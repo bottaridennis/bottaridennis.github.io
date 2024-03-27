@@ -34,3 +34,6 @@ window.onscroll = () => {
     // animation footer on scroll
 
 }
+
+
+/* reload */

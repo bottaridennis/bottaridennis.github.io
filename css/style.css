@@ -15,8 +15,8 @@
     --bg-color: #081b29;
     --second-bg-color: #112e42;
     --text-color: #ededed;
-    --main-color: #00abf0;
-    /* --main-color: #c294d4; */
+    /* --main-color: #00abf0; */
+    --main-color: #c294d4;
 }
 
 html {
@@ -403,7 +403,7 @@ span {
     gap: 5rem;
 }
 
-,.skills-row .skills-column  {
+.skills-row .skills-column  {
     flex: 1 1 40rem;
 }
 
@@ -428,4 +428,8 @@ span {
     font-size: 1.7rem;
     display: flex;
     justify-content: space-between; 
+}
+
+.skills-content .progress h3 span {
+    margin-left: 7rem;
 }

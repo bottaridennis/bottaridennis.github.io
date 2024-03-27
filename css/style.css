@@ -734,7 +734,7 @@ span {
 
 /* BREAKPOINTS */
 
-@media (min-width:1200px) {
+@media (min-width:5cm) {
     .education-row .education-column {
         flex: 1 1 4rem;
     }

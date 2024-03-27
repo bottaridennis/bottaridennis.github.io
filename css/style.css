@@ -429,7 +429,3 @@ span {
     display: flex;
     justify-content: space-between; 
 }
-
-.skills-content .progress h3 span {
-    margin-left: 7rem;
-}

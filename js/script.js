@@ -47,3 +47,7 @@ window.onscroll = () => {
 
 
 /* reload */
+
+const confirmAction = () => {
+    confirm('Il download è iniziato');
+}

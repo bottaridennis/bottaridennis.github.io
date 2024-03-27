@@ -34,7 +34,8 @@ window.onscroll = () => {
     header.classList.toggle('sticky', window.scrollY > 100);
 
     // remove toggle icon and navbar when click navbar links (scroll)
-
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
 
     // animation footer on scroll
 

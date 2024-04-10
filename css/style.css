@@ -33,6 +33,17 @@ html {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* overflow-x: hidden; */
+}
+#particles-js{
+    height: 100vh;
+    position: absolute;
+    opacity: .4;
+    position: fixed;
+    z-index: 0;
 }
 
 .header {

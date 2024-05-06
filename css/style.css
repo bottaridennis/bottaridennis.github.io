@@ -38,7 +38,8 @@ body {
     height: 100vh;
     /* overflow-x: hidden; */
 }
-#particles-js{
+
+#particles-js {
     height: 100vh;
     position: absolute;
     opacity: .4;
@@ -451,10 +452,17 @@ span {
     background: var(--second-bg-color);
 }
 
+.skills-container {
+    display: flex;
+    /* gap: 3rem; */
+}
+
 .skills .skills-row {
     display: flex;
     flex-wrap: wrap;
+    /* overflow-y: scroll; */
     gap: 5rem;
+    /* flex-basis: 20; */
 }
 
 .skills-row .skills-column {
@@ -472,6 +480,7 @@ span {
     border-radius: .6rem;
     padding: .5rem 1.5rem;
     min-width: 50%;
+    /* max-width: 0%; */
     z-index: 1;
     overflow: hidden;
 }
@@ -538,6 +547,10 @@ span {
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
+    width: 60%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span {
     width: 60%;
 }
 
@@ -743,13 +756,58 @@ span {
     animation-delay: calc(.3s * var(--i));
 }
 
+.updates .updates-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.updates-column {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    min-width: 33.3%;
+    z-index: 1;
+    max-width: 33.3%;
+    /* overflow: hidden; */
+}
+
+.updates-row .updates-column {
+    flex: 1 1 40rem;
+}
+.updates-box .updates-content {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    min-width: 33.3%;
+    max-width: 33.3%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.updates-box .updates-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.updates-box .updates-content:hover::before {
+    width: 100%;
+}
+.projects {
+    background: var(--second-bg-color);
+}
+
 /* BREAKPOINTS */
 
-/* @media (min-width:10cm) {
-    .education-row .education-column {
-        flex: 1 1 4rem;
-    }
-} */
 
 @media (max-width:1200px) {
     .education-column {
@@ -857,6 +915,7 @@ span {
     .education-column {
         width: 100%;
     }
+
     html {
         font-size: 50%;
     }

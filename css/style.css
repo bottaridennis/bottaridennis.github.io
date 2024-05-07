@@ -884,8 +884,8 @@ span {
     border-radius: .6rem;
     padding: 2rem 2rem;
     z-index: 1;
-    max-width: 40%;
-    min-width: 40%;
+    max-width: 30%;
+    min-width: 30%;
     overflow: hidden;
 }
 

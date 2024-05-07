@@ -385,6 +385,11 @@ span {
     font-size: 2.5rem;
     margin: 0 0 1.5rem 2rem;
 }
+.education-column .title i{
+    font-size: 3rem;
+    margin: 0 0 1.5rem 2rem;
+}
+
 
 .education-column .education-box {
     border-left: .2rem solid var(--main-color);

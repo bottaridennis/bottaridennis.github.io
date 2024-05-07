@@ -919,7 +919,6 @@ span {
     display: flex;
     gap: 5rem;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .projects-column h2 {

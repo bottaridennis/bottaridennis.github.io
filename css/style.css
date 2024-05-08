@@ -731,11 +731,11 @@ span {
     background-image: url('../images/game.png');
 }
 
-.updates-box:nth-child(2) .updates-img {
+.updates-box:nth-child(3) .updates-img {
     background-image: url('../images/PG.gif');
 }
 
-.updates-box:nth-child(3) .updates-img {
+.updates-box:nth-child(2) .updates-img {
     background-image: url('../images/sea.png');
 }
 

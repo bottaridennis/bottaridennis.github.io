@@ -731,11 +731,11 @@ span {
     background-image: url('../images/game.png');
 }
 
-.updates-box:nth-child(3) .updates-img {
+.updates-box:nth-child(2) .updates-img {
     background-image: url('../images/PG.gif');
 }
 
-.updates-box:nth-child(2) .updates-img {
+.updates-box:nth-child(3) .updates-img {
     background-image: url('../images/sea.png');
 }
 
@@ -912,6 +912,9 @@ span {
 .projects-box:nth-child(4) .projects-img {
     background-image: url('../images/ARCON.png');
 }
+.projects-box:nth-child(5) .projects-img {
+    background-image: url('../images/parking.png');
+}
 
 .projects-column {
     margin-left: 10%;
@@ -919,6 +922,8 @@ span {
     display: flex;
     gap: 5rem;
     flex-wrap: wrap;
+    justify-content: center;
+    /* padding-bottom: 6rem; */
 }
 
 .projects-column h2 {

@@ -878,6 +878,22 @@ span {
     margin-bottom: 1rem;
 }
 
+.updates-column .updates-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.updates-column .updates-box:hover::before {
+    width: 100%;
+}
+
 .projects-box {
     position: relative;
     border: .2rem solid var(--main-color);
@@ -933,6 +949,21 @@ span {
 
 .projects-column p {
     font-size: 1.5rem;
+}
+.projects-column .projects-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.projects-column .projects-box:hover::before {
+    width: 100%;
 }
 
 /* BREAKPOINTS */

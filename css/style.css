@@ -30,13 +30,7 @@ body {
     height: 100vh;
 }
 
-#particles-js {
-    height: 100vh;
-    position: absolute;
-    opacity: .4;
-    position: fixed;
-    z-index: 0;
-}
+
 
 /* cahnging text test */
 
@@ -740,8 +734,6 @@ span {
 }
 
 .updates-column {
-    margin-left: 10%;
-    margin-right: 10%;
     display: flex;
     gap: 5rem;
     flex-wrap: wrap;
@@ -933,8 +925,6 @@ span {
 }
 
 .projects-column {
-    margin-left: 10%;
-    margin-right: 10%;
     display: flex;
     gap: 5rem;
     flex-wrap: wrap;

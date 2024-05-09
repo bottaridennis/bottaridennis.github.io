@@ -1,479 +1,133 @@
-body{
-    margin: 0;
-    font-family: HedvigLettersSans-Regular;
-}
-
-@font-face {
-    font-family: HedvigLettersSans-Regular;
-    src: url(./HedvigLettersSans-Regular.ttf);
-}
-
-
-
-/* QUESTA SEZIONE CI SERVE PER CREARE LE COLONNE */
-*{
-    box-sizing: border-box;
-}
-[class*="col-"] {
-    float: left;
-    /* border: 1px solid red; */
-    min-height: 10px;
-    width: 100%;
-}
-.col-22{
-    width: 16.66%;
-}
-.col-88{
-    width: 66.66%;
-}
+body{margin:0;font-family:HedvigLettersSans-Regular}
+@font-face{font-family:HedvigLettersSans-Regular;src:url(HedvigLettersSans-Regular.ttf)}
+*{box-sizing:border-box}
+[class*=col-]{float:left;min-height:10px;width:100%}
+.col-22{width:16.66%}
+.col-88{width:66.66%}
 @media screen and (max-width:700px){
-    .col-333{width: 50%; margin: 20%;}
-    .col-33{width: 50%; margin: 20%;}
+.col-333{width:50%;margin:20%}
+.col-33{width:50%;margin:20%}
 }
 @media screen and (min-width:768px){
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 74.99%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-    .col-33{width: 12.5%; margin-right: 5.56%;}
-    .col-333{width: 12.5%;}
-}
-.row{
-    width: 100%;
-    margin-bottom: 30px;
-}
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* QUESTA SEZIONE SERVE PER CREARE LA NAVBAR */
-
-.navbar {
-    background-color: white;
-    overflow: hidden;
-    width: 100%;
-    z-index: 9999;
-    border-bottom: 1px solid black;
-}
-.navbar a {
-    float: right;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 11px;
-}
-.navbar a:hover {
-  border-bottom: 3px solid black;
-}
-.logobar{
-    width: auto;
-    max-height: 35px;
-    margin-top: 7px;
-    float: right;
-}
-.WWU{
-    width: 140px;
-    height: 30px;
-    color: white;
-    background-color: rgb(75, 165, 255);
-    border: 2px solid rgb(75, 165, 255);
-    border-radius: 5px;
-    
-}
-.title1{
-    /* background: url(/ARCON/IMG/home-bg-4.jpg); */
-    min-height: 100vh;
-    color: white;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../IMG/home-bg-4.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-/* .overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.247);
-
-} */
-
-.title1{
-    text-align: center;
-    font-size: 50px;
-}
-.title2{
-    font-size: 30px;
-}  
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.ilmondo{
-    z-index: 2;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.ilmondo h5{
-    color: grey;
-}
-.ilmondo p{
-    color: grey;
-    margin-left: 25%;
-    margin-right: 25%;
-}
-.nodo{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-.qr{
-    z-index: 3;
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-    border: 3px solid white;
-    color: black;
-    background-color: white;
-    font-size: 32px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display:inline-flex;
-}
-.qr:hover{
-    color: white;
-    background-color: rgb(75, 165, 255);
-    border: 3px solid rgb(75, 165, 255);
-    font-size: 40px;
-}
-.div{
-    margin-left: 10%;
-    margin-right: 10%;
-}
-.div p{
-    color: gray;
-    font-size: 15px;
-}
-.white{
-    background-color: whitesmoke;
-}
-.whitesmoke{
-    background-color: white;
-}
-.occhiali{
-    width: 80%;
-    height: 31vh;
-    margin-top: 20px;
-    border: 0px;
-    background-image: url(../IMG/about-video-img.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-}
-.occhiali:hover{
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../IMG/about-video-img.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.RM{
-    width: 150px;
-    height: 40px;
-    background-color: rgb(75, 165, 255);
-    color: white;
-    border: 1px solid rgb(75, 165, 255) ;
-    border-radius: 20px;
-    font-size: xx-small;
-}
-.play{
-    font-size: 32px;
-    padding-left: 5px;
-}
-.torno{
-    color: white;
-    border: 2px solid white;
-    width: 70px;
-    height: 70px;
-    border-radius: 35px;
-}
-.occhiali:hover i{
-    color: black;
-}
-.occhiali:hover div{
-    background-color: white;
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-}
-.ico{
-    padding-top: 15vh;
-    margin-top: 50px;
-    font-size: 32px;
-    color: rgb(75, 165, 255);
-    margin-bottom: 0px;
-}
-.black{
-    background-color: rgb(34, 31, 46);
-}
-.bianco{
-    color: white;
-    font-size: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.bianco1{
-    font-size: 15px;
-    padding-bottom: 15vh;
-    color: white;
-}
-.coworker1{
-    height: 35vh;
-    background-image: url(../IMG/team-01.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    text-align: center;
-}
-.coworker2{
-    height: 35vh;
-    background-image: url(../IMG/team-02.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    text-align: center;
-}
-.coworker3{
-    height: 35vh;
-    background-image: url(../IMG/team-03.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    text-align: center;
-}
-.coworker4{
-    height: 35vh;
-    background-image: url(../IMG/team-04.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    text-align: center;
-}
-.coworker1:hover{
-    height: 35vh;
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../IMG/team-01.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.coworker2:hover{
-    height: 35vh;
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../IMG/team-02.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.coworker3:hover{
-    height: 35vh;
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../IMG/team-03.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.coworker4:hover{
-    height: 35vh;
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(../IMG/team-04.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.coworker1 p{
-    display: none;
-    color: white;
-}
-.coworker1:hover p{
-    display:block;
-}
-.coworker2 p{
-    display: none;
-    color: white;
-}
-.coworker2:hover p{
-    display:block;
-}
-.coworker3 p{
-    display: none;
-    color: white;
-}
-.coworker3:hover p{
-    display:block;
-}
-.coworker4 p{
-    display: none;
-    color: white;
-}
-.coworker4:hover p{
-    display:block;
-}
-.coworker1 i{margin-right: 5px;}
-.coworker2 i{margin-right: 5px;}
-.coworker3 i{margin-right: 5px;}
-.coworker4 i{margin-right: 5px;}
-.prodotto1  {
-    background-image: url(../IMG/1.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    height: 40vh;
-}
-.prodotto1 p{
-    display: none;
-    justify-content: center;
-    text-align: center;
-}
-.prodotto1:hover  {
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../IMG/1.jpg);
-}
-.prodotto1:hover p{
-    display: block;
-    color:white;
-}
-.prodotto1 i{
-    color: white;
-}
-.prodotto1 i:hover{
-    color: rgb(75, 165, 255);
-}
-.prodotto2  {
-    background-image: url(../IMG/2.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    height: 40vh;
-}
-.prodotto2 p{
-    display: none;
-    justify-content: center;
-    text-align: center;
-}
-.prodotto2:hover  {
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../IMG/2.jpg);
-}
-.prodotto2:hover p{
-    display: block;
-    color:white;
-}
-.prodotto2 i{
-    color: white;
-}
-.prodotto2 i:hover{
-    color: rgb(75, 165, 255);
-}
-.prodotto3  {
-    background-image: url(../IMG/3.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    height: 40vh;
-}
-.prodotto3 p{
-    display: none;
-    justify-content: center;
-    text-align: center;
-}
-.prodotto3:hover  {
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../IMG/3.jpg);
-}
-.prodotto3:hover p{
-    display: block;
-    color:white;
-}
-.prodotto3 i{
-    color: white;
-}
-.prodotto3 i:hover{
-    color: rgb(75, 165, 255);
-}
-.prodotto4  {
-    background-image: url(../IMG/4.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    height: 40vh;
-}
-.prodotto4 p{
-    display: none;
-    justify-content: center;
-    text-align: center;
-}
-.prodotto4:hover  {
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../IMG/4.jpg);
-}
-.prodotto4:hover p{
-    display: block;
-    color:white;
-}
-.prodotto4 i{
-    color: white;
-}
-.prodotto4 i:hover{
-    color: rgb(75, 165, 255);
-}
-.prodotto5  {
-    background-image: url(../IMG/5.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    height: 40vh;
-}
-.prodotto5 p{
-    display: none;
-    justify-content: center;
-    text-align: center;
-}
-.prodotto5:hover  {
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../IMG/5.jpg);
-}
-.prodotto5:hover p{
-    display: block;
-    color:white;
-}
-.prodotto5 i{
-    color: white;
-}
-.prodotto5 i:hover{
-    color: rgb(75, 165, 255);
-}
-.prodotto6  {
-    background-image: url(../IMG/6.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    height: 40vh;
-}
-.prodotto6 p{
-    display: none;
-    justify-content: center;
-    text-align: center;
-}
-.prodotto6:hover  {
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../IMG/6.jpg);
-}
-.prodotto6:hover p{
-    display: block;
-    color:white;
-}
-.prodotto6 i{
-    color: white;
-}
-.prodotto6 i:hover{
-    color: rgb(75, 165, 255);
-}
+.col-1{width:8.33%}
+.col-2{width:16.66%}
+.col-3{width:25%}
+.col-4{width:33.33%}
+.col-5{width:41.66%}
+.col-6{width:50%}
+.col-7{width:58.33%}
+.col-8{width:66.66%}
+.col-9{width:74.99%}
+.col-10{width:83.33%}
+.col-11{width:91.66%}
+.col-12{width:100%}
+.col-33{width:12.5%;margin-right:5.56%}
+.col-333{width:12.5%}
+}
+.row{width:100%;margin-bottom:30px}
+.row::after{content:"";clear:both;display:table}
+:root{--bg-color:rgb(34, 31, 46);--second-bg-color:rgb(34, 31, 46);--text-color:#ededed;--main-color:#4ba5ff}
+header{background-color:#fff}
+#menu-icon{position:relative;font-size:3.6rem;color:var(--text-color);cursor:pointer;display:none}
+#menu-icon .animate,.home.show-animate .animate,.logo .animate,.navbar .animate{animation:showRight 1s ease forwards;animation-delay:calc(.3s * var(--i))}
+.active{color:#4ba5ff!important}
+.header{position:fixed;top:0;left:0;width:100%;padding:2rem 9%;background:0 0;display:flex;justify-content:space-between;align-items:center;z-index:100;transition:.3s}
+.header.sticky{background:var(--bg-color)}
+.logo{position:relative;font-size:2.5rem;color:var(--text-color);font-weight:600}
+.navbar{position:relative}
+.navbar a{font-size:1rem;color:var(--text-color);font-weight:500;margin-left:3.5rem;transition:.3s;text-decoration:none}
+.navbar a.active,.navbar a:hover{color:var(--main-color)}
+@media (max-width:768px){
+#menu-icon{display:block}
+.navbar{position:absolute;top:100%;left:-100%;width:100%;padding:1rem 4%;background:var(--main-color);box-shadow:0 .5rem 1rem rgba(0,0,0,.2);z-index:1;transition:.25s ease;transition-delay:.25s}
+.navbar.active{transition-delay:0s;left:0}
+.navbar .active-nav{position:absolute;top:0;left:-100%;width:100%;height:100%;background-color:var(--bg-color);border-top:.1rem solid rgba(0,0,0,.2);z-index:-1;transition:.25s ease;transition-delay:0s}
+.navbar.active .active-nav{left:0;transition-delay:.25s}
+.navbar a{display:block;font-size:2rem;margin:3rem 0;transform:translateX(-20rem);transition:.25s ease;transition-delay:0s}
+.navbar.active a{transform:translateX(0);transition-delay:.25s}
+.home-imgHover{pointer-events:none;background:var(--bg-color);opacity:.6}
+.title{font-size:2rem}
+}
+.logobar{width:auto;max-height:35px;margin-top:7px;float:right}
+.WWU{width:140px;height:30px;color:#fff;background-color:#4ba5ff;border:2px solid #4ba5ff;border-radius:5px}
+.title1{min-height:100vh;color:#fff;z-index:1;width:100%;height:100%;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../IMG/home-bg-4.jpg);background-attachment:fixed;background-size:cover;background-repeat:no-repeat}
+.title1{text-align:center;font-size:50px}
+.title2{font-size:30px}
+.flex{display:flex;justify-content:center;align-items:center}
+.ilmondo{z-index:2;justify-content:center;align-items:center;text-align:center}
+.ilmondo h5{color:grey}
+.ilmondo p{color:grey;margin-left:25%;margin-right:25%}
+.nodo{justify-content:center;align-items:center;text-align:center;display:flex;justify-content:center}
+.qr{z-index:3;width:80px;height:80px;border-radius:40px;border:3px solid #fff;color:#000;background-color:#fff;font-size:32px;justify-content:center;align-items:center;text-align:center;display:inline-flex}
+.qr:hover{color:#fff;background-color:#4ba5ff;border:3px solid #4ba5ff;font-size:40px}
+.div{margin-left:10%;margin-right:10%}
+.div p{color:gray;font-size:15px}
+.white{background-color:#f5f5f5}
+.whitesmoke{background-color:#fff}
+.occhiali{width:80%;height:31vh;margin-top:20px;border:0;background-image:url(../IMG/about-video-img.jpg);background-size:cover;background-repeat:no-repeat}
+.occhiali:hover{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../IMG/about-video-img.jpg);background-size:cover;background-repeat:no-repeat}
+.RM{width:150px;height:40px;background-color:#4ba5ff;color:#fff;border:1px solid #4ba5ff;border-radius:20px;font-size:xx-small}
+.play{font-size:32px;padding-left:5px}
+.torno{color:#fff;border:2px solid #fff;width:70px;height:70px;border-radius:35px}
+.occhiali:hover i{color:#000}
+.occhiali:hover div{background-color:#fff;width:80px;height:80px;border-radius:40px}
+.ico{padding-top:15vh;margin-top:50px;font-size:32px;color:#4ba5ff;margin-bottom:0}
+.black{background-color:var(--bg-color)}
+.bianco{color:#fff;font-size:50px;margin-top:5px;margin-bottom:5px}
+.bianco1{font-size:15px;padding-bottom:15vh;color:#fff}
+.coworker1{height:35vh;background-image:url(../IMG/team-01.jpg);background-repeat:no-repeat;background-size:cover;justify-content:center;text-align:center}
+.coworker2{height:35vh;background-image:url(../IMG/team-02.jpg);background-repeat:no-repeat;background-size:cover;justify-content:center;text-align:center}
+.coworker3{height:35vh;background-image:url(../IMG/team-03.jpg);background-repeat:no-repeat;background-size:cover;justify-content:center;text-align:center}
+.coworker4{height:35vh;background-image:url(../IMG/team-04.jpg);background-repeat:no-repeat;background-size:cover;justify-content:center;text-align:center}
+.coworker1:hover{height:35vh;background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/team-01.jpg);background-repeat:no-repeat;background-size:cover}
+.coworker2:hover{height:35vh;background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/team-02.jpg);background-repeat:no-repeat;background-size:cover}
+.coworker3:hover{height:35vh;background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/team-03.jpg);background-repeat:no-repeat;background-size:cover}
+.coworker4:hover{height:35vh;background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/team-04.jpg);background-repeat:no-repeat;background-size:cover}
+.coworker1 p{display:none;color:#fff}
+.coworker1:hover p{display:block}
+.coworker2 p{display:none;color:#fff}
+.coworker2:hover p{display:block}
+.coworker3 p{display:none;color:#fff}
+.coworker3:hover p{display:block}
+.coworker4 p{display:none;color:#fff}
+.coworker4:hover p{display:block}
+.coworker1 i{margin-right:5px}
+.coworker2 i{margin-right:5px}
+.coworker3 i{margin-right:5px}
+.coworker4 i{margin-right:5px}
+.prodotto1{background-image:url(../IMG/1.jpg);background-repeat:no-repeat;background-size:cover;height:40vh}
+.prodotto1 p{display:none;justify-content:center;text-align:center}
+.prodotto1:hover{background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/1.jpg)}
+.prodotto1:hover p{display:block;color:#fff}
+.prodotto1 i{color:#fff}
+.prodotto1 i:hover{color:#4ba5ff}
+.prodotto2{background-image:url(../IMG/2.jpg);background-repeat:no-repeat;background-size:cover;height:40vh}
+.prodotto2 p{display:none;justify-content:center;text-align:center}
+.prodotto2:hover{background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/2.jpg)}
+.prodotto2:hover p{display:block;color:#fff}
+.prodotto2 i{color:#fff}
+.prodotto2 i:hover{color:#4ba5ff}
+.prodotto3{background-image:url(../IMG/3.jpg);background-repeat:no-repeat;background-size:cover;height:40vh}
+.prodotto3 p{display:none;justify-content:center;text-align:center}
+.prodotto3:hover{background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/3.jpg)}
+.prodotto3:hover p{display:block;color:#fff}
+.prodotto3 i{color:#fff}
+.prodotto3 i:hover{color:#4ba5ff}
+.prodotto4{background-image:url(../IMG/4.jpg);background-repeat:no-repeat;background-size:cover;height:40vh}
+.prodotto4 p{display:none;justify-content:center;text-align:center}
+.prodotto4:hover{background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/4.jpg)}
+.prodotto4:hover p{display:block;color:#fff}
+.prodotto4 i{color:#fff}
+.prodotto4 i:hover{color:#4ba5ff}
+.prodotto5{background-image:url(../IMG/5.jpg);background-repeat:no-repeat;background-size:cover;height:40vh}
+.prodotto5 p{display:none;justify-content:center;text-align:center}
+.prodotto5:hover{background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/5.jpg)}
+.prodotto5:hover p{display:block;color:#fff}
+.prodotto5 i{color:#fff}
+.prodotto5 i:hover{color:#4ba5ff}
+.prodotto6{background-image:url(../IMG/6.jpg);background-repeat:no-repeat;background-size:cover;height:40vh}
+.prodotto6 p{display:none;justify-content:center;text-align:center}
+.prodotto6:hover{background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../IMG/6.jpg)}
+.prodotto6:hover p{display:block;color:#fff}
+.prodotto6 i{color:#fff}
+.prodotto6 i:hover{color:#4ba5ff}

@@ -219,7 +219,6 @@ function createUpdatesBox(data) {
     column.appendChild(updateBox);
 }
 
-
 var revolutionminds = {
     img: '../images/Logo.png',
     'img-link': 'https://revolutionminds.github.io',

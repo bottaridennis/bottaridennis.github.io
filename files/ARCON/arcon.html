@@ -2,36 +2,39 @@
 
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./CSS/style.css">
+    <!-- <link rel="stylesheet" href="../../CSS/style.css"> -->
     <meta charset="UTF-8">
     <meta keywords="Small business">
     <meta description="A site about small business">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARCON</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="./image/x-icon" href="./IMG/9239548.png">
 </head>
+
 <body>
-    <div class="row">
-        <div class="navbar" style="position: fixed;">
-            <div class="col-22">
-                <img src="./IMG/logo-black.png" alt="Dark logo" class="logobar">
-            </div>
-            <div class="col-88">
-                <a href="#HOME"><b>HOME</b></a>
-                <a href="#PAGES"><b>PAGES</b></a>
-                <a href="#BLOG"><b>BLOG</b></a>
-                <a href="#PORTFOLIO"><b>PORTFOLIO</b></a>
-                <a href="#SHOPS"><b>SHOPS</b></a>
-                <a href="#WIDGETS"><b>WIDGETS</b></a>
-            </div>
-            <div class="col-22" style="border-left: 1px solid black;">
-                <a href="" style="float: left;"><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="" style="float: left;"><i class="fa-solid fa-magnifying-glass"></i></a>
-            </div>
-        </div>
-    </div>
+    <header class="header">
+
+        <a href="#" class="logo"><img src="./IMG/logo-footer.png" alt="" style="height: 2.5rem;"><span class="animate"
+                style="--i:1;"></span></a>
+
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+
+        <nav class="navbar">
+            <a href="#home" class="active"><i class='bx bxs-home-alt-2'></i> | Home</a>
+            <a href="#about"><i class='bx bx-question-mark'></i> | About</a>
+            <a href="#education"><i class='bx bxs-book'></i> | Education</a>
+            <a href="#skills"><i class='bx bx-stats'></i> | Skills</a>
+            <a href="#updates"><i class='bx bxs-wrench'></i> | WIP</a>
+            <a href="#projects"><i class='bx bx-git-branch'></i> | Projects</a>
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
     <div class="white">
         <div class="row">
             <div class="col-12 title1 flex">
@@ -50,7 +53,9 @@
                 <div>
                     <h1>WHO WE ARE</h1>
                     <h5>- THE WORLD AT YOUR FINGERTIPS -</h5>
-                    <p>We're nuts about improving your business so we ensure that we track results from day one. Sure, we come up with great creative ideas that engage and captivate your customers, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius quam ut magna ultricies pellentesque.</p>
+                    <p>We're nuts about improving your business so we ensure that we track results from day one. Sure,
+                        we come up with great creative ideas that engage and captivate your customers, Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit. Sed varius quam ut magna ultricies pellentesque.</p>
                 </div>
             </div>
         </div>
@@ -60,7 +65,8 @@
                 <div class="div">
                     <i class="fa-solid fa-play  qr"></i>
                     <h3>WEB DESIGN</h3>
-                    <p>Designing a good website that accommodates a lot of content is a tricky balancing act to pull off.</p>
+                    <p>Designing a good website that accommodates a lot of content is a tricky balancing act to pull
+                        off.</p>
                 </div>
             </div>
             <div class="col-2 nodo">
@@ -74,14 +80,16 @@
                 <div class="div">
                     <i class="fa-regular fa-gem qr"></i>
                     <h3>DIGITAL MARKETING</h3>
-                    <p>Google has made this important since 1998 when it launched. Content became, and still is king since websites.</p>
+                    <p>Google has made this important since 1998 when it launched. Content became, and still is king
+                        since websites.</p>
                 </div>
             </div>
             <div class="col-2 nodo">
                 <div class="div">
-                    <i class="fa-solid fa-cat qr" ></i>
+                    <i class="fa-solid fa-cat qr"></i>
                     <h3>UI / UX FRIENDLY</h3>
-                    <p>UX design refers to the term user experience design, while UI design stands for user interface design.</p>
+                    <p>UX design refers to the term user experience design, while UI design stands for user interface
+                        design.</p>
                 </div>
             </div>
             <div class="col-2"></div>
@@ -91,15 +99,20 @@
         <div class="col-2"></div>
         <div class="col-4">
             <h1>MEET OUR COMPANY</h1>
-            <p style="color: grey; font-size: smaller;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac vulputate dolor. Nullam venenatis enim in quam euismod fringilla. Donec in risus eget purus mattis varius. Nulla dapibus quis orci et tincidunt. Phasellus in rhoncus quam. Fusce a est lacinia, ultricies mi nec, rutrum dolor.</p>
-            <p style="color: grey; font-size: smaller;">Donec vehicula cursus metus viverra aliquet Aliquam tincidunt dolor a auctor finibus. Sed in sodales magna. Etiam eget velit nec urna facilisis fringilla sed eget purus. Ut pulvinar ullamcorper mauris non tristique.</p>
+            <p style="color: grey; font-size: smaller;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                ac vulputate dolor. Nullam venenatis enim in quam euismod fringilla. Donec in risus eget purus mattis
+                varius. Nulla dapibus quis orci et tincidunt. Phasellus in rhoncus quam. Fusce a est lacinia, ultricies
+                mi nec, rutrum dolor.</p>
+            <p style="color: grey; font-size: smaller;">Donec vehicula cursus metus viverra aliquet Aliquam tincidunt
+                dolor a auctor finibus. Sed in sodales magna. Etiam eget velit nec urna facilisis fringilla sed eget
+                purus. Ut pulvinar ullamcorper mauris non tristique.</p>
             <button class="RM">READ MORE</button>
         </div>
         <div class="col-4 flex">
             <div class="occhiali flex">
                 <div class="torno flex">
                     <i class="fa-solid fa-play play"></i>
-                </div>    
+                </div>
             </div>
         </div>
         <div class="col-2"></div>
@@ -134,19 +147,49 @@
             <p style="color: grey; text-align: center;">- WE ARE STRONGER -</p>
         </div>
         <div class="col-2"></div>
-        <div class="col-33 coworker1 flex"><p>David Marks<br>UI/UX Designer <br><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i></p></div>
-        <div class="col-33 coworker2 flex"><p>Lynda Stone<br>Photographer <br><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i></p></div>
-        <div class="col-33 coworker3 flex"><p>Karl Casey<br>Web Developer <br><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i></p></div>
-        <div class="col-333 coworker4 flex"><p>Roland Buford<br>CEO/Founder <br><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i></p></div>
+        <div class="col-33 coworker1 flex">
+            <p>David Marks<br>UI/UX Designer <br><i class="fa-brands fa-facebook-f"></i><i
+                    class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i></p>
+        </div>
+        <div class="col-33 coworker2 flex">
+            <p>Lynda Stone<br>Photographer <br><i class="fa-brands fa-facebook-f"></i><i
+                    class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i></p>
+        </div>
+        <div class="col-33 coworker3 flex">
+            <p>Karl Casey<br>Web Developer <br><i class="fa-brands fa-facebook-f"></i><i
+                    class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i></p>
+        </div>
+        <div class="col-333 coworker4 flex">
+            <p>Roland Buford<br>CEO/Founder <br><i class="fa-brands fa-facebook-f"></i><i
+                    class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i></p>
+        </div>
         <div class="col-2"></div>
     </div>
     <div class="row" style="margin-bottom: 0px;">
-        <div class="col-4 prodotto1 flex"><p style="font-size: x-large;">Business Cards <br> PRINT DESIGN <br> <i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p></div>
-        <div class="col-4 prodotto2 flex"><p style="font-size: x-large;">Magazine <br> BRANDING <br> <i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p></div>
-        <div class="col-4 prodotto3 flex"><p style="font-size: x-large;">Rabycad CD Design <br> BRANDING <br> <i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p></div>
-        <div class="col-4 prodotto4 flex"><p style="font-size: x-large;">Micro Chips <br> WEB DESIGN <br> <i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p></div>
-        <div class="col-4 prodotto5 flex"><p style="font-size: x-large;">Flyer <br> PRINT DESIGN <br> <i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p></div>
-        <div class="col-4 prodotto6 flex"><p style="font-size: x-large;">Flat Web Design <br> WEB DESIGN <br> <i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p></div>
+        <div class="col-4 prodotto1 flex">
+            <p style="font-size: x-large;">Business Cards <br> PRINT DESIGN <br> <i class="fa-solid fa-magnifying-glass"
+                    style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p>
+        </div>
+        <div class="col-4 prodotto2 flex">
+            <p style="font-size: x-large;">Magazine <br> BRANDING <br> <i class="fa-solid fa-magnifying-glass"
+                    style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p>
+        </div>
+        <div class="col-4 prodotto3 flex">
+            <p style="font-size: x-large;">Rabycad CD Design <br> BRANDING <br> <i class="fa-solid fa-magnifying-glass"
+                    style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p>
+        </div>
+        <div class="col-4 prodotto4 flex">
+            <p style="font-size: x-large;">Micro Chips <br> WEB DESIGN <br> <i class="fa-solid fa-magnifying-glass"
+                    style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p>
+        </div>
+        <div class="col-4 prodotto5 flex">
+            <p style="font-size: x-large;">Flyer <br> PRINT DESIGN <br> <i class="fa-solid fa-magnifying-glass"
+                    style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p>
+        </div>
+        <div class="col-4 prodotto6 flex">
+            <p style="font-size: x-large;">Flat Web Design <br> WEB DESIGN <br> <i class="fa-solid fa-magnifying-glass"
+                    style="margin-right: 5px;"></i><i class="fa-solid fa-link"></i></p>
+        </div>
     </div>
     <div class="row" style="margin-top: 0px;">
         <div class="white">
@@ -154,5 +197,7 @@
             <p style="color: grey; text-align: center;">- CHOSE YOUR PLAN -</p>
         </div>
     </div>
+    <script src="../../js/script.js"></script>
 </body>
+
 </html>

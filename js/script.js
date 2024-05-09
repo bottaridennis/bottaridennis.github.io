@@ -263,7 +263,7 @@ var stove = {
 };
 
 var arcon = {
-    img: '../images/arcon.png',
+    img: '../images/ARCON.png',
     'img-link': '../files/ARCON/arcon.html',
     title: 'HTML/CSS | ARCON template',
     paragraph: "Con il percorso ITS con l'ITS ACCADEMY LAST durante le lezioni di HTML e CSS ci è stato detto di scegliere un template dalla piattaforma Envato e provare a ricrearlo utilizzando HTML e CSS per prendere dimestichezza con il linguaggio.",
@@ -290,7 +290,6 @@ var parkingSensor = {
     'btn-d-link': '../files/parking.png'
 };
 
-
 var knightRun = {
     img: "../images/game.png",
     'img-link': "https://github.com/bottaridennis/KnightRun",
@@ -306,7 +305,7 @@ var knightRun = {
 };
 
 var character = {
-    img: "../images/pg.gif",
+    img: "../images/PG.gif",
     'img-link': "../images/PG.gif",
     title: "Aseprite | Animation",
     paragraph: "Con Aseprite ho iniziato a creare un set di animazioni per un personaggio 2D in 6 direzioni da poi condividere con la comunity con licenza CC-0 per lo sviluppo di Giochi e per la realizzazione di animazioni in pixel-art commerciali.",

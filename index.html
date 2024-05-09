@@ -43,16 +43,18 @@
             <h1>Ciao, sono <span>Dennis Bottari</span><span class="animate" style="--i:2;"></span></h1>
             <div class="change-text">
                 <h3>Sono un</h3>
-                <h3>
+                <h3 id="change">
+                    <span class="word">Graphic&nbsp;Designer</span>
+                    <span class="word">Frontend&nbsp;Developer</span>
+                    <span class="word">Web&nbsp;Designer</span>
+                    <span class="word">Web&nbsp;Developer</span>
+                    <span class="word">Game&nbsp;Designer</span>
+                    <span class="word">Game&nbsp;Developer</span>
+                    <span class="word">UI/UX&nbsp;Designer</span>
                     <span class="word">&nbsp;Artist</span>
                     <span class="word">2D&nbsp;Artist</span>
                     <span class="word">3D&nbsp;Artist</span>
-                    <span class="word">Game&nbsp;developer</span>
-                    <span class="word">UI/UX&nbsp;Designer</span>
-                    <span class="word">Graphic&nbsp;Designer</span>
-                    <span class="word">Web&nbsp;Designer</span>
-                    <span class="word">Frontend&nbsp;Developer</span>
-                    <span class="word">pixel-art&nbsp;Artist</span>
+                    <span class="word">Pixel-Art&nbsp;Artist</span>
                 </h3>
             </div>
             <!-- <div class="text-animate">
@@ -324,171 +326,16 @@
 
         <h2 class="heading">I miei <span>Progressi</span></h2>
 
-        <div class="updates-column">
-
-            <div class="updates-box">
-                <a href="https://github.com/bottaridennis/KnightRun" target="_blank">
-                    <div class="updates-img">
-                    </div>
-                </a>
-                <h2>Godot | Knight run</h2>
-                <p>Ho iniziato lo sviluppo di un videogioco 16bit in Godot, gli sprite sono stati presi da <a
-                        href="https://brackeysgames.itch.io/brackeys-platformer-bundle" target="_blank"
-                        style="color: var(--main-color);">itch.io
-                        con licenza CC-0</a> mentre gli script e il level Design sono opera mia. <br>Collegamento per
-                    il download della demo e per la repository GitHub del progetto:</p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="./files/Game.zip" onclick='confirmAction()' class="btn" download="Game.zip"
-                        style="width: 30%; font-size: 1.3rem; height: 4rem;">Download</a>
-                    <div class="github">
-                        <a href="https://github.com/bottaridennis/KnightRun" target="_blank"><i
-                                class='bx bxl-github'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="updates-box">
-                <a href="./images/PG.gif" target="_blank">
-                    <div class="updates-img">
-                    </div>
-                </a>
-                <h2>Aseprite | Animation</h2>
-                <p>Con Aseprite ho iniziato a creare un set di animazioni per un personaggio 2D in 6 direzioni da poi
-                    condividere con la comunity con licenza CC-0 per lo sviluppo di Giochi e per la realizzazione di
-                    animazioni in pixel-art commerciali. <br>
-                </p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="./files/sprite.png" onclick='confirmAction()' class="btn" download="sprite.png"
-                        style="width: 30%; font-size: 1.3rem; height: 4rem;">Download</a>
-                </div>
-            </div>
-
-            <div class="updates-box">
-                <a href="./images/sea.png">
-                    <div class="updates-img">
-                    </div>
-                </a>
-                <h2>Blender | Render</h2>
-                <p>Con Blender ho eseguito il primo render dell'animazione di un mare in tempesta modellato e animato da
-                    me per studiare l'interfaccia di Blender.<br>
-                </p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="./files/sea.blend" onclick='confirmAction()' class="btn" download="sea.blend"
-                        style="width: 30%; font-size: 1.3rem; height: 4rem;">Download</a>
-                </div>
-            </div>
+        <div class="updates-column" id="updates-column">
 
         </div>
-
-        <!--<div class="updates-box">
-                <a href="" target="_blank">
-                    <div class="updates-img">
-                    </div>
-                </a>
-                <h2> | </h2>
-                <p><br>
-                </p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="./files/sprite.png" onclick='confirmAction()' class="btn" download="sprite.png"
-                        style="width: 30%; font-size: 1.3rem; height: 4rem;">Download</a>
-                </div>-->
-
     </section>
 
     <section class="projects" id="projects">
 
         <h2 class="heading">Progetti <span>Finiti</span></h2>
 
-        <div class="projects-column">
-
-            <div class="projects-box">
-                <a href="https://revolutionminds.github.io" target="_blank">
-                    <div class="projects-img">
-                    </div>
-                </a>
-                <h2>ProjectWork | Revolution Minds</h2>
-                <p>Con il percorso ITS con l'ITS ACCADEMY LAST io e alcuni miei compagni abbiamo sviluppato un progetto
-                    che punta a sensibilizzare la popolazione sul territorio del veronese sull'impatto ambientale del
-                    loro aramdio, offrendo come soluzione i negozi second-hand sul territorio.</p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="https://revolutionminds.github.io/" class="btn" target="_blank"
-                        style="width: 30%; font-size: 1.1rem; height: 4rem;">Visita il sito</a>
-                    <div class="github">
-                        <a href="https://github.com/bottaridennis/ProjectWorkRevolutionMinds" target="_blank"><i
-                                class='bx bxl-github'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projects-box">
-                <a href="https://github.com/bottaridennis/Encoder_Decoder_AES" target="_blank">
-                    <div class="projects-img">
-                    </div>
-                </a>
-                <h2>Python | ENC/DEC con AES</h2>
-                <p>Con il percorso ITS con l'ITS ACCADEMY LAST io e alcuni miei compagni abbiamo sviluppato un progetto
-                    di cyber security, il progetto consisteva nel creare un programma in Python che potesse criptare e
-                    decrittare un file di qualsiasi tipo con la libreria AES</p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <div class="github">
-                        <a href="https://github.com/bottaridennis/Encoder_Decoder_AES" target="_blank"><i
-                                class='bx bxl-github'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projects-box">
-                <a href="https://www.figma.com/file/aVVNqbTn3qFB69eTG17imo/Untitled?type=design&node-id=88%3A828&mode=design&t=2ieOiKQFAiT4OxO1-1"
-                    target="_blank">
-                    <div class="projects-img">
-                    </div>
-                </a>
-                <h2>UI & UX | Prototipo stove</h2>
-                <p>Con il percorso ITS con l'ITS ACCADEMY LAST ho sviluppato l'interfaccia grafica e il prototipo
-                    funzionante di un'app per la gestione domestica delle stufe</p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="https://www.figma.com/file/aVVNqbTn3qFB69eTG17imo/Untitled?type=design&node-id=88%3A828&mode=design&t=2ieOiKQFAiT4OxO1-1"
-                        class="btn" target="_blank" style="width: 30%; font-size: 1.1rem; height: 4rem;">Visita il
-                        sito</a>
-                </div>
-            </div>
-
-            <div class="projects-box">
-                <a href="./files/ARCON/arcon.html" target="_blank">
-                    <div class="projects-img">
-                    </div>
-                </a>
-                <h2>HTML/CSS | ARCON template</h2>
-                <p>Con il percorso ITS con l'ITS ACCADEMY LAST durante le lezioni di HTML e CSS ci è stato detto di
-                    scegliere un template dalla piattaforma Envato e provare a ricrearlo utilizzando HTML e CSS per
-                    prendere dimestichezza con il linguaggio.</p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="https://www.figma.com/file/aVVNqbTn3qFB69eTG17imo/Untitled?type=design&node-id=88%3A828&mode=design&t=2ieOiKQFAiT4OxO1-1"
-                        class="btn" target="_blank" style="width: 30%; font-size: 1.1rem; height: 4rem;">Visita il
-                        sito</a>
-                </div>
-            </div>
-
-            <div class="projects-box">
-                <a href="https://github.com/bottaridennis/parking-sensor-arduino" target="_blank">
-                    <div class="projects-img">
-                    </div>
-                </a>
-                <h2>Arduino | Sensore parcheggio</h2>
-                <p>Con arduino ho realizzato un sensore di parcheggio funzionante utilizzando una scheda arduino uno, un
-                    buzzer un sensore ad ultra suoni e un lcd con modulo I2C, quest'ultimo per segnalare per iscritto la
-                    distanza dall'ostacolo.
-                </p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="./files/sprite.png" onclick='confirmAction()' class="btn" download="sprite.png"
-                        style="width: 30%; font-size: 1.3rem; height: 4rem;">Download</a>
-                    <div class="github">
-                        <a href="https://github.com/bottaridennis/parking-sensor-arduino" target="_blank"><i
-                                class='bx bxl-github'></i></a>
-                    </div>
-                </div>
-            </div>
-
+        <div class="projects-column" id="projects-column">
             <!-- <div class="projects-box">
                 <a href="https://github.com/bottaridennis/parking-sensor-arduino" target="_blank">
                     <div class="projects-img">
@@ -506,7 +353,6 @@
                     </div>
                 </div>
             </div> -->
-
         </div>
 
     </section>

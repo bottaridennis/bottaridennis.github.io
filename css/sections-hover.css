@@ -1,0 +1,10 @@
+.education-content .content::before{content:"";position:absolute;top:0;left:0;width:0;height:100%;background:var(--second-bg-color);z-index:-1;transition:.5s}
+.education-content .content:hover::before{width:100%}
+.skills-box .skills-content::before{content:"";position:absolute;top:0;left:0;width:0;height:100%;background:var(--bg-color);z-index:-1;transition:.5s}
+.skills-box .skills-content:hover::before{width:100%}
+.footer-iconTop a::before{content:"";position:absolute;top:0;left:0;width:0;height:100%;background:var(--second-bg-color);z-index:-1;transition:.5s}
+.footer-iconTop a:hover::before{width:100%}
+.updates-column .updates-box::before{content:"";position:absolute;top:0;left:0;width:0;height:100%;background:var(--second-bg-color);z-index:-1;transition:.5s}
+.updates-column .updates-box:hover::before{width:100%}
+.projects-column .projects-box::before{content:"";position:absolute;top:0;left:0;width:0;height:100%;background:var(--bg-color);z-index:-1;transition:.5s}
+.projects-column .projects-box:hover::before{width:100%}

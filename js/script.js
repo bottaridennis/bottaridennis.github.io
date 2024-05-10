@@ -385,8 +385,97 @@ function changeTheme(theme) {
             root.style.setProperty('--bg-color', cssVariables.getPropertyValue('--bg-color-theme4'));
             root.style.setProperty('--second-bg-color', cssVariables.getPropertyValue('--second-bg-color-theme4'));
             root.style.setProperty('--text-color', cssVariables.getPropertyValue('--text-color-theme4'));
-            root.style.setProperty('--main-color', cssVariables.getPropertyValue('--main-color-theme4'));            break;
+            root.style.setProperty('--main-color', cssVariables.getPropertyValue('--main-color-theme4')); break;
         default:
             break;
     }
 }
+
+function createSections(sectionsData) {
+    var container = document.getElementById('skills-row');
+
+    sectionsData.forEach(section => {
+        var sectionDiv = document.createElement('div');
+        sectionDiv.classList.add('skills-column');
+
+        var titleElement = document.createElement('h3');
+        titleElement.classList.add('title');
+        titleElement.innerHTML = `<img src="${section.img}" style="max-width:2.5rem;"> | ${section.title}`;
+        sectionDiv.appendChild(titleElement);
+
+        var skillsBox = document.createElement('div');
+        skillsBox.classList.add('skills-box');
+        sectionDiv.appendChild(skillsBox);
+
+        var skillsContent = document.createElement('div');
+        skillsContent.classList.add('skills-content');
+        skillsBox.appendChild(skillsContent);
+
+        section.skills.forEach(skill => {
+            var progressDiv = document.createElement('div');
+            progressDiv.classList.add('progress');
+
+            var h3Element = document.createElement('h3');
+            h3Element.innerHTML = `${skill.name} <span>${skill.percent}%</span>`;
+            progressDiv.appendChild(h3Element);
+
+            var barDiv = document.createElement('div');
+            barDiv.classList.add('bar');
+            var spanDiv = document.createElement('span');
+            spanDiv.style.width = `${skill.percent}%`;
+            barDiv.appendChild(spanDiv);
+            progressDiv.appendChild(barDiv);
+
+            skillsContent.appendChild(progressDiv);
+        });
+
+        container.appendChild(sectionDiv);
+    });
+}
+
+// Utilizzo della funzione
+
+
+const sectionsData = [
+    {
+        title: "Coding skills",
+        img: "./svgs/coding.svg",
+        skills: [
+            { name: "HTML", percent: 90 },
+            { name: "CSS", percent: 80 },
+            { name: "php", percent: 75 },
+            { name: "JavaScript", percent: 60 },
+            { name: "Python", percent: 60 },
+            { name: "C", percent: 50 },
+            { name: "GDScript", percent: 60 }
+        ]
+    },
+    {
+        title: "Professional skills",
+        img: "./svgs/professional.svg",
+        skills: [
+            { name: "Graphic design", percent: 95 },
+            { name: "UI", percent: 70 },
+            { name: "UX", percent: 75 },
+            { name: "Web development", percent: 75 },
+            { name: "Web design", percent: 70 },
+            { name: "Game development", percent: 60 },
+            { name: "Game design", percent: 90 },
+        ]
+    },
+    {
+        title: "Artistic skills",
+        img: "./svgs/artistic.svg",
+        skills: [
+            { name: "Animazione 3D", percent: 40 },
+            { name: "Disegno 3D", percent: 50 },
+            { name: "Animazione 2D", percent: 65 },
+            { name: "Disegno 2D", percent: 80 },
+            { name: "Chitarra", percent: 75 },
+            { name: "Canto", percent: 70 },
+            { name: "Ukulele", percent: 60 }
+        ]
+    },
+];
+
+createSections(sectionsData);

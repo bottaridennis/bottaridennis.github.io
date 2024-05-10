@@ -256,7 +256,7 @@ var stove = {
     'btn-git': false,
     'btn-d': true,
     'download-btn': 'external-link', // Opzioni: 'download' o 'external-link'
-    'download-btn-label': 'Prototipo', 
+    'download-btn-label': 'Prototipo',
     'btn-git-link': 'https://www.figma.com/file/aVVNqbTn3qFB69eTG17imo/Untitled?type=design&node-id=88%3A828&mode=design&t=2ieOiKQFAiT4OxO1-1',
     'btn-d-link': ''
 };
@@ -270,7 +270,7 @@ var arcon = {
     'btn-git': false,
     'btn-d': true,
     'download-btn': 'external-link', // Opzioni: 'download' o 'external-link'
-    'download-btn-label': '', 
+    'download-btn-label': '',
     'btn-git-link': '',
     'btn-d-link': '../files/ARCON/arcon.html'
 };
@@ -356,3 +356,37 @@ createUpdatesBox(knightRun);
 createUpdatesBox(character);
 createUpdatesBox(seaRender);
 // createUpdatesBox();
+
+
+function changeTheme(theme) {
+    const root = document.documentElement;
+    const cssVariables = getComputedStyle(root);
+
+    switch (theme) {
+        case 'theme1':
+            root.style.setProperty('--bg-color', cssVariables.getPropertyValue('--bg-color-theme1'));
+            root.style.setProperty('--second-bg-color', cssVariables.getPropertyValue('--second-bg-color-theme1'));
+            root.style.setProperty('--text-color', cssVariables.getPropertyValue('--text-color-theme1'));
+            root.style.setProperty('--main-color', cssVariables.getPropertyValue('--main-color-theme1'));
+            break;
+        case 'theme2':
+            root.style.setProperty('--bg-color', cssVariables.getPropertyValue('--bg-color-theme2'));
+            root.style.setProperty('--second-bg-color', cssVariables.getPropertyValue('--second-bg-color-theme2'));
+            root.style.setProperty('--text-color', cssVariables.getPropertyValue('--text-color-theme2'));
+            root.style.setProperty('--main-color', cssVariables.getPropertyValue('--main-color-theme2'));
+            break;
+        case 'theme3':
+            root.style.setProperty('--bg-color', cssVariables.getPropertyValue('--bg-color-theme3'));
+            root.style.setProperty('--second-bg-color', cssVariables.getPropertyValue('--second-bg-color-theme3'));
+            root.style.setProperty('--text-color', cssVariables.getPropertyValue('--text-color-theme3'));
+            root.style.setProperty('--main-color', cssVariables.getPropertyValue('--main-color-theme3'));
+            break; break;
+        case 'theme4':
+            root.style.setProperty('--bg-color', cssVariables.getPropertyValue('--bg-color-theme4'));
+            root.style.setProperty('--second-bg-color', cssVariables.getPropertyValue('--second-bg-color-theme4'));
+            root.style.setProperty('--text-color', cssVariables.getPropertyValue('--text-color-theme4'));
+            root.style.setProperty('--main-color', cssVariables.getPropertyValue('--main-color-theme4'));            break;
+        default:
+            break;
+    }
+}

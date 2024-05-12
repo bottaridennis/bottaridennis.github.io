@@ -479,3 +479,96 @@ const sectionsData = [
 ];
 
 createSections(sectionsData);
+
+function createEducationAndExperience(data) {
+    const container = document.getElementById('education-row');
+    data.forEach(section => {
+        var column = document.createElement('div');
+        column.classList.add('education-column');
+
+        var titleElement = document.createElement('h3');
+        titleElement.classList.add('title');
+        titleElement.textContent = section.title;
+        column.appendChild(titleElement);
+
+        var educationBox = document.createElement('div');
+        educationBox.classList.add('education-box');
+        column.appendChild(educationBox);
+
+        section.items.forEach(item => {
+            var educationContent = document.createElement('div');
+            educationContent.classList.add('education-content');
+
+            var contentDiv = document.createElement('div');
+            contentDiv.classList.add('content');
+
+            var yearDiv = document.createElement('div');
+            yearDiv.classList.add('year');
+            yearDiv.innerHTML = `<i class='bx bxs-calendar'></i>${item.year} | ${item.institution}`;
+            contentDiv.appendChild(yearDiv);
+
+            var h3Element = document.createElement('h3');
+            h3Element.textContent = item.qualification;
+            contentDiv.appendChild(h3Element);
+
+            var pElement = document.createElement('p');
+            pElement.textContent = item.description;
+            contentDiv.appendChild(pElement);
+
+            if (item.position) {
+                var positionElement = document.createElement('h4');
+                positionElement.textContent = item.position;
+                contentDiv.appendChild(positionElement);
+            }
+
+            educationContent.appendChild(contentDiv);
+            educationBox.appendChild(educationContent);
+        });
+
+        container.appendChild(column);
+    });
+}
+
+createEducationAndExperience([
+    {
+        title: "Educazione",
+        items: [
+            {
+                year: "2017 - 2020",
+                institution: "ISTITUTO SALESIANO SAN ZENO",
+                qualification: "Qualifica professionale per Operatore elettrico",
+                description: "Elettrotecnica, Sistemi, Tecniche e progettazione di sistemi elettrici"
+            },
+            {
+                year: "2020 - 2023",
+                institution: "ISTITUTO SALESIANO SAN ZENO",
+                qualification: "Qualifica professionale per Operatore elettrico",
+                description: "Elettrotecnica, Sistemi, Tecniche e progettazione di sistemi elettrici"
+            },
+            {
+                year: "2023 - IN CORSO",
+                institution: "ITS ACADEMY LAST",
+                qualification: "Qualifica di web development",
+                description: "HTML, CSS, JS, Graphic design, UX, UI, php"
+            }
+        ]
+    },
+    {
+        title: "Esperienza",
+        items: [
+            {
+                year: "MAGGIO - GIUGNO 2022",
+                institution: "ELETTROSYSTEM",
+                qualification: "Operatore elettrico presso Elettrosystem di Daniele Pellini a Oppeano",
+                description: "Operaio (stagista)"
+            },
+            {
+                year: "GIUGNO - LUGLIO 2023",
+                institution: "ELETTROSYSTEM",
+                qualification: "Operatore elettrico presso Elettrosystem di Daniele Pellini a Oppeano",
+                description: "Operaio (stagista)"
+            }
+        ]
+    }
+]);
+

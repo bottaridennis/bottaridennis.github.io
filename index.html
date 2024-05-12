@@ -76,7 +76,7 @@
                 <h3>Frontend developer</h3>
                 <span class="animate" style="--i:3;"></span>
             </div> -->
-            <p>Sono uno studente dell'<span style="color: var(--main-color);">ITS Accademy LAST</span> di Verona
+            <p>Sono uno studente dell'<span style="color: var(--main-color);">ITS Academy LAST</span> di Verona
                 appassionato e creativo con una
                 fervida passione per tutto il mondo del graphic design e del Frontend. Il mio percorso di studi spazia
                 dall'elettrotecnica al corso che sto frequentando adesso per diventare <span
@@ -92,10 +92,22 @@
             </div>
             <h2 class="home-color-title" style="font-size: 2.3rem;">scegli la palette del sito:</h2>
             <div class="home-color">
-                <button class="button" onclick="changeTheme('theme1')" style="overflow: hidden;"><div class="color-2" style="width: 50%; height:100vh"></div><div class="color-1" style="width: 50%; height:100vh"></button>
-                <button class="button" onclick="changeTheme('theme2')" style="overflow: hidden;"><div class="color-2" style="width: 50%; height:100vh"></div><div class="color-1" style="width: 50%; height:100vh"></button>
-                <button class="button" onclick="changeTheme('theme3')" style="overflow: hidden;"><div class="color-2" style="width: 50%; height:100vh"></div><div class="color-1" style="width: 50%; height:100vh"></button>
-                <button class="button" onclick="changeTheme('theme4')" style="overflow: hidden;"><div class="color-2" style="width: 50%; height:100vh"></div><div class="color-1" style="width: 50%; height:100vh"></button>
+                <button class="button" onclick="changeTheme('theme1')" style="overflow: hidden;">
+                    <div class="color-2" style="width: 50%; height:100vh"></div>
+                    <div class="color-1" style="width: 50%; height:100vh">
+                </button>
+                <button class="button" onclick="changeTheme('theme2')" style="overflow: hidden;">
+                    <div class="color-2" style="width: 50%; height:100vh"></div>
+                    <div class="color-1" style="width: 50%; height:100vh">
+                </button>
+                <button class="button" onclick="changeTheme('theme3')" style="overflow: hidden;">
+                    <div class="color-2" style="width: 50%; height:100vh"></div>
+                    <div class="color-1" style="width: 50%; height:100vh">
+                </button>
+                <button class="button" onclick="changeTheme('theme4')" style="overflow: hidden;">
+                    <div class="color-2" style="width: 50%; height:100vh"></div>
+                    <div class="color-1" style="width: 50%; height:100vh">
+                </button>
             </div>
             <div class="home-sci">
                 <a href="https://github.com/bottaridennis"><i class='bx bxl-github'></i></a>
@@ -147,57 +159,7 @@
 
         <h2 class="heading">La mia <span>Istruzione</span></h2>
 
-        <div class="education-row">
-            <div class="education-column">
-                <h3 class="title">Educazione</h3>
-
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i>2017 - 2020 | ISTITUTO SALESIANO SAN ZENO
-                            </div>
-                            <h3>Qualifica professionale per Operatore elettrico</h3>
-                            <p>Elettrotecnica, Sistemi, Tecniche e progettazione di sistemi elettrici</p>
-                        </div>
-                    </div>
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i>2020 - 2023 | ISTITUTO SALESIANO SAN ZENO
-                            </div>
-                            <h3>Qualifica professionale per Operatore elettrico</h3>
-                            <p>Elettrotecnica, Sistemi, Tecniche e progettazione di sistemi elettrici</p>
-                        </div>
-                    </div>
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i> 2023 - IN CORSO | ITS ACADEMY LAST</div>
-                            <h3>Qualifica di web development</h3>
-                            <p>HTML, CSS, JS, Graphic design, UX, UI, php</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="education-column">
-                <h3 class="title">Esperienza</h3>
-
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i> MAGGIO - GIUGNO 2022 | ELETTROSYSTEM</div>
-                            <h3>Operatore elettrico presso Elettrosystem di Daniele Pellini a Oppeano</h3>
-                            <p>Operaio(stagista)</p>
-                        </div>
-                    </div>
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i> GIUGNO - LUGLIO 2023 | ELETTROSYSTEM</div>
-                            <h3>Operatore elettrico presso Elettrosystem di Daniele Pellini a Oppeano</h3>
-                            <p>Operaio(stagista)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="education-row" id="education-row">
 
         </div>
 
@@ -228,23 +190,6 @@
         <h2 class="heading">Progetti <span>Finiti</span></h2>
 
         <div class="projects-column" id="projects-column">
-            <!-- <div class="projects-box">
-                <a href="https://github.com/bottaridennis/parking-sensor-arduino" target="_blank">
-                    <div class="projects-img">
-                    </div>
-                </a>
-                <h2> | </h2>
-                <p><br>
-                </p>
-                <div class="download-box" style="padding-top: 1rem;">
-                    <a href="./files/sprite.png" onclick='confirmAction()' class="btn" download="sprite.png"
-                        style="width: 30%; font-size: 1.3rem; height: 4rem;">Download</a>
-                    <div class="github">
-                        <a href="https://github.com/bottaridennis/parking-sensor-arduino" target="_blank"><i
-                                class='bx bxl-github'></i></a>
-                    </div>
-                </div>
-            </div> -->
         </div>
 
     </section>

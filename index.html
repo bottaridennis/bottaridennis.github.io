@@ -91,8 +91,8 @@
                 <span class="animate" style="--i:5;"></span>
             </div>
             <h2 class="home-color-title" style="font-size: 2.3rem;">scegli la palette del sito:</h2>
-            <div class="home-color">
-                <button class="button" onclick="changeTheme('theme1')" style="overflow: hidden;">
+            <div class="home-color" >
+                <button class="button" onclick="changeTheme('theme1')" style="overflow: hidden;" >
                     <div class="color-2" style="width: 50%; height:100vh"></div>
                     <div class="color-1" style="width: 50%; height:100vh">
                 </button>
@@ -129,7 +129,7 @@
 
         <h2 class="heading">About <span>Me</span></h2>
 
-        <div class="about-img">
+        <div class="about-img" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare=".5">
             <img src="/images/about.png" alt="">
             <span class="circle-spin"></span>
         </div>
@@ -170,7 +170,6 @@
         <h2 class="heading">Le mie <span>Skills</span></h2>
 
         <div class="skills-row" id="skills-row">
-
         </div>
 
     </section>
@@ -207,6 +206,7 @@
 
     <!-- script import -->
     <script src="./js/script.js"></script>
+    <script src="./js/vanilla-tilt.js"></script>
 
 </body>
 

@@ -80,6 +80,9 @@ function createProjectBox(data) {
     var column = document.getElementById('projects-column');
     var projectBox = document.createElement('div');
     projectBox.classList.add('projects-box');
+    projectBox.setAttribute('data-tilt-max', '.1');
+    projectBox.setAttribute('data-tilt', '');
+    projectBox.setAttribute('data-tilt-scale', '1.1');
 
     var link = document.createElement('a');
     link.href = data['img-link'];
@@ -151,6 +154,9 @@ function createUpdatesBox(data) {
     var column = document.getElementById('updates-column');
     var updateBox = document.createElement('div');
     updateBox.classList.add('updates-box');
+    updateBox.setAttribute('data-tilt', '');
+    updateBox.setAttribute('data-tilt-max', '.1');
+    updateBox.setAttribute('data-tilt-scale', '1.1');
 
     var link = document.createElement('a');
     link.href = data['img-link'];
@@ -397,6 +403,8 @@ function createSections(sectionsData) {
     sectionsData.forEach(section => {
         var sectionDiv = document.createElement('div');
         sectionDiv.classList.add('skills-column');
+        sectionDiv.setAttribute('data-tilt', '');
+        sectionDiv.setAttribute('data-tilt-max', '6');
 
         var titleElement = document.createElement('h3');
         titleElement.classList.add('title');

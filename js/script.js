@@ -560,13 +560,19 @@ createEducationAndExperience([
                 year: "MAGGIO - GIUGNO 2022",
                 institution: "ELETTROSYSTEM",
                 qualification: "Operatore elettrico presso Elettrosystem di Daniele Pellini a Oppeano",
-                description: "Operaio (stagista)"
+                description: "stagista"
             },
             {
                 year: "GIUGNO - LUGLIO 2023",
                 institution: "ELETTROSYSTEM",
                 qualification: "Operatore elettrico presso Elettrosystem di Daniele Pellini a Oppeano",
-                description: "Operaio (stagista)"
+                description: "stagista"
+            },
+            {
+                year: "MAGGIO - AGOSTO 2024",
+                institution: "EDULIFE SOCIETÀ BENEFIT",
+                qualification: "Facilitatore digitale - contenuti digitali",
+                description: "stagista"
             }
         ]
     }

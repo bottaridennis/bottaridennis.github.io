@@ -11,6 +11,7 @@
     <title>Bottari Dennis</title>
     <link rel="shortcut icon" href="./svgs/oldColorLogo.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/aos.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -91,8 +92,8 @@
                 <span class="animate" style="--i:5;"></span>
             </div>
             <h2 class="home-color-title" style="font-size: 2.3rem;">scegli la palette del sito:</h2>
-            <div class="home-color" >
-                <button class="button" onclick="changeTheme('theme1')" style="overflow: hidden;" >
+            <div class="home-color">
+                <button class="button" onclick="changeTheme('theme1')" style="overflow: hidden;">
                     <div class="color-2" style="width: 50%; height:100vh"></div>
                     <div class="color-1" style="width: 50%; height:100vh">
                 </button>
@@ -207,6 +208,10 @@
     <!-- script import -->
     <script src="./js/script.js"></script>
     <script src="./js/vanilla-tilt.js"></script>
+    <script src="./js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

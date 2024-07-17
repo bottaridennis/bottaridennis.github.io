@@ -83,6 +83,9 @@ function createProjectBox(data) {
     projectBox.setAttribute('data-tilt-max', '.1');
     projectBox.setAttribute('data-tilt', '');
     projectBox.setAttribute('data-tilt-scale', '1.1');
+    projectBox.setAttribute('data-aos', 'fade-up');
+    projectBox.setAttribute('data-aos-duration', '2000');
+    
 
     var link = document.createElement('a');
     link.href = data['img-link'];
@@ -157,6 +160,8 @@ function createUpdatesBox(data) {
     updateBox.setAttribute('data-tilt', '');
     updateBox.setAttribute('data-tilt-max', '.1');
     updateBox.setAttribute('data-tilt-scale', '1.1');
+    updateBox.setAttribute('data-aos', 'fade-up');
+    updateBox.setAttribute('data-aos-duration', '2000');
 
     var link = document.createElement('a');
     link.href = data['img-link'];
@@ -400,6 +405,7 @@ function changeTheme(theme) {
 function createSections(sectionsData) {
     var container = document.getElementById('skills-row');
 
+
     sectionsData.forEach(section => {
         var sectionDiv = document.createElement('div');
         sectionDiv.classList.add('skills-column');
@@ -414,6 +420,7 @@ function createSections(sectionsData) {
         var skillsBox = document.createElement('div');
         skillsBox.classList.add('skills-box');
         sectionDiv.appendChild(skillsBox);
+        skillsBox.setAttribute('data-aos', 'zoom-in');
 
         var skillsContent = document.createElement('div');
         skillsContent.classList.add('skills-content');
@@ -422,6 +429,7 @@ function createSections(sectionsData) {
         section.skills.forEach(skill => {
             var progressDiv = document.createElement('div');
             progressDiv.classList.add('progress');
+            progressDiv.setAttribute('data-aos', 'fade-left');
 
             var h3Element = document.createElement('h3');
             h3Element.innerHTML = `${skill.name} <span>${skill.percent}%</span>`;
@@ -502,6 +510,8 @@ function createEducationAndExperience(data) {
         var educationBox = document.createElement('div');
         educationBox.classList.add('education-box');
         column.appendChild(educationBox);
+        educationBox.setAttribute('data-aos', 'fade-left');
+
 
         section.items.forEach(item => {
             var educationContent = document.createElement('div');

@@ -82,7 +82,7 @@ function createProjectBox(data) {
     projectBox.classList.add('projects-box');
     projectBox.setAttribute('data-tilt-max', '.1');
     projectBox.setAttribute('data-tilt', '');
-    projectBox.setAttribute('data-tilt-scale', '1.1');
+    projectBox.setAttribute('data-tilt-scale', '1.06');
     projectBox.setAttribute('data-aos', 'fade-up');
     projectBox.setAttribute('data-aos-duration', '2000');
     
@@ -159,7 +159,7 @@ function createUpdatesBox(data) {
     updateBox.classList.add('updates-box');
     updateBox.setAttribute('data-tilt', '');
     updateBox.setAttribute('data-tilt-max', '.1');
-    updateBox.setAttribute('data-tilt-scale', '1.1');
+    updateBox.setAttribute('data-tilt-scale', '1.06');
     updateBox.setAttribute('data-aos', 'fade-up');
     updateBox.setAttribute('data-aos-duration', '2000');
 
@@ -415,6 +415,7 @@ function createSections(sectionsData) {
         var titleElement = document.createElement('h3');
         titleElement.classList.add('title');
         titleElement.innerHTML = `<img src="${section.img}" style="max-width:2.5rem;"> | ${section.title}`;
+        titleElement.setAttribute('data-aos', 'fade-left')
         sectionDiv.appendChild(titleElement);
 
         var skillsBox = document.createElement('div');
@@ -505,6 +506,7 @@ function createEducationAndExperience(data) {
         var titleElement = document.createElement('h3');
         titleElement.classList.add('title');
         titleElement.textContent = section.title;
+        titleElement.setAttribute('data-aos', 'fade-right');
         column.appendChild(titleElement);
 
         var educationBox = document.createElement('div');

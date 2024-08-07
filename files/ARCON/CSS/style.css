@@ -160,14 +160,6 @@ header {
     display: none
 }
 
-#menu-icon .animate,
-.home.show-animate .animate,
-.logo .animate,
-.navbar .animate {
-    animation: showRight 1s ease forwards;
-    animation-delay: calc(.3s * var(--i))
-}
-
 .active {
     color: #4ba5ff !important
 }

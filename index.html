@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="./svgs/oldColorLogo.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="./css/bg.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -36,9 +37,9 @@
                 <path
                     d="M73.9988 46.8437C73.9988 39.7081 73.2055 33.2552 71.6188 27.4851L59.1242 34.0261C59.4767 37.9462 59.653 42.2628 59.653 46.9758C59.653 55.609 59.1242 62.7446 58.0664 68.3826L73.1394 59.1327C73.7123 55.0804 73.9988 50.9841 73.9988 46.8437Z"
                     class="logo-text-color" />
-            </svg>ennis<span class="animate" style="--i:1;"></span></a>
+            </svg>ennis</a>
 
-        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+        <div class="bx bx-menu" id="menu-icon"></div>
 
         <nav class="navbar">
             <a href="#home" class="active"><i class='bx bxs-home-alt-2'></i> | Home</a>
@@ -48,15 +49,16 @@
             <a href="#updates"><i class='bx bxs-wrench'></i> | WIP</a>
             <a href="#projects"><i class='bx bx-git-branch'></i> | Projects</a>
             <span class="active-nav"></span>
-            <span class="animate" style="--i:2;"></span>
         </nav>
     </header>
-
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
     <!-- home section design -->
     <section class="home show-animate" id="home">
 
         <div class="home-content">
-            <h1 data-aos="fade-left" data-aos-duration="1000">Ciao, sono <span>Dennis Bottari</span><span class="animate" style="--i:2;"></span></h1>
+            <h1 data-aos="fade-left" data-aos-duration="1000">Ciao, sono <span>Dennis Bottari</span></h1>
             <div class="change-text" data-aos="fade-left" data-aos-duration="1500">
                 <h3>Sono un</h3>
                 <h3 id="change">
@@ -75,54 +77,56 @@
             </div>
             <!-- <div class="text-animate">
                 <h3>Frontend developer</h3>
-                <span class="animate" style="--i:3;"></span>
             </div> -->
-            <p data-aos="fade-left" data-aos-duration="2000">Sono uno studente dell'<span style="color: var(--main-color);">ITS Academy LAST</span> di Verona
+            <p data-aos="fade-left" data-aos-duration="2000">Sono uno studente dell'<span
+                    style="color: var(--main-color);">ITS Academy LAST</span> di Verona
                 appassionato e creativo con una
                 fervida passione per tutto il mondo del graphic design e del Frontend. Il mio percorso di studi spazia
                 dall'elettrotecnica al corso che sto frequentando adesso per diventare <span
                     style="color: var(--main-color);">web developer</span>.
                 Attraverso un approccio innovativo, mi impegno a fornire soluzioni semplici ma efficaci senza far
                 mancare il design e lo stile.
-                <span class="animate" style="--i:4;"></span>
             </p>
             <div class="btn-box" data-aos="fade-left" data-aos-duration="2500">
-                <a href="./files/CV.pdf" class="btn" target="_blank" data-tilt data-tilt-max=".1" data-tilt-scale="1.1">Il mio CV</a>
-                <a href="mailto:dennisbottari@gmail.com?subject=Contattami" class="btn" data-tilt data-tilt-max=".1" data-tilt-scale="1.1">Contattami</a>
-                <span class="animate" style="--i:5;"></span>
+                <a href="./files/CV.pdf" class="btn" target="_blank" data-tilt data-tilt-max=".1"
+                    data-tilt-scale="1.1">Il mio CV</a>
+                <a href="mailto:dennisbottari@gmail.com?subject=Contattami" class="btn" data-tilt data-tilt-max=".1"
+                    data-tilt-scale="1.1">Contattami</a>
             </div>
-            <h2 class="home-color-title" style="font-size: 2.3rem;" data-aos="fade-left" data-aos-duration="3000">scegli la palette del sito:</h2>
+            <h2 class="home-color-title" style="font-size: 2.3rem;" data-aos="fade-left" data-aos-duration="3000">scegli
+                la palette del sito:</h2>
             <div class="home-color" data-aos="fade-left" data-aos-duration="3000">
-                <button class="button" onclick="changeTheme('theme1')" style="overflow: hidden;" data-tilt data-tilt-max=".1" data-tilt-scale="1.3">
+                <button class="button" onclick="changeTheme('theme1')" style="overflow: hidden;" data-tilt
+                    data-tilt-max=".1" data-tilt-scale="1.3">
                     <div class="color-2" style="width: 50%; height:100vh"></div>
                     <div class="color-1" style="width: 50%; height:100vh">
                 </button>
-                <button class="button" onclick="changeTheme('theme2')" style="overflow: hidden;" data-tilt data-tilt-max=".1" data-tilt-scale="1.3">
+                <button class="button" onclick="changeTheme('theme2')" style="overflow: hidden;" data-tilt
+                    data-tilt-max=".1" data-tilt-scale="1.3">
                     <div class="color-2" style="width: 50%; height:100vh"></div>
                     <div class="color-1" style="width: 50%; height:100vh">
                 </button>
-                <button class="button" onclick="changeTheme('theme3')" style="overflow: hidden;" data-tilt data-tilt-max=".1" data-tilt-scale="1.3">
+                <button class="button" onclick="changeTheme('theme3')" style="overflow: hidden;" data-tilt
+                    data-tilt-max=".1" data-tilt-scale="1.3">
                     <div class="color-2" style="width: 50%; height:100vh"></div>
                     <div class="color-1" style="width: 50%; height:100vh">
                 </button>
-                <button class="button" onclick="changeTheme('theme4')" style="overflow: hidden;" data-tilt data-tilt-max=".1" data-tilt-scale="1.3">
+                <button class="button" onclick="changeTheme('theme4')" style="overflow: hidden;" data-tilt
+                    data-tilt-max=".1" data-tilt-scale="1.3">
                     <div class="color-2" style="width: 50%; height:100vh"></div>
                     <div class="color-1" style="width: 50%; height:100vh">
                 </button>
             </div>
             <div class="home-sci" data-aos="fade-left" data-aos-duration="3000">
-                <a href="https://github.com/bottaridennis" data-tilt data-tilt-max=".1" data-tilt-scale="1.3"><i class='bx bxl-github'></i></a>
-                <a href="mailto:dennisbottari@gmail.com?subject=Contattami" data-tilt data-tilt-max=".1" data-tilt-scale="1.3"><i class='bx bxl-gmail'></i></a>
-                <a href="https://www.linkedin.com/in/dennis-bottari-708400241/" data-tilt data-tilt-max=".1" data-tilt-scale="1.3"><i class='bx bxl-linkedin'></i></a>
-                
+                <a href="https://github.com/bottaridennis" data-tilt data-tilt-max=".1" data-tilt-scale="1.3"><i
+                        class='bx bxl-github'></i></a>
+                <a href="mailto:dennisbottari@gmail.com?subject=Contattami" data-tilt data-tilt-max=".1"
+                    data-tilt-scale="1.3"><i class='bx bxl-gmail'></i></a>
+                <a href="https://www.linkedin.com/in/dennis-bottari-708400241/" data-tilt data-tilt-max=".1"
+                    data-tilt-scale="1.3"><i class='bx bxl-linkedin'></i></a>
+
             </div>
         </div>
-
-
-        <div class="home-imgHover"></div>
-
-        <span class="animate home-img" style="--i:7;"></span>
-
     </section>
 
     <!-- about section design -->
@@ -131,7 +135,7 @@
         <h2 class="heading" data-aos="fade-down">About <span>Me</span></h2>
 
         <div class="about-img" data-tilt data-tilt-scale="1.1">
-            <img src="/images/about.png" alt="" >
+            <img src="/images/about.png" alt="">
             <span class="circle-spin"></span>
         </div>
 
@@ -158,16 +162,18 @@
     <!-- education section design -->
     <section class="education" id="education">
 
-        <h2 class="heading" data-aos="fade-down" >La mia <span>Istruzione</span></h2>
+        <h2 class="heading" data-aos="fade-down">La mia <span>Istruzione</span></h2>
 
         <div class="education-row" id="education-row">
 
         </div>
 
     </section>
-
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
     <!-- skills section design -->
-    <section class="skills" id="skills" >
+    <section class="skills" id="skills">
         <h2 class="heading" data-aos="fade-down">Le mie <span>Skills</span></h2>
 
         <div class="skills-row" id="skills-row">

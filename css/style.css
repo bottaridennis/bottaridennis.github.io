@@ -16,18 +16,22 @@
     --second-bg-color: #421652;
     --text-color: #ededed;
     --main-color: #be75ff;
+
     --bg-color-theme1: #240829;
     --second-bg-color-theme1: #421652;
     --text-color-theme1: #ededed;
     --main-color-theme1: #be75ff;
+
     --bg-color-theme2: #0B0C10;
     --second-bg-color-theme2: #1F2833;
     --text-color-theme2: #ededed;
     --main-color-theme2: #45A29E;
+
     --bg-color-theme3: rgb(4, 4, 4);
     --second-bg-color-theme3: rgb(38, 36, 41);
     --text-color-theme3: #EDE7E1;
     --main-color-theme3: rgb(224, 224, 0);
+    
     --bg-color-theme4: #081B29;
     --second-bg-color-theme4: #112e42;
     --text-color-theme4: #ededed;
@@ -241,13 +245,13 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url(../images/home.png) no-repeat;
+    /* background: url(../images/home.png) no-repeat; */
     background-size: cover;
     background-position: center
 }
 
 .home-content {
-    max-width: 60rem;
+    max-width: 70rem;
     z-index: 99
 }
 

@@ -80,9 +80,9 @@ function createProjectBox(data) {
     var column = document.getElementById('projects-column');
     var projectBox = document.createElement('div');
     projectBox.classList.add('projects-box');
-    projectBox.setAttribute('data-tilt-max', '.1');
-    projectBox.setAttribute('data-tilt', '');
-    projectBox.setAttribute('data-tilt-scale', '1.06');
+    // projectBox.setAttribute('data-tilt-max', '.1');
+    // projectBox.setAttribute('data-tilt', '');
+    // projectBox.setAttribute('data-tilt-scale', '1.06');
     projectBox.setAttribute('data-aos', 'fade-up');
     projectBox.setAttribute('data-aos-duration', '2000');
     
@@ -157,9 +157,9 @@ function createUpdatesBox(data) {
     var column = document.getElementById('updates-column');
     var updateBox = document.createElement('div');
     updateBox.classList.add('updates-box');
-    updateBox.setAttribute('data-tilt', '');
-    updateBox.setAttribute('data-tilt-max', '.1');
-    updateBox.setAttribute('data-tilt-scale', '1.06');
+    // updateBox.setAttribute('data-tilt', '');
+    // updateBox.setAttribute('data-tilt-max', '.1');
+    // updateBox.setAttribute('data-tilt-scale', '1.06');
     updateBox.setAttribute('data-aos', 'fade-up');
     updateBox.setAttribute('data-aos-duration', '2000');
 
@@ -415,7 +415,7 @@ function createSections(sectionsData) {
         var titleElement = document.createElement('h3');
         titleElement.classList.add('title');
         titleElement.innerHTML = `<img src="${section.img}" style="max-width:2.5rem;"> | ${section.title}`;
-        titleElement.setAttribute('data-aos', 'fade-left')
+        titleElement.setAttribute('data-aos', 'fade-right')
         sectionDiv.appendChild(titleElement);
 
         var skillsBox = document.createElement('div');
@@ -430,7 +430,7 @@ function createSections(sectionsData) {
         section.skills.forEach(skill => {
             var progressDiv = document.createElement('div');
             progressDiv.classList.add('progress');
-            progressDiv.setAttribute('data-aos', 'fade-left');
+            progressDiv.setAttribute('data-aos', 'fade-right');
 
             var h3Element = document.createElement('h3');
             h3Element.innerHTML = `${skill.name} <span>${skill.percent}%</span>`;
@@ -512,7 +512,7 @@ function createEducationAndExperience(data) {
         var educationBox = document.createElement('div');
         educationBox.classList.add('education-box');
         column.appendChild(educationBox);
-        educationBox.setAttribute('data-aos', 'fade-left');
+        educationBox.setAttribute('data-aos', 'fade-right');
 
 
         section.items.forEach(item => {

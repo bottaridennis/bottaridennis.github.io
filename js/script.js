@@ -591,7 +591,13 @@ createEducationAndExperience([
             {
                 year: "MAGGIO - AGOSTO 2024",
                 institution: "EDULIFE SOCIETÀ BENEFIT",
-                qualification: "Facilitatore digitale - contenuti digitali",
+                qualification: "Contenuti digitali - contenuti digitali",
+                description: "stagista"
+            },
+            {
+                year: "SETTEMBRE - DICEMBRE 2024",
+                institution: "EDULIFE SOCIETÀ BENEFIT",
+                qualification: "Contenuti digitali - contenuti digitali",
                 description: "stagista"
             }
         ]

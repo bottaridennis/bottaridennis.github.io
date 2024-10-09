@@ -85,7 +85,7 @@ function createProjectBox(data) {
     // projectBox.setAttribute('data-tilt-scale', '1.06');
     projectBox.setAttribute('data-aos', 'fade-up');
     projectBox.setAttribute('data-aos-duration', '2000');
-    
+
 
     var link = document.createElement('a');
     link.href = data['img-link'];
@@ -342,6 +342,19 @@ var seaRender = {
     'btn-d-link': "../files/sea.blend"
 };
 
+var spacegame = {
+    img: '../images/spacegame.png',
+    'img-link': '',
+    title: 'Gamemaker 2 | Space rocks',
+    paragraph: "Con gamemaker 2 ho creato un minigioco nel quale bisogna distruggere degli asteroidi, i comandi sono W A S D per il movimento, Spazio per bloccare la navicella e tasto sinistro del mouse per sparare.",
+    'contain-background': false,
+    'btn-git': false,
+    'btn-d': true,
+    'download-btn': 'external-link', // Options: 'download' o 'external-link'
+    'download-btn-label': 'Gioca',
+    'btn-git-link': '',
+    'btn-d-link': '../files/space_game/index.html'
+};
 // var  = {
 //     img: "",
 //     'img-link': "",
@@ -362,6 +375,7 @@ createProjectBox(stove);
 createProjectBox(arcon);
 createProjectBox(parkingSensor);
 createProjectBox(knightRun);
+createProjectBox(spacegame);
 // createProjectBox();
 createUpdatesBox(knightRun);
 createUpdatesBox(character);
@@ -603,4 +617,3 @@ createEducationAndExperience([
         ]
     }
 ]);
-

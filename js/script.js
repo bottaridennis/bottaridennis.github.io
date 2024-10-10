@@ -344,7 +344,7 @@ var seaRender = {
 
 var spacegame = {
     img: '../images/spacegame.png',
-    'img-link': '',
+    'img-link': '../files/space_game/index.html',
     title: 'Gamemaker 2 | Space rocks',
     paragraph: "Con gamemaker 2 ho creato un minigioco nel quale bisogna distruggere degli asteroidi, i comandi sono W A S D per il movimento, Spazio per bloccare la navicella e tasto sinistro del mouse per sparare.",
     'contain-background': false,
@@ -354,6 +354,19 @@ var spacegame = {
     'download-btn-label': 'Gioca',
     'btn-git-link': '',
     'btn-d-link': '../files/space_game/index.html'
+};
+var spaceshooter = {
+    img: '../images/space_game.png',
+    'img-link': '../files/space_shooter/index.html',
+    title: 'Gamemaker 2 | Rocks shooter',
+    paragraph: "Con gamemaker 2 ho creato un minigioco nel quale bisogna distruggere degli asteroidi, progetto da modificare e personalizzare in seguito utilizzando sprite più detagliati.",
+    'contain-background': false,
+    'btn-git': false,
+    'btn-d': true,
+    'download-btn': 'external-link', // Options: 'download' o 'external-link'
+    'download-btn-label': 'Gioca',
+    'btn-git-link': '',
+    'btn-d-link': '../files/space_shooter/index.html'
 };
 // var  = {
 //     img: "",
@@ -376,6 +389,7 @@ createProjectBox(arcon);
 createProjectBox(parkingSensor);
 createProjectBox(knightRun);
 createProjectBox(spacegame);
+createProjectBox(spaceshooter);
 // createProjectBox();
 createUpdatesBox(knightRun);
 createUpdatesBox(character);

@@ -368,6 +368,19 @@ var spaceshooter = {
     'btn-git-link': '',
     'btn-d-link': '../files/space_shooter/index.html'
 };
+var spookyshooter = {
+    img: '../images/spookyshooter.png',
+    'img-link': '../files/spookyshooter/index.html',
+    title: 'Gamemaker 2 | Spooky shooter',
+    paragraph: "Con gamemaker 2 ho creato un minigioco nel quale bisogna sopravvivere a orde di uomini zucca, clicca gioca e divertiti.",
+    'contain-background': false,
+    'btn-git': false,
+    'btn-d': true,
+    'download-btn': 'external-link', // Options: 'download' o 'external-link'
+    'download-btn-label': 'Gioca',
+    'btn-git-link': '',
+    'btn-d-link': '../files/spookyshooter/index.html'
+};
 // var  = {
 //     img: "",
 //     'img-link': "",
@@ -390,6 +403,7 @@ createProjectBox(parkingSensor);
 createProjectBox(knightRun);
 createProjectBox(spacegame);
 createProjectBox(spaceshooter);
+createProjectBox(spookyshooter);
 // createProjectBox();
 createUpdatesBox(knightRun);
 createUpdatesBox(character);

@@ -368,6 +368,19 @@ var spaceshooter = {
     'btn-git-link': '',
     'btn-d-link': '../files/space_shooter/index.html'
 };
+var rpggame = {
+    img: '../images/rpg.png',
+    'img-link': '../files/RPG_game/index.html',
+    title: 'Gamemaker 2 | RPG game',
+    paragraph: "Con gamemaker 2 e aseprite ho creato degli assets e sto lavorando a delle meccaniche di gioco per un RPG 8-bit",
+    'contain-background': false,
+    'btn-git': false,
+    'btn-d': true,
+    'download-btn': 'external-link', // Options: 'download' o 'external-link'
+    'download-btn-label': 'Gioca',
+    'btn-git-link': '',
+    'btn-d-link': '../files/RPG_game/index.html'
+};
 var spookyshooter = {
     img: '../images/spookyshooter.png',
     'img-link': '../files/spookyshooter/index.html',
@@ -401,13 +414,13 @@ createProjectBox(stove);
 createProjectBox(arcon);
 createProjectBox(parkingSensor);
 createProjectBox(knightRun);
-createProjectBox(spacegame);
+createUpdatesBox(spacegame);
 createProjectBox(spaceshooter);
-createProjectBox(spookyshooter);
+createUpdatesBox(spookyshooter);
 // createProjectBox();
-createUpdatesBox(knightRun);
-createUpdatesBox(character);
-createUpdatesBox(seaRender);
+createUpdatesBox(rpggame);
+createProjectBox(character);
+createProjectBox(seaRender);
 // createUpdatesBox();
 
 

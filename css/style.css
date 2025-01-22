@@ -28,16 +28,14 @@
     --second-bg-color-theme3: rgb(4, 4, 4);
     --text-color-theme3: #ede7e1;
     --main-color-theme3: rgb(224, 224, 0);
-    --bg-color-theme4: #081b29;
-    --second-bg-color-theme4: #081b29;
-    --text-color-theme4: #ededed;
-    --main-color-theme4: #00abf0;
+    --bg-color-theme4: #0b0c10;
+    --second-bg-color-theme4: #0b0c10;
+    --text-color-theme4: #b0e0e6;
+    --main-color-theme4: #c71585;
     --particle-hue-theme1: 220;
     --particle-hue-theme2: 180;
     --particle-hue-theme3: 300;
     --particle-hue-theme4: 50;
-
-    
 }
 
 .home-color-title {
@@ -1094,4 +1092,55 @@ span {
     display: flex;
     align-items: center;
     justify-content: center
+}
+
+.project-page-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-sci {
+    /* margin-top: 2rem; */
+    width: 200px;
+    display: flex;
+    justify-content: space-around
+}
+
+.project-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: 0 0;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 4rem;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s
+}
+
+.project-sci a:hover {
+    color: var(--bg-color)
+}
+
+.project-sci a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: .5s
+}
+
+.project-sci a:hover::before {
+    width: 100%
 }

@@ -821,6 +821,26 @@ span {
     font-size: 1.5rem
 }
 
+.playlist-column iframe{ 
+    z-index: 9999;
+    width: 40%
+}
+.playlist-column {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.playlist-column h2 {
+    font-size: 2.5rem;
+    color: var(--main-color)
+}
+
+.playlist-column p {
+    font-size: 1.5rem
+}
+
 @media (max-width:1200px) {
     .education-column {
         width: 100%
@@ -861,6 +881,9 @@ span {
     .projects-box {
         max-width: 100%
     }
+    .playlist-column iframe{
+        width: 100%!important;
+    }
 }
 
 @media only screen and (min-device-width:375px) and (max-device-width:812px) and (-webkit-min-device-pixel-ratio:3) and (orientation:portrait) {
@@ -871,6 +894,9 @@ span {
     .projects-box {
         max-width: 100%
     }
+    .playlist-column iframe{
+        width: 100%!important
+    }
 }
 
 @media only screen and (min-device-width:375px) and (max-device-width:812px) and (-webkit-min-device-pixel-ratio:3) and (orientation:landscape) {
@@ -880,6 +906,9 @@ span {
 
     .projects-box {
         max-width: 100%
+    }
+    .playlist-column iframe{
+        width: 100%!important
     }
 }
 
@@ -902,6 +931,9 @@ span {
 
     .projects-box {
         max-width: 100%
+    }
+    .playlist-column iframe{
+        width: 100%!important
     }
 
     .navbar {

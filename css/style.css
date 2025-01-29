@@ -823,7 +823,9 @@ span {
 
 .playlist-column iframe{ 
     z-index: 9999;
-    width: 40%
+    width: 40%;
+    height: 352px;
+    /* height: 152px; */
 }
 .playlist-column {
     display: flex;
@@ -883,6 +885,7 @@ span {
     }
     .playlist-column iframe{
         width: 100%!important;
+        height: 152px;
     }
 }
 
@@ -895,7 +898,8 @@ span {
         max-width: 100%
     }
     .playlist-column iframe{
-        width: 100%!important
+        width: 100%!important;
+        height: 152px;
     }
 }
 
@@ -908,7 +912,8 @@ span {
         max-width: 100%
     }
     .playlist-column iframe{
-        width: 100%!important
+        width: 100%!important;
+        height: 152px;
     }
 }
 

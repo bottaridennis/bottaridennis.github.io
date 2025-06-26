@@ -148,58 +148,7 @@
 
     <section class="project-page" id="project-page">
         <h2 class="heading" data-aos="fade-down">Le mie <span>playlist</span></h2>
-        <div class="playlist-column">
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/5QKgUqfecHSprREJj1PDMy?utm_source=generator" width="40%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/22OKbIAGCgBtYcEb3oXANT?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/1FuX68Y0hFsO9s9K9JqYiA?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/1bX2bXn075ZDOzLrUpsmmA?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/6Yze0ZPWxWrCoAbgVGHVoC?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/7A4tyCrZyn7N4yDvRkufSX?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/597U1RL2lRYlXFq9zEMPaX?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/4zaXhaW0mp4v4Exliuo0WH?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/1uYneC2hyNcbRWnCztabYK?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/0gMXaY9jKjUBk3ya8RZ8Gy?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-        </div>
+        <div id="playlist-container" class="playlist-column"></div>
         <!-- footer design -->
         <footer class="footer">
 
@@ -219,22 +168,7 @@
         <script>
             AOS.init();
         </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const iframes = document.querySelectorAll("iframe");
-                let loadedCount = 0;
 
-                iframes.forEach((iframe) => {
-                    iframe.onload = function () {
-                        loadedCount++;
-                        if (loadedCount === iframes.length) {
-                            document.getElementById("loading-overlay").style.display = "none";
-                        }
-                    };
-                });
-            });
-
-        </script>
 
 </body>
 

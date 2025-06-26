@@ -658,3 +658,71 @@ createEducationAndExperience([
         ]
     }
 ]);
+
+const playlistsData = [
+    { id: '5QKgUqfecHSprREJj1PDMy', title: 'Playlist 1' },
+    { id: '22OKbIAGCgBtYcEb3oXANT', title: 'Playlist 2' },
+    { id: '1FuX68Y0hFsO9s9K9JqYiA', title: 'Playlist 3' },
+    { id: '1bX2bXn075ZDOzLrUpsmmA', title: 'Playlist 4' },
+    { id: '6Yze0ZPWxWrCoAbgVGHVoC', title: 'Playlist 5' },
+    { id: '7A4tyCrZyn7N4yDvRkufSX', title: 'Playlist 6' },
+    { id: '597U1RL2lRYlXFq9zEMPaX', title: 'Playlist 7' },
+    { id: '4zaXhaW0mp4v4Exliuo0WH', title: 'Playlist 8' },
+    { id: '1uYneC2hyNcbRWnCztabYK', title: 'Playlist 9' },
+    { id: '0gMXaY9jKjUBk3ya8RZ8Gy', title: 'Playlist 10' }
+];
+
+function createPlaylists(list) {
+    const container = document.getElementById('playlist-container');
+    if (!container) return;
+
+    list.forEach(pl => {
+        const title = document.createElement('h3');
+        title.classList.add('playlist-title');
+        title.textContent = pl.title;
+        container.appendChild(title);
+
+        const iframe = document.createElement('iframe');
+        iframe.classList.add('playlist-iframe');
+        iframe.style.borderRadius = '12px';
+        iframe.setAttribute('data-src', `https://open.spotify.com/embed/playlist/${pl.id}?utm_source=generator`);
+        iframe.height = '352';
+        iframe.setAttribute('frameBorder', '0');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture');
+        iframe.loading = 'lazy';
+        container.appendChild(iframe);
+    });
+}
+
+function setupPlaylistLazyLoad() {
+    const overlay = document.getElementById('loading-overlay');
+    const iframes = document.querySelectorAll('.playlist-iframe');
+    let overlayHidden = false;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const iframe = entry.target;
+                iframe.src = iframe.dataset.src;
+                observer.unobserve(iframe);
+
+                if (!overlayHidden) {
+                    iframe.addEventListener('load', function () {
+                        overlay.style.display = 'none';
+                    }, { once: true });
+                    overlayHidden = true;
+                }
+            }
+        });
+    }, { rootMargin: '0px 0px 100px 0px' });
+
+    iframes.forEach(iframe => observer.observe(iframe));
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.getElementById('playlist-container')) {
+        createPlaylists(playlistsData);
+        setupPlaylistLazyLoad();
+    }
+});

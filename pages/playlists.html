@@ -92,7 +92,7 @@
 
     .playlist-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       padding: 2rem;
       max-width: 1200px;
@@ -105,16 +105,21 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
+
+    @media (max-width: 768px) {
+      .playlist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- header design -->
   <header class="header" style="z-index: 999999; background-color: var(--bg-color)">
     <a href="#" class="logo" data-aos="fade-right">
       <svg height="2.5rem" viewBox="0 0 72 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- svg paths (omesso qui per brevità, lo puoi lasciare invariato) -->
+        <!-- svg paths (omesso qui per brevità) -->
       </svg>ennis</a>
 
     <div class="bx bx-menu" id="menu-icon"></div>
@@ -152,30 +157,27 @@
   <div id="stars2"></div>
   <div id="stars3"></div>
 
-  <!-- home section design -->
   <section class="project-page" id="project-page">
     <h2 class="heading" data-aos="fade-down">Le mie <span>playlist</span></h2>
 
-    <div id="playlist-container" class="playlist-grid">
-      <!-- INIZIO PLAYLIST -->
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/5QKgUqfecHSprREJj1PDMy?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/22OKbIAGCgBtYcEb3oXANT?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/1FuX68Y0hFsO9s9K9JqYiA?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/1bX2bXn075ZDOzLrUpsmmA?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/6Yze0ZPWxWrCoAbgVGHVoC?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/7A4tyCrZyn7N4yDvRkufSX?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/597U1RL2lRYlXFq9zEMPaX?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/4zaXhaW0mp4v4Exliuo0WH?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/1uYneC2hyNcbRWnCztabYK?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/0gMXaY9jKjUBk3ya8RZ8Gy?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/4aAjqaC0lRtFm0nCEnYN8J?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/19TB3N3zcMb4myUUXXtiOT?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/3YUh5gCzPZTJeY8zCz1myX?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      <!-- FINE PLAYLIST -->
+    <div class="playlist-grid">
+      <!-- Incolla qui le 13 playlist già inserite prima -->
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/5QKgUqfecHSprREJj1PDMy?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/22OKbIAGCgBtYcEb3oXANT?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/1FuX68Y0hFsO9s9K9JqYiA?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/1bX2bXn075ZDOzLrUpsmmA?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/6Yze0ZPWxWrCoAbgVGHVoC?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/7A4tyCrZyn7N4yDvRkufSX?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/597U1RL2lRYlXFq9zEMPaX?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/4zaXhaW0mp4v4Exliuo0WH?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/1uYneC2hyNcbRWnCztabYK?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/0gMXaY9jKjUBk3ya8RZ8Gy?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/4aAjqaC0lRtFm0nCEnYN8J?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/19TB3N3zcMb4myUUXXtiOT?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="playlist-item"><iframe src="https://open.spotify.com/embed/playlist/3YUh5gCzPZTJeY8zCz1myX?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
     </div>
   </section>
 
-  <!-- footer design -->
   <footer class="footer">
     <div class="footer-text">
       <p>Made by Dennis Bottari</p>
@@ -185,14 +187,12 @@
     </div>
   </footer>
 
-  <!-- script import -->
   <script src="../js/script.js"></script>
   <script src="../js/vanilla-tilt.js"></script>
   <script src="../js/aos.js"></script>
   <script src="../js/next.js"></script>
   <script>
     AOS.init();
-
     window.addEventListener("load", function () {
       const loader = document.getElementById("loading-overlay");
       if (loader) {

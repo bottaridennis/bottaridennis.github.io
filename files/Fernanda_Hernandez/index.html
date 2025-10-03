@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fernanda Hernandez – Portfolio</title>
+    <meta name="description" content="Portfolio fotografico – Fernanda Hernandez" />
+    <link rel="stylesheet" href="assets/files/boxicons-2.1.4/css/animations.css" />
+    <link rel="stylesheet" href="assets/files/boxicons-2.1.4/css/boxicons.css" />
+    <link rel="stylesheet" href="assets/files/boxicons-2.1.4/css/boxicons.min.css" />
+    <link rel="stylesheet" href="assets/files/boxicons-2.1.4/css/transformations.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Sfondo dinamico -->
+    <div class="bg-anim" aria-hidden="true">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="nav" aria-label="Navigazione principale" style="width: 100%; padding-bottom: 2rem">
+            <div class="brand"><span class="dot"></span>
+                <h1>Fernanda Hernandez</h1>
+            </div>
+            <button class="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 6h18M3 12h18M3 18h18" color="white" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+            <div class="links">
+                <a class="active" href="#home"><i class="bx bx-home"></i> Home</a>
+                <a href="#portfolio"><i class="bx bx-photo-album"></i> Portfolio</a>
+                <a href="#about"><i class="bx bx-user"></i> Chi sono</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="home" class="section-dark"
+            style="background-image: url('/assets/img/ph1.jpg'); background-size: cover; background-position: center;">
+            <div class="container">
+                <div class="kicker">Freelance Photographer</div>
+                <div class="display-xl" style="margin:10px 0 20px">Fernanda <span style="opacity:.6">Hernandez</span>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p style="max-width:46ch;color:#c8c8d6">
+                            Editoriale · Ritratto · Eventi. Creo immagini con forte taglio narrativo e direzione della
+                            luce.
+                            Lavoro ovunque, con set essenziali.
+                        </p>
+                    </div>
+                    <div class="meta" style="justify-self:end;text-align:right">
+                        <div>Portfolio 2024 — 2025</div>
+                        <div class="hr"></div>
+                        <div>Premi · Pubblicazioni · Clienti</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio: Raccolte a ventaglio -->
+        <section id="portfolio">
+            <div class="container">
+                <h3 style="margin:0 0 8px">Portfolio</h3>
+                <p style="color:var(--muted);margin:0 0 18px">
+                    Ogni card è una raccolta. Clicca su una miniatura per aprire da quella foto.
+                </p>
+
+                <div class="fan-collections" id="fan">
+                    <!-- Raccolta 1 -->
+                    <div class="fan-card" data-title="Ritratti in luce naturale"
+                        data-images="https://picsum.photos/id/1005/2000/1333,https://picsum.photos/id/1001/2000/1333,https://picsum.photos/id/1002/2000/1333,https://picsum.photos/id/1003/2000/1333,https://picsum.photos/id/1004/2000/1333">
+                        <div class="fan-stack">
+                            <img src="https://picsum.photos/id/1005/1200/800" alt="Ritratti 1">
+                            <img src="https://picsum.photos/id/1001/1200/800" alt="Ritratti 2">
+                            <img src="https://picsum.photos/id/1002/1200/800" alt="Ritratti 3">
+                            <img src="https://picsum.photos/id/1003/1200/800" alt="Ritratti 4">
+                            <img src="https://picsum.photos/id/1004/1200/800" alt="Ritratti 5">
+                        </div>
+                        <div class="fan-meta"><span class="fan-title">Ritratti in luce naturale</span><span>Apri
+                                galleria →</span></div>
+                    </div>
+
+                    <!-- Raccolta 2 -->
+                    <div class="fan-card" data-title="Reportage eventi"
+                        data-images="https://picsum.photos/id/1038/2000/1333,https://picsum.photos/id/1039/2000/1333,https://picsum.photos/id/1040/2000/1333,https://picsum.photos/id/1041/2000/1333,https://picsum.photos/id/1042/2000/1333">
+                        <div class="fan-stack">
+                            <img src="https://picsum.photos/id/1038/1200/800" alt="Eventi 1">
+                            <img src="https://picsum.photos/id/1039/1200/800" alt="Eventi 2">
+                            <img src="https://picsum.photos/id/1040/1200/800" alt="Eventi 3">
+                            <img src="https://picsum.photos/id/1041/1200/800" alt="Eventi 4">
+                            <img src="https://picsum.photos/id/1042/1200/800" alt="Eventi 5">
+                        </div>
+                        <div class="fan-meta"><span class="fan-title">Reportage eventi</span><span>Apri galleria
+                                →</span></div>
+                    </div>
+
+                    <!-- Raccolta 3 -->
+                    <div class="fan-card" data-title="Editoriale fashion"
+                        data-images="https://picsum.photos/id/1025/2000/1333,https://picsum.photos/id/1027/2000/1333,https://picsum.photos/id/1024/2000/1333,https://picsum.photos/id/1021/2000/1333,https://picsum.photos/id/1020/2000/1333">
+                        <div class="fan-stack">
+                            <img src="https://picsum.photos/id/1025/1200/800" alt="Editoriale 1">
+                            <img src="https://picsum.photos/id/1027/1200/800" alt="Editoriale 2">
+                            <img src="https://picsum.photos/id/1024/1200/800" alt="Editoriale 3">
+                            <img src="https://picsum.photos/id/1021/1200/800" alt="Editoriale 4">
+                            <img src="https://picsum.photos/id/1020/1200/800" alt="Editoriale 5">
+                        </div>
+                        <div class="fan-meta"><span class="fan-title">Editoriale fashion</span><span>Apri galleria
+                                →</span></div>
+                    </div>
+
+                    <!-- Raccolta 4 -->
+                    <div class="fan-card" data-title="Bianco e Nero"
+                        data-images="https://picsum.photos/id/1011/2000/1333,https://picsum.photos/id/1012/2000/1333,https://picsum.photos/id/1013/2000/1333,https://picsum.photos/id/1014/2000/1333,https://picsum.photos/id/1015/2000/1333">
+                        <div class="fan-stack">
+                            <img src="https://picsum.photos/id/1011/1200/800" alt="Bn 1">
+                            <img src="https://picsum.photos/id/1012/1200/800" alt="Bn 2">
+                            <img src="https://picsum.photos/id/1013/1200/800" alt="Bn 3">
+                            <img src="https://picsum.photos/id/1014/1200/800" alt="Bn 4">
+                            <img src="https://picsum.photos/id/1015/1200/800" alt="Bn 5">
+                        </div>
+                        <div class="fan-meta"><span class="fan-title">Bianco e Nero</span><span>Apri galleria →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section-light">
+            <div class="container">
+                <div class="display-lg" style="margin-bottom:18px">About Me</div>
+                <div class="grid-2">
+                    <div>
+                        <div
+                            style="width:140px;height:140px;border-radius:999px;overflow:hidden;border:2px solid #111;background:#ddd;margin-bottom:16px">
+                            <img src="https://picsum.photos/seed/profile/280/280" alt="Ritratto"
+                                style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <div class="meta">Freelance Photographer</div>
+                        <p style="max-width:60ch">
+                            Lavoro professionalmente da 8+ anni; ho guidato progetti per brand e magazine, con
+                            attenzione a persone,
+                            texture e spazi. Credo in una post-produzione rispettosa della pelle e del colore.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="meta">Contatti</div>
+                        <div class="hr" style="background:#000"></div>
+                        <p style="margin:0 0 6px"><strong>Email</strong> · nome@dominio.com</p>
+                        <p style="margin:0 0 6px"><strong>Telefono</strong> · +39 000 0000000</p>
+                        <p style="margin:0 0 16px"><strong>Base</strong> · Ovunque, Any City</p>
+                        <a class="pill-ghost" href="#contatti">Parla del tuo progetto →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="section-dark">
+            <div class="container">
+                <div class="display-lg" style="margin-bottom:18px">Services</div>
+                <div class="grid-2">
+                    <div class="service">Editorial / Campaigns <a href="#portfolio">Work view</a></div>
+                    <div class="service">Portrait / Corporate <a href="#portfolio">Work view</a></div>
+                    <div class="service">Events / Reportage <a href="#portfolio">Work view</a></div>
+                    <div class="service">Post-production <a href="#portfolio">Work view</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <!-- <section id="contatti" class="section-dark">
+                <p class="meta" style="margin-top:2rem">
+                    Scrivi a <a href="mailto:dennisbottari@gmail.com">dennisbottari@gmail.com</a>
+                </p>
+            </div>
+        </section> -->
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Immagine ingrandita">
+        <button aria-label="Chiudi">Chiudi ✕</button>
+        <button class="lb-nav prev" aria-label="Precedente">‹</button>
+        <button class="lb-nav next" aria-label="Successiva">›</button>
+        <div>
+            <img class="lightbox-img" alt="" />
+            <div class="lightbox-cap" id="lbcap"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="section-light" style="background:#f4f4f6">
+        <div class="container"
+            style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+            <div style="font-weight:800">Dennis Bottari</div>
+            <div class="meta">© <span id="year"></span> Tutti i diritti riservati</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

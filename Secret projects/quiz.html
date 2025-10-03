@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Interattivo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .answers {
+      list-style: none;
+      padding: 0;
+    }
+
+    .answers li {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #673ab7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5e35b1;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 1.2em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz Interattivo</h1>
+    <div id="quiz"></div>
+    <button id="submit">Invia Risposte</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "Qual è la capitale dell’Italia?",
+        answers: {
+          a: "Milano",
+          b: "Roma",
+          c: "Napoli"
+        },
+        correct: "b"
+      },
+      {
+        question: "In che anno è finita la Seconda Guerra Mondiale?",
+        answers: {
+          a: "1945",
+          b: "1939",
+          c: "1918"
+        },
+        correct: "a"
+      },
+      {
+        question: "Chi ha scritto 'La Divina Commedia'?",
+        answers: {
+          a: "Leopardi",
+          b: "Manzoni",
+          c: "Dante Alighieri"
+        },
+        correct: "c"
+      }
+    ];
+
+    const quizEl = document.getElementById('quiz');
+    const submitBtn = document.getElementById('submit');
+    const resultEl = document.getElementById('result');
+
+    function loadQuiz() {
+      const output = quizData.map((q, index) => {
+        const answers = Object.entries(q.answers).map(
+          ([key, text]) =>
+            `<li><label><input type="radio" name="question${index}" value="${key}"> ${text}</label></li>`
+        ).join('');
+        return `
+          <div class="question">${index + 1}. ${q.question}</div>
+          <ul class="answers">${answers}</ul>
+        `;
+      }).join('');
+      quizEl.innerHTML = output;
+    }
+
+    function checkAnswers() {
+      let score = 0;
+      quizData.forEach((q, index) => {
+        const answer = document.querySelector(`input[name="question${index}"]:checked`);
+        if (answer && answer.value === q.correct) {
+          score++;
+        }
+      });
+      resultEl.textContent = `Hai risposto correttamente a ${score} su ${quizData.length} domande!`;
+    }
+
+    submitBtn.addEventListener('click', checkAnswers);
+    loadQuiz();
+  </script>
+</body>
+</html>

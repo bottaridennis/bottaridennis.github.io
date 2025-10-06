@@ -651,152 +651,20 @@ textarea.input {
     left: auto;
 }
 
+
+
+/* Feedback section */
+
 /* Miniatura feedback */
 .t-thumb {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #dcdce6;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #dcdce6;
 }
 
-.t-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Immagine grande nel modale */
-.t-full {
-    width: 100%;
-    max-height: 380px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 10px;
-    margin-bottom: 12px;
-}
-
-.t-head strong {
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 1.3;
-}
-
-/* Feedback (testi lunghi, accessibile, senza JS) */
-.t-grid {
-    display: grid;
-    gap: 16px
-}
-
-@media (min-width:700px) {
-    .t-grid {
-        grid-template-columns: 1fr 1fr
-    }
-}
-
-@media (min-width:1024px) {
-    .t-grid {
-        grid-template-columns: repeat(3, 1fr)
-    }
-}
-
-.t-card {
-    border: 1px solid #dcdce6;
-    border-radius: 14px;
-    background: #fff;
-    color: #0b0b10;
-    overflow: hidden;
-}
-
-.section-dark .t-card {
-    border-color: #24243b;
-    background: #11131a;
-    color: #e9e9f1
-}
-
-.t-card>summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    display: grid;
-    gap: 8px;
-    align-items: start;
-}
-
-.t-card>summary::-webkit-details-marker {
-    display: none
-}
-
-.t-head {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    align-items: baseline
-}
-
-.t-meta {
-  font-size: 12px;
-  letter-spacing: .08em;
-  opacity: .7;
-  text-transform: uppercase;
-}
-
-.t-excerpt {
-    margin: 0;
-    opacity: .85;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    /* clamp preview */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.t-body {
-    padding: 0 16px 16px
-}
-
-.t-body p {
-    margin: 10px 0;
-    color: inherit
-}
-
-/* micro affordance “apri/chiudi” */
-.t-card>summary {
-    position: relative
-}
-
-.t-card>summary:after {
-    content: "+";
-    position: absolute;
-    right: 12px;
-    top: 14px;
-    font-weight: 700;
-    opacity: .6;
-}
-
-.t-card[open]>summary:after {
-    content: "–"
-}
-
-/* Fix: niente sovrapposizione +/– con la data */
-.t-card>summary {
-    position: relative;
-    padding: 14px 42px 14px 16px;
-}
-
-.t-card>summary:after {
-    content: "+";
-    position: absolute;
-    right: 12px;
-    top: 14px;
-    font-weight: 700;
-    opacity: .6;
-}
-
-.t-card[open]>summary:after {
-    content: "–";
-}
-
+/* Header centrato: immagine sopra, testo sotto */
 .t-head {
   display: flex;
   flex-direction: column;
@@ -806,76 +674,165 @@ textarea.input {
   margin-bottom: 6px;
 }
 
+.t-head strong {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
 .t-meta {
-    font-size: 12px;
-    letter-spacing: .08em;
-    opacity: .7;
-    text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+/* Immagine grande nel modale */
+.t-full {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* Griglia feedback */
+.t-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .t-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .t-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card base */
+.t-card {
+  border: 1px solid #dcdce6;
+  border-radius: 14px;
+  background: #fff;
+  color: #0b0b10;
+  overflow: hidden;
+}
+
+.section-dark .t-card {
+  border-color: #24243b;
+  background: #11131a;
+  color: #e9e9f1;
+}
+
+/* Summary pulito, centrato, senza marker */
+.t-card > summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  padding: 14px 42px 14px 16px; /* spazio per il +/– a destra */
+  text-align: center;
+}
+.t-card > summary::-webkit-details-marker {
+  display: none;
+}
+.t-card > summary::marker {
+  content: "";
+}
+
+/* Micro affordance “apri/chiudi” */
+.t-card > summary:after {
+  content: "+";
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.t-card[open] > summary:after {
+  content: "–";
+}
+
+/* Excerpt (anteprima) */
+.t-excerpt {
+  margin: 6px 0 0;
+  opacity: 0.85;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* mostra solo due righe */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Corpo feedback */
+.t-body {
+  padding: 0 16px 16px;
+  line-height: 1.55;
+}
+.t-body p {
+  margin: 10px 0;
+  color: inherit;
 }
 
 /* Modal overlay per feedback lunghi */
 .t-modal[hidden] {
-    display: none;
+  display: none;
 }
-
 .t-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 120;
-    display: grid;
-    place-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
 }
-
 .t-modal__backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, .65);
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
 }
-
 .t-modal__content {
-    position: relative;
-    max-width: min(900px, 92vw);
-    max-height: 86vh;
-    overflow: auto;
-    background: #fff;
-    color: #0b0b10;
-    border-radius: 16px;
-    padding: 18px 18px 22px;
-    box-shadow: 0 30px 90px rgba(0, 0, 0, .45);
+  position: relative;
+  max-width: min(900px, 92vw);
+  max-height: 86vh;
+  overflow: auto;
+  background: #fff;
+  color: #0b0b10;
+  border-radius: 16px;
+  padding: 18px 18px 22px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
 }
-
 .section-dark .t-modal__content {
-    background: #11131a;
-    color: #e9e9f1;
+  background: #11131a;
+  color: #e9e9f1;
 }
-
 .t-modal__close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: 1px solid #d0d0da;
-    background: #fff;
-    color: #0b0b10;
-    border-radius: 10px;
-    padding: 6px 10px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid #d0d0da;
+  background: #fff;
+  color: #0b0b10;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
 }
-
 .section-dark .t-modal__close {
-    background: #1a1c26;
-    color: #fff;
-    border-color: #2a2d3a;
+  background: #1a1c26;
+  color: #fff;
+  border-color: #2a2d3a;
 }
-
 .t-modal__title {
-    margin: 0 0 8px;
-    font-weight: 800;
+  margin: 0 0 8px;
+  font-weight: 800;
 }
-
 .t-modal__body {
-    line-height: 1.55;
+  line-height: 1.55;
 }
-
 .t-modal__body p {
-    margin: 10px 0;
+  margin: 10px 0;
 }

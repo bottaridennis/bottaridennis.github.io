@@ -105,3 +105,41 @@ if (cf) {
     window.location.href = mailto;
   });
 }
+// Overlay feedback: apri modale dal summary e disattiva toggle di <details>
+const modal = document.getElementById('feedback-modal');
+const modalTitle = document.getElementById('t-modal-title');
+const modalBody = document.getElementById('t-modal-body');
+
+function openFeedbackModal(title, html){
+  modalTitle.textContent = title || 'Feedback';
+  modalBody.innerHTML = html || '';
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+function closeFeedbackModal(){
+  modal.hidden = true;
+  document.body.style.overflow = '';
+  modalTitle.textContent = '';
+  modalBody.innerHTML = '';
+}
+
+document.querySelectorAll('#feedback .t-card > summary').forEach(summary=>{
+  summary.addEventListener('click', (e)=>{
+    // Evita che <details> cambi stato (niente “aprono tutti”)
+    e.preventDefault();
+    e.stopPropagation();
+    const card = summary.parentElement;
+    const title = card.querySelector('.t-head strong')?.textContent.trim() || 'Feedback';
+    const bodyHTML = card.querySelector('.t-body')?.innerHTML || '';
+    openFeedbackModal(title, bodyHTML);
+    // Assicura che nessun <details> resti [open]
+    document.querySelectorAll('#feedback .t-card[open]').forEach(d=>d.removeAttribute('open'));
+  });
+});
+
+modal?.addEventListener('click', (e)=>{
+  if(e.target.hasAttribute('data-close')) closeFeedbackModal();
+});
+window.addEventListener('keydown', (e)=>{
+  if(!modal.hidden && e.key === 'Escape') closeFeedbackModal();
+});

@@ -3,84 +3,85 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<title>Oltre il Segno — Gioco del Limite (Mobile Ready)</title>
+<title>Oltre il Segno — Gioco del Limite (60 caselle)</title>
 <style>
   :root{
     --bg:#0c0f14; --panel:#151a22; --ink:#e9edf3; --muted:#a7b0c0; --grid:#232a36;
     --paura:#ff6b6b; --confine:#ffd166; --oltre:#06d6a0; --accent:#7c5cff;
   }
-  *{box-sizing:border-box}
-  html,body{height:100%}
+  *{box-sizing:border-box} html,body{height:100%}
   body{
-    margin:0;
-    background:
+    margin:0; background:
       radial-gradient(1200px 800px at 10% -10%, #111728 0%, #0a0d14 40%, #06070b 100%),
       var(--bg);
     color:var(--ink);
-    font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    -webkit-tap-highlight-color: transparent;
+    font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    -webkit-tap-highlight-color:transparent; overflow-x:hidden;
   }
   header{padding:16px 16px 8px; text-align:center}
-  h1{margin:0; font-weight:800; letter-spacing:.2px; font-size:clamp(1.1rem, 3.8vw, 1.6rem)}
-  .sub{color:var(--muted); margin-top:4px; font-size:clamp(.8rem, 3.2vw, .95rem)}
+  h1{margin:0; font-weight:800; letter-spacing:.2px; font-size:clamp(1.1rem,3.8vw,1.6rem)}
+  .sub{color:var(--muted); margin-top:4px; font-size:clamp(.8rem,3.2vw,.95rem)}
 
-  /* ===== LAYOUT ===== */
   .wrap{
-    display:grid;
-    grid-template-columns: 340px 1fr 360px;
-    gap:14px; padding:14px; padding-bottom: max(14px, env(safe-area-inset-bottom));
+    display:grid; grid-template-columns: 320px 1fr 360px;
+    gap:14px; padding:14px; padding-bottom:max(14px, env(safe-area-inset-bottom));
   }
-  @media (max-width:1100px){
-    .wrap{grid-template-columns:1fr}
-  }
-  .panel{
-    background:linear-gradient(180deg, #171c26, #121720);
-    border:1px solid #222a38; border-radius:14px; padding:14px;
-    box-shadow: 0 20px 50px rgba(0,0,0,.35);
-  }
-  .panel h2{margin:2px 0 10px; font-size:clamp(.95rem, 3.4vw, 1.05rem); letter-spacing:.3px}
+  @media (max-width:1100px){ .wrap{grid-template-columns:1fr} }
 
-  /* ===== BOARD (responsive) ===== */
-  .board-wrap{
-    overflow:auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    border-radius: 12px;
+  .panel{
+    background:linear-gradient(180deg,#171c26,#121720);
+    border:1px solid #222a38; border-radius:14px; padding:14px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
   }
+  .panel h2{margin:2px 0 10px; font-size:clamp(.95rem,3.4vw,1.05rem); letter-spacing:.3px}
+
+  /* ===== BOARD: 10x6, niente scroll orizzontale ===== */
   .board{
+    width:100%;
     display:grid;
-    /* 8 colonne: le celle prendono dimensione in vw per restare leggibili su mobile */
-    grid-template-columns: repeat(8, minmax(min(10.5vw, 70px), 1fr));
-    gap:8px; padding:10px; position:relative;
-    /* larghezza minima così non si schiaccia troppo su display piccoli */
-    min-width: min(96vw, 560px);
-  }
-  @media (max-width:600px){
-    .board{ gap:4px; padding:8px }
+    grid-template-columns:repeat(10, 1fr);
+    gap:6px; padding:10px; position:relative;
   }
   .cell{
     aspect-ratio:1/1; border:1px solid var(--grid); border-radius:10px;
     display:flex; align-items:center; justify-content:center;
-    position:relative; overflow:hidden; background:#0f1420; scroll-snap-align:start;
+    position:relative; overflow:hidden; background:#0f1420;
   }
   .cell::after{
     content:attr(data-i);
-    position:absolute; top:6px; left:8px; font-size:clamp(.62rem, 2.6vw, .75rem); color:#7c879b; opacity:.85;
+    position:absolute; top:6px; left:8px; font-size:clamp(.62rem,2.6vw,.75rem); color:#7c879b; opacity:.85;
   }
-  .cell .type{position:absolute; bottom:6px; right:6px; font-size:clamp(.9rem, 4vw, 1.1rem)}
-  .cell.paura{outline:2px solid rgba(255,107,107,.28); box-shadow: inset 0 0 0 2px rgba(255,107,107,.14)}
-  .cell.confine{outline:2px solid rgba(255,209,102,.28); box-shadow: inset 0 0 0 2px rgba(255,209,102,.14)}
-  .cell.oltre{outline:2px solid rgba(6,214,160,.28); box-shadow: inset 0 0 0 2px rgba(6,214,160,.14)}
+  .cell .type{position:absolute; bottom:6px; right:6px; font-size:clamp(.9rem,3.5vw,1.1rem)}
+  .cell.paura{outline:2px solid rgba(255,107,107,.28); box-shadow:inset 0 0 0 2px rgba(255,107,107,.14)}
+  .cell.confine{outline:2px solid rgba(255,209,102,.28); box-shadow:inset 0 0 0 2px rgba(255,209,102,.14)}
+  .cell.oltre{outline:2px solid rgba(6,214,160,.28); box-shadow:inset 0 0 0 2px rgba(6,214,160,.14)}
   .cell.start{background:#0d1522; border-style:dashed; border-color:#3b4a66}
   .cell.finish{background:#0d1522; border-style:dashed; border-color:#7c5cff}
 
+  /* Evidenza cella del giocatore di turno */
+  .cell.current{
+    box-shadow: 0 0 0 3px rgba(124,92,255,.55), 0 0 25px rgba(124,92,255,.35) inset;
+    border-color:#7c5cff;
+  }
+
+  /* Pedine */
   .tokens{display:flex; gap:6px; flex-wrap:wrap; justify-content:center; align-items:center; padding:6px}
   .token{
-    width:clamp(18px, 4.8vw, 26px);
-    height:clamp(18px, 4.8vw, 26px);
+    width:clamp(18px, 4.4vw, 26px); height:clamp(18px,4.4vw,26px);
     border-radius:50%; display:grid; place-items:center;
     color:#0b0b0b; font-weight:800; border:2px solid rgba(255,255,255,.18);
-    font-size:clamp(.62rem, 2.6vw, .8rem);
+    font-size:clamp(.62rem,2.6vw,.8rem); position:relative;
+  }
+  .token::after{ /* anello pulsante sul giocatore di turno */
+    content:''; position:absolute; inset:-5px;
+    border-radius:50%; border:2px solid transparent;
+  }
+  .token.active::after{
+    border-color:#7c5cff; animation:pulse 1.2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(124,92,255,.45)}
+    100%{box-shadow:0 0 0 10px rgba(124,92,255,0)}
   }
   .t1{background:#ff6b6b}
   .t2{background:#4dabf7}
@@ -95,97 +96,65 @@
   .tag.c{border-color:rgba(255,209,102,.45); color:#fff0c8}
   .tag.o{border-color:rgba(6,214,160,.45); color:#b9ffea}
 
-  /* ===== CONTROLS ===== */
-  .controls{display:flex; gap:8px; flex-wrap:wrap}
+  /* CONTROLLI */
+  .row-flex{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap}
   button{
     background:#1b2231; color:#eaf0ff; border:1px solid #2b3650; padding:.7rem .95rem;
     border-radius:12px; font-weight:800; cursor:pointer;
-    transition:.15s transform, .15s background, .15s border;
-    min-height:44px; /* touch target */
-    width:auto;
-  }
-  button:hover{transform:translateY(-1px); background:#20293b}
-  button.primary{background:linear-gradient(180deg, #2b3bff, #7c5cff); border-color:#7c5cff}
-  button:disabled{opacity:.55; cursor:not-allowed}
-  .row-flex{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap}
-  .field{display:flex; gap:8px; align-items:center}
-  select{
-    background:#111726; color:#e9eefc; border:1px solid #29324a; border-radius:12px; padding:.6rem .7rem;
+    transition:.15s transform,.15s background,.15s border;
     min-height:44px;
   }
-
-  /* Su mobile, bottoni full-width ordinati in colonna */
+  button:hover{transform:translateY(-1px); background:#20293b}
+  button.primary{background:linear-gradient(180deg,#2b3bff,#7c5cff); border-color:#7c5cff}
+  button:disabled{opacity:.55; cursor:not-allowed}
+  .field{display:flex; gap:8px; align-items:center}
+  select{
+    background:#111726; color:#e9eefc; border:1px solid #29324a; border-radius:12px; padding:.6rem .7rem; min-height:44px;
+  }
   @media (max-width:768px){
-    .controls-stack{display:grid; grid-template-columns:1fr 1fr; gap:8px}
-    .controls-stack button{width:100%}
+    .controls-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px}
     .row-flex > div:last-child{width:100%; display:grid; grid-template-columns:1fr 1fr; gap:8px}
   }
 
-  /* ===== CARDS ===== */
+  /* CARTE */
   .cardbox{display:grid; grid-template-columns:1fr; gap:10px}
-  .prompt{
-    border:1px solid #27314a; background:linear-gradient(180deg, #141a25, #101521);
-    border-radius:12px; padding:12px
-  }
-  .prompt h3{margin:0 0 6px; font-size:clamp(.95rem, 3.6vw, 1rem); letter-spacing:.3px; color:#d9e2ff}
-  .prompt p{margin:0; color:#dfe6ff; font-size:clamp(.9rem, 3.6vw, 1rem)}
-
+  .prompt{border:1px solid #27314a; background:linear-gradient(180deg,#141a25,#101521); border-radius:12px; padding:12px}
+  .prompt h3{margin:0 0 6px; font-size:clamp(.95rem,3.6vw,1rem); color:#d9e2ff}
+  .prompt p{margin:0; color:#dfe6ff; font-size:clamp(.9rem,3.6vw,1rem)}
   .badge{display:inline-flex; align-items:center; gap:6px; padding:.25rem .55rem; border-radius:999px; font-weight:800; font-size:.78rem; border:1px solid}
   .b-paura{color:#ffc7c7; border-color:rgba(255,107,107,.5); background:rgba(255,107,107,.12)}
   .b-confine{color:#fff0c8; border-color:rgba(255,209,102,.55); background:rgba(255,209,102,.12)}
   .b-oltre{color:#b9ffea; border-color:rgba(6,214,160,.55); background:rgba(6,214,160,.12)}
 
-  /* ===== DICE 3D ===== */
-  .dice-overlay{
-    position:fixed; inset:0; display:grid; place-items:center; pointer-events:none;
-    transition: opacity .25s ease; opacity:0; padding:16px
-  }
+  /* DADO 3D */
+  .dice-overlay{position:fixed; inset:0; display:grid; place-items:center; pointer-events:none; transition:opacity .25s ease; opacity:0; padding:16px}
   .dice-overlay.visible{opacity:1}
-  .dice-wrap{
-    width:clamp(84px, 26vw, 120px);
-    height:clamp(84px, 26vw, 120px);
-    perspective:900px; filter: drop-shadow(0 30px 50px rgba(0,0,0,.5));
-    transform: scale(.9);
-    transition: transform .25s ease;
-  }
-  .dice-overlay.visible .dice-wrap{ transform: scale(1)}
-  .dice{
-    position:relative; width:100%; height:100%;
-    transform-style:preserve-3d;
-    transition: transform 1s cubic-bezier(.19,.9,.22,1.12);
-  }
-  .face{
-    position:absolute; inset:0; display:grid; place-items:center;
-    background:linear-gradient(145deg, #e8edf7, #cdd6ea);
-    border-radius:14px; box-shadow: inset 0 0 0 2px #aab7d6;
-  }
-  .pips{display:grid; gap:10px; grid-template-columns: repeat(3, 1fr); width:70%; height:70%}
-  .pip{width:clamp(10px, 2.7vw, 16px); height:clamp(10px, 2.7vw, 16px); background:#1e2433; border-radius:50%}
+  .dice-wrap{width:clamp(84px,26vw,120px); height:clamp(84px,26vw,120px); perspective:900px; filter:drop-shadow(0 30px 50px rgba(0,0,0,.5)); transform:scale(.9); transition:transform .25s ease}
+  .dice-overlay.visible .dice-wrap{transform:scale(1)}
+  .dice{position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform 1s cubic-bezier(.19,.9,.22,1.12)}
+  .face{position:absolute; inset:0; display:grid; place-items:center; background:linear-gradient(145deg,#e8edf7,#cdd6ea); border-radius:14px; box-shadow:inset 0 0 0 2px #aab7d6}
+  .pips{display:grid; gap:10px; grid-template-columns:repeat(3,1fr); width:70%; height:70%}
+  .pip{width:clamp(10px,2.7vw,16px); height:clamp(10px,2.7vw,16px); background:#1e2433; border-radius:50%}
   .pip.light{background:#2a3350}
-  .f1{ transform: translateZ(60px) }
-  .f2{ transform: rotateY(180deg) translateZ(60px) }
-  .f3{ transform: rotateY(90deg)  translateZ(60px) }
-  .f4{ transform: rotateY(-90deg) translateZ(60px) }
-  .f5{ transform: rotateX(90deg)  translateZ(60px) }
-  .f6{ transform: rotateX(-90deg) translateZ(60px) }
+  .f1{ transform: translateZ(60px) } .f2{ transform: rotateY(180deg) translateZ(60px) }
+  .f3{ transform: rotateY(90deg)  translateZ(60px) } .f4{ transform: rotateY(-90deg) translateZ(60px) }
+  .f5{ transform: rotateX(90deg)  translateZ(60px) } .f6{ transform: rotateX(-90deg) translateZ(60px) }
+  .fadeNote{position:fixed; bottom:12px; left:50%; transform:translateX(-50%); color:#9fb0d6; font-size:clamp(.75rem,3.2vw,.85rem); opacity:.85; padding-bottom:env(safe-area-inset-bottom)}
 
-  .fadeNote{
-    position:fixed; bottom:12px; left:50%; transform:translateX(-50%);
-    color:#9fb0d6; font-size:clamp(.75rem, 3.2vw, .85rem); opacity:.85;
-    padding-bottom: env(safe-area-inset-bottom);
-  }
+  /* Lista posizioni */
+  .statuslist{display:flex; flex-direction:column; gap:6px; margin:0; padding:0; list-style:none}
+  .statusitem{display:flex; align-items:center; justify-content:space-between; gap:8px; background:#111726; border:1px solid #26304a; border-radius:10px; padding:.5rem .7rem}
+  .badge-mini{min-width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font-weight:800; color:#0b0b0b; border:2px solid rgba(255,255,255,.2)}
+  .mini1{background:#ff6b6b}.mini2{background:#4dabf7}.mini3{background:#ffd166;color:#1b1b1b}.mini4{background:#06d6a0;color:#0b2b22}.mini5{background:#f06595}.mini6{background:#7c5cff}
 
-  /* Riduci preferenze motion */
-  @media (prefers-reduced-motion: reduce){
-    .dice, .dice-overlay, button{transition:none !important}
-  }
+  @media (prefers-reduced-motion: reduce){ .dice,.dice-overlay,button{transition:none !important} }
 </style>
 </head>
 <body>
 
 <header>
   <h1>Oltre il Segno — Gioco del Limite</h1>
-  <div class="sub">Collaborativo, 2–6 giocatori • Caselle 😨 🚧 🌱 • Dado 3D touch-friendly</div>
+  <div class="sub">Collaborativo, 2–6 giocatori • 60 caselle • Nada scroll orizzontale • Dado 3D</div>
 </header>
 
 <div class="wrap">
@@ -210,26 +179,27 @@
       <span class="tag" role="listitem">🏁 Arrivo</span>
     </div>
 
-    <h2>Turno</h2>
+    <h2>Turno & Azioni</h2>
     <div class="row-flex" style="margin-bottom:8px">
       <div id="turnInfo" aria-live="polite">—</div>
-      <div class="controls-stack">
+      <div class="controls-grid">
         <button id="rollBtn">Rolla Dado</button>
         <button id="nextBtn">Avanti Turno</button>
       </div>
     </div>
-    <div class="controls-stack">
+    <div class="controls-grid">
       <button id="drawBtn">Pesca Carta</button>
       <button id="toggleDice">Mostra/Nascondi Dado</button>
     </div>
+
+    <h2 style="margin-top:12px">Posizioni</h2>
+    <ul id="status" class="statuslist"></ul>
   </section>
 
-  <!-- TABELLO-BOARD -->
+  <!-- BOARD -->
   <section class="panel">
-    <h2>Tabellone</h2>
-    <div class="board-wrap">
-      <div id="board" class="board"></div>
-    </div>
+    <h2>Tabellone (10×6 = 60)</h2>
+    <div id="board" class="board"></div>
   </section>
 
   <!-- CARTE -->
@@ -238,13 +208,12 @@
     <div class="cardbox">
       <div class="prompt">
         <h3 id="cardTitle">Nessuna carta pescata</h3>
-        <p id="cardText" style="color:#bfc9df">Rolla il dado, muovi. Se la casella mostra 😨/🚧/🌱, pesca una carta della categoria indicata.</p>
+        <p id="cardText" style="color:#bfc9df">Rolla il dado e muovi. Se la casella mostra 😨/🚧/🌱, pesca una carta della categoria indicata.</p>
       </div>
       <div class="prompt" style="opacity:.95">
         <h3>Regole Lampo</h3>
         <p style="color:#c8d3ee">
-          1) A turno: rolla → muovi → risolvi. 2) Casella colorata ⇒ carta e breve confronto. 
-          3) Decisioni sempre rispettose dei limiti personali. 4) Vince chi arriva a 🏁; opzionale: vittoria collettiva se tutti condividono un “passo oltre”.
+          A turno: rolla → muovi → risolvi. Sulle caselle colorate pesca e confrontatevi. La cella del giocatore di turno è evidenziata. Vince chi arriva a 🏁; opzionale: vittoria collettiva se tutti condividono un “passo oltre”.
         </p>
       </div>
     </div>
@@ -264,9 +233,10 @@
     </div>
   </div>
 </div>
+<div class="fadeNote">Il dado compare e sparisce automaticamente dopo il lancio.</div>
 
 <script>
-/* ==================== CARTE ==================== */
+/* ==================== CARTE (come definite prima) ==================== */
 const cartePaura = [
 "Hai paura di sbagliare davanti agli altri. Rischi o ti tiri indietro?",
 "Ti chiedono un’opinione sincera ma impopolare. La dici o taci?",
@@ -297,7 +267,7 @@ const carteConfine = [
 "Ricevi un segreto pesante. Lo tieni o chiedi aiuto a un adulto?",
 "Il gruppo vuole fare qualcosa di rischioso. Ti opponi o partecipi?",
 "Ti dicono “non puoi farlo”. Cerchi un modo diverso o rinunci?",
-"Hai troppi impegni. Rinunci a qualcosa o ti carichi tutto addoss o?",
+"Hai troppi impegni. Rinunci a qualcosa o ti carichi tutto addosso?",
 "Ti senti escluso da una decisione. Reclami il tuo spazio o accetti?",
 "Ti accorgi che stai superando i tuoi limiti fisici. Ti fermi o forzi?",
 "Vedi qualcuno oltrepassare il limite verso un altro. Intervieni o resti in disparte?",
@@ -334,10 +304,11 @@ const carteOltre = [
 "Condividi un piccolo passo “oltre” che vuoi fare nei prossimi giorni."
 ];
 
-/* ==================== BOARD ==================== */
-const sizeCols = 8, sizeRows = 4;
-const totalCells = sizeCols * sizeRows; // 32
-const pattern = ["paura","confine","oltre","confine","paura","oltre","confine","oltre"];
+/* ==================== BOARD 60 CASELLE ==================== */
+const sizeCols = 10, sizeRows = 6;
+const totalCells = sizeCols * sizeRows; // 60
+// Pattern bilanciato per le caselle "colorate"
+const pattern = ["paura","confine","oltre","confine","paura","oltre","confine","oltre","paura","confine"];
 
 const boardEl = document.getElementById('board');
 let cellRefs = [];
@@ -349,6 +320,7 @@ let gameOn = false;
 function buildBoard(){
   boardEl.innerHTML = '';
   cellRefs = [];
+  // crea griglia
   for(let r=0;r<sizeRows;r++){
     for(let c=0;c<sizeCols;c++){
       const cell = document.createElement('div');
@@ -356,6 +328,7 @@ function buildBoard(){
       boardEl.appendChild(cell);
     }
   }
+  // ordine a zig-zag
   const order = [];
   for(let r=0;r<sizeRows;r++){
     const row = [];
@@ -363,6 +336,7 @@ function buildBoard(){
     if(r%2===1) row.reverse();
     order.push(...row);
   }
+  // applica categorie e numerazione in ordine di gioco
   order.forEach((idx, n)=>{
     const cell = boardEl.children[idx];
     const num = n+1;
@@ -373,14 +347,22 @@ function buildBoard(){
       const t = pattern[(num-2) % pattern.length];
       cell.classList.add(t);
       const emoji = t==='paura'?'😨':t==='confine'?'🚧':'🌱';
-      const tag = document.createElement('div');
-      tag.className='type'; tag.textContent = emoji;
+      const tag = document.createElement('div'); tag.className='type'; tag.textContent = emoji;
       cell.appendChild(tag);
     }
     cellRefs.push(cell);
   });
 }
 
+/* Evidenzia la cella del giocatore di turno */
+function markCurrentCell(){
+  cellRefs.forEach(c=>c.classList.remove('current'));
+  const pos = positions[current] ?? 1;
+  const cell = cellRefs[pos-1];
+  if(cell) cell.classList.add('current');
+}
+
+/* Pedine */
 function renderTokens(){
   cellRefs.forEach(c=>{ const b=c.querySelector('.tokens'); if(b) b.remove(); });
   positions.forEach((pos, idx)=>{
@@ -391,25 +373,35 @@ function renderTokens(){
     t.className = 'token t'+(idx+1);
     t.title = 'Giocatore '+(idx+1);
     t.textContent = (idx+1);
+    if(idx===current) t.classList.add('active');
     box.appendChild(t);
   });
+}
+
+/* Stato laterale posizioni */
+const statusEl = document.getElementById('status');
+function renderStatus(){
+  statusEl.innerHTML = '';
+  for(let i=0;i<players;i++){
+    const li = document.createElement('li');
+    li.className='statusitem';
+    const mini = `<span class="badge-mini mini${i+1}">${i+1}</span>`;
+    const here = positions[i];
+    li.innerHTML = `${mini} <strong>Giocatore ${i+1}</strong> <span>Casella ${here}</span>`;
+    if(i===current) li.style.boxShadow = '0 0 0 2px rgba(124,92,255,.5) inset';
+    statusEl.appendChild(li);
+  }
 }
 
 /* ==================== DADO 3D ==================== */
 const diceOverlay = document.getElementById('diceOverlay');
 const dice = document.getElementById('dice');
 let diceVisible = false;
-
 function showDice(){ diceOverlay.classList.add('visible'); diceOverlay.setAttribute('aria-hidden','false'); diceVisible = true; }
 function hideDice(){ diceOverlay.classList.remove('visible'); diceOverlay.setAttribute('aria-hidden','true'); diceVisible = false; }
+document.getElementById('toggleDice').addEventListener('click', ()=>{ diceVisible ? hideDice() : showDice(); });
 
-document.getElementById('toggleDice').addEventListener('click', ()=>{
-  diceVisible ? hideDice() : showDice();
-});
-
-const faceRotations = {
-  1:{x:0,y:0}, 2:{x:0,y:180}, 3:{x:0,y:-90}, 4:{x:0,y:90}, 5:{x:-90,y:0}, 6:{x:90,y:0}
-};
+const faceRotations = { 1:{x:0,y:0}, 2:{x:0,y:180}, 3:{x:0,y:-90}, 4:{x:0,y:90}, 5:{x:-90,y:0}, 6:{x:90,y:0} };
 function rollVisual(to){
   const extraX = (Math.floor(Math.random()*4))*360;
   const extraY = (Math.floor(Math.random()*4))*360;
@@ -433,12 +425,10 @@ startBtn.addEventListener('click', ()=>{
   players = parseInt(playersSel.value,10);
   positions = new Array(players).fill(1);
   current = 0; gameOn = true;
-  buildBoard(); renderTokens(); updateTurnInfo();
+  buildBoard(); renderTokens(); markCurrentCell(); renderStatus(); updateTurnInfo();
   cardTitle.textContent = 'Partenza';
   cardText.textContent  = 'Rolla il dado e muovi dalla casella 1.';
-  // focus visivo su mobile all’inizio
-  document.querySelector('.board-wrap')?.scrollTo({left:0, behavior:'smooth'});
-}, {passive:true});
+});
 
 function updateTurnInfo(){
   turnInfo.textContent = gameOn ? `Tocca al Giocatore ${current+1}` : '—';
@@ -448,7 +438,7 @@ function movePlayer(idx, steps){
   let target = positions[idx] + steps;
   if(target > totalCells) target = totalCells;
   positions[idx] = target;
-  renderTokens();
+  renderTokens(); markCurrentCell(); renderStatus();
   if(target === totalCells){
     cardTitle.textContent = `🏁 Giocatore ${idx+1} è all’arrivo!`;
     cardText.textContent = 'Bonus cooperativo: ognuno dice un “passo oltre” imparato. Vittoria collettiva.';
@@ -459,12 +449,6 @@ function movePlayer(idx, steps){
     else if(cell.classList.contains('confine')) drawCategory('confine');
     else if(cell.classList.contains('oltre')) drawCategory('oltre');
     else { cardTitle.textContent='Casella neutra'; cardText.textContent='Condividi: che limite oggi ti ha protetto?'; }
-    // autoscroll verso la cella raggiunta (mobile QoL)
-    const wrap = document.querySelector('.board-wrap');
-    const rect = cell.getBoundingClientRect();
-    const wrapRect = wrap.getBoundingClientRect();
-    const offset = rect.left - wrapRect.left - wrapRect.width/2 + rect.width/2;
-    wrap.scrollBy({left: offset, behavior:'smooth'});
   }
 }
 
@@ -473,12 +457,13 @@ rollBtn.addEventListener('click', ()=>{
   const n = 1 + Math.floor(Math.random()*6);
   rollVisual(n);
   setTimeout(()=> movePlayer(current, n), 950);
-}, {passive:true});
+});
 
 nextBtn.addEventListener('click', ()=>{
   if(!gameOn) return;
-  current = (current + 1) % players; updateTurnInfo();
-}, {passive:true});
+  current = (current + 1) % players;
+  markCurrentCell(); renderTokens(); renderStatus(); updateTurnInfo();
+});
 
 drawBtn.addEventListener('click', ()=>{
   if(!gameOn) return;
@@ -490,7 +475,7 @@ drawBtn.addEventListener('click', ()=>{
     const pool = ['paura','confine','oltre'];
     drawCategory(pool[Math.floor(Math.random()*pool.length)]);
   }
-}, {passive:true});
+});
 
 function drawCategory(cat){
   let pool, badge, emoji;

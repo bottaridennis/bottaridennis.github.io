@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oltre il Segno — 60 Carte</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --col-paura:#ff6b6b;    /* rosso tenue */
+      --col-confine:#ffd166;  /* ambra */
+      --col-oltre:#06d6a0;    /* verde */
+      --panel:#0f0f14;
+      --panel-2:#15151c;
+      --stroke:#2a2a38;
+    }
+    body {
+      background: radial-gradient(1200px 600px at 10% -10%, #1c1c26, #0b0b10) fixed;
+      color: #e9e9ef;
+      font-family: 'Quicksand', sans-serif;
+      overflow-x: hidden;
+    }
+    h1 {
+      color: #e9e9ef;
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      text-shadow: 0 10px 30px rgba(0,0,0,.6);
+      font-size: clamp(2rem, 2.6vw, 3.2rem);
+      margin-bottom: 1rem;
+      letter-spacing:.3px;
+    }
+    .subtitle{
+      text-align:center;
+      color:#bdbdd3;
+      margin-bottom:2rem;
+    }
+
+    .legend .badge{font-size:.9rem}
+    .badge-paura{background:var(--col-paura)}
+    .badge-confine{background:var(--col-confine); color:#262626}
+    .badge-oltre{background:var(--col-oltre); color:#062a21}
+
+    .card-flip {
+      perspective: 1200px;
+      margin-bottom: 1.5rem;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      transition: transform 0.8s ease-in-out;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .card-front, .card-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      font-weight: 600;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00)),
+        radial-gradient(160% 80% at 50% -10%, rgba(255,255,255,.06), rgba(255,255,255,0));
+      border: 1px solid var(--stroke);
+      box-shadow: 0 10px 35px rgba(0,0,0,.35);
+      padding: 1rem;
+    }
+    .card-front {
+      color: #e9e9ef;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    .card-front .cat {
+      font-size: .95rem;
+      opacity:.85;
+      margin-top:.2rem
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      color: #f5f5fb;
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.35;
+      padding: 1.2rem;
+    }
+    .flipped { transform: rotateY(180deg); }
+
+    /* cornice colore per categoria */
+    .card-paura .card-front, .card-paura .card-back { box-shadow: 0 10px 35px rgba(255,107,107,.18); }
+    .card-confine .card-front, .card-confine .card-back { box-shadow: 0 10px 35px rgba(255,209,102,.18); }
+    .card-oltre .card-front, .card-oltre .card-back { box-shadow: 0 10px 35px rgba(6,214,160,.18); }
+
+    .big-emoji{font-size:2.1rem; line-height:1}
+    .num{opacity:.8; font-size:1rem}
+    .pill {
+      border-radius: 999px;
+      padding: .25rem .6rem;
+      font-weight:700;
+      letter-spacing:.3px;
+      margin-bottom:.5rem;
+    }
+    .pill.paura{background: rgba(255,107,107,.12); border:1px solid rgba(255,107,107,.35); color:#ffc7c7}
+    .pill.confine{background: rgba(255,209,102,.12); border:1px solid rgba(255,209,102,.35); color:#fff0c8}
+    .pill.oltre{background: rgba(6,214,160,.12); border:1px solid rgba(6,214,160,.35); color:#b9ffea}
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h1>Oltre il Segno — Carte del Limite</h1>
+    <p class="subtitle">Tocca una carta per leggere la sfida. <span class="badge badge-paura">Paura</span> <span class="badge badge-confine">Confine</span> <span class="badge badge-oltre">Oltre</span></p>
+
+    <div class="row g-3 legend mb-3">
+      <div class="col-12 d-flex gap-2 flex-wrap justify-content-center">
+        <span class="badge badge-paura">😨 Paura</span>
+        <span class="badge badge-confine">🚧 Confine</span>
+        <span class="badge badge-oltre">🌱 Oltre</span>
+      </div>
+    </div>
+
+    <div class="row" id="menuContainer"></div>
+  </div>
+
+  <script>
+    // --- DATI: 60 carte in ordine fisso (niente random) ---
+    const cartePaura = [
+      "Hai paura di sbagliare davanti agli altri. Rischi o ti tiri indietro?",
+      "Ti chiedono un’opinione sincera ma impopolare. La dici o taci?",
+      "Sei in gruppo ma ti senti invisibile. Ti fai notare o resti in silenzio?",
+      "Hai paura di deludere chi conta su di te. Fingi sicurezza o ammetti fragilità?",
+      "Tutti ridono di un errore. Ti unisci alle risate o difendi chi ha sbagliato?",
+      "Non ti senti all’altezza di un compito. Provi lo stesso o lo lasci a qualcuno?",
+      "Hai paura di mostrare emozioni. Ti chiudi o ti lasci vedere per come sei?",
+      "Ti accorgi che un amico sta meglio di te. Lo sostieni o ti chiudi nell’invidia?",
+      "Devi parlare di qualcosa che ti mette a disagio. Lo affronti o cambi argomento?",
+      "Ti senti giudicato per come ti vesti o ti esprimi. Ti adegui o resti te stesso?",
+      "Hai fallito in qualcosa di importante. Ne parli o lo nascondi?",
+      "Il gruppo prende una strada sbagliata. Li segui o ti opponi?",
+      "Hai paura di essere frainteso. Ti spieghi meglio o lasci correre?",
+      "Non vieni scelto. Ti arrendi o cerchi un altro modo per contribuire?",
+      "Devi chiedere aiuto ma temi di sembrare debole. Chiedi o taci?",
+      "Hai paura del giudizio online. Pubblicheresti lo stesso?",
+      "Ti confronti con qualcuno più bravo. Ti ispiri o ti scoraggi?",
+      "Hai promesso qualcosa che non riesci a mantenere. Confessi o nascondi?",
+      "Ti accorgi di sbagliare davanti a tutti. Ti fermi o prosegui?",
+      "Hai paura di crescere. Resti dove sei o affronti il cambiamento?"
+    ];
+
+    const carteConfine = [
+      "Un adulto impone una regola che non capisci. Obbedisci o chiedi spiegazioni?",
+      "Ti propongono di copiare per aiutare un amico. Accetti o rifiuti?",
+      "Qualcuno infrange una regola del gruppo. Lo segnali o lasci correre?",
+      "Devi scegliere tra due persone in conflitto. Prendi posizione o resti neutrale?",
+      "Ricevi un segreto pesante. Lo tieni o chiedi aiuto a un adulto?",
+      "Il gruppo vuole fare qualcosa di rischioso. Ti opponi o partecipi?",
+      "Ti dicono “non puoi farlo”. Cerchi un modo diverso o rinunci?",
+      "Hai troppi impegni. Rinunci a qualcosa o ti carichi tutto addosso?",
+      "Ti senti escluso da una decisione. Reclami il tuo spazio o accetti?",
+      "Ti accorgi che stai superando i tuoi limiti fisici. Ti fermi o forzi?",
+      "Vedi qualcuno oltrepassare il limite verso un altro. Intervieni o resti in disparte?",
+      "Devi scegliere tra la verità e la protezione di un amico. Cosa fai?",
+      "Il gruppo vota per una scelta che non condividi. Ti adegui o resti fedele alla tua idea?",
+      "Ti impongono una scadenza impossibile. Ti organizzi o protesti?",
+      "Ti trovi davanti a un divieto ingiusto. Lo rispetti o lo metti in discussione?",
+      "Un compagno supera un tuo confine personale. Lo affronti o lo lasci passare?",
+      "Hai un talento che altri vogliono usare a modo loro. Ti lasci guidare o rivendichi libertà?",
+      "Sei testimone di un’ingiustizia. Resti in silenzio o la denunci?",
+      "Devi scegliere tra rispetto e sincerità. Cosa pesa di più?",
+      "Ti viene chiesto di perdonare qualcuno. Sei pronto o non ancora?"
+    ];
+
+    const carteOltre = [
+      "Racconta un momento in cui hai affrontato una paura.",
+      "Descrivi una volta in cui ti sei sentito libero dopo aver detto “no”.",
+      "Parla di una persona che ti ha aiutato a superare un limite.",
+      "Ricorda un rischio che hai corso e che ti ha fatto crescere.",
+      "Cita una tua piccola vittoria quotidiana.",
+      "Racconta una volta in cui hai sbagliato ma hai imparato qualcosa.",
+      "Qual è un limite che oggi vedi come protezione e non più come prigione?",
+      "Descrivi un sogno che prima ti sembrava impossibile e ora non più.",
+      "Racconta una volta in cui ti sei sentito davvero te stesso.",
+      "Qual è una paura che vuoi ancora affrontare?",
+      "Ricorda una persona che ti ha mostrato un nuovo modo di vedere le cose.",
+      "Descrivi un momento in cui hai chiesto aiuto e hai scoperto che non era debolezza.",
+      "Racconta una volta in cui hai avuto il coraggio di dire la verità.",
+      "Qual è una regola che hai imparato a capire col tempo?",
+      "Parla di una volta in cui hai aiutato qualcuno a superare un limite.",
+      "Qual è un confine che rispetti perché ti fa stare bene?",
+      "Descrivi un momento in cui hai capito che il limite era dentro di te, non fuori.",
+      "Racconta una volta in cui hai scelto la calma invece della reazione.",
+      "Pensa a qualcosa che ti spaventava da piccolo e oggi ti fa sorridere.",
+      "Condividi un piccolo passo “oltre” che vuoi fare nei prossimi giorni."
+    ];
+
+    // mapping categoria -> emoji / classe
+    const catInfo = {
+      Paura: { emoji: "😨", class: "card-paura", badgeClass: "paura", labelClass:"badge-paura" },
+      Confine: { emoji: "🚧", class: "card-confine", badgeClass: "confine", labelClass:"badge-confine" },
+      Oltre: { emoji: "🌱", class: "card-oltre", badgeClass: "oltre", labelClass:"badge-oltre" }
+    };
+
+    // costruisco array completo non randomizzato (1–60)
+    const tutteLeCarte = [
+      ...cartePaura.map((t)=>({categoria:"Paura", testo:t})),
+      ...carteConfine.map((t)=>({categoria:"Confine", testo:t})),
+      ...carteOltre.map((t)=>({categoria:"Oltre", testo:t}))
+    ];
+
+    const container = document.getElementById('menuContainer');
+
+    tutteLeCarte.forEach((carta, idx) => {
+      const n = idx + 1;
+      const info = catInfo[carta.categoria];
+      const col = document.createElement('div');
+      col.className = 'col-md-4 col-sm-6';
+
+      const cardId = `card-${n}`;
+      col.innerHTML = `
+        <div class="card-flip ${info.class}" onclick="flipCard('${cardId}')">
+          <div class="card-inner" id="${cardId}">
+            <div class="card-front">
+              <div class="big-emoji">${info.emoji}</div>
+              <div class="mt-2">Carta ${n}</div>
+              <div class="num cat">
+                <span class="badge ${info.labelClass}">${carta.categoria}</span>
+              </div>
+            </div>
+            <div class="card-back">
+              <div class="pill ${info.badgeClass}">${info.emoji} ${carta.categoria}</div>
+              <div>${carta.testo}</div>
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(col);
+    });
+
+    function flipCard(id) {
+      const card = document.getElementById(id);
+      card.classList.toggle('flipped');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oltre il Segno — Gioco da Tavolo con Dado 3D</title>
+<style>
+  :root{
+    --bg:#0c0f14;
+    --panel:#151a22;
+    --ink:#e9edf3;
+    --muted:#a7b0c0;
+    --grid:#232a36;
+    --paura:#ff6b6b;    /* 😨 */
+    --confine:#ffd166;  /* 🚧 */
+    --oltre:#06d6a0;    /* 🌱 */
+    --accent:#7c5cff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:
+    radial-gradient(1200px 800px at 10% -10%, #111728 0%, #0a0d14 40%, #06070b 100%),
+    var(--bg);
+    color:var(--ink); font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+  header{padding:18px 16px 6px; text-align:center}
+  h1{margin:0; font-weight:800; letter-spacing:.2px}
+  .sub{color:var(--muted); margin-top:4px; font-size:.95rem}
+
+  .wrap{display:grid; grid-template-columns: 340px 1fr 360px; gap:14px; padding:14px}
+  @media (max-width:1100px){ .wrap{grid-template-columns:1fr} }
+
+  .panel{
+    background:linear-gradient(180deg, #171c26, #121720);
+    border:1px solid #222a38; border-radius:14px; padding:14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  }
+  .panel h2{margin:2px 0 10px; font-size:1.05rem; letter-spacing:.3px}
+
+  /* ===== BOARD ===== */
+  .board{
+    display:grid; grid-template-columns: repeat(8, 1fr);
+    gap:8px; padding:10px; position:relative; min-height:520px;
+  }
+  .cell{
+    aspect-ratio:1/1; border:1px solid var(--grid); border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden; background:#0f1420;
+  }
+  .cell::after{
+    content:attr(data-i);
+    position:absolute; top:6px; left:8px; font-size:.75rem; color:#7c879b; opacity:.85;
+  }
+  .cell .type{position:absolute; bottom:6px; right:6px; font-size:1rem}
+  .cell.paura{outline:2px solid rgba(255,107,107,.28); box-shadow: inset 0 0 0 2px rgba(255,107,107,.14)}
+  .cell.confine{outline:2px solid rgba(255,209,102,.28); box-shadow: inset 0 0 0 2px rgba(255,209,102,.14)}
+  .cell.oltre{outline:2px solid rgba(6,214,160,.28); box-shadow: inset 0 0 0 2px rgba(6,214,160,.14)}
+  .cell.start{background: #0d1522; border-style:dashed; border-color:#3b4a66}
+  .cell.finish{background: #0d1522; border-style:dashed; border-color:#7c5cff}
+
+  /* snake path helper (zig-zag numerazione) non visivo */
+  .tokens{display:flex; gap:6px; flex-wrap:wrap; justify-content:center; align-items:center; padding:6px}
+  .token{
+    width:26px; height:26px; border-radius:50%; display:grid; place-items:center;
+    color:#0b0b0b; font-weight:800; border:2px solid rgba(255,255,255,.18)
+  }
+  .t1{background:#ff6b6b}
+  .t2{background:#4dabf7}
+  .t3{background:#ffd166; color:#1b1b1b}
+  .t4{background:#06d6a0; color:#0b2b22}
+  .t5{background:#f06595}
+  .t6{background:#7c5cff}
+
+  .legend{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px}
+  .tag{padding:.25rem .6rem; border-radius:999px; border:1px solid #2a3346; color:#c9d2e3; font-size:.85rem}
+  .tag.p{border-color:rgba(255,107,107,.35); color:#ffc7c7}
+  .tag.c{border-color:rgba(255,209,102,.45); color:#fff0c8}
+  .tag.o{border-color:rgba(6,214,160,.45); color:#b9ffea}
+
+  /* ===== CONTROLS ===== */
+  .controls{display:flex; gap:8px; flex-wrap:wrap}
+  button{
+    background:#1b2231; color:#eaf0ff; border:1px solid #2b3650; padding:.6rem .9rem;
+    border-radius:10px; font-weight:700; cursor:pointer;
+    transition:.15s transform, .15s background, .15s border;
+  }
+  button:hover{transform:translateY(-1px); background:#20293b}
+  button.primary{background:linear-gradient(180deg, #2b3bff, #7c5cff);
+    border-color:#7c5cff}
+  button:disabled{opacity:.55; cursor:not-allowed}
+
+  .row-flex{display:flex; align-items:center; justify-content:space-between; gap:10px}
+  .field{display:flex; gap:6px; align-items:center}
+  select, input[type=number]{background:#111726; color:#e9eefc; border:1px solid #29324a; border-radius:10px; padding:.45rem .6rem}
+
+  /* ===== CARDS ===== */
+  .cardbox{display:grid; grid-template-columns:1fr; gap:10px}
+  .prompt{
+    border:1px solid #27314a; background:linear-gradient(180deg, #141a25, #101521);
+    border-radius:12px; padding:12px
+  }
+  .prompt h3{margin:0 0 6px; font-size:.95rem; letter-spacing:.3px; color:#d9e2ff}
+  .prompt p{margin:0; color:#dfe6ff}
+  .badge{display:inline-flex; align-items:center; gap:6px; padding:.25rem .55rem; border-radius:999px; font-weight:800; font-size:.78rem; border:1px solid}
+  .b-paura{color:#ffc7c7; border-color:rgba(255,107,107,.5); background:rgba(255,107,107,.12)}
+  .b-confine{color:#fff0c8; border-color:rgba(255,209,102,.55); background:rgba(255,209,102,.12)}
+  .b-oltre{color:#b9ffea; border-color:rgba(6,214,160,.55); background:rgba(6,214,160,.12)}
+
+  /* ===== DICE 3D OVERLAY ===== */
+  .dice-overlay{
+    position:fixed; inset:0; display:grid; place-items:center; pointer-events:none;
+    transition: opacity .25s ease; opacity:0;
+  }
+  .dice-overlay.visible{opacity:1}
+  .dice-wrap{
+    width:120px; height:120px; perspective:900px; filter: drop-shadow(0 30px 50px rgba(0,0,0,.5));
+    transform: scale(.9);
+    transition: transform .25s ease;
+  }
+  .dice-overlay.visible .dice-wrap{ transform: scale(1)}
+  .dice{
+    position:relative; width:100%; height:100%;
+    transform-style:preserve-3d;
+    transition: transform 1s cubic-bezier(.19,.9,.22,1.12);
+  }
+  .face{
+    position:absolute; inset:0; display:grid; place-items:center;
+    background:linear-gradient(145deg, #e8edf7, #cdd6ea);
+    border-radius:18px; box-shadow: inset 0 0 0 2px #aab7d6;
+  }
+  .pips{display:grid; gap:10px; grid-template-columns: repeat(3, 1fr); width:70%; height:70%}
+  .pip{width:16px; height:16px; background:#1e2433; border-radius:50%; justify-self:center; align-self:center}
+  .pip.light{background:#2a3350}
+  /* position faces */
+  .f1{ transform: translateZ(60px) }               /* front */
+  .f2{ transform: rotateY(180deg) translateZ(60px) } /* back  */
+  .f3{ transform: rotateY(90deg)  translateZ(60px) } /* right */
+  .f4{ transform: rotateY(-90deg) translateZ(60px) } /* left  */
+  .f5{ transform: rotateX(90deg)  translateZ(60px) } /* top   */
+  .f6{ transform: rotateX(-90deg) translateZ(60px) } /* bottom*/
+
+  .fadeNote{
+    position:fixed; bottom:14px; left:50%; transform:translateX(-50%);
+    color:#9fb0d6; font-size:.85rem; opacity:.85
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Oltre il Segno — Gioco del Limite</h1>
+  <div class="sub">Collaborativo, 2–6 giocatori • Caselle Paura 😨 — Confine 🚧 — Oltre 🌱 • Dado 3D che compare e scompare</div>
+</header>
+
+<div class="wrap">
+
+  <!-- COLONNA SINISTRA: controlli -->
+  <section class="panel">
+    <h2>Impostazioni</h2>
+    <div class="row-flex" style="margin-bottom:10px">
+      <div class="field">
+        <label for="players">Giocatori</label>
+        <select id="players">
+          <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+        </select>
+      </div>
+      <button id="startBtn" class="primary">Nuova Partita</button>
+    </div>
+
+    <div class="legend">
+      <span class="tag p">😨 Paura</span>
+      <span class="tag c">🚧 Confine</span>
+      <span class="tag o">🌱 Oltre</span>
+      <span class="tag">🏁 Arrivo</span>
+    </div>
+
+    <h2>Turno</h2>
+    <div class="row-flex" style="margin-bottom:8px">
+      <div id="turnInfo">—</div>
+      <div>
+        <button id="rollBtn">Rolla Dado</button>
+        <button id="nextBtn">Avanti Turno</button>
+      </div>
+    </div>
+    <div class="row-flex">
+      <button id="drawBtn">Pesca Carta</button>
+      <button id="toggleDice">Mostra/Nascondi Dado</button>
+    </div>
+  </section>
+
+  <!-- COLONNA CENTRALE: tabellone -->
+  <section class="panel">
+    <h2>Tabellone</h2>
+    <div id="board" class="board"></div>
+  </section>
+
+  <!-- COLONNA DESTRA: carta estratta -->
+  <section class="panel">
+    <h2>Carta</h2>
+    <div class="cardbox">
+      <div class="prompt">
+        <h3 id="cardTitle">Nessuna carta pescata</h3>
+        <p id="cardText" style="color:#bfc9df">Lancia il dado e muovi. Se la casella ha un simbolo, pesca una carta della categoria indicata.</p>
+      </div>
+      <div class="prompt" style="opacity:.9">
+        <h3>Regole Lampo</h3>
+        <p style="color:#c8d3ee">
+          1) A turno: rolla, muovi, risolvi. 2) Casella 😨/🚧/🌱 ⇒ pesca e discuti la carta. 
+          3) Se la discussione porta a una scelta, il gruppo decide con rispetto dei limiti personali. 
+          4) Vince chi raggiunge 🏁; facoltativo: si vince tutti se ogni giocatore condivide un “passo oltre” finale.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- DADO 3D OVERLAY -->
+<div class="dice-overlay" id="diceOverlay" aria-hidden="true">
+  <div class="dice-wrap">
+    <div class="dice" id="dice">
+      <!-- Face 1 -->
+      <div class="face f1">
+        <div class="pips">
+          <span></span><span></span><span></span>
+          <span></span><span class="pip"></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <!-- Face 2 -->
+      <div class="face f2">
+        <div class="pips">
+          <span class="pip"></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span class="pip"></span>
+        </div>
+      </div>
+      <!-- Face 3 -->
+      <div class="face f3">
+        <div class="pips">
+          <span class="pip"></span><span></span><span></span>
+          <span></span><span class="pip light"></span><span></span>
+          <span></span><span></span><span class="pip"></span>
+        </div>
+      </div>
+      <!-- Face 4 -->
+      <div class="face f4">
+        <div class="pips">
+          <span class="pip"></span><span></span><span class="pip"></span>
+          <span></span><span></span><span></span>
+          <span class="pip"></span><span></span><span class="pip"></span>
+        </div>
+      </div>
+      <!-- Face 5 -->
+      <div class="face f5">
+        <div class="pips">
+          <span class="pip"></span><span></span><span class="pip"></span>
+          <span></span><span class="pip"></span><span></span>
+          <span class="pip"></span><span></span><span class="pip"></span>
+        </div>
+      </div>
+      <!-- Face 6 -->
+      <div class="face f6">
+        <div class="pips">
+          <span class="pip"></span><span></span><span class="pip"></span>
+          <span class="pip"></span><span></span><span class="pip"></span>
+          <span class="pip"></span><span></span><span class="pip"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fadeNote">Suggerimento: clicca “Mostra/Nascondi Dado” per far comparire/scomparire il cubo 3D.</div>
+
+<script>
+/* ==================== DATI CARTE (60) ==================== */
+const cartePaura = [
+"Hai paura di sbagliare davanti agli altri. Rischi o ti tiri indietro?",
+"Ti chiedono un’opinione sincera ma impopolare. La dici o taci?",
+"Sei in gruppo ma ti senti invisibile. Ti fai notare o resti in silenzio?",
+"Hai paura di deludere chi conta su di te. Fingi sicurezza o ammetti fragilità?",
+"Tutti ridono di un errore. Ti unisci alle risate o difendi chi ha sbagliato?",
+"Non ti senti all’altezza di un compito. Provi lo stesso o lo lasci a qualcuno?",
+"Hai paura di mostrare emozioni. Ti chiudi o ti lasci vedere per come sei?",
+"Ti accorgi che un amico sta meglio di te. Lo sostieni o ti chiudi nell’invidia?",
+"Devi parlare di qualcosa che ti mette a disagio. Lo affronti o cambi argomento?",
+"Ti senti giudicato per come ti vesti o ti esprimi. Ti adegui o resti te stesso?",
+"Hai fallito in qualcosa di importante. Ne parli o lo nascondi?",
+"Il gruppo prende una strada sbagliata. Li segui o ti opponi?",
+"Hai paura di essere frainteso. Ti spieghi meglio o lasci correre?",
+"Non vieni scelto. Ti arrendi o cerchi un altro modo per contribuire?",
+"Devi chiedere aiuto ma temi di sembrare debole. Chiedi o taci?",
+"Hai paura del giudizio online. Pubblicheresti lo stesso?",
+"Ti confronti con qualcuno più bravo. Ti ispiri o ti scoraggi?",
+"Hai promesso qualcosa che non riesci a mantenere. Confessi o nascondi?",
+"Ti accorgi di sbagliare davanti a tutti. Ti fermi o prosegui?",
+"Hai paura di crescere. Resti dove sei o affronti il cambiamento?"
+];
+const carteConfine = [
+"Un adulto impone una regola che non capisci. Obbedisci o chiedi spiegazioni?",
+"Ti propongono di copiare per aiutare un amico. Accetti o rifiuti?",
+"Qualcuno infrange una regola del gruppo. Lo segnali o lasci correre?",
+"Devi scegliere tra due persone in conflitto. Prendi posizione o resti neutrale?",
+"Ricevi un segreto pesante. Lo tieni o chiedi aiuto a un adulto?",
+"Il gruppo vuole fare qualcosa di rischioso. Ti opponi o partecipi?",
+"Ti dicono “non puoi farlo”. Cerchi un modo diverso o rinunci?",
+"Hai troppi impegni. Rinunci a qualcosa o ti carichi tutto addosso?",
+"Ti senti escluso da una decisione. Reclami il tuo spazio o accetti?",
+"Ti accorgi che stai superando i tuoi limiti fisici. Ti fermi o forzi?",
+"Vedi qualcuno oltrepassare il limite verso un altro. Intervieni o resti in disparte?",
+"Devi scegliere tra la verità e la protezione di un amico. Cosa fai?",
+"Il gruppo vota per una scelta che non condividi. Ti adegui o resti fedele alla tua idea?",
+"Ti impongono una scadenza impossibile. Ti organizzi o protesti?",
+"Ti trovi davanti a un divieto ingiusto. Lo rispetti o lo metti in discussione?",
+"Un compagno supera un tuo confine personale. Lo affronti o lo lasci passare?",
+"Hai un talento che altri vogliono usare a modo loro. Ti lasci guidare o rivendichi libertà?",
+"Sei testimone di un’ingiustizia. Resti in silenzio o la denunci?",
+"Devi scegliere tra rispetto e sincerità. Cosa pesa di più?",
+"Ti viene chiesto di perdonare qualcuno. Sei pronto o non ancora?"
+];
+const carteOltre = [
+"Racconta un momento in cui hai affrontato una paura.",
+"Descrivi una volta in cui ti sei sentito libero dopo aver detto “no”.",
+"Parla di una persona che ti ha aiutato a superare un limite.",
+"Ricorda un rischio che hai corso e che ti ha fatto crescere.",
+"Cita una tua piccola vittoria quotidiana.",
+"Racconta una volta in cui hai sbagliato ma hai imparato qualcosa.",
+"Qual è un limite che oggi vedi come protezione e non più come prigione?",
+"Descrivi un sogno che prima ti sembrava impossibile e ora non più.",
+"Racconta una volta in cui ti sei sentito davvero te stesso.",
+"Qual è una paura che vuoi ancora affrontare?",
+"Ricorda una persona che ti ha mostrato un nuovo modo di vedere le cose.",
+"Descrivi un momento in cui hai chiesto aiuto e hai scoperto che non era debolezza.",
+"Racconta una volta in cui hai avuto il coraggio di dire la verità.",
+"Qual è una regola che hai imparato a capire col tempo?",
+"Parla di una volta in cui hai aiutato qualcuno a superare un limite.",
+"Qual è un confine che rispetti perché ti fa stare bene?",
+"Descrivi un momento in cui hai capito che il limite era dentro di te, non fuori.",
+"Racconta una volta in cui hai scelto la calma invece della reazione.",
+"Pensa a qualcosa che ti spaventava da piccolo e oggi ti fa sorridere.",
+"Condividi un piccolo passo “oltre” che vuoi fare nei prossimi giorni."
+];
+
+/* ==================== BOARD MODEL ==================== */
+/* 32 caselle (8x4) a zig-zag. Pattern categorie ripetuto e bilanciato. */
+const sizeCols = 8, sizeRows = 4;
+const totalCells = sizeCols * sizeRows; // 32
+const pattern = ["paura","confine","oltre","confine","paura","oltre","confine","oltre"];
+// start (1) e finish (32) hanno stile dedicato; le altre prendono pattern a zig-zag.
+
+const boardEl = document.getElementById('board');
+let cellRefs = []; // DOM refs in ordine di gioco (zig-zag)
+let players = 2;
+let positions = []; // posizioni 1..32 (0=fuori/partenza su cella 1)
+let current = 0;
+let gameOn = false;
+
+function buildBoard(){
+  boardEl.innerHTML = '';
+  cellRefs = [];
+  // costruiamo griglia visiva
+  for(let r=0;r<sizeRows;r++){
+    for(let c=0;c<sizeCols;c++){
+      const i = r*sizeCols + c + 1; // indice visivo non zigzag
+      const cell = document.createElement('div');
+      cell.className='cell';
+      cell.dataset.i = i;
+      boardEl.appendChild(cell);
+    }
+  }
+  // mappa zig-zag: riga pari → LTR, riga dispari → RTL
+  const order = [];
+  for(let r=0;r<sizeRows;r++){
+    const row = [];
+    for(let c=0;c<sizeCols;c++) row.push(r*sizeCols + c);
+    if(r%2===1) row.reverse();
+    order.push(...row);
+  }
+  // applica categorie e numeri in ordine di gioco
+  order.forEach((idx, n)=>{
+    const cell = boardEl.children[idx];
+    const num = n+1;
+    cell.dataset.i = num;
+    if(num===1){ cell.classList.add('start'); cell.innerHTML = '<div class="type">🏁</div>'; }
+    else if(num===totalCells){ cell.classList.add('finish'); cell.innerHTML = '<div class="type">🏁</div>'; }
+    else{
+      const t = pattern[(num-2) % pattern.length];
+      cell.classList.add(t);
+      const emoji = t==='paura'?'😨':t==='confine'?'🚧':'🌱';
+      const tag = document.createElement('div');
+      tag.className='type';
+      tag.textContent = emoji;
+      cell.appendChild(tag);
+    }
+    cellRefs.push(cell);
+  });
+}
+
+function renderTokens(){
+  // pulisci
+  cellRefs.forEach(c=>{
+    let box = c.querySelector('.tokens');
+    if(box) box.remove();
+  });
+  // render
+  positions.forEach((pos, idx)=>{
+    const cell = cellRefs[Math.max(0, Math.min(totalCells-1, pos-1))];
+    let box = cell.querySelector('.tokens');
+    if(!box){ box = document.createElement('div'); box.className='tokens'; cell.appendChild(box); }
+    const t = document.createElement('div');
+    t.className = 'token t'+(idx+1);
+    t.title = 'Giocatore '+(idx+1);
+    t.textContent = (idx+1);
+    box.appendChild(t);
+  });
+}
+
+/* ==================== DICE 3D ==================== */
+const diceOverlay = document.getElementById('diceOverlay');
+const dice = document.getElementById('dice');
+let diceVisible = false;
+
+function showDice(){
+  diceOverlay.classList.add('visible');
+  diceOverlay.setAttribute('aria-hidden','false');
+  diceVisible = true;
+}
+function hideDice(){
+  diceOverlay.classList.remove('visible');
+  diceOverlay.setAttribute('aria-hidden','true');
+  diceVisible = false;
+}
+document.getElementById('toggleDice').addEventListener('click', ()=>{
+  diceVisible ? hideDice() : showDice();
+});
+
+const faceRotations = {
+  1: {x:0,   y:0},      // front
+  2: {x:0,   y:180},    // back
+  3: {x:0,   y:-90},    // left shows 3? We defined f3=right → to show 3 on top we rotate accordingly
+  4: {x:0,   y:90},
+  5: {x:-90, y:0},
+  6: {x:90,  y:0}
+};
+// correggo la nota: con la nostra definizione, queste rotazioni portano la faccia desiderata frontale.
+
+function rollVisual(to){
+  // leggero random extra per naturalezza
+  const extraX = (Math.floor(Math.random()*4))*360;
+  const extraY = (Math.floor(Math.random()*4))*360;
+  const rot = faceRotations[to];
+  const rx = rot.x + extraX;
+  const ry = rot.y + extraY;
+  dice.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+  showDice();
+  // auto-hide dopo 1.6s
+  setTimeout(()=>{ hideDice(); }, 1600);
+}
+
+/* ==================== GAME STATE ==================== */
+const startBtn = document.getElementById('startBtn');
+const rollBtn  = document.getElementById('rollBtn');
+const nextBtn  = document.getElementById('nextBtn');
+const drawBtn  = document.getElementById('drawBtn');
+const turnInfo = document.getElementById('turnInfo');
+const playersSel = document.getElementById('players');
+const cardTitle = document.getElementById('cardTitle');
+const cardText  = document.getElementById('cardText');
+
+startBtn.addEventListener('click', ()=>{
+  players = parseInt(playersSel.value,10);
+  positions = new Array(players).fill(1);
+  current = 0;
+  gameOn = true;
+  buildBoard();
+  renderTokens();
+  updateTurnInfo();
+  cardTitle.textContent = 'Partenza';
+  cardText.textContent  = 'Rolla il dado con “Rolla Dado” e muovi la tua pedina dalla casella 1.';
+});
+
+function updateTurnInfo(){
+  turnInfo.textContent = gameOn ? `Tocca al Giocatore ${current+1}` : '—';
+}
+
+function movePlayer(idx, steps){
+  let target = positions[idx] + steps;
+  if(target > totalCells) target = totalCells; // arrivo
+  positions[idx] = target;
+  renderTokens();
+  // check finish
+  if(target === totalCells){
+    cardTitle.textContent = `🏁 Giocatore ${idx+1} ha raggiunto l’arrivo!`;
+    cardText.textContent = 'Opzionale: ognuno condivide un “passo oltre” imparato in partita. Vittoria collettiva sbloccata.';
+    gameOn = false;
+    updateTurnInfo();
+  }else{
+    // autopesca se la cella ha tipo
+    const cell = cellRefs[target-1];
+    if(cell.classList.contains('paura')) drawCategory('paura');
+    else if(cell.classList.contains('confine')) drawCategory('confine');
+    else if(cell.classList.contains('oltre')) drawCategory('oltre');
+    else {
+      cardTitle.textContent = 'Casella neutra';
+      cardText.textContent = 'Respira. Condividi una micro-riflessione: qual è un limite che oggi ti ha protetto?';
+    }
+  }
+}
+
+rollBtn.addEventListener('click', ()=>{
+  if(!gameOn) return;
+  const n = 1 + Math.floor(Math.random()*6);
+  rollVisual(n);
+  // muovo dopo l’animazione per gusto scenico
+  setTimeout(()=> movePlayer(current, n), 950);
+});
+
+nextBtn.addEventListener('click', ()=>{
+  if(!gameOn) return;
+  current = (current + 1) % players;
+  updateTurnInfo();
+});
+
+drawBtn.addEventListener('click', ()=>{
+  if(!gameOn) return;
+  // pesca manuale: categoria dalla cella corrente o menù prompt
+  const cell = cellRefs[positions[current]-1];
+  if(cell.classList.contains('paura')) drawCategory('paura');
+  else if(cell.classList.contains('confine')) drawCategory('confine');
+  else if(cell.classList.contains('oltre')) drawCategory('oltre');
+  else {
+    // neutra → chiedi categoria random bilanciata
+    const pool = ['paura','confine','oltre'];
+    drawCategory(pool[Math.floor(Math.random()*pool.length)]);
+  }
+});
+
+function drawCategory(cat){
+  let pool, badge, emoji;
+  if(cat==='paura'){ pool=cartePaura; badge='b-paura'; emoji='😨'; }
+  else if(cat==='confine'){ pool=carteConfine; badge='b-confine'; emoji='🚧'; }
+  else { pool=carteOltre; badge='b-oltre'; emoji='🌱'; }
+  // pesca “semicausale” ma ripetibile: indice basato su turno+posizione
+  const seed = (current+1) * positions[current] * (Date.now()%7+1);
+  const idx  = seed % pool.length;
+  const text = pool[idx];
+  cardTitle.innerHTML = `<span class="badge ${badge}">${emoji} ${cat.toUpperCase()}</span>`;
+  cardText.textContent = text;
+}
+
+/* init */
+buildBoard();
+</script>
+</body>
+</html>

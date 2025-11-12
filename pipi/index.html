@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Noi • 5 mesi</title>
+    <meta name="description" content="Una piccola sorpresa romantica per festeggiare i nostri 5 mesi insieme." />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #ff4d6d;
+            --muted: #b7b9c9;
+            --bg1: #0f1118;
+            --bg2: #171a26;
+            --card: #161a27;
+        }
+
+        body {
+            font-family: Poppins, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+            background: linear-gradient(180deg, var(--bg1), var(--bg2));
+            color: #fff
+        }
+
+        .hero {
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: var(--accent);
+            opacity: .25;
+            font-size: clamp(18px, 2vw+10px, 38px);
+            animation: floatUp linear infinite
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-120vh) rotate(20deg);
+                opacity: 0
+            }
+        }
+
+        .unit {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 14px;
+            padding: 1rem 1.2rem
+        }
+
+        .num {
+            font-weight: 800;
+            font-size: 1.7rem
+        }
+
+        .label {
+            font-size: .85rem;
+            color: var(--muted)
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .card-dd {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 16px
+        }
+
+        .secret {
+            background: linear-gradient(180deg, #1c2236, #182038);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 16px
+        }
+
+        .secret input {
+            background: #0f1530;
+            border: 1px solid #2a3253;
+            color: #fff
+        }
+
+        .gallery img {
+            border-radius: 16px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HERO -->
+    <header class="hero">
+        <div id="hearts" aria-hidden="true"></div>
+        <div class="container py-5">
+            <span class="badge bg-danger-subtle text-light mb-2">Noi due</span>
+            <h1 class="display-4 fw-bold">5 mesi di <span style="color:var(--accent)"><i class='bx bxs-heart'></i>
+                    amore</span></h1>
+            <p class="lead muted">Dal <strong id="startDateText">11 giugno 2025</strong> ad oggi — ogni giorno con te è
+                il mio preferito.</p>
+
+            <div id="counter" class="d-flex justify-content-center gap-3 mt-3"></div>
+
+            <div class="mt-3">
+                <a class="btn btn-lg"
+                    style="background:linear-gradient(180deg,var(--accent),#ff1f52);color:#fff;border:0"
+                    href="#momenti">
+                    <i class='bx bxs-gift me-2'></i>Apri il regalo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- MOMENTI -->
+        <section id="momenti" class="py-5">
+            <div class="container">
+                <!-- SECRET -->
+                <div class="secret p-4 mt-4" data-aos="fade-up">
+                    <label for="key" class="form-label">Piccolo segreto (scrivi come mi chiami quando siamo solo noi
+                        🫢)</label>
+                    <input id="key" type="text" class="form-control form-control-lg"
+                        placeholder="es. tesorino / amore /…" autocomplete="off">
+                    <div id="reveal" class="mt-3 d-none">
+                        <p class="mb-0"><strong>Ehi.</strong> Sei la mia persona preferita. Grazie per questi 5 mesi,
+                            per la pazienza, le carezze, e tutte le cose che non si fotografano ma restano.
+                            <br>Ti amo, oggi piú di ieri. <span style="color:var(--accent)">❤</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="py-5">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                    <div>
+                        <h2 class="h1 mb-1" data-aos="fade-up">I nostri scatti</h2>
+                        <p class="muted mb-0" data-aos="fade-up" data-aos-delay="50">Le nostre foto preferite 💕</p>
+                    </div>
+                </div>
+                <div id="galleryGrid" class="row g-2"></div>
+            </div>
+        </section>
+
+        <!-- SONGS -->
+        <section id="songs" class="py-5">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                    <div>
+                        <h2 class="h1 mb-1" data-aos="fade-up">Le nostre canzoni</h2>
+                        <p class="muted mb-0" data-aos="fade-up" data-aos-delay="50">Ho messo qui i nostri pezzi. Puoi
+                            cambiare i link Spotify nel codice, senza toccare il layout.</p>
+                    </div>
+                </div>
+                <div id="songsList" class="row g-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-5 text-center muted">
+        <div class="container">Fatto con <i class='bx bxs-heart' aria-label="amore"></i> per noi due.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        const START_DATE = new Date('2025-06-11T00:00:00');
+
+        // Hearts floating
+        const hearts = document.getElementById('hearts');
+        for (let i = 0; i < 25; i++) {
+            const h = document.createElement('i');
+            h.className = 'bx bxs-heart floating-heart';
+            h.style.left = Math.random() * 100 + '%';
+            h.style.bottom = (-10 - Math.random() * 30) + 'vh';
+            h.style.animationDuration = (8 + Math.random() * 10) + 's';
+            h.style.animationDelay = (Math.random() * 10) + 's';
+            hearts.appendChild(h);
+        }
+
+        // Counter mesi + giorni
+        const startDateText = document.getElementById('startDateText');
+        startDateText.textContent = START_DATE.toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' });
+        const counter = document.getElementById('counter');
+
+        function updateCounter() {
+            const now = new Date();
+            let y1 = START_DATE.getFullYear(), m1 = START_DATE.getMonth(), d1 = START_DATE.getDate();
+            let y2 = now.getFullYear(), m2 = now.getMonth(), d2 = now.getDate();
+            let months = (y2 - y1) * 12 + (m2 - m1);
+            let dayAdj = d2 - d1;
+            if (dayAdj < 0) { months--; const prevMonth = new Date(y2, m2, 0); dayAdj = d2 + prevMonth.getDate() - d1; }
+            counter.innerHTML = `<div class='unit text-center'><div class='num'>${months}</div><div class='label'>mesi</div></div><div class='unit text-center'><div class='num'>${dayAdj}</div><div class='label'>giorni</div></div>`;
+        }
+        updateCounter();
+        setInterval(updateCounter, 60 * 60 * 1000);
+
+        // Galleria immagini locali
+        const gallery = document.getElementById('galleryGrid');
+        const totalImages = 9; // img/0.jpg -> img/11.jpg
+        if (gallery) {
+            let html = '';
+            for (let i = 0; i < totalImages; i++) {
+                html += `<div class='col-6 col-md-4' data-aos='fade-up' data-aos-delay='${i * 30}'><img loading='lazy' class='w-100' src='img/${i}.jpg' alt='Foto ${i}'></div>`;
+            }
+            gallery.innerHTML = html;
+        }
+
+        // Sezione canzoni Spotify
+        const SPOTIFY_EMBEDS = [
+            { title: 'La nostra canzone', url: 'https://open.spotify.com/embed/track/6C6EyA832m59DutYTzZwFl?utm_source=generator', height: 152 },
+            { title: 'Il primo "Ti amo"', url: 'https://open.spotify.com/embed/track/0ZGZyxk4aVtsHvUyufJcAx?utm_source=generator', height: 152 },
+            { title: "Un ricordo d'estate", url: 'https://open.spotify.com/embed/track/0yr1vH6vD09OBe7xuahMec?utm_source=generator', height: 152 }
+        ];
+        const songsList = document.getElementById('songsList');
+        if (songsList) {
+            songsList.innerHTML = SPOTIFY_EMBEDS.map((s, i) => `<div class='col-12 col-md-6 col-lg-4' data-aos='fade-up' data-aos-delay='${i * 50}'><div class='card card-dd h-100 p-3'><h3 class='h6 mb-2'>${s.title}</h3><iframe style='border-radius:12px' src='${s.url}' width='100%' height='${s.height}' frameborder='0' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div></div>`).join('');
+        }
+
+        // --- Nomi segreti (non cambia il resto del sito) ---
+        const SECRET_KEYS = ['pipi', 'amorcito']; // modifica/aggiungi i vostri nomignoli, in minuscolo
+        const keyEl = document.getElementById('key');
+        const revealEl = document.getElementById('reveal');
+        if (keyEl && revealEl) {
+            keyEl.addEventListener('input', () => {
+                const v = keyEl.value.trim().toLowerCase();
+                revealEl.classList.toggle('d-none', !SECRET_KEYS.includes(v));
+            });
+        }
+
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-quart' });
+    </script>
+</body>
+
+</html>

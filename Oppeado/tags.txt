@@ -1,0 +1,13 @@
+Tag disponibili (per il campo "tag")
+
+"limit" → badge azzurro, icona 🧠 (bx bx-brain) – incontri sul tema del limite
+
+"special" → badge rosa, icona 🎬 (bx bx-film) – Movie & Games
+
+"gita" → badge rosa, icona 🚌 (bx bx-bus) – gite / uscite
+
+"evento" → badge rosa, icona ⭐ (bx bx-star) – evento speciale / veglia / serata unica
+
+"messa" → badge azzurro, icona ⛪ (bx bxs-church) – messe dei giovani
+
+"coro" → badge azzurro, icona 🎵 (bx bx-music) – prove coro / serate musicali

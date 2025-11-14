@@ -92,49 +92,6 @@
       text-align: left;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        text-align: center;
-        padding-top: 6.5rem
-      }
-
-      .hero .col-lg-7 {
-        order: 2
-      }
-
-      .hero .col-lg-5 {
-        order: 1
-      }
-
-      .event-card {
-        margin-bottom: 2rem
-      }
-    }
-
-    .brand-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .35rem .85rem;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, .4);
-      font-size: .82rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .chip {
-      padding: .35rem .9rem;
-      background: rgba(0, 0, 0, .55);
-      border-radius: 50px;
-      color: #f5f5ff;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: .9rem;
-      white-space: nowrap;
-    }
-
     .event-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -142,20 +99,6 @@
       padding: 1.5rem 1.6rem;
       color: var(--text-soft);
       box-shadow: 0 18px 40px rgba(6, 10, 40, .18);
-    }
-
-    .event-card h3 {
-      color: var(--text-main)
-    }
-
-    .badge-soft {
-      background: rgba(0, 191, 196, .12);
-      padding: .35rem .75rem;
-      border-radius: 50px;
-      font-size: .8rem;
-      color: var(--brand);
-      font-weight: 500;
-      white-space: nowrap
     }
 
     .badge-limit {
@@ -176,57 +119,13 @@
       font-weight: 600
     }
 
-    /* SECTION SPACING */
-    section {
-      padding: 3rem 0;
-      min-height: 100vh;
+    #heroCard {
+      width: 100%;
       display: flex;
+      flex-direction: column;
+      gap: 2vh;
       align-items: center;
-    }
-
-    @media(max-width:768px) {
-      section {
-        padding: 2.2rem 0
-      }
-    }
-
-    /* BADGE FIX: evita il ritorno a capo */
-    .event-card .d-flex {
-      flex-wrap: nowrap !important;
-    }
-
-    .event-card .badge-limit,
-    .event-card .badge-special {
-      white-space: nowrap;
-    }
-
-    /* CARDS RESPONSIVE */
-    @media(max-width:768px) {
-      .event-card {
-        padding: 1.3rem 1.4rem;
-        border-radius: 16px;
-        text-align: left;
-      }
-
-      .event-card h3 {
-        font-size: 1.15rem;
-        margin-bottom: .4rem;
-      }
-
-      .event-card .fs-5 {
-        font-size: 1.05rem !important;
-      }
-
-      .badge-soft {
-        font-size: .75rem;
-        padding: .3rem .6rem;
-      }
-
-      .event-card .d-flex {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .35rem;
-      }
+      text-align: center;
     }
 
     .info-card {
@@ -238,21 +137,11 @@
       height: 100%;
     }
 
-    .section-heading h2 {
-      color: var(--text-main)
-    }
-
-    .section-heading p {
-      color: var(--text-soft)
-    }
-
-    .row.g-4>[class*='col-'] {
-      display: flex
-    }
-
-    .event-card,
-    .info-card {
-      flex: 1
+    section {
+      padding: 3rem 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
     }
   </style>
 </head>
@@ -263,64 +152,40 @@
   <nav class="navbar navbar-expand-lg fixed-top nav-blur navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
-        <div class="logo-circle d-flex align-items-center justify-content-center"><img id="logoImg" class="logo"
-            src="logo.PNG"></div>
+        <div class="logo-circle d-flex align-items-center justify-content-center"><img class="logo" src="logo.PNG">
+        </div>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-        aria-label="Apri menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link d-flex align-items-center gap-1" href="#prossimi"><i
-                class='bx bx-bolt-circle'></i> Prossimi</a></li>
-          <li class="nav-item"><a class="nav-link d-flex align-items-center gap-1" href="#tutti"><i
-                class='bx bx-calendar'></i> Calendario</a></li>
+          <li class="nav-item"><a class="nav-link" href="#prossimi">Prossimi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tutti">Calendario</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO CON EVENTO DINAMICO -->
   <header id="top" class="hero">
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-7" data-aos="fade-right">
           <span class="brand-badge mb-3"><i class='bx bxs-heart'></i> Comunità giovani</span>
           <h1 class="display-5 fw-bold mb-3">Incontri adolescenti di Oppeano</h1>
-          <p class="lead mb-3">Il tema dell’anno è <strong>il Limite</strong>. Ogni venerdì un passo per capire chi
-            siamo quando sembra che non bastiamo.</p>
-          <p class="mb-4 text-body-secondary">Spazio per domande vere, amicizie nuove, riflessioni serene e un modo
-            diverso di vivere l'oratorio. Dopo le 22 è possibile fermarsi per parlare e bere il tè insieme.</p>
+          <p class="lead mb-3">Il tema dell’anno è <strong>il Limite</strong>.</p>
 
-          <div class="d-flex flex-wrap gap-2 mb-4">
-            <span class="chip"><i class='bx bx-time-five'></i> 21:00 – 22:00</span>
-            <span class="chip"><i class='bx bx-map'></i> Parrocchia di Oppeano</span>
-            <span class="chip"><i class='bx bx-movie-play'></i> Film · giochi · dialoghi · riflessioni</span>
-          </div>
+          <!-- HERO DINAMICO QUI -->
+          <div id="heroDynamic"></div>
 
-          <a class="btn btn-info btn-lg" href="#prossimi">Vedi i prossimi tre venerdì</a>
+          <a class="btn btn-info btn-lg mt-4" href="#prossimi">Vedi i prossimi venerdì</a>
         </div>
 
         <div class="col-lg-5" data-aos="fade-left">
-          <div class="event-card">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <div>
-                <div class="event-date fs-3 fw-semibold">Venerdì 14 novembre</div>
-                <div class="small text-body-secondary">2025 · Oggi</div>
-              </div>
-              <span class="badge-special"><i class='bx bx-film'></i> Serata speciale</span>
-            </div>
-
-            <h3 class="h4 mb-2">Film & Giochi</h3>
-            <p class="event-meta mb-3">Parrocchia di Oppeano · 21:00 – 22:00</p>
-            <ul class="list-unstyled small mb-3">
-              <li><i class='bx bx-check-circle text-info me-1'></i> Proiezione di un film a tema</li>
-              <li><i class='bx bx-check-circle text-info me-1'></i> Giochi in gruppo</li>
-              <li><i class='bx bx-check-circle text-info me-1'></i> Spazio per un breve confronto</li>
-            </ul>
-            <p class="small text-body-secondary mb-0">Per chi rimane dopo l'incontro, si beve il tè e si fa salotto
-              insieme.</p>
+          <div class="event-card" id="heroCard">
+            <!-- Questo contenuto sarà sostituito -->
           </div>
         </div>
       </div>
@@ -329,100 +194,29 @@
 
   <main>
 
-    <!-- PROSSIMI TRE VENERDÌ -->
+    <!-- PROSSIMI TRE EVENTI -->
     <section id="prossimi">
       <div class="container">
-        <div class="section-heading d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
-          <div>
-            <p class="text-uppercase text-body-secondary small mb-1">I prossimi venerdì</p>
-            <h2 class="h1 mb-0">Agenda rapida</h2>
-          </div>
+        <div class="section-heading mb-4">
+          <p class="text-uppercase text-body-secondary small mb-1">I prossimi venerdì</p>
+          <h2 class="h1 mb-0">Agenda rapida</h2>
         </div>
 
-        <div class="row g-4">
-          <!-- OGGI: 14 NOVEMBRE -->
-          <div class="col-md-4">
-            <article class="event-card h-100" data-aos="fade-up">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <div>
-                  <div class="fs-5 fw-semibold">Venerdì 14 novembre 2025</div>
-                </div>
-                <span class="badge-special"><i class='bx bx-film'></i> Movie & Games</span>
-              </div>
-              <h3 class="h5 mb-1">Film & Giochi</h3>
-              <p class="event-meta mb-2">Parrocchia di Oppeano · 21:00 – 22:00</p>
-              <p class="small mb-0">Serata leggera: si sceglie se guardare un film oppure giocare insieme.</p>
-            </article>
-          </div>
-
-          <!-- PROSSIMO: 21 NOVEMBRE -->
-          <div class="col-md-4">
-            <article class="event-card h-100" data-aos="fade-up" data-aos-delay="80">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <div>
-                  <div class="fs-5 fw-semibold">Venerdì 21 novembre 2025</div>
-                </div>
-                <span class="badge-limit"><i class='bx bx-brain'></i> Tema limite</span>
-              </div>
-              <h3 class="h5 mb-1">Limite · Parte 1</h3>
-              <p class="event-meta mb-2">Parrocchia di Oppeano · 21:00 – 22:00</p>
-              <p class="small mb-0">Laboratorio e confronto: quando sentiamo di non essere all'altezza e cosa ce lo fa
-                credere.</p>
-            </article>
-          </div>
-
-          <!-- TRA DUE: 28 NOVEMBRE -->
-          <div class="col-md-4">
-            <article class="event-card h-100" data-aos="fade-up">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <div>
-                  <div class="fs-5 fw-semibold">Venerdì 28 novembre 2025</div>
-                </div>
-                <span class="badge-special"><i class='bx bx-film'></i> Movie & Games</span>
-              </div>
-              <h3 class="h5 mb-1">Film & Giochi</h3>
-              <p class="event-meta mb-2">Parrocchia di Oppeano · 21:00 – 22:00</p>
-              <p class="small mb-0">Serata leggera: si sceglie se guardare un film oppure giocare insieme.</p>
-            </article>
-          </div>
+        <div class="row g-4" id="nextEvents"></div>
+      </div>
     </section>
 
-    <!-- CALENDARIO SINTETICO -->
-    <!-- <section id="tutti">
+    <!-- STORICO -->
+    <section id="tutti">
       <div class="container">
         <div class="section-heading mb-4">
-          <p class="text-uppercase text-body-secondary small mb-1">Calendario</p>
-          <h2 class="h1 mb-1">Panoramica incontri</h2>
-          <p class="text-body-secondary mb-0">Le date oltre novembre verranno confermate con animatori e catechisti e
-            aggiunte qui.</p>
+          <p class="text-uppercase text-body-secondary small mb-1">Storico incontri</p>
+          <h2 class="h1 mb-1">Archivio completo</h2>
         </div>
 
-        <div class="row g-3">
-          <div class="col-md-4">
-            <div class="info-card h-100">
-              <h3 class="h6 mb-1">14 novembre 2025</h3>
-              <p class="small mb-1 text-body-secondary">Film & Giochi</p>
-              <p class="small mb-0">Serata di inizio percorso: film, giochi e primo sguardo al tema del limite.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="info-card h-100">
-              <h3 class="h6 mb-1">21 novembre 2025</h3>
-              <p class="small mb-1 text-body-secondary">Limite · Parte 1</p>
-              <p class="small mb-0">Incontro a gruppi, attività guidate e domande scritte anonime.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="info-card h-100">
-              <h3 class="h6 mb-1">28 novembre 2025</h3>
-              <p class="small mb-1 text-body-secondary">Limite · Parte 2</p>
-              <p class="small mb-0">Sintesi del percorso e piccolo gesto finale da portare a casa.</p>
-            </div>
-          </div>
-        </div>
-
+        <div class="row g-3" id="allEvents"></div>
       </div>
-    </section> -->
+    </section>
 
   </main>
 
@@ -432,18 +226,105 @@
     </div>
   </footer>
 
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
 
-      const yearEl = document.getElementById('year');
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
-    });
+  <!-- SCRIPT DINAMICO -->
+  <script>
+    async function loadEvents() {
+      const res = await fetch("events.json");
+      const events = await res.json();
+
+      // Ordina cronologicamente
+      events.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      // Ultimo ⇒ HERO
+      const last = events[events.length - 1];
+
+      // Ultimi 3 ⇒ prossimi
+      const latestThree = events.slice(-3);
+
+      // Resto ⇒ storico
+      const others = events.slice(0, -3);
+
+      const heroDynamic = document.getElementById("heroDynamic");
+      const heroCard = document.getElementById("heroCard");
+      const nextBox = document.getElementById("nextEvents");
+      const allBox = document.getElementById("allEvents");
+
+      const format = d =>
+        new Date(d).toLocaleDateString("it-IT", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        });
+
+      const badge = t =>
+        t === "limit"
+          ? `<span class="badge-limit"><i class='bx bx-brain'></i> Tema limite</span>`
+          : `<span class="badge-special"><i class='bx bx-film'></i> Movie & Games</span>`;
+
+      // HERO - testuale
+      heroDynamic.innerHTML = `
+    <p class="mb-1"><strong>${format(last.date)}</strong></p>
+    <p class="text-body-secondary mb-2">${last.titolo}</p>
+    <p class="small">${last.testo}</p>
+  `;
+
+      // HERO - CARD a destra
+      heroCard.innerHTML = `
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <div>
+        <div class="event-date fs-4 fw-semibold">${format(last.date)}</div>
+      </div>
+    </div>
+      ${badge(last.tag)}
+
+    <h3 class="h4 mb-2">${last.titolo}</h3>
+    <p class="event-meta mb-3">${last.luogo} · 21:00 – 22:00</p>
+    <p class="small text-body-secondary mb-0">${last.testo}</p>
+  `;
+
+      // PROSSIMI (ultimi 3)
+      nextBox.innerHTML = "";
+      latestThree.forEach(e => {
+        nextBox.innerHTML += `
+      <div class="col-md-4">
+        <article class="event-card h-100">
+          <div class="d-flex justify-content-between mb-2">
+            <div class="fw-semibold">${format(e.date)}</div>
+            ${badge(e.tag)}
+          </div>
+          <h3 class="h5">${e.titolo}</h3>
+          <p class="small mb-1">${e.luogo} · 21:00 – 22:00</p>
+          <p class="small">${e.testo}</p>
+        </article>
+      </div>
+    `;
+      });
+
+      // STORICO
+      allBox.innerHTML = "";
+      others.forEach(e => {
+        allBox.innerHTML += `
+      <div class="col-md-4 col-lg-3">
+        <div class="info-card h-100">
+          <h3 class="h6 mb-1">${format(e.date)}</h3>
+          <p class="small mb-1 text-body-secondary">${e.titolo}</p>
+          <p class="small">${e.testo}</p>
+        </div>
+      </div>
+    `;
+      });
+
+      AOS.init({ once: true, duration: 700 });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadEvents);
   </script>
+
 </body>
 
 </html>

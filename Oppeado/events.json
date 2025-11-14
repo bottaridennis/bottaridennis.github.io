@@ -1,0 +1,58 @@
+[
+  {
+    "date": "2025-10-10",
+    "titolo": "Icebreaking",
+    "tag": "special",
+    "tagLabel": "Icebreaking",
+    "luogo": "Parrocchia di Oppeano",
+    "testo": "Prima serata di inizio adolescenti per conoscersi e iniziare l'anno Ado insieme."
+  },
+  {
+    "date": "2025-10-17",
+    "titolo": "Primo incontro",
+    "tag": "limit",
+    "tagLabel": "Tema limite",
+    "luogo": "Parrocchia di Oppeano",
+    "testo": "Prima serata, con spunti sull'argomento di quest'anno"
+  },
+  {
+    "date": "2025-10-24",
+    "titolo": "Silenzio Bruno",
+    "tag": "limit",
+    "tagLabel": "Tema limite",
+    "luogo": "Parrocchia di Oppeano",
+    "testo": "Serata riflessiva sul tema del limite"
+  },
+  {
+    "date": "2025-11-07",
+    "titolo": "Limit Game",
+    "tag": "limit",
+    "tagLabel": "Tema limite",
+    "luogo": "Parrocchia di Oppeano",
+    "testo": "Serata gioco di carte sul limite."
+  },
+  {
+    "date": "2025-11-14",
+    "titolo": "Film & Giochi",
+    "tag": "special",
+    "tagLabel": "Movie & Games",
+    "luogo": "Parrocchia di Oppeano",
+    "testo": "Serata leggera: si sceglie se guardare un film oppure giocare insieme."
+  },
+  {
+    "date": "2025-11-21",
+    "titolo": "Limite · Parte 1",
+    "tag": "limit",
+    "tagLabel": "Tema limite",
+    "luogo": "Parrocchia di Oppeano",
+    "testo": "Laboratorio e confronto: quando sentiamo di non essere all'altezza e cosa ce lo fa credere."
+  },
+  {
+    "date": "2025-11-28",
+    "titolo": "Film & Giochi",
+    "tag": "special",
+    "tagLabel": "Movie & Games",
+    "luogo": "Parrocchia di Oppeano",
+    "testo": "Serata leggera: si sceglie se guardare un film oppure giocare insieme."
+  }
+]

@@ -40,7 +40,7 @@ window.SPELLS = [
     range: "9 metri",
     components: "V, S, M (una sottile striscia di stoffa bianca)",
     duration: "8 ore",
-    img: 'Images/spells/aid.jpg',
+    img: 'Images/spells/Aid.jpg',
     description:
       "Rafforzi la vitalità delle creature con energia protettiva. Scegli fino a tre creature entro gittata: per la durata dell’incantesimo, i loro punti ferita massimi e attuali aumentano di 5.\n\nQuando l’incantesimo termina, i punti ferita massimi tornano al valore normale e gli eventuali punti ferita in eccesso vengono persi."
   },

@@ -70,31 +70,350 @@ function initSpellsPage() {
   const schoolFilter = document.getElementById("schoolFilter");
   const levelFilter = document.getElementById("levelFilter");
   const counter = document.getElementById("counter");
+  const viewSelect = document.getElementById("spellView");
+  const mineCountEl = document.getElementById("mineCount");
+  const btnExportMySpells = document.getElementById("btnExportMySpells");
+  const fileImportMySpells = document.getElementById("fileImportMySpells");
+  const filterConcentration = document.getElementById("filterConcentration");
+  const filterRitual = document.getElementById("filterRitual");
+  const filterNoCantrip = document.getElementById("filterNoCantrip");
+  const levelSummaryEl = document.getElementById("levelSummary");
+  const slotsTrackerEl = document.getElementById("slotsTracker");
+  const slotsRowEl = document.getElementById("slotsRow");
 
   const modalEl = document.getElementById("spellModal");
   const modal = modalEl ? new bootstrap.Modal(modalEl) : null;
 
-  const state = { q: "", school: "", level: "" };
+  const state = {
+    q: "",
+    school: "",
+    level: "",
+    onlyConcentration: false,
+    onlyRitual: false,
+    noCantrip: false,
+  };
 
-  const apply = () => {
+  const MY_SPELLS_KEY = "dnd_my_spells_v1";
+
+  const slugId = (str) =>
+    String(str ?? "")
+      .toLowerCase()
+      .trim()
+      .replaceAll("à", "a")
+      .replaceAll("è", "e")
+      .replaceAll("ì", "i")
+      .replaceAll("ò", "o")
+      .replaceAll("ù", "u")
+      .replaceAll(/[^a-z0-9]+/g, "-")
+      .replaceAll(/^-|-$/g, "");
+
+  const spellId = (sp) => {
+    if (sp.id) return sp.id;
+    if (sp.img) {
+      const parts = String(sp.img).split("/");
+      const file = parts[parts.length - 1] || "";
+      if (file) return slugId(file.replace(/\.(jpg|jpeg|png|webp)$/i, ""));
+    }
+    return slugId(sp.name);
+  };
+
+  const ensureSpellIdsInPlace = () => {
+    window.SPELLS.forEach((sp) => {
+      sp.id = spellId(sp);
+    });
+  };
+
+  const safeJSONParseLocal = (str) => {
+    try {
+      return JSON.parse(str);
+    } catch (e) {
+      return null;
+    }
+  };
+
+  const loadMySpells = () => {
+    const raw = localStorage.getItem(MY_SPELLS_KEY);
+    const parsed = raw ? safeJSONParseLocal(raw) : null;
+    if (parsed && Array.isArray(parsed.selected)) return parsed.selected;
+    return [];
+  };
+
+  const saveMySpells = (selected) => {
+    const payload = {
+      schema: "dnd-my-spells",
+      version: 1,
+      updatedAt: new Date().toISOString(),
+      selected,
+    };
+    localStorage.setItem(MY_SPELLS_KEY, JSON.stringify(payload));
+  };
+
+  const myIndexMap = (selected) => {
+    const map = new Map();
+    selected.forEach((x) => {
+      if (x && x.id) map.set(x.id, x);
+    });
+    return map;
+  };
+
+  const toggleMySpell = (id, on) => {
+    const selected = loadMySpells();
+    const map = myIndexMap(selected);
+    if (on) {
+      if (!map.has(id)) selected.push({ id, asCantrip: null, notes: "" });
+    } else {
+      const i = selected.findIndex((x) => x.id === id);
+      if (i >= 0) selected.splice(i, 1);
+    }
+    saveMySpells(selected);
+    return selected;
+  };
+
+  const updateMySpellMeta = (id, patch) => {
+    const selected = loadMySpells();
+    const i = selected.findIndex((x) => x.id === id);
+    if (i === -1) {
+      selected.push({
+        id,
+        asCantrip: null,
+        notes: "",
+        prepared: false,
+        ...patch,
+      });
+    } else {
+      selected[i] = { ...selected[i], ...patch };
+    }
+    saveMySpells(selected);
+    return selected;
+  };
+
+  const setMineCountUI = (selected) => {
+    if (!mineCountEl) return;
+    const count = selected.length;
+    if (!count) {
+      mineCountEl.classList.add("d-none");
+      mineCountEl.innerHTML =
+        "<i class='bx bxs-bookmark-star me-1'></i> Nessuna selezionata";
+    } else {
+      mineCountEl.classList.remove("d-none");
+      mineCountEl.innerHTML = `<i class='bx bxs-bookmark-star me-1'></i> Selezionate ${count}`;
+    }
+  };
+
+  const getCurrentView = () =>
+    viewSelect && viewSelect.value === "mine" ? "mine" : "all";
+
+  const bindMineToggles = () => {
+    const selected = loadMySpells();
+    const map = myIndexMap(selected);
+    document.querySelectorAll("[data-mine-toggle]").forEach((cb) => {
+      const id = cb.getAttribute("data-mine-toggle");
+      cb.checked = id ? map.has(id) : false;
+      cb.addEventListener("change", () => {
+        const targetId = cb.getAttribute("data-mine-toggle");
+        if (!targetId) return;
+        const updated = toggleMySpell(targetId, cb.checked);
+        const label = cb.closest(".mine-chip")?.querySelector("span");
+        if (label) label.textContent = cb.checked ? "Mia" : "Aggiungi";
+        setMineCountUI(updated);
+        if (getCurrentView() === "mine" && !cb.checked) apply();
+      });
+    });
+    document.querySelectorAll("[data-prepared-toggle]").forEach((cb) => {
+      const id = cb.getAttribute("data-prepared-toggle");
+      const entry = id ? map.get(id) : null;
+      cb.checked = !!entry && !!entry.prepared;
+      cb.addEventListener("change", () => {
+        const targetId = cb.getAttribute("data-prepared-toggle");
+        if (!targetId) return;
+        let allSelected = loadMySpells();
+        const allMap = myIndexMap(allSelected);
+        if (cb.checked && !allMap.has(targetId)) {
+          allSelected = toggleMySpell(targetId, true);
+        }
+        const updated = updateMySpellMeta(targetId, { prepared: cb.checked });
+        const label = cb.closest(".mine-chip")?.querySelector("span");
+        if (label) label.textContent = cb.checked ? "Preparato" : "Non prep.";
+        setMineCountUI(updated);
+        if (getCurrentView() === "mine" && !cb.checked) apply();
+      });
+    });
+    setMineCountUI(selected);
+  };
+
+  ensureSpellIdsInPlace();
+
+  const getFilteredSpells = () => {
     const q = state.q.trim().toLowerCase();
     const school = state.school;
     const level = state.level;
+    const onlyConcentration = state.onlyConcentration;
+    const onlyRitual = state.onlyRitual;
+    const noCantrip = state.noCantrip;
+    const view = getCurrentView();
 
-    const filtered = window.SPELLS.filter((s) => {
+    const selected = loadMySpells();
+    const map = myIndexMap(selected);
+
+    const baseFiltered = window.SPELLS.filter((s) => {
       const blob = `${s.name} ${s.school} ${s.level}`.toLowerCase();
+      const fullText = `${blob} ${s.description || ""}`.toLowerCase();
       const okQ = !q || blob.includes(q);
       const okSchool = !school || s.school === school;
       const okLevel = !level || s.level === level;
-      return okQ && okSchool && okLevel;
+      const tDur = s.duration.toLowerCase();
+      const okConcentration =
+        !onlyConcentration || tDur.includes("concentrazione");
+      const okRitual = !onlyRitual || fullText.includes("rituale");
+      const okNoCantrip = !noCantrip || s.level !== "Trucchetto";
+      return (
+        okQ &&
+        okSchool &&
+        okLevel &&
+        okConcentration &&
+        okRitual &&
+        okNoCantrip
+      );
     });
 
+    if (view === "mine") {
+      return baseFiltered.filter((s) => map.has(s.id));
+    }
+
+    return baseFiltered;
+  };
+
+  const updateLevelSummary = (list) => {
+    if (!levelSummaryEl) return;
+    const selected = loadMySpells();
+    const map = myIndexMap(selected);
+    const counts = {};
+    list.forEach((s) => {
+      if (!map.has(s.id)) return;
+      const label =
+        s.level === "Trucchetto" ? "Trucchetti" : `Lv ${s.level || "?"}`;
+      counts[label] = (counts[label] || 0) + 1;
+    });
+    const labels = Object.keys(counts);
+    if (!labels.length) {
+      levelSummaryEl.textContent = "";
+      return;
+    }
+    const sorted = labels.sort((a, b) => {
+      if (a === "Trucchetti") return -1;
+      if (b === "Trucchetti") return 1;
+      const na = parseInt(a.replace(/\D+/g, ""), 10);
+      const nb = parseInt(b.replace(/\D+/g, ""), 10);
+      if (isNaN(na) || isNaN(nb)) return a.localeCompare(b);
+      return na - nb;
+    });
+    levelSummaryEl.innerHTML = sorted
+      .map(
+        (lbl) =>
+          `<span class="level-summary-pill">${lbl}: ${counts[lbl]}</span>`
+      )
+      .join("");
+  };
+
+  const loadSlotsUsage = () => {
+    const raw = localStorage.getItem("dnd_spell_slots_usage_v1");
+    try {
+      return raw ? JSON.parse(raw) || {} : {};
+    } catch (e) {
+      return {};
+    }
+  };
+
+  const saveSlotsUsage = (usage) => {
+    localStorage.setItem("dnd_spell_slots_usage_v1", JSON.stringify(usage));
+  };
+
+  const getSlotsMaxConfig = () => {
+    if (typeof getSavedState !== "function") return {};
+    const st = getSavedState();
+    const cfg = {};
+    for (let lvl = 1; lvl <= 5; lvl++) {
+      const key = `slots${lvl}`;
+      const raw = st && st[key] != null ? String(st[key]).trim() : "";
+      const n = parseInt(raw, 10);
+      if (!Number.isNaN(n) && n > 0) cfg[lvl] = n;
+    }
+    return cfg;
+  };
+
+  const renderSlotsTracker = () => {
+    if (!slotsTrackerEl || !slotsRowEl) return;
+    const maxCfg = getSlotsMaxConfig();
+    const levels = Object.keys(maxCfg);
+    if (!levels.length) {
+      slotsTrackerEl.classList.add("d-none");
+      slotsRowEl.innerHTML = "";
+      return;
+    }
+
+    const usage = loadSlotsUsage();
+    slotsTrackerEl.classList.remove("d-none");
+
+    slotsRowEl.innerHTML = levels
+      .map((lvl) => {
+        const max = maxCfg[lvl];
+        const used = Math.min(usage[lvl] || 0, max);
+        const remaining = Math.max(max - used, 0);
+        return `
+          <div class="slot-pill" data-slot-level="${lvl}">
+            <span class="slot-label">${lvl}°</span>
+            <button type="button" class="slot-btn" data-slot-action="dec">−</button>
+            <span class="slot-value">${remaining}/${max}</span>
+            <button type="button" class="slot-btn" data-slot-action="inc">+</button>
+          </div>
+        `;
+      })
+      .join("");
+
+    slotsRowEl.querySelectorAll(".slot-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const pill = btn.closest(".slot-pill");
+        if (!pill) return;
+        const lvl = pill.getAttribute("data-slot-level");
+        if (!lvl) return;
+        const max = maxCfg[lvl] || 0;
+        const usageNow = loadSlotsUsage();
+        const usedNow = usageNow[lvl] || 0;
+        const action = btn.getAttribute("data-slot-action");
+        let nextUsed = usedNow;
+        if (action === "inc") nextUsed = Math.min(usedNow + 1, max);
+        if (action === "dec") nextUsed = Math.max(usedNow - 1, 0);
+        usageNow[lvl] = nextUsed;
+        saveSlotsUsage(usageNow);
+        const remaining = Math.max(max - nextUsed, 0);
+        const valueEl = pill.querySelector(".slot-value");
+        if (valueEl) valueEl.textContent = `${remaining}/${max}`;
+      });
+    });
+
+    const resetBtn = slotsTrackerEl.querySelector(".slots-reset");
+    if (resetBtn) {
+      resetBtn.onclick = () => {
+        const empty = {};
+        saveSlotsUsage(empty);
+        renderSlotsTracker();
+      };
+    }
+  };
+
+  const apply = () => {
+    const filtered = getFilteredSpells();
+
     renderSpells(filtered);
+    updateLevelSummary(filtered);
+    renderSlotsTracker();
     if (counter)
       counter.innerHTML = `<i class='bx bx-collection me-1'></i> ${filtered.length}`;
   };
 
   const renderSpells = (list) => {
+    const selected = loadMySpells();
+    const map = myIndexMap(selected);
     grid.innerHTML = list.map((s, idx) => spellCardHTML(s, idx)).join("");
     grid.querySelectorAll("[data-open-spell]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -104,6 +423,11 @@ function initSpellsPage() {
         openModal(spell);
       });
     });
+    grid.querySelectorAll("[data-mine-toggle]").forEach((cb) => {
+      const id = cb.getAttribute("data-mine-toggle");
+      cb.checked = id ? map.has(id) : false;
+    });
+    bindMineToggles();
     if (window.AOS) AOS.refresh();
   };
 
@@ -122,6 +446,17 @@ function initSpellsPage() {
     document.getElementById("mDur").textContent = s.duration;
 
     document.getElementById("mDesc").innerHTML = paragraphs(s.description);
+
+    const notesArea = document.getElementById("mNotes");
+    if (notesArea) {
+      const selected = loadMySpells();
+      const map = myIndexMap(selected);
+      const entry = map.get(s.id);
+      notesArea.value = entry && entry.notes ? entry.notes : "";
+      notesArea.oninput = () => {
+        updateMySpellMeta(s.id, { notes: notesArea.value });
+      };
+    }
 
     const wrap = document.getElementById("mSpecialWrap");
     const txt = document.getElementById("mSpecial");
@@ -154,6 +489,11 @@ function initSpellsPage() {
       .replaceAll(">", "&gt;");
 
   const spellCardHTML = (s, idx) => {
+    const selected = loadMySpells();
+    const map = myIndexMap(selected);
+    const isMine = map.has(s.id);
+    const entry = map.get(s.id);
+    const isPrepared = !!(entry && entry.prepared);
     const badges = [
       `<span class="badge-glass"><i class='bx bx-library me-1'></i>${s.school}</span>`,
       `<span class="badge-glass"><i class='bx bx-layer me-1'></i>${
@@ -166,12 +506,26 @@ function initSpellsPage() {
         `<span class="badge-glass"><i class='bx bxs-star me-1'></i>1/LR gratis</span>`
       );
 
+    const mineToggle = `
+      <div class="spell-mine-toggle">
+        <label class="mine-chip">
+          <input type="checkbox" data-mine-toggle="${s.id}">
+          <span>${isMine ? "Mia" : "Aggiungi"}</span>
+        </label>
+        <label class="mine-chip">
+          <input type="checkbox" data-prepared-toggle="${s.id}">
+          <span>${isPrepared ? "Preparato" : "Non prep."}</span>
+        </label>
+      </div>`;
+
     return `
     <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="${Math.min(
       idx * 25,
       200
     )}">
-      <article class="spell-card v2 school-${slugSchool(s.school)}">
+      <article class="spell-card v2 school-${slugSchool(s.school)}${
+        isMine ? " is-mine" : ""
+      }">
       
       <div class="spell-thumb v2">
       <img src="${s.img}" alt="placeholder ${s.name}">
@@ -185,6 +539,7 @@ function initSpellsPage() {
       </div>
       </div>
       
+      ${mineToggle}
       <div class="spell-badges">${badges.join("")}</div>
         <div class="spell-body v2">
           <div class="spell-mini v2">
@@ -288,10 +643,97 @@ function initSpellsPage() {
       apply();
     });
 
+  if (filterConcentration)
+    filterConcentration.addEventListener("change", (e) => {
+      state.onlyConcentration = e.target.checked;
+      apply();
+    });
+
+  if (filterRitual)
+    filterRitual.addEventListener("change", (e) => {
+      state.onlyRitual = e.target.checked;
+      apply();
+    });
+
+  if (filterNoCantrip)
+    filterNoCantrip.addEventListener("change", (e) => {
+      state.noCantrip = e.target.checked;
+      apply();
+    });
+
+  if (viewSelect)
+    viewSelect.addEventListener("change", () => {
+      apply();
+    });
+
+  if (btnExportMySpells) {
+    btnExportMySpells.addEventListener("click", () => {
+      const payload = {
+        schema: "dnd-my-spells",
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        selected: loadMySpells(),
+      };
+      const name = "mie_magie";
+      downloadJSON(`${name}.json`, payload);
+    });
+  }
+
+  if (fileImportMySpells) {
+    fileImportMySpells.addEventListener("change", async (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+
+      try {
+        const text = await file.text();
+        const json = JSON.parse(text);
+        const incoming = Array.isArray(json?.selected)
+          ? json.selected
+          : Array.isArray(json)
+          ? json
+          : [];
+
+        const cleaned = incoming
+          .filter(
+            (x) =>
+              x &&
+              typeof x === "object" &&
+              typeof x.id === "string" &&
+              x.id.trim()
+          )
+          .map((x) => ({
+            id: x.id.trim(),
+            asCantrip: x.asCantrip ?? null,
+            notes: (x.notes ?? "").toString(),
+          }));
+
+        saveMySpells(cleaned);
+        apply();
+      } catch (err) {
+        alert("File JSON non valido.");
+        console.error(err);
+      } finally {
+        e.target.value = "";
+      }
+    });
+  }
+
   apply();
 }
 
 initSpellsPage();
+
+const MY_SPELLS_KEY_GLOBAL = "dnd_my_spells_v1";
+
+function loadMySpellsGlobal() {
+  const raw = localStorage.getItem(MY_SPELLS_KEY_GLOBAL);
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch (e) {
+    return null;
+  }
+}
 
 /* =========================
    AUTO MODIFICATORI D&D
@@ -411,6 +853,7 @@ function downloadJSON(filename, obj) {
 
 function initExportImport() {
   const btnExport = document.getElementById("btnExport");
+  const btnExportFull = document.getElementById("btnExportFull");
   const fileImport = document.getElementById("fileImport");
 
   if (btnExport) {
@@ -425,6 +868,22 @@ function initExportImport() {
 
       const name = (data.name || "personaggio").trim().replaceAll(/\s+/g, "_");
       downloadJSON(`${name}_pg.json`, payload);
+    });
+  }
+
+  if (btnExportFull) {
+    btnExportFull.addEventListener("click", () => {
+      const data = collectBindData();
+      const spellsPayload = loadMySpellsGlobal();
+      const payload = {
+        schema: "dnd-full",
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        sheet: data,
+        mySpells: spellsPayload,
+      };
+      const name = (data.name || "personaggio").trim().replaceAll(/\s+/g, "_");
+      downloadJSON(`${name}_full.json`, payload);
     });
   }
 
@@ -468,6 +927,59 @@ function getSavedState() {
 function setSavedState(next) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
 }
+
+function toggleTheme() {
+  const root = document.documentElement;
+  const body = document.body;
+  const current = root.getAttribute("data-theme") || "dark";
+  const next = current === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  if (body) body.setAttribute("data-theme", next);
+  localStorage.setItem("dnd_theme", next);
+}
+
+function initTheme() {
+  const root = document.documentElement;
+  const body = document.body;
+  const raw = localStorage.getItem("dnd_theme");
+  const saved = raw === "light" || raw === "dark" ? raw : "dark";
+
+  root.setAttribute("data-theme", saved);
+  if (body) body.setAttribute("data-theme", saved);
+  const btn = document.getElementById("btnThemeToggle");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      toggleTheme();
+    });
+  }
+}
+
+initTheme();
+
+function initConditions() {
+  const chips = document.querySelectorAll(".condition-chip");
+  if (!chips.length) return;
+
+  const st = getSavedState();
+  const stored = st.conditions || {};
+
+  chips.forEach((btn) => {
+    const key = btn.getAttribute("data-condition");
+    if (!key) return;
+    if (stored[key]) btn.classList.add("active");
+
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const next = getSavedState();
+      const cond = next.conditions || {};
+      cond[key] = btn.classList.contains("active");
+      next.conditions = cond;
+      setSavedState(next);
+    });
+  });
+}
+
+initConditions();
 
 function getInventory() {
   const st = getSavedState();

@@ -79,23 +79,33 @@
         <span class="brand-rune"><i class='bx bxs-shield'></i></span>
         <span class="fw-800">Scheda PG</span>
       </a>
-      
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div id="nav" class="collapse navbar-collapse">
-        <button id="btnExport" class="btn btn-outline-info btn-sm px-3" type="button">
-          <i class='bx bx-download me-1'></i> Esporta JSON
-        </button>
-  
-        <label class="btn btn-outline-success btn-sm px-3 mb-0">
-          <i class='bx bx-upload me-1'></i> Importa JSON
-          <input id="fileImport" type="file" accept="application/json" hidden>
-        </label>
-        <div class="ms-auto d-flex gap-2">
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          <button id="btnExport" class="btn btn-outline-info btn-sm px-3" type="button">
+            <i class='bx bx-download me-1'></i> Esporta scheda
+          </button>
+          <button id="btnExportFull" class="btn btn-outline-info btn-sm px-3" type="button">
+            <i class='bx bx-download me-1'></i> Export completo
+          </button>
+          <label class="btn btn-outline-success btn-sm px-3 mb-0">
+            <i class='bx bx-upload me-1'></i> Importa scheda
+            <input id="fileImport" type="file" accept="application/json" hidden>
+          </label>
+        </div>
+        <div class="ms-auto d-flex gap-2 align-items-center">
+          <button id="btnThemeToggle" class="btn btn-outline-light btn-sm px-3" type="button">
+            <i class='bx bx-moon me-1'></i> Tema
+          </button>
           <a class="btn btn-outline-light btn-sm px-3" href="incantesimi.html">
             <i class='bx bxs-magic-wand me-1'></i> Incantesimi
+          </a>
+          <a class="btn btn-outline-light btn-sm px-3" href="encounter.html">
+            <i class='bx bx-target-lock me-1'></i> Encounter
           </a>
           <button id="btnReset" class="btn btn-outline-warning btn-sm px-3" type="button">
             <i class='bx bx-refresh me-1'></i> Reset
@@ -156,8 +166,7 @@
             </div>
             <div class="col-md-4">
               <label class="form-label tiny">Divinità / Patrono</label>
-              <input class="form-control form-control-glass" data-bind="deity"
-                placeholder="Divinità / Patrono" />
+              <input class="form-control form-control-glass" data-bind="deity" placeholder="Divinità / Patrono" />
             </div>
             <div class="col-md-4">
               <label class="form-label tiny">Bonus Competenza</label>
@@ -188,6 +197,27 @@
               <div class="stat-pill">
                 <div class="stat-pill__label"><i class='bx bxs-dice-5 me-1'></i> Iniziativa</div>
                 <input class="stat-pill__value" data-bind="init" placeholder="0" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3 mt-2">
+            <div class="col-md-4">
+              <div class="stat-pill">
+                <div class="stat-pill__label"><i class='bx bx-tachometer me-1'></i> Classe armatura passiva</div>
+                <input class="stat-pill__value" data-bind="passive" placeholder="10" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-pill">
+                <div class="stat-pill__label"><i class='bx bx-show-alt me-1'></i> Percezione passiva</div>
+                <input class="stat-pill__value" data-bind="passivePerception" placeholder="10" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-pill">
+                <div class="stat-pill__label"><i class='bx bx-target-lock me-1'></i> Iniziativa passiva</div>
+                <input class="stat-pill__value" data-bind="passiveInit" placeholder="10" />
               </div>
             </div>
           </div>
@@ -313,7 +343,7 @@
         <div class="glass-card p-4 p-lg-5 h-100">
           <div class="d-flex align-items-center justify-content-between">
             <h2 class="section-title mb-0">Riepilogo rapido</h2>
-            <span class="chip chip-alt">
+            <span class="chip chip-alt" id="quickSummary">
               <i class='bx bxs-user-badge me-1'></i> quick view
             </span>
           </div>
@@ -338,6 +368,46 @@
           </div>
 
           <hr class="sep my-4" />
+
+          <div class="row g-2 mb-3">
+            <div class="col-12">
+              <div class="d-flex flex-wrap gap-2 align-items-center">
+                <span class="chip chip-alt">Stato</span>
+                <button class="btn btn-outline-light btn-sm px-2 condition-chip" type="button"
+                  data-condition="ispirazione">
+                  <i class='bx bx-star'></i> Ispirazione
+                </button>
+                <button class="btn btn-outline-light btn-sm px-2 condition-chip" type="button"
+                  data-condition="vantaggio">
+                  <i class='bx bx-chevrons-up'></i> Vantaggio
+                </button>
+                <button class="btn btn-outline-light btn-sm px-2 condition-chip" type="button"
+                  data-condition="svantaggio">
+                  <i class='bx bx-chevrons-down'></i> Svantaggio
+                </button>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex flex-wrap gap-2 align-items-center">
+                <span class="chip chip-alt">Condizioni</span>
+                <button class="btn btn-outline-light btn-sm px-2 condition-chip" type="button" data-condition="prono">
+                  Prono
+                </button>
+                <button class="btn btn-outline-light btn-sm px-2 condition-chip" type="button"
+                  data-condition="accecato">
+                  Accecato
+                </button>
+                <button class="btn btn-outline-light btn-sm px-2 condition-chip" type="button"
+                  data-condition="stordito">
+                  Stordito
+                </button>
+                <button class="btn btn-outline-light btn-sm px-2 condition-chip" type="button"
+                  data-condition="incosciente">
+                  Incosciente
+                </button>
+              </div>
+            </div>
+          </div>
 
           <h2 class="section-title">Tratti / Note</h2>
           <textarea class="form-control form-control-glass area" rows="10" data-bind="notes"
@@ -386,6 +456,7 @@
       <div class="tiny text-mutedish">Powered by @ Dennis Bottari</div>
       <div class="d-flex gap-2">
         <a class="btn btn-sm btn-outline-light" href="incantesimi.html"><i class='bx bx-book me-1'></i> Incantesimi</a>
+        <a class="btn btn-sm btn-outline-light" href="encounter.html"><i class='bx bx-target-lock me-1'></i> Encounter</a>
         <a class="btn btn-sm btn-outline-light" href="index.html"><i class='bx bx-home me-1'></i> Statistiche</a>
       </div>
     </div>

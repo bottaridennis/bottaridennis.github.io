@@ -17,6 +17,33 @@ function slugId(str) {
 }
 
 async function initFeaturesPage() {
+  const MY_FEATURES_KEY = "dnd_my_features_v1";
+
+  const safeParse = (raw) => {
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  };
+
+  const loadMyFeatures = () => {
+    const payload = safeParse(localStorage.getItem(MY_FEATURES_KEY));
+    if (payload && Array.isArray(payload.selected)) return payload.selected;
+    return [];
+  };
+
+  const saveMyFeatures = (selected) => {
+    const payload = {
+      schema: "dnd-my-features",
+      version: 1,
+      updatedAt: new Date().toISOString(),
+      selected,
+    };
+    localStorage.setItem(MY_FEATURES_KEY, JSON.stringify(payload));
+  };
+
   const grid = document.getElementById("grid");
   const searchInput = document.getElementById("searchInput");
   const counter = document.getElementById("counter");
@@ -39,29 +66,79 @@ async function initFeaturesPage() {
   function render(list) {
     if (!grid) return;
     grid.innerHTML = "";
+
+    const selected = loadMyFeatures();
+    const selectedMap = new Map();
+    selected.forEach(f => {
+      if (f && f.id) selectedMap.set(f.id, f);
+    });
     
-    list.forEach(item => {
+    list.forEach((item, idx) => {
       const col = document.createElement("div");
-      col.className = "col-12 col-md-6 col-lg-4";
+      col.className = "col-12 col-md-6 col-xl-4";
       
-      const card = document.createElement("div");
-      card.className = "card glass-card feature-card h-100";
+      const card = document.createElement("article");
+      card.className = "spell-card v2 feature-card";
       card.style.cursor = "pointer";
+      card.setAttribute("data-aos", "fade-up");
+      card.setAttribute("data-aos-delay", String(Math.min(idx * 25, 200)));
       card.onclick = () => openModal(item);
       
       card.innerHTML = `
-        <i class='bx bxs-component card-bg-icon'></i>
-        <div class="card-body feature-body">
-          <h5 class="card-title fw-bold text-truncate" title="${item.name}">${item.name}</h5>
-          <div class="mb-2">
-            ${item.prerequisite ? `<span class="badge bg-secondary text-truncate mw-100">${item.prerequisite}</span>` : ""}
-            ${item.repeatable ? `<span class="badge bg-info text-dark">Ripetibile</span>` : ""}
+        <div class="spell-body v2 feature-body">
+          <div class="d-flex align-items-start justify-content-between gap-2">
+            <div>
+              <h3 class="spell-title v2 mb-1" title="${item.name}">${item.name}</h3>
+              <div class="spell-sub v2">
+                Talento
+              </div>
+            </div>
+            <div class="spell-mine-toggle static">
+              <label class="mine-chip" data-feature-label="${item.id}">
+                <input type="checkbox" data-feature-id="${item.id}">
+                <span></span>
+              </label>
+            </div>
           </div>
-          <div class="card-text small text-mutedish text-truncate-3">
-             ${stripHtml(item.description)}
+          <div class="spell-badges static mt-3">
+            ${item.prerequisite ? `<span class="badge-glass"><i class='bx bx-check-shield me-1'></i>${item.prerequisite}</span>` : ""}
+            ${item.repeatable ? `<span class="badge-glass"><i class='bx bx-refresh me-1'></i>Ripetibile</span>` : ""}
           </div>
         </div>
       `;
+
+      const toggle = card.querySelector("[data-feature-id]");
+      const label = card.querySelector(`[data-feature-label="${item.id}"] span`);
+
+      if (toggle) {
+        const isSelected = selectedMap.has(item.id);
+        toggle.checked = !!isSelected;
+        if (label) label.textContent = isSelected ? "Nel personaggio" : "Segna";
+
+        toggle.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+        });
+
+        toggle.addEventListener("change", () => {
+          const current = loadMyFeatures();
+          const idx = current.findIndex(f => f.id === item.id);
+          if (toggle.checked) {
+            if (idx === -1) {
+              current.push({
+                id: item.id,
+                name: item.name,
+                prerequisite: item.prerequisite || "",
+                repeatable: !!item.repeatable
+              });
+            }
+          } else {
+            if (idx !== -1) current.splice(idx, 1);
+          }
+          saveMyFeatures(current);
+          const isNowSelected = toggle.checked;
+          if (label) label.textContent = isNowSelected ? "Posseduto" : "Aggiungi";
+        });
+      }
       
       col.appendChild(card);
       grid.appendChild(col);

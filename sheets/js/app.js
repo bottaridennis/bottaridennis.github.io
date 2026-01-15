@@ -294,10 +294,10 @@ async function initSpellsPage() {
     if (!count) {
       mineCountEl.classList.add("d-none");
       mineCountEl.innerHTML =
-        "<i class='bx bxs-bookmark-star me-1'></i> Nessuna selezionata";
+        '<i class="bx bxs-bookmark-star me-1"></i> Nessuna selezionata';
     } else {
       mineCountEl.classList.remove("d-none");
-      mineCountEl.innerHTML = `<i class='bx bxs-bookmark-star me-1'></i> Selezionate ${count}`;
+      mineCountEl.innerHTML = `<i class="bx bxs-bookmark-star me-1"></i> Selezionate ${count}`;
     }
   };
 
@@ -596,14 +596,15 @@ async function initSpellsPage() {
     const entry = map.get(s.id);
     const isPrepared = !!(entry && entry.prepared);
     const badges = [
-      `<span class="badge-glass"><i class='bx bx-library me-1'></i>${s.school}</span>`,
-      `<span class="badge-glass"><i class='bx bx-layer me-1'></i>${s.level === "Trucchetto" ? "Trucchetto" : `Lv ${s.level}`
+      `<span class="badge-glass"><i class="bx bx-library me-1"></i>${s.school}</span>`,
+      `<span class="badge-glass"><i class="bx bx-layer me-1"></i>${
+        s.level === "Trucchetto" ? "Trucchetto" : `Lv ${s.level}`
       }</span>`,
     ];
 
     if (s.special)
       badges.push(
-        `<span class="badge-glass"><i class='bx bxs-star me-1'></i>1/LR gratis</span>`
+        `<span class="badge-glass"><i class="bx bxs-star me-1"></i>1/LR gratis</span>`
       );
 
     const mineToggle = `
@@ -638,18 +639,17 @@ async function initSpellsPage() {
       <div class="spell-badges">${badges.join("")}</div>
         <div class="spell-body v2">
           <div class="spell-mini v2">
-            <div class="mini-pill"><i class='bx bx-target-lock'></i><b>${s.range
-      }</b></div>
-            <div class="mini-pill"><i class='bx bx-time-five'></i><b>${shortDuration(
-        s.duration
-      )}</b></div>
-            <div class="mini-pill"><i class='bx bx-flask'></i><b>${shortComponents(
-        s.components
-      )}</b></div>
+            <div class="mini-pill"><i class="bx bx-target-lock"></i><b>${s.range}</b></div>
+            <div class="mini-pill"><i class="bx bx-time-five"></i><b>${shortDuration(
+              s.duration
+            )}</b></div>
+            <div class="mini-pill"><i class="bx bx-flask"></i><b>${shortComponents(
+              s.components
+            )}</b></div>
           </div>
 
           <button class="btn-soft v2 mt-3" data-open-spell="${idx}">
-            <i class='bx bx-detail me-1'></i> Dettagli
+            <i class="bx bx-detail me-1"></i> Dettagli
           </button>
         </div>
       </article>
@@ -718,9 +718,6 @@ async function initSpellsPage() {
     if (s.special) parts.push(`Uso speciale: ${s.special}`);
     return parts.join(" | ");
   };
-
-  const escapeForAttr = (str) =>
-    str.replaceAll("\\", "\\\\").replaceAll("'", "\\'");
 
   if (search)
     search.addEventListener("input", (e) => {
@@ -819,6 +816,8 @@ async function initSpellsPage() {
 initSpellsPage();
 
 const MY_SPELLS_KEY_GLOBAL = "dnd_my_spells_v1";
+const MY_FEATURES_KEY_GLOBAL = "dnd_my_features_v1";
+const MY_INVOCATIONS_KEY_GLOBAL = "dnd_my_invocations_v1";
 
 function loadMySpellsGlobal() {
   const raw = localStorage.getItem(MY_SPELLS_KEY_GLOBAL);
@@ -828,6 +827,30 @@ function loadMySpellsGlobal() {
   } catch (e) {
     return null;
   }
+}
+
+function loadMyFeaturesGlobal() {
+  const raw = localStorage.getItem(MY_FEATURES_KEY_GLOBAL);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    if (parsed && Array.isArray(parsed.selected)) return parsed.selected;
+  } catch (e) {
+    return [];
+  }
+  return [];
+}
+
+function loadMyInvocationsGlobal() {
+  const raw = localStorage.getItem(MY_INVOCATIONS_KEY_GLOBAL);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    if (parsed && Array.isArray(parsed.selected)) return parsed.selected;
+  } catch (e) {
+    return [];
+  }
+  return [];
 }
 
 /* =========================
@@ -891,6 +914,11 @@ function collectBindData() {
     data.inventory = [];
   }
 
+  const feats = loadMyFeaturesGlobal();
+  const invocations = loadMyInvocationsGlobal();
+  data.myFeatures = Array.isArray(feats) ? feats : [];
+  data.myInvocations = Array.isArray(invocations) ? invocations : [];
+
   return data;
 }
 
@@ -905,6 +933,26 @@ function applyBindData(payload) {
       : payload;
 
   if (!data || typeof data !== "object") return;
+
+  if (Array.isArray(data.myFeatures)) {
+    const payload = {
+      schema: "dnd-my-features",
+      version: 1,
+      updatedAt: new Date().toISOString(),
+      selected: data.myFeatures,
+    };
+    localStorage.setItem(MY_FEATURES_KEY_GLOBAL, JSON.stringify(payload));
+  }
+
+  if (Array.isArray(data.myInvocations)) {
+    const payload = {
+      schema: "dnd-my-invocations",
+      version: 1,
+      updatedAt: new Date().toISOString(),
+      selected: data.myInvocations,
+    };
+    localStorage.setItem(MY_INVOCATIONS_KEY_GLOBAL, JSON.stringify(payload));
+  }
 
   // applica campi data-bind
   const inputs = document.querySelectorAll("[data-bind]");
@@ -929,6 +977,10 @@ function applyBindData(payload) {
   // ricalcola modificatori (se presente)
   if (typeof initAbilityModifiers === "function") {
     initAbilityModifiers();
+  }
+
+  if (typeof renderOwnedFeaturesInvocations === "function") {
+    renderOwnedFeaturesInvocations();
   }
 }
 
@@ -1015,6 +1067,158 @@ initExportImport();
 
 const INV_KEY = "inventory"; // dentro lo stesso JSON salvato
 
+const INVENTORY_IMAGE_BASE = "./images/objects/";
+
+let INVENTORY_PRESET_IMAGES = [];
+let INVENTORY_IMAGE_GROUPS = null;
+const INVENTORY_IMAGE_FILTER_STATE = {
+  q: "",
+  category: "",
+};
+
+function normaliseInventoryImages(rawList) {
+  if (!Array.isArray(rawList)) return [];
+  return rawList.map((entry) => {
+    if (typeof entry === "string") {
+      const file = entry;
+      const base = file.replace(/\.[a-z0-9]+$/i, "");
+      const label = base
+        .replace(/[-_]+/g, " ")
+        .replace(/\s+/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+      return { id: base, label, file };
+    }
+    const file = entry.file || entry.id || "";
+    const base = (entry.id || file || "").replace(/\.[a-z0-9]+$/i, "");
+    const label =
+      entry.label ||
+      base
+        .replace(/[-_]+/g, " ")
+        .replace(/\s+/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+    return { id: base, label, file };
+  });
+}
+
+function loadInventoryImages() {
+  if (INVENTORY_PRESET_IMAGES.length) {
+    return Promise.resolve(INVENTORY_PRESET_IMAGES);
+  }
+  return fetch("./images/objects/index.json", { cache: "no-store" })
+    .then((res) => (res.ok ? res.json() : []))
+    .catch(() => [])
+    .then((data) => {
+      const list = Array.isArray(data) ? data : (data.images || []);
+      INVENTORY_PRESET_IMAGES = normaliseInventoryImages(list);
+      return INVENTORY_PRESET_IMAGES;
+    });
+}
+
+function buildInventoryImageGroups(defs) {
+  const groups = {};
+  defs.forEach((def) => {
+    const parts = String(def.file || "").split("/");
+    const category = parts.length > 1 ? parts[0] : "Base";
+    if (!groups[category]) groups[category] = [];
+    groups[category].push(def);
+  });
+  const sortedCategories = Object.keys(groups).sort();
+  return { groups, sortedCategories };
+}
+
+function renderInventoryImageList() {
+  const imgList = document.getElementById("invImgList");
+  if (!imgList || !INVENTORY_IMAGE_GROUPS) return;
+
+  const q = INVENTORY_IMAGE_FILTER_STATE.q.trim().toLowerCase();
+  const categoryFilter = INVENTORY_IMAGE_FILTER_STATE.category;
+  const { groups, sortedCategories } = INVENTORY_IMAGE_GROUPS;
+
+  let html = "";
+  let totalMatches = 0;
+
+  sortedCategories.forEach((cat, idx) => {
+    if (categoryFilter && categoryFilter !== cat) {
+      return;
+    }
+
+    const defs = groups[cat] || [];
+    const filteredDefs = defs.filter((def) => {
+      if (!q) return true;
+      const label = String(def.label || "").toLowerCase();
+      return label.includes(q);
+    });
+
+    if (!filteredDefs.length) {
+      return;
+    }
+
+    totalMatches += filteredDefs.length;
+
+    html += `
+      <div class="inv-img-category-title" data-cat-idx="${idx}">
+        <span>${cat}</span>
+        <i class="bx bx-chevron-down"></i>
+      </div>
+      <div class="inv-img-grid" id="cat-grid-${idx}">
+    `;
+
+    html += filteredDefs
+      .map(
+        (def) => `
+        <button type="button" class="inv-img-option" data-inv-img="${def.file}">
+          <div class="inv-img-option-thumb">
+            <img src="${INVENTORY_IMAGE_BASE + def.file}" alt="${def.label}">
+          </div>
+          <div class="tiny text-mutedish mt-1">${def.label}</div>
+        </button>
+      `
+      )
+      .join("");
+
+    html += `</div>`;
+  });
+
+  if (!totalMatches) {
+    html = `
+      <div class="tiny text-mutedish">Nessuna immagine corrisponde alla ricerca</div>
+    `;
+  }
+
+  html += `
+    <div style="text-align: center; margin-top: 1rem; opacity: 0.6;" class="tiny text-mutedish pb-2">
+      Icons by game-icons.net — CC BY 3.0
+    </div>
+  `;
+
+  imgList.innerHTML = html;
+
+  imgList.querySelectorAll(".inv-img-category-title").forEach((el) => {
+    el.addEventListener("click", () => {
+      const idx = el.getAttribute("data-cat-idx");
+      const grid = document.getElementById("cat-grid-" + idx);
+      if (grid) {
+        el.classList.toggle("collapsed");
+        grid.classList.toggle("collapsed");
+      }
+    });
+  });
+
+  imgList.querySelectorAll("[data-inv-img]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (invEditingIndex == null) return;
+      const file = btn.getAttribute("data-inv-img");
+      const items = getInventory();
+      const it = items[invEditingIndex];
+      if (!it) return;
+      it.img = file;
+      setInventory(items);
+      updateInvImagePreview(file);
+      renderInventory();
+    });
+  });
+}
+
 function getSavedState() {
   return safeJSONParse(localStorage.getItem(STORAGE_KEY)) || {};
 }
@@ -1075,6 +1279,58 @@ function initConditions() {
 }
 
 initConditions();
+renderOwnedFeaturesInvocations();
+
+function renderOwnedFeaturesInvocations() {
+  const featsContainer = document.getElementById("ownedFeaturesList");
+  const invocationsContainer = document.getElementById("ownedInvocationsList");
+  if (!featsContainer && !invocationsContainer) return;
+
+  const feats = loadMyFeaturesGlobal();
+  const invocations = loadMyInvocationsGlobal();
+
+  if (featsContainer) {
+    if (!feats || !feats.length) {
+      featsContainer.innerHTML = `<div class="tiny text-mutedish">Nessun talento selezionato</div>`;
+    } else {
+      featsContainer.innerHTML = feats
+        .map(
+          (f) => `
+      <div class="mini-row">
+      <span>${escapeHTML(f.name || "")}</span>
+          ${
+        f.prerequisite
+          ? `<span class="tiny text-mutedish ms-auto">${escapeHTML(f.prerequisite)}</span>`
+          : ""
+      }
+        </div>
+        `
+        )
+        .join("");
+    }
+  }
+
+  if (invocationsContainer) {
+    if (!invocations || !invocations.length) {
+      invocationsContainer.innerHTML = `<div class="tiny text-mutedish">Nessuna invocazione selezionata</div>`;
+    } else {
+      invocationsContainer.innerHTML = invocations
+        .map(
+          (v) => `
+        <div class="mini-row">
+          <span>${escapeHTML(v.name || "")}</span>
+          ${
+        v.prerequisite
+          ? `<span class="tiny text-mutedish ms-auto">${escapeHTML(v.prerequisite)}</span>`
+          : ""
+      }
+        </div>
+        `
+        )
+        .join("");
+    }
+  }
+}
 
 function getInventory() {
   const st = getSavedState();
@@ -1101,34 +1357,52 @@ function renderInventory() {
   const items = getInventory();
 
   body.innerHTML = items
-    .map(
-      (it, idx) => `
-    <tr>
+    .map((it, idx) => {
+      const hasDesc = !!it.desc;
+      const hasImg = !!it.img;
+      const parts = [];
+      if (hasDesc) parts.push("Descrizione");
+      if (hasImg) parts.push("Immagine");
+      const metaText = parts.length ? parts.join(" • ") : "—";
+
+      const thumbHtml = it.img
+        ? `< div class="inv-row-thumb" > <img src="${INVENTORY_IMAGE_BASE + it.img}" alt=""></div>`
+        : `< div class="inv-row-thumb inv-row-thumb-empty" > <i class='bx bx-image-alt'></i></div > `;
+
+      return `
+        < tr >
       <td>
         <input class="inv-inline" type="number" min="0" step="1"
           value="${it.qty ?? 1}"
           data-inv-qty="${idx}">
       </td>
       <td>
-        <input class="inv-inline" type="text"
-          value="${escapeHTML(it.name ?? "")}"
-          placeholder="Nome oggetto..."
-          data-inv-name="${idx}">
-        <div class="inv-muted">${it.desc ? "Ha descrizione" : "—"}</div>
+        <div class="inv-row-main">
+          ${thumbHtml}
+          <div class="inv-row-main-details">
+            <input class="inv-inline" type="text"
+              value="${escapeHTML(it.name ?? "")}"
+              placeholder="Nome oggetto..."
+              data-inv-name="${idx}">
+            <div class="inv-muted">
+              ${metaText}
+            </div>
+          </div>
+        </div>
       </td>
       <td class="text-end">
         <div class="inv-actions">
-          <button class="inv-btn" type="button" data-inv-open="${idx}">
-            <i class='bx bx-detail'></i>
+        <button class="inv-btn" type="button" data-inv-open="${idx}">
+            <i class="bx bx-detail"></i>
           </button>
           <button class="inv-btn" type="button" data-inv-del="${idx}">
-            <i class='bx bx-trash'></i>
+            <i class="bx bx-trash"></i>
           </button>
         </div>
       </td>
-    </tr>
-  `
-    )
+    </tr >
+        `;
+    })
     .join("");
 
   // inline edit qty/name
@@ -1190,6 +1464,11 @@ function initInventory() {
   // hook modal buttons
   const btnSave = document.getElementById("invSave");
   const btnDelete = document.getElementById("invDelete");
+  const imgChoose = document.getElementById("invImgChoose");
+  const imgPanel = document.getElementById("invImgPanel");
+  const imgList = document.getElementById("invImgList");
+  const imgSearch = document.getElementById("invImgSearch");
+  const imgCategory = document.getElementById("invImgCategory");
 
   if (btnSave) {
     btnSave.addEventListener("click", () => {
@@ -1197,6 +1476,7 @@ function initInventory() {
       const items = getInventory();
 
       items[invEditingIndex] = {
+        ...items[invEditingIndex],
         qty: Number(document.getElementById("invQty").value || 0),
         name: document.getElementById("invName").value,
         desc: document.getElementById("invDesc").value,
@@ -1219,6 +1499,52 @@ function initInventory() {
     });
   }
 
+  if (imgList) {
+    loadInventoryImages().then((defs) => {
+      if (!defs || !defs.length) {
+        imgList.innerHTML =
+          `< div class="tiny text-mutedish" > Nessuna immagine disponibile</div > `;
+        return;
+      }
+
+      INVENTORY_IMAGE_GROUPS = buildInventoryImageGroups(defs);
+
+      if (imgCategory && INVENTORY_IMAGE_GROUPS) {
+        const { sortedCategories } = INVENTORY_IMAGE_GROUPS;
+        imgCategory.innerHTML =
+          `< option value = "" > Tutte le categorie</option > ` +
+          sortedCategories
+            .map(
+              (cat) =>
+                `< option value = "${cat}" > ${ cat }</option > `
+            )
+            .join("");
+      }
+
+      renderInventoryImageList();
+    });
+  }
+
+  if (imgSearch) {
+    imgSearch.addEventListener("input", () => {
+      INVENTORY_IMAGE_FILTER_STATE.q = imgSearch.value || "";
+      renderInventoryImageList();
+    });
+  }
+
+  if (imgCategory) {
+    imgCategory.addEventListener("change", () => {
+      INVENTORY_IMAGE_FILTER_STATE.category = imgCategory.value || "";
+      renderInventoryImageList();
+    });
+  }
+
+  if (imgChoose && imgPanel) {
+    imgChoose.addEventListener("click", () => {
+      imgPanel.classList.toggle("d-none");
+    });
+  }
+
   renderInventory();
 }
 
@@ -1228,14 +1554,49 @@ function openInvModal(index) {
   const it = items[index];
   if (!it) return;
 
-  document.getElementById("invModalSubtitle").textContent = `Oggetto #${index + 1
-    }`;
+  document.getElementById("invModalSubtitle").textContent = `Oggetto #${ index + 1 } `;
 
   document.getElementById("invQty").value = it.qty ?? 1;
   document.getElementById("invName").value = it.name ?? "";
   document.getElementById("invDesc").value = it.desc ?? "";
 
-  invModal?.show();
+  loadInventoryImages().then(() => {
+    const searchEl = document.getElementById("invImgSearch");
+    const catEl = document.getElementById("invImgCategory");
+
+    INVENTORY_IMAGE_FILTER_STATE.q = "";
+    INVENTORY_IMAGE_FILTER_STATE.category = "";
+
+    if (searchEl) searchEl.value = "";
+    if (catEl) catEl.value = "";
+
+    if (INVENTORY_IMAGE_GROUPS) {
+      renderInventoryImageList();
+    }
+
+    updateInvImagePreview(it.img || "");
+    invModal?.show();
+  });
+}
+
+function updateInvImagePreview(file) {
+  const imgEl = document.getElementById("invImgPreviewImg");
+  const labelEl = document.getElementById("invImgPreviewLabel");
+  if (!imgEl || !labelEl) return;
+
+  const def = INVENTORY_PRESET_IMAGES.find(
+    (x) => x.file === file || x.id === file
+  );
+
+  if (def) {
+    imgEl.src = INVENTORY_IMAGE_BASE + def.file;
+    imgEl.classList.remove("d-none");
+    labelEl.textContent = def.label;
+  } else {
+    imgEl.src = "";
+    imgEl.classList.add("d-none");
+    labelEl.textContent = "Nessuna immagine";
+  }
 }
 
 // avvia solo se siamo su index e gli elementi esistono

@@ -759,12 +759,22 @@ h1, h2, h3, h4, h5, h6,
 
 
 .spell-mine-toggle {
-  position: absolute;
-  top: 12px;
-  right: 12px;
   display: flex;
   align-items: center;
   gap: .4rem;
+}
+
+.feature-card .spell-mine-toggle,
+.invocation-card .spell-mine-toggle {
+  position: static;
+  justify-content: flex-end;
+}
+
+.feature-card .spell-badges,
+.invocation-card .spell-badges {
+  position: static;
+  top: auto;
+  left: auto;
 }
 
 .mine-chip {
@@ -969,6 +979,203 @@ h1, h2, h3, h4, h5, h6,
   color: rgba(255, 255, 255, .65);
   font-weight: 600;
   font-size: .85rem;
+}
+
+.inv-img-picker {
+  gap: .75rem;
+}
+
+.inv-img-preview {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(15, 23, 42, .8);
+  padding: .4rem .6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-width: 160px;
+}
+
+.inv-img-preview img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.inv-img-list {
+  display: block;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.inv-img-list::-webkit-scrollbar {
+  width: 6px;
+}
+.inv-img-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+.inv-img-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+.inv-img-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.inv-img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+
+.inv-img-grid.collapsed {
+  display: none;
+}
+
+.inv-img-category-title {
+  font-family: Unbounded, system-ui;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fcd34d;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.25rem;
+  position: sticky;
+  top: 0;
+  background: #0f172a; /* Fallback */
+  background: rgba(15, 23, 42, 0.95);
+  z-index: 5;
+  padding-top: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inv-img-category-title:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.inv-img-category-title i {
+  transition: transform 0.2s ease;
+}
+
+.inv-img-category-title.collapsed i {
+  transform: rotate(-90deg);
+}
+
+.inv-img-option {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(15, 23, 42, .9);
+  padding: .35rem .4rem .45rem;
+  text-align: center;
+  color: #fff;
+}
+
+.inv-img-option-thumb {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, .9);
+}
+
+.inv-img-option-thumb img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.inv-img-big {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(0, 0, 0, .25);
+  padding: .6rem .6rem .7rem;
+}
+
+.inv-img-big-inner {
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, .95);
+  height: 260px;
+  display: grid;
+  place-items: center;
+}
+
+.inv-img-big-inner img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.inv-img-big-inner img.d-none {
+  display: none;
+}
+
+.inv-img-big-meta {
+  margin-top: .4rem;
+}
+
+.inv-img-panel {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(15, 23, 42, .85);
+  padding: .45rem .55rem .55rem;
+}
+
+.inv-img-controls {
+  display: flex;
+  gap: .5rem;
+}
+
+.inv-img-controls .form-control,
+.inv-img-controls .form-select {
+  min-width: 0;
+}
+
+.inv-img-controls input[type="search"] {
+  flex: 1;
+}
+
+.inv-row-main {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+
+.inv-row-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, .9);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.inv-row-thumb img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.inv-row-thumb-empty {
+  color: rgba(255, 255, 255, .35);
+  font-size: 1.2rem;
+}
+
+.inv-row-main-details {
+  flex: 1;
+  min-width: 0;
 }
 
 .condition-chip.active {

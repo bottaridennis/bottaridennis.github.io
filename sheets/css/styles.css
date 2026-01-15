@@ -8,6 +8,8 @@
   --muted2: rgba(255, 255, 255, .55);
   --shadow: 0 18px 55px rgba(0, 0, 0, .45);
   --r: 18px;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, .70);
 }
 
 * {
@@ -27,6 +29,15 @@ body {
               linear-gradient(180deg, var(--bg0), var(--bg1)); */
   color: #fff;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.display-title,
+.section-title,
+.modal-title,
+.card-title,
+.offcanvas-title {
+  color: var(--text-primary);
 }
 
 .fw-800 {
@@ -492,7 +503,9 @@ body {
   font-weight: 900;
 }
 
-.spell-desc {
+.spell-desc,
+.feature-desc,
+.invocation-desc {
   color: rgba(255, 255, 255, .85);
   line-height: 1.55;
   font-size: .98rem;
@@ -725,13 +738,17 @@ body {
   border-radius: 16px;
 }
 
-.spell-desc {
+.spell-desc,
+.feature-desc,
+.invocation-desc {
   font-size: 1.02rem;
   line-height: 1.65;
   color: rgba(255, 255, 255, .88);
 }
 
-.spell-desc p {
+.spell-desc p,
+.feature-desc p,
+.invocation-desc p {
   margin-bottom: .65rem;
 }
 
@@ -996,6 +1013,57 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
+/* =========================
+   TEXT HEAVY PAGES (FEATURES/INVOCATIONS)
+   ========================= */
+
+.desc-box {
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+
+.desc-box strong {
+  display: block;
+  margin-top: .75rem;
+  margin-bottom: .25rem;
+  color: #fcd34d; /* Amber-300 for contrast */
+  font-family: Unbounded, Inter, system-ui;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.desc-box strong:first-child {
+  margin-top: 0;
+}
+
+.card-bg-icon {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  font-size: 8rem;
+  opacity: 0.04;
+  transform: rotate(-15deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.feature-card,
+.invocation-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-body,
+.invocation-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
 html[data-theme="light"],
 body[data-theme="light"] {
   background-color: #f3f4f6;
@@ -1011,6 +1079,8 @@ body[data-theme="light"] {
   --muted: rgba(15, 23, 42, .7);
   --muted2: rgba(15, 23, 42, .6);
   --shadow: 0 18px 55px rgba(15, 23, 42, .15);
+  --text-primary: #020617;
+  --text-secondary: rgba(15, 23, 42, .7);
 }
 
 html[data-theme="light"] .glass-nav {
@@ -1112,47 +1182,6 @@ html[data-theme="light"] .inv-btn:hover {
   background: rgba(15, 23, 42, .09);
 }
 
-html[data-theme="light"] .glass-modal {
-  background: rgba(255, 255, 255, .96);
-  color: #020617;
-}
-
-html[data-theme="light"] .navbar-dark .navbar-brand,
-html[data-theme="light"] .navbar-dark .navbar-brand span {
-  color: #020617;
-}
-
-html[data-theme="light"] .btn-outline-light {
-  color: #020617;
-  border-color: rgba(15, 23, 42, .45);
-}
-
-html[data-theme="light"] .btn-outline-light:hover,
-html[data-theme="light"] .btn-outline-light:focus {
-  background-color: rgba(15, 23, 42, .06);
-  color: #020617;
-  border-color: rgba(15, 23, 42, .7);
-}
-
-html[data-theme="light"] .display-title,
-html[data-theme="light"] .section-title,
-html[data-theme="light"] .tiny,
-html[data-theme="light"] .text-mutedish,
-html[data-theme="light"] label {
-  color: #020617;
-}
-
-html[data-theme="light"] .footer,
-html[data-theme="light"] .footer a {
-  color: #020617;
-}
-
-html[data-theme="light"] .table-glass thead th {
-  background: rgba(15, 23, 42, .04) !important;
-  border-color: rgba(15, 23, 42, .14) !important;
-  color: #020617 !important;
-}
-
 /* =========================
    LIGHT MODE FIXES
    ========================= */
@@ -1170,10 +1199,21 @@ html[data-theme="light"] .inv-muted {
 }
 
 html[data-theme="light"] .spell-desc,
+html[data-theme="light"] .feature-desc,
+html[data-theme="light"] .invocation-desc,
 html[data-theme="light"] .spell-mini b,
 html[data-theme="light"] .mini-pill b,
 html[data-theme="light"] .ability__mod {
   color: rgba(15, 23, 42, .9) !important;
+}
+
+html[data-theme="light"] .desc-box {
+  background: rgba(15, 23, 42, .04);
+  border-color: rgba(15, 23, 42, .12);
+}
+
+html[data-theme="light"] .desc-box strong {
+  color: #d97706; /* Amber-600 */
 }
 
 html[data-theme="light"] .mini-pill {

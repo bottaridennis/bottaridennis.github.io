@@ -106,7 +106,7 @@ async function initSpellsPage() {
     try {
       let rawSpells = window.RAW_SPELLS;
       if (!rawSpells) {
-        const r = await fetch('./2024_spells.json');
+        const r = await fetch('./data/2024_spells.json');
         rawSpells = await r.json();
       }
 

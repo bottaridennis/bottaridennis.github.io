@@ -35,7 +35,7 @@
 		"actionType": "action",
 		"concentration": true,
 		"ritual": false,
-		"range": "120 feet",
+		"range": "36 metri",
 		"components": ["v", "s", "m"],
 		"material": "a bit of phosphorus",
 		"duration": "up to 1 minute",
@@ -92,8 +92,8 @@
 		"range": "120 feet",
 		"components": ["v", "s"],
 		"duration": "Instantaneous",
-		"description": "You hurl a mote of fire at a creature or an object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 Fire damage. A flammable object hit by this spell starts burning if it isn't being worn or carried.",
-		"cantripUpgrade": "The damage increases by 1d10 when you reach levels 5 (2d10), 11 (3d10), and 17 (4d10)."
+		"description": "Scagli un piccolo globo di fuoco contro una creatura o un oggetto nel raggio. Effettua un attacco con incantesimo a distanza contro il bersaglio. Se colpisci, il bersaglio subisce 1d10 danni da fuoco. Un oggetto infiammabile colpito da questo incantesimo prende fuoco se non è indossato o trasportato.",
+		"cantripUpgrade": "Il danno aumenta di 1d10 quando raggiungi il 5° livello (2d10), l'11° (3d10) e il 17° (4d10)."
 	},
 	{
 		"name": "Guidance",
@@ -105,8 +105,8 @@
 		"ritual": false,
 		"range": "Tocco",
 		"components": ["v", "s"],
-		"duration": "up to 1 minute",
-		"description": "You touch a willing creature and choose a skill. Until the spell ends, the creature adds 1d4 to any ability check using the chosen skill."
+		"duration": "fino a 1 minuto",
+		"description": "Tocchi una creatura consenziente e scegli una abilità. Finché l'incantesimo non termina, la creatura aggiunge 1d4 a qualsiasi prova di caratteristica che usa l'abilità scelta."
 	},
 	{
 		"name": "Light",
@@ -118,9 +118,9 @@
 		"ritual": false,
 		"range": "Tocco",
 		"components": ["v", "m"],
-		"material": "a firefly or phosphorescent moss",
+		"material": "una lucciola o del muschio fosforescente",
 		"duration": "1 hour",
-		"description": "You touch one Large or smaller object that isn't being worn or carried by someone else. Until the spell ends, the object sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. The light can be colored as you like. \n\nCovering the object with something opaque blocks the light. The spell ends if you cast it again."
+		"description": "Tocchi un oggetto Grande o più piccolo che non sia indossato o trasportato da un'altra creatura. Finché l'incantesimo non termina, l'oggetto emette luce intensa in un raggio di 6 metri e luce fioca per altri 6 metri. Puoi scegliere il colore della luce. \n\nCoprire l'oggetto con qualcosa di opaco blocca la luce. L'incantesimo termina se lo lanci di nuovo."
 	},
 	{
 		"name": "Mage Hand",
@@ -130,10 +130,10 @@
 		"actionType": "action",
 		"concentration": false,
 		"ritual": false,
-		"range": "30 feet",
+		"range": "9 metri",
 		"components": ["v", "s"],
-		"duration": "1 minute",
-		"description": "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again. When you cast the spell, you can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. \n\nAs a Magic action on your later turns, you can control the hand thus again. As part of that action, you can move the hand up to 30 feet.\n\nThe hand can't attack, activate magic items, or carry more than 10 pounds."
+		"duration": "1 minuto",
+		"description": "Una mano spettrale fluttuante appare in un punto a tua scelta nel raggio. La mano dura per tutta la durata. Scompare se si allontana da te oltre 9 metri o se lanci di nuovo questo incantesimo. Quando lanci l'incantesimo puoi usare la mano per manipolare un oggetto, aprire una porta o un contenitore non chiuso a chiave, riporre o prendere un oggetto da un contenitore aperto o versare il contenuto di una fiala. \n\nCome azione magica nei tuoi turni successivi puoi controllare di nuovo la mano. Come parte di quell'azione puoi muoverla fino a 9 metri.\n\nLa mano non può attaccare, attivare oggetti magici o trasportare più di 5 kg."
 	},
 	{
 		"name": "Mending",
@@ -148,7 +148,7 @@
 		"components": ["v", "s", "m"],
 		"material": "two lodestones",
 		"duration": "Instantaneous",
-		"description": "This spell repairs a single break or tear in an object you touch, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage. \n\nThis spell can physically repair a magic item, but it can't restore magic to such an object."
+		"description": "Questo incantesimo ripara una singola rottura o strappo in un oggetto che tocchi, come un anello di catena spezzato, le due metà di una chiave rotta, un mantello strappato o una otre che perde. Finché la rottura o lo strappo non supera i 30 centimetri in nessuna dimensione, lo ripari senza lasciare tracce del danno precedente. \n\nQuesto incantesimo può riparare fisicamente un oggetto magico, ma non può ripristinarne la magia."
 	},
 	{
 		"name": "Message",
@@ -158,11 +158,11 @@
 		"actionType": "action",
 		"concentration": false,
 		"ritual": false,
-		"range": "120 feet",
+		"range": "36 metri",
 		"components": ["s", "m"],
 		"material": "a copper wire",
 		"duration": "1 round",
-		"description": "You point toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear. You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence; 1 foot of stone, metal, or wood; or a thin sheet of lead blocks the spell."
+		"description": "Indichi una creatura nel raggio e le sussurri un messaggio. Il bersaglio (e solo il bersaglio) sente il messaggio e può rispondere con un sussurro che solo tu puoi udire. Puoi lanciare questo incantesimo attraverso oggetti solidi se conosci il bersaglio e sai che si trova oltre la barriera. Silenzio magico, 30 centimetri di pietra, metallo o legno, o un sottile strato di piombo bloccano l'incantesimo."
 	},
 	{
 		"name": "Minor Illusion",
@@ -172,11 +172,11 @@
 		"actionType": "action",
 		"concentration": false,
 		"ritual": false,
-		"range": "30 feet",
+		"range": "9 metri",
 		"components": ["s", "m"],
 		"material": "a bit of fleece",
 		"duration": "1 minute",
-		"description": "You create a sound or an image of an object within range that lasts for the duration. See the descriptions below for the effects of each. The illusion ends if you cast this spell again. If a creature takes a Study action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature. \n\nSound. If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends. \n\nImage. If you create an image of an object\u2014such as a chair, muddy footprints, or a small chest\u2014it must be no larger than a 5- foot Cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it."
+		"description": "Crei un suono o l'immagine di un oggetto nel raggio che dura per tutta la durata. Vedi sotto per gli effetti di ciascuna opzione. L'illusione termina se lanci di nuovo questo incantesimo. Se una creatura usa un'azione per studiare il suono o l'immagine, può capire che si tratta di un'illusione con una prova di Intelligenza (Indagare) contro la tua CD di tiro salvezza per gli incantesimi. Se la creatura scopre l'illusione, questa diventa evanescente per lei. \n\nSuono. Se crei un suono, il suo volume può andare da un sussurro a un urlo. Può essere la tua voce, quella di qualcun altro, un ruggito di leone, un rullare di tamburi o qualunque altro suono tu scelga. Il suono continua per tutta la durata, oppure puoi produrre suoni distinti in momenti diversi finché l'incantesimo dura. \n\nImmagine. Se crei l'immagine di un oggetto — come una sedia, impronte fangose o uno scrignetto — non può essere più grande di un cubo di 1,5 metri di lato. L'immagine non può creare suono, luce, odore o altri effetti sensoriali. L'interazione fisica con l'immagine rivela che è un'illusione, dato che le cose possono attraversarla."
 	},
 	{
 		"name": "Poison Spray",
@@ -186,11 +186,11 @@
 		"actionType": "action",
 		"concentration": false,
 		"ritual": false,
-		"range": "30 feet",
+		"range": "9 metri",
 		"components": ["v", "s"],
 		"duration": "Instantaneous",
-		"description": "You spray toxic mist at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d12 Poison damage.",
-		"cantripUpgrade": "The damage increases by 1d12 when you reach levels 5 (2d12), 11 (3d12), and 17 (4d12)."
+		"description": "Spruzzi una nube di veleno verso una creatura nel raggio. Effettua un attacco con incantesimo a distanza contro il bersaglio. Se colpisci, il bersaglio subisce 1d12 danni da veleno.",
+		"cantripUpgrade": "Il danno aumenta di 1d12 quando raggiungi il 5° livello (2d12), l'11° (3d12) e il 17° (4d12)."
 	},
 	{
 		"name": "Prestidigitation",
@@ -200,10 +200,10 @@
 		"actionType": "action",
 		"concentration": false,
 		"ritual": false,
-		"range": "10 feet",
+		"range": "3 metri",
 		"components": ["v", "s"],
-		"duration": "Up to 1 hour",
-		"description": "You create a magical effect within range. Choose the effect from the options below. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time. \n\nSensory Effect. You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor. \n\nFire Play. You instantaneously light or snuff out a candle, a torch, or a small campfire. Clean or Soil. You instantaneously clean or soil an object no larger than 1 cubic foot. \n\nMinor Sensation. You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour. \n\nMagic Mark. You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour. \n\nMinor Creation. You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn. A trinket can deal no damage and has no monetary worth."
+		"duration": "fino a 1 ora",
+		"description": "Crei un effetto magico nel raggio. Scegli l'effetto tra le opzioni seguenti. Se lanci questo incantesimo più volte, puoi avere attivi fino a tre dei suoi effetti non istantanei alla volta. \n\nEffetto sensoriale. Crei un effetto sensoriale istantaneo e innocuo, come una pioggia di scintille, una folata di vento, deboli note musicali o un odore curioso. \n\nGioco di fuoco. Accendi o spegni istantaneamente una candela, una torcia o un piccolo fuoco da campo. \n\nPulire o Sporcare. Pulisci o sporchi istantaneamente un oggetto grande al massimo 30 centimetri per lato. \n\nSensazione minore. Raffreddi, riscaldi o insaporisci fino a 30 centimetri cubi di materiale non vivente per 1 ora. \n\nSegno magico. Fai apparire un colore, un piccolo segno o un simbolo su un oggetto o una superficie per 1 ora. \n\nCreazione minore. Crei un ninnolo non magico o un'immagine illusoria che può stare nella tua mano. Dura fino alla fine del tuo turno successivo. Il ninnolo non può infliggere danni e non ha valore monetario."
 	},
 	{
 		"name": "Produce Flame",
@@ -213,11 +213,11 @@
 		"actionType": "bonusAction",
 		"concentration": false,
 		"ritual": false,
-		"range": "Self",
+		"range": "Sé",
 		"components": ["v", "s"],
 		"duration": "10 minutes",
-		"description": "A flickering flame appears in your hand and remains there for the duration. While there, the flame emits no heat and ignites nothing, and it sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. The spell ends if you cast it again. \n\nUntil the spell ends, you can take a Magic action to hurl fire at a creature or an object within 60 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 Fire damage.",
-		"cantripUpgrade": "The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8)."
+		"description": "Una fiamma tremolante appare nella tua mano e vi rimane per tutta la durata. Finché è lì, la fiamma non emette calore e non incendia nulla, ed emette luce intensa in un raggio di 6 metri e luce fioca per altri 6 metri. L'incantesimo termina se lo lanci di nuovo. \n\nFinché l'incantesimo dura, puoi usare un'azione magica per scagliare il fuoco contro una creatura o un oggetto entro 18 metri da te. Effettua un attacco con incantesimo a distanza. Se colpisci, il bersaglio subisce 1d8 danni da fuoco.",
+		"cantripUpgrade": "Il danno aumenta di 1d8 quando raggiungi il 5° livello (2d8), l'11° (3d8) e il 17° (4d8)."
 	},
 	{
 		"name": "Ray of Frost",

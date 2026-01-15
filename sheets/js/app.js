@@ -1366,11 +1366,11 @@ function renderInventory() {
       const metaText = parts.length ? parts.join(" • ") : "—";
 
       const thumbHtml = it.img
-        ? `< div class="inv-row-thumb" > <img src="${INVENTORY_IMAGE_BASE + it.img}" alt=""></div>`
-        : `< div class="inv-row-thumb inv-row-thumb-empty" > <i class='bx bx-image-alt'></i></div > `;
+        ? `<div class="inv-row-thumb"><img src="${INVENTORY_IMAGE_BASE + it.img}" alt=""></div>`
+        : `<div class="inv-row-thumb inv-row-thumb-empty"><i class='bx bx-image-alt'></i></div>`;
 
       return `
-        < tr >
+        <tr>
       <td>
         <input class="inv-inline" type="number" min="0" step="1"
           value="${it.qty ?? 1}"
@@ -1400,7 +1400,7 @@ function renderInventory() {
           </button>
         </div>
       </td>
-    </tr >
+    </tr>
         `;
     })
     .join("");

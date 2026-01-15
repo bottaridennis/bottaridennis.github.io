@@ -62,9 +62,96 @@ bindAutosave();
 // -----------------------------
 // Incantesimi page rendering
 // -----------------------------
-function initSpellsPage() {
+async function initSpellsPage() {
+  const slugId = (str) =>
+    String(str ?? "")
+      .toLowerCase()
+      .trim()
+      .replaceAll("à", "a")
+      .replaceAll("è", "e")
+      .replaceAll("ì", "i")
+      .replaceAll("ò", "o")
+      .replaceAll("ù", "u")
+      .replaceAll(/[^a-z0-9]+/g, "-")
+      .replaceAll(/^-|-$/g, "");
+
+  const spellId = (sp) => {
+    if (sp.id) return sp.id;
+    if (sp.img) {
+      const parts = String(sp.img).split("/");
+      const file = parts[parts.length - 1] || "";
+      if (file) return slugId(file.replace(/\.(jpg|jpeg|png|webp)$/i, ""));
+    }
+    return slugId(sp.name);
+  };
+
+  const normalizeRange = (range) => {
+    const raw = String(range ?? "").trim();
+    if (!raw) return "";
+    const feetMatch = raw.match(/^(\d+)\s*feet$/i);
+    if (feetMatch) {
+      const feet = parseInt(feetMatch[1], 10);
+      if (!Number.isNaN(feet)) {
+        const meters = Math.round(feet * 0.3);
+        return `${meters} metri`;
+      }
+    }
+    return raw;
+  };
+
   const grid = document.getElementById("spellsGrid");
-  if (!grid || !window.SPELLS) return;
+  if (!grid) return;
+
+  if (!window.SPELLS) {
+    try {
+      let rawSpells = window.RAW_SPELLS;
+      if (!rawSpells) {
+        const r = await fetch('./2024_spells.json');
+        rawSpells = await r.json();
+      }
+
+      window.SPELLS = rawSpells.map(s => {
+        const schoolMap = {
+          "evocation": "Invocazione",
+          "necromancy": "Necromanzia",
+          "illusion": "Illusione",
+          "transmutation": "Trasmutazione",
+          "abjuration": "Abiurazione",
+          "conjuration": "Congiurazione",
+          "divination": "Divinazione",
+          "enchantment": "Ammaliamento"
+        };
+
+        const levelLabel = s.level === 0 ? "Trucchetto" : String(s.level);
+
+        const displayName = s.displayName || s.name;
+        const imageName = s.imageName || s.originalName || s.name;
+        const imgPath = s.img || `Images/spells/${imageName}.jpg`;
+
+        return {
+          id: slugId(imageName),
+          name: displayName,
+          rawName: s.name,
+          school: schoolMap[s.school.toLowerCase()] || s.school,
+          level: levelLabel,
+          castingTime: s.actionType === "action" ? "1 azione" :
+            s.actionType === "bonus" ? "1 azione bonus" :
+              s.actionType === "reaction" ? "1 reazione" : s.actionType,
+          range: normalizeRange(s.range),
+          components: s.components.map(c => c.toUpperCase()).join(", ") + (s.material ? ` (${s.material})` : ""),
+          duration: (s.concentration ? "Concentrazione, " : "") + s.duration,
+          img: imgPath,
+          description: s.description + (s.cantripUpgrade ? `\n\nAi livelli superiori: ${s.cantripUpgrade}` : ""),
+          classes: s.classes, // Utile per filtri futuri
+          ritual: s.ritual
+        };
+      });
+
+    } catch (err) {
+      console.error(err);
+      return;
+    }
+  }
 
   const search = document.getElementById("spellSearch");
   const schoolFilter = document.getElementById("schoolFilter");
@@ -93,29 +180,43 @@ function initSpellsPage() {
     noCantrip: false,
   };
 
-  const MY_SPELLS_KEY = "dnd_my_spells_v1";
+  if (levelFilter) {
+    const levelsSet = new Set();
+    let hasCantrip = false;
+    window.SPELLS.forEach((s) => {
+      if (s.level === "Trucchetto") {
+        hasCantrip = true;
+        return;
+      }
+      const n = parseInt(s.level, 10);
+      if (!Number.isNaN(n)) levelsSet.add(n);
+    });
 
-  const slugId = (str) =>
-    String(str ?? "")
-      .toLowerCase()
-      .trim()
-      .replaceAll("à", "a")
-      .replaceAll("è", "e")
-      .replaceAll("ì", "i")
-      .replaceAll("ò", "o")
-      .replaceAll("ù", "u")
-      .replaceAll(/[^a-z0-9]+/g, "-")
-      .replaceAll(/^-|-$/g, "");
+    levelFilter.innerHTML = "";
 
-  const spellId = (sp) => {
-    if (sp.id) return sp.id;
-    if (sp.img) {
-      const parts = String(sp.img).split("/");
-      const file = parts[parts.length - 1] || "";
-      if (file) return slugId(file.replace(/\.(jpg|jpeg|png|webp)$/i, ""));
+    const optAll = document.createElement("option");
+    optAll.value = "";
+    optAll.textContent = "Tutti i livelli";
+    levelFilter.appendChild(optAll);
+
+    if (hasCantrip) {
+      const optCantrip = document.createElement("option");
+      optCantrip.value = "Trucchetto";
+      optCantrip.textContent = "Trucchetto";
+      levelFilter.appendChild(optCantrip);
     }
-    return slugId(sp.name);
-  };
+
+    Array.from(levelsSet)
+      .sort((a, b) => a - b)
+      .forEach((lvl) => {
+        const opt = document.createElement("option");
+        opt.value = String(lvl);
+        opt.textContent = String(lvl);
+        levelFilter.appendChild(opt);
+      });
+  }
+
+  const MY_SPELLS_KEY = "dnd_my_spells_v1";
 
   const ensureSpellIdsInPlace = () => {
     window.SPELLS.forEach((sp) => {
@@ -256,7 +357,7 @@ function initSpellsPage() {
     const map = myIndexMap(selected);
 
     const baseFiltered = window.SPELLS.filter((s) => {
-      const blob = `${s.name} ${s.school} ${s.level}`.toLowerCase();
+      const blob = `${s.name} ${s.rawName || ""} ${s.school} ${s.level}`.toLowerCase();
       const fullText = `${blob} ${s.description || ""}`.toLowerCase();
       const okQ = !q || blob.includes(q);
       const okSchool = !school || s.school === school;
@@ -496,8 +597,7 @@ function initSpellsPage() {
     const isPrepared = !!(entry && entry.prepared);
     const badges = [
       `<span class="badge-glass"><i class='bx bx-library me-1'></i>${s.school}</span>`,
-      `<span class="badge-glass"><i class='bx bx-layer me-1'></i>${
-        s.level === "Trucchetto" ? "Trucchetto" : `Lv ${s.level}`
+      `<span class="badge-glass"><i class='bx bx-layer me-1'></i>${s.level === "Trucchetto" ? "Trucchetto" : `Lv ${s.level}`
       }</span>`,
     ];
 
@@ -512,10 +612,6 @@ function initSpellsPage() {
           <input type="checkbox" data-mine-toggle="${s.id}">
           <span>${isMine ? "Mia" : "Aggiungi"}</span>
         </label>
-        <label class="mine-chip">
-          <input type="checkbox" data-prepared-toggle="${s.id}">
-          <span>${isPrepared ? "Preparato" : "Non prep."}</span>
-        </label>
       </div>`;
 
     return `
@@ -523,8 +619,7 @@ function initSpellsPage() {
       idx * 25,
       200
     )}">
-      <article class="spell-card v2 school-${slugSchool(s.school)}${
-        isMine ? " is-mine" : ""
+      <article class="spell-card v2 school-${slugSchool(s.school)}${isMine ? " is-mine" : ""
       }">
       
       <div class="spell-thumb v2">
@@ -543,15 +638,14 @@ function initSpellsPage() {
       <div class="spell-badges">${badges.join("")}</div>
         <div class="spell-body v2">
           <div class="spell-mini v2">
-            <div class="mini-pill"><i class='bx bx-target-lock'></i><b>${
-              s.range
-            }</b></div>
+            <div class="mini-pill"><i class='bx bx-target-lock'></i><b>${s.range
+      }</b></div>
             <div class="mini-pill"><i class='bx bx-time-five'></i><b>${shortDuration(
-              s.duration
-            )}</b></div>
+        s.duration
+      )}</b></div>
             <div class="mini-pill"><i class='bx bx-flask'></i><b>${shortComponents(
-              s.components
-            )}</b></div>
+        s.components
+      )}</b></div>
           </div>
 
           <button class="btn-soft v2 mt-3" data-open-spell="${idx}">
@@ -597,13 +691,15 @@ function initSpellsPage() {
 
   const pickTag = (s) => {
     const map = {
-      Necromanzia: "☠ necro",
-      Abiurazione: "🛡 difesa",
-      Ammaliamento: "🌀 controllo",
-      Divinazione: "👁 sensi",
-      Illusione: "🫥 stealth",
-      Invocazione: "✨ potere",
-      Trasmutazione: "🔧 buff",
+      Necromanzia: "☠ Necromanzia",
+      Abiurazione: "🛡 Abiurazione",
+      Ammaliamento: "🌀 Ammaliamento",
+      Divinazione: "👁 Divinazione",
+      Illusione: "🫥 Illusione",
+      Invocazione: "✨ Invocazione",
+      Trasmutazione: "🔧 Trasmutazione",
+      Congiurazione: "🌪️ Congiurazione",
+      Evocazione: "🌪️ Evocazione",
     };
     return map[s.school] || "—";
   };
@@ -611,8 +707,7 @@ function initSpellsPage() {
   const makeOneLine = (s) => {
     const parts = [
       s.name,
-      `${s.school} • ${
-        s.level === "Trucchetto" ? "Trucchetto" : `Livello ${s.level}`
+      `${s.school} • ${s.level === "Trucchetto" ? "Trucchetto" : `Livello ${s.level}`
       }`,
       `Tempo: ${s.castingTime}`,
       `Gittata: ${s.range}`,
@@ -690,8 +785,8 @@ function initSpellsPage() {
         const incoming = Array.isArray(json?.selected)
           ? json.selected
           : Array.isArray(json)
-          ? json
-          : [];
+            ? json
+            : [];
 
         const cleaned = incoming
           .filter(
@@ -803,9 +898,9 @@ function applyBindData(payload) {
   // supporta sia { data: {...} } sia json “piatto”
   const data =
     payload &&
-    typeof payload === "object" &&
-    payload.data &&
-    typeof payload.data === "object"
+      typeof payload === "object" &&
+      payload.data &&
+      typeof payload.data === "object"
       ? payload.data
       : payload;
 
@@ -1133,9 +1228,8 @@ function openInvModal(index) {
   const it = items[index];
   if (!it) return;
 
-  document.getElementById("invModalSubtitle").textContent = `Oggetto #${
-    index + 1
-  }`;
+  document.getElementById("invModalSubtitle").textContent = `Oggetto #${index + 1
+    }`;
 
   document.getElementById("invQty").value = it.qty ?? 1;
   document.getElementById("invName").value = it.name ?? "";

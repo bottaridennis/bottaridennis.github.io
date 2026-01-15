@@ -671,6 +671,10 @@ body {
   --school: #fb7185;
 }
 
+.school-congiurazione {
+  --school: #f97316;
+}
+
 .spell-card.v2::before {
   content: "";
   position: absolute;
@@ -1147,4 +1151,89 @@ html[data-theme="light"] .table-glass thead th {
   background: rgba(15, 23, 42, .04) !important;
   border-color: rgba(15, 23, 42, .14) !important;
   color: #020617 !important;
+}
+
+/* =========================
+   LIGHT MODE FIXES
+   ========================= */
+
+/* Fix text contrast in cards and panels */
+html[data-theme="light"] .spell-sub,
+html[data-theme="light"] .spell-mini,
+html[data-theme="light"] .kv span,
+html[data-theme="light"] .mini-row span,
+html[data-theme="light"] .ability__head,
+html[data-theme="light"] .quick__k,
+html[data-theme="light"] .stat-pill__label,
+html[data-theme="light"] .inv-muted {
+  color: rgba(15, 23, 42, .7) !important;
+}
+
+html[data-theme="light"] .spell-desc,
+html[data-theme="light"] .spell-mini b,
+html[data-theme="light"] .mini-pill b,
+html[data-theme="light"] .ability__mod {
+  color: rgba(15, 23, 42, .9) !important;
+}
+
+html[data-theme="light"] .mini-pill {
+  background: rgba(15, 23, 42, .06);
+  border-color: rgba(15, 23, 42, .14);
+  color: rgba(15, 23, 42, .8);
+}
+
+html[data-theme="light"] .mini-pill i {
+  color: rgba(15, 23, 42, .6);
+}
+
+html[data-theme="light"] .special-note {
+  background: rgba(15, 23, 42, .05);
+  border-color: rgba(15, 23, 42, .12);
+  color: #020617;
+}
+
+/* Fix modal inputs/text */
+html[data-theme="light"] .form-control-glass::placeholder,
+html[data-theme="light"] .inv-inline::placeholder,
+html[data-theme="light"] .search-input::placeholder {
+  color: rgba(15, 23, 42, .45);
+}
+
+/* Fix navbar toggler */
+html[data-theme="light"] .navbar-toggler-icon,
+html[data-theme="light"] .btn-close-white {
+  filter: invert(1);
+}
+
+/* Preserve white text on spell thumbnails (which have dark overlay) */
+html[data-theme="light"] .spell-thumb,
+html[data-theme="light"] .spell-thumb .spell-title,
+html[data-theme="light"] .spell-thumb .spell-sub,
+html[data-theme="light"] .spell-thumb .spell-tag {
+  color: #fff !important;
+}
+
+html[data-theme="light"] .spell-thumb .spell-sub.v2 {
+  color: rgba(255, 255, 255, .75) !important;
+}
+
+html[data-theme="light"] .spell-tag {
+  background: rgba(255, 255, 255, .15);
+  border-color: rgba(255, 255, 255, .25);
+  color: #fff !important;
+}
+
+/* Fix slot tracker buttons */
+html[data-theme="light"] .slot-pill {
+  background: rgba(15, 23, 42, .08);
+  border-color: rgba(15, 23, 42, .18);
+  color: #020617;
+}
+
+html[data-theme="light"] .slot-btn {
+  background: rgba(15, 23, 42, .1);
+  color: #020617;
+}
+html[data-theme="light"] .slot-btn:hover {
+  background: rgba(15, 23, 42, .18);
 }

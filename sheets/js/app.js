@@ -60,18 +60,40 @@ function bindAutosave() {
 
   const btnReset = document.getElementById("btnReset");
   if (btnReset) {
-    btnReset.addEventListener("click", () => {
+    btnReset.addEventListener("click", async () => {
+      const msg =
+        "Sei sicuro di voler resettare la scheda? Perderai tutti i dati locali, inventario e selezioni di talenti e invocazioni non salvate nel Cloud.";
+      let proceed = false;
+      try {
+        if (window.cloud && typeof window.cloud.confirm === "function") {
+          proceed = await window.cloud.confirm(msg);
+        } else {
+          proceed = window.confirm(msg);
+        }
+      } catch (e) {
+        proceed = window.confirm(msg);
+      }
+      if (!proceed) return;
+
       setSavedState({});
 
-      // reset campi
       inputs.forEach((el) => (el.value = ""));
 
-      // reset inventario
       if (typeof setInventory === "function") setInventory([]);
       if (typeof renderInventory === "function") renderInventory();
 
-      // ricalcolo modificatori
       if (typeof initAbilityModifiers === "function") initAbilityModifiers();
+
+      try {
+        localStorage.removeItem(MY_SPELLS_KEY_GLOBAL);
+        localStorage.removeItem(MY_FEATURES_KEY_GLOBAL);
+        localStorage.removeItem(MY_INVOCATIONS_KEY_GLOBAL);
+      } catch (e) {
+      }
+
+      if (typeof renderOwnedFeaturesInvocations === "function") {
+        renderOwnedFeaturesInvocations();
+      }
     });
   }
 }
@@ -93,6 +115,25 @@ function initCloudAutoSave() {
   setInterval(() => {
     window.cloud.autoSave();
   }, 60000);
+}
+
+function initLeavePageGuard() {
+  const path = window.location.pathname || "";
+  const isStatsPage =
+    path.endsWith("index.html") ||
+    path === "/" ||
+    path === "";
+  if (!isStatsPage) return;
+  window.addEventListener("beforeunload", function (e) {
+    if (window.cloud && window.cloud.user) {
+      return;
+    }
+    const msg =
+      "Non sei loggato: se lasci questa pagina potresti perdere i dati non salvati nel Cloud. Sei sicuro di voler uscire?";
+    e.preventDefault();
+    e.returnValue = msg;
+    return msg;
+  });
 }
 
 // -----------------------------
@@ -138,56 +179,7 @@ async function initSpellsPage() {
   const grid = document.getElementById("spellsGrid");
   if (!grid) return;
 
-  if (!window.SPELLS) {
-    try {
-      let rawSpells = window.RAW_SPELLS;
-      if (!rawSpells) {
-        const r = await fetch('./data/2024_spells.json');
-        rawSpells = await r.json();
-      }
-
-      window.SPELLS = rawSpells.map(s => {
-        const schoolMap = {
-          "evocation": "Invocazione",
-          "necromancy": "Necromanzia",
-          "illusion": "Illusione",
-          "transmutation": "Trasmutazione",
-          "abjuration": "Abiurazione",
-          "conjuration": "Congiurazione",
-          "divination": "Divinazione",
-          "enchantment": "Ammaliamento"
-        };
-
-        const levelLabel = s.level === 0 ? "Trucchetto" : String(s.level);
-
-        const displayName = s.displayName || s.name;
-        const imageName = s.imageName || s.originalName || s.name;
-        const imgPath = s.img || `Images/spells/${imageName}.jpg`;
-
-        return {
-          id: slugId(imageName),
-          name: displayName,
-          rawName: s.name,
-          school: schoolMap[s.school.toLowerCase()] || s.school,
-          level: levelLabel,
-          castingTime: s.actionType === "action" ? "1 azione" :
-            s.actionType === "bonus" ? "1 azione bonus" :
-              s.actionType === "reaction" ? "1 reazione" : s.actionType,
-          range: normalizeRange(s.range),
-          components: s.components.map(c => c.toUpperCase()).join(", ") + (s.material ? ` (${s.material})` : ""),
-          duration: (s.concentration ? "Concentrazione, " : "") + s.duration,
-          img: imgPath,
-          description: s.description + (s.cantripUpgrade ? `\n\nAi livelli superiori: ${s.cantripUpgrade}` : ""),
-          classes: s.classes, // Utile per filtri futuri
-          ritual: s.ritual
-        };
-      });
-
-    } catch (err) {
-      console.error(err);
-      return;
-    }
-  }
+  await loadAllSpells();
 
   const search = document.getElementById("spellSearch");
   const schoolFilter = document.getElementById("schoolFilter");
@@ -855,6 +847,77 @@ const MY_SPELLS_KEY_GLOBAL = "dnd_my_spells_v1";
 const MY_FEATURES_KEY_GLOBAL = "dnd_my_features_v1";
 const MY_INVOCATIONS_KEY_GLOBAL = "dnd_my_invocations_v1";
 
+function slugIdGeneric(str) {
+  return String(str ?? "")
+    .toLowerCase()
+    .trim()
+    .replaceAll("à", "a")
+    .replaceAll("è", "e")
+    .replaceAll("ì", "i")
+    .replaceAll("ò", "o")
+    .replaceAll("ù", "u")
+    .replaceAll(/[^a-z0-9]+/g, "-")
+    .replaceAll(/^-|-$/g, "");
+}
+
+async function loadAllSpells() {
+  if (window.SPELLS) return;
+  try {
+    let rawSpells = window.RAW_SPELLS;
+    
+    // Se ancora non abbiamo rawSpells, usciamo
+    if (!rawSpells) return;
+
+    window.SPELLS = rawSpells.map(s => {
+      const schoolMap = {
+        "evocation": "Invocazione",
+        "necromancy": "Necromanzia",
+        "illusion": "Illusione",
+        "transmutation": "Trasmutazione",
+        "abjuration": "Abiurazione",
+        "conjuration": "Congiurazione",
+        "divination": "Divinazione",
+        "enchantment": "Ammaliamento"
+      };
+
+      // Normalizzazione range
+      const normalizeRange = (r) => {
+         if (!r) return "";
+         const lo = r.toLowerCase();
+         if (lo.includes("self")) return "Incantatore";
+         if (lo.includes("touch")) return "Tocco";
+         if (lo.includes("feet")) return r.replace("feet", "m").replace("foot", "m"); // approssimazione
+         return r;
+      };
+
+      const levelLabel = s.level === 0 ? "Trucchetto" : String(s.level);
+      const displayName = s.displayName || s.name;
+      const imageName = s.imageName || s.originalName || s.name;
+      const imgPath = s.img || `Images/spells/${imageName}.jpg`;
+
+      return {
+        id: slugIdGeneric(imageName),
+        name: displayName,
+        rawName: s.name,
+        school: schoolMap[s.school.toLowerCase()] || s.school,
+        level: levelLabel,
+        castingTime: s.actionType === "action" ? "1 azione" :
+          s.actionType === "bonus" ? "1 azione bonus" :
+            s.actionType === "reaction" ? "1 reazione" : s.actionType,
+        range: normalizeRange(s.range),
+        components: s.components.map(c => c.toUpperCase()).join(", ") + (s.material ? ` (${s.material})` : ""),
+        duration: (s.concentration ? "Concentrazione, " : "") + s.duration,
+        img: imgPath,
+        description: s.description + (s.cantripUpgrade ? `\n\nAi livelli superiori: ${s.cantripUpgrade}` : ""),
+        classes: s.classes,
+        ritual: s.ritual
+      };
+    });
+  } catch (err) {
+    console.error("Errore in loadAllSpells", err);
+  }
+}
+
 function loadMySpellsGlobal() {
   const raw = localStorage.getItem(MY_SPELLS_KEY_GLOBAL);
   if (!raw) return null;
@@ -863,6 +926,32 @@ function loadMySpellsGlobal() {
   } catch (e) {
     return null;
   }
+}
+
+function saveMySpellsGlobal(payload) {
+  localStorage.setItem(MY_SPELLS_KEY_GLOBAL, JSON.stringify(payload));
+}
+
+function updateMySpellMetaGlobal(id, patch) {
+  let payload = loadMySpellsGlobal();
+  if (!payload || !Array.isArray(payload.selected)) {
+     payload = { schema: "dnd-my-spells", version: 1, updatedAt: new Date().toISOString(), selected: [] };
+  }
+  
+  const i = payload.selected.findIndex((x) => x.id === id);
+  if (i === -1) {
+    payload.selected.push({
+      id,
+      asCantrip: null,
+      notes: "",
+      prepared: false,
+      ...patch,
+    });
+  } else {
+    payload.selected[i] = { ...payload.selected[i], ...patch };
+  }
+  payload.updatedAt = new Date().toISOString();
+  saveMySpellsGlobal(payload);
 }
 
 function loadMyFeaturesGlobal() {
@@ -1112,6 +1201,7 @@ function initExportImport() {
 
 initExportImport();
 initCloudAutoSave();
+initLeavePageGuard();
 
 /* =========================
    INVENTARIO MODULARE
@@ -1340,15 +1430,172 @@ function initConditions() {
 }
 
 initConditions();
-renderOwnedFeaturesInvocations();
+loadAllSpells().then(() => {
+  renderOwnedFeaturesInvocations();
+});
+
+function openSpellDetailFromSheet(id) {
+  const modalEl = document.getElementById("spellModal");
+  if (!modalEl || !window.bootstrap || !Array.isArray(window.SPELLS)) return;
+  
+  const targetId = String(id || "");
+  const item =
+    window.SPELLS.find((s) => String(s.id || "") === targetId) ||
+    window.SPELLS.find((s) => slugIdGeneric(s.name) === targetId);
+  if (!item) return;
+
+  const setText = (eid, val) => { const el = document.getElementById(eid); if(el) el.textContent = val; };
+  const setHTML = (eid, val) => { const el = document.getElementById(eid); if(el) el.innerHTML = val; };
+  
+  setText("modalTitle", item.name);
+  const labelLvl = item.level === "Trucchetto" ? "Trucchetto" : `Livello ${item.level}`;
+  setText("modalMeta", `${labelLvl} • ${item.school}`);
+  
+  const imgEl = document.getElementById("modalImg");
+  if(imgEl) imgEl.src = item.img;
+  
+  setText("mSchool", item.school);
+  setText("mLevel", labelLvl);
+  setText("mCast", item.castingTime);
+  setText("mRange", item.range);
+  setText("mComp", item.components);
+  setText("mDur", item.duration);
+  
+  const paragraphs = (text) => String(text || "").split("\n").map(t => t.trim()).filter(Boolean).map(t => `<p class="mb-2">${escapeHTML(t)}</p>`).join("");
+  setHTML("mDesc", paragraphs(item.description));
+  
+  const notesArea = document.getElementById("mNotes");
+  if (notesArea) {
+      const payload = loadMySpellsGlobal();
+      const selected = (payload && payload.selected) ? payload.selected : [];
+      const entry = selected.find(x => x.id === item.id);
+      notesArea.value = entry && entry.notes ? entry.notes : "";
+      
+      notesArea.oninput = () => {
+          updateMySpellMetaGlobal(item.id, { notes: notesArea.value });
+      };
+  }
+  
+  const wrap = document.getElementById("mSpecialWrap");
+  const txt = document.getElementById("mSpecial");
+  if (item.special) {
+    if(wrap) wrap.classList.remove("d-none");
+    if(txt) txt.textContent = item.special;
+  } else {
+    if(wrap) wrap.classList.add("d-none");
+    if(txt) txt.textContent = "";
+  }
+
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  modal.show();
+}
+
+function openFeatureDetailFromSheet(id) {
+  const modalEl = document.getElementById("featInvDetailModal");
+  if (!modalEl || !window.bootstrap) return;
+  const list = Array.isArray(window.FEATURES) ? window.FEATURES : [];
+  if (!list.length) return;
+  const targetId = String(id || "");
+  const item =
+    list.find((f) => String(f.id || "") === targetId) ||
+    list.find((f) => slugIdGeneric(f.name) === targetId);
+  if (!item) return;
+  const nameEl = document.getElementById("detailName");
+  const prereqEl = document.getElementById("detailPrereq");
+  const repeatEl = document.getElementById("detailRepeatable");
+  const descEl = document.getElementById("detailDesc");
+  if (nameEl) nameEl.textContent = item.name || "";
+  if (prereqEl) {
+    const hasPrereq = !!item.prerequisite;
+    prereqEl.textContent = item.prerequisite || "";
+    if (hasPrereq) prereqEl.classList.remove("d-none");
+    else prereqEl.classList.add("d-none");
+  }
+  if (repeatEl) {
+    if (item.repeatable) repeatEl.classList.remove("d-none");
+    else repeatEl.classList.add("d-none");
+  }
+  if (descEl) descEl.innerHTML = item.description || "";
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  modal.show();
+}
+
+function openInvocationDetailFromSheet(id) {
+  const modalEl = document.getElementById("featInvDetailModal");
+  if (!modalEl || !window.bootstrap) return;
+  const list = Array.isArray(window.INVOCATIONS) ? window.INVOCATIONS : [];
+  if (!list.length) return;
+  const targetId = String(id || "");
+  const item =
+    list.find((v) => String(v.id || "") === targetId) ||
+    list.find((v) => slugIdGeneric(v.name) === targetId);
+  if (!item) return;
+  const nameEl = document.getElementById("detailName");
+  const prereqEl = document.getElementById("detailPrereq");
+  const repeatEl = document.getElementById("detailRepeatable");
+  const descEl = document.getElementById("detailDesc");
+  if (nameEl) nameEl.textContent = item.name || "";
+  if (prereqEl) {
+    const hasPrereq = !!item.prerequisite;
+    prereqEl.textContent = item.prerequisite || "";
+    if (hasPrereq) prereqEl.classList.remove("d-none");
+    else prereqEl.classList.add("d-none");
+  }
+  if (repeatEl) {
+    if (item.repeatable) repeatEl.classList.remove("d-none");
+    else repeatEl.classList.add("d-none");
+  }
+  if (descEl) descEl.innerHTML = item.description || "";
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  modal.show();
+}
 
 function renderOwnedFeaturesInvocations() {
+  const spellsContainer = document.getElementById("ownedSpellsList");
   const featsContainer = document.getElementById("ownedFeaturesList");
   const invocationsContainer = document.getElementById("ownedInvocationsList");
-  if (!featsContainer && !invocationsContainer) return;
+  if (!spellsContainer && !featsContainer && !invocationsContainer) return;
 
+  const spellsPayload = loadMySpellsGlobal();
   const feats = loadMyFeaturesGlobal();
   const invocations = loadMyInvocationsGlobal();
+
+  if (spellsContainer) {
+    const selected =
+      spellsPayload && Array.isArray(spellsPayload.selected)
+        ? spellsPayload.selected
+        : [];
+    if (!selected.length) {
+      spellsContainer.innerHTML = `<div class="tiny text-mutedish">Nessun incantesimo selezionato</div>`;
+    } else {
+      spellsContainer.innerHTML = selected
+        .map(
+          (entry) => {
+            let name = entry.name;
+            if (!name && window.SPELLS) {
+               const found = window.SPELLS.find(s => s.id === entry.id);
+               if (found) name = found.name;
+            }
+            if (!name) name = "Incantesimo sconosciuto";
+            
+            return `
+      <div class="mini-row" data-spell-id="${escapeHTML(
+        entry.id || ""
+      )}">
+        <span>${escapeHTML(name)}</span>
+      </div>
+      `;
+          }
+        )
+        .join("");
+      spellsContainer.querySelectorAll("[data-spell-id]").forEach((el) => {
+        el.addEventListener("click", () => {
+          const id = el.getAttribute("data-spell-id");
+          openSpellDetailFromSheet(id);
+        });
+      });
+    }
+  }
 
   if (featsContainer) {
     if (!feats || !feats.length) {
@@ -1357,8 +1604,10 @@ function renderOwnedFeaturesInvocations() {
       featsContainer.innerHTML = feats
         .map(
           (f) => `
-      <div class="mini-row">
-      <span>${escapeHTML(f.name || "")}</span>
+      <div class="mini-row" data-feature-id="${escapeHTML(
+        f.id || slugIdGeneric(f.name || "")
+      )}">
+        <span>${escapeHTML(f.name || "")}</span>
           ${
         f.prerequisite
           ? `<span class="tiny text-mutedish ms-auto">${escapeHTML(f.prerequisite)}</span>`
@@ -1368,6 +1617,12 @@ function renderOwnedFeaturesInvocations() {
         `
         )
         .join("");
+      featsContainer.querySelectorAll("[data-feature-id]").forEach((el) => {
+        el.addEventListener("click", () => {
+          const id = el.getAttribute("data-feature-id");
+          openFeatureDetailFromSheet(id);
+        });
+      });
     }
   }
 
@@ -1378,7 +1633,9 @@ function renderOwnedFeaturesInvocations() {
       invocationsContainer.innerHTML = invocations
         .map(
           (v) => `
-        <div class="mini-row">
+        <div class="mini-row" data-invocation-id="${escapeHTML(
+          v.id || slugIdGeneric(v.name || "")
+        )}">
           <span>${escapeHTML(v.name || "")}</span>
           ${
         v.prerequisite
@@ -1389,6 +1646,14 @@ function renderOwnedFeaturesInvocations() {
         `
         )
         .join("");
+      invocationsContainer
+        .querySelectorAll("[data-invocation-id]")
+        .forEach((el) => {
+          el.addEventListener("click", () => {
+            const id = el.getAttribute("data-invocation-id");
+            openInvocationDetailFromSheet(id);
+          });
+        });
     }
   }
 }

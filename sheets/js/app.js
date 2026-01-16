@@ -652,7 +652,7 @@ async function initSpellsPage() {
       }">
       
       <div class="spell-thumb v2">
-      <img src="${s.img}" alt="placeholder ${s.name}">
+      <img src="${s.img}" onerror="this.onerror=null;this.src='Images/PLACEHOLDER_IMG.jpg'" alt="${s.name}">
       <div class="spell-overlay"></div>
       <div class="spell-thumb-footer">
       <div class="spell-title-row">

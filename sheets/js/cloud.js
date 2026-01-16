@@ -348,6 +348,10 @@ class CloudManager {
       this.renderCharList();
     }
  
+    // Chiudi il modal del profilo se aperto
+    const modal = bootstrap.Modal.getInstance(document.getElementById("cloudProfileModal"));
+    modal?.hide();
+
     showAppAlert(`Salvataggio "${data.name}" caricato!`);
   }
 

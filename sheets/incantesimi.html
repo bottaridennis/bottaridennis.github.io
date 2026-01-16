@@ -66,29 +66,7 @@
             <i class='bx bx-target-lock me-1'></i> Encounter
           </a>
 
-          <div class="search-wrap">
-            <i class='bx bx-search'></i>
-            <input id="spellSearch" class="search-input" placeholder="Cerca" />
-          </div>
 
-          <select id="schoolFilter" class="form-select form-select-sm form-control-glass w-auto">
-            <option value="">Tutte le scuole</option>
-            <option>Abiurazione</option>
-            <option>Ammaliamento</option>
-            <option>Divinazione</option>
-            <option>Illusione</option>
-            <option>Invocazione</option>
-            <option>Necromanzia</option>
-            <option>Trasmutazione</option>
-            <option>Congiurazione</option>
-          </select>
-
-          <select id="levelFilter" class="form-select form-select-sm form-control-glass w-auto">
-            <option value="">Tutti i livelli</option>
-            <option value="Trucchetto">Trucchetto</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-          </select>
         </div>
       </div>
     </div>
@@ -100,6 +78,27 @@
         <h1 class="display-title mb-1">Grimorio personale</h1>
       </div>
       <div class="d-flex flex-wrap gap-2 align-items-center">
+        <div class="search-wrap">
+          <i class='bx bx-search'></i>
+          <input id="spellSearch" class="search-input" placeholder="Cerca" />
+        </div>
+        <select id="schoolFilter" class="form-select form-select-sm form-control-glass w-auto">
+          <option value="">Tutte le scuole</option>
+          <option>Abiurazione</option>
+          <option>Ammaliamento</option>
+          <option>Divinazione</option>
+          <option>Illusione</option>
+          <option>Invocazione</option>
+          <option>Necromanzia</option>
+          <option>Trasmutazione</option>
+          <option>Congiurazione</option>
+        </select>
+        <select id="levelFilter" class="form-select form-select-sm form-control-glass w-auto">
+          <option value="">Tutti i livelli</option>
+          <option value="Trucchetto">Trucchetto</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
         <span class="chip chip-alt"><i class='bx bx-filter-alt me-1'></i> filtri</span>
         <span id="counter" class="chip"><i class='bx bx-collection me-1'></i> 0</span>
         <span id="mineCount" class="chip d-none"><i class='bx bxs-bookmark-star me-1'></i> Selezionate 0</span>
@@ -164,7 +163,7 @@
           <div class="row g-3">
             <div class="col-lg-4">
               <div class="spell-img-big">
-                <img id="modalImg" alt="placeholder" />
+                <img id="modalImg" alt="placeholder" onerror="this.onerror=null;this.src='Images/PLACEHOLDER_IMG.jpg'" />
                 <!-- <div class="spell-img-cap tiny text-mutedish">placeholder immagine</div> -->
               </div>
             </div>

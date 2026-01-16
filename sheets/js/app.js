@@ -6,6 +6,7 @@
 // Autosave (pagina statistiche)
 // -----------------------------
 const STORAGE_KEY = "dnd_sheet_stats_v1";
+let SHEET_STATE = {};
 
 function safeJSONParse(str) {
   try {
@@ -15,11 +16,27 @@ function safeJSONParse(str) {
   }
 }
 
+function showAppAlert(message) {
+  try {
+    const modalEl = document.getElementById("appAlertModal");
+    const msgEl = document.getElementById("appAlertMessage");
+    if (!modalEl || !msgEl || !window.bootstrap) {
+      window.alert(message);
+      return;
+    }
+    msgEl.textContent = message;
+    const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+    modal.show();
+  } catch (e) {
+    window.alert(message);
+  }
+}
+
 function bindAutosave() {
   const inputs = document.querySelectorAll("[data-bind]");
   if (!inputs.length) return;
 
-  const saved = safeJSONParse(localStorage.getItem(STORAGE_KEY)) || {};
+  const saved = getSavedState();
   inputs.forEach((el) => {
     const key = el.getAttribute("data-bind");
     if (saved[key] != null) el.value = saved[key];
@@ -31,7 +48,9 @@ function bindAutosave() {
       const key = el.getAttribute("data-bind");
       data[key] = el.value;
     });
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    const current = getSavedState();
+    const next = { ...current, ...data };
+    setSavedState(next);
   };
 
   inputs.forEach((el) => {
@@ -42,7 +61,7 @@ function bindAutosave() {
   const btnReset = document.getElementById("btnReset");
   if (btnReset) {
     btnReset.addEventListener("click", () => {
-      localStorage.removeItem(STORAGE_KEY);
+      setSavedState({});
 
       // reset campi
       inputs.forEach((el) => (el.value = ""));
@@ -819,7 +838,7 @@ async function initSpellsPage() {
         saveMySpells(cleaned);
         apply();
       } catch (err) {
-        alert("File JSON non valido.");
+        showAppAlert("File JSON non valido.");
         console.error(err);
       } finally {
         e.target.value = "";
@@ -989,7 +1008,7 @@ function applyBindData(payload) {
   }
 
   // salva tutto nello storage
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(collectBindData()));
+  setSavedState(collectBindData());
 
   // ricalcola modificatori (se presente)
   if (typeof initAbilityModifiers === "function") {
@@ -1067,7 +1086,7 @@ function initExportImport() {
 
         applyBindData(data);
       } catch (err) {
-        alert("JSON non valido o file corrotto.");
+        showAppAlert("JSON non valido o file corrotto.");
         console.error(err);
       } finally {
         // reset per poter ricaricare lo stesso file
@@ -1189,11 +1208,11 @@ function renderInventoryImageList() {
     totalMatches += filteredDefs.length;
 
     html += `
-      <div class="inv-img-category-title" data-cat-idx="${idx}">
+      <div class="inv-img-category-title collapsed" data-cat-idx="${idx}">
         <span>${cat}</span>
         <i class="bx bx-chevron-down"></i>
       </div>
-      <div class="inv-img-grid" id="cat-grid-${idx}">
+      <div class="inv-img-grid collapsed" id="cat-grid-${idx}">
     `;
 
     html += filteredDefs
@@ -1237,6 +1256,15 @@ function renderInventoryImageList() {
     });
   });
 
+  if (q) {
+    imgList.querySelectorAll(".inv-img-category-title").forEach((el) => {
+      el.classList.remove("collapsed");
+    });
+    imgList.querySelectorAll(".inv-img-grid").forEach((grid) => {
+      grid.classList.remove("collapsed");
+    });
+  }
+
   imgList.querySelectorAll("[data-inv-img]").forEach((btn) => {
     btn.addEventListener("click", () => {
       if (invEditingIndex == null) return;
@@ -1253,11 +1281,11 @@ function renderInventoryImageList() {
 }
 
 function getSavedState() {
-  return safeJSONParse(localStorage.getItem(STORAGE_KEY)) || {};
+  return SHEET_STATE;
 }
 
 function setSavedState(next) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  SHEET_STATE = next || {};
 }
 
 function toggleTheme() {

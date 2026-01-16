@@ -54,18 +54,34 @@ class CloudManager {
   }
 
   // 1. REGISTRAZIONE
-  async register(email, password) {
+  async register(email, password, displayName) {
     const { data, error } = await this.client.auth.signUp({
       email: email,
       password: password,
+      options: {
+        data: {
+          display_name: displayName || "",
+        },
+      },
     });
 
     if (error) {
-      alert("Errore registrazione: " + error.message);
+      showAppAlert("Errore registrazione: " + error.message);
       return false;
     }
-    
-    alert("Registrazione completata! Controlla la tua email per confermare (o se hai disabilitato la conferma, fai login).");
+    const user = data?.user || null;
+    if (user && displayName) {
+      try {
+        await this.client.from("user_logins").upsert({
+          user_id: user.id,
+          email: user.email || email,
+          username: displayName,
+        });
+      } catch (e) {
+      }
+    }
+
+    showAppAlert("Registrazione completata! Controlla la tua email per confermare (o se hai disabilitato la conferma, fai login).");
     return true;
   }
 
@@ -73,39 +89,69 @@ class CloudManager {
     const emailEl = document.getElementById("regUser");
     const passEl = document.getElementById("regPass");
     const pass2El = document.getElementById("regPass2");
+    const nameEl = document.getElementById("regDisplayName");
     if (!emailEl || !passEl || !pass2El) return;
 
     const email = emailEl.value.trim();
     const pass = passEl.value;
     const pass2 = pass2El.value;
+    const displayName = nameEl ? nameEl.value.trim() : "";
 
     if (!email || !pass || !pass2) {
-      alert("Compila email e password due volte.");
+      showAppAlert("Compila email, nome utente e password due volte.");
       return;
     }
-
+ 
     if (pass !== pass2) {
-      alert("Le due password non coincidono.");
+      showAppAlert("Le due password non coincidono.");
       return;
     }
 
-    await this.register(email, pass);
+    await this.register(email, pass, displayName);
   }
 
   // 2. LOGIN
-  async login(email, password) {
+  async resolveIdentifierToEmail(identifier) {
+    const trimmed = (identifier || "").trim();
+    if (!trimmed) return null;
+    if (trimmed.includes("@")) return trimmed;
+    try {
+      const { data, error } = await this.client
+        .from("user_logins")
+        .select("email")
+        .eq("username", trimmed)
+        .single();
+      if (error || !data || !data.email) {
+        showAppAlert("Nessun account trovato con questo nome utente.");
+        return null;
+      }
+      return data.email;
+    } catch (e) {
+      showAppAlert("Login con nome utente non disponibile, prova con l'email.");
+      return null;
+    }
+  }
+
+  async login(identifier, password) {
+    const rawId = (identifier || "").trim();
+    if (!rawId || !password) {
+      showAppAlert("Inserisci nome utente/email e password.");
+      return false;
+    }
+    const email = await this.resolveIdentifierToEmail(rawId);
+    if (!email) return false;
+
     const { data, error } = await this.client.auth.signInWithPassword({
       email: email,
       password: password,
     });
 
     if (error) {
-      alert("Errore login: " + error.message);
+      showAppAlert("Errore login: " + error.message);
       return false;
     }
     
-    // onAuthStateChange gestirà l'UI
-    const modal = bootstrap.Modal.getInstance(document.getElementById('cloudAuthModal'));
+    const modal = bootstrap.Modal.getInstance(document.getElementById("cloudAuthModal"));
     modal?.hide();
     return true;
   }
@@ -113,8 +159,30 @@ class CloudManager {
   // 3. LOGOUT
   async logout() {
     const { error } = await this.client.auth.signOut();
-    if (error) alert(error.message);
+    if (error) showAppAlert(error.message);
     window.location.reload();
+  }
+
+  async updateDisplayName(newName) {
+    if (!this.user) {
+      showAppAlert("Devi essere loggato per cambiare il nome visualizzato.");
+      return;
+    }
+    const trimmed = (newName || "").trim();
+    if (!trimmed) {
+      showAppAlert("Inserisci un nome valido.");
+      return;
+    }
+    const { data, error } = await this.client.auth.updateUser({
+      data: { display_name: trimmed },
+    });
+    if (error) {
+      showAppAlert("Errore aggiornamento nome utente: " + error.message);
+      return;
+    }
+    this.user = data?.user || this.user;
+    this.updateUI();
+    showAppAlert("Nome visualizzato aggiornato.");
   }
 
   // 4. SALVA PERSONAGGIO
@@ -173,10 +241,10 @@ class CloudManager {
     }
 
     if (error) {
-      if (!options.silent) alert("Errore salvataggio: " + error.message);
+      if (!options.silent) showAppAlert("Errore salvataggio: " + error.message);
       else console.error("Errore autosalvataggio:", error);
     } else {
-      if (!options.silent) alert(`Salvataggio "${effectiveName}" completato con successo!`);
+      if (!options.silent) showAppAlert(`Salvataggio "${effectiveName}" completato con successo!`);
       this.renderCharList();
     }
   }
@@ -254,21 +322,33 @@ class CloudManager {
       .single();
 
     if (error || !data) {
-      alert("Errore caricamento: " + (error?.message || "Non trovato"));
+      showAppAlert("Errore caricamento: " + (error?.message || "Non trovato"));
       return;
     }
 
-    const d = data.data;
-    if (d.pg_stats) localStorage.setItem("pg_stats", d.pg_stats);
-    if (d.mySpells) localStorage.setItem("mySpells", d.mySpells);
-    if (d.myInvocations) localStorage.setItem("myInvocations", d.myInvocations);
-    if (d.myFeatures) localStorage.setItem("myFeatures", d.myFeatures);
-    if (d.inventory) localStorage.setItem("inventory", d.inventory);
-    if (d.encounter_state) localStorage.setItem("encounter_state", d.encounter_state);
-    if (d.notes) localStorage.setItem("notes", d.notes);
+    const payload = data.data || {};
+    const sheet = payload.sheet || payload.pg_stats || null;
+    const mySpells = payload.mySpells || null;
 
-    alert(`Salvataggio "${data.name}" caricato!`);
-    window.location.reload();
+    if (sheet && typeof applyBindData === "function") {
+      applyBindData(sheet);
+    }
+
+    if (mySpells && Array.isArray(mySpells.selected)) {
+      const spellsPayload = {
+        schema: "dnd-my-spells",
+        version: 1,
+        updatedAt: new Date().toISOString(),
+        selected: mySpells.selected,
+      };
+      localStorage.setItem("dnd_my_spells_v1", JSON.stringify(spellsPayload));
+    }
+
+    if (typeof this.renderCharList === "function") {
+      this.renderCharList();
+    }
+ 
+    showAppAlert(`Salvataggio "${data.name}" caricato!`);
   }
 
   // 7. ELIMINA PERSONAGGIO
@@ -280,7 +360,7 @@ class CloudManager {
       .single();
 
     if (fetchError || !data) {
-      alert("Errore nel recupero del salvataggio da eliminare.");
+      showAppAlert("Errore nel recupero del salvataggio da eliminare.");
       return;
     }
 
@@ -294,7 +374,7 @@ class CloudManager {
       .eq('id', id);
 
     if (error) {
-      alert("Errore eliminazione: " + error.message);
+      showAppAlert("Errore eliminazione: " + error.message);
     } else {
       this.renderCharList();
     }
@@ -308,20 +388,21 @@ class CloudManager {
       if (!modalEl || !msgEl || !okBtn || !window.bootstrap) {
         return window.confirm(message);
       }
-
+ 
       msgEl.textContent = message;
       const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-
+ 
       return await new Promise((resolve) => {
-        const handlerOk = () => {
-          okBtn.removeEventListener("click", handlerOk);
-          modalEl.removeEventListener("hidden.bs.modal", handlerCancel);
-          resolve(true);
-        };
         const handlerCancel = () => {
           okBtn.removeEventListener("click", handlerOk);
           modalEl.removeEventListener("hidden.bs.modal", handlerCancel);
           resolve(false);
+        };
+        const handlerOk = () => {
+          okBtn.removeEventListener("click", handlerOk);
+          modalEl.removeEventListener("hidden.bs.modal", handlerCancel);
+          modal.hide();
+          resolve(true);
         };
         okBtn.addEventListener("click", handlerOk);
         modalEl.addEventListener("hidden.bs.modal", handlerCancel, { once: true });
@@ -335,7 +416,7 @@ class CloudManager {
   // 8. ELIMINA ACCOUNT (OPZIONALE, COMPLESSO IN SUPABASE CLIENT-SIDE)
   async deleteUser() {
     if (!this.user) {
-      alert("Devi essere loggato per richiedere l'eliminazione dell'account.");
+      showAppAlert("Devi essere loggato per richiedere l'eliminazione dell'account.");
       return;
     }
     const email = this.user.email || "";
@@ -354,11 +435,17 @@ class CloudManager {
     const btnLogin = document.getElementById("cloudLoginBtn");
     const pnlUser = document.getElementById("cloudUserPanel");
     const lblUser = document.getElementById("cloudUsername");
+    const displayInput = document.getElementById("cloudDisplayNameInput");
     
     if (this.user) {
       if (btnLogin) btnLogin.classList.add("d-none");
       if (pnlUser) pnlUser.classList.remove("d-none");
-      if (lblUser) lblUser.textContent = this.user.email;
+      const meta = this.user.user_metadata || {};
+      const effectiveName = meta.display_name || this.user.email || "Utente";
+      if (lblUser) lblUser.textContent = effectiveName;
+      if (displayInput && !displayInput.value) {
+        displayInput.value = meta.display_name || "";
+      }
       
       // Carica lista personaggi quando si apre il modale profilo
       const modalEl = document.getElementById('cloudProfileModal');

@@ -164,9 +164,9 @@
             <div>
               <h1 class="display-title mb-1">Statistiche Personaggio</h1>
             </div>
-            <span class="chip">
-              <i class='bx bx-save me-1'></i> autosave locale
-            </span>
+            <!-- <span class="chip">
+              <i class='bx bx-warning me-1'></i> autosave locale
+            </span> -->
           </div>
 
           <hr class="sep my-4" />
@@ -483,6 +483,34 @@
 
           <hr class="sep my-4" />
 
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h2 class="section-title mb-0">Monete</h2>
+          </div>
+
+          <div class="row g-2 mb-4">
+            <div class="col-4">
+              <div class="glass-card p-2 d-flex flex-column align-items-center justify-content-center gap-2">
+                <img src="./Images/coins/CP.svg" alt="CP" style="width: 36px; height: 36px;">
+                <input class="form-control form-control-glass text-center fw-bold" data-bind="coinCP" placeholder="0"
+                  type="number" inputmode="numeric">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="glass-card p-2 d-flex flex-column align-items-center justify-content-center gap-2">
+                <img src="./Images/coins/SP.svg" alt="SP" style="width: 36px; height: 36px;">
+                <input class="form-control form-control-glass text-center fw-bold" data-bind="coinSP" placeholder="0"
+                  type="number" inputmode="numeric">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="glass-card p-2 d-flex flex-column align-items-center justify-content-center gap-2">
+                <img src="./Images/coins/GP.svg" alt="GP" style="width: 36px; height: 36px;">
+                <input class="form-control form-control-glass text-center fw-bold" data-bind="coinGP" placeholder="0"
+                  type="number" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+
           <div class="d-flex flex-wrap gap-2 align-items-center justify-content-between">
             <div>
               <h2 class="section-title mb-1">Talenti e Invocazioni</h2>
@@ -575,8 +603,8 @@
             <!-- Login -->
             <div class="tab-pane fade show active" id="pills-login">
               <div class="mb-3">
-                <label class="form-label tiny">Email</label>
-                <input type="email" class="form-control form-control-glass" id="loginUser">
+                <label class="form-label tiny">Email o nome utente</label>
+                <input type="text" class="form-control form-control-glass" id="loginUser" placeholder="Email o nome utente">
               </div>
               <div class="mb-3">
                 <label class="form-label tiny d-flex justify-content-between align-items-center">
@@ -599,6 +627,10 @@
                 <input type="email" class="form-control form-control-glass" id="regUser">
               </div>
               <div class="mb-3">
+                <label class="form-label tiny">Nome utente</label>
+                <input type="text" class="form-control form-control-glass" id="regDisplayName" placeholder="Es. Dennis, Master, ecc.">
+              </div>
+              <div class="mb-3">
                 <label class="form-label tiny d-flex justify-content-between align-items-center">
                   <span>Password</span>
                   <span class="tiny">
@@ -606,7 +638,7 @@
                     Mostra
                   </span>
                 </label>
-                <input type="password" class="form-control form-control-glass mb-2" id="regPass">
+                <input type="password" class="form-control form-control-glass mb-2" id="regPass" placeholder="Inserisci password">
                 <input type="password" class="form-control form-control-glass" id="regPass2" placeholder="Ripeti password">
               </div>
               <button class="btn btn-outline-info w-100" onclick="window.cloud.registerWithConfirm()">
@@ -632,11 +664,20 @@
             Ogni scheda è un personaggio completo salvato nel Cloud. Seleziona una scheda per caricarla nella pagina Statistiche.
           </p>
           <div class="mb-3">
+            <label class="form-label tiny">Nome visualizzato</label>
+            <div class="d-flex gap-2">
+              <input type="text" class="form-control form-control-glass" id="cloudDisplayNameInput" placeholder="Come vuoi apparire" autocomplete="off">
+              <button class="btn btn-outline-light btn-sm" type="button" onclick="(function(){ const input=document.getElementById('cloudDisplayNameInput'); if(!input) return; const name=(input.value||'').trim(); if(!name){ showAppAlert('Inserisci un nome da visualizzare.'); return; } window.cloud.updateDisplayName(name); })();">
+                Salva
+              </button>
+            </div>
+          </div>
+          <div class="mb-3">
             <label class="form-label tiny">Nome del salvataggio</label>
             <input type="text" class="form-control form-control-glass" id="cloudSaveName" placeholder="Es. Campagna - Personaggio">
           </div>
           <div class="d-grid gap-2 mb-4">
-            <button class="btn btn-glow" onclick="(function(){ const input=document.getElementById('cloudSaveName'); const name=(input&&input.value?input.value:'').trim(); if(!name){ alert('Inserisci un nome per il salvataggio.'); return; } window.cloud.saveCharacter(name); })();">
+            <button class="btn btn-glow" onclick="(function(){ const input=document.getElementById('cloudSaveName'); const name=(input&&input.value?input.value:'').trim(); if(!name){ showAppAlert('Inserisci un nome per il salvataggio.'); return; } window.cloud.saveCharacter(name); })();">
               <i class='bx bx-save me-1'></i> Salva questa scheda come nuova
             </button>
           </div>
@@ -670,6 +711,19 @@
           <div class="d-flex justify-content-end gap-2">
             <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Annulla</button>
             <button type="button" class="btn btn-outline-danger btn-sm" id="cloudConfirmOk">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="appAlertModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-modal">
+        <div class="modal-body">
+          <p id="appAlertMessage" class="mb-4"></p>
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">Ok</button>
           </div>
         </div>
       </div>

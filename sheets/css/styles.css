@@ -18,15 +18,15 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  /* background: radial-gradient(1100px 650px at 20% 20%, #111a3a 0%, rgba(17,26,58,0) 55%),
+  background: radial-gradient(1100px 650px at 20% 20%, #111a3a 0%, rgba(17,26,58,0) 55%),
               radial-gradient(900px 520px at 85% 25%, #2b1240 0%, rgba(43,18,64,0) 55%),
               radial-gradient(1200px 700px at 50% 90%, #0f2d2a 0%, rgba(15,45,42,0) 55%),
-              linear-gradient(180deg, var(--bg0), var(--bg1)); */
+              linear-gradient(180deg, var(--bg0), var(--bg1));
   color: #fff;
   overflow-x: hidden;
 }
@@ -325,6 +325,33 @@ h1, h2, h3, h4, h5, h6,
 .footer {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: top center;
+  }
+
+  html:not([data-theme="light"]) .glass-card,
+  html:not([data-theme="light"]) .ability,
+  html:not([data-theme="light"]) .mini-row,
+  html:not([data-theme="light"]) .quick,
+  html:not([data-theme="light"]) .table-glass,
+  html:not([data-theme="light"]) .slots-bar,
+  html:not([data-theme="light"]) .desc-box {
+    background: rgba(7, 9, 16, 0.96);
+    border-color: rgba(15, 23, 42, 0.9);
+  }
+
+  html:not([data-theme="light"]) .glass-nav {
+    background: rgba(7, 9, 16, 0.98);
+    border-bottom-color: rgba(15, 23, 42, 0.9);
+  }
+
+  .bg-orb {
+    display: none;
+  }
 }
 
 /* --- Spells page --- */
@@ -893,7 +920,7 @@ h1, h2, h3, h4, h5, h6,
 
 .form-select,
 .form-select:focus {
-  background-color: rgba(15, 18, 30, .75);
+  /* background-color: rgba(15, 18, 30, .75); */
   color: #fff;
   border: 1px solid rgba(255, 255, 255, .18);
   box-shadow: none;
@@ -1005,7 +1032,7 @@ h1, h2, h3, h4, h5, h6,
 
 .inv-img-list {
   display: block;
-  max-height: 60vh;
+  max-height: calc(100vh - 260px);
   overflow-y: auto;
   padding-right: 0.5rem;
 }

@@ -275,6 +275,16 @@ function encInit() {
     });
   }
 
+  const btnToggleMap = document.getElementById("toggleMap");
+  if (btnToggleMap) {
+    btnToggleMap.addEventListener("click", () => {
+      const mapContainer = document.getElementById("mapContainer");
+      if (mapContainer) {
+        mapContainer.classList.toggle("d-none");
+      }
+    });
+  }
+
   encRender();
 }
 

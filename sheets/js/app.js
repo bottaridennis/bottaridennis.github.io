@@ -461,7 +461,7 @@ async function initSpellsPage() {
     if (typeof getSavedState !== "function") return {};
     const st = getSavedState();
     const cfg = {};
-    for (let lvl = 1; lvl <= 5; lvl++) {
+    for (let lvl = 1; lvl <= 9; lvl++) {
       const key = `slots${lvl}`;
       const raw = st && st[key] != null ? String(st[key]).trim() : "";
       const n = parseInt(raw, 10);

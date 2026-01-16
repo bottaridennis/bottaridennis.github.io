@@ -427,6 +427,34 @@
               <div class="quick__k">Slot 2°</div>
               <input class="quick__v" data-bind="slots2" placeholder="0" />
             </div>
+            <div class="quick">
+              <div class="quick__k">Slot 3°</div>
+              <input class="quick__v" data-bind="slots3" placeholder="0" />
+            </div>
+            <div class="quick">
+              <div class="quick__k">Slot 4°</div>
+              <input class="quick__v" data-bind="slots4" placeholder="0" />
+            </div>
+            <div class="quick">
+              <div class="quick__k">Slot 5°</div>
+              <input class="quick__v" data-bind="slots5" placeholder="0" />
+            </div>
+            <div class="quick">
+              <div class="quick__k">Slot 6°</div>
+              <input class="quick__v" data-bind="slots6" placeholder="0" />
+            </div>
+            <div class="quick">
+              <div class="quick__k">Slot 7°</div>
+              <input class="quick__v" data-bind="slots7" placeholder="0" />
+            </div>
+            <div class="quick">
+              <div class="quick__k">Slot 8°</div>
+              <input class="quick__v" data-bind="slots8" placeholder="0" />
+            </div>
+            <div class="quick">
+              <div class="quick__k">Slot 9°</div>
+              <input class="quick__v" data-bind="slots9" placeholder="0" />
+            </div>
           </div>
 
           <hr class="sep my-4" />
@@ -579,7 +607,10 @@
     <div class="footer glass-card p-3 d-flex flex-wrap gap-2 justify-content-between align-items-center">
       <div class="tiny text-mutedish">
         Powered by @ Dennis Bottari · <a href="https://dennisbottari.it" target="_blank" rel="noopener noreferrer" class="link-light">dennisbottari.it</a><br>
-        <span style="opacity: 0.7;">Icons by game-icons.net — CC BY 3.0</span>
+        <span style="opacity: 0.7;">Icons by game-icons.net — CC BY 3.0</span><br>
+        <button type="button" class="btn btn-link btn-sm p-0 align-baseline text-decoration-underline" data-bs-toggle="modal" data-bs-target="#privacyModal">
+          Privacy &amp; cookie
+        </button>
       </div>
       <div class="d-flex gap-2">
         <a class="btn btn-sm btn-outline-light" href="incantesimi.html"><i class='bx bx-book me-1'></i> Incantesimi</a>
@@ -589,6 +620,46 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content glass-modal">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-800">Informativa su privacy, cookie e dati salvati</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p class="tiny text-mutedish mb-2">
+            Questo strumento non utilizza cookie di profilazione né strumenti di tracciamento statistico (come Google Analytics) sul dominio della scheda.
+          </p>
+          <h6 class="fw-800 mt-3 mb-1">localStorage</h6>
+          <p class="tiny text-mutedish mb-2">
+            Il browser utilizza il localStorage per salvare i dati della scheda del personaggio (statistiche, abilità, inventario, note, ecc.), le selezioni locali di incantesimi, talenti e invocazioni e alcune preferenze come il tema grafico e l&apos;ultimo personaggio aperto. Questi dati rimangono nel tuo browser e possono essere cancellati in qualsiasi momento svuotando i dati di navigazione o usando il pulsante di reset nella scheda.
+          </p>
+          <h6 class="fw-800 mt-3 mb-1">Salvataggio Cloud con Supabase</h6>
+          <p class="tiny text-mutedish mb-2">
+            Se scegli di creare un account e usare il salvataggio Cloud, i dati della tua scheda e delle tue selezioni vengono salvati in un database gestito da Supabase. Supabase utilizza propri meccanismi di autenticazione salvati nello storage del browser per mantenere attiva la sessione; questi sono tecnicamente necessari per il funzionamento del login e non vengono utilizzati per finalità di profilazione.
+          </p>
+          <p class="tiny text-mutedish mb-2">
+            I dati salvati includono il contenuto della scheda (statistiche, note, inventario, ecc.) e le selezioni di incantesimi, compresi eventuali appunti personali associati agli incantesimi.
+          </p>
+          <h6 class="fw-800 mt-3 mb-1">Contenuti di terze parti</h6>
+          <p class="tiny text-mutedish mb-2">
+            Il sito utilizza librerie esterne caricate da CDN (ad esempio Bootstrap, Boxicons, AOS, Google Fonts) solo per motivi grafici e funzionali. Tali servizi possono effettuare log tecnici delle richieste per motivi di sicurezza e funzionamento, secondo le rispettive informative privacy.
+          </p>
+          <h6 class="fw-800 mt-3 mb-1">Gestione dei dati</h6>
+          <p class="tiny text-mutedish mb-2">
+            Puoi cancellare i dati locali della scheda usando il pulsante di reset, oppure cancellare manualmente i dati di navigazione dal tuo browser. Se utilizzi il Cloud, puoi richiedere la cancellazione del tuo account contattando l&apos;autore dello strumento.
+          </p>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">
+            Chiudi
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal Cloud Auth -->
   <div class="modal fade" id="cloudAuthModal" tabindex="-1" aria-hidden="true">
@@ -622,7 +693,7 @@
                     Mostra
                   </span>
                 </label>
-                <input type="password" class="form-control form-control-glass" id="loginPass">
+                <input type="password" class="form-control form-control-glass" id="loginPass" placeholder="Inserisci la password">
               </div>
               <button class="btn btn-glow w-100" onclick="window.cloud.login(document.getElementById('loginUser').value, document.getElementById('loginPass').value)">
                 Accedi
@@ -632,11 +703,11 @@
             <div class="tab-pane fade" id="pills-register">
               <div class="mb-3">
                 <label class="form-label tiny">Email</label>
-                <input type="email" class="form-control form-control-glass" id="regUser">
+                <input type="email" class="form-control form-control-glass" id="regUser" placeholder="esempio@dominio.it">
               </div>
               <div class="mb-3">
                 <label class="form-label tiny">Nome utente</label>
-                <input type="text" class="form-control form-control-glass" id="regDisplayName" placeholder="Es. Dennis, Master, ecc.">
+                <input type="text" class="form-control form-control-glass" id="regDisplayName" placeholder="Nome utente">
               </div>
               <div class="mb-3">
                 <label class="form-label tiny d-flex justify-content-between align-items-center">
@@ -681,7 +752,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label tiny">Nome del salvataggio</label>
+            <label class="form-label tiny">Nome del Personaggio</label>
             <input type="text" class="form-control form-control-glass" id="cloudSaveName" placeholder="Es. Campagna - Personaggio">
           </div>
           <div class="d-grid gap-2 mb-4">

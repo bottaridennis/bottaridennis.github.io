@@ -97,8 +97,8 @@ class CloudManager {
     const pass2 = pass2El.value;
     const displayName = nameEl ? nameEl.value.trim() : "";
 
-    if (!email || !pass || !pass2) {
-      showAppAlert("Compila email, nome utente e password due volte.");
+    if (!email || !pass || !pass2 || !displayName) {
+      showAppAlert("Compila email, nome utente e password (due volte).");
       return;
     }
  

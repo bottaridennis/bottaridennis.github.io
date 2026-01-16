@@ -44,6 +44,7 @@ class CloudManager {
     }
     this.client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     this.user = null;
+    this._confirmResolver = null;
     
     // Ascolta cambiamenti auth
     this.client.auth.onAuthStateChange((event, session) => {
@@ -66,6 +67,29 @@ class CloudManager {
     
     alert("Registrazione completata! Controlla la tua email per confermare (o se hai disabilitato la conferma, fai login).");
     return true;
+  }
+
+  async registerWithConfirm() {
+    const emailEl = document.getElementById("regUser");
+    const passEl = document.getElementById("regPass");
+    const pass2El = document.getElementById("regPass2");
+    if (!emailEl || !passEl || !pass2El) return;
+
+    const email = emailEl.value.trim();
+    const pass = passEl.value;
+    const pass2 = pass2El.value;
+
+    if (!email || !pass || !pass2) {
+      alert("Compila email e password due volte.");
+      return;
+    }
+
+    if (pass !== pass2) {
+      alert("Le due password non coincidono.");
+      return;
+    }
+
+    await this.register(email, pass);
   }
 
   // 2. LOGIN
@@ -94,30 +118,40 @@ class CloudManager {
   }
 
   // 4. SALVA PERSONAGGIO
-  async saveCharacter(charName) {
+  async saveCharacter(charName, options = {}) {
     if (!this.user) return;
 
+    let sheet = null;
+    let mySpells = null;
+    if (typeof collectBindData === "function") {
+      sheet = collectBindData();
+    }
+    if (typeof loadMySpellsGlobal === "function") {
+      mySpells = loadMySpellsGlobal();
+    }
+
     const charData = {
-      pg_stats: localStorage.getItem("pg_stats"),
-      mySpells: localStorage.getItem("mySpells"),
-      myInvocations: localStorage.getItem("myInvocations"),
-      myFeatures: localStorage.getItem("myFeatures"),
-      inventory: localStorage.getItem("inventory"),
-      encounter_state: localStorage.getItem("encounter_state"),
-      notes: localStorage.getItem("notes")
+      sheet,
+      mySpells
     };
+
+    const effectiveName = (charName || (sheet && sheet.name) || localStorage.getItem("cloud_current_char") || "PG senza nome").toString().trim() || "PG senza nome";
+    localStorage.setItem("cloud_current_char", effectiveName);
 
     // Cerchiamo se esiste già un PG con questo nome per questo utente
     const { data: existing } = await this.client
       .from('characters')
       .select('id')
-      .eq('name', charName)
+      .eq('name', effectiveName)
       .single();
 
     let error;
     if (existing) {
-      // Aggiorna
-      if(!confirm(`Sovrascrivere il personaggio "${charName}" esistente?`)) return;
+      const skipConfirm = options.silent || options.forceOverwrite;
+      if (!skipConfirm) {
+        const ok = await this.confirm(`Sovrascrivere il salvataggio "${effectiveName}" esistente?`);
+        if (!ok) return;
+      }
       const res = await this.client
         .from('characters')
         .update({ 
@@ -132,18 +166,25 @@ class CloudManager {
         .from('characters')
         .insert({
           user_id: this.user.id,
-          name: charName,
+          name: effectiveName,
           data: charData
         });
       error = res.error;
     }
 
     if (error) {
-      alert("Errore salvataggio: " + error.message);
+      if (!options.silent) alert("Errore salvataggio: " + error.message);
+      else console.error("Errore autosalvataggio:", error);
     } else {
-      alert("Personaggio salvato con successo!");
+      if (!options.silent) alert(`Salvataggio "${effectiveName}" completato con successo!`);
       this.renderCharList();
     }
+  }
+
+  async autoSave() {
+    if (!this.user) return;
+    if (typeof collectBindData !== "function") return;
+    await this.saveCharacter(null, { silent: true, forceOverwrite: true });
   }
 
   // 5. CARICA LISTA PERSONAGGI
@@ -164,26 +205,44 @@ class CloudManager {
     }
 
     if (!data || data.length === 0) {
-      list.innerHTML = '<div class="text-muted tiny">Nessun personaggio salvato.</div>';
+      list.innerHTML = '<div class="text-muted tiny">Non hai ancora nessuna scheda salvata per questo account.</div>';
       return;
     }
 
-    list.innerHTML = data.map((c) => `
+    const currentName = localStorage.getItem("cloud_current_char") || "";
+
+    list.innerHTML = data.map((c) => {
+      const payload = c.data || {};
+      const sheet = payload.sheet || null;
+      const displayName = c.name || (sheet && sheet.name) || "PG senza nome";
+
+      const parts = [];
+      if (sheet && sheet.class) parts.push(sheet.class);
+      if (sheet && sheet.level) parts.push("Lv " + sheet.level);
+      if (sheet && sheet.race) parts.push(sheet.race);
+      const subtitle = parts.join(" • ");
+
+      const isCurrent = currentName && currentName === c.name;
+
+      return `
       <div class="d-flex justify-content-between align-items-center mb-2 p-2 glass-card">
         <div>
-          <div class="fw-bold">${escapeHTML(c.name)}</div>
-          <div class="tiny text-mutedish">${new Date(c.updated_at).toLocaleDateString()}</div>
+          <div class="fw-bold">${escapeHTML(displayName)}</div>
+          <div class="tiny text-mutedish">
+            ${subtitle ? escapeHTML(subtitle) + " • " : ""}Ultimo salvataggio: ${new Date(c.updated_at).toLocaleDateString()}
+          </div>
+          ${isCurrent ? "<div class='tiny text-success'>Scheda corrente</div>" : ""}
         </div>
-        <div class="d-flex gap-1">
+        <div class="d-flex flex-column gap-1 align-items-end">
           <button class="btn btn-sm btn-outline-info" onclick="window.cloud.loadCharacter('${c.id}')">
-            <i class='bx bx-upload'></i>
+            <i class='bx bx-folder-open me-1'></i> Apri scheda
           </button>
           <button class="btn btn-sm btn-outline-danger" onclick="window.cloud.deleteCharacter('${c.id}')">
-            <i class='bx bx-trash'></i>
+            <i class='bx bx-trash me-1'></i> Elimina
           </button>
         </div>
-      </div>
-    `).join("");
+      </div>`;
+    }).join("");
   }
 
   // 6. CARICA SINGOLO PERSONAGGIO
@@ -208,13 +267,26 @@ class CloudManager {
     if (d.encounter_state) localStorage.setItem("encounter_state", d.encounter_state);
     if (d.notes) localStorage.setItem("notes", d.notes);
 
-    alert(`Personaggio "${data.name}" caricato!`);
+    alert(`Salvataggio "${data.name}" caricato!`);
     window.location.reload();
   }
 
   // 7. ELIMINA PERSONAGGIO
   async deleteCharacter(id) {
-    if(!confirm("Eliminare definitivamente questo personaggio?")) return;
+    const { data, error: fetchError } = await this.client
+      .from('characters')
+      .select('id,name')
+      .eq('id', id)
+      .single();
+
+    if (fetchError || !data) {
+      alert("Errore nel recupero del salvataggio da eliminare.");
+      return;
+    }
+
+    const saveName = data.name || "questo salvataggio";
+    const ok = await this.confirm(`Eliminare definitivamente il salvataggio "${saveName}"?`);
+    if (!ok) return;
 
     const { error } = await this.client
       .from('characters')
@@ -228,9 +300,54 @@ class CloudManager {
     }
   }
 
+  async confirm(message) {
+    try {
+      const modalEl = document.getElementById("cloudConfirmModal");
+      const msgEl = document.getElementById("cloudConfirmMessage");
+      const okBtn = document.getElementById("cloudConfirmOk");
+      if (!modalEl || !msgEl || !okBtn || !window.bootstrap) {
+        return window.confirm(message);
+      }
+
+      msgEl.textContent = message;
+      const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+
+      return await new Promise((resolve) => {
+        const handlerOk = () => {
+          okBtn.removeEventListener("click", handlerOk);
+          modalEl.removeEventListener("hidden.bs.modal", handlerCancel);
+          resolve(true);
+        };
+        const handlerCancel = () => {
+          okBtn.removeEventListener("click", handlerOk);
+          modalEl.removeEventListener("hidden.bs.modal", handlerCancel);
+          resolve(false);
+        };
+        okBtn.addEventListener("click", handlerOk);
+        modalEl.addEventListener("hidden.bs.modal", handlerCancel, { once: true });
+        modal.show();
+      });
+    } catch (e) {
+      return window.confirm(message);
+    }
+  }
+
   // 8. ELIMINA ACCOUNT (OPZIONALE, COMPLESSO IN SUPABASE CLIENT-SIDE)
   async deleteUser() {
-    alert("Per eliminare l'account, contatta l'amministratore o fallo dal pannello Supabase.");
+    if (!this.user) {
+      alert("Devi essere loggato per richiedere l'eliminazione dell'account.");
+      return;
+    }
+    const email = this.user.email || "";
+    const id = this.user.id || "";
+    const body = encodeURIComponent(
+      "Richiesta eliminazione account scheda PG.%0D%0A%0D%0A" +
+      "Email: " + email + "%0D%0A" +
+      "User ID: " + id + "%0D%0A%0D%0A" +
+      "Scrivi qui eventuali dettagli aggiuntivi:"
+    );
+    const subject = encodeURIComponent("Richiesta eliminazione account scheda PG");
+    window.location.href = "mailto:TUO_INDIRIZZO_EMAIL?subject=" + subject + "&body=" + body;
   }
 
   updateUI() {
@@ -250,6 +367,13 @@ class CloudManager {
       }
       // Se il modale è già aperto (es. dopo login), carica subito
       if(modalEl && modalEl.classList.contains('show')) this.renderCharList();
+
+      const isStatsPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname === "";
+      if (modalEl && isStatsPage && !this._profileAutoShown && window.bootstrap) {
+        this._profileAutoShown = true;
+        const profileModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        profileModal.show();
+      }
       
     } else {
       if (btnLogin) btnLogin.classList.remove("d-none");

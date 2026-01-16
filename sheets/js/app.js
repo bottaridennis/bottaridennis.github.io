@@ -59,6 +59,23 @@ function bindAutosave() {
 
 bindAutosave();
 
+function initCloudLoginGate() {
+  const authModalEl = document.getElementById("cloudAuthModal");
+  if (!authModalEl || !window.bootstrap) return;
+  setTimeout(() => {
+    if (!window.cloud || window.cloud.user) return;
+    const modal = new bootstrap.Modal(authModalEl);
+    modal.show();
+  }, 500);
+}
+
+function initCloudAutoSave() {
+  if (!window.cloud || typeof window.cloud.autoSave !== "function") return;
+  setInterval(() => {
+    window.cloud.autoSave();
+  }, 60000);
+}
+
 // -----------------------------
 // Incantesimi page rendering
 // -----------------------------
@@ -1002,6 +1019,7 @@ function initExportImport() {
   const btnExport = document.getElementById("btnExport");
   const btnExportFull = document.getElementById("btnExportFull");
   const fileImport = document.getElementById("fileImport");
+  const btnCloudQuickSave = document.getElementById("btnCloudQuickSave");
 
   if (btnExport) {
     btnExport.addEventListener("click", () => {
@@ -1057,9 +1075,24 @@ function initExportImport() {
       }
     });
   }
+
+  if (btnCloudQuickSave) {
+    btnCloudQuickSave.addEventListener("click", () => {
+      if (!window.cloud || !window.cloud.user) {
+        const authModalEl = document.getElementById("cloudAuthModal");
+        if (authModalEl && window.bootstrap) {
+          const modal = bootstrap.Modal.getOrCreateInstance(authModalEl);
+          modal.show();
+        }
+        return;
+      }
+      window.cloud.saveCharacter(null, { silent: false, forceOverwrite: true });
+    });
+  }
 }
 
 initExportImport();
+initCloudAutoSave();
 
 /* =========================
    INVENTARIO MODULARE

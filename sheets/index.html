@@ -117,22 +117,13 @@
       </button>
 
       <div id="nav" class="collapse navbar-collapse">
-        <div class="d-flex flex-wrap gap-2 align-items-center">
-          <button id="btnExport" class="btn btn-outline-info btn-sm px-3" type="button">
-            <i class='bx bx-download me-1'></i> Esporta scheda
-          </button>
-          <button id="btnExportFull" class="btn btn-outline-info btn-sm px-3" type="button">
-            <i class='bx bx-download me-1'></i> Export completo
-          </button>
-          <label class="btn btn-outline-success btn-sm px-3 mb-0">
-            <i class='bx bx-upload me-1'></i> Importa scheda
-            <input id="fileImport" type="file" accept="application/json" hidden>
-          </label>
-        </div>
-        <div class="ms-auto d-flex gap-2 align-items-center">
-          <button id="btnThemeToggle" class="btn btn-outline-light btn-sm px-3" type="button">
+        <div class="ms-auto d-flex flex-wrap gap-2 align-items-center">
+          <!-- <button id="btnThemeToggle" class="btn btn-outline-light btn-sm px-3" type="button">
             <i class='bx bx-moon me-1'></i> Tema
-          </button>
+          </button> -->
+          <a class="btn btn-outline-light btn-sm px-3" href="index.html">
+            <i class='bx bxs-user me-1'></i> Statistiche
+          </a>
           <a class="btn btn-outline-light btn-sm px-3" href="incantesimi.html">
             <i class='bx bxs-magic-wand me-1'></i> Incantesimi
           </a>
@@ -142,17 +133,17 @@
           <a class="btn btn-outline-light btn-sm px-3" href="invocations.html">
             <i class='bx bxs-ghost me-1'></i> Invocazioni
           </a>
-          <a class="btn btn-outline-light btn-sm px-3" href="invocations.html">
-            <i class='bx bxs-ghost me-1'></i> Invocazioni
+          <a class="btn btn-outline-light btn-sm px-3" href="encounter.html">
+            <i class='bx bx-target-lock me-1'></i> Encounter
           </a>
           
-          <!-- Cloud Controls -->
+          <!-- Cloud Controls (solo su Statistiche) -->
           <button id="cloudLoginBtn" class="btn btn-outline-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#cloudAuthModal">
             <i class='bx bx-cloud me-1'></i> Cloud
           </button>
           
           <div id="cloudUserPanel" class="d-none d-flex gap-2 align-items-center">
-             <button class="btn btn-outline-info btn-sm px-3" data-bs-toggle="modal" data-bs-target="#cloudProfileModal">
+            <button class="btn btn-outline-info btn-sm px-3" data-bs-toggle="modal" data-bs-target="#cloudProfileModal">
               <i class='bx bx-user-circle me-1'></i> <span id="cloudUsername">User</span>
             </button>
           </div>
@@ -174,11 +165,32 @@
               <h1 class="display-title mb-1">Statistiche Personaggio</h1>
             </div>
             <span class="chip">
-              <i class='bx bx-save me-1'></i> autosave
+              <i class='bx bx-save me-1'></i> autosave locale
             </span>
           </div>
 
           <hr class="sep my-4" />
+
+          <div class="d-flex flex-wrap gap-2 align-items-center justify-content-between mb-3">
+            <div class="tiny text-mutedish">
+              Esporta o importa questa scheda
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <button id="btnExport" class="btn btn-outline-info btn-sm px-3" type="button">
+                <i class='bx bx-download me-1'></i> Esporta scheda
+              </button>
+              <button id="btnExportFull" class="btn btn-outline-info btn-sm px-3" type="button">
+                <i class='bx bx-download me-1'></i> Export completo
+              </button>
+              <label class="btn btn-outline-success btn-sm px-3 mb-0">
+                <i class='bx bx-upload me-1'></i> Importa scheda
+                <input id="fileImport" type="file" accept="application/json" hidden>
+              </label>
+              <button id="btnCloudQuickSave" class="btn btn-outline-primary btn-sm px-3" type="button">
+                <i class='bx bx-cloud-upload me-1'></i> Salva su Cloud
+              </button>
+            </div>
+          </div>
 
           <div class="row g-3">
             <div class="col-md-6">
@@ -530,7 +542,7 @@
   <footer class="container pb-5">
     <div class="footer glass-card p-3 d-flex flex-wrap gap-2 justify-content-between align-items-center">
       <div class="tiny text-mutedish">
-        Powered by @ Dennis Bottari<br>
+        Powered by @ Dennis Bottari · <a href="https://dennisbottari.it" target="_blank" rel="noopener noreferrer" class="link-light">dennisbottari.it</a><br>
         <span style="opacity: 0.7;">Icons by game-icons.net — CC BY 3.0</span>
       </div>
       <div class="d-flex gap-2">
@@ -563,11 +575,17 @@
             <!-- Login -->
             <div class="tab-pane fade show active" id="pills-login">
               <div class="mb-3">
-                <label class="form-label tiny">Username</label>
-                <input type="text" class="form-control form-control-glass" id="loginUser">
+                <label class="form-label tiny">Email</label>
+                <input type="email" class="form-control form-control-glass" id="loginUser">
               </div>
               <div class="mb-3">
-                <label class="form-label tiny">Password</label>
+                <label class="form-label tiny d-flex justify-content-between align-items-center">
+                  <span>Password</span>
+                  <span class="tiny">
+                    <input type="checkbox" id="loginShowPass" class="form-check-input me-1" onchange="const f=document.getElementById('loginPass'); f.type=this.checked?'text':'password';">
+                    Mostra
+                  </span>
+                </label>
                 <input type="password" class="form-control form-control-glass" id="loginPass">
               </div>
               <button class="btn btn-glow w-100" onclick="window.cloud.login(document.getElementById('loginUser').value, document.getElementById('loginPass').value)">
@@ -577,14 +595,21 @@
             <!-- Register -->
             <div class="tab-pane fade" id="pills-register">
               <div class="mb-3">
-                <label class="form-label tiny">Nuovo Username</label>
-                <input type="text" class="form-control form-control-glass" id="regUser">
+                <label class="form-label tiny">Email</label>
+                <input type="email" class="form-control form-control-glass" id="regUser">
               </div>
               <div class="mb-3">
-                <label class="form-label tiny">Password</label>
-                <input type="password" class="form-control form-control-glass" id="regPass">
+                <label class="form-label tiny d-flex justify-content-between align-items-center">
+                  <span>Password</span>
+                  <span class="tiny">
+                    <input type="checkbox" id="regShowPass" class="form-check-input me-1" onchange="const f1=document.getElementById('regPass'); const f2=document.getElementById('regPass2'); const t=this.checked?'text':'password'; f1.type=t; f2.type=t;">
+                    Mostra
+                  </span>
+                </label>
+                <input type="password" class="form-control form-control-glass mb-2" id="regPass">
+                <input type="password" class="form-control form-control-glass" id="regPass2" placeholder="Ripeti password">
               </div>
-              <button class="btn btn-outline-info w-100" onclick="window.cloud.register(document.getElementById('regUser').value, document.getElementById('regPass').value)">
+              <button class="btn btn-outline-info w-100" onclick="window.cloud.registerWithConfirm()">
                 Crea Account
               </button>
             </div>
@@ -599,17 +624,24 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content glass-modal">
         <div class="modal-header border-0">
-          <h5 class="modal-title fw-800">Gestione Personaggi</h5>
+          <h5 class="modal-title fw-800">Le tue schede salvate</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
+          <p class="tiny text-mutedish mb-3">
+            Ogni scheda è un personaggio completo salvato nel Cloud. Seleziona una scheda per caricarla nella pagina Statistiche.
+          </p>
+          <div class="mb-3">
+            <label class="form-label tiny">Nome del salvataggio</label>
+            <input type="text" class="form-control form-control-glass" id="cloudSaveName" placeholder="Es. Campagna - Personaggio">
+          </div>
           <div class="d-grid gap-2 mb-4">
-            <button class="btn btn-glow" onclick="const name = prompt('Nome del personaggio corrente?'); if(name) window.cloud.saveCharacter(name);">
-              <i class='bx bx-save me-1'></i> Salva scheda corrente nel Cloud
+            <button class="btn btn-glow" onclick="(function(){ const input=document.getElementById('cloudSaveName'); const name=(input&&input.value?input.value:'').trim(); if(!name){ alert('Inserisci un nome per il salvataggio.'); return; } window.cloud.saveCharacter(name); })();">
+              <i class='bx bx-save me-1'></i> Salva questa scheda come nuova
             </button>
           </div>
           
-          <h6 class="tiny text-mutedish text-uppercase mb-2">Personaggi salvati</h6>
+          <h6 class="tiny text-mutedish text-uppercase mb-2">Schede salvate nel tuo account</h6>
           <div id="cloudCharList" class="mb-3">
             <!-- Popolato via JS -->
             <div class="text-center py-3"><div class="spinner-border text-light" role="status"></div></div>
@@ -624,6 +656,20 @@
             <button class="btn btn-outline-warning btn-sm" onclick="window.cloud.logout()">
               <i class='bx bx-log-out me-1'></i> Logout
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="cloudConfirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-modal">
+        <div class="modal-body">
+          <p id="cloudConfirmMessage" class="mb-4"></p>
+          <div class="d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Annulla</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" id="cloudConfirmOk">Ok</button>
           </div>
         </div>
       </div>

@@ -1100,7 +1100,7 @@ initCloudAutoSave();
 
 const INV_KEY = "inventory"; // dentro lo stesso JSON salvato
 
-const INVENTORY_IMAGE_BASE = "./images/objects/";
+const INVENTORY_IMAGE_BASE = "./Images/objects/";
 
 let INVENTORY_PRESET_IMAGES = [];
 let INVENTORY_IMAGE_GROUPS = null;
@@ -1137,7 +1137,7 @@ function loadInventoryImages() {
   if (INVENTORY_PRESET_IMAGES.length) {
     return Promise.resolve(INVENTORY_PRESET_IMAGES);
   }
-  return fetch("./images/objects/index.json", { cache: "no-store" })
+  return fetch("./Images/objects/index.json", { cache: "no-store" })
     .then((res) => (res.ok ? res.json() : []))
     .catch(() => [])
     .then((data) => {
@@ -1536,7 +1536,7 @@ function initInventory() {
     loadInventoryImages().then((defs) => {
       if (!defs || !defs.length) {
         imgList.innerHTML =
-          `< div class="tiny text-mutedish" > Nessuna immagine disponibile</div > `;
+          `<div class="tiny text-mutedish">Nessuna immagine disponibile</div>`;
         return;
       }
 
@@ -1545,11 +1545,11 @@ function initInventory() {
       if (imgCategory && INVENTORY_IMAGE_GROUPS) {
         const { sortedCategories } = INVENTORY_IMAGE_GROUPS;
         imgCategory.innerHTML =
-          `< option value = "" > Tutte le categorie</option > ` +
+          `<option value="">Tutte le categorie</option>` +
           sortedCategories
             .map(
               (cat) =>
-                `< option value = "${cat}" > ${ cat }</option > `
+                `<option value="${cat}">${cat}</option>`
             )
             .join("");
       }

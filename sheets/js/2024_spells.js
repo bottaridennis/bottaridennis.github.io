@@ -630,7 +630,7 @@
 		"description": "Per la durata, percepisci la presenza di veleni, creature velenose o tossiche e malattie magiche entro circa 9 metri da te. Per ciascuna fonte percepita, intuisci il tipo di veleno, creatura o contagio.\n\nLâ€™incantesimo Ã¨ bloccato da circa 30 cm di pietra, terra o legno, da 2,5 cm di metallo o da un sottile strato di piombo.",
 	},
 	{
-		"name": "Disguise Se stessi",
+		"name": "Disguise Self",
 		"displayName": "Camuffare Se Stessi",
 		"level": 1,
 		"school": "illusion",
@@ -1283,7 +1283,7 @@
 		"higherLevelSlot": "I Punti Ferita di ciascun bersaglio aumentano di 5 per ogni livello di slot incantesimo superiore al 2Â°."
 	},
 	{
-		"name": "Alter Se stessi",
+		"name": "Alter Self",
 		"displayName": "Alterare Se Stessi",
 		"level": 2,
 		"school": "transmutation",
@@ -4669,7 +4669,7 @@
 		"description": "Un'aura di antimagia ti circonda in un'Emanazione di raggio 3 metri. Nessuno puÃ² lanciare incantesimi, compiere Azioni Magiche o creare altri effetti magici all'interno dell'aura, e tali effetti non possono bersagliare nÃ© influenzare nulla al suo interno.\n\nLe proprietÃ  magiche degli oggetti magici non funzionano all'interno dell'aura o su ciÃ² che si trova al suo interno. Le aree di effetto create da incantesimi o altra magia non possono estendersi nell'aura, e nessuno puÃ² teletrasportarsi dentro o fuori da essa nÃ© usare viaggi planari al suo interno. I portali si chiudono temporaneamente mentre si trovano nell'aura.\n\nGli incantesimi in corso, tranne quelli lanciati da un Artefatto o da una divinitÃ , sono soppressi nell'area. FinchÃ© un effetto Ã¨ soppresso, non funziona, ma il tempo in cui Ã¨ soppresso viene comunque conteggiato nella sua durata.\n\nDissolvi Magie non ha effetto sull'aura, e le aure create da diversi incantesimi Campo Antimagia non si annullano a vicenda."
 	},
 	{
-		"name": "Antipathy/Sympathy",
+		"name": "Antipathy Sympathy",
 		"displayName": "Antipatia/Simpatie",
 		"level": 8,
 		"school": "enchantment",

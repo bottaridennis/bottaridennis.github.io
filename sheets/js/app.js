@@ -893,7 +893,7 @@ async function loadAllSpells() {
       const levelLabel = s.level === 0 ? "Trucchetto" : String(s.level);
       const displayName = s.displayName || s.name;
       const imageName = s.imageName || s.originalName || s.name;
-      const imgPath = s.img || `Images/spells/${imageName}.jpg`;
+      const imgPath = s.img || `Images/spells/${imageName.toLowerCase()}.jpg`;
 
       return {
         id: slugIdGeneric(imageName),

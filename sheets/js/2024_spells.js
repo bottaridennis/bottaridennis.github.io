@@ -326,7 +326,7 @@
 		"cantripUpgrade": "Questo danno aumenta di 1d8 quando raggiungi i livelli 5 (2d8), 11 (3d8) e 17 (4d8)."
 	},
 	{
-		"name": "Spare the Dying",
+		"name": "Spare The Dying",
 		"displayName": "Preservare i Morenti",
 		"level": 0,
 		"school": "necromancy",
@@ -495,7 +495,7 @@
 		"higherLevelSlot": "You can target one additional creature for each spell slot level above 1."
 	},
 	{
-		"name": "Chromatic Orb",
+		"name": "Chromatic orb",
 		"displayName": "Globo Cromatico",
 		"level": 1,
 		"school": "evocation",

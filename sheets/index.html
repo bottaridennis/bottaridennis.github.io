@@ -156,7 +156,31 @@
     </div>
   </nav>
 
-  <header class="container py-5">
+  <!-- FLOATING MOBILE NAV -->
+  <div class="floating-nav">
+    <a href="#sec-stats" class="floating-nav__item active" onclick="scrollToSection('sec-stats', this)">
+      <i class='bx bxs-user-detail'></i>
+      <span>Stats</span>
+    </a>
+    <a href="#sec-abilities" class="floating-nav__item" onclick="scrollToSection('sec-abilities', this)">
+      <i class='bx bxs-hand'></i>
+      <span>Abilità</span>
+    </a>
+    <a href="#sec-combat" class="floating-nav__item" onclick="scrollToSection('sec-combat', this)">
+      <i class='bx bxs-skull'></i>
+      <span>Combat</span>
+    </a>
+    <a href="#sec-inventory" class="floating-nav__item" onclick="scrollToSection('sec-inventory', this)">
+      <i class='bx bxs-backpack'></i>
+      <span>Zaino</span>
+    </a>
+    <a href="#sec-notes" class="floating-nav__item" onclick="scrollToSection('sec-notes', this)">
+      <i class='bx bxs-note'></i>
+      <span>Note</span>
+    </a>
+  </div>
+
+  <header class="container py-5" id="sec-stats">
     <div class="row g-4 align-items-stretch">
       <div class="col-lg-7" data-aos="fade-up">
         <div class="glass-card p-4 p-lg-5 h-100">
@@ -284,7 +308,7 @@
             </div>
           </div>
 
-          <div class="mt-4">
+          <div class="mt-4" id="sec-abilities">
             <div class="d-flex align-items-center justify-content-between">
               <h2 class="section-title mb-0">Caratteristiche</h2>
             </div>
@@ -540,6 +564,8 @@
           </div>
 
           <hr class="sep my-4" />
+          
+          <div id="sec-combat"></div>
 
           <div class="row g-2 mb-3">
             <div class="col-12">
@@ -581,7 +607,9 @@
             </div>
           </div>
 
-          <h2 class="section-title">Tratti / Note</h2>
+          <div class="d-flex align-items-center justify-content-between mb-2" id="sec-notes">
+            <h2 class="section-title mb-0">Tratti / Note</h2>
+          </div>
           <textarea class="form-control form-control-glass area" rows="10" data-bind="notes"
             placeholder="Tratti e note"></textarea>
 
@@ -656,7 +684,7 @@
 
           <hr class="sep my-4" />
 
-          <div class="d-flex flex-wrap gap-2 align-items-center justify-content-between">
+          <div class="d-flex flex-wrap gap-2 align-items-center justify-content-between" id="sec-inventory">
             <div>
               <h2 class="section-title mb-1">Inventario</h2>
               <div class="tiny text-mutedish">Aggiungi oggetti</div>

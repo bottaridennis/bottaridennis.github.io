@@ -2096,3 +2096,57 @@ function updateInvImagePreview(file) {
 
 // avvia solo se siamo su index e gli elementi esistono
 initInventory();
+
+// Helper per scroll fluido dalla floating nav
+window.scrollToSection = function(id, el) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  
+  // Rimuovi active dagli altri
+  document.querySelectorAll(".floating-nav__item").forEach(item => item.classList.remove("active"));
+  // Aggiungi active a quello cliccato
+  if (el) el.classList.add("active");
+  
+  // Calcola offset per la navbar fissa (circa 60px) + un po di spazio
+  const headerOffset = 80;
+  const elementPosition = target.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
+};
+
+// Intersection Observer per aggiornare attivo mentre si scrolla
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = ["sec-stats", "sec-abilities", "sec-combat", "sec-inventory", "sec-notes"];
+  const navItems = document.querySelectorAll(".floating-nav__item");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "-20% 0px -60% 0px", // Attiva quando la sezione è nella parte alta
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navItems.forEach((link) => {
+          if (link.getAttribute("href") === "#" + id) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+});
+

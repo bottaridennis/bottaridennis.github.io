@@ -8,6 +8,16 @@
 const STORAGE_KEY = "dnd_sheet_stats_v1";
 let SHEET_STATE = {};
 
+try {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (raw) {
+    SHEET_STATE = JSON.parse(raw);
+  }
+} catch (e) {
+  console.error("Errore caricamento stato locale:", e);
+  SHEET_STATE = {};
+}
+
 function safeJSONParse(str) {
   try {
     return JSON.parse(str);
@@ -39,14 +49,24 @@ function bindAutosave() {
   const saved = getSavedState();
   inputs.forEach((el) => {
     const key = el.getAttribute("data-bind");
-    if (saved[key] != null) el.value = saved[key];
+    if (saved[key] != null) {
+      if (el.type === "checkbox") {
+        el.checked = saved[key] === true || saved[key] === "true";
+      } else {
+        el.value = saved[key];
+      }
+    }
   });
 
   const save = () => {
     const data = {};
     inputs.forEach((el) => {
       const key = el.getAttribute("data-bind");
-      data[key] = el.value;
+      if (el.type === "checkbox") {
+        data[key] = el.checked;
+      } else {
+        data[key] = el.value;
+      }
     });
     const current = getSavedState();
     const next = { ...current, ...data };
@@ -99,6 +119,150 @@ function bindAutosave() {
 }
 
 bindAutosave();
+
+function initCalculations() {
+  const inputs = document.querySelectorAll("input[data-bind], select[data-bind]");
+  
+  const calculate = () => {
+    // 1. Get Ability Scores
+    const getScore = (key) => {
+      const el = document.querySelector(`[data-bind="${key}"]`);
+      return el ? parseInt(el.value) || 10 : 10;
+    };
+    
+    const str = getScore("str");
+    const dex = getScore("dex");
+    const con = getScore("con");
+    const int = getScore("int");
+    const wis = getScore("wis");
+    const cha = getScore("cha");
+    
+    // 2. Calculate Modifiers
+    const getMod = (score) => Math.floor((score - 10) / 2);
+    
+    const strMod = getMod(str);
+    const dexMod = getMod(dex);
+    const conMod = getMod(con);
+    const intMod = getMod(int);
+    const wisMod = getMod(wis);
+    const chaMod = getMod(cha);
+    
+    // 3. Update Modifier Inputs
+    const setVal = (key, val) => {
+      const el = document.querySelector(`[data-bind="${key}"]`);
+      if (el && !el.matches(":focus")) { 
+          if (el.type === "checkbox") return;
+          const strVal = val >= 0 ? `+${val}` : `${val}`;
+          if (el.value !== strVal) el.value = strVal;
+      }
+    };
+    
+    setVal("strMod", strMod);
+    setVal("dexMod", dexMod);
+    setVal("conMod", conMod);
+    setVal("intMod", intMod);
+    setVal("wisMod", wisMod);
+    setVal("chaMod", chaMod);
+    
+    // 4. Get Proficiency Bonus
+    // Calcolo automatico basato sul livello (Formula richiesta: Lv 1-4 = +1)
+    const profEl = document.querySelector('[data-bind="prof"]');
+    const levelEl = document.querySelector('[data-bind="level"]');
+    
+    let lvl = 1;
+    if (levelEl) {
+        lvl = parseInt(levelEl.value) || 1;
+    }
+    
+    // Formula modificata: ceil(lvl / 4) -> Lv 1-4 = +1, Lv 5-8 = +2, etc.
+    let prof = Math.ceil(lvl / 4);
+    if (prof < 1) prof = 1;
+
+    if (profEl) {
+        // Se l'utente non sta modificando manualmente il campo, aggiornalo con il valore calcolato
+        if (document.activeElement !== profEl) {
+            profEl.value = `+${prof}`;
+        } else {
+            // Se l'utente sta scrivendo, usa il valore inserito
+            const val = profEl.value.trim();
+            const match = val.match(/-?\d+/);
+            if (match) {
+                prof = parseInt(match[0]);
+            }
+        }
+    }
+    
+    // 5. Calculate Saving Throws
+    const calcSave = (mod, profKey, outKey) => {
+        const cb = document.querySelector(`[data-bind="${profKey}"]`);
+        const isProf = cb ? cb.checked : false;
+        const total = mod + (isProf ? prof : 0);
+        setVal(outKey, total);
+    };
+    
+    calcSave(strMod, "saveStrProf", "saveStr");
+    calcSave(dexMod, "saveDexProf", "saveDex");
+    calcSave(conMod, "saveConProf", "saveCon");
+    calcSave(intMod, "saveIntProf", "saveInt");
+    calcSave(wisMod, "saveWisProf", "saveWis");
+    calcSave(chaMod, "saveChaProf", "saveCha");
+    
+    // 6. Calculate Skills
+    const calcSkill = (mod, profKey, outKey) => {
+        const cb = document.querySelector(`[data-bind="${profKey}"]`);
+        const isProf = cb ? cb.checked : false;
+        const total = mod + (isProf ? prof : 0);
+        setVal(outKey, total);
+    };
+    
+    // STR
+    calcSkill(strMod, "skillAthleticsProf", "skillAthletics");
+    
+    // DEX
+    calcSkill(dexMod, "skillAcrobaticsProf", "skillAcrobatics");
+    calcSkill(dexMod, "skillSleightOfHandProf", "skillSleightOfHand");
+    calcSkill(dexMod, "skillStealthProf", "skillStealth");
+    
+    // INT
+    calcSkill(intMod, "skillArcanaProf", "skillArcana");
+    calcSkill(intMod, "skillHistoryProf", "skillHistory");
+    calcSkill(intMod, "skillInvestigationProf", "skillInvestigation");
+    calcSkill(intMod, "skillNatureProf", "skillNature");
+    calcSkill(intMod, "skillReligionProf", "skillReligion");
+    
+    // WIS
+    calcSkill(wisMod, "skillAnimalHandlingProf", "skillAnimalHandling");
+    calcSkill(wisMod, "skillInsightProf", "skillInsight");
+    calcSkill(wisMod, "skillMedicineProf", "skillMedicine");
+    calcSkill(wisMod, "skillPerceptionProf", "skillPerception");
+    calcSkill(wisMod, "skillSurvivalProf", "skillSurvival");
+    
+    // CHA
+    calcSkill(chaMod, "skillDeceptionProf", "skillDeception");
+    calcSkill(chaMod, "skillIntimidationProf", "skillIntimidation");
+    calcSkill(chaMod, "skillPerformanceProf", "skillPerformance");
+    calcSkill(chaMod, "skillPersuasionProf", "skillPersuasion");
+    
+    // Passive Perception
+    const ppEl = document.querySelector('[data-bind="skillPerception"]');
+    if (ppEl) {
+        const ppVal = parseInt(ppEl.value) || 0;
+        const pp = 10 + ppVal;
+        const ppOut = document.querySelector('[data-bind="passivePerception"]');
+        if (ppOut && !ppOut.matches(":focus")) ppOut.value = pp;
+    }
+  };
+  
+  inputs.forEach(el => {
+      el.addEventListener("input", calculate);
+      el.addEventListener("change", calculate);
+  });
+  
+  // Initial calculation
+  calculate();
+}
+
+initCalculations();
 
 function initCloudLoginGate() {
   const authModalEl = document.getElementById("cloudAuthModal");
@@ -1376,6 +1540,11 @@ function getSavedState() {
 
 function setSavedState(next) {
   SHEET_STATE = next || {};
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(SHEET_STATE));
+  } catch (e) {
+    console.error("Errore salvataggio stato locale:", e);
+  }
 }
 
 function toggleTheme() {

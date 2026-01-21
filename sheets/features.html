@@ -21,6 +21,11 @@
 
   <!-- CSS locale -->
   <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Cloud Script -->
+  <script src="./js/cloud.js"></script>
 </head>
 
 <body>
@@ -59,6 +64,17 @@
           <a class="btn btn-outline-light btn-sm px-3" href="encounter.html">
             <i class='bx bx-target-lock me-1'></i> Encounter
           </a>
+
+          <!-- Cloud Controls -->
+          <button id="cloudLoginBtn" class="btn btn-outline-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#cloudAuthModal">
+            <i class='bx bx-cloud me-1'></i> Cloud
+          </button>
+          
+          <div id="cloudUserPanel" class="d-none d-flex gap-2 align-items-center">
+            <button class="btn btn-outline-info btn-sm px-3" data-bs-toggle="modal" data-bs-target="#cloudProfileModal">
+              <i class='bx bx-user-circle me-1'></i> <span id="cloudUsername">User</span>
+            </button>
+          </div>
 
           <div class="search-wrap">
             <i class='bx bx-search'></i>

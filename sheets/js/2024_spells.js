@@ -673,7 +673,7 @@
 		"description": "FinchÃ© lâ€™incantesimo dura, i tuoi attacchi con armi infliggono 1d4 danni Radianti aggiuntivi quando colpiscono."
 	},
 	{
-		"name": "Divine Smite",
+		"name": "Divine  Smite",
 		"displayName": "Punizione Divina",
 		"level": 1,
 		"school": "evocation",
@@ -3171,7 +3171,7 @@
 		"higherLevelSlot": "Puoi aumentare la dimensione del Cubo di 30 metri per ogni slot incantesimo di livello superiore al 4."
 	},
 	{
-		"name": "Resilient Sphere",
+		"name": "Resilient  Sphere",
 		"displayName": "Sfera Resiliente",
 		"level": 4,
 		"school": "evocation",

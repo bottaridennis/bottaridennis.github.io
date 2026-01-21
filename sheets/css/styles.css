@@ -280,6 +280,26 @@ h1, h2, h3, h4, h5, h6,
   user-select: none;
 }
 
+.mini-group-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-top: 0.85rem;
+  margin-bottom: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+.prof-check {
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: text-bottom;
+  margin-right: 0.4rem;
+  cursor: pointer;
+  accent-color: #22c55e;
+}
+
 .mini-row span {
   color: rgba(255, 255, 255, .80);
   font-size: .92rem;

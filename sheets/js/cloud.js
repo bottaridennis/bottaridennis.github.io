@@ -50,6 +50,53 @@ class CloudManager {
     this.client.auth.onAuthStateChange((event, session) => {
       this.user = session?.user || null;
       this.updateUI();
+      // Appena l'utente è confermato, facciamo un salvataggio silenzioso per sincronizzare 
+      // eventuali modifiche fatte nell'altra pagina (localStorage -> Cloud)
+      if (this.user) {
+        setTimeout(() => this.autoSave(), 1000);
+      }
+    });
+
+    // Avvia autosave e guard
+    this.startAutoSaveTimer();
+    this.initLeaveGuard();
+  }
+
+  initDOM() {
+    this.initLoginGate();
+  }
+
+  initLoginGate() {
+    setTimeout(() => {
+      if (this.user) return;
+      const authModalEl = document.getElementById("cloudAuthModal");
+      if (!authModalEl || !window.bootstrap) return;
+      // Controlla se il modale è già aperto o se l'utente ha già chiuso
+      // Per ora mostriamo sempre se non loggato, come da richiesta "autorizzazione pagina"
+      if (authModalEl.classList.contains("show")) return;
+      
+      try {
+        const modal = new bootstrap.Modal(authModalEl);
+        modal.show();
+      } catch(e) {}
+    }, 1000);
+  }
+
+  startAutoSaveTimer() {
+    setInterval(() => {
+      this.autoSave();
+    }, 60000);
+  }
+
+  initLeaveGuard() {
+    window.addEventListener("beforeunload", (e) => {
+      if (this.user) return;
+      // Se l'utente non è loggato, avvisa che potrebbe perdere i dati
+      // Questo vale per tutte le pagine dato che tutte modificano il localStorage
+      const msg = "Non sei loggato: i dati non salvati nel Cloud potrebbero andare persi.";
+      e.preventDefault();
+      e.returnValue = msg;
+      return msg;
     });
   }
 
@@ -189,21 +236,39 @@ class CloudManager {
   async saveCharacter(charName, options = {}) {
     if (!this.user) return;
 
-    let sheet = null;
-    let mySpells = null;
-    if (typeof collectBindData === "function") {
-      sheet = collectBindData();
-    }
-    if (typeof loadMySpellsGlobal === "function") {
-      mySpells = loadMySpellsGlobal();
-    }
-
-    const charData = {
-      sheet,
-      mySpells
+    // Recupera i dati dal LocalStorage (Sessione corrente)
+    const safeParse = (key) => {
+      try {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : null;
+      } catch (e) {
+        return null;
+      }
     };
 
-    const effectiveName = (charName || (sheet && sheet.name) || localStorage.getItem("cloud_current_char") || "PG senza nome").toString().trim() || "PG senza nome";
+    const charData = {
+      sheet: safeParse("dnd_sheet_stats_v1"),
+      mySpells: safeParse("dnd_my_spells_v1"),
+      myFeatures: safeParse("dnd_my_features_v1"),
+      myInvocations: safeParse("dnd_my_invocations_v1"),
+      slotsUsage: safeParse("dnd_spell_slots_usage_v1")
+    };
+
+    // Se siamo sulla pagina principale, potremmo avere dati più freschi nel DOM, 
+    // ma bindAutosave aggiorna il localStorage in tempo reale, quindi fidiamoci del localStorage.
+    // L'unica eccezione è se bindAutosave non è ancora scattato, ma è raro.
+
+    // Se sheet è null, prova collectBindData come fallback (se esiste)
+    if (!charData.sheet && typeof collectBindData === "function") {
+      charData.sheet = collectBindData();
+    }
+
+    const currentNameStored = localStorage.getItem("cloud_current_char");
+    // Se c'è un nome nella scheda, usalo. Altrimenti usa quello salvato in cloud_current_char.
+    // Se la scheda è vuota/null, usa "PG senza nome"
+    let nameFromSheet = charData.sheet ? charData.sheet.name : "";
+    
+    const effectiveName = (charName || nameFromSheet || currentNameStored || "PG senza nome").toString().trim() || "PG senza nome";
     localStorage.setItem("cloud_current_char", effectiveName);
 
     // Cerchiamo se esiste già un PG con questo nome per questo utente
@@ -251,7 +316,7 @@ class CloudManager {
 
   async autoSave() {
     if (!this.user) return;
-    if (typeof collectBindData !== "function") return;
+    // Salva silenziosamente
     await this.saveCharacter(null, { silent: true, forceOverwrite: true });
   }
 
@@ -303,7 +368,7 @@ class CloudManager {
         </div>
         <div class="d-flex flex-column gap-1 align-items-end">
           <button class="btn btn-sm btn-outline-info" onclick="window.cloud.loadCharacter('${c.id}')">
-            <i class='bx bx-folder-open me-1'></i> Apri scheda
+            <i class='bx bx-folder-open me-1'></i> Carica
           </button>
           <button class="btn btn-sm btn-outline-danger" onclick="window.cloud.deleteCharacter('${c.id}')">
             <i class='bx bx-trash me-1'></i> Elimina
@@ -327,32 +392,33 @@ class CloudManager {
     }
 
     const payload = data.data || {};
-    const sheet = payload.sheet || payload.pg_stats || null;
-    const mySpells = payload.mySpells || null;
+    
+    // Helper per salvare in localStorage se il dato esiste
+    const restore = (key, val) => {
+      if (val) localStorage.setItem(key, JSON.stringify(val));
+      else localStorage.removeItem(key);
+    };
 
-    if (sheet && typeof applyBindData === "function") {
-      applyBindData(sheet);
-    }
+    // Ripristina tutto nel localStorage
+    restore("dnd_sheet_stats_v1", payload.sheet || payload.pg_stats); // compatibilità con vecchie chiavi
+    restore("dnd_my_spells_v1", payload.mySpells);
+    restore("dnd_my_features_v1", payload.myFeatures);
+    restore("dnd_my_invocations_v1", payload.myInvocations);
+    restore("dnd_spell_slots_usage_v1", payload.slotsUsage);
 
-    if (mySpells && Array.isArray(mySpells.selected)) {
-      const spellsPayload = {
-        schema: "dnd-my-spells",
-        version: 1,
-        updatedAt: new Date().toISOString(),
-        selected: mySpells.selected,
-      };
-      localStorage.setItem("dnd_my_spells_v1", JSON.stringify(spellsPayload));
-    }
+    // Imposta il nome corrente
+    localStorage.setItem("cloud_current_char", data.name);
 
-    if (typeof this.renderCharList === "function") {
-      this.renderCharList();
-    }
- 
     // Chiudi il modal del profilo se aperto
     const modal = bootstrap.Modal.getInstance(document.getElementById("cloudProfileModal"));
     modal?.hide();
 
-    showAppAlert(`Salvataggio "${data.name}" caricato!`);
+    showAppAlert(`Salvataggio "${data.name}" caricato! Ricarico la pagina...`);
+    
+    // Ricarica la pagina per applicare le modifiche ovunque
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
 
   // 7. ELIMINA PERSONAGGIO
@@ -460,7 +526,8 @@ class CloudManager {
       if(modalEl && modalEl.classList.contains('show')) this.renderCharList();
 
       const isStatsPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname === "";
-      if (modalEl && isStatsPage && !this._profileAutoShown && window.bootstrap) {
+      const hasCurrentChar = localStorage.getItem("cloud_current_char");
+      if (modalEl && isStatsPage && !this._profileAutoShown && window.bootstrap && !hasCurrentChar) {
         this._profileAutoShown = true;
         const profileModal = bootstrap.Modal.getOrCreateInstance(modalEl);
         profileModal.show();
@@ -480,3 +547,8 @@ function escapeHTML(str) {
 
 // Inizializzazione
 window.cloud = new CloudManager();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => window.cloud.initDOM());
+} else {
+  window.cloud.initDOM();
+}

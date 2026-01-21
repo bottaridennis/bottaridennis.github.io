@@ -232,7 +232,7 @@
             </div>
             <div class="col-md-4">
               <label class="form-label tiny">Bonus Competenza</label>
-              <input class="form-control form-control-glass" data-bind="prof" placeholder="+2" />
+              <input class="form-control form-control-glass" data-bind="prof" placeholder="+1" />
             </div>
           </div>
 
@@ -352,36 +352,118 @@
             <div class="col-lg-6">
               <h2 class="section-title">Tiri Salvezza</h2>
               <div class="mini-list">
-                <div class="mini-row"><span>FOR</span><input class="mini-input" data-bind="saveStr"
-                    placeholder="+0 / ✔" /></div>
-                <div class="mini-row"><span>DES</span><input class="mini-input" data-bind="saveDex"
-                    placeholder="+0 / ✔" /></div>
-                <div class="mini-row"><span>COS</span><input class="mini-input" data-bind="saveCon"
-                    placeholder="+0 / ✔" /></div>
-                <div class="mini-row"><span>INT</span><input class="mini-input" data-bind="saveInt"
-                    placeholder="+0 / ✔" /></div>
-                <div class="mini-row"><span>SAG</span><input class="mini-input" data-bind="saveWis"
-                    placeholder="+0 / ✔" /></div>
-                <div class="mini-row"><span>CAR</span><input class="mini-input" data-bind="saveCha"
-                    placeholder="+0 / ✔" /></div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="saveStrProf" class="prof-check"> FORZA</span>
+                  <input class="mini-input" data-bind="saveStr" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="saveDexProf" class="prof-check"> DESTREZZA</span>
+                  <input class="mini-input" data-bind="saveDex" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="saveConProf" class="prof-check"> COSTITUZIONE</span>
+                  <input class="mini-input" data-bind="saveCon" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="saveIntProf" class="prof-check"> INTELLIGENZA</span>
+                  <input class="mini-input" data-bind="saveInt" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="saveWisProf" class="prof-check"> SAGGEZZA</span>
+                  <input class="mini-input" data-bind="saveWis" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="saveChaProf" class="prof-check"> CARISMA</span>
+                  <input class="mini-input" data-bind="saveCha" readonly placeholder="+0" />
+                </div>
               </div>
             </div>
 
             <div class="col-lg-6">
               <h2 class="section-title">Abilità</h2>
               <div class="mini-list">
-                <div class="mini-row"><span>Atletica (FOR)</span><input class="mini-input" data-bind="skillAth"
-                    placeholder="+?" /></div>
-                <div class="mini-row"><span>Percezione (SAG)</span><input class="mini-input" data-bind="skillPer"
-                    placeholder="+?" /></div>
-                <div class="mini-row"><span>Intimidire (CAR)</span><input class="mini-input" data-bind="skillIntim"
-                    placeholder="+?" /></div>
-                <div class="mini-row"><span>Persuasione (CAR)</span><input class="mini-input" data-bind="skillPers"
-                    placeholder="+?" /></div>
-                <div class="mini-row"><span>Furtività (DES)</span><input class="mini-input" data-bind="skillStealth"
-                    placeholder="+?" /></div>
-                <div class="mini-row"><span>Religione (INT)</span><input class="mini-input" data-bind="skillRel"
-                    placeholder="+?" /></div>
+                
+                <div class="mini-group-label">Forza (FOR)</div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillAthleticsProf" class="prof-check"> Atletica</span>
+                  <input class="mini-input" data-bind="skillAthletics" readonly placeholder="+0" />
+                </div>
+
+                <div class="mini-group-label">Destrezza (DES)</div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillAcrobaticsProf" class="prof-check"> Acrobazia</span>
+                  <input class="mini-input" data-bind="skillAcrobatics" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillSleightOfHandProf" class="prof-check"> Rapidità di mano</span>
+                  <input class="mini-input" data-bind="skillSleightOfHand" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillStealthProf" class="prof-check"> Furtività</span>
+                  <input class="mini-input" data-bind="skillStealth" readonly placeholder="+0" />
+                </div>
+
+                <div class="mini-group-label">Intelligenza (INT)</div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillArcanaProf" class="prof-check"> Arcano</span>
+                  <input class="mini-input" data-bind="skillArcana" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillHistoryProf" class="prof-check"> Storia</span>
+                  <input class="mini-input" data-bind="skillHistory" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillInvestigationProf" class="prof-check"> Indagare</span>
+                  <input class="mini-input" data-bind="skillInvestigation" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillNatureProf" class="prof-check"> Natura</span>
+                  <input class="mini-input" data-bind="skillNature" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillReligionProf" class="prof-check"> Religione</span>
+                  <input class="mini-input" data-bind="skillReligion" readonly placeholder="+0" />
+                </div>
+
+                <div class="mini-group-label">Saggezza (SAG)</div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillAnimalHandlingProf" class="prof-check"> Addestrare Animali</span>
+                  <input class="mini-input" data-bind="skillAnimalHandling" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillInsightProf" class="prof-check"> Intuizione</span>
+                  <input class="mini-input" data-bind="skillInsight" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillMedicineProf" class="prof-check"> Medicina</span>
+                  <input class="mini-input" data-bind="skillMedicine" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillPerceptionProf" class="prof-check"> Percezione</span>
+                  <input class="mini-input" data-bind="skillPerception" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillSurvivalProf" class="prof-check"> Sopravvivenza</span>
+                  <input class="mini-input" data-bind="skillSurvival" readonly placeholder="+0" />
+                </div>
+
+                <div class="mini-group-label">Carisma (CAR)</div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillDeceptionProf" class="prof-check"> Inganno</span>
+                  <input class="mini-input" data-bind="skillDeception" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillIntimidationProf" class="prof-check"> Intimidire</span>
+                  <input class="mini-input" data-bind="skillIntimidation" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillPerformanceProf" class="prof-check"> Intrattenere</span>
+                  <input class="mini-input" data-bind="skillPerformance" readonly placeholder="+0" />
+                </div>
+                <div class="mini-row">
+                  <span><input type="checkbox" data-bind="skillPersuasionProf" class="prof-check"> Persuasione</span>
+                  <input class="mini-input" data-bind="skillPersuasion" readonly placeholder="+0" />
+                </div>
               </div>
             </div>
           </div>

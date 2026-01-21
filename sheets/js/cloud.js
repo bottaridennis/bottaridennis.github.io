@@ -45,6 +45,7 @@ class CloudManager {
     this.client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     this.user = null;
     this._confirmResolver = null;
+    this.pendingChanges = false;
     
     // Ascolta cambiamenti auth
     this.client.auth.onAuthStateChange((event, session) => {
@@ -90,6 +91,7 @@ class CloudManager {
 
   triggerDebouncedSave(delay = 5000) {
     if (!this.user) return;
+    this.pendingChanges = true;
     if (this._debounceTimer) clearTimeout(this._debounceTimer);
     this._debounceTimer = setTimeout(() => {
       this.autoSave();
@@ -98,7 +100,15 @@ class CloudManager {
 
   initLeaveGuard() {
     window.addEventListener("beforeunload", (e) => {
-      if (this.user) return;
+      if (this.user) {
+        if (this.pendingChanges) {
+          const msg = "Salvataggio Cloud in attesa. Se esci ora, le ultime modifiche andranno perse.";
+          e.preventDefault();
+          e.returnValue = msg;
+          return msg;
+        }
+        return;
+      }
       // Se l'utente non è loggato, avvisa che potrebbe perdere i dati
       // Questo vale per tutte le pagine dato che tutte modificano il localStorage
       const msg = "Non sei loggato: i dati non salvati nel Cloud potrebbero andare persi.";
@@ -318,6 +328,7 @@ class CloudManager {
       if (!options.silent) showAppAlert("Errore salvataggio: " + error.message);
       else console.error("Errore autosalvataggio:", error);
     } else {
+      this.pendingChanges = false;
       if (!options.silent) showAppAlert(`Salvataggio "${effectiveName}" completato con successo!`);
       this.renderCharList();
     }

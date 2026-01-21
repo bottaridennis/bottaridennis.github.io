@@ -88,6 +88,14 @@ class CloudManager {
     }, 60000);
   }
 
+  triggerDebouncedSave(delay = 5000) {
+    if (!this.user) return;
+    if (this._debounceTimer) clearTimeout(this._debounceTimer);
+    this._debounceTimer = setTimeout(() => {
+      this.autoSave();
+    }, delay);
+  }
+
   initLeaveGuard() {
     window.addEventListener("beforeunload", (e) => {
       if (this.user) return;
@@ -251,7 +259,8 @@ class CloudManager {
       mySpells: safeParse("dnd_my_spells_v1"),
       myFeatures: safeParse("dnd_my_features_v1"),
       myInvocations: safeParse("dnd_my_invocations_v1"),
-      slotsUsage: safeParse("dnd_spell_slots_usage_v1")
+      slotsUsage: safeParse("dnd_spell_slots_usage_v1"),
+      encounter: safeParse("dnd_encounter_v1")
     };
 
     // Se siamo sulla pagina principale, potremmo avere dati più freschi nel DOM, 
@@ -405,6 +414,7 @@ class CloudManager {
     restore("dnd_my_features_v1", payload.myFeatures);
     restore("dnd_my_invocations_v1", payload.myInvocations);
     restore("dnd_spell_slots_usage_v1", payload.slotsUsage);
+    restore("dnd_encounter_v1", payload.encounter);
 
     // Imposta il nome corrente
     localStorage.setItem("cloud_current_char", data.name);

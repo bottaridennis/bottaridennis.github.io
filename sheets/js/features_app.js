@@ -42,6 +42,9 @@ async function initFeaturesPage() {
       selected,
     };
     localStorage.setItem(MY_FEATURES_KEY, JSON.stringify(payload));
+    if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+      window.cloud.triggerDebouncedSave();
+    }
   };
 
   const grid = document.getElementById("grid");

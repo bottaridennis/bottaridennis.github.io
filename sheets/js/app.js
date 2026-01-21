@@ -439,6 +439,9 @@ async function initSpellsPage() {
       selected,
     };
     localStorage.setItem(MY_SPELLS_KEY, JSON.stringify(payload));
+    if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+      window.cloud.triggerDebouncedSave();
+    }
   };
 
   const myIndexMap = (selected) => {
@@ -619,6 +622,9 @@ async function initSpellsPage() {
 
   const saveSlotsUsage = (usage) => {
     localStorage.setItem("dnd_spell_slots_usage_v1", JSON.stringify(usage));
+    if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+      window.cloud.triggerDebouncedSave();
+    }
   };
 
   const getSlotsMaxConfig = () => {
@@ -1094,6 +1100,9 @@ function loadMySpellsGlobal() {
 
 function saveMySpellsGlobal(payload) {
   localStorage.setItem(MY_SPELLS_KEY_GLOBAL, JSON.stringify(payload));
+  if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+    window.cloud.triggerDebouncedSave();
+  }
 }
 
 function updateMySpellMetaGlobal(id, patch) {
@@ -1231,6 +1240,9 @@ function applyBindData(payload) {
       selected: data.myFeatures,
     };
     localStorage.setItem(MY_FEATURES_KEY_GLOBAL, JSON.stringify(payload));
+    if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+      window.cloud.triggerDebouncedSave();
+    }
   }
 
   if (Array.isArray(data.myInvocations)) {
@@ -1241,6 +1253,9 @@ function applyBindData(payload) {
       selected: data.myInvocations,
     };
     localStorage.setItem(MY_INVOCATIONS_KEY_GLOBAL, JSON.stringify(payload));
+    if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+      window.cloud.triggerDebouncedSave();
+    }
   }
 
   // applica campi data-bind
@@ -1542,6 +1557,9 @@ function setSavedState(next) {
   SHEET_STATE = next || {};
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(SHEET_STATE));
+    if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+      window.cloud.triggerDebouncedSave();
+    }
   } catch (e) {
     console.error("Errore salvataggio stato locale:", e);
   }
@@ -2125,7 +2143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const observerOptions = {
     root: null,
-    rootMargin: "-20% 0px -60% 0px", // Attiva quando la sezione è nella parte alta
+    rootMargin: "-20% 0px -60% 0px", // Attiva quando la sezione ï¿½ nella parte alta
     threshold: 0
   };
 

@@ -42,6 +42,9 @@ async function initInvocationsPage() {
       selected,
     };
     localStorage.setItem(MY_INVOCATIONS_KEY, JSON.stringify(payload));
+    if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+      window.cloud.triggerDebouncedSave();
+    }
   };
 
   const grid = document.getElementById("grid");

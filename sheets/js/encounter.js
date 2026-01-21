@@ -20,6 +20,9 @@ function encLoadState() {
 
 function encSaveState(st) {
   localStorage.setItem(ENCOUNTER_KEY, JSON.stringify(st));
+  if (window.cloud && typeof window.cloud.triggerDebouncedSave === "function") {
+    window.cloud.triggerDebouncedSave();
+  }
 }
 
 function encRender() {

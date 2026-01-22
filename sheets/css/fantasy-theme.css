@@ -305,3 +305,118 @@ input[readonly],
     cursor: default;
     font-weight: bold;
 }
+
+/* --- Spell/Feature/Invocation Card Overrides --- */
+
+/* Override spell card background and borders */
+.spell-card,
+.spell-card.v2,
+.feature-card,
+.invocation-card {
+    background: linear-gradient(135deg, rgba(45, 30, 20, 0.9), rgba(55, 35, 25, 0.8)) !important;
+    border: 1px solid var(--stroke) !important;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), var(--shadow) !important;
+}
+
+/* Remove glass effects from badges and make them solid/fantasy */
+.badge-glass {
+    background-color: var(--bg1) !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    font-family: 'Cinzel', serif !important;
+    text-transform: uppercase;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.5px;
+}
+
+/* Modal overrides */
+.glass-modal {
+    background: linear-gradient(135deg, rgba(45, 30, 20, 0.95), rgba(55, 35, 25, 0.9)) !important;
+    border: 1px solid var(--gold) !important;
+    backdrop-filter: none !important;
+    box-shadow: var(--shadow) !important;
+}
+
+/* Selection chips (mine-chip) */
+.mine-chip {
+    background: var(--bg0) !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+}
+
+.mine-chip input[type="checkbox"] {
+    accent-color: var(--gold) !important;
+}
+
+/* Spell Thumb/Image container */
+.spell-thumb,
+.spell-thumb.v2 {
+    border-bottom: 1px solid var(--gold) !important;
+    background: transparent !important;
+}
+
+/* Soft buttons in cards */
+.btn-soft,
+.btn-soft.v2 {
+    background: var(--bg1) !important;
+    border: 1px solid var(--stroke) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Cinzel', serif !important;
+}
+
+.btn-soft:hover,
+.btn-soft.v2:hover {
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+}
+
+/* Mini pills in cards */
+.mini-pill,
+.spell-tag,
+.level-summary-pill,
+.slot-pill {
+    background: rgba(45, 30, 20, 0.6) !important;
+    border: 1px solid var(--stroke) !important;
+    color: var(--text-secondary) !important;
+}
+
+.mini-pill b,
+.slot-value {
+    color: var(--gold) !important;
+}
+
+/* Slots bar */
+.slots-bar {
+    background: rgba(30, 20, 10, 0.8) !important;
+    border: 1px solid var(--gold) !important;
+}
+
+.slot-btn {
+    background: var(--bg1) !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+}
+
+/* Feature/Invocation specific tweaks */
+.feature-body,
+.invocation-body,
+.spell-body,
+.spell-body.v2 {
+    /* Ensure text color is correct */
+    color: var(--text-primary) !important;
+}
+
+.spell-sub,
+.spell-sub.v2 {
+    color: var(--text-secondary) !important;
+    font-family: 'Cinzel', serif !important;
+}
+
+/* Highlight "is-mine" cards with gold glow instead of green */
+.spell-card.v2.is-mine {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
+    border-color: var(--gold) !important;
+}

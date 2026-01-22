@@ -290,12 +290,34 @@ class CloudManager {
     const effectiveName = (charName || nameFromSheet || currentNameStored || "PG senza nome").toString().trim() || "PG senza nome";
     localStorage.setItem("cloud_current_char", effectiveName);
 
-    // Cerchiamo se esiste già un PG con questo nome per questo utente
-    const { data: existing } = await this.client
-      .from('characters')
-      .select('id')
-      .eq('name', effectiveName)
-      .single();
+    let existingId = localStorage.getItem("cloud_current_id");
+    let existing = null;
+
+    // 1. Cerca per ID (prioritario)
+    if (existingId) {
+      const { data } = await this.client
+        .from('characters')
+        .select('id')
+        .eq('id', existingId)
+        .maybeSingle();
+      if (data) existing = data;
+    }
+
+    // 2. Se non trovato per ID, cerca per Nome (fallback)
+    if (!existing) {
+      const { data } = await this.client
+        .from('characters')
+        .select('id')
+        .eq('name', effectiveName)
+        .order('updated_at', { ascending: false })
+        .limit(1);
+      
+      if (data && data.length > 0) {
+        existing = data[0];
+        // Trovato per nome, colleghiamo l'ID per il futuro
+        localStorage.setItem("cloud_current_id", existing.id);
+      }
+    }
 
     let error;
     if (existing) {
@@ -307,6 +329,7 @@ class CloudManager {
       const res = await this.client
         .from('characters')
         .update({ 
+          name: effectiveName, // Aggiorna anche il nome se cambiato
           data: charData,
           updated_at: new Date()
         })
@@ -320,8 +343,13 @@ class CloudManager {
           user_id: this.user.id,
           name: effectiveName,
           data: charData
-        });
+        })
+        .select();
+      
       error = res.error;
+      if (!error && res.data && res.data.length > 0) {
+        localStorage.setItem("cloud_current_id", res.data[0].id);
+      }
     }
 
     if (error) {
@@ -427,8 +455,9 @@ class CloudManager {
     restore("dnd_spell_slots_usage_v1", payload.slotsUsage);
     restore("dnd_encounter_v1", payload.encounter);
 
-    // Imposta il nome corrente
+    // Imposta il nome e ID corrente
     localStorage.setItem("cloud_current_char", data.name);
+    localStorage.setItem("cloud_current_id", data.id);
 
     // Chiudi il modal del profilo se aperto
     const modal = bootstrap.Modal.getInstance(document.getElementById("cloudProfileModal"));

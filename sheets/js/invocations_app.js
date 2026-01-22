@@ -97,10 +97,12 @@ async function initInvocationsPage() {
               </div>
             </div>
             <div class="spell-mine-toggle static">
-              <label class="mine-chip" data-invocation-label="${item.id}">
-                <input type="checkbox" data-invocation-id="${item.id}">
-                <span></span>
-              </label>
+              <div class="d-flex align-items-center gap-2" style="background: rgba(0,0,0,0.4); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--stroke);">
+                <input type="checkbox" class="prof-check m-0" data-invocation-id="${item.id}">
+                <label class="small text-uppercase cinzel fw-bold" data-invocation-label="${item.id}" style="cursor:pointer; color:var(--gold); font-size: 0.8rem;">
+                  <span></span>
+                </label>
+              </div>
             </div>
           </div>
           <div class="spell-badges static mt-3">

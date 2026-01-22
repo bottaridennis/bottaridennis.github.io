@@ -2168,3 +2168,107 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* =========================
+   RICERCA GLOBALE (Index)
+   ========================= */
+
+function initPageSearch() {
+  const searchInput = document.getElementById("searchInput");
+  const isStatsPage = !!document.getElementById("sec-stats");
+
+  if (!searchInput || !isStatsPage) return;
+
+  searchInput.addEventListener("input", (e) => {
+    const q = e.target.value.toLowerCase().trim();
+    
+    // Rimuovi highlight precedenti
+    document.querySelectorAll(".search-highlight").forEach(el => {
+        el.classList.remove("search-highlight");
+    });
+    document.querySelectorAll(".search-highlight-text").forEach(el => {
+        el.classList.remove("search-highlight-text");
+    });
+
+    if (q.length < 2) return;
+
+    let found = null;
+
+    // Helper per highlight
+    const highlight = (el) => {
+        el.classList.add("search-highlight");
+        if (!found) found = el;
+    };
+    
+    // 1. Labels, Titoli e Testi (espanso)
+    const targets = document.querySelectorAll("label, .stat-pill__label, .section-title, h2, h3, h4, h5, h6, .form-label, .mini-group-label, span, p");
+
+    for (const el of targets) {
+        // Ignora elementi nascosti o vuoti
+        if (el.offsetParent === null) continue;
+        
+        if (el.textContent.toLowerCase().includes(q)) {
+            el.classList.add("search-highlight-text");
+            
+            // Se è una label, cerchiamo l'input successivo
+            if (el.tagName === 'LABEL' && el.nextElementSibling && (el.nextElementSibling.tagName === 'INPUT' || el.nextElementSibling.tagName === 'TEXTAREA' || el.nextElementSibling.tagName === 'SELECT')) {
+                 highlight(el.nextElementSibling);
+            } else if (el.closest('.stat-pill')) {
+                 highlight(el.closest('.stat-pill'));
+            } else {
+                 if (!found) found = el;
+            }
+        }
+    }
+
+    // 2. Inputs (placeholder e VALUE)
+    const inputs = document.querySelectorAll("input, textarea, select");
+    for (const input of inputs) {
+        if (input.offsetParent === null) continue;
+
+        const ph = input.getAttribute("placeholder") || "";
+        const val = input.value || "";
+        
+        if (ph.toLowerCase().includes(q) || val.toLowerCase().includes(q)) {
+             highlight(input);
+        }
+    }
+    
+    // 3. Data-bind keys
+    const boundInputs = document.querySelectorAll("[data-bind]");
+    for (const input of boundInputs) {
+        if (input.offsetParent === null) continue;
+        const key = input.getAttribute("data-bind").toLowerCase();
+        if (key.includes(q)) {
+            highlight(input);
+        }
+    }
+
+    // Scroll to first match con OFFSET per Navbar
+    if (found) {
+        // Calcolo offset manuale per evitare che la navbar copra l'elemento
+        const headerOffset = 100; 
+        const elementPosition = found.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+
+        // Flash effect
+        found.animate([
+            { transform: 'scale(1)', boxShadow: '0 0 0 rgba(212, 175, 55, 0)' },
+            { transform: 'scale(1.05)', boxShadow: '0 0 20px rgba(212, 175, 55, 0.8)' },
+            { transform: 'scale(1)', boxShadow: '0 0 0 rgba(212, 175, 55, 0)' }
+        ], {
+            duration: 500,
+            iterations: 1
+        });
+    }
+
+  });
+}
+
+// Avvia ricerca
+initPageSearch();
+

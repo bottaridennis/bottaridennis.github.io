@@ -19,8 +19,20 @@
   <!-- AOS (CDN rete) -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <!-- Tailwind CSS Config -->
+  <script>
+    tailwind = {
+      config: {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- CSS locale -->
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/fantasy-theme.css" />
 
   <!-- Supabase JS -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -45,7 +57,7 @@
       </button>
 
       <div id="nav" class="collapse navbar-collapse">
-        <div class="ms-auto d-flex flex-wrap gap-2 align-items-center">
+        <div class="ms-auto d-flex flex-wrap gap-3 align-items-center">
           <!-- <button id="btnThemeToggle" class="btn btn-outline-light btn-sm px-3" type="button">
             <i class='bx bx-moon me-1'></i> Tema
           </button> -->

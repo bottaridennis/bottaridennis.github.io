@@ -22,9 +22,21 @@
   <!-- AOS (CDN rete) -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <!-- Tailwind CSS Config -->
+  <script>
+    tailwind = {
+      config: {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- CSS locale -->
   <link rel="stylesheet" href="./css/styles.css" />
-  
+  <link rel="stylesheet" href="./css/fantasy-theme.css" />
+
   <!-- Supabase JS -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- Cloud Script -->
@@ -117,7 +129,7 @@
       </button>
 
       <div id="nav" class="collapse navbar-collapse">
-        <div class="ms-auto d-flex flex-wrap gap-2 align-items-center">
+        <div class="ms-auto d-flex flex-wrap gap-3 align-items-center">
           <!-- <button id="btnThemeToggle" class="btn btn-outline-light btn-sm px-3" type="button">
             <i class='bx bx-moon me-1'></i> Tema
           </button> -->
@@ -136,12 +148,13 @@
           <a class="btn btn-outline-light btn-sm px-3" href="encounter.html">
             <i class='bx bx-target-lock me-1'></i> Encounter
           </a>
-          
+
           <!-- Cloud Controls (solo su Statistiche) -->
-          <button id="cloudLoginBtn" class="btn btn-outline-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#cloudAuthModal">
+          <button id="cloudLoginBtn" class="btn btn-outline-success btn-sm px-3" data-bs-toggle="modal"
+            data-bs-target="#cloudAuthModal">
             <i class='bx bx-cloud me-1'></i> Cloud
           </button>
-          
+
           <div id="cloudUserPanel" class="d-none d-flex gap-2 align-items-center">
             <button class="btn btn-outline-info btn-sm px-3" data-bs-toggle="modal" data-bs-target="#cloudProfileModal">
               <i class='bx bx-user-circle me-1'></i> <span id="cloudUsername">User</span>
@@ -188,9 +201,11 @@
             <div>
               <h1 class="display-title mb-1">Statistiche Personaggio</h1>
             </div>
-            <!-- <span class="chip">
-              <i class='bx bx-warning me-1'></i> autosave locale
-            </span> -->
+            
+            <div class="search-wrap">
+              <i class='bx bx-search'></i>
+              <input id="searchInput" class="search-input" placeholder="Cerca campo..." />
+            </div>
           </div>
 
           <hr class="sep my-4" />
@@ -406,7 +421,7 @@
             <div class="col-lg-6">
               <h2 class="section-title">Abilità</h2>
               <div class="mini-list">
-                
+
                 <div class="mini-group-label">Forza (FOR)</div>
                 <div class="mini-row">
                   <span><input type="checkbox" data-bind="skillAthleticsProf" class="prof-check"> Atletica</span>
@@ -419,7 +434,8 @@
                   <input class="mini-input" data-bind="skillAcrobatics" readonly placeholder="+0" />
                 </div>
                 <div class="mini-row">
-                  <span><input type="checkbox" data-bind="skillSleightOfHandProf" class="prof-check"> Rapidità di mano</span>
+                  <span><input type="checkbox" data-bind="skillSleightOfHandProf" class="prof-check"> Rapidità di
+                    mano</span>
                   <input class="mini-input" data-bind="skillSleightOfHand" readonly placeholder="+0" />
                 </div>
                 <div class="mini-row">
@@ -451,7 +467,8 @@
 
                 <div class="mini-group-label">Saggezza (SAG)</div>
                 <div class="mini-row">
-                  <span><input type="checkbox" data-bind="skillAnimalHandlingProf" class="prof-check"> Addestrare Animali</span>
+                  <span><input type="checkbox" data-bind="skillAnimalHandlingProf" class="prof-check"> Addestrare
+                    Animali</span>
                   <input class="mini-input" data-bind="skillAnimalHandling" readonly placeholder="+0" />
                 </div>
                 <div class="mini-row">
@@ -564,7 +581,7 @@
           </div>
 
           <hr class="sep my-4" />
-          
+
           <div id="sec-combat"></div>
 
           <div class="row g-2 mb-3">
@@ -716,9 +733,11 @@
   <footer class="container pb-5">
     <div class="footer glass-card p-3 d-flex flex-wrap gap-2 justify-content-between align-items-center">
       <div class="tiny text-mutedish">
-        Powered by @ Dennis Bottari · <a href="https://dennisbottari.it" target="_blank" rel="noopener noreferrer" class="link-light">dennisbottari.it</a><br>
+        Powered by @ Dennis Bottari · <a href="https://dennisbottari.it" target="_blank" rel="noopener noreferrer"
+          class="link-light">dennisbottari.it</a><br>
         <span style="opacity: 0.7;">Icons by game-icons.net — CC BY 3.0</span><br>
-        <button type="button" class="btn btn-link btn-sm p-0 align-baseline text-decoration-underline" data-bs-toggle="modal" data-bs-target="#privacyModal">
+        <button type="button" class="btn btn-link btn-sm p-0 align-baseline text-decoration-underline"
+          data-bs-toggle="modal" data-bs-target="#privacyModal">
           Privacy &amp; cookie
         </button>
       </div>
@@ -740,26 +759,38 @@
         </div>
         <div class="modal-body">
           <p class="tiny text-mutedish mb-2">
-            Questo strumento non utilizza cookie di profilazione né strumenti di tracciamento statistico (come Google Analytics) sul dominio della scheda.
+            Questo strumento non utilizza cookie di profilazione né strumenti di tracciamento statistico (come Google
+            Analytics) sul dominio della scheda.
           </p>
           <h6 class="fw-800 mt-3 mb-1">localStorage</h6>
           <p class="tiny text-mutedish mb-2">
-            Il browser utilizza il localStorage per salvare i dati della scheda del personaggio (statistiche, abilità, inventario, note, ecc.), le selezioni locali di incantesimi, talenti e invocazioni e alcune preferenze come il tema grafico e l&apos;ultimo personaggio aperto. Questi dati rimangono nel tuo browser e possono essere cancellati in qualsiasi momento svuotando i dati di navigazione o usando il pulsante di reset nella scheda.
+            Il browser utilizza il localStorage per salvare i dati della scheda del personaggio (statistiche, abilità,
+            inventario, note, ecc.), le selezioni locali di incantesimi, talenti e invocazioni e alcune preferenze come
+            il tema grafico e l&apos;ultimo personaggio aperto. Questi dati rimangono nel tuo browser e possono essere
+            cancellati in qualsiasi momento svuotando i dati di navigazione o usando il pulsante di reset nella scheda.
           </p>
           <h6 class="fw-800 mt-3 mb-1">Salvataggio Cloud con Supabase</h6>
           <p class="tiny text-mutedish mb-2">
-            Se scegli di creare un account e usare il salvataggio Cloud, i dati della tua scheda e delle tue selezioni vengono salvati in un database gestito da Supabase. Supabase utilizza propri meccanismi di autenticazione salvati nello storage del browser per mantenere attiva la sessione; questi sono tecnicamente necessari per il funzionamento del login e non vengono utilizzati per finalità di profilazione.
+            Se scegli di creare un account e usare il salvataggio Cloud, i dati della tua scheda e delle tue selezioni
+            vengono salvati in un database gestito da Supabase. Supabase utilizza propri meccanismi di autenticazione
+            salvati nello storage del browser per mantenere attiva la sessione; questi sono tecnicamente necessari per
+            il funzionamento del login e non vengono utilizzati per finalità di profilazione.
           </p>
           <p class="tiny text-mutedish mb-2">
-            I dati salvati includono il contenuto della scheda (statistiche, note, inventario, ecc.) e le selezioni di incantesimi, compresi eventuali appunti personali associati agli incantesimi.
+            I dati salvati includono il contenuto della scheda (statistiche, note, inventario, ecc.) e le selezioni di
+            incantesimi, compresi eventuali appunti personali associati agli incantesimi.
           </p>
           <h6 class="fw-800 mt-3 mb-1">Contenuti di terze parti</h6>
           <p class="tiny text-mutedish mb-2">
-            Il sito utilizza librerie esterne caricate da CDN (ad esempio Bootstrap, Boxicons, AOS, Google Fonts) solo per motivi grafici e funzionali. Tali servizi possono effettuare log tecnici delle richieste per motivi di sicurezza e funzionamento, secondo le rispettive informative privacy.
+            Il sito utilizza librerie esterne caricate da CDN (ad esempio Bootstrap, Boxicons, AOS, Google Fonts) solo
+            per motivi grafici e funzionali. Tali servizi possono effettuare log tecnici delle richieste per motivi di
+            sicurezza e funzionamento, secondo le rispettive informative privacy.
           </p>
           <h6 class="fw-800 mt-3 mb-1">Gestione dei dati</h6>
           <p class="tiny text-mutedish mb-2">
-            Puoi cancellare i dati locali della scheda usando il pulsante di reset, oppure cancellare manualmente i dati di navigazione dal tuo browser. Se utilizzi il Cloud, puoi richiedere la cancellazione del tuo account contattando l&apos;autore dello strumento.
+            Puoi cancellare i dati locali della scheda usando il pulsante di reset, oppure cancellare manualmente i dati
+            di navigazione dal tuo browser. Se utilizzi il Cloud, puoi richiedere la cancellazione del tuo account
+            contattando l&apos;autore dello strumento.
           </p>
         </div>
         <div class="modal-footer border-0 pt-0">
@@ -782,10 +813,12 @@
         <div class="modal-body">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button">Login</button>
+              <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login"
+                type="button">Login</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register" type="button">Registrati</button>
+              <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register"
+                type="button">Registrati</button>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
@@ -793,19 +826,23 @@
             <div class="tab-pane fade show active" id="pills-login">
               <div class="mb-3">
                 <label class="form-label tiny">Email o nome utente</label>
-                <input type="text" class="form-control form-control-glass" id="loginUser" placeholder="Email o nome utente">
+                <input type="text" class="form-control form-control-glass" id="loginUser"
+                  placeholder="Email o nome utente">
               </div>
               <div class="mb-3">
                 <label class="form-label tiny d-flex justify-content-between align-items-center">
                   <span>Password</span>
                   <span class="tiny">
-                    <input type="checkbox" id="loginShowPass" class="form-check-input me-1" onchange="const f=document.getElementById('loginPass'); f.type=this.checked?'text':'password';">
+                    <input type="checkbox" id="loginShowPass" class="form-check-input me-1"
+                      onchange="const f=document.getElementById('loginPass'); f.type=this.checked?'text':'password';">
                     Mostra
                   </span>
                 </label>
-                <input type="password" class="form-control form-control-glass" id="loginPass" placeholder="Inserisci la password">
+                <input type="password" class="form-control form-control-glass" id="loginPass"
+                  placeholder="Inserisci la password">
               </div>
-              <button class="btn btn-glow w-100" onclick="window.cloud.login(document.getElementById('loginUser').value, document.getElementById('loginPass').value)">
+              <button class="btn btn-glow w-100"
+                onclick="window.cloud.login(document.getElementById('loginUser').value, document.getElementById('loginPass').value)">
                 Accedi
               </button>
             </div>
@@ -813,22 +850,27 @@
             <div class="tab-pane fade" id="pills-register">
               <div class="mb-3">
                 <label class="form-label tiny">Email</label>
-                <input type="email" class="form-control form-control-glass" id="regUser" placeholder="esempio@dominio.it">
+                <input type="email" class="form-control form-control-glass" id="regUser"
+                  placeholder="esempio@dominio.it">
               </div>
               <div class="mb-3">
                 <label class="form-label tiny">Nome utente</label>
-                <input type="text" class="form-control form-control-glass" id="regDisplayName" placeholder="Nome utente">
+                <input type="text" class="form-control form-control-glass" id="regDisplayName"
+                  placeholder="Nome utente">
               </div>
               <div class="mb-3">
                 <label class="form-label tiny d-flex justify-content-between align-items-center">
                   <span>Password</span>
                   <span class="tiny">
-                    <input type="checkbox" id="regShowPass" class="form-check-input me-1" onchange="const f1=document.getElementById('regPass'); const f2=document.getElementById('regPass2'); const t=this.checked?'text':'password'; f1.type=t; f2.type=t;">
+                    <input type="checkbox" id="regShowPass" class="form-check-input me-1"
+                      onchange="const f1=document.getElementById('regPass'); const f2=document.getElementById('regPass2'); const t=this.checked?'text':'password'; f1.type=t; f2.type=t;">
                     Mostra
                   </span>
                 </label>
-                <input type="password" class="form-control form-control-glass mb-2" id="regPass" placeholder="Inserisci password">
-                <input type="password" class="form-control form-control-glass" id="regPass2" placeholder="Ripeti password">
+                <input type="password" class="form-control form-control-glass mb-2" id="regPass"
+                  placeholder="Inserisci password">
+                <input type="password" class="form-control form-control-glass" id="regPass2"
+                  placeholder="Ripeti password">
               </div>
               <button class="btn btn-outline-info w-100" onclick="window.cloud.registerWithConfirm()">
                 Crea Account
@@ -850,35 +892,42 @@
         </div>
         <div class="modal-body">
           <p class="tiny text-mutedish mb-3">
-            Ogni scheda è un personaggio completo salvato nel Cloud. Seleziona una scheda per caricarla nella pagina Statistiche.
+            Ogni scheda è un personaggio completo salvato nel Cloud. Seleziona una scheda per caricarla nella pagina
+            Statistiche.
           </p>
           <div class="mb-3">
             <label class="form-label tiny">Nome visualizzato</label>
             <div class="d-flex gap-2">
-              <input type="text" class="form-control form-control-glass" id="cloudDisplayNameInput" placeholder="Come vuoi apparire" autocomplete="off">
-              <button class="btn btn-outline-light btn-sm" type="button" onclick="(function(){ const input=document.getElementById('cloudDisplayNameInput'); if(!input) return; const name=(input.value||'').trim(); if(!name){ showAppAlert('Inserisci un nome da visualizzare.'); return; } window.cloud.updateDisplayName(name); })();">
+              <input type="text" class="form-control form-control-glass" id="cloudDisplayNameInput"
+                placeholder="Come vuoi apparire" autocomplete="off">
+              <button class="btn btn-outline-light btn-sm" type="button"
+                onclick="(function(){ const input=document.getElementById('cloudDisplayNameInput'); if(!input) return; const name=(input.value||'').trim(); if(!name){ showAppAlert('Inserisci un nome da visualizzare.'); return; } window.cloud.updateDisplayName(name); })();">
                 Salva
               </button>
             </div>
           </div>
           <div class="mb-3">
             <label class="form-label tiny">Nome del Personaggio</label>
-            <input type="text" class="form-control form-control-glass" id="cloudSaveName" placeholder="Es. Campagna - Personaggio">
+            <input type="text" class="form-control form-control-glass" id="cloudSaveName"
+              placeholder="Es. Campagna - Personaggio">
           </div>
           <div class="d-grid gap-2 mb-4">
-            <button class="btn btn-glow" onclick="(function(){ const input=document.getElementById('cloudSaveName'); const name=(input&&input.value?input.value:'').trim(); if(!name){ showAppAlert('Inserisci un nome per il salvataggio.'); return; } window.cloud.saveCharacter(name); })();">
+            <button class="btn btn-glow"
+              onclick="(function(){ const input=document.getElementById('cloudSaveName'); const name=(input&&input.value?input.value:'').trim(); if(!name){ showAppAlert('Inserisci un nome per il salvataggio.'); return; } window.cloud.saveCharacter(name); })();">
               <i class='bx bx-save me-1'></i> Salva questa scheda come nuova
             </button>
           </div>
-          
+
           <h6 class="tiny text-mutedish text-uppercase mb-2">Schede salvate nel tuo account</h6>
           <div id="cloudCharList" class="mb-3">
             <!-- Popolato via JS -->
-            <div class="text-center py-3"><div class="spinner-border text-light" role="status"></div></div>
+            <div class="text-center py-3">
+              <div class="spinner-border text-light" role="status"></div>
+            </div>
           </div>
 
           <hr class="sep my-3">
-          
+
           <div class="d-flex justify-content-between">
             <button class="btn btn-outline-danger btn-sm" onclick="window.cloud.deleteUser()">
               <i class='bx bx-trash me-1'></i> Elimina Account
@@ -960,13 +1009,14 @@
                 <div class="kv"><span>Durata</span><b id="mDur"></b></div>
               </div>
 
-              <hr class="sep my-3"/>
+              <hr class="sep my-3" />
 
               <div id="mDesc" class="spell-desc"></div>
 
               <div id="mNotesWrap" class="mt-3">
                 <label for="mNotes" class="form-label tiny">Note personali</label>
-                <textarea id="mNotes" class="form-control form-control-glass area" rows="4" placeholder="Annotazioni, combo, consigli, uso tipico..."></textarea>
+                <textarea id="mNotes" class="form-control form-control-glass area" rows="4"
+                  placeholder="Annotazioni, combo, consigli, uso tipico..."></textarea>
               </div>
 
               <div id="mSpecialWrap" class="mt-3 d-none">

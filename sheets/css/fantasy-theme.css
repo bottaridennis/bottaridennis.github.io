@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=MedievalSharp&display=swap');
+
+:root {
+    --bg0: #1e140d;
+    --bg1: #2d1f18;
+    --glass: rgba(60, 40, 25, 0.65);
+    --glass2: rgba(80, 50, 30, 0.45);
+    --stroke: rgba(212, 175, 55, 0.3); /* Goldish */
+    --muted: rgba(224, 214, 200, 0.7);
+    --muted2: rgba(224, 214, 200, 0.55);
+    --shadow: 0 18px 55px rgba(0, 0, 0, 0.5);
+    --r: 12px;
+    --text-primary: #f5e6d3; /* Parchment white */
+    --text-secondary: rgba(245, 230, 211, 0.7);
+    --gold: #d4af37;
+    --crimson: #7a1f1f;
+}
+
+body {
+    font-family: 'MedievalSharp', cursive;
+    background-color: var(--bg0) !important;
+    background: 
+        radial-gradient(circle at 20% 20%, #3a251a 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, #2d1f18 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 100%) !important;
+    color: var(--text-primary) !important;
+    min-height: 100vh;
+}
+
+/* Force dark theme on all containers */
+.glass-card, .card, .modal-content {
+    background: linear-gradient(135deg, rgba(45, 30, 20, 0.9), rgba(55, 35, 25, 0.8)) !important;
+    border: 1px solid var(--stroke) !important;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), var(--shadow) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Fix Inputs and Form Controls to be dark */
+.form-control, 
+.form-select, 
+input, 
+textarea, 
+select,
+.form-control-glass {
+    background-color: rgba(45, 30, 20, 0.7) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: var(--gold) !important;
+    font-family: 'MedievalSharp', cursive !important;
+}
+
+.form-control:focus, 
+.form-select:focus, 
+input:focus, 
+textarea:focus, 
+select:focus {
+    background-color: rgba(60, 40, 25, 0.9) !important;
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
+    color: #fff !important;
+}
+
+/* Labels and text must be visible */
+label, .form-label, span, p, div {
+    color: inherit;
+}
+
+label, .form-label {
+    color: var(--gold) !important;
+    font-family: 'Cinzel', serif !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Placeholder color fix */
+::placeholder {
+    color: rgba(212, 175, 55, 0.4) !important;
+    opacity: 1;
+}
+
+/* Navbar specific styling to ensure visibility */
+.navbar .btn,
+.glass-nav .btn,
+.glass-nav .btn-outline-light,
+.glass-nav a.btn {
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    background: rgba(45, 30, 20, 0.85) !important; /* Darker background for better contrast */
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* margin-bottom: 0.25rem; */
+    opacity: 1 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative !important;
+    z-index: 1050 !important;
+    visibility: visible !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9); /* Stronger text shadow */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.navbar .btn:hover,
+.glass-nav .btn:hover,
+.glass-nav .btn-outline-light:hover {
+    background: rgba(212, 175, 55, 0.25) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    color: #fff !important;
+    border-color: var(--gold) !important;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.8);
+}
+
+/* Mobile Navbar Collapse Fix */
+.navbar-collapse {
+    background: rgba(40, 25, 15, 0.98) !important;
+    border: 1px solid var(--gold);
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Floating Mobile Nav Fix */
+.floating-nav {
+    background: rgba(40, 25, 15, 0.95) !important;
+    border-top: 2px solid var(--gold) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+}
+
+.floating-nav__item {
+    color: var(--muted) !important;
+    font-family: 'Cinzel', serif;
+}
+
+.floating-nav__item.active,
+.floating-nav__item:hover {
+    color: var(--gold) !important;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 8px;
+}
+
+.floating-nav__item i {
+    font-family: 'boxicons' !important; /* Ensure icons use correct font */
+}
+
+/* FIX: Do not override font-family for icons */
+.navbar-brand,
+.navbar-brand span {
+    color: var(--gold) !important;
+    font-family: 'Cinzel', serif !important;
+}
+
+.navbar-brand i,
+.navbar .btn i,
+.glass-nav i {
+    font-family: 'boxicons' !important;
+    color: inherit !important;
+}
+
+/* Ensure brand rune container style matches */
+.brand-rune {
+    border-color: var(--gold) !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+    color: var(--gold) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--gold) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(212, 175, 55, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.glass-card {
+    background: linear-gradient(135deg, rgba(30, 15, 5, 0.7), rgba(40, 20, 10, 0.5));
+    border: 1px solid var(--stroke);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), var(--shadow);
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--r);
+    padding: 1px;
+    background: linear-gradient(45deg, transparent, var(--gold), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.btn-glow {
+    background: linear-gradient(to bottom, #5a3a2a, #2d1f18);
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    background: linear-gradient(to bottom, #7a4a3a, #3a251a);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.glass-nav {
+    background: rgba(40, 25, 15, 0.95) !important; /* Force dark background */
+    border-bottom: 1px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Custom Round Checkboxes */
+.prof-check {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.3em;
+    height: 1.3em;
+    border: 1px solid var(--gold) !important;
+    border-radius: 50% !important;
+    background: rgba(45, 30, 20, 0.5) !important;
+    cursor: pointer;
+    position: relative;
+    vertical-align: text-bottom;
+    margin-right: 0.4rem;
+    transition: all 0.2s ease;
+}
+
+.prof-check:checked {
+    background: var(--gold) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+.prof-check:checked::after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0f0a05; /* Dark text for contrast against gold */
+    font-size: 0.8em;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, sans-serif; /* Ensure standard checkmark */
+}
+
+.prof-check:hover {
+    border-color: #fff !important;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+}
+
+/* Search Highlight */
+.search-highlight {
+    box-shadow: 0 0 15px var(--gold) !important;
+    border-color: var(--gold) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 5;
+}
+
+.search-highlight-text {
+    color: var(--gold) !important;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    font-weight: bold;
+}
+
+/* Search Bar Theming */
+.search-wrap {
+    background: rgba(45, 30, 20, 0.7) !important;
+    border: 1px solid var(--gold) !important;
+}
+
+.search-wrap i {
+    color: var(--gold) !important;
+}
+
+.search-input {
+    color: var(--gold) !important;
+    font-family: 'MedievalSharp', cursive !important;
+}
+
+.search-input::placeholder {
+    color: rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Readonly fields styling to look like text */
+input[readonly], 
+.mini-input[readonly], 
+.form-control[readonly] {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--gold) !important;
+    text-align: right;
+    padding-right: 0;
+    cursor: default;
+    font-weight: bold;
+}

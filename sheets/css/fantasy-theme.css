@@ -29,10 +29,11 @@ body {
 
 /* Force dark theme on all containers */
 .glass-card, .card, .modal-content {
-    background: linear-gradient(135deg, rgba(45, 30, 20, 0.9), rgba(55, 35, 25, 0.8)) !important;
+    background: linear-gradient(135deg, #2d1f18, #37251d) !important;
     border: 1px solid var(--stroke) !important;
     box-shadow: inset 0 0 20px rgba(0,0,0,0.5), var(--shadow) !important;
     color: var(--text-primary) !important;
+    backdrop-filter: none !important;
 }
 
 /* Fix Inputs and Form Controls to be dark */
@@ -42,10 +43,11 @@ input,
 textarea, 
 select,
 .form-control-glass {
-    background-color: rgba(45, 30, 20, 0.7) !important;
+    background-color: #2d1f18 !important;
     border: 1px solid rgba(212, 175, 55, 0.3) !important;
     color: var(--gold) !important;
     font-family: 'MedievalSharp', cursive !important;
+    backdrop-filter: none !important;
 }
 
 .form-control:focus, 
@@ -53,7 +55,7 @@ select,
 input:focus, 
 textarea:focus, 
 select:focus {
-    background-color: rgba(60, 40, 25, 0.9) !important;
+    background-color: #3c2820 !important;
     border-color: var(--gold) !important;
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
     color: #fff !important;
@@ -79,146 +81,247 @@ label, .form-label {
 }
 
 /* Navbar specific styling to ensure visibility */
+.navbar,
+.glass-nav {
+    z-index: 9999 !important;
+    background: #28190f !important;
+    border-bottom: 1px solid var(--gold) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+}
+
+.navbar .container {
+    z-index: 10000 !important;
+    position: relative !important;
+}
+
 .navbar .btn,
 .glass-nav .btn,
 .glass-nav .btn-outline-light,
 .glass-nav a.btn {
     border: 1px solid var(--gold) !important;
     color: var(--gold) !important;
-    background: rgba(45, 30, 20, 0.85) !important; /* Darker background for better contrast */
+    background: #2d1f18 !important;
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
     letter-spacing: 1px;
-    /* margin-bottom: 0.25rem; */
     opacity: 1 !important;
+    visibility: visible !important;
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
     position: relative !important;
-    z-index: 1050 !important;
-    visibility: visible !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.9); /* Stronger text shadow */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 10001 !important;
 }
 
-.navbar .btn:hover,
-.glass-nav .btn:hover,
-.glass-nav .btn-outline-light:hover {
-    background: rgba(212, 175, 55, 0.25) !important;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    color: #fff !important;
-    border-color: var(--gold) !important;
-    text-shadow: 0 0 5px rgba(212, 175, 55, 0.8);
-}
-
-/* Mobile Navbar Collapse Fix */
-.navbar-collapse {
-    background: rgba(40, 25, 15, 0.98) !important;
-    border: 1px solid var(--gold);
-    margin-top: 0.5rem;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* Floating Mobile Nav Fix */
-.floating-nav {
-    background: rgba(40, 25, 15, 0.95) !important;
-    border-top: 2px solid var(--gold) !important;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-}
-
-.floating-nav__item {
-    color: var(--muted) !important;
-    font-family: 'Cinzel', serif;
-}
-
-.floating-nav__item.active,
-.floating-nav__item:hover {
-    color: var(--gold) !important;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
-    background: rgba(212, 175, 55, 0.1);
-    border-radius: 8px;
-}
-
-.floating-nav__item i {
-    font-family: 'boxicons' !important; /* Ensure icons use correct font */
-}
-
-/* FIX: Do not override font-family for icons */
-.navbar-brand,
-.navbar-brand span {
-    color: var(--gold) !important;
-    font-family: 'Cinzel', serif !important;
-}
-
-.navbar-brand i,
+/* Ensure icons inside buttons are visible */
 .navbar .btn i,
-.glass-nav i {
-    font-family: 'boxicons' !important;
-    color: inherit !important;
+.glass-nav .btn i,
+.navbar .btn span,
+.glass-nav .btn span {
+    color: var(--gold) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 10002 !important;
 }
 
-/* Ensure brand rune container style matches */
-.brand-rune {
-    border-color: var(--gold) !important;
-    background: rgba(212, 175, 55, 0.1) !important;
+.navbar-brand,
+.navbar-brand span,
+.navbar-brand i {
     color: var(--gold) !important;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 10001 !important;
+    position: relative !important;
 }
 
 .navbar-toggler {
     border-color: var(--gold) !important;
+    z-index: 10001 !important;
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
+html[data-theme="light"] .navbar-toggler-icon,
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(212, 175, 55, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
 }
 
-.glass-card {
-    background: linear-gradient(135deg, rgba(30, 15, 5, 0.7), rgba(40, 20, 10, 0.5));
-    border: 1px solid var(--stroke);
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), var(--shadow);
+.navbar-collapse {
+    z-index: 10000 !important;
+    background: #28190f !important;
 }
 
-.glass-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--r);
-    padding: 1px;
-    background: linear-gradient(45deg, transparent, var(--gold), transparent);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0.3;
+/* Floating Nav Styling (Mobile) */
+.floating-nav {
+    background: #28190f !important;
+    border: 1px solid var(--gold) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5) !important;
+    z-index: 10000 !important;
 }
 
-.btn-glow {
-    background: linear-gradient(to bottom, #5a3a2a, #2d1f18);
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
-    color: var(--gold);
-    font-family: 'Cinzel', serif;
+.floating-nav__item {
+    color: var(--muted) !important;
+}
+
+.floating-nav__item.active,
+.floating-nav__item.active i {
+    color: var(--gold) !important;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5) !important;
+}
+
+.navbar .btn:hover,
+.glass-nav .btn:hover,
+.glass-nav .btn-outline-light:hover,
+.glass-nav a.btn:hover {
+    background: rgba(212, 175, 55, 0.2) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+    color: #fff !important;
+}
+
+/* Specific button overrides */
+.btn-outline-success {
+    border-color: #4caf50 !important;
+    color: #4caf50 !important;
+}
+
+.btn-outline-success:hover {
+    background-color: #4caf50 !important;
+    color: #fff !important;
+}
+
+.btn-outline-info {
+    border-color: #2196f3 !important;
+    color: #2196f3 !important;
+}
+
+.btn-outline-info:hover {
+    background-color: #2196f3 !important;
+    color: #fff !important;
+}
+
+.btn-outline-danger {
+    border-color: #f44336 !important;
+    color: #f44336 !important;
+}
+
+.btn-outline-danger:hover {
+    background-color: #f44336 !important;
+    color: #fff !important;
+}
+
+/* Ability Scores */
+.ability {
+    background: #2d1f18 !important;
+    border: 1px solid var(--gold) !important;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5) !important;
+    backdrop-filter: none !important;
+}
+
+.ability__head {
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.1), transparent) !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+.ability__head i, 
+.ability__head span {
+    color: var(--gold) !important;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.ability__score {
+    color: #fff !important;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.ability__mod {
+    background: #1e140d !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+}
+
+/* Quick Summary Boxes */
+.quick {
+    background: #2d1f18 !important;
+    border: 1px solid var(--gold) !important;
+    border-radius: 4px !important;
+    backdrop-filter: none !important;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3) !important;
+}
+
+.quick__k {
+    color: var(--text-secondary) !important;
+    font-family: 'Cinzel', serif !important;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+}
+
+.quick__v {
+    color: var(--gold) !important;
+    font-family: 'MedievalSharp', cursive !important;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+/* Condition Chips */
+.chip, .condition-chip {
+    background: #1e140d !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    font-family: 'Cinzel', serif !important;
+}
+
+.chip-alt {
+    background: var(--gold) !important;
+    color: #1e140d !important;
+    border: 1px solid var(--gold) !important;
+    font-weight: bold;
+}
+
+.condition-chip.active {
+    background: var(--gold) !important;
+    color: #1e140d !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6) !important;
+}
+
+/* Table overrides */
+.table-glass {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+.table-glass th {
+    border-bottom: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    font-family: 'Cinzel', serif !important;
+}
+
+.table-glass td {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Button Glow effect replacement */
+.btn-glow {
+    background: linear-gradient(to bottom, #5a3a2a, #2d1f18) !important;
+    border: 1px solid var(--gold) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15) !important;
+    color: var(--gold) !important;
+    font-family: 'Cinzel', serif !important;
 }
 
 .btn-glow:hover {
-    background: linear-gradient(to bottom, #7a4a3a, #3a251a);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-    color: #fff;
-    transform: translateY(-2px);
+    background: linear-gradient(to bottom, #7a4a3a, #3a251a) !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4) !important;
+    color: #fff !important;
 }
 
-.glass-nav {
-    background: rgba(40, 25, 15, 0.95) !important; /* Force dark background */
-    border-bottom: 1px solid var(--gold);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
-}
+
 
 /* Custom Round Checkboxes */
 .prof-check {
@@ -228,7 +331,7 @@ label, .form-label {
     height: 1.3em;
     border: 1px solid var(--gold) !important;
     border-radius: 50% !important;
-    background: rgba(45, 30, 20, 0.5) !important;
+    background: #2d1f18 !important;
     cursor: pointer;
     position: relative;
     vertical-align: text-bottom;
@@ -238,7 +341,7 @@ label, .form-label {
 
 .prof-check:checked {
     background: var(--gold) !important;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6) !important;
 }
 
 .prof-check:checked::after {
@@ -255,7 +358,7 @@ label, .form-label {
 
 .prof-check:hover {
     border-color: #fff !important;
-    box-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.4) !important;
 }
 
 /* Search Highlight */
@@ -275,7 +378,7 @@ label, .form-label {
 
 /* Search Bar Theming */
 .search-wrap {
-    background: rgba(45, 30, 20, 0.7) !important;
+    background: #2d1f18 !important;
     border: 1px solid var(--gold) !important;
 }
 
@@ -313,9 +416,43 @@ input[readonly],
 .spell-card.v2,
 .feature-card,
 .invocation-card {
-    background: linear-gradient(135deg, rgba(45, 30, 20, 0.9), rgba(55, 35, 25, 0.8)) !important;
+    background: linear-gradient(135deg, #2d1f18, #37251d) !important;
     border: 1px solid var(--stroke) !important;
     box-shadow: inset 0 0 20px rgba(0,0,0,0.5), var(--shadow) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: none !important;
+}
+
+/* Remove glass effects from pseudo-elements on cards */
+.spell-card.v2::before,
+.spell-card.v2::after,
+.feature-card::before,
+.feature-card::after,
+.invocation-card::before,
+.invocation-card::after {
+    display: none !important;
+}
+
+/* Description box in modals */
+.desc-box {
+    background: #2d1f18 !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--text-primary) !important;
+}
+
+.desc-box strong {
+    color: var(--gold) !important;
+}
+
+/* Bootstrap badges override */
+.badge.bg-secondary,
+.badge.bg-info {
+    background-color: var(--bg1) !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    font-family: 'Cinzel', serif !important;
+    text-transform: uppercase;
+    font-size: 0.75em !important;
 }
 
 /* Remove glass effects from badges and make them solid/fantasy */
@@ -333,7 +470,7 @@ input[readonly],
 
 /* Modal overrides */
 .glass-modal {
-    background: linear-gradient(135deg, rgba(45, 30, 20, 0.95), rgba(55, 35, 25, 0.9)) !important;
+    background: linear-gradient(135deg, #2d1f18, #37251d) !important;
     border: 1px solid var(--gold) !important;
     backdrop-filter: none !important;
     box-shadow: var(--shadow) !important;
@@ -378,9 +515,10 @@ input[readonly],
 .spell-tag,
 .level-summary-pill,
 .slot-pill {
-    background: rgba(45, 30, 20, 0.6) !important;
+    background: #2d1f18 !important;
     border: 1px solid var(--stroke) !important;
     color: var(--text-secondary) !important;
+    backdrop-filter: none !important;
 }
 
 .mini-pill b,
@@ -390,14 +528,20 @@ input[readonly],
 
 /* Slots bar */
 .slots-bar {
-    background: rgba(30, 20, 10, 0.8) !important;
+    background: #1e140d !important;
     border: 1px solid var(--gold) !important;
+    backdrop-filter: none !important;
 }
 
 .slot-btn {
     background: var(--bg1) !important;
     border: 1px solid var(--gold) !important;
     color: var(--gold) !important;
+}
+
+/* Hide orbs in fantasy theme */
+.bg-orb {
+    display: none !important;
 }
 
 /* Feature/Invocation specific tweaks */
@@ -419,4 +563,36 @@ input[readonly],
 .spell-card.v2.is-mine {
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
     border-color: var(--gold) !important;
+}
+
+/* Saved Spells/Features/Invocations List Items */
+.mini-row {
+    background-color: var(--bg1) !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--text-primary) !important;
+    padding: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+    border-radius: 4px !important;
+    display: flex;
+    align-items: center;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.mini-row span {
+    color: var(--text-primary) !important;
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.9em;
+}
+
+.mini-row .text-mutedish {
+    color: var(--text-secondary) !important;
+}
+
+.mini-row:hover {
+    background-color: var(--bg0) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+    cursor: pointer;
+    transform: translateX(2px);
 }

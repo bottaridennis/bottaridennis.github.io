@@ -2214,6 +2214,8 @@ function initPageSearch() {
                  highlight(el.nextElementSibling);
             } else if (el.closest('.stat-pill')) {
                  highlight(el.closest('.stat-pill'));
+            } else if (el.closest('.ability')) {
+                 highlight(el.closest('.ability'));
             } else {
                  if (!found) found = el;
             }
@@ -2229,7 +2231,11 @@ function initPageSearch() {
         const val = input.value || "";
         
         if (ph.toLowerCase().includes(q) || val.toLowerCase().includes(q)) {
-             highlight(input);
+             if (input.closest('.ability')) {
+                 highlight(input.closest('.ability'));
+             } else {
+                 highlight(input);
+             }
         }
     }
     
@@ -2239,7 +2245,21 @@ function initPageSearch() {
         if (input.offsetParent === null) continue;
         const key = input.getAttribute("data-bind").toLowerCase();
         if (key.includes(q)) {
-            highlight(input);
+            if (input.closest('.ability')) {
+                 highlight(input.closest('.ability'));
+             } else {
+                 highlight(input);
+             }
+        }
+    }
+
+    // 4. Data-keywords
+    const keywordElements = document.querySelectorAll("[data-keywords]");
+    for (const el of keywordElements) {
+        if (el.offsetParent === null) continue;
+        const keywords = el.getAttribute("data-keywords").toLowerCase();
+        if (keywords.includes(q)) {
+             highlight(el);
         }
     }
 

@@ -282,6 +282,13 @@ class CloudManager {
       charData.sheet = collectBindData();
     }
 
+    // SAFETY CHECK: Se stiamo facendo un autosave (silent) e non abbiamo dati della scheda,
+    // evitiamo di salvare per non creare record "vuoti" o "PG senza nome" duplicati.
+    if (options.silent && (!charData.sheet || !charData.sheet.name)) {
+       console.warn("Autosave annullato: dati scheda insufficienti.");
+       return;
+    }
+
     const currentNameStored = localStorage.getItem("cloud_current_char");
     // Se c'è un nome nella scheda, usalo. Altrimenti usa quello salvato in cloud_current_char.
     // Se la scheda è vuota/null, usa "PG senza nome"
@@ -295,22 +302,37 @@ class CloudManager {
 
     // 1. Cerca per ID (prioritario)
     if (existingId) {
-      const { data } = await this.client
+      const { data, error } = await this.client
         .from('characters')
         .select('id')
         .eq('id', existingId)
         .maybeSingle();
+      
+      if (error) {
+        if (!options.silent) showAppAlert("Errore verifica salvataggio (ID): " + error.message);
+        return; // Abort save on error to prevent duplicates
+      }
+
       if (data) existing = data;
     }
 
     // 2. Se non trovato per ID, cerca per Nome (fallback)
     if (!existing) {
-      const { data } = await this.client
+      // Se avevamo un ID ma non l'abbiamo trovato nel DB (e non c'è errore),
+      // significa che il record è stato cancellato o l'ID è errato.
+      // Procediamo con la ricerca per nome.
+
+      const { data, error } = await this.client
         .from('characters')
         .select('id')
         .eq('name', effectiveName)
         .order('updated_at', { ascending: false })
         .limit(1);
+      
+      if (error) {
+        if (!options.silent) showAppAlert("Errore verifica salvataggio (Nome): " + error.message);
+        return; // Abort
+      }
       
       if (data && data.length > 0) {
         existing = data[0];

@@ -232,7 +232,7 @@ function createUpdatesBox(data) {
 
 var revolutionminds = {
     img: '../images/Logo.png',
-    'img-link': 'https://revolutionminds.github.io',
+    'img-link': '../pages/project.html?id=revolutionminds',
     title: 'ProjectWork | Revolution Minds',
     paragraph: "Con il percorso ITS con l'ITS ACADEMY LAST io e alcuni miei compagni abbiamo sviluppato un progetto che punta a sensibilizzare la popolazione sul territorio del veronese sull'impatto ambientale del loro aramdio, offrendo come soluzione i negozi second-hand sul territorio.",
     'contain-background': true,
@@ -246,7 +246,7 @@ var revolutionminds = {
 
 var encDec = {
     img: '../images/encdec.png',
-    'img-link': 'https://github.com/bottaridennis/Encoder_Decoder_AES',
+    'img-link': '../pages/project.html?id=encdec',
     title: 'Python | ENC/DEC con AES',
     paragraph: "Con il percorso ITS con l'ITS ACADEMY LAST io e alcuni miei compagni abbiamo sviluppato un progetto di <span>cyber security</span>, il progetto consisteva nel creare un programma in <span>Python</span> che potesse criptare e decrittare un file di qualsiasi tipo con la libreria AES",
     'contain-background': false,
@@ -260,7 +260,7 @@ var encDec = {
 
 var stove = {
     img: '../images/page.png',
-    'img-link': 'https://www.figma.com/file/aVVNqbTn3qFB69eTG17imo/Untitled?type=design&node-id=88%3A828&mode=design&t=2ieOiKQFAiT4OxO1-1',
+    'img-link': '../pages/project.html?id=stove',
     title: 'UI & UX | Prototipo stove figma',
     paragraph: "Con il percorso ITS con l'ITS ACCADEMY LAST ho sviluppato l'interfaccia grafica e il prototipo funzionante di un'app per la gestione domestica delle stufe utilizzando <span>figma</span>.",
     'contain-background': false,
@@ -274,7 +274,7 @@ var stove = {
 
 var arcon = {
     img: '../images/ARCON.png',
-    'img-link': '../files/ARCON/arcon.html',
+    'img-link': '../pages/project.html?id=arcon',
     title: 'HTML/CSS | ARCON template',
     paragraph: "Con il percorso ITS con l'ITS ACCADEMY LAST durante le lezioni di HTML e CSS ci è stato detto di scegliere un template dalla piattaforma Envato e provare a ricrearlo utilizzando HTML e CSS per prendere dimestichezza con il linguaggio.",
     'contain-background': false,
@@ -288,7 +288,7 @@ var arcon = {
 
 var parkingSensor = {
     img: '../images/parking.png',
-    'img-link': '',
+    'img-link': '../pages/project.html?id=parking-sensor',
     title: 'Arduino | Sensore parcheggio',
     paragraph: "Con arduino ho realizzato un sensore di parcheggio funzionante utilizzando una scheda arduino uno, un buzzer un sensore ad ultra suoni e un lcd con modulo I2C, quest'ultimo per segnalare per iscritto la distanza dall'ostacolo.",
     'contain-background': false,
@@ -302,7 +302,7 @@ var parkingSensor = {
 
 var knightRun = {
     img: "../images/game.png",
-    'img-link': "https://github.com/bottaridennis/KnightRun",
+    'img-link': "../pages/project.html?id=knightrun",
     title: "Godot | Knight run",
     paragraph: "Ho iniziato lo sviluppo di un videogioco 16bit in Godot, gli sprite sono stati presi da <a href='https://brackeysgames.itch.io/brackeys-platformer-bundle' target='_blank' style='color: var(--main-color);'>itch.io con licenza CC-0</a> mentre gli script e il level Design sono opera mia. <br>Collegamento per il download della demo e per la repository GitHub del progetto:",
     'contain-background': false,
@@ -316,7 +316,7 @@ var knightRun = {
 
 var character = {
     img: "../images/PG.gif",
-    'img-link': "../images/PG.gif",
+    'img-link': "../pages/project.html?id=character",
     title: "Aseprite | Animation",
     paragraph: "Con Aseprite ho iniziato a creare un set di animazioni per un personaggio 2D in 6 direzioni da poi condividere con la comunity con licenza CC-0 per lo sviluppo di Giochi e per la realizzazione di animazioni in pixel-art commerciali.",
     'contain-background': true,
@@ -330,7 +330,7 @@ var character = {
 
 var seaRender = {
     img: "../images/sea.png",
-    'img-link': "../images/sea.png",
+    'img-link': "../pages/project.html?id=searender",
     title: "Blender | Sea Render",
     paragraph: "Con Blender ho eseguito il primo render dell'animazione di un mare in tempesta modellato e animato da me per studiare l'interfaccia di Blender.<br>",
     'contain-background': false,
@@ -344,7 +344,7 @@ var seaRender = {
 
 var spacegame = {
     img: '../images/spacegame.png',
-    'img-link': '../files/space_game/index.html',
+    'img-link': '../pages/project.html?id=spacegame',
     title: 'Gamemaker 2 | Space rocks',
     paragraph: "Con gamemaker 2 ho creato un minigioco nel quale bisogna distruggere degli asteroidi, i comandi sono W A S D per il movimento, Spazio per bloccare la navicella e tasto sinistro del mouse per sparare.",
     'contain-background': false,
@@ -357,7 +357,7 @@ var spacegame = {
 };
 var spaceshooter = {
     img: '../images/space_game.png',
-    'img-link': '../files/space_shooter/index.html',
+    'img-link': '../pages/project.html?id=spaceshooter',
     title: 'Gamemaker 2 | Rocks shooter',
     paragraph: "Con gamemaker 2 ho creato un minigioco nel quale bisogna distruggere degli asteroidi, progetto da modificare e personalizzare in seguito utilizzando sprite più detagliati.",
     'contain-background': false,
@@ -370,7 +370,7 @@ var spaceshooter = {
 };
 var rpggame = {
     img: '../images/rpg.png',
-    'img-link': '../files/RPG_game/index.html',
+    'img-link': '../pages/project.html?id=rpggame',
     title: 'Gamemaker 2 | RPG game',
     paragraph: "Con gamemaker 2 e aseprite ho creato degli assets e sto lavorando a delle meccaniche di gioco per un RPG 8-bit",
     'contain-background': false,
@@ -383,7 +383,7 @@ var rpggame = {
 };
 var spookyshooter = {
     img: '../images/spookyshooter.png',
-    'img-link': '../files/spookyshooter/index.html',
+    'img-link': '../pages/project.html?id=spookyshooter',
     title: 'Gamemaker 2 | Spooky shooter',
     paragraph: "Con gamemaker 2 ho creato un minigioco nel quale bisogna sopravvivere a orde di uomini zucca, clicca gioca e divertiti.",
     'contain-background': false,

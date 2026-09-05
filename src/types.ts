@@ -21,6 +21,9 @@ export interface Project {
   technologies: string[];
   links?: Link[];
   collaborators?: Collaborator[];
+  audioUrl?: string;
+  lyrics?: string;
+  promptStyle?: string;
 }
 
 export interface Education {

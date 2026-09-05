@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { ArrowLeft, Github, Globe, Download, ExternalLink, Users } from 'lucide-react';
+import { ArrowLeft, Github, Globe, Download, ExternalLink, Users, Sparkles } from 'lucide-react';
 import { Project, Profile } from '../types';
+import CustomAudioPlayer from './CustomAudioPlayer';
 
 interface ProjectPageProps {
   project: Project;
@@ -107,9 +108,53 @@ export default function ProjectPage({ project, profile, onBack }: ProjectPagePro
                 </p>
               ))}
             </div>
+
+            {project.audioUrl && (
+              <div className="mt-8">
+                <CustomAudioPlayer src={project.audioUrl} />
+              </div>
+            )}
+
+            {project.lyrics && (
+              <div className="mt-12 space-y-6">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-[10px] uppercase tracking-[0.4em] font-bold text-neutral-500 shrink-0">
+                    Testo
+                  </h2>
+                  <div className="h-px bg-white/5 w-full" />
+                </div>
+                <div className="bg-neutral-900 p-8 rounded-2xl border border-white/5">
+                  <pre className="text-neutral-300 font-sans text-sm leading-relaxed whitespace-pre-wrap">
+                    {project.lyrics}
+                  </pre>
+                </div>
+              </div>
+            )}
           </div>
 
           <aside className="space-y-12">
+            {/* Prompt Style for Suno */}
+            {project.promptStyle && (
+              <div className="space-y-8 p-8 rounded-3xl bg-neutral-950 border border-white/5">
+                <div className="flex flex-wrap items-center justify-between gap-4 text-neutral-500 uppercase text-[10px] tracking-[0.2em] font-bold">
+                  <span>Suno AI Style Prompt</span>
+                  <a 
+                    href="https://suno.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full border border-white/5 shadow-sm"
+                    title="Crea musica con Suno AI"
+                  >
+                    <Sparkles size={12} />
+                    <span className="tracking-widest">Suno.com</span>
+                  </a>
+                </div>
+                <p className="text-neutral-400 text-sm font-light leading-relaxed italic">
+                  "{project.promptStyle}"
+                </p>
+              </div>
+            )}
+
             {/* Collaborators */}
             {project.collaborators && project.collaborators.length > 0 && (
               <div className="space-y-8 p-8 rounded-3xl bg-neutral-950 border border-white/5">

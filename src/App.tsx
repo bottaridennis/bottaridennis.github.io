@@ -57,57 +57,55 @@ export default function App() {
   const activeProject = activeProfile?.projects.find(pj => pj.id === activeProjectId);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-neutral-950 text-neutral-200 font-sans selection:bg-neutral-100 selection:text-neutral-950">
+    <div className="flex h-screen overflow-hidden bg-[#0b0f17] text-zinc-100 font-sans selection:bg-purple-500/20 selection:text-white">
+      {/* Universal Navigation (Desktop Sidebar & Responsive Mobile Drawer) */}
       <Navigation 
         activeProfileId={activeProfileId} 
         onNavigate={handleNavigate} 
       />
       
-      {/* Mobile Top Bar */}
-      <div className="md:hidden fixed top-0 left-0 right-0 h-16 border-b border-white/10 bg-neutral-900/50 backdrop-blur-xl z-50 flex items-center justify-between px-6">
-        <button onClick={() => handleNavigate(null)} className="text-xl font-black tracking-tighter text-white">
-          DENNIS BOTTARI
-        </button>
-        <div className="flex gap-2">
-           <div className="w-1.5 h-1.5 rounded-full bg-blue-600"></div>
-           <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-        </div>
-      </div>
-      
-      <main className="flex-1 overflow-y-auto pt-16 md:pt-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-neutral-900 via-neutral-950 to-black relative">
+      {/* Main Content Area */}
+      <main className="flex-1 overflow-y-auto pt-16 md:pt-0 bg-[#0b0f17] relative bg-ambient-mesh">
         <AnimatePresence mode="wait">
           {!activeProfileId ? (
             <motion.div
               key="home"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="h-full"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25 }}
+              className="min-h-full"
             >
-              <Home onProfileClick={(id) => handleNavigate(id)} />
+              <Home 
+                onProfileClick={(id) => handleNavigate(id)} 
+                onDirectProjectClick={(profileId, projectId) => handleNavigate(profileId, projectId)}
+              />
             </motion.div>
           ) : activeProject ? (
             <motion.div
               key={`${activeProfileId}-${activeProjectId}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="h-full"
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25 }}
+              className="min-h-full"
             >
               <ProjectPage 
                 project={activeProject} 
                 profile={activeProfile!} 
                 onBack={() => handleNavigate(activeProfileId, null)} 
+                onSelectProject={(projectId) => handleNavigate(activeProfileId, projectId)}
               />
             </motion.div>
           ) : (
             activeProfile && (
               <motion.div
                 key={activeProfileId}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                className="h-full"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+                className="min-h-full"
               >
                 <ProfilePage 
                   profile={activeProfile} 

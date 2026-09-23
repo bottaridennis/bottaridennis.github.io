@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' fill='none'>
+  <g stroke='white' stroke-linecap='round' stroke-linejoin='round'>
+    <!-- D outer loop -->
+    <path d='M 148 450 C 200 300, 340 210, 520 220 C 605 225, 620 320, 540 460 C 470 580, 350 720, 230 780 C 180 805, 170 780, 260 620' stroke-width='38' />
+  </g>
+</svg>

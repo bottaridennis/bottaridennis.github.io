@@ -1,5 +1,20 @@
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowLeft, Github, Globe, Download, ExternalLink, Users, Sparkles } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  Github, 
+  Globe, 
+  Download, 
+  ExternalLink, 
+  Users, 
+  Sparkles, 
+  Copy, 
+  Check, 
+  Music, 
+  FileText, 
+  ChevronRight, 
+  ChevronLeft 
+} from 'lucide-react';
 import { Project, Profile } from '../types';
 import CustomAudioPlayer from './CustomAudioPlayer';
 
@@ -7,186 +22,320 @@ interface ProjectPageProps {
   project: Project;
   profile: Profile;
   onBack: () => void;
+  onSelectProject?: (projectId: string) => void;
 }
 
-export default function ProjectPage({ project, profile, onBack }: ProjectPageProps) {
+export default function ProjectPage({ project, profile, onBack, onSelectProject }: ProjectPageProps) {
+  const [copiedPrompt, setCopiedPrompt] = useState(false);
+
   const getIcon = (type: string) => {
     switch (type) {
-      case 'github': return <Github size={18} />;
-      case 'preview': return <Globe size={18} />;
-      case 'download': return <Download size={18} />;
-      default: return <ExternalLink size={18} />;
+      case 'github': return <Github size={16} />;
+      case 'preview': return <Globe size={16} />;
+      case 'download': return <Download size={16} />;
+      default: return <ExternalLink size={16} />;
     }
   };
 
+  const handleCopyPrompt = () => {
+    if (!project.promptStyle) return;
+    navigator.clipboard.writeText(project.promptStyle);
+    setCopiedPrompt(true);
+    setTimeout(() => setCopiedPrompt(false), 2000);
+  };
+
+  const currentIndex = profile.projects.findIndex(p => p.id === project.id);
+  const prevProject = currentIndex > 0 ? profile.projects[currentIndex - 1] : null;
+  const nextProject = currentIndex < profile.projects.length - 1 ? profile.projects[currentIndex + 1] : null;
+
   return (
-    <div className="min-h-screen pb-20 pt-10 px-4 md:px-8">
-      <div className="max-w-5xl mx-auto">
-        {/* Navigation */}
+    <div className="min-h-full px-5 py-8 md:px-12 md:py-14 max-w-6xl mx-auto space-y-16">
+      {/* Top Breadcrumbs */}
+      <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-white/[0.08]">
         <motion.button
           onClick={onBack}
-          initial={{ opacity: 0, x: -10 }}
+          initial={{ opacity: 0, x: -8 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-2 text-neutral-500 hover:text-white transition-colors mb-12 group uppercase text-[10px] tracking-[0.2em] font-bold"
+          className="flex items-center gap-2.5 text-zinc-400 hover:text-white transition-colors group text-xs font-medium cursor-pointer"
         >
-          <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-          Torna al Profilo
+          <div className="w-8 h-8 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center group-hover:bg-white/[0.1] transition-all">
+            <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
+          </div>
+          <span>Torna a {profile.title}</span>
         </motion.button>
 
-        {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-8"
-          >
-            <div className="space-y-4">
-              <span className={`text-[10px] font-black uppercase tracking-[0.4em] ${profile.themeColor}`}>
-                Dettaglio Progetto
+        <div className="flex items-center gap-2 text-xs text-zinc-500 font-medium">
+          <span>{profile.title}</span>
+          <span>/</span>
+          <span className="text-zinc-200">{project.title}</span>
+        </div>
+      </div>
+
+      {/* Hero Project Header */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        {/* Project Info */}
+        <motion.div 
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="lg:col-span-7 space-y-6"
+        >
+          <div className="space-y-3">
+            <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-purple-300 inline-block">
+              {profile.title}
+            </span>
+
+            <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+              {project.title}
+            </h1>
+          </div>
+
+          {/* Tech stack tags */}
+          <div className="flex flex-wrap items-center gap-1.5">
+            {project.technologies.map((tech) => (
+              <span 
+                key={tech}
+                className="text-xs px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] text-zinc-300 font-medium"
+              >
+                {tech}
               </span>
-              <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none text-white">
-                {project.title}
-              </h1>
-            </div>
+            ))}
+          </div>
 
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech) => (
-                <span 
-                  key={tech}
-                  className="px-4 py-1 rounded-full bg-neutral-900 border border-white/5 text-[10px] text-neutral-400 uppercase tracking-widest"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+          <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed">
+            {project.description}
+          </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              {project.links?.map((link, idx) => (
-                <a
-                  key={idx}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center gap-3 px-6 py-3 rounded-xl border border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all duration-300 hover:bg-white hover:text-black hover:border-white shadow-xl shadow-black/20`}
-                >
-                  {getIcon(link.type)}
-                  {link.label}
-                </a>
-              ))}
+          {/* Action Links */}
+          {project.links && project.links.length > 0 && (
+            <div className="flex flex-wrap gap-3 pt-2">
+              {project.links.map((link, idx) => {
+                const isPrimary = link.type === 'preview';
+                return (
+                  <a
+                    key={idx}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-2.5 px-6 py-3 rounded-2xl text-xs font-semibold transition-all duration-300 shadow-xl group cursor-pointer ${
+                      isPrimary 
+                        ? 'bg-white text-zinc-950 hover:bg-zinc-200' 
+                        : 'bg-white/[0.06] hover:bg-white/[0.12] text-zinc-200 border border-white/10 hover:border-white/25'
+                    }`}
+                  >
+                    {getIcon(link.type)}
+                    <span>{link.label}</span>
+                  </a>
+                );
+              })}
             </div>
-          </motion.div>
+          )}
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="relative aspect-video rounded-3xl overflow-hidden border border-white/5 group shadow-2xl shadow-black/40"
-          >
+        {/* Project Artwork */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1 }}
+          className="lg:col-span-5"
+        >
+          <div className="relative aspect-[16/11] rounded-3xl overflow-hidden glass-card shadow-2xl group">
             <img 
               src={project.imageUrl} 
               alt={project.title}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-          </motion.div>
-        </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />
+          </div>
+        </motion.div>
+      </section>
 
-        {/* Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          <div className="lg:col-span-2 space-y-8">
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-[10px] uppercase tracking-[0.4em] font-bold text-neutral-500 shrink-0">
-                L'Idea & Sviluppo
+      {/* Main Body */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 pt-6 border-t border-white/[0.08]">
+        {/* Narrative & Audio */}
+        <div className="lg:col-span-8 space-y-10">
+          <div className="space-y-4">
+            <div className="flex items-center gap-2.5 pb-2 border-b border-white/[0.06]">
+              <FileText size={16} className="text-zinc-400" />
+              <h2 className="font-heading text-lg font-bold text-white">
+                Panoramica del Progetto
               </h2>
-              <div className="h-px bg-white/5 w-full" />
             </div>
-            
-            <div className="space-y-6">
-              {project.fullDescription.map((p, idx) => (
-                <p key={idx} className="text-neutral-400 text-lg md:text-xl font-light leading-relaxed">
-                  {p}
+
+            <div className="space-y-4 text-base text-zinc-300 font-normal leading-relaxed">
+              {project.fullDescription.map((paragraph, idx) => (
+                <p key={idx}>
+                  {paragraph}
                 </p>
               ))}
             </div>
-
-            {project.audioUrl && (
-              <div className="mt-8">
-                <CustomAudioPlayer src={project.audioUrl} />
-              </div>
-            )}
-
-            {project.lyrics && (
-              <div className="mt-12 space-y-6">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-[10px] uppercase tracking-[0.4em] font-bold text-neutral-500 shrink-0">
-                    Testo
-                  </h2>
-                  <div className="h-px bg-white/5 w-full" />
-                </div>
-                <div className="bg-neutral-900 p-8 rounded-2xl border border-white/5">
-                  <pre className="text-neutral-300 font-sans text-sm leading-relaxed whitespace-pre-wrap">
-                    {project.lyrics}
-                  </pre>
-                </div>
-              </div>
-            )}
           </div>
 
-          <aside className="space-y-12">
-            {/* Prompt Style for Suno */}
-            {project.promptStyle && (
-              <div className="space-y-8 p-8 rounded-3xl bg-neutral-950 border border-white/5">
-                <div className="flex flex-wrap items-center justify-between gap-4 text-neutral-500 uppercase text-[10px] tracking-[0.2em] font-bold">
-                  <span>Suno AI Style Prompt</span>
-                  <a 
-                    href="https://suno.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full border border-white/5 shadow-sm"
-                    title="Crea musica con Suno AI"
-                  >
-                    <Sparkles size={12} />
-                    <span className="tracking-widest">Suno.com</span>
-                  </a>
+          {/* Audio Player if available */}
+          {project.audioUrl && (
+            <div className="space-y-4 pt-2">
+              <div className="flex items-center justify-between pb-2 border-b border-white/[0.06]">
+                <div className="flex items-center gap-2 text-white font-semibold">
+                  <Music size={16} className="text-purple-400" />
+                  <span>Riproduzione Audio</span>
                 </div>
-                <p className="text-neutral-400 text-sm font-light leading-relaxed italic">
-                  "{project.promptStyle}"
-                </p>
+                <span className="text-xs text-zinc-500">Traccia Originale</span>
               </div>
-            )}
 
-            {/* Collaborators */}
-            {project.collaborators && project.collaborators.length > 0 && (
-              <div className="space-y-8 p-8 rounded-3xl bg-neutral-950 border border-white/5">
-                <div className="flex items-center gap-3 text-neutral-500 uppercase text-[10px] tracking-[0.2em] font-bold">
-                  <Users size={14} />
-                  Team & Collaboratori
+              <CustomAudioPlayer src={project.audioUrl} />
+            </div>
+          )}
+
+          {/* Lyrics if available */}
+          {project.lyrics && (
+            <div className="space-y-4 pt-2">
+              <div className="flex items-center justify-between pb-2 border-b border-white/[0.06]">
+                <h3 className="font-heading text-lg font-bold text-white">
+                  Testo del Brano
+                </h3>
+                <span className="text-xs text-zinc-500">Songwriting</span>
+              </div>
+
+              <div className="p-7 rounded-3xl glass-card">
+                <pre className="font-sans text-sm sm:text-base text-zinc-300 leading-relaxed whitespace-pre-wrap font-normal">
+                  {project.lyrics}
+                </pre>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Sidebar Info */}
+        <aside className="lg:col-span-4 space-y-5">
+          {/* Suno AI Prompt Card */}
+          {project.promptStyle && (
+            <div className="p-6 rounded-3xl glass-card space-y-3.5">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-amber-300 text-xs font-semibold">
+                  <Sparkles size={14} />
+                  <span>Suno AI Prompt</span>
                 </div>
-                <div className="space-y-6">
-                  {project.collaborators.map((collab, idx) => (
-                    <div key={idx} className="group">
-                      <p className="text-white font-bold text-sm group-hover:text-neutral-400 transition-colors">
+                <a 
+                  href="https://suno.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs text-zinc-400 hover:text-white transition-colors"
+                >
+                  suno.com ↗
+                </a>
+              </div>
+
+              <p className="text-xs text-zinc-300 font-normal leading-relaxed italic border-l-2 border-amber-400/40 pl-3">
+                "{project.promptStyle}"
+              </p>
+
+              <button
+                onClick={handleCopyPrompt}
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-xs font-medium text-zinc-200 hover:text-white transition-colors cursor-pointer"
+              >
+                {copiedPrompt ? (
+                  <>
+                    <Check size={14} className="text-emerald-400" />
+                    <span>Prompt Copiato!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy size={14} />
+                    <span>Copia Prompt</span>
+                  </>
+                )}
+              </button>
+            </div>
+          )}
+
+          {/* Collaborators */}
+          {project.collaborators && project.collaborators.length > 0 && (
+            <div className="p-6 rounded-3xl glass-card space-y-4">
+              <div className="flex items-center gap-2 text-zinc-300 text-xs font-semibold pb-2 border-b border-white/[0.06]">
+                <Users size={15} />
+                <span>Collaboratori & Crediti</span>
+              </div>
+
+              <div className="space-y-3">
+                {project.collaborators.map((collab, idx) => (
+                  <div key={idx} className="flex items-start justify-between gap-3 text-xs">
+                    <div>
+                      <p className="font-semibold text-white text-sm">
                         {collab.name}
                       </p>
-                      <p className="text-[10px] uppercase tracking-widest text-neutral-500 font-medium">
+                      <p className="text-zinc-400">
                         {collab.role}
                       </p>
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            
-            <div className="p-8 rounded-3xl border border-dashed border-white/10 opacity-50">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 font-bold mb-4">Stato Progetto</p>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs text-neutral-300 font-medium tracking-wide">Completato / Live</span>
+                    {collab.url && (
+                      <a 
+                        href={collab.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-zinc-400 hover:text-white p-1"
+                      >
+                        <ExternalLink size={13} />
+                      </a>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
-          </aside>
-        </div>
-      </div>
+          )}
+
+          {/* Project Details */}
+          <div className="p-6 rounded-3xl glass-card space-y-3 text-xs">
+            <p className="font-semibold text-zinc-400 uppercase tracking-wider text-[11px]">
+              Dettagli Opera
+            </p>
+            <div className="space-y-2 text-zinc-300">
+              <div className="flex justify-between py-1 border-b border-white/[0.04]">
+                <span className="text-zinc-500">Autore</span>
+                <span>Dennis Bottari</span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-white/[0.04]">
+                <span className="text-zinc-500">Area</span>
+                <span>{profile.title}</span>
+              </div>
+              <div className="flex justify-between py-1">
+                <span className="text-zinc-500">Status</span>
+                <span className="text-emerald-400 font-medium">Completato</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      {/* Next / Previous Project Navigation */}
+      {(prevProject || nextProject) && onSelectProject && (
+        <section className="pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+          {prevProject ? (
+            <button
+              onClick={() => onSelectProject(prevProject.id)}
+              className="w-full sm:w-auto flex items-center gap-3 p-4 rounded-2xl glass-card glass-card-hover text-left transition-all group cursor-pointer"
+            >
+              <ChevronLeft size={18} className="text-zinc-400 group-hover:-translate-x-1 transition-transform" />
+              <div>
+                <span className="text-[11px] text-zinc-500 block">Progetto Precedente</span>
+                <span className="font-bold text-sm text-white group-hover:text-purple-300">{prevProject.title}</span>
+              </div>
+            </button>
+          ) : <div />}
+
+          {nextProject && (
+            <button
+              onClick={() => onSelectProject(nextProject.id)}
+              className="w-full sm:w-auto flex items-center justify-end gap-3 p-4 rounded-2xl glass-card glass-card-hover text-right transition-all group cursor-pointer ml-auto"
+            >
+              <div>
+                <span className="text-[11px] text-zinc-500 block">Progetto Successivo</span>
+                <span className="font-bold text-sm text-white group-hover:text-purple-300">{nextProject.title}</span>
+              </div>
+              <ChevronRight size={18} className="text-zinc-400 group-hover:translate-x-1 transition-transform" />
+            </button>
+          )}
+        </section>
+      )}
     </div>
   );
 }

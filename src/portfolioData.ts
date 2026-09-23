@@ -1,7 +1,7 @@
 import { Palette, Dices, Brush, Music, Zap, Camera, Code, User } from 'lucide-react';
-import { Profile } from './types';
+import { Profile, Project } from './types';
 
-export const portfolioData: Profile[] = [
+const disciplineProfiles: Profile[] = [
   {
     id: 'web-developer',
     title: 'Web Developer',
@@ -1346,60 +1346,53 @@ For your love, I changed it all`
       // }
   //   ],
   //   skills: ['Fotografia di Architettura', 'Editing (Lightroom)', 'Composizione', 'Street Photography']
-  // },
-  {
-    id: 'persona',
-    title: 'Profilo Generale',
-    intro: 'Sono un ragazzo di Verona appassionato e creativo con una fervida passione per tutto il mondo del graphic design e del Frontend. Il mio percorso di studi spazia dall\'elettrotecnica all\'arte. Attraverso un approccio innovativo, mi impegno a fornire soluzioni semplici ma efficaci senza far mancare il design e lo stile.',
-    themeColor: 'text-zinc-400',
-    bgColor: 'bg-zinc-400/10',
-    icon: User,
-    projects: [
-      {
-        id: 'aseprite-animation',
-        title: 'Aseprite | Animation',
-        description: 'Set di animazioni pixel-art per personaggi 2D in 6 direzioni.',
-        fullDescription: [
-          "Con Aseprite ho iniziato a creare un set di animazioni per un personaggio 2D in 6 direzioni da poi condividere con la comunity con licenza CC-0.",
-          "L'obiettivo è fornire risorse utili per lo sviluppo di giochi e animazioni commerciali."
-        ],
-        imageUrl: '/PG.gif',
-        technologies: ['Aseprite', 'Pixel Art', 'Animation'],
-      },
-      {
-        id: 'sea-render',
-        title: 'Blender | Sea Render',
-        description: 'Animazione di un mare in tempesta modellato e renderizzato in Blender.',
-        fullDescription: [
-          "Con Blender ho eseguito il primo render dell'animazione di un mare in tempesta modellato e animato da me per studiare l'interfaccia di Blender.",
-          "Un esercizio focalizzato sulla simulazione dei fluidi e sul rendering atmosferico."
-        ],
-        imageUrl: '/sea.png',
-        technologies: ['Blender', '3D Modeling', 'Rendering'],
-      }
-    ],
-    education: [
-      {
-        year: '2023 - 2025',
-        institution: 'ITS Academy LAST',
-        description: 'Corso in Service Design & Frontend Development. Focus su progettazione di servizi digitali, architettura frontend (React) e UX design.'
-      },
-      {
-        year: '2015 - 2023',
-        institution: 'Diploma di Maturità',
-        description: "Formazione tecnica nel settore dell'eletronica e dell'elettrotecnica che ha gettato le basi per la mia curiosità multidisciplinare."
-      }
-    ],
-    
-    skills: [
-      'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3', 
-      'Godot (GDScript)', 'GameMaker Studio 2', 'Unity', 
-      'Figma', 'Blender', 'Aseprite', 'Adobe Illustrator', 
-      'Arduino', 'C++', 'Creative Problem Solving'
-    ],
-    links: [
-      { label: 'Scarica il mio CV', url: 'https://dennisbottari.it/files/CV.pdf' },
-      { label: 'Contattami', url: 'mailto:dennisbottari@gmail.com' }
-    ]
-  }
+  //  }
 ];
+
+// Combine all distinct projects from all discipline areas for the general profile
+const allProjectsList: Project[] = [];
+for (const profile of disciplineProfiles) {
+  for (const proj of profile.projects) {
+    if (!allProjectsList.some(p => p.id === proj.id)) {
+      allProjectsList.push(proj);
+    }
+  }
+}
+
+const personaProfile: Profile = {
+  id: 'persona',
+  title: 'Profilo Generale',
+  intro: 'Sono un ragazzo di Verona appassionato e creativo con una fervida passione per tutto il mondo del graphic design e del Frontend. Il mio percorso di studi spazia dall\'elettrotecnica all\'arte. Attraverso un approccio innovativo, mi impegno a fornire soluzioni semplici ma efficaci senza far mancare il design e lo stile.',
+  themeColor: 'text-zinc-400',
+  bgColor: 'bg-zinc-400/10',
+  icon: User,
+  projects: allProjectsList,
+  education: [
+    {
+      year: '2023 - 2025',
+      institution: 'ITS Academy LAST',
+      description: 'Corso in Service Design & Frontend Development. Focus su progettazione di servizi digitali, architettura frontend (React) e UX design.'
+    },
+    {
+      year: '2015 - 2023',
+      institution: 'Diploma di Maturità',
+      description: "Formazione tecnica nel settore dell'eletronica e dell'elettrotecnica che ha gettato le basi per la mia curiosità multidisciplinare."
+    }
+  ],
+  skills: [
+    'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3', 
+    'Godot (GDScript)', 'GameMaker Studio 2', 'Unity', 
+    'Figma', 'Blender', 'Aseprite', 'Adobe Illustrator', 
+    'Arduino', 'C++', 'Creative Problem Solving'
+  ],
+  links: [
+    { label: 'Scarica il mio CV', url: 'https://dennisbottari.it/files/CV.pdf' },
+    { label: 'Contattami', url: 'mailto:dennisbottari@gmail.com' }
+  ]
+};
+
+export const portfolioData: Profile[] = [
+  ...disciplineProfiles,
+  personaProfile
+];
+

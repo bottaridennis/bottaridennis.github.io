@@ -77,64 +77,138 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
 
       {/* Hero Header */}
       <header className="space-y-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
-              style={{ backgroundColor: theme.bgSoft, color: theme.accent, border: `1px solid ${theme.border}` }}
-            >
-              <IconComponent size={15} />
-              <span>{isGeneralProfile ? 'Panoramica Completa' : 'Disciplina'}</span>
+        {isGeneralProfile ? (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent border border-white/10 backdrop-blur-xl relative overflow-hidden shadow-2xl">
+            {/* Ambient Lighting */}
+            <div className="absolute top-0 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-10 left-10 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Profile Photo */}
+            <div className="lg:col-span-4 flex flex-col items-center sm:items-start">
+              <div className="relative group">
+                <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-3xl p-1.5 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-2xl shadow-purple-500/20 group-hover:shadow-purple-500/35 transition-all duration-300">
+                  <div className="w-full h-full rounded-[22px] overflow-hidden bg-zinc-950 relative">
+                    <img 
+                      src="/about.png" 
+                      alt="Dennis Bottari"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                      <span className="text-[11px] font-medium text-white/90">Dennis Bottari</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Status Badge */}
+                <div className="absolute -bottom-2 -right-2 px-3 py-1 rounded-full bg-zinc-950/90 border border-white/10 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-[11px] font-medium text-zinc-300">Verona, IT</span>
+                </div>
+              </div>
             </div>
 
-            <motion.h1 
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="font-heading text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight"
-            >
-              {profile.title}
-            </motion.h1>
+            {/* Profile Intro & Actions */}
+            <div className="lg:col-span-8 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
+                style={{ backgroundColor: theme.bgSoft, color: theme.accent, border: `1px solid ${theme.border}` }}
+              >
+                <IconComponent size={15} />
+                <span>Panoramica Completa</span>
+              </div>
 
-            <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-2xl">
-              {profile.intro}
-            </p>
-          </div>
+              <motion.h1 
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight"
+              >
+                {profile.title}
+              </motion.h1>
 
-          <div className="lg:col-span-4 space-y-4">
-            {/* Action Links (CV, website, etc.) */}
-            {profile.links && profile.links.length > 0 && (
-              <div className="flex flex-col gap-2.5">
-                {profile.links.map((link, idx) => (
+              <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-2xl">
+                {profile.intro}
+              </p>
+
+              {/* Action Links & Stats */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                {profile.links && profile.links.map((link, idx) => (
                   <a 
                     key={idx}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between px-5 py-3 rounded-2xl bg-white/[0.05] hover:bg-white text-zinc-200 hover:text-zinc-950 border border-white/10 hover:border-white text-xs font-semibold transition-all duration-300 shadow-md group"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/[0.08] hover:bg-white text-zinc-200 hover:text-zinc-950 border border-white/10 hover:border-white text-xs font-semibold transition-all duration-300 shadow-md group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 ))}
-              </div>
-            )}
 
-            {/* Quick Metrics */}
-            <div className="p-5 rounded-2xl glass-card grid grid-cols-2 gap-4 text-xs">
-              <div>
-                <span className="text-zinc-500 block text-[11px]">
-                  {isGeneralProfile ? 'Tutti i Progetti' : 'Progetti archiviati'}
-                </span>
-                <span className="font-heading text-xl font-bold text-white mt-0.5 block">
-                  {profile.projects.length}
-                </span>
-              </div>
-              <div>
-                <span className="text-zinc-500 block text-[11px]">Località</span>
-                <span className="font-heading text-xl font-bold text-zinc-200 mt-0.5 block">Verona</span>
+                <div className="px-4 py-2.5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs text-zinc-400 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-purple-400" />
+                  <span><strong className="text-white">{profile.projects.length}</strong> Progetti Archiviati</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
+                style={{ backgroundColor: theme.bgSoft, color: theme.accent, border: `1px solid ${theme.border}` }}
+              >
+                <IconComponent size={15} />
+                <span>Disciplina</span>
+              </div>
+
+              <motion.h1 
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="font-heading text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight"
+              >
+                {profile.title}
+              </motion.h1>
+
+              <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-2xl">
+                {profile.intro}
+              </p>
+            </div>
+
+            <div className="lg:col-span-4 space-y-4">
+              {/* Action Links (CV, website, etc.) */}
+              {profile.links && profile.links.length > 0 && (
+                <div className="flex flex-col gap-2.5">
+                  {profile.links.map((link, idx) => (
+                    <a 
+                      key={idx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between px-5 py-3 rounded-2xl bg-white/[0.05] hover:bg-white text-zinc-200 hover:text-zinc-950 border border-white/10 hover:border-white text-xs font-semibold transition-all duration-300 shadow-md group"
+                    >
+                      <span>{link.label}</span>
+                      <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {/* Quick Metrics */}
+              <div className="p-5 rounded-2xl glass-card grid grid-cols-2 gap-4 text-xs">
+                <div>
+                  <span className="text-zinc-500 block text-[11px]">Progetti archiviati</span>
+                  <span className="font-heading text-xl font-bold text-white mt-0.5 block">
+                    {profile.projects.length}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-zinc-500 block text-[11px]">Località</span>
+                  <span className="font-heading text-xl font-bold text-zinc-200 mt-0.5 block">Verona</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Core Skills & Tools */}

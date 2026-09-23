@@ -106,20 +106,51 @@ export default function Home({ onProfileClick, onDirectProjectClick }: HomeProps
             transition={{ delay: 0.15 }}
             className="lg:col-span-4"
           >
-            <div className="p-6 rounded-3xl bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/[0.08] backdrop-blur-xl relative overflow-hidden shadow-xl shadow-black/20 group">
+            <div 
+              onClick={() => onProfileClick('persona')}
+              className="p-6 rounded-3xl bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/[0.08] hover:border-purple-500/40 backdrop-blur-xl relative overflow-hidden shadow-xl shadow-black/20 group cursor-pointer transition-all duration-300"
+            >
               <div className="absolute -bottom-4 -right-4 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
                 <DBLogo className="w-full h-full text-white" />
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-purple-300 uppercase tracking-wider mb-2">
-                <Sparkles size={13} />
-                <span>La Mia Filosofia</span>
+
+              {/* Personal Photo & Identity */}
+              <div className="flex items-center gap-3.5 mb-4 relative z-10">
+                <div className="relative shrink-0">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 p-[1.5px] shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/35 transition-all">
+                    <div className="w-full h-full rounded-[14px] bg-zinc-950 overflow-hidden">
+                      <img 
+                        src="/about.png" 
+                        alt="Dennis Bottari"
+                        referrerPolicy="no-referrer"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                  <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-zinc-950 shadow-sm" />
+                </div>
+
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-purple-300 uppercase tracking-wider">
+                    <Sparkles size={12} />
+                    <span>Dennis Bottari</span>
+                  </div>
+                  <h3 className="font-heading font-bold text-sm text-white group-hover:text-purple-300 transition-colors">
+                    Profilo Personale
+                  </h3>
+                  <p className="text-[11px] text-zinc-400">
+                    Verona, IT • Anno 2026
+                  </p>
+                </div>
               </div>
-              <p className="text-sm text-zinc-300 font-light italic leading-relaxed relative z-10">
+
+              <p className="text-xs sm:text-sm text-zinc-300 font-light italic leading-relaxed relative z-10">
                 "Una mente poliedrica che naviga tra pixel, circuiti, lenti e spartiti. La curiosità è l'unico linguaggio universale."
               </p>
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400 relative z-10">
-                <span>Dennis Bottari</span>
-                <span className="text-zinc-500">Portfolio 2026</span>
+
+              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400 group-hover:text-white transition-colors relative z-10">
+                <span className="font-medium">Esplora profilo completo</span>
+                <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </div>
           </motion.div>

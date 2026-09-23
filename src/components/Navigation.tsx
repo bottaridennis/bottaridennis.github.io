@@ -47,7 +47,7 @@ export default function Navigation({ activeProfileId, onNavigate }: NavigationPr
                     <DBLogo className="w-full h-full text-white group-hover:scale-105 transition-transform" />
                   </div>
                 </div>
-                <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-zinc-950 shadow-sm" />
+                <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-zinc-950 shadow-sm" title="Online" />
               </div>
 
               <div className="flex-1 min-w-0">

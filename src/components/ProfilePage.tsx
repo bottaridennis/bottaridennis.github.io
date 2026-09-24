@@ -33,6 +33,7 @@ const filterCategories = [
 
 export default function ProfilePage({ profile, onBack, onSelectProject }: ProfilePageProps) {
   const [activeFilter, setActiveFilter] = useState('all');
+  const avatarSrc = '/Dede.png';
   const IconComponent = profile.icon;
   const theme = colorMap[profile.id] || { accent: '#6366f1', bgSoft: 'rgba(99, 102, 241, 0.12)', border: 'rgba(99, 102, 241, 0.3)' };
 
@@ -89,7 +90,7 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
                 <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-3xl p-1.5 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-2xl shadow-purple-500/20 group-hover:shadow-purple-500/35 transition-all duration-300">
                   <div className="w-full h-full rounded-[22px] overflow-hidden bg-zinc-950 relative">
                     <img 
-                      src="/about.png" 
+                      src={avatarSrc} 
                       alt="Dennis Bottari"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 

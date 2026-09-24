@@ -1250,7 +1250,7 @@ For your love, I changed it all`
           'Oltre alla pratica strumentale, dedico tempo all\'analisi musicale e alla creazione di playlist che raccontano storie.',
           'Le collezioni spaziano dalla musica italiana d\'autore al synth-wave, cercando di creare ponti tra generi apparentemente distanti.'
         ],
-        imageUrl: '/about.png',
+        imageUrl: '/Dede.png',
         technologies: ['Spotify API', 'Music Analysis'],
       }
     ],

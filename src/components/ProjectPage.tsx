@@ -13,20 +13,37 @@ import {
   Music, 
   FileText, 
   ChevronRight, 
-  ChevronLeft 
+  ChevronLeft,
+  Gamepad2
 } from 'lucide-react';
 import { Project, Profile } from '../types';
 import CustomAudioPlayer from './CustomAudioPlayer';
+import GameModal, { PlayableGame } from './GameModal';
 
 interface ProjectPageProps {
   project: Project;
   profile: Profile;
   onBack: () => void;
   onSelectProject?: (projectId: string) => void;
+  onPlayGame?: (game: PlayableGame) => void;
 }
 
-export default function ProjectPage({ project, profile, onBack, onSelectProject }: ProjectPageProps) {
+export default function ProjectPage({ project, profile, onBack, onSelectProject, onPlayGame }: ProjectPageProps) {
   const [copiedPrompt, setCopiedPrompt] = useState(false);
+  const [isGameModalOpen, setIsGameModalOpen] = useState(false);
+
+  // Check if project has an HTML5 game link
+  const playableGameLink = project.links?.find(
+    (l) => l.url.endsWith('.html') || l.label.toLowerCase().includes('gioca') || l.url.includes('game') || l.url.includes('shooter')
+  );
+
+  const gameModalData: PlayableGame | null = playableGameLink ? {
+    id: project.id,
+    title: project.title,
+    url: playableGameLink.url,
+    technologies: project.technologies,
+    description: project.description,
+  } : null;
 
   const getIcon = (type: string) => {
     switch (type) {
@@ -89,13 +106,14 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject 
             </h1>
           </div>
 
-          {/* Tech stack tags */}
-          <div className="flex flex-wrap items-center gap-1.5">
+          {/* Tech stack badges (small, pill-shaped in glass-card style) */}
+          <div className="flex flex-wrap items-center gap-2 pt-0.5">
             {project.technologies.map((tech) => (
               <span 
                 key={tech}
-                className="text-xs px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] text-zinc-300 font-medium"
+                className="text-xs px-3 py-1 rounded-full glass-card hover:bg-white/[0.08] hover:border-white/20 text-zinc-200 font-medium shadow-sm transition-all inline-flex items-center gap-1.5"
               >
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
                 {tech}
               </span>
             ))}
@@ -106,29 +124,48 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject 
           </p>
 
           {/* Action Links */}
-          {project.links && project.links.length > 0 && (
-            <div className="flex flex-wrap gap-3 pt-2">
-              {project.links.map((link, idx) => {
-                const isPrimary = link.type === 'preview';
-                return (
-                  <a
-                    key={idx}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center gap-2.5 px-6 py-3 rounded-2xl text-xs font-semibold transition-all duration-300 shadow-xl group cursor-pointer ${
-                      isPrimary 
-                        ? 'bg-white text-zinc-950 hover:bg-zinc-200' 
-                        : 'bg-white/[0.06] hover:bg-white/[0.12] text-zinc-200 border border-white/10 hover:border-white/25'
-                    }`}
-                  >
-                    {getIcon(link.type)}
-                    <span>{link.label}</span>
-                  </a>
-                );
-              })}
-            </div>
-          )}
+          <div className="flex flex-wrap gap-3 pt-2">
+            {/* Direct Play in Browser button for HTML5 games */}
+            {playableGameLink && (
+              <button
+                onClick={() => {
+                  if (onPlayGame && gameModalData) {
+                    onPlayGame(gameModalData);
+                  } else {
+                    setIsGameModalOpen(true);
+                  }
+                }}
+                className="flex items-center gap-2.5 px-6 py-3 rounded-2xl text-xs font-bold transition-all duration-300 shadow-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-zinc-950 active:scale-95 cursor-pointer shadow-emerald-500/20 group"
+              >
+                <Gamepad2 size={16} className="text-zinc-950 group-hover:scale-110 transition-transform" />
+                <span>Gioca nel Browser</span>
+              </button>
+            )}
+
+            {project.links && project.links.length > 0 && (
+              <>
+                {project.links.map((link, idx) => {
+                  const isPrimary = link.type === 'preview' && !playableGameLink;
+                  return (
+                    <a
+                      key={idx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-2.5 px-6 py-3 rounded-2xl text-xs font-semibold transition-all duration-300 shadow-xl group cursor-pointer ${
+                        isPrimary 
+                          ? 'bg-white text-zinc-950 hover:bg-zinc-200' 
+                          : 'bg-white/[0.06] hover:bg-white/[0.12] text-zinc-200 border border-white/10 hover:border-white/25'
+                      }`}
+                    >
+                      {getIcon(link.type)}
+                      <span>{link.label}</span>
+                    </a>
+                  );
+                })}
+              </>
+            )}
+          </div>
         </motion.div>
 
         {/* Project Artwork */}
@@ -182,7 +219,17 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject 
                 <span className="text-xs text-zinc-500">Traccia Originale</span>
               </div>
 
-              <CustomAudioPlayer src={project.audioUrl} />
+              <CustomAudioPlayer 
+                src={project.audioUrl} 
+                trackInfo={{
+                  id: project.id,
+                  title: project.title,
+                  artist: 'Dennis Bottari · Suno AI',
+                  audioUrl: project.audioUrl,
+                  imageUrl: project.imageUrl,
+                  profileId: profile.id,
+                }}
+              />
             </div>
           )}
 
@@ -297,9 +344,23 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject 
                 <span className="text-zinc-500">Area</span>
                 <span>{profile.title}</span>
               </div>
-              <div className="flex justify-between py-1">
+              <div className="flex justify-between py-1 border-b border-white/[0.04]">
                 <span className="text-zinc-500">Status</span>
                 <span className="text-emerald-400 font-medium">Completato</span>
+              </div>
+              <div className="pt-2">
+                <span className="text-zinc-500 block mb-2 font-medium">Tecnologie</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.technologies.map(tech => (
+                    <span 
+                      key={tech} 
+                      className="px-2.5 py-0.5 rounded-full text-[11px] glass-card text-zinc-300 font-medium inline-flex items-center gap-1 hover:border-white/20 transition-all"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-purple-400" />
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -336,6 +397,13 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject 
           )}
         </section>
       )}
+
+      {/* Play in Browser Game Modal */}
+      <GameModal 
+        isOpen={isGameModalOpen} 
+        onClose={() => setIsGameModalOpen(false)} 
+        game={gameModalData} 
+      />
     </div>
   );
 }

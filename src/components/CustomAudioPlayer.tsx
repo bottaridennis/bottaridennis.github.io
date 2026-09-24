@@ -1,216 +1,185 @@
 import React, { useState, useRef, useEffect, ChangeEvent } from 'react';
 import { Play, Pause, Volume2, VolumeX, AlertCircle, Music } from 'lucide-react';
+import { useAudio, AudioTrack } from '../context/AudioContext';
 
 interface CustomAudioPlayerProps {
   src: string;
+  trackInfo?: {
+    id: string;
+    title: string;
+    artist?: string;
+    audioUrl: string;
+    imageUrl?: string;
+    profileId?: string;
+  };
 }
 
-export default function CustomAudioPlayer({ src }: CustomAudioPlayerProps) {
-  const audioRef = useRef<HTMLAudioElement>(null);
+export default function CustomAudioPlayer({ src, trackInfo }: CustomAudioPlayerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [isMuted, setIsMuted] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const analyserRef = useRef<AnalyserNode | null>(null);
-  const sourceRef = useRef<MediaElementAudioSourceNode | null>(null);
   const animationRef = useRef<number>(0);
+  const [localDuration, setLocalDuration] = useState<number>(0);
+  const [hasError, setHasError] = useState<boolean>(false);
 
-  const initAudio = () => {
-    if (!audioRef.current || audioCtxRef.current) return;
-    
-    try {
-      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-      const ctx = new AudioContextClass();
-      const analyser = ctx.createAnalyser();
-      
-      analyser.fftSize = 256; 
-      analyser.smoothingTimeConstant = 0.85;
-      
-      const source = ctx.createMediaElementSource(audioRef.current);
-      source.connect(analyser);
-      analyser.connect(ctx.destination);
-      
-      audioCtxRef.current = ctx;
-      analyserRef.current = analyser;
-      sourceRef.current = source;
-    } catch (e) {
-      console.warn("Web Audio API not supported:", e);
-    }
-  };
+  const {
+    currentTrack,
+    isPlaying: globalIsPlaying,
+    currentTime: globalCurrentTime,
+    duration: globalDuration,
+    progress: globalProgress,
+    isMuted: globalIsMuted,
+    playTrack,
+    togglePlay: globalTogglePlay,
+    seek: globalSeek,
+    toggleMute: globalToggleMute,
+  } = useAudio();
 
-  const togglePlay = () => {
-    if (!audioRef.current || hasError) return;
-    
-    if (!audioCtxRef.current) {
-      initAudio();
-    }
+  // Is this specific track the one currently active in the global player?
+  const isCurrentTrack = currentTrack?.audioUrl === src || (trackInfo && currentTrack?.id === trackInfo.id);
+  const isPlaying = isCurrentTrack && globalIsPlaying;
+  const currentTime = isCurrentTrack ? globalCurrentTime : 0;
+  const duration = (isCurrentTrack && globalDuration > 0) ? globalDuration : localDuration;
+  const progress = isCurrentTrack ? globalProgress : 0;
+  const isMuted = globalIsMuted;
 
-    if (audioCtxRef.current?.state === 'suspended') {
-      audioCtxRef.current.resume();
-    }
+  // Preload metadata to get duration if not playing
+  useEffect(() => {
+    const tempAudio = new Audio(src);
+    const onLoaded = () => {
+      setLocalDuration(tempAudio.duration);
+      setHasError(false);
+    };
+    const onError = () => {
+      setHasError(true);
+    };
+    tempAudio.addEventListener('loadedmetadata', onLoaded);
+    tempAudio.addEventListener('error', onError);
+    return () => {
+      tempAudio.removeEventListener('loadedmetadata', onLoaded);
+      tempAudio.removeEventListener('error', onError);
+    };
+  }, [src]);
 
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
+  const handleTogglePlay = () => {
+    if (isCurrentTrack) {
+      globalTogglePlay();
     } else {
-      audioRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch(err => {
-        console.warn("Play error:", err);
-        setIsPlaying(false);
+      playTrack({
+        id: trackInfo?.id || src,
+        title: trackInfo?.title || 'Traccia Audio',
+        artist: trackInfo?.artist || 'Dennis Bottari · Suno AI',
+        audioUrl: src,
+        imageUrl: trackInfo?.imageUrl || '/52-Hertz.jpeg',
+        profileId: trackInfo?.profileId || 'musicista',
       });
     }
   };
 
-  const toggleMute = () => {
-    if (!audioRef.current) return;
-    audioRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
+  const handleSeek = (e: ChangeEvent<HTMLInputElement>) => {
+    const val = parseFloat(e.target.value);
+    if (!isCurrentTrack) {
+      handleTogglePlay();
+    }
+    globalSeek(val);
   };
 
+  // Canvas visualizer animation
   useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const handleTimeUpdate = () => {
-      setCurrentTime(audio.currentTime);
-      setProgress((audio.currentTime / (audio.duration || 1)) * 100);
-    };
-    const handleLoadedMetadata = () => {
-      setDuration(audio.duration);
-      setHasError(false);
-    };
-    const handleEnded = () => {
-      setIsPlaying(false);
-      setProgress(0);
-    };
-    const handleError = () => {
-      setIsPlaying(false);
-      setHasError(true);
-    };
-
-    setHasError(false);
-
-    audio.addEventListener('timeupdate', handleTimeUpdate);
-    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
-    audio.addEventListener('ended', handleEnded);
-    audio.addEventListener('error', handleError);
-
-    return () => {
-      audio.removeEventListener('timeupdate', handleTimeUpdate);
-      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      audio.removeEventListener('ended', handleEnded);
-      audio.removeEventListener('error', handleError);
-    };
-  }, [src]);
-
-  // Smooth & rounded visualizer bars
-  useEffect(() => {
-    if (!canvasRef.current) return;
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const draw = () => {
-      animationRef.current = requestAnimationFrame(draw);
-      
+    let phase = 0;
+
+    const render = () => {
       const width = canvas.width;
       const height = canvas.height;
-      
       ctx.clearRect(0, 0, width, height);
-      
-      if (!analyserRef.current || !isPlaying) {
-        // Idle gentle waveform wave
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-        ctx.lineWidth = 2;
+
+      // Subtle background grid
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+      ctx.lineWidth = 1;
+      const step = 20;
+      for (let x = 0; x < width; x += step) {
         ctx.beginPath();
-        ctx.moveTo(0, height / 2);
-        for (let x = 0; x < width; x += 10) {
-          ctx.lineTo(x, height / 2 + Math.sin(x * 0.05 + Date.now() * 0.002) * 4);
-        }
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
         ctx.stroke();
-        return;
       }
 
-      const analyser = analyserRef.current;
-      const bufferLength = analyser.frequencyBinCount;
-      const dataArray = new Uint8Array(bufferLength);
-      analyser.getByteFrequencyData(dataArray);
+      const numBars = 48;
+      const barWidth = (width / numBars) - 3;
+      phase += isPlaying ? 0.08 : 0.02;
 
-      const drawableLength = Math.floor(bufferLength * 0.7); 
-      const barWidth = (width / drawableLength) * 1.3;
-      let x = 0;
+      for (let i = 0; i < numBars; i++) {
+        let barHeight = 8;
+        if (isPlaying) {
+          // Dynamic wave shape
+          const wave1 = Math.sin(phase + (i * 0.25)) * 0.5 + 0.5;
+          const wave2 = Math.cos(phase * 1.5 + (i * 0.35)) * 0.5 + 0.5;
+          barHeight = 12 + (wave1 * wave2 * (height - 30));
+        } else {
+          // Idle gentle waveform
+          const idleWave = Math.sin((i * 0.2) + phase) * 0.5 + 0.5;
+          barHeight = 6 + (idleWave * 12);
+        }
 
-      for (let i = 0; i < drawableLength; i++) {
-        const normalized = dataArray[i] / 255;
-        const barHeight = Math.pow(normalized, 1.3) * (height * 0.85);
+        const x = i * (barWidth + 3);
+        const y = height - barHeight;
 
-        // Smooth color gradient from vibrant purple to cyan
-        const gradient = ctx.createLinearGradient(0, height / 2 - barHeight / 2, 0, height / 2 + barHeight / 2);
-        gradient.addColorStop(0, '#c084fc');
-        gradient.addColorStop(0.5, '#ec4899');
-        gradient.addColorStop(1, '#38bdf8');
+        // Gradient for bars
+        const gradient = ctx.createLinearGradient(0, height, 0, y);
+        if (isPlaying) {
+          gradient.addColorStop(0, 'rgba(168, 85, 247, 0.2)');
+          gradient.addColorStop(0.5, 'rgba(147, 51, 234, 0.7)');
+          gradient.addColorStop(1, 'rgba(236, 72, 153, 0.9)');
+        } else {
+          gradient.addColorStop(0, 'rgba(255, 255, 255, 0.05)');
+          gradient.addColorStop(1, 'rgba(255, 255, 255, 0.2)');
+        }
 
         ctx.fillStyle = gradient;
-        
-        // Draw rounded bars
-        const drawHeight = Math.max(3, barHeight);
-        const y = (height - drawHeight) / 2;
-        const radius = Math.min(barWidth / 2, 2);
-
         ctx.beginPath();
-        ctx.roundRect(x, y, Math.max(2, barWidth - 2), drawHeight, radius);
+        ctx.roundRect(x, y, barWidth, barHeight, [4, 4, 0, 0]);
         ctx.fill();
-
-        x += barWidth;
       }
+
+      animationRef.current = requestAnimationFrame(render);
     };
 
-    draw();
+    render();
 
-    return () => cancelAnimationFrame(animationRef.current);
+    return () => {
+      cancelAnimationFrame(animationRef.current);
+    };
   }, [isPlaying]);
 
   const formatTime = (time: number) => {
-    if (isNaN(time) || !isFinite(time)) return '0:00';
+    if (isNaN(time)) return '0:00';
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-  };
-
-  const handleSeek = (e: ChangeEvent<HTMLInputElement>) => {
-    if (!audioRef.current || isNaN(duration)) return;
-    const newTime = (Number(e.target.value) / 100) * duration;
-    audioRef.current.currentTime = newTime;
-    setProgress(Number(e.target.value));
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
   return (
-    <div className="flex flex-col gap-4 rounded-3xl p-6 glass-card shadow-2xl overflow-hidden relative">
-      <audio ref={audioRef} src={src} crossOrigin="anonymous" preload="metadata" />
-
-      {/* Visualizer Frame */}
-      <div className="relative w-full h-24 bg-black/40 border border-white/[0.06] rounded-2xl overflow-hidden flex items-center justify-center">
+    <div className="p-6 rounded-3xl glass-card border border-white/[0.08] flex flex-col gap-5 relative overflow-hidden backdrop-blur-xl">
+      {/* Visualizer Display */}
+      <div className="relative w-full h-36 bg-zinc-950/80 rounded-2xl border border-white/[0.06] overflow-hidden flex items-center justify-center shadow-inner">
         <canvas 
           ref={canvasRef} 
           className="w-full h-full"
           width={800}
-          height={160}
+          height={144}
         />
         
         <div className="absolute top-3 left-3 flex items-center gap-2 text-xs font-medium text-zinc-400">
           <span className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-emerald-400 animate-pulse' : 'bg-zinc-600'}`} />
-          <span>{isPlaying ? 'In Riproduzione' : 'Audio Player'}</span>
+          <span>{isPlaying ? 'In Riproduzione Globale' : 'Audio Player'}</span>
         </div>
 
         <div className="absolute top-3 right-3 flex items-center gap-1.5 text-xs text-zinc-500 font-medium">
           <Music size={13} className="text-purple-400" />
-          <span>Stereo</span>
+          <span>Suno AI Stereo</span>
         </div>
       </div>
 
@@ -219,7 +188,7 @@ export default function CustomAudioPlayer({ src }: CustomAudioPlayerProps) {
         <div className="flex items-center gap-4">
           {/* Main Play Button */}
           <button 
-            onClick={togglePlay}
+            onClick={handleTogglePlay}
             disabled={hasError}
             aria-label={isPlaying ? 'Pausa' : 'Riproduci'}
             className="w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-600 text-white hover:from-indigo-400 hover:to-purple-500 transition-all shadow-lg shadow-purple-500/25 active:scale-95 shrink-0 cursor-pointer disabled:opacity-40"
@@ -235,7 +204,7 @@ export default function CustomAudioPlayer({ src }: CustomAudioPlayerProps) {
           <div className="flex flex-col grow gap-1.5">
             <div className="flex justify-between items-center text-xs text-zinc-400 font-mono-tech">
               <span className="text-zinc-300">
-                {hasError ? 'Traccia non disponibile' : formatTime(currentTime)}
+                {hasError ? 'File audio non disponibile' : formatTime(currentTime)}
               </span>
               <span className="text-zinc-500">
                 {hasError ? '--:--' : formatTime(duration)}
@@ -259,10 +228,10 @@ export default function CustomAudioPlayer({ src }: CustomAudioPlayerProps) {
 
           {/* Mute button */}
           <button
-            onClick={toggleMute}
+            onClick={globalToggleMute}
             disabled={hasError}
             aria-label={isMuted ? 'Attiva volume' : 'Silenzia'}
-            className="p-2.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors disabled:opacity-40"
+            className="p-2.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors disabled:opacity-40 cursor-pointer"
           >
             {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
           </button>

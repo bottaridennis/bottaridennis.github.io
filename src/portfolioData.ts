@@ -1,5 +1,7 @@
 import { Palette, Dices, Brush, Music, Zap, Camera, Code, User } from 'lucide-react';
+import { useMemo } from 'react';
 import { Profile, Project } from './types';
+import { Language, useLanguage } from './context/LanguageContext';
 
 const disciplineProfiles: Profile[] = [
   {
@@ -1395,4 +1397,368 @@ export const portfolioData: Profile[] = [
   ...disciplineProfiles,
   personaProfile
 ];
+
+const enProfileOverrides: Record<string, Partial<Profile>> = {
+  'web-developer': {
+    title: 'Web Developer',
+    intro: 'Frontend Developer from Verona with a passion for clean, performant interfaces. I love transforming information architecture into engaging digital experiences.',
+    skills: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Firebase', 'Next.js', 'Semantic HTML', 'CSS3 / PostCSS']
+  },
+  'game-designer': {
+    title: 'Game Designer',
+    intro: 'Passionate about mechanics and narrative worlds. Studying Godot and D&D 5.5e rulesets to create balanced, engaging gameplay systems.',
+    skills: ['Godot Engine', 'GDScript', 'GameMaker Studio 2', 'Unity', 'Level Design', 'Game Mechanics', 'Physics Tuning']
+  },
+  'elettricista': {
+    title: 'Electrician & IoT',
+    intro: 'Electrotechnical technician specialized in hardware systems and circuits. Merging manual craft with Arduino programming logic.',
+    skills: ['Arduino Uno/Mega', 'Prototyping', 'Circuit Design', 'IoT Systems', 'C++', 'I2C Protocols', 'Soldering']
+  },
+  'musicista': {
+    title: 'Musician & Producer',
+    intro: 'Curious multi-instrumentalist and songwriter. From composing melodies and prompt engineering with Suno to curating thematic sonic journeys on Spotify.',
+    skills: ['Composition', 'Sound Design', 'Music Production', 'Digital Audio Workstation (DAW)', 'Guitar', 'Bass', 'Ukulele', 'Vocals', 'Prompt Engineering']
+  },
+  'graphic-designer': {
+    title: 'Graphic Designer',
+    intro: 'Visual communication and brand identity. Creating clean graphic languages with memorable symbolic impact and intuitive user journeys.',
+    skills: ['UI/UX Design', 'Branding', 'Figma', 'Adobe Creative Suite', 'Layout & Typography', 'Wireframing', 'Design Systems']
+  },
+  'artista': {
+    title: 'Artist & 3D Modeler',
+    intro: 'Visual exploration across digital and analog realms. Using Blender and Aseprite to craft 3D assets, fluid simulations, and pixel animations.',
+    skills: ['3D Modeling', 'Blender', 'Pixel Art', 'Digital Painting', 'Texturing', 'Fluid Simulation', 'Aseprite']
+  },
+  'persona': {
+    title: 'General Profile & About Me',
+    intro: "I am a passionate and creative developer from Verona with a deep love for graphic design and frontend engineering. My background bridges electrotechnics, digital art, and code. Through an innovative mindset, I deliver simple yet impactful solutions with attention to craftsmanship and aesthetic elegance.",
+    education: [
+      {
+        year: '2023 - 2025',
+        institution: 'ITS Academy LAST',
+        description: 'Diploma in Service Design & Frontend Development. Focus on digital service architecture, modern React frontend development, and UX design.'
+      },
+      {
+        year: '2015 - 2023',
+        institution: 'High School Technical Diploma',
+        description: 'Technical education in electronics and electrotechnics, laying the foundation for my multidisciplinary curiosity.'
+      }
+    ],
+    skills: [
+      'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3', 
+      'Godot (GDScript)', 'GameMaker Studio 2', 'Unity', 
+      'Figma', 'Blender', 'Aseprite', 'Adobe Illustrator', 
+      'Arduino', 'C++', 'Creative Problem Solving'
+    ],
+    links: [
+      { label: 'Download my CV', url: 'https://dennisbottari.it/files/CV.pdf' },
+      { label: 'Contact Me', url: 'mailto:dennisbottari@gmail.com' }
+    ]
+  }
+};
+
+const enProjectOverrides: Record<string, Partial<Project>> = {
+  'rev-minds': {
+    title: 'Revolution Minds',
+    description: 'Awareness project on the environmental impact of wardrobes and fast fashion.',
+    fullDescription: [
+      "Through the ITS program at ITS ACADEMY LAST, my teammates and I developed a project aimed at raising awareness in Verona about the environmental footprint of our closets, offering local second-hand shops as a sustainable solution.",
+      "Engineered as an interactive Web App, the site acts as a practical handbook offering resources, eco-friendly tips, and insights on sustainable fashion."
+    ],
+    links: [
+      { label: 'Visit Website', url: 'https://dennisbottari.it/revolutionminds/', type: 'preview' },
+      { label: 'GitHub', url: 'https://github.com/bottaridennis/ProjectWorkRevolutionMinds', type: 'github' }
+    ],
+    collaborators: [
+      { name: 'Dennis Bottari', role: 'Frontend Developer' },
+      { name: 'Yasmine Giuliani', role: 'Graphic Designer & Leader' },
+      { name: 'Diego Milli', role: 'Backend Developer' },
+      { name: 'Fabian Dumea', role: 'Research' },
+      { name: 'Matteo Leto', role: 'Research' }
+    ]
+  },
+  'arcon-template': {
+    title: 'ARCON Template',
+    description: 'Recreation of a professional Envato template as an architectural styling exercise.',
+    fullDescription: [
+      "During HTML and CSS classes at ITS ACADEMY LAST, we selected an Envato template to recreate from scratch using pure semantic HTML and CSS to master layout architecture.",
+      "The project focuses on visual fidelity, pixel-perfect alignment, and clean semantic code."
+    ],
+    links: [
+      { label: 'View Local Project', url: '/ARCON/arcon.html', type: 'preview' }
+    ]
+  },
+  'enc-dec-aes': {
+    title: 'ENC/DEC with AES',
+    description: 'Cybersecurity application for file encryption and decryption via AES.',
+    fullDescription: [
+      "During the cybersecurity module at ITS ACADEMY LAST, my team developed a cryptographic tool in Python.",
+      "The project enables end-to-end symmetric encryption and decryption for any file type using the AES standard.",
+      "Includes key generation and reliable binary file handling."
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/bottaridennis/Encoder_Decoder_AES', type: 'github' }
+    ],
+    collaborators: [
+      { name: 'Dennis Bottari', role: 'Security Developer' },
+      { name: 'Classmate 1', role: 'Developer' }
+    ]
+  },
+  'nerdshelf': {
+    title: 'NerdShelf',
+    description: 'Digital bookshelf and collection manager for geek culture enthusiasts.',
+    fullDescription: [
+      "NerdShelf is a modern web application dedicated to organizing and cataloging personal collections of books, comics, and collectibles.",
+      "Enables users to curate their digital bookshelves, log reading progress, and wishlist future releases.",
+      "Focuses on seamless client-side persistence and responsive user interface design."
+    ],
+    links: [
+      { label: 'Visit Website', url: 'https://dennisbottari.it/NerdShelf/', type: 'preview' }
+    ]
+  },
+  'PartyPantry': {
+    title: 'Party Pantry',
+    description: 'Party and drink organizer to coordinate events and shared expenses with friends.',
+    fullDescription: [
+      "Party Pantry is a streamlined party planner to keep logistics orderly, split expenses evenly, and manage leftovers when the event wraps up."
+    ],
+    links: [
+      { label: 'Visit Website', url: 'https://dennisbottari.it/partyOrganizer/', type: 'preview' }
+    ]
+  },
+  'dnd': {
+    title: 'D&D Hero Forge',
+    description: 'Character manager and builder for Dungeons & Dragons 2024 edition.',
+    fullDescription: [
+      "D&D Hero Forge is a dedicated web app for managing and cataloging characters from Dungeons & Dragons 2024.",
+      "Allows adventurers to configure ability scores, spellbooks, and inventory via a guided step-by-step wizard.",
+      "Features local data persistence and dynamic calculation sheets."
+    ],
+    links: [
+      { label: 'Visit Website', url: 'https://dennisbottari.it/dnd/', type: 'preview' }
+    ]
+  },
+  'knight-run': {
+    title: 'Knight Run',
+    description: '16-bit action platformer developed in Godot with custom scripts and level design.',
+    fullDescription: [
+      "Developed a 16-bit action platformer in Godot engine. Pixel sprites were licensed under CC-0 via itch.io, while gameplay scripts, physics tuning, and level design were crafted entirely by me.",
+      "Focused on fluid player movement, snappy jump physics, and rewarding game feel."
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/bottaridennis/KnightRun', type: 'github' }
+    ]
+  },
+  'space-rocks': {
+    title: 'Space Rocks',
+    description: 'Arcade-style shooter destroying space debris and rogue asteroids with a starship.',
+    fullDescription: [
+      "Developed an arcade space shooter in GameMaker Studio 2 where players maneuver a starship to clear asteroid belts.",
+      "Controls: W A S D for thrust, Spacebar for airbrake, and Left Mouse Click to fire laser cannons."
+    ],
+    links: [
+      { label: 'Play Game', url: '/space_game/index.html', type: 'preview' }
+    ]
+  },
+  'rpg-game-8bit': {
+    title: 'GRPG Game',
+    description: 'Asset creation and core mechanics for an 8-bit retro role-playing game.',
+    fullDescription: [
+      "Crafted retro tilesets and sprite sheets in Aseprite, coding environmental interactions and dialogue systems in GameMaker Studio 2.",
+      "Explores top-down tile-based exploration and classic RPG progression."
+    ],
+    links: [
+      { label: 'Play Game', url: '/RPG_game/index.html', type: 'preview' }
+    ]
+  },
+  'spooky-shooter': {
+    title: 'Spooky Shooter',
+    description: 'Fast-paced survival shooter fending off relentless pumpkin monster hordes.',
+    fullDescription: [
+      "Built a fast-paced survival shooter in GameMaker Studio 2 battling waves of pumpkin ghouls.",
+      "Designed to calibrate enemy spawn escalation, collision hitboxes, and high-score multipliers."
+    ],
+    links: [
+      { label: 'Play Game', url: '/spookyshooter/index.html', type: 'preview' }
+    ]
+  },
+  'space-shooter-rocks': {
+    title: 'Rocks Shooter',
+    description: 'Enhanced space shooter iteration with high-detail particle effects and sprites.',
+    fullDescription: [
+      "Iterative evolution of the arcade space shooter in GameMaker 2 with custom sprite animations.",
+      "Refined projectile physics and particle explosion dynamics."
+    ],
+    links: [
+      { label: 'Play Game', url: '/space_shooter/index.html', type: 'preview' }
+    ]
+  },
+  'parking-sensor': {
+    title: 'Parking Sensor',
+    description: 'Functional IoT parking sensor with real-time distance readout on an LCD screen.',
+    fullDescription: [
+      "Constructed an automated reverse parking proximity alert system using Arduino Uno, an ultrasonic distance sensor, a piezoelectric buzzer, and an I2C LCD character display.",
+      "Bridges electrotechnical circuit wiring with responsive microcontroller C++ firmware."
+    ],
+    links: [
+      { label: 'GitHub Code', url: 'https://github.com/bottaridennis/parking-sensor-arduino', type: 'github' }
+    ]
+  },
+  '52-hertz': {
+    title: '52 Hertz',
+    description: 'Atmospheric track generated with Suno AI, capturing the deep underwater loneliness of the 52-Hz whale.',
+    fullDescription: [
+      'Composed using Suno AI based on my original lyrics. The song portrays the melancholic solitude of the "52-hertz whale"—the solitary ocean nomad singing at a frequency unheard by any other whale.',
+      'The production emphasizes underwater resonance, spacious reverberation, and deep sub-bass frequencies to convey isolation and beauty.'
+    ]
+  },
+  'whale-fall': {
+    title: 'Whale Fall',
+    description: 'Ambient composition depicting the ecological cycle of a whale fall in the abyssal depths.',
+    fullDescription: [
+      'An ambient soundscape exploring the natural wonder of a "whale fall", where a resting giant sustains deep-sea ecosystems for generations.',
+      'Features minimal textures, slow evolving pads, and submerged hydrophone recordings.'
+    ]
+  },
+  'deep-dive': {
+    title: 'Deep Dive',
+    description: 'Electronic sonic journey exploring oceanic pressure and psychological resilience.',
+    fullDescription: [
+      'A pulse-driven electronic composition blending rhythmic sonar pulses with sub-aquatic bass textures.',
+      'Explores themes of descending deeper under pressure while keeping clarity and focus.'
+    ]
+  },
+  'salt-on-the-mast': {
+    title: 'Salt on the Mast',
+    description: 'Theatrical, haunting dark cabaret sea shanty produced with Suno AI.',
+    fullDescription: [
+      'A dark musical storytelling experiment generated with Suno AI from original lyrics.',
+      'Recounts a treacherous sea voyage through madness, torrential storms, and raw survival instinct with frantic staccato piano.'
+    ]
+  },
+  'un-interruttore': {
+    title: 'Un Interruttore',
+    description: 'Technical Italian rap track over a punchy, aggressive hip-hop groove.',
+    fullDescription: [
+      'A high-cadence rap track exploring self-overcoming, shifting flows, and intense double-time delivery.',
+      'No vocal chorus: raw bars, internal rhymes, and driving basslines.'
+    ]
+  },
+  'heaven-and-hell': {
+    title: 'Heaven and Hell (Musical)',
+    description: 'Theatrical musical duet exploring the clash between contrasting inner souls.',
+    fullDescription: [
+      'A cinematic musical theatre dialogue featuring contrasting character voices exploring moral redemption and inner conflict.'
+    ]
+  },
+  'monster': {
+    title: 'Monster',
+    description: 'Intense duel between inner dark impulses and conscience.',
+    fullDescription: [
+      'A multi-voiced rock-cabaret piece depicting the inner tug-of-war between guilt, anger, and self-acceptance.'
+    ]
+  },
+  'spit-it-out': {
+    title: 'Spit it out',
+    description: 'Claustrophobic composition pairing baroque strings, detuned piano, and whisper choirs.',
+    fullDescription: [
+      'Generated with Suno AI, this piece revolves around the friction of feeling alien to one\'s surroundings.',
+      'A blend of baroque chamber elements, military snares, and modern cinematic tension.'
+    ]
+  },
+  'the-beast': {
+    title: 'The Beast',
+    description: 'Heavy, cinematic track focused on primal drive and fierce perseverance.',
+    fullDescription: [
+      'An adrenaline-fueled, low-tuned anthem capturing determination against impossible odds.'
+    ]
+  },
+  'for-your-love': {
+    title: 'For Your Love',
+    description: 'Soulful, passionate narrative about redemption, self-transformation, and love.',
+    fullDescription: [
+      'An emotive blues-rock narrative about walking away from past destructive habits to build something enduring for the person you love.'
+    ]
+  },
+  'curated-playlists': {
+    title: 'Dennis Bottari Collections',
+    description: 'Curated thematic Spotify playlists exploring eclectic genres and moods.',
+    fullDescription: [
+      'Beyond playing instruments, I curate narrative playlists mapping sonic landscapes from Italian cantautori to modern synthwave.',
+      'Designed as auditory journeys connecting seemingly distant musical traditions.'
+    ]
+  },
+  'stove-prototype': {
+    title: 'UI & UX | Figma Stove Prototype',
+    description: 'User interface and high-fidelity prototype for a smart domestic stove IoT app.',
+    fullDescription: [
+      "Developed during the ITS program at ITS ACADEMY LAST: designed the complete mobile interface and interactive Figma prototype for residential stove control.",
+      "Conducted UX research for temperature scheduling, error alerts, and intuitive IoT controls."
+    ],
+    links: [
+      { label: 'View Figma Prototype', url: 'https://www.figma.com/file/aVVNqbTn3qFB69eTG17imo/Untitled', type: 'preview' }
+    ]
+  },
+  'branding-rev': {
+    title: 'Revolution Minds Branding',
+    description: 'Visual identity and branding system for the Revolution Minds initiative.',
+    fullDescription: [
+      'Engineered the core logomark, typography scale, and color harmony for Revolution Minds.',
+      'Designed social media assets, marketing collateral, and digital brand guidelines.'
+    ]
+  },
+  'aseprite-animation': {
+    title: 'Aseprite | Animation',
+    description: '6-directional pixel-art animation set for top-down 2D game characters.',
+    fullDescription: [
+      'Created an expansive 6-direction sprite animation set in Aseprite, released open-source under CC-0.',
+      'Engineered to support indie game developers with walk, idle, and action frames.'
+    ]
+  },
+  'sea-render': {
+    title: 'Blender | Sea Render',
+    description: 'Stormy ocean fluid simulation modeled, shaded, and rendered in Blender.',
+    fullDescription: [
+      'Designed an atmospheric stormy sea in Blender to master fluid displacement, foam shaders, and volumetric lighting.',
+      'An exercise in realistic fluid dynamics and atmospheric scene composition.'
+    ]
+  }
+};
+
+export function getLocalizedPortfolioData(lang: Language): Profile[] {
+  if (lang === 'it') {
+    return portfolioData;
+  }
+
+  return portfolioData.map((profile) => {
+    const profOverride = enProfileOverrides[profile.id];
+    const translatedProjects = profile.projects.map((proj) => {
+      const projOverride = enProjectOverrides[proj.id];
+      if (!projOverride) return proj;
+      return {
+        ...proj,
+        title: projOverride.title || proj.title,
+        description: projOverride.description || proj.description,
+        fullDescription: projOverride.fullDescription || proj.fullDescription,
+        links: projOverride.links || proj.links,
+        collaborators: projOverride.collaborators || proj.collaborators,
+      };
+    });
+
+    return {
+      ...profile,
+      title: profOverride?.title || profile.title,
+      intro: profOverride?.intro || profile.intro,
+      skills: profOverride?.skills || profile.skills,
+      education: profOverride?.education || profile.education,
+      links: profOverride?.links || profile.links,
+      projects: translatedProjects,
+    };
+  });
+}
+
+export function useLocalizedPortfolio(): Profile[] {
+  const { language } = useLanguage();
+  return useMemo(() => getLocalizedPortfolioData(language), [language]);
+}
 

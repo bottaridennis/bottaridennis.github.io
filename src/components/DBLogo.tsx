@@ -1,20 +1,28 @@
 import React from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 interface DBLogoProps {
   className?: string;
   size?: number;
 }
 
-export default function DBLogo({ className = 'w-6 h-6 text-white', size }: DBLogoProps) {
+export default function DBLogo({ className = 'w-6 h-6', size }: DBLogoProps) {
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
+  const logoColor = isLight ? '#000000' : '#ffffff';
+
   return (
     <svg 
       viewBox="0 0 500 500" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      style={size ? { width: size, height: size } : undefined}
+      className={`db-logo transition-colors duration-200 ${className}`}
+      style={{
+        color: logoColor,
+        ...(size ? { width: size, height: size } : {})
+      }}
     >
-      <g stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+      <g stroke={logoColor} strokeLinecap="round" strokeLinejoin="round">
         {/* Slanted D stem */}
         <path d="M 190 170 L 90 370" strokeWidth="24" />
         

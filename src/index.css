@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-heading: "Outfit", "Plus Jakarta Sans", sans-serif;
@@ -74,3 +76,174 @@
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
   }
 }
+
+/* ========================================================
+   LIGHT THEME ADAPTATIONS
+   Seamlessly turns the portfolio into a crisp, modern light mode
+======================================================== */
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .bg-\[\#0b0f17\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .bg-ambient-mesh {
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(59, 130, 246, 0.09) 0px, transparent 50%),
+    radial-gradient(at 85% 20%, rgba(168, 85, 247, 0.08) 0px, transparent 45%),
+    radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.07) 0px, transparent 55%) !important;
+}
+
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02) !important;
+}
+
+[data-theme="light"] .glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="light"] aside,
+[data-theme="light"] header,
+[data-theme="light"] footer,
+[data-theme="light"] .bg-zinc-950\/70,
+[data-theme="light"] .bg-zinc-950\/80,
+[data-theme="light"] .bg-zinc-950\/90,
+[data-theme="light"] .bg-zinc-950\/95,
+[data-theme="light"] .bg-zinc-950 {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+}
+
+[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-zinc-100 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-zinc-200 {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .text-zinc-300 {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .text-zinc-400 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .border-white\/\[0\.08\],
+[data-theme="light"] .border-white\/\[0\.06\],
+[data-theme="light"] .border-white\/10,
+[data-theme="light"] .border-white\/\[0\.1\],
+[data-theme="light"] .border-white\/\[0\.12\],
+[data-theme="light"] .border-white\/15,
+[data-theme="light"] .border-white\/20,
+[data-theme="light"] .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .bg-white\/\[0\.02\],
+[data-theme="light"] .bg-white\/\[0\.03\],
+[data-theme="light"] .bg-white\/\[0\.04\],
+[data-theme="light"] .bg-white\/\[0\.05\],
+[data-theme="light"] .bg-white\/\[0\.06\],
+[data-theme="light"] .bg-white\/\[0\.08\],
+[data-theme="light"] .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .bg-white\/\[0\.04\]:hover,
+[data-theme="light"] .bg-white\/\[0\.08\]:hover,
+[data-theme="light"] .bg-white\/\[0\.09\]:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Ensure vibrant colored badges and buttons preserve light readability */
+[data-theme="light"] button.bg-purple-600,
+[data-theme="light"] button.bg-blue-600,
+[data-theme="light"] button.bg-indigo-600,
+[data-theme="light"] a.bg-purple-600,
+[data-theme="light"] .bg-gradient-to-tr .text-white {
+  color: #ffffff !important;
+}
+
+/* ========================================================
+   DB LOGO & EMBLEM CONTAINER - THEME ADAPTATION
+   In dark mode: dark background (#09090b) with white logo (#ffffff)
+   In light mode: light background (#ffffff) with black logo (#000000)
+======================================================== */
+.db-logo-box {
+  background-color: #09090b;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .db-logo-box {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .db-logo-box {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.db-logo,
+svg.db-logo {
+  color: currentColor;
+}
+
+.db-logo path,
+svg.db-logo path,
+.db-logo g,
+svg.db-logo g {
+  stroke: currentColor;
+}
+
+[data-theme="dark"] .db-logo,
+[data-theme="dark"] svg.db-logo {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .db-logo path,
+[data-theme="dark"] svg.db-logo path,
+[data-theme="dark"] .db-logo g,
+[data-theme="dark"] svg.db-logo g {
+  stroke: #ffffff !important;
+}
+
+[data-theme="light"] .db-logo,
+[data-theme="light"] svg.db-logo {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .db-logo path,
+[data-theme="light"] svg.db-logo path,
+[data-theme="light"] .db-logo g,
+[data-theme="light"] svg.db-logo g {
+  stroke: #000000 !important;
+}
+
+[data-theme="light"] *::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+[data-theme="light"] *::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+

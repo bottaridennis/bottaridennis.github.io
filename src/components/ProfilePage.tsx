@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowUpRight, GraduationCap, Wrench, Layers, Filter } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, GraduationCap, Wrench, Layers } from 'lucide-react';
 import { Profile } from '../types';
-import { portfolioData } from '../portfolioData';
+import { useLocalizedPortfolio } from '../portfolioData';
+import { useLanguage } from '../context/LanguageContext';
 import ProjectCard from './ProjectCard';
 
 interface ProfilePageProps {
@@ -21,25 +22,27 @@ const colorMap: Record<string, { accent: string; bgSoft: string; border: string 
   'persona': { accent: '#94a3b8', bgSoft: 'rgba(148, 163, 184, 0.12)', border: 'rgba(148, 163, 184, 0.3)' },
 };
 
-const filterCategories = [
-  { id: 'all', label: 'Tutti' },
-  { id: 'web-developer', label: 'Web Dev' },
-  { id: 'game-designer', label: 'Game Design' },
-  { id: 'musicista', label: 'Musica' },
-  { id: 'graphic-designer', label: 'Grafica' },
-  { id: 'elettricista', label: 'Elettronica' },
-  { id: 'artista', label: 'Arte 3D' },
-];
-
 export default function ProfilePage({ profile, onBack, onSelectProject }: ProfilePageProps) {
   const [activeFilter, setActiveFilter] = useState('all');
+  const { t, language } = useLanguage();
+  const portfolio = useLocalizedPortfolio();
   const avatarSrc = '/Dede.png';
   const IconComponent = profile.icon;
   const theme = colorMap[profile.id] || { accent: '#6366f1', bgSoft: 'rgba(99, 102, 241, 0.12)', border: 'rgba(99, 102, 241, 0.3)' };
 
+  const filterCategories = useMemo(() => [
+    { id: 'all', label: language === 'it' ? 'Tutti' : 'All' },
+    { id: 'web-developer', label: 'Web Dev' },
+    { id: 'game-designer', label: 'Game Design' },
+    { id: 'musicista', label: language === 'it' ? 'Musica' : 'Music' },
+    { id: 'graphic-designer', label: language === 'it' ? 'Grafica' : 'Graphics' },
+    { id: 'elettricista', label: language === 'it' ? 'Elettronica' : 'IoT Hardware' },
+    { id: 'artista', label: language === 'it' ? 'Arte 3D' : '3D Art' },
+  ], [language]);
+
   // Helper to find the original discipline of a project
   const getProjectCategory = (projectId: string) => {
-    for (const p of portfolioData) {
+    for (const p of portfolio) {
       if (p.id !== 'persona' && p.projects.some(pj => pj.id === projectId)) {
         return p.id;
       }
@@ -66,7 +69,7 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
           <div className="w-8 h-8 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center group-hover:bg-white/[0.1] transition-all">
             <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
           </div>
-          <span>Torna alla Panoramica</span>
+          <span>{t.backToOverview}</span>
         </motion.button>
 
         <div className="hidden sm:flex items-center gap-2 text-xs text-zinc-500 font-medium">
@@ -115,7 +118,7 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
                 style={{ backgroundColor: theme.bgSoft, color: theme.accent, border: `1px solid ${theme.border}` }}
               >
                 <IconComponent size={15} />
-                <span>Panoramica Completa</span>
+                <span>{t.generalOverviewBadge}</span>
               </div>
 
               <motion.h1 
@@ -147,7 +150,7 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
 
                 <div className="px-4 py-2.5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs text-zinc-400 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-purple-400" />
-                  <span><strong className="text-white">{profile.projects.length}</strong> Progetti Archiviati</span>
+                  <span><strong className="text-white">{profile.projects.length}</strong> {t.archivedProjectsCount}</span>
                 </div>
               </div>
             </div>
@@ -159,7 +162,7 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
                 style={{ backgroundColor: theme.bgSoft, color: theme.accent, border: `1px solid ${theme.border}` }}
               >
                 <IconComponent size={15} />
-                <span>Disciplina</span>
+                <span>{t.disciplineBadge}</span>
               </div>
 
               <motion.h1 
@@ -197,14 +200,14 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
               {/* Quick Metrics */}
               <div className="p-5 rounded-2xl glass-card grid grid-cols-2 gap-4 text-xs">
                 <div>
-                  <span className="text-zinc-500 block text-[11px]">Progetti archiviati</span>
+                  <span className="text-zinc-500 block text-[11px]">{t.archivedProjectsCount}</span>
                   <span className="font-heading text-xl font-bold text-white mt-0.5 block">
                     {profile.projects.length}
                   </span>
                 </div>
                 <div>
-                  <span className="text-zinc-500 block text-[11px]">Località</span>
-                  <span className="font-heading text-xl font-bold text-zinc-200 mt-0.5 block">Verona</span>
+                  <span className="text-zinc-500 block text-[11px]">{language === 'it' ? 'Località' : 'Location'}</span>
+                  <span className="font-heading text-xl font-bold text-zinc-200 mt-0.5 block">{t.location}</span>
                 </div>
               </div>
             </div>
@@ -219,11 +222,11 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
             <div className="flex items-center gap-2">
               <Wrench size={16} className="text-zinc-400" />
               <h2 className="font-heading text-base font-bold text-white">
-                Competenze & Tecnologie
+                {t.toolsAndSkills}
               </h2>
             </div>
             <span className="text-xs text-zinc-500 font-medium">
-              {profile.skills.length} aree di padronanza
+              {profile.skills.length} {language === 'it' ? 'competenze' : 'skills'}
             </span>
           </div>
 
@@ -250,7 +253,7 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
           <div className="flex items-center gap-2 border-b border-white/[0.08] pb-3">
             <GraduationCap size={16} className="text-zinc-400" />
             <h2 className="font-heading text-base font-bold text-white">
-              Percorso Formativo
+              {t.educationSection}
             </h2>
           </div>
 
@@ -286,7 +289,7 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
           <div className="flex items-center gap-2">
             <Layers size={16} className="text-zinc-400" />
             <h2 className="font-heading text-xl font-bold text-white">
-              Progetti Realizzati
+              {language === 'it' ? 'Progetti Realizzati' : 'Selected Projects'}
             </h2>
             <span className="text-xs text-zinc-400 font-medium px-2 py-0.5 rounded-full bg-white/[0.06] border border-white/[0.08]">
               {displayedProjects.length}
@@ -340,7 +343,7 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
         ) : (
           <div className="py-16 text-center rounded-3xl glass-card">
             <p className="text-zinc-400 text-sm">
-              Nessun progetto trovato per questa categoria.
+              {language === 'it' ? 'Nessun progetto trovato per questa categoria.' : 'No projects found in this category.'}
             </p>
           </div>
         )}

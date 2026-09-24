@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { portfolioData } from '../portfolioData';
+import { useLocalizedPortfolio } from '../portfolioData';
 import { 
   ArrowUpRight, 
   Sparkles, 
@@ -17,6 +17,7 @@ import DBLogo from './DBLogo';
 import { Project } from '../types';
 import { PlayableGame } from './GameModal';
 import { useAudio } from '../context/AudioContext';
+import { useLanguage } from '../context/LanguageContext';
 
 interface HomeProps {
   onProfileClick: (id: string | null) => void;
@@ -75,19 +76,21 @@ const SUGGESTED_TAGS = ['Web Developer', 'Game', 'Musica', 'IoT', 'Blender', 'Su
 export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const { playTrack, currentTrack, isPlaying: globalIsPlaying, togglePlay } = useAudio();
+  const { t, language } = useLanguage();
+  const portfolio = useLocalizedPortfolio();
   const avatarSrc = '/Dede.png';
 
   // Count distinct projects in the portfolio
   const totalProjects = useMemo(() => {
-    return new Set(portfolioData.flatMap(p => p.projects.map(proj => proj.id))).size;
-  }, []);
+    return new Set(portfolio.flatMap(p => p.projects.map(proj => proj.id))).size;
+  }, [portfolio]);
 
   const query = searchQuery.trim().toLowerCase();
 
   // Filter profiles in real-time
   const filteredProfiles = useMemo(() => {
-    if (!query) return portfolioData;
-    return portfolioData.filter((profile) => {
+    if (!query) return portfolio;
+    return portfolio.filter((profile) => {
       const matchesTitle = profile.title.toLowerCase().includes(query);
       const matchesIntro = profile.intro.toLowerCase().includes(query);
       const hasMatchingProject = profile.projects.some(
@@ -98,7 +101,7 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
       );
       return matchesTitle || matchesIntro || hasMatchingProject;
     });
-  }, [query]);
+  }, [portfolio, query]);
 
   // Filter projects in real-time across all profiles
   const matchingProjects = useMemo(() => {
@@ -106,7 +109,7 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
     const results: { project: Project; profileId: string; profileTitle: string }[] = [];
     const seen = new Set<string>();
 
-    portfolioData.forEach((profile) => {
+    portfolio.forEach((profile) => {
       profile.projects.forEach((proj) => {
         if (seen.has(proj.id)) return;
         const matchesTitle = proj.title.toLowerCase().includes(query);
@@ -126,7 +129,7 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
     });
 
     return results;
-  }, [query]);
+  }, [portfolio, query]);
 
   const handleProjectClick = (profileId: string, projectId: string) => {
     if (onDirectProjectClick) {
@@ -154,9 +157,9 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
-          <span>Dennis Bottari · Verona, Italia</span>
+          <span>Dennis Bottari · {t.location}</span>
           <span className="text-zinc-600">|</span>
-          <span className="text-zinc-400">{totalProjects} Progetti Documentati</span>
+          <span className="text-zinc-400">{totalProjects} {language === 'it' ? 'Progetti Documentati' : 'Documented Projects'}</span>
         </motion.div>
 
         {/* Hero Headings */}
@@ -168,13 +171,15 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
             className="lg:col-span-8 space-y-4"
           >
             <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.05]">
-              Sviluppatore Web &{' '}
+              {language === 'it' ? 'Sviluppatore Web &' : 'Web Developer &'}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
-                Creativo Multidisciplinare
+                {language === 'it' ? 'Creativo Multidisciplinare' : 'Multidisciplinary Creative'}
               </span>
             </h1>
             <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-2xl">
-              Esploro l'intersezione tra sviluppo web, videogiochi, sound design, arte 3D ed elettronica. Un approccio che unisce logica e sensibilità estetica.
+              {language === 'it' 
+                ? "Esploro l'intersezione tra sviluppo web, videogiochi, sound design, arte 3D ed elettronica. Un approccio che unisce logica e sensibilità estetica."
+                : "Exploring the intersection of web development, game design, sound design, 3D art, and electronics. Combining logic with aesthetic sensibility."}
             </p>
           </motion.div>
 
@@ -188,8 +193,8 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
               onClick={() => onProfileClick('persona')}
               className="p-6 rounded-3xl bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/[0.08] hover:border-purple-500/40 backdrop-blur-xl relative overflow-hidden shadow-xl shadow-black/20 group cursor-pointer transition-all duration-300"
             >
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-                <DBLogo className="w-full h-full text-white" />
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 opacity-15 dark:opacity-10 group-hover:opacity-25 transition-opacity pointer-events-none">
+                <DBLogo className="w-full h-full" />
               </div>
 
               {/* Personal Photo & Identity */}
@@ -214,20 +219,20 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                     <span>Dennis Bottari</span>
                   </div>
                   <h3 className="font-heading font-bold text-sm text-white group-hover:text-purple-300 transition-colors">
-                    Profilo Personale
+                    {t.personalProfile}
                   </h3>
                   <p className="text-[11px] text-zinc-400">
-                    Verona, IT • Anno 2026
+                    Verona, IT • 2026
                   </p>
                 </div>
               </div>
 
               <p className="text-xs sm:text-sm text-zinc-300 font-light italic leading-relaxed relative z-10">
-                "Una mente poliedrica che naviga tra pixel, circuiti, lenti e spartiti. La curiosità è l'unico linguaggio universale."
+                {t.personalQuote}
               </p>
 
               <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400 group-hover:text-white transition-colors relative z-10">
-                <span className="font-medium">Esplora profilo completo</span>
+                <span className="font-medium">{t.exploreFullProfile}</span>
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </div>
@@ -248,7 +253,7 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Cerca discipline, progetti o tecnologie (es. React, GameMaker, Suno, IoT, Blender...)"
+            placeholder={t.searchPlaceholder}
             className="w-full pl-11 sm:pl-12 pr-10 py-3.5 sm:py-4 rounded-2xl glass-card bg-zinc-950/60 border border-white/[0.1] hover:border-white/20 focus:border-purple-500/60 focus:ring-2 focus:ring-purple-500/20 text-white placeholder:text-zinc-500 text-xs sm:text-sm outline-none transition-all shadow-xl backdrop-blur-xl"
             aria-label="Cerca discipline e progetti"
           />
@@ -271,7 +276,7 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
         <div className="flex flex-wrap items-center justify-between gap-2 px-1 text-xs">
           {!query ? (
             <div className="flex flex-wrap items-center gap-1.5 text-zinc-400">
-              <span className="text-[11px] text-zinc-500">Suggeriti:</span>
+              <span className="text-[11px] text-zinc-500">{t.suggested}</span>
               {SUGGESTED_TAGS.map((tag) => (
                 <button
                   key={tag}
@@ -287,17 +292,17 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
               <div className="flex items-center gap-2 text-xs text-zinc-300">
                 <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
                 <span>
-                  Filtro attivo per <strong className="text-white">"{searchQuery}"</strong>:
+                  {t.activeFilterFor} <strong className="text-white">"{searchQuery}"</strong>:
                 </span>
                 <span className="text-zinc-400 font-mono-tech">
-                  {filteredProfiles.length} {filteredProfiles.length === 1 ? 'disciplina' : 'discipline'} · {matchingProjects.length} {matchingProjects.length === 1 ? 'progetto' : 'progetti'}
+                  {filteredProfiles.length} {filteredProfiles.length === 1 ? (language === 'it' ? 'disciplina' : 'discipline') : (language === 'it' ? 'discipline' : 'disciplines')} · {matchingProjects.length} {matchingProjects.length === 1 ? (language === 'it' ? 'progetto' : 'project') : (language === 'it' ? 'progetti' : 'projects')}
                 </span>
               </div>
               <button
                 onClick={() => setSearchQuery('')}
                 className="text-[11px] text-purple-300 hover:text-purple-200 underline underline-offset-4 cursor-pointer"
               >
-                Rimuovi filtro
+                {t.removeFilter}
               </button>
             </div>
           )}
@@ -318,17 +323,17 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
           </div>
           <div className="space-y-1">
             <h3 className="font-heading font-bold text-lg text-white">
-              Nessun risultato trovato
+              {t.noResultsHeading}
             </h3>
             <p className="text-xs sm:text-sm text-zinc-400 max-w-md mx-auto leading-relaxed">
-              Nessun progetto o disciplina corrisponde a <span className="text-zinc-200">"{searchQuery}"</span>. Prova con un'altra parola chiave come <em>React</em>, <em>Suno</em>, <em>IoT</em>, <em>Game</em> o <em>Blender</em>.
+              {t.noResultsText}
             </p>
           </div>
           <button
             onClick={() => setSearchQuery('')}
             className="px-4 py-2 rounded-xl bg-white text-zinc-950 font-semibold text-xs hover:bg-zinc-200 transition-all cursor-pointer shadow-md"
           >
-            Reimposta tutti i filtri
+            {t.resetAllFilters}
           </button>
         </motion.div>
       )}
@@ -342,12 +347,13 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
             <div className="flex items-center gap-2">
               <Compass size={16} className="text-purple-400" />
               <h2 className="font-heading text-lg sm:text-xl font-bold text-white">
-                Progetti Corrispondenti ({matchingProjects.length})
+                {t.matchingProjectsTitle} ({matchingProjects.length})
               </h2>
             </div>
             <span className="text-xs text-zinc-500">
-              Accesso diretto al dettaglio del progetto
+              {t.directAccessProject}
             </span>
+
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -419,10 +425,10 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                         }
                       }}
                       className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition-all flex items-center gap-1 shrink-0 cursor-pointer shadow-sm"
-                      title="Gioca subito nel browser"
+                      title={t.playGameTooltip}
                     >
                       <Gamepad2 size={12} />
-                      <span>Gioca</span>
+                      <span>{t.playGame}</span>
                     </button>
                   )}
 
@@ -445,14 +451,14 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                         }
                       }}
                       className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 transition-all flex items-center gap-1 shrink-0 cursor-pointer shadow-sm"
-                      title="Ascolta brano con il mini player"
+                      title={t.listenTrackTooltip}
                     >
                       {currentTrack?.id === project.id && globalIsPlaying ? (
                         <Pause size={12} className="fill-purple-300" />
                       ) : (
                         <Play size={12} className="fill-purple-300 ml-0.5" />
                       )}
-                      <span>{currentTrack?.id === project.id && globalIsPlaying ? 'Pausa' : 'Ascolta'}</span>
+                      <span>{currentTrack?.id === project.id && globalIsPlaying ? t.pauseTrack : t.listenTrack}</span>
                     </button>
                   )}
                 </div>
@@ -470,16 +476,16 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
           <div className="flex items-center justify-between border-b border-white/[0.08] pb-4">
             <div>
               <h2 className="font-heading text-xl sm:text-2xl font-bold text-white">
-                {query ? 'Discipline Filtrate' : 'Le Aree di Attività'}
+                {query ? t.disciplinesFilteredTitle : t.disciplinesSectionTitle}
               </h2>
               <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
                 {query 
-                  ? 'Ambiti che contengono corrispondenze con la tua ricerca'
-                  : 'Seleziona un ambito per scoprire i progetti e le competenze'}
+                  ? t.disciplinesFilteredSubtitle
+                  : t.disciplinesSectionSubtitle}
               </p>
             </div>
             <span className="text-xs text-zinc-500 font-medium hidden sm:inline">
-              {filteredProfiles.length} {filteredProfiles.length === 1 ? 'Disciplina' : 'Discipline'}
+              {filteredProfiles.length} {filteredProfiles.length === 1 ? (language === 'it' ? 'Disciplina' : 'Discipline') : (language === 'it' ? 'Discipline' : 'Disciplines')}
             </span>
           </div>
 
@@ -534,7 +540,7 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                       <span className="text-xs px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] text-zinc-300 font-medium">
                         {query && matchingInThisProfile.length > 0 
                           ? `${matchingInThisProfile.length} match`
-                          : `${profile.projects.length} ${profile.projects.length === 1 ? 'progetto' : 'progetti'}`}
+                          : `${profile.projects.length} ${profile.projects.length === 1 ? (language === 'it' ? 'progetto' : 'project') : (language === 'it' ? 'progetti' : 'projects')}`}
                       </span>
                       <div className="w-8 h-8 rounded-full bg-white/[0.05] group-hover:bg-white text-zinc-400 group-hover:text-zinc-950 flex items-center justify-center transition-all duration-300">
                         <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -575,7 +581,7 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                     })}
                     {profile.projects.length > 3 && (
                       <span className="text-[11px] text-zinc-500 pl-1 font-medium">
-                        +{profile.projects.length - 3} altri
+                        +{profile.projects.length - 3} {t.moreOthers}
                       </span>
                     )}
                   </div>
@@ -595,36 +601,36 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
             <div className="flex items-center gap-2">
               <Compass size={16} className="text-zinc-400" />
               <h3 className="font-heading text-sm font-semibold text-white uppercase tracking-wider">
-                Progetti in Evidenza
+                {t.featuredProjectsTitle}
               </h3>
             </div>
             <span className="text-xs text-zinc-500">
-              Accesso rapido ai lavori principali
+              {t.featuredProjectsSubtitle}
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
             {[
               { 
-                title: 'Revolution Minds', 
-                role: 'Web App & Green Fashion', 
+                title: portfolio.find(p => p.id === 'web-developer')?.projects.find(pj => pj.id === 'rev-minds')?.title || 'Revolution Minds', 
+                role: language === 'it' ? 'Web App & Green Fashion' : 'Web App & Sustainable Fashion', 
                 profileId: 'web-developer', 
                 projectId: 'rev-minds', 
                 tech: 'JS · CSS · Web' 
               },
               { 
-                title: '52 Hertz', 
-                role: 'Composizione Sonora Suno', 
+                title: portfolio.find(p => p.id === 'musicista')?.projects.find(pj => pj.id === '52-hertz')?.title || '52 Hertz', 
+                role: language === 'it' ? 'Composizione Sonora Suno' : 'Suno AI Soundscape', 
                 profileId: 'musicista', 
                 projectId: '52-hertz', 
-                tech: 'Audio · Rap',
+                tech: 'Audio · Ambient',
                 isAudio: true,
                 audioUrl: '/52-Hertz.mp3',
                 imageUrl: '/52-Hertz.jpeg'
               },
               { 
-                title: 'Spooky Shooter', 
-                role: 'Videogioco Arcade 2D', 
+                title: portfolio.find(p => p.id === 'game-designer')?.projects.find(pj => pj.id === 'spooky-shooter')?.title || 'Spooky Shooter', 
+                role: language === 'it' ? 'Videogioco Arcade 2D' : '2D Arcade Survival', 
                 profileId: 'game-designer', 
                 projectId: 'spooky-shooter', 
                 tech: 'GML · HTML5',
@@ -632,8 +638,8 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                 gameUrl: '/spookyshooter/index.html'
               },
               { 
-                title: 'Sensore Parcheggio', 
-                role: 'Sistemi & Circuiti IoT', 
+                title: portfolio.find(p => p.id === 'elettricista')?.projects.find(pj => pj.id === 'parking-sensor')?.title || 'Sensore Parcheggio', 
+                role: language === 'it' ? 'Sistemi & Circuiti IoT' : 'IoT Systems & Hardware', 
                 profileId: 'elettricista', 
                 projectId: 'parking-sensor', 
                 tech: 'Hardware · IoT' 
@@ -658,14 +664,14 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                             title: item.title,
                             url: item.gameUrl!,
                             technologies: ['GameMaker', 'HTML5', 'GML'],
-                            description: 'Sopravvivi alle orde di zucche!'
+                            description: language === 'it' ? 'Sopravvivi alle orde di zucche!' : 'Survive the pumpkin monster hordes!'
                           });
                         }}
                         className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition-all flex items-center gap-1 cursor-pointer"
-                        title="Gioca nel Browser"
+                        title={t.playGameTooltip}
                       >
                         <Gamepad2 size={11} />
-                        Gioca
+                        {t.playGame}
                       </button>
                     )}
                     {item.isAudio && (
@@ -686,14 +692,14 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                           }
                         }}
                         className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 transition-all flex items-center gap-1 cursor-pointer"
-                        title="Ascolta traccia"
+                        title={t.listenTrackTooltip}
                       >
                         {currentTrack?.id === item.projectId && globalIsPlaying ? (
                           <Pause size={10} className="fill-purple-300" />
                         ) : (
                           <Play size={10} className="fill-purple-300 ml-0.5" />
                         )}
-                        {currentTrack?.id === item.projectId && globalIsPlaying ? 'Pausa' : 'Ascolta'}
+                        {currentTrack?.id === item.projectId && globalIsPlaying ? t.pauseTrack : t.listenTrack}
                       </button>
                     )}
                   </div>
@@ -712,6 +718,7 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
           </div>
         </section>
       )}
+
     </div>
   );
 }

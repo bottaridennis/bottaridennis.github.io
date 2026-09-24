@@ -19,6 +19,7 @@ import {
 import { Project, Profile } from '../types';
 import CustomAudioPlayer from './CustomAudioPlayer';
 import GameModal, { PlayableGame } from './GameModal';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ProjectPageProps {
   project: Project;
@@ -31,6 +32,7 @@ interface ProjectPageProps {
 export default function ProjectPage({ project, profile, onBack, onSelectProject, onPlayGame }: ProjectPageProps) {
   const [copiedPrompt, setCopiedPrompt] = useState(false);
   const [isGameModalOpen, setIsGameModalOpen] = useState(false);
+  const { t, language } = useLanguage();
 
   // Check if project has an HTML5 game link
   const playableGameLink = project.links?.find(
@@ -78,7 +80,7 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
           <div className="w-8 h-8 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center group-hover:bg-white/[0.1] transition-all">
             <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
           </div>
-          <span>Torna a {profile.title}</span>
+          <span>{t.backToOverview} · {profile.title}</span>
         </motion.button>
 
         <div className="flex items-center gap-2 text-xs text-zinc-500 font-medium">
@@ -138,7 +140,7 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
                 className="flex items-center gap-2.5 px-6 py-3 rounded-2xl text-xs font-bold transition-all duration-300 shadow-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-zinc-950 active:scale-95 cursor-pointer shadow-emerald-500/20 group"
               >
                 <Gamepad2 size={16} className="text-zinc-950 group-hover:scale-110 transition-transform" />
-                <span>Gioca nel Browser</span>
+                <span>{t.playGame}</span>
               </button>
             )}
 
@@ -195,7 +197,7 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
             <div className="flex items-center gap-2.5 pb-2 border-b border-white/[0.06]">
               <FileText size={16} className="text-zinc-400" />
               <h2 className="font-heading text-lg font-bold text-white">
-                Panoramica del Progetto
+                {t.projectOverview}
               </h2>
             </div>
 
@@ -214,9 +216,9 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
               <div className="flex items-center justify-between pb-2 border-b border-white/[0.06]">
                 <div className="flex items-center gap-2 text-white font-semibold">
                   <Music size={16} className="text-purple-400" />
-                  <span>Riproduzione Audio</span>
+                  <span>{t.audioPlayback}</span>
                 </div>
-                <span className="text-xs text-zinc-500">Traccia Originale</span>
+                <span className="text-xs text-zinc-500">{t.originalTrack}</span>
               </div>
 
               <CustomAudioPlayer 
@@ -238,7 +240,7 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
             <div className="space-y-4 pt-2">
               <div className="flex items-center justify-between pb-2 border-b border-white/[0.06]">
                 <h3 className="font-heading text-lg font-bold text-white">
-                  Testo del Brano
+                  {t.lyricsTitle}
                 </h3>
                 <span className="text-xs text-zinc-500">Songwriting</span>
               </div>
@@ -283,12 +285,12 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
                 {copiedPrompt ? (
                   <>
                     <Check size={14} className="text-emerald-400" />
-                    <span>Prompt Copiato!</span>
+                    <span>{t.promptCopied}</span>
                   </>
                 ) : (
                   <>
                     <Copy size={14} />
-                    <span>Copia Prompt</span>
+                    <span>{t.copyPrompt}</span>
                   </>
                 )}
               </button>
@@ -300,7 +302,7 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
             <div className="p-6 rounded-3xl glass-card space-y-4">
               <div className="flex items-center gap-2 text-zinc-300 text-xs font-semibold pb-2 border-b border-white/[0.06]">
                 <Users size={15} />
-                <span>Collaboratori & Crediti</span>
+                <span>{t.collaboratorsCredits}</span>
               </div>
 
               <div className="space-y-3">
@@ -333,23 +335,23 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
           {/* Project Details */}
           <div className="p-6 rounded-3xl glass-card space-y-3 text-xs">
             <p className="font-semibold text-zinc-400 uppercase tracking-wider text-[11px]">
-              Dettagli Opera
+              {t.workDetails}
             </p>
             <div className="space-y-2 text-zinc-300">
               <div className="flex justify-between py-1 border-b border-white/[0.04]">
-                <span className="text-zinc-500">Autore</span>
+                <span className="text-zinc-500">{t.authorLabel}</span>
                 <span>Dennis Bottari</span>
               </div>
               <div className="flex justify-between py-1 border-b border-white/[0.04]">
-                <span className="text-zinc-500">Area</span>
+                <span className="text-zinc-500">{t.areaLabel}</span>
                 <span>{profile.title}</span>
               </div>
               <div className="flex justify-between py-1 border-b border-white/[0.04]">
-                <span className="text-zinc-500">Status</span>
-                <span className="text-emerald-400 font-medium">Completato</span>
+                <span className="text-zinc-500">{t.statusLabel}</span>
+                <span className="text-emerald-400 font-medium">{t.completedStatus}</span>
               </div>
               <div className="pt-2">
-                <span className="text-zinc-500 block mb-2 font-medium">Tecnologie</span>
+                <span className="text-zinc-500 block mb-2 font-medium">{t.technologiesLabel}</span>
                 <div className="flex flex-wrap gap-1.5">
                   {project.technologies.map(tech => (
                     <span 
@@ -377,7 +379,7 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
             >
               <ChevronLeft size={18} className="text-zinc-400 group-hover:-translate-x-1 transition-transform" />
               <div>
-                <span className="text-[11px] text-zinc-500 block">Progetto Precedente</span>
+                <span className="text-[11px] text-zinc-500 block">{t.previousProject}</span>
                 <span className="font-bold text-sm text-white group-hover:text-purple-300">{prevProject.title}</span>
               </div>
             </button>
@@ -389,7 +391,7 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
               className="w-full sm:w-auto flex items-center justify-end gap-3 p-4 rounded-2xl glass-card glass-card-hover text-right transition-all group cursor-pointer ml-auto"
             >
               <div>
-                <span className="text-[11px] text-zinc-500 block">Progetto Successivo</span>
+                <span className="text-[11px] text-zinc-500 block">{t.nextProject}</span>
                 <span className="font-bold text-sm text-white group-hover:text-purple-300">{nextProject.title}</span>
               </div>
               <ChevronRight size={18} className="text-zinc-400 group-hover:translate-x-1 transition-transform" />

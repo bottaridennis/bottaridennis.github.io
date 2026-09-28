@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowUpRight, Play, Pause, Volume2, Sliders, Music, Radio, Disc, Mic2, Shuffle, Repeat } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Play, Pause, Volume2, Sliders, Music, Radio, Disc, Mic2, Shuffle, Repeat, Search, X } from 'lucide-react';
 import { Profile, Project } from '../../types';
 import { useAudio } from '../../context/AudioContext';
 
@@ -14,6 +14,25 @@ export default function DAWConsoleView({ profile, onBack, onSelectProject }: DAW
   const { playTrack, currentTrack, isPlaying, togglePlay } = useAudio();
   const [activeTab, setActiveTab] = useState<'mixer' | 'rack' | 'bio'>('mixer');
   const [masterVolume, setMasterVolume] = useState(85);
+  const [activePlaylist, setActivePlaylist] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const filteredTracks = useMemo(() => {
+    let list = profile.projects;
+    if (activePlaylist !== 'all') {
+      list = list.filter(p => p.technologies.includes(activePlaylist));
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      list = list.filter(p => 
+        p.title.toLowerCase().includes(q) ||
+        p.description.toLowerCase().includes(q) ||
+        (p.promptStyle && p.promptStyle.toLowerCase().includes(q)) ||
+        (p.lyrics && p.lyrics.toLowerCase().includes(q))
+      );
+    }
+    return list;
+  }, [profile.projects, activePlaylist, searchQuery]);
 
   return (
     <div className="min-h-full px-3 py-6 sm:px-6 md:px-10 lg:py-8 max-w-7xl mx-auto space-y-6 select-none font-mono">
@@ -130,18 +149,57 @@ export default function DAWConsoleView({ profile, onBack, onSelectProject }: DAW
         <div className="p-5 sm:p-7 space-y-6">
           {activeTab === 'mixer' && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between text-xs text-zinc-400 border-b border-zinc-800 pb-2">
-                <span className="font-bold text-purple-300">
-                  DAW MULTITRACK MATRIX // {profile.projects.length} CANALI AUDIO
-                </span>
-                <span className="text-[11px] text-zinc-500">
-                  ASCOLTO CONTINUO CON IL MINI-PLAYER GLOBALE
-                </span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-zinc-400 border-b border-zinc-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-purple-300">
+                    DAW MULTITRACK MATRIX // {filteredTracks.length} / {profile.projects.length} CANALI AUDIO
+                  </span>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  {/* Real-time search */}
+                  <div className="relative">
+                    <Search size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-zinc-500" />
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Cerca traccia..."
+                      className="pl-7 pr-6 py-1 rounded bg-zinc-900 border border-zinc-700 text-[11px] text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-purple-400"
+                    />
+                    {searchQuery && (
+                      <button onClick={() => setSearchQuery('')} className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-white">
+                        <X size={10} />
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Playlist selector buttons */}
+                  <div className="flex items-center gap-1 bg-zinc-950 p-0.5 rounded border border-zinc-800">
+                    {[
+                      { id: 'all', label: `TUTTI (${profile.projects.length})` },
+                      { id: "Dede's Originals", label: "ORIGINALS" },
+                      { id: 'Faded kingdom', label: "FADED KINGDOM" },
+                    ].map((pl) => (
+                      <button
+                        key={pl.id}
+                        onClick={() => setActivePlaylist(pl.id)}
+                        className={`px-2 py-0.5 rounded text-[10px] font-bold transition-colors cursor-pointer ${
+                          activePlaylist === pl.id
+                            ? 'bg-purple-600 text-white'
+                            : 'text-zinc-500 hover:text-zinc-300'
+                        }`}
+                      >
+                        {pl.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Grid of Mixer Channels */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {profile.projects.map((project, idx) => {
+                {filteredTracks.map((project, idx) => {
                   const channelNumber = String(idx + 1).padStart(2, '0');
                   const isCurrent = currentTrack?.id === project.id;
                   const isTrackPlaying = isCurrent && isPlaying;
@@ -304,7 +362,7 @@ export default function DAWConsoleView({ profile, onBack, onSelectProject }: DAW
                 {profile.intro}
               </p>
               <div className="p-4 rounded-lg bg-zinc-900/90 border border-purple-500/20 font-mono text-xs text-zinc-400 space-y-1">
-                <div>CATALOGO DISCOGRAFICO: 10 BRANI ORIGINALI ASCOLTABILI SUL PORTFOLIO</div>
+                <div>CATALOGO DISCOGRAFICO: {profile.projects.length} BRANI ORIGINALI ASCOLTABILI SUL PORTFOLIO</div>
                 <div>DISTRIBUZIONE: MINI-PLAYER INTEGRATO CON AUDIO STREAMING IN BACKGROUND</div>
                 <div>STRUMENTI: SUNO AI V3.5, DIGITAL AUDIO WORKSTATIONS, COMPOSIZIONE METRICA</div>
               </div>

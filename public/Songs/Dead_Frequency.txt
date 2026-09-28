@@ -1,0 +1,322 @@
+Metadata for: Unknown-Dead_Frequency.m4a
+Generated: 2026-09-25T15:13:45.298Z
+
+--- Track Information ---
+Title: Dead Frequency
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 622c3438-3bb9-41a0-a9b7-e59dba43d39b
+
+--- Lyrics ---
+[Verse 1]
+La valvola chiama,
+ma non c’è nessuno.
+Solo il tuo respiro
+nel vetro del buio.
+Dice il tuo nome piano
+da un anno che non c’è.
+
+[Pre-Chorus]
+Stanotte cambia il taglio,
+cambia la tua età.
+Prima eri un addio,
+ora sei qui, vicino a me.
+E il vuoto risponde
+con la tua voce in più.
+
+[Chorus]
+Dead Frequency, non spegnerla
+Dead Frequency, resta qui
+Ogni notte dici altro
+e io ti credo così.
+Dead Frequency, chiamami
+Dead Frequency, ancora un po’
+Se sei morto da anni,
+perché suoni come adesso?
+
+[Verse 2]
+Sul bordo della notte
+gratta il tuo messaggio.
+Prima era una preghiera,
+poi un elenco di bugie.
+Ieri mi hai detto piano:
+“Non aprire quella porta”.
+
+[Pre-Chorus]
+Oggi sei più freddo,
+oggi sai il mio nome.
+Domani forse ridi,
+forse chiedi di salire.
+L’antenna trema lenta
+come un dito sulla pelle.
+
+[Chorus]
+Dead Frequency, non spegnerla
+Dead Frequency, resta qui
+Ogni notte dici altro
+e io ti credo così.
+Dead Frequency, chiamami
+Dead Frequency, ancora un po’
+Se sei morto da anni,
+perché suoni come adesso?
+
+[Bridge]
+Ho staccato il cavo,
+ma la tua voce no.
+Viene dalle pareti,
+dalla bocca del neon spento.
+“Apri”, dici, “aprimi”
+e il segnale si fa cuore.
+
+[Final Chorus]
+Dead Frequency, non spegnerla
+Dead Frequency, resta qui
+Ogni notte dici altro
+e io ti credo così.
+Dead Frequency, chiamami
+Dead Frequency, ancora un po’
+Se sei morto da anni,
+perché mi stai guardando adesso?
+
+Cover Art URL: https://cdn2.suno.ai/bd7aaeac-5c52-4c3a-87ed-82bfe2f79f4b.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Dead Frequency",
+  "play_count": 29,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "622c3438-3bb9-41a0-a9b7-e59dba43d39b",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/622c3438-3bb9-41a0-a9b7-e59dba43d39b.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/622c3438-3bb9-41a0-a9b7-e59dba43d39b.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/bd7aaeac-5c52-4c3a-87ed-82bfe2f79f4b.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/bd7aaeac-5c52-4c3a-87ed-82bfe2f79f4b.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-goose",
+  "metadata": {
+    "tags": "lo-fi horror pop fused with dark ambient: whispered intimate male vocal through narrow-band AM filtering, analog tape hiss, radio static and warped cassette grain; detuned piano, low synth drones, distant guitar swells, muted heartbeat percussion and sparse drums at 70 BPM, restrained verses opening into a haunting melodic chorus, sudden silences and subtle reverse effects building toward an increasingly distorted, claustrophobic final section.",
+    "prompt": "[Verse 1]\nLa valvola chiama,\nma non c’è nessuno.\nSolo il tuo respiro\nnel vetro del buio.\nDice il tuo nome piano\nda un anno che non c’è.\n\n[Pre-Chorus]\nStanotte cambia il taglio,\ncambia la tua età.\nPrima eri un addio,\nora sei qui, vicino a me.\nE il vuoto risponde\ncon la tua voce in più.\n\n[Chorus]\nDead Frequency, non spegnerla\nDead Frequency, resta qui\nOgni notte dici altro\ne io ti credo così.\nDead Frequency, chiamami\nDead Frequency, ancora un po’\nSe sei morto da anni,\nperché suoni come adesso?\n\n[Verse 2]\nSul bordo della notte\ngratta il tuo messaggio.\nPrima era una preghiera,\npoi un elenco di bugie.\nIeri mi hai detto piano:\n“Non aprire quella porta”.\n\n[Pre-Chorus]\nOggi sei più freddo,\noggi sai il mio nome.\nDomani forse ridi,\nforse chiedi di salire.\nL’antenna trema lenta\ncome un dito sulla pelle.\n\n[Chorus]\nDead Frequency, non spegnerla\nDead Frequency, resta qui\nOgni notte dici altro\ne io ti credo così.\nDead Frequency, chiamami\nDead Frequency, ancora un po’\nSe sei morto da anni,\nperché suoni come adesso?\n\n[Bridge]\nHo staccato il cavo,\nma la tua voce no.\nViene dalle pareti,\ndalla bocca del neon spento.\n“Apri”, dici, “aprimi”\ne il segnale si fa cuore.\n\n[Final Chorus]\nDead Frequency, non spegnerla\nDead Frequency, resta qui\nOgni notte dici altro\ne io ti credo così.\nDead Frequency, chiamami\nDead Frequency, ancora un po’\nSe sei morto da anni,\nperché mi stai guardando adesso?",
+    "type": "gen",
+    "duration": 192.28,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "is_max_mode": true,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": false,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6-MINI",
+        "light": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        },
+        "dark": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "film_strip",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-11T08:18:51.723Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "lo-fi horror pop, dark ambient",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 0,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 14,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-23T22:05:51.141Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

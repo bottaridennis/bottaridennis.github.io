@@ -1,0 +1,300 @@
+Metadata for: Unknown-Whale_Fall.m4a
+Generated: 2026-09-25T15:12:58.309Z
+
+--- Track Information ---
+Title: Whale Fall
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 5c103438-8e57-4680-a367-5122908dc915
+
+--- Lyrics ---
+[Verse 1]
+Salt-black water
+Over my bones
+I came down heavy
+To the trench below
+
+My skin gave way
+My name dissolved
+Cold took the crown
+And the dark held on
+
+[Pre-Chorus]
+But the ribs still open
+Like a gate in the deep
+Tiny mouths gather
+Where my silence sleeps
+
+[Chorus]
+Whale fall
+Feed the sea
+Whale fall
+Carry me
+Whale fall
+I become
+A thousand lives
+From one
+
+[Verse 2]
+White hagfish ribbon
+Through the folds of me
+Crabs in the armor
+Shell by shell, set free
+
+A bone cathedral
+On a silted floor
+Every broken piece
+Becomes a door
+
+[Pre-Chorus]
+And the hands keep working
+In the pressure and the blue
+What was ending here
+Turns into something new
+
+[Chorus]
+Whale fall
+Feed the sea
+Whale fall
+Carry me
+Whale fall
+I become
+A thousand lives
+From one
+
+[Bridge]
+No crown
+No song
+Just the long descent
+Then the long, long giving
+
+[Chorus]
+Whale fall
+Feed the sea
+Whale fall
+Carry me
+Whale fall
+I become
+A thousand lives
+From one
+
+Cover Art URL: https://cdn2.suno.ai/5c103438-8e57-4680-a367-5122908dc915_9adbd3b0.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Whale Fall",
+  "play_count": 45,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "5c103438-8e57-4680-a367-5122908dc915",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/5c103438-8e57-4680-a367-5122908dc915.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/5c103438-8e57-4680-a367-5122908dc915.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/5c103438-8e57-4680-a367-5122908dc915_9adbd3b0.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/5c103438-8e57-4680-a367-5122908dc915_9adbd3b0.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "cinematic post-rock, oceanic ambient, slow orchestral crescendo, melancholic but peaceful, fragile intimate vocals, spacious clean electric guitars with long reverb and delay, bowed guitar, deep cello, contrabass, soft strings, sparse felt piano, ocean drones, deep sub-bass, hydrophone textures, distant whale-like tones, cymbal swells, drums entering gradually, slow toms, huge underwater atmosphere, descending melodies, restrained verses, emotional spacious chorus, instruments gradually layering as new life appears, massive but gentle final crescendo, wordless choir, bittersweet acceptance, organic production, no pop, no EDM, no metal, 64 BPM",
+    "prompt": "[Verse 1]\nSalt-black water\nOver my bones\nI came down heavy\nTo the trench below\n\nMy skin gave way\nMy name dissolved\nCold took the crown\nAnd the dark held on\n\n[Pre-Chorus]\nBut the ribs still open\nLike a gate in the deep\nTiny mouths gather\nWhere my silence sleeps\n\n[Chorus]\nWhale fall\nFeed the sea\nWhale fall\nCarry me\nWhale fall\nI become\nA thousand lives\nFrom one\n\n[Verse 2]\nWhite hagfish ribbon\nThrough the folds of me\nCrabs in the armor\nShell by shell, set free\n\nA bone cathedral\nOn a silted floor\nEvery broken piece\nBecomes a door\n\n[Pre-Chorus]\nAnd the hands keep working\nIn the pressure and the blue\nWhat was ending here\nTurns into something new\n\n[Chorus]\nWhale fall\nFeed the sea\nWhale fall\nCarry me\nWhale fall\nI become\nA thousand lives\nFrom one\n\n[Bridge]\nNo crown\nNo song\nJust the long descent\nThen the long, long giving\n\n[Chorus]\nWhale fall\nFeed the sea\nWhale fall\nCarry me\nWhale fall\nI become\nA thousand lives\nFrom one",
+    "type": "gen",
+    "duration": 225.56,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "video_upload_width": 1440,
+    "video_upload_height": 1440,
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "cyanotype",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-08-25T08:30:25.953Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 48,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:25:07.561Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-04T14:45:55.220Z",
+  "playlistName": "Dede's Originals"
+}

@@ -1,0 +1,310 @@
+Metadata for: Unknown-52_Hertz.m4a
+Generated: 2026-09-25T15:12:55.365Z
+
+--- Track Information ---
+Title: 52 Hertz
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: c3f399ae-1b01-4263-a5c7-67f8da3ac2d9
+
+--- Lyrics ---
+[Verse 1]
+I call out low
+Into the blue
+My little wave
+Keeps reaching you
+
+The dark keeps still
+The cold keeps time
+I leave my name
+In thin white lines
+
+[Pre-Chorus]
+Somewhere out there
+A door stays shut
+I hear the turn
+I hear the hush
+
+[Chorus]
+Fifty-two hertz
+Fifty-two hertz
+I keep on singing
+I keep on singing
+
+Fifty-two hertz
+Fifty-two hertz
+If you can hear me
+Please, answer me
+
+[Verse 2]
+The deep is long
+The deep is kind
+It holds my ache
+And marks the tide
+
+I trace the black
+With patient faith
+A lonely sound
+Still has a shape
+
+[Pre-Chorus]
+Somewhere out there
+A heart might learn
+To feel the bend
+To feel the burn
+
+[Chorus]
+Fifty-two hertz
+Fifty-two hertz
+I keep on singing
+I keep on singing
+
+Fifty-two hertz
+Fifty-two hertz
+If you can hear me
+Please, answer me
+
+[Bridge]
+Maybe I am
+Not meant to fade
+Maybe my song
+Is how I stay
+
+Maybe one day
+A stray reply
+Will break the blue
+And meet my cry
+
+[Final Chorus]
+Fifty-two hertz
+Fifty-two hertz
+I keep on singing
+I keep on singing
+
+Fifty-two hertz
+Fifty-two hertz
+You are not broken
+You are not alone
+
+Cover Art URL: https://cdn2.suno.ai/c3f399ae-1b01-4263-a5c7-67f8da3ac2d9_b1aa373f.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "52 Hertz",
+  "play_count": 40,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "c3f399ae-1b01-4263-a5c7-67f8da3ac2d9",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/c3f399ae-1b01-4263-a5c7-67f8da3ac2d9.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/c3f399ae-1b01-4263-a5c7-67f8da3ac2d9.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/c3f399ae-1b01-4263-a5c7-67f8da3ac2d9_b1aa373f.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/c3f399ae-1b01-4263-a5c7-67f8da3ac2d9_b1aa373f.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "ambient pop, cinematic dream pop, underwater soundscape, intimate melancholic atmosphere, solitary soft lead vocal, close-mic breathy singing, restrained emotion, slow spacious arrangement, felt piano, deep ambient synth pads, distant sub bass, glassy textures, reversed piano tails, bowed vibraphone, sparse guitar swells, hydrophone-like textures, whale-call inspired tones, sonar pulses as musical motifs, muffled underwater percussion, heartbeat-like kick, long submerged reverb, filtered echoes, oceanic low-frequency rumble, huge sense of empty space, suspended verses, haunting pre-chorus, wide but restrained chorus, distant layered backing vocals like unanswered calls, ethereal bridge with almost no percussion, final chorus with remote vocal layers slowly finding the same frequency, bittersweet unresolved ending, minimal cinematic production, no EDM drops, no aggressive drums, 68 BPM",
+    "prompt": "[Verse 1]\nI call out low\nInto the blue\nMy little wave\nKeeps reaching you\n\nThe dark keeps still\nThe cold keeps time\nI leave my name\nIn thin white lines\n\n[Pre-Chorus]\nSomewhere out there\nA door stays shut\nI hear the turn\nI hear the hush\n\n[Chorus]\nFifty-two hertz\nFifty-two hertz\nI keep on singing\nI keep on singing\n\nFifty-two hertz\nFifty-two hertz\nIf you can hear me\nPlease, answer me\n\n[Verse 2]\nThe deep is long\nThe deep is kind\nIt holds my ache\nAnd marks the tide\n\nI trace the black\nWith patient faith\nA lonely sound\nStill has a shape\n\n[Pre-Chorus]\nSomewhere out there\nA heart might learn\nTo feel the bend\nTo feel the burn\n\n[Chorus]\nFifty-two hertz\nFifty-two hertz\nI keep on singing\nI keep on singing\n\nFifty-two hertz\nFifty-two hertz\nIf you can hear me\nPlease, answer me\n\n[Bridge]\nMaybe I am\nNot meant to fade\nMaybe my song\nIs how I stay\n\nMaybe one day\nA stray reply\nWill break the blue\nAnd meet my cry\n\n[Final Chorus]\nFifty-two hertz\nFifty-two hertz\nI keep on singing\nI keep on singing\n\nFifty-two hertz\nFifty-two hertz\nYou are not broken\nYou are not alone",
+    "type": "gen",
+    "duration": 249.36,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "style_weight": 0.63
+    },
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "polaroid",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-08-21T12:15:20.027Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "ambient pop, cinematic dream pop",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 47,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-24T07:06:48.562Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-04T14:45:29.642Z",
+  "playlistName": "Dede's Originals"
+}

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowUpRight, Code2, Terminal, Play, FolderTree, FileCode, CheckCircle2, GitBranch, Sparkles } from 'lucide-react';
-import { Profile, Project } from '../../types';
+import { ArrowLeft, ArrowUpRight, Code2, Terminal, FolderTree, FileCode, GitBranch, ExternalLink, Filter } from 'lucide-react';
+import { Profile } from '../../types';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface IDEViewProps {
   profile: Profile;
@@ -11,6 +12,21 @@ interface IDEViewProps {
 
 export default function IDEWorkspaceView({ profile, onBack, onSelectProject }: IDEViewProps) {
   const [activeTab, setActiveTab] = useState<'editor' | 'skills' | 'terminal'>('editor');
+  const [filterCategory, setFilterCategory] = useState<'all' | 'apps' | 'portals' | 'tools'>('all');
+  const { language } = useLanguage();
+
+  const filteredProjects = useMemo(() => {
+    if (filterCategory === 'apps') {
+      return profile.projects.filter(p => ['rev-minds', 'party-pantry', 'nerd-shelf', 'dnd-hub', 'personal-portfolio'].includes(p.id));
+    }
+    if (filterCategory === 'portals') {
+      return profile.projects.filter(p => ['arcon-web'].includes(p.id));
+    }
+    if (filterCategory === 'tools') {
+      return profile.projects.filter(p => ['enc-dec'].includes(p.id));
+    }
+    return profile.projects;
+  }, [profile.projects, filterCategory]);
 
   return (
     <div className="min-h-full px-3 py-6 sm:px-6 md:px-10 lg:py-8 max-w-7xl mx-auto space-y-6 select-none font-mono">
@@ -21,7 +37,7 @@ export default function IDEWorkspaceView({ profile, onBack, onSelectProject }: I
           className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-blue-400 border border-blue-500/30 text-xs font-semibold tracking-wider transition-all group cursor-pointer"
         >
           <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
-          <span>[ ESC ] ESCI A PANORAMICA</span>
+          <span>[ ESC ] {language === 'it' ? 'ESCI A PANORAMICA' : 'BACK TO OVERVIEW'}</span>
         </button>
 
         <div className="flex items-center gap-2 text-xs">
@@ -97,63 +113,106 @@ export default function IDEWorkspaceView({ profile, onBack, onSelectProject }: I
         <div className="p-5 sm:p-7 space-y-6">
           {/* TAB 1: Projects as Typed Component Modules */}
           {activeTab === 'editor' && (
-            <div className="space-y-4">
-              <div className="flex items-center justify-between text-xs text-zinc-500 pb-2 border-b border-zinc-800">
-                <span className="text-blue-300 font-bold">
-                  // EXPORT CONST REPOSITORIES: Project[] = [...]
-                </span>
-                <span>VITE + REACT 19 SPA ENGINE</span>
+            <div className="space-y-5">
+              {/* Category & Status Bar */}
+              <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-500 pb-3 border-b border-zinc-800">
+                <div className="flex items-center gap-2">
+                  <span className="text-blue-300 font-bold">
+                    // EXPORT CONST REPOSITORIES: Project[] = [...]
+                  </span>
+                  <span className="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-bold border border-blue-500/20">
+                    {profile.projects.length} {language === 'it' ? 'progetti' : 'projects'}
+                  </span>
+                </div>
+
+                {/* Filter Pills */}
+                <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px]">
+                  <span className="text-zinc-500 flex items-center gap-1 mr-1">
+                    <Filter size={11} />
+                    <span>Filter:</span>
+                  </span>
+                  {[
+                    { id: 'all', label: language === 'it' ? `Tutti (${profile.projects.length})` : `All (${profile.projects.length})` },
+                    { id: 'apps', label: language === 'it' ? 'Web Apps (5)' : 'Web Apps (5)' },
+                    { id: 'portals', label: language === 'it' ? 'Corporate (1)' : 'Corporate (1)' },
+                    { id: 'tools', label: language === 'it' ? 'CyberSecurity (1)' : 'CyberSecurity (1)' }
+                  ].map((filter) => (
+                    <button
+                      key={filter.id}
+                      onClick={() => setFilterCategory(filter.id as any)}
+                      className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
+                        filterCategory === filter.id
+                          ? 'bg-blue-600/30 text-blue-300 border border-blue-500/50 font-bold'
+                          : 'bg-zinc-900/80 text-zinc-400 hover:text-zinc-200 border border-zinc-800'
+                      }`}
+                    >
+                      {filter.label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {profile.projects.map((project, idx) => (
-                  <motion.div
-                    key={project.id}
-                    whileHover={{ y: -3 }}
-                    onClick={() => onSelectProject(project.id)}
-                    className="p-5 rounded-xl bg-zinc-950/90 border border-zinc-800 hover:border-blue-500/60 transition-all cursor-pointer group relative overflow-hidden shadow-lg flex flex-col justify-between"
-                  >
-                    {/* Code Snippet Header */}
-                    <div className="flex items-center justify-between pb-2 mb-3 border-b border-zinc-800/80 text-[11px] font-mono">
-                      <span className="text-purple-400 font-bold">const module_{idx + 1} =</span>
-                      <span className="text-zinc-500 text-[10px]">import(UI)</span>
-                    </div>
+                {filteredProjects.map((project, idx) => {
+                  const liveLink = project.links?.find(l => l.type === 'preview' && l.url !== '#');
+                  return (
+                    <motion.div
+                      key={project.id}
+                      whileHover={{ y: -3 }}
+                      onClick={() => onSelectProject(project.id)}
+                      className="p-5 rounded-xl bg-zinc-950/90 border border-zinc-800 hover:border-blue-500/60 transition-all cursor-pointer group relative overflow-hidden shadow-lg flex flex-col justify-between"
+                    >
+                      <div>
+                        {/* Code Snippet Header */}
+                        <div className="flex items-center justify-between pb-2 mb-3 border-b border-zinc-800/80 text-[11px] font-mono">
+                          <span className="text-purple-400 font-bold">const module_{idx + 1} =</span>
+                          <span className="text-zinc-500 text-[10px]">import('{project.id}')</span>
+                        </div>
 
-                    {/* Screenshot Preview */}
-                    <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-3.5 bg-zinc-900 border border-zinc-800">
-                      <img 
-                        src={project.imageUrl} 
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent" />
-                      <div className="absolute bottom-2 left-2 text-[11px] font-bold text-blue-300 bg-black/70 px-2 py-0.5 rounded border border-blue-500/30">
-                        &lt;{project.title} /&gt;
+                        {/* Screenshot Preview */}
+                        <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-3.5 bg-zinc-900 border border-zinc-800">
+                          <img 
+                            src={project.imageUrl} 
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-85 group-hover:opacity-100"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent" />
+                          <div className="absolute bottom-2 left-2 text-[11px] font-bold text-blue-300 bg-black/75 px-2 py-0.5 rounded border border-blue-500/30">
+                            &lt;{project.title} /&gt;
+                          </div>
+
+                          {liveLink && (
+                            <div className="absolute top-2 right-2 flex items-center gap-1 text-[10px] font-bold text-emerald-300 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">
+                              <span>LIVE SITE</span>
+                              <ExternalLink size={10} />
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-xs text-zinc-400 font-sans line-clamp-2 leading-relaxed mb-4">
+                          {project.description}
+                        </p>
                       </div>
-                    </div>
 
-                    {/* Description */}
-                    <p className="text-xs text-zinc-400 font-sans line-clamp-2 leading-relaxed mb-4">
-                      {project.description}
-                    </p>
+                      {/* Stack tags */}
+                      <div className="pt-3 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-2">
+                        <div className="flex flex-wrap gap-1 text-[10px]">
+                          {project.technologies.slice(0, 3).map((tech) => (
+                            <span key={tech} className="px-2 py-0.5 rounded bg-zinc-900 text-blue-200 border border-blue-500/20">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
 
-                    {/* Stack tags */}
-                    <div className="pt-3 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex flex-wrap gap-1 text-[10px]">
-                        {project.technologies.slice(0, 3).map((tech) => (
-                          <span key={tech} className="px-2 py-0.5 rounded bg-zinc-900 text-blue-200 border border-blue-500/20">
-                            {tech}
-                          </span>
-                        ))}
+                        <div className="flex items-center gap-1 text-xs text-blue-400 font-bold group-hover:text-blue-300">
+                          <span>{language === 'it' ? 'ISPEZIONA' : 'INSPECT'}</span>
+                          <ArrowUpRight size={13} />
+                        </div>
                       </div>
-
-                      <div className="flex items-center gap-1 text-xs text-blue-400 font-bold group-hover:text-blue-300">
-                        <span>ISPEZIONA</span>
-                        <ArrowUpRight size={13} />
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           )}

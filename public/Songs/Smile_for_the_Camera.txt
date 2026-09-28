@@ -1,0 +1,345 @@
+Metadata for: Unknown-Smile_for_the_Camera.m4a
+Generated: 2026-09-25T15:13:17.021Z
+
+--- Track Information ---
+Title: Smile for the Camera
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 8c7a6b72-87ae-4ea7-9a66-0fa118248bc9
+
+--- Lyrics ---
+[Intro]
+One, two—chin up, eyes wide
+Mother fixed my collar tight
+Three, four—the room looks right
+Hold your breath beneath the light
+
+[Verse 1]
+Matching blue from head to toe
+Polished floors and curtains closed
+Father says, “Don’t wrinkle that”
+Brother hides a little scratch
+
+Mother’s got the silver tray
+Set the same way every day
+If the picture comes out clean
+No one asks what might have been
+
+[Pre-Chorus]
+Step to the mark, don’t cross the line
+Tilt your head and look divine
+Count the clicks, keep still, behave
+Pretty faces, little graves
+
+[Chorus]
+Smile for the camera—now
+Everybody knows exactly when
+Smile for the camera—now
+Show your teeth and count to ten
+Hands together, shoulders straight
+Love is looking picture-perfect
+Smile for the camera—now
+Nobody leaves until we’re all connected
+
+[Verse 2]
+Sunday coats and spotless glass
+Never mention what happened last
+Father laughs a little too loud
+Mother smooths the tablecloth down
+
+Behind the pantry, three locked drawers
+A family rule, a family war
+Brother mouths, “Don’t tell,” through the frame
+Mother’s smile forgets his name
+
+[Pre-Chorus]
+Step to the mark, don’t cross the line
+Keep your secret looking fine
+Count the clicks, don’t make a sound
+If you fall, you’re not allowed
+
+[Chorus]
+Smile for the camera—now
+Everybody knows exactly when
+Smile for the camera—now
+Show your teeth and count to ten
+Hands together, shoulders straight
+Love is looking picture-perfect
+Smile for the camera—now
+Nobody leaves until we’re all connected
+
+[Bridge]
+Click—there’s a crack in the painted wall
+Click—someone’s crying down the hall
+Click—Father’s hand beneath my sleeve
+Click—Mother says, “Make them believe”
+
+The flash goes white, the room goes thin
+A little secret slips its pin
+If the shutter catches every lie
+Why do we still look so alive?
+
+[Breakdown]
+One for the house
+Two for the name
+Three for the child
+Who takes the blame
+Four for the lock
+Five for the key
+Six for the family
+Seven for me
+
+[Final Chorus]
+Smile for the camera—now
+Everybody knows exactly when
+Smile for the camera—now
+Show your teeth and count to ten
+Hands together, shoulders straight
+Love is looking picture-perfect
+Smile for the camera—now
+Nobody leaves until we’re all connected
+
+[Outro]
+One, two—chin up, eyes wide
+The door is locked from either side
+Three, four—the room looks right
+Hold that smile until the light
+Click.
+
+
+Cover Art URL: https://cdn2.suno.ai/66e14c26-af2d-4637-9f79-0c3e47d071e1.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Smile for the Camera",
+  "play_count": 16,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "8c7a6b72-87ae-4ea7-9a66-0fa118248bc9",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/8c7a6b72-87ae-4ea7-9a66-0fa118248bc9.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/8c7a6b72-87ae-4ea7-9a66-0fa118248bc9.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/66e14c26-af2d-4637-9f79-0c3e47d071e1.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/66e14c26-af2d-4637-9f79-0c3e47d071e1.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-hawk",
+  "metadata": {
+    "tags": "dark alternative pop, eerie nursery-rhyme undertone, creepy family-photo atmosphere, intimate male vocal, playful but sinister delivery, minor key, plucked toy piano, detuned bells, dry punchy drums, deep sub bass, muted handclaps, warped synths, music-box motifs, whispered doubles, rhythmic camera-shutter clicks, subtle tape wobble, stop-start dynamics, catchy unsettling chorus, polished surface with distorted details underneath, theatrical phrasing, bright motifs against dark harmony, sudden dropouts, no major-key resolution, no EDM drop, 94 BPM",
+    "prompt": "[Intro]\nOne, two—chin up, eyes wide\nMother fixed my collar tight\nThree, four—the room looks right\nHold your breath beneath the light\n\n[Verse 1]\nMatching blue from head to toe\nPolished floors and curtains closed\nFather says, “Don’t wrinkle that”\nBrother hides a little scratch\n\nMother’s got the silver tray\nSet the same way every day\nIf the picture comes out clean\nNo one asks what might have been\n\n[Pre-Chorus]\nStep to the mark, don’t cross the line\nTilt your head and look divine\nCount the clicks, keep still, behave\nPretty faces, little graves\n\n[Chorus]\nSmile for the camera—now\nEverybody knows exactly when\nSmile for the camera—now\nShow your teeth and count to ten\nHands together, shoulders straight\nLove is looking picture-perfect\nSmile for the camera—now\nNobody leaves until we’re all connected\n\n[Verse 2]\nSunday coats and spotless glass\nNever mention what happened last\nFather laughs a little too loud\nMother smooths the tablecloth down\n\nBehind the pantry, three locked drawers\nA family rule, a family war\nBrother mouths, “Don’t tell,” through the frame\nMother’s smile forgets his name\n\n[Pre-Chorus]\nStep to the mark, don’t cross the line\nKeep your secret looking fine\nCount the clicks, don’t make a sound\nIf you fall, you’re not allowed\n\n[Chorus]\nSmile for the camera—now\nEverybody knows exactly when\nSmile for the camera—now\nShow your teeth and count to ten\nHands together, shoulders straight\nLove is looking picture-perfect\nSmile for the camera—now\nNobody leaves until we’re all connected\n\n[Bridge]\nClick—there’s a crack in the painted wall\nClick—someone’s crying down the hall\nClick—Father’s hand beneath my sleeve\nClick—Mother says, “Make them believe”\n\nThe flash goes white, the room goes thin\nA little secret slips its pin\nIf the shutter catches every lie\nWhy do we still look so alive?\n\n[Breakdown]\nOne for the house\nTwo for the name\nThree for the child\nWho takes the blame\nFour for the lock\nFive for the key\nSix for the family\nSeven for me\n\n[Final Chorus]\nSmile for the camera—now\nEverybody knows exactly when\nSmile for the camera—now\nShow your teeth and count to ten\nHands together, shoulders straight\nLove is looking picture-perfect\nSmile for the camera—now\nNobody leaves until we’re all connected\n\n[Outro]\nOne, two—chin up, eyes wide\nThe door is locked from either side\nThree, four—the room looks right\nHold that smile until the light\nClick.\n",
+    "gpt_description_prompt": "Write a dark, unsettling song called “Smile for the Camera” about a family that looks perfect in every photograph but is deeply dysfunctional behind closed doors. Use staged smiles, matching clothes, polished rooms and forced poses as recurring imagery, while small cracks gradually reveal fear, resentment, secrets and control beneath the surface. Keep the lyrics catchy and slightly playful on the outside, but increasingly disturbing underneath, with the chorus built around the idea that everyone knows exactly when to smile.\n\n\ndark alternative pop, eerie nursery-rhyme undertone, creepy family-photo atmosphere, intimate male vocal, playful but sinister delivery, minor key, plucked toy piano, detuned bells, dry punchy drums, deep sub bass, muted handclaps, warped synths, music-box motifs, whispered doubles, camera shutter clicks used rhythmically, subtle tape wobble, stop-start dynamics, catchy unsettling chorus, polished surface with distorted details underneath, theatrical phrasing, bright-sounding motifs contrasted with dark harmony, sudden dropouts, no bright major resolution, no EDM drop, 94 BPM\n",
+    "type": "gen",
+    "duration": 208.8,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": false,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "camcorder",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-15T13:44:35.855Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative pop, dark, eerie",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 15,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:06:54.824Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

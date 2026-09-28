@@ -1,0 +1,272 @@
+Metadata for: Unknown-Heaven_and_Hell_(Musical).m4a
+Generated: 2026-09-25T15:12:18.614Z
+
+--- Track Information ---
+Title: Heaven and Hell (Musical)
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: ecef81d6-7746-4384-a3ad-ee436e46bcfc
+
+--- Lyrics ---
+[Verse 1: Demon]
+The skies burn red and the cities are silent
+This world of wretches ain't worth saving
+Every soul is a burden of sin
+I'll erase every trace of you from existence
+
+[Verse 2: Angel]
+The skies are burning
+And yes
+They're silent
+But listen to me: humanity's worth saving
+All of you are wounded and weak
+But there are innocents left
+And there are people still fighting
+
+[Pre-Chorus: Demon]
+This world was a mistake
+Broken prayers from ruined hearts
+Don't let this chance go to waste
+There is no hope in the dark
+
+[Chorus: Angel]
+There's still light in the ashes
+There's still beauty in pain
+There's still love and compassion
+And those who choose to remain
+There's still hope in the darkness
+There's still good in this place
+There's still light in the ashes
+So I'll choose to have faith
+
+[Verse 3: Demon]
+Stars fall
+And the clouds run red with blood
+I have no sympathy for what you will become
+You're better off being buried and gone
+There's nothing left to save
+So let it all burn
+
+[Verse 4: Angel]
+Stars fall
+And the clouds are stained with blood
+But I'm not afraid
+And I know we're not done
+The good and the brave will rise up
+There's so much left to save
+So please don't let them burn
+
+Cover Art URL: https://cdn2.suno.ai/34d1d8dc-46ba-4ecf-be3f-4856cd5365b8.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Heaven and Hell (Musical)",
+  "play_count": 80,
+  "upvote_count": 2,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "ecef81d6-7746-4384-a3ad-ee436e46bcfc",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/ecef81d6-7746-4384-a3ad-ee436e46bcfc.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/ecef81d6-7746-4384-a3ad-ee436e46bcfc.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/34d1d8dc-46ba-4ecf-be3f-4856cd5365b8.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/34d1d8dc-46ba-4ecf-be3f-4856cd5365b8.jpeg",
+  "major_model_version": "v5.5",
+  "model_name": "chirp-fenix",
+  "metadata": {
+    "tags": "dark cinematic horror score, baroque pop, music box melody, celesta arpeggios, warped tape textures, detuned piano ostinato, fretless bass lines, clean electric guitar arpeggios, steel-string fingerpicking, sparse taiko impacts, whispered choir pads, reversed swell intro, analog tape saturation, mono room reverb, minor key waltz, slow doom pulse, hopeful lift, duality, 1970s film score",
+    "prompt": "[Verse 1: Demon]\nThe skies burn red and the cities are silent\nThis world of wretches ain't worth saving\nEvery soul is a burden of sin\nI'll erase every trace of you from existence\n\n[Verse 2: Angel]\nThe skies are burning\nAnd yes\nThey're silent\nBut listen to me: humanity's worth saving\nAll of you are wounded and weak\nBut there are innocents left\nAnd there are people still fighting\n\n[Pre-Chorus: Demon]\nThis world was a mistake\nBroken prayers from ruined hearts\nDon't let this chance go to waste\nThere is no hope in the dark\n\n[Chorus: Angel]\nThere's still light in the ashes\nThere's still beauty in pain\nThere's still love and compassion\nAnd those who choose to remain\nThere's still hope in the darkness\nThere's still good in this place\nThere's still light in the ashes\nSo I'll choose to have faith\n\n[Verse 3: Demon]\nStars fall\nAnd the clouds run red with blood\nI have no sympathy for what you will become\nYou're better off being buried and gone\nThere's nothing left to save\nSo let it all burn\n\n[Verse 4: Angel]\nStars fall\nAnd the clouds are stained with blood\nBut I'm not afraid\nAnd I know we're not done\nThe good and the brave will rise up\nThere's so much left to save\nSo please don't let them burn",
+    "type": "gen",
+    "duration": 224.92,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-02T11:07:04.471Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "cinematic horror, baroque pop, 1970s film score",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 62,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:06:49.230Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-05T21:30:09.409Z",
+  "playlistName": "Dede's Originals"
+}

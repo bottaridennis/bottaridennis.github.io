@@ -1,0 +1,299 @@
+Metadata for: Unknown-Meet_Me_at_the_Fence_Line.m4a
+Generated: 2026-09-25T15:12:49.195Z
+
+--- Track Information ---
+Title: Meet Me at the Fence Line
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 98a9daf2-cb79-468a-993b-b29048e487fa
+
+--- Lyrics ---
+[Verse 1]
+I heard the sirens cry
+Down by the river road
+You wore your red coat
+Like you knew the end would show
+
+We shut the door slow
+Held hands in the dark
+You said, "Don't let me vanish
+Without your name in my heart"
+
+[Pre-Chorus]
+So I pulled you near
+Under that shaking frame
+If the sky goes white
+I will still say your name
+
+[Chorus]
+Meet me at the fence line
+When the last train calls
+Meet me at the fence line
+Before the whole world falls
+I loved you in the ruins
+I loved you in the flame
+Meet me at the fence line
+And say my name (say my name)
+
+[Verse 2]
+You laughed through the static
+Kissed my dirty hands
+The windows were trembling
+Like they couldn't understand
+
+We watched the warning glow
+Paint the broken sky
+You told me love is a house
+That can live before we die
+
+[Pre-Chorus]
+So I pulled you near
+And the ground shook loud
+If the sun turns black
+I'll still find you in the crowd
+
+[Chorus]
+Meet me at the fence line
+When the last train calls
+Meet me at the fence line
+Before the whole world falls
+I loved you in the ruins
+I loved you in the flame
+Meet me at the fence line
+And say my name (say my name)
+
+[Bridge]
+If this is the last hour
+Then let me be your light
+Let me kiss your fear away
+Let me hold you tight
+
+No tomorrow left to borrow
+No safe road home to take
+Just your breath on my shoulder
+And the earth beginning to shake
+
+[Final Chorus]
+Meet me at the fence line
+When the last train calls
+Meet me at the fence line
+Before the whole world falls
+I loved you in the ruins
+I loved you in the flame
+Meet me at the fence line
+And say my name (say my name)
+Meet me at the fence line
+Let love outlive the blaze
+
+Cover Art URL: https://cdn2.suno.ai/a062c891-eafc-4103-8d35-26a15c4abf14.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Meet Me at the Fence Line",
+  "play_count": 45,
+  "upvote_count": 3,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "98a9daf2-cb79-468a-993b-b29048e487fa",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/98a9daf2-cb79-468a-993b-b29048e487fa.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/98a9daf2-cb79-468a-993b-b29048e487fa.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/a062c891-eafc-4103-8d35-26a15c4abf14.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/a062c891-eafc-4103-8d35-26a15c4abf14.jpeg",
+  "major_model_version": "v5.5",
+  "model_name": "chirp-fenix",
+  "metadata": {
+    "tags": "Piano only staccato and frenetic, sad and melanconic",
+    "prompt": "[Verse 1]\nI heard the sirens cry\nDown by the river road\nYou wore your red coat\nLike you knew the end would show\n\nWe shut the door slow\nHeld hands in the dark\nYou said, \"Don't let me vanish\nWithout your name in my heart\"\n\n[Pre-Chorus]\nSo I pulled you near\nUnder that shaking frame\nIf the sky goes white\nI will still say your name\n\n[Chorus]\nMeet me at the fence line\nWhen the last train calls\nMeet me at the fence line\nBefore the whole world falls\nI loved you in the ruins\nI loved you in the flame\nMeet me at the fence line\nAnd say my name (say my name)\n\n[Verse 2]\nYou laughed through the static\nKissed my dirty hands\nThe windows were trembling\nLike they couldn't understand\n\nWe watched the warning glow\nPaint the broken sky\nYou told me love is a house\nThat can live before we die\n\n[Pre-Chorus]\nSo I pulled you near\nAnd the ground shook loud\nIf the sun turns black\nI'll still find you in the crowd\n\n[Chorus]\nMeet me at the fence line\nWhen the last train calls\nMeet me at the fence line\nBefore the whole world falls\nI loved you in the ruins\nI loved you in the flame\nMeet me at the fence line\nAnd say my name (say my name)\n\n[Bridge]\nIf this is the last hour\nThen let me be your light\nLet me kiss your fear away\nLet me hold you tight\n\nNo tomorrow left to borrow\nNo safe road home to take\nJust your breath on my shoulder\nAnd the earth beginning to shake\n\n[Final Chorus]\nMeet me at the fence line\nWhen the last train calls\nMeet me at the fence line\nBefore the whole world falls\nI loved you in the ruins\nI loved you in the flame\nMeet me at the fence line\nAnd say my name (say my name)\nMeet me at the fence line\nLet love outlive the blaze",
+    "type": "gen",
+    "duration": 217.32,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-17T09:56:59.936Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 44,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:22:32.952Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

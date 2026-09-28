@@ -1,0 +1,312 @@
+Metadata for: Unknown-Make_Me_Wait.m4a
+Generated: 2026-09-25T15:13:22.420Z
+
+--- Track Information ---
+Title: Make Me Wait
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: e7b78c2d-3410-46f6-b56d-9e5f7892e0c5
+
+--- Lyrics ---
+[Intro]
+(Whispered close-mic)
+Shh...
+Don't rush it.
+The best things... take time.
+
+[Verse 1]
+You're standing there, eyes locked on mine
+Trying to read between every line
+You want it now, I see the fire
+But I’m the keeper of your desire
+A little distance makes it sweet
+The slow gravity before we meet
+So take a breath, let the tension grow
+We’ve got all night, we’re moving slow
+
+[Chorus]
+Make me wait, let the hunger build
+Until the empty space is filled
+Keep me wanting, keep me on the edge
+Swaying on the borderline, right on the ledge
+Because the anticipation is a deeper spark
+So make me wait... here in the dark
+
+[Verse 2]
+I take my time, I draw the line
+A calculated, slow design
+The way you reach, the way you sigh
+Is worth more than a quick goodbye
+It’s a power play, but we both agree
+This sweet torture is the key
+The longer we hold back the storm
+The hotter the lightning, the deeper the warm
+
+[Chorus]
+Make me wait, let the hunger build
+Until the empty space is filled
+Keep me wanting, keep me on the edge
+Swaying on the borderline, right on the ledge
+Because the anticipation is a deeper spark
+So make me wait... here in the dark
+
+[Bridge]
+(Low whispered spoken word)
+You think you're ready?
+Not yet.
+Feel the sub bass roll.
+Let the rhythm pull you in.
+Just a little longer...
+Perfect.
+
+[Chorus]
+Make me wait, let the hunger build
+Until the empty space is filled
+Keep me wanting, keep me on the edge
+Swaying on the borderline, right on the ledge
+Because the anticipation is a deeper spark
+So make me wait... here in the dark
+
+[Outro]
+(Sustained low vocal)
+Yeah...
+Right there.
+Now we begin.
+(Fade out on minimal snap and warm sub bass)
+
+Cover Art URL: https://cdn2.suno.ai/b1aad28f-560b-47f2-a42d-955aa6c26afc.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Make Me Wait",
+  "play_count": 10,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "e7b78c2d-3410-46f6-b56d-9e5f7892e0c5",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/e7b78c2d-3410-46f6-b56d-9e5f7892e0c5.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/e7b78c2d-3410-46f6-b56d-9e5f7892e0c5.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/b1aad28f-560b-47f2-a42d-955aa6c26afc.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/b1aad28f-560b-47f2-a42d-955aa6c26afc.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-hawk",
+  "metadata": {
+    "tags": "dark erotic R&B, alternative electronic pop, dominant low male vocal, whispered close-mic performance, slow grinding rhythm, massive warm sub bass, minimal kick and snap percussion, sparse piano notes",
+    "prompt": "[Intro]\n(Whispered close-mic)\nShh...\nDon't rush it.\nThe best things... take time.\n\n[Verse 1]\nYou're standing there, eyes locked on mine\nTrying to read between every line\nYou want it now, I see the fire\nBut I’m the keeper of your desire\nA little distance makes it sweet\nThe slow gravity before we meet\nSo take a breath, let the tension grow\nWe’ve got all night, we’re moving slow\n\n[Chorus]\nMake me wait, let the hunger build\nUntil the empty space is filled\nKeep me wanting, keep me on the edge\nSwaying on the borderline, right on the ledge\nBecause the anticipation is a deeper spark\nSo make me wait... here in the dark\n\n[Verse 2]\nI take my time, I draw the line\nA calculated, slow design\nThe way you reach, the way you sigh\nIs worth more than a quick goodbye\nIt’s a power play, but we both agree\nThis sweet torture is the key\nThe longer we hold back the storm\nThe hotter the lightning, the deeper the warm\n\n[Chorus]\nMake me wait, let the hunger build\nUntil the empty space is filled\nKeep me wanting, keep me on the edge\nSwaying on the borderline, right on the ledge\nBecause the anticipation is a deeper spark\nSo make me wait... here in the dark\n\n[Bridge]\n(Low whispered spoken word)\nYou think you're ready?\nNot yet.\nFeel the sub bass roll.\nLet the rhythm pull you in.\nJust a little longer...\nPerfect.\n\n[Chorus]\nMake me wait, let the hunger build\nUntil the empty space is filled\nKeep me wanting, keep me on the edge\nSwaying on the borderline, right on the ledge\nBecause the anticipation is a deeper spark\nSo make me wait... here in the dark\n\n[Outro]\n(Sustained low vocal)\nYeah...\nRight there.\nNow we begin.\n(Fade out on minimal snap and warm sub bass)",
+    "gpt_description_prompt": "MAKE ME WAIT\n\nLyricist Prompt\nWrite a sensual power-play song about someone deliberately making the other person wait because they know anticipation is more intense than getting what they want immediately. Keep the dynamic teasing, confident and consensual. THE TITLE OF THE SONG IS MAKE ME WAIT",
+    "type": "gen",
+    "duration": 238,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": false,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "scribbles",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-14T14:55:10.861Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "R&B, alternative electronic pop",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 8,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T07:15:30.315Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

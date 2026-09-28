@@ -1,0 +1,291 @@
+Metadata for: Unknown-For_Your_Love.m4a
+Generated: 2026-09-25T15:13:05.874Z
+
+--- Track Information ---
+Title: For Your Love
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 0d4dff26-1e31-4e6f-90d8-47d37de9ef09
+
+--- Lyrics ---
+[Verse 1]
+I used to move reckless, all bad habits
+Late nights, loose talk, and the trap of it
+Pride in my chest, I was toxic with it
+Burned every bridge, I was awful with it
+You came through calm, had a soft kind of fire
+Looked at my mess and you lifted me higher
+Now I’m cutting off all the old me lies
+For one real chance in your eyes
+
+[Pre-Chorus]
+I been scrubbing my name, trying to get right
+Breaking old chains in the middle of the night
+If I fall, I get back up and try
+'Cause I want your hand, and I want that life
+
+[Chorus]
+For your love, I changed it all
+For your love, I took that fall
+One day, baby, I’ll be your man
+One day, baby, I’ll wear that band
+For your love, I changed it all
+For your love, I changed it all
+
+[Verse 2]
+I cut the fools off, cut the smoke too
+Cut the bad words when I’m talking to you
+Swapped that rush for a steady pace
+Now I clean up my room, got a new little place
+I show up on time, keep my word now
+Say what I mean, let the old hurt down
+I know trust ain’t cheap, I’m paying in sweat
+Trying to be the best you ever met
+
+[Pre-Chorus]
+I been scrubbing my name, trying to get right
+Breaking old chains in the middle of the night
+If I fall, I get back up and try
+'Cause I want your hand, and I want that life
+
+[Chorus]
+For your love, I changed it all
+For your love, I took that fall
+One day, baby, I’ll be your man
+One day, baby, I’ll wear that band
+For your love, I changed it all
+For your love, I changed it all
+
+[Bridge]
+If you see me now, you’ll know I’m real
+No more games when I say how I feel
+I ain’t perfect, but I’m on this road
+With your name in my chest, I’m carrying hope
+
+[Chorus]
+For your love, I changed it all
+For your love, I took that fall
+One day, baby, I’ll be your man
+One day, baby, I’ll wear that band
+For your love, I changed it all
+For your love, I changed it all
+
+Cover Art URL: https://cdn2.suno.ai/941fa437-da61-41e9-8bd5-322b40b270aa.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "For Your Love",
+  "play_count": 40,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "0d4dff26-1e31-4e6f-90d8-47d37de9ef09",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/0d4dff26-1e31-4e6f-90d8-47d37de9ef09.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/0d4dff26-1e31-4e6f-90d8-47d37de9ef09.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/941fa437-da61-41e9-8bd5-322b40b270aa.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/941fa437-da61-41e9-8bd5-322b40b270aa.jpeg",
+  "major_model_version": "v5.5",
+  "model_name": "chirp-fenix",
+  "metadata": {
+    "tags": "# Style prompt\n\nmelodic drill rap, emotional UK drill, dark romantic atmosphere, introspective male rapper, deep warm male voice, controlled aggressive delivery in the verses, vulnerable melodic singing in the chorus, minor key, haunting piano motif, sparse dark synth pads, sliding 808 bass, heavy sub bass, sharp punchy kick, syncopated drill hi-hats, fast triplet hi-hat rolls, crisp snare, subtle reversed textures, atmospheric vocal samples, nocturnal urban ambience, tense verses, emotional pre-chorus build, big memorable melodic hook, raw but sincere performance, redemption theme, mature street energy, cinematic production, polished modern mix, 142 BPM, half-time feel\n",
+    "prompt": "[Verse 1]\nI used to move reckless, all bad habits\nLate nights, loose talk, and the trap of it\nPride in my chest, I was toxic with it\nBurned every bridge, I was awful with it\nYou came through calm, had a soft kind of fire\nLooked at my mess and you lifted me higher\nNow I’m cutting off all the old me lies\nFor one real chance in your eyes\n\n[Pre-Chorus]\nI been scrubbing my name, trying to get right\nBreaking old chains in the middle of the night\nIf I fall, I get back up and try\n'Cause I want your hand, and I want that life\n\n[Chorus]\nFor your love, I changed it all\nFor your love, I took that fall\nOne day, baby, I’ll be your man\nOne day, baby, I’ll wear that band\nFor your love, I changed it all\nFor your love, I changed it all\n\n[Verse 2]\nI cut the fools off, cut the smoke too\nCut the bad words when I’m talking to you\nSwapped that rush for a steady pace\nNow I clean up my room, got a new little place\nI show up on time, keep my word now\nSay what I mean, let the old hurt down\nI know trust ain’t cheap, I’m paying in sweat\nTrying to be the best you ever met\n\n[Pre-Chorus]\nI been scrubbing my name, trying to get right\nBreaking old chains in the middle of the night\nIf I fall, I get back up and try\n'Cause I want your hand, and I want that life\n\n[Chorus]\nFor your love, I changed it all\nFor your love, I took that fall\nOne day, baby, I’ll be your man\nOne day, baby, I’ll wear that band\nFor your love, I changed it all\nFor your love, I changed it all\n\n[Bridge]\nIf you see me now, you’ll know I’m real\nNo more games when I say how I feel\nI ain’t perfect, but I’m on this road\nWith your name in my chest, I’m carrying hope\n\n[Chorus]\nFor your love, I changed it all\nFor your love, I took that fall\nOne day, baby, I’ll be your man\nOne day, baby, I’ll wear that band\nFor your love, I changed it all\nFor your love, I changed it all",
+    "type": "gen",
+    "duration": 192.64,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "scribbles",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-08-21T10:19:42.899Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "melodic drill rap, emotional UK drill",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 31,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:25:08.581Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-05T21:27:23.554Z",
+  "playlistName": "Dede's Originals"
+}

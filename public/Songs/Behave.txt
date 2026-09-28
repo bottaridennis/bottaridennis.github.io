@@ -1,0 +1,331 @@
+Metadata for: Unknown-Behave.m4a
+Generated: 2026-09-25T15:13:48.685Z
+
+--- Track Information ---
+Title: Behave
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: a0d5f814-71ca-4e1b-8ad7-4bc6b31f29eb
+
+--- Lyrics ---
+[Verse 1]
+They taught me young: keep both hands still
+Say yes before they ask you will
+Lower your eyes, soften the sound
+Make yourself small when they come around
+At dinner: behave
+In class: behave
+At home: behave
+Don't make a wave
+
+[Pre-Chorus]
+So I wore the word like a collar
+Let it pull me under, under
+Every room had the same refrain
+Every smile hid the same old chain
+
+[Chorus]
+Behave, behave
+That's what you say when you want me tame
+Behave, behave
+Keep your little fire out of frame
+I nod, I smile, I play the part
+But something sharp is learning to start
+Behave, behave
+Say it again—I'll hear it another way
+Behave, behave
+Say it again—I'll hear it another way
+
+[Verse 2]
+Now you say it with your careful face
+Like my pulse is a public disgrace
+Fix my tone, fix my sleeves
+Fix the truth before it leaves
+At work: behave
+On the train: behave
+In love: behave
+Don't misbehave
+
+[Pre-Chorus]
+But the word tastes thin in my mouth now
+Like a rule nobody bows to
+Every warning strikes a match
+Every locked door makes me scratch
+
+[Chorus]
+Behave, behave
+That's what you say when you want me tame
+Behave, behave
+Keep your little fire out of frame
+I nod, I smile, I play the part
+Now I press the blade against the dark
+Behave, behave
+Say it again—I'll make it sound like a dare
+
+[Bridge]
+Behave
+Say it again—I'll make it sound like a dare
+
+[Bridge]
+Behave
+Go on, say it slow
+Behave
+Watch how far I go
+No hush, no mask, no borrowed shape
+You built the cage—I'll break the phrase
+Behave
+I don't belong beneath your hand
+
+[Final Chorus]
+Behave, behave
+No, that's the word you can keep today
+Behave, behave
+I won't fold my bones to clear your way
+I speak too loud, I take up space
+I leave the fear upon your face
+Behave, behave
+Say it again—I refuse the name
+
+[Outro]
+Behave
+Behave
+Not for you
+Not again
+
+
+Cover Art URL: https://cdn2.suno.ai/e3b3284c-3e9f-4438-8def-926d9d233c47.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Behave",
+  "play_count": 20,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "a0d5f814-71ca-4e1b-8ad7-4bc6b31f29eb",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/a0d5f814-71ca-4e1b-8ad7-4bc6b31f29eb.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/a0d5f814-71ca-4e1b-8ad7-4bc6b31f29eb.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/e3b3284c-3e9f-4438-8def-926d9d233c47.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/e3b3284c-3e9f-4438-8def-926d9d233c47.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-hawk",
+  "metadata": {
+    "tags": "dark electro-pop, commanding male lead vocal, low intimate register, sharp rhythmic delivery, heavy sub bass, distorted synth pulses, punchy electronic drums, dry handclaps, clipped percussion, minor key, tense stop-start groove, whispered doubles repeating the hook word, restrained verses, hypnotic repetitive hook, rising aggression without chaos, sleek nocturnal production, subtle industrial textures, dramatic dropouts, bass-led attitude chorus, bridge stripped to voice and pulse, final chorus wider heavier and defiant, polished dangerous mix, no bright pop, no festival drop, 104 BPM",
+    "prompt": "[Verse 1]\nThey taught me young: keep both hands still\nSay yes before they ask you will\nLower your eyes, soften the sound\nMake yourself small when they come around\nAt dinner: behave\nIn class: behave\nAt home: behave\nDon't make a wave\n\n[Pre-Chorus]\nSo I wore the word like a collar\nLet it pull me under, under\nEvery room had the same refrain\nEvery smile hid the same old chain\n\n[Chorus]\nBehave, behave\nThat's what you say when you want me tame\nBehave, behave\nKeep your little fire out of frame\nI nod, I smile, I play the part\nBut something sharp is learning to start\nBehave, behave\nSay it again—I'll hear it another way\nBehave, behave\nSay it again—I'll hear it another way\n\n[Verse 2]\nNow you say it with your careful face\nLike my pulse is a public disgrace\nFix my tone, fix my sleeves\nFix the truth before it leaves\nAt work: behave\nOn the train: behave\nIn love: behave\nDon't misbehave\n\n[Pre-Chorus]\nBut the word tastes thin in my mouth now\nLike a rule nobody bows to\nEvery warning strikes a match\nEvery locked door makes me scratch\n\n[Chorus]\nBehave, behave\nThat's what you say when you want me tame\nBehave, behave\nKeep your little fire out of frame\nI nod, I smile, I play the part\nNow I press the blade against the dark\nBehave, behave\nSay it again—I'll make it sound like a dare\n\n[Bridge]\nBehave\nSay it again—I'll make it sound like a dare\n\n[Bridge]\nBehave\nGo on, say it slow\nBehave\nWatch how far I go\nNo hush, no mask, no borrowed shape\nYou built the cage—I'll break the phrase\nBehave\nI don't belong beneath your hand\n\n[Final Chorus]\nBehave, behave\nNo, that's the word you can keep today\nBehave, behave\nI won't fold my bones to clear your way\nI speak too loud, I take up space\nI leave the fear upon your face\nBehave, behave\nSay it again—I refuse the name\n\n[Outro]\nBehave\nBehave\nNot for you\nNot again\n",
+    "gpt_description_prompt": "Write a dark, provocative song called “Behave” built around that single word changing meaning throughout the song. At first “behave” is an order the narrator has heard all his life: stay quiet, stay polite, don’t make trouble. Later he starts repeating it sarcastically, turning the command into a challenge. By the final chorus, he rejects it completely and refuses to keep shrinking himself for other people’s comfort. Keep the lyrics sharp, controlled and catchy, with recurring phrases that evolve each time they return.\n\ndark electro-pop, commanding male lead vocal, low intimate register, sharp rhythmic delivery, heavy sub bass, distorted synth pulses, punchy electronic drums, dry handclaps, clipped percussion, minor key, tense stop-start groove, whispered doubles repeating “behave”, restrained verses, hypnotic repetitive hook, rising aggression without becoming chaotic, sleek nocturnal production, subtle industrial textures, dramatic dropouts, chorus driven by bass and vocal attitude, bridge stripped to voice and pulse, final chorus wider, heavier and defiant, polished but dangerous, no bright pop, no EDM drop, 104 BPM\n",
+    "type": "gen",
+    "duration": 209.72,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "minimal_album_art",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-16T07:29:04.603Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "dark electro-pop, industrial",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 16,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-23T22:05:51.153Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

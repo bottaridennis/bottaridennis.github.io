@@ -1,0 +1,381 @@
+Metadata for: Unknown-Un_Interruttore.m4a
+Generated: 2026-09-25T15:12:52.242Z
+
+--- Track Information ---
+Title: Un Interruttore
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: d86906ee-d747-4fac-9058-ff13e9bae4ce
+
+--- Lyrics ---
+# Un Interruttore
+
+[Intro — Spoken Rap]
+
+Prima non usciva niente
+Zero
+Adesso prova a fermarmi
+
+[Verse 1]
+
+Prima, bro, un blocco
+Muto, non un fiato
+Ogni parola un macigno
+Tutto dentro, incasinato
+
+Volevo, sì, ma zero azione
+Paura in ogni situazione
+Lei, uno sguardo, un flash
+Cambio marcia, niente crash
+
+Testa bassa, passo corto
+Ogni pensiero nasceva morto
+Mille frasi nella mente
+Ma davanti a te? Niente
+
+Poi qualcosa ha fatto clic
+Come un colpo sopra il beat
+Non mi sono trasformato
+Ho soltanto sbloccato il fiato
+
+[Pre-Chorus — Rap Build]
+
+Un clic
+Un interruttore
+Spengo il dubbio
+Alzo il rumore
+
+Non cerco più
+La frase perfetta
+Apro la bocca
+E parte diretta
+
+[Chorus — Rap]
+
+Ora parlo, man, un fiume in piena
+Fuori dall'ombra, dentro la scena
+Chiedo, voglio, dico ciò che penso
+Ogni parola adesso ha il suo peso
+
+Ora parlo, non mi tengo niente
+Voce davanti, paura assente
+Prima silenzio, adesso saetta
+La mia voce colpisce diretta
+
+[Verse 2]
+
+Prima un fantasma, quasi invisibile
+Ora ogni sillaba diventa tangibile
+Non sono un altro, sono sempre quello
+Solo che adesso non abbasso il livello
+
+Ho tolto il freno dalla lingua e dal petto
+Dico ciò che voglio senza chiedere permesso
+Non per arroganza, non per fare il grosso
+Ho perso troppo tempo col pensiero addosso
+
+Lei è stata scintilla, non destinazione
+Ha aperto una porta nella mia prigione
+Poi ho capito mentre correvo più forte
+Che quella chiave era mia, non della sorte
+
+[Beat Switch]
+
+[Fast Verse — Double-Time / Extrabeat]
+
+Parlavo piano perché dentro avevo il panico
+Calcolo, analizzo, paralizzo, tutto statico
+Pratico silenzi come fossero una tattica
+Ma ogni cosa trattenuta diventava problematica
+
+Adesso sputo sillabe, le libero, le incastro
+Passo dalla nebbia fino al centro del contrasto
+Scatto, cambio passo, non mi basta stare zitto
+Scrivo quello che non dico, poi lo dico sopra il ritmo
+
+Niente freno, niente filtro per la paura che mi blocca
+Ogni dubbio che ritorna trova chiusa quella porta
+Prima cento formulazioni prima ancora di parlare
+Ora penso mentre parto, tanto imparo ad atterrare
+
+Accelerazione, respirazione, articolazione
+Cambio metrica, direzione, senza perdere intenzione
+Non è voglia di impressionare, è recuperare il tempo
+Che ho passato ad aspettare che arrivasse il mio momento
+
+E se inciampo nella frase la correggo mentre corro
+Non mi fermo, non mi piego, non mi chiudo, non ritorno
+Alla versione che tremava solamente per un "no"
+Ora prendo quel silenzio, lo comprimo—
+
+E lo esplodo.
+
+[Beat Cut]
+
+[Bridge — Slow Rap]
+
+Lei, la scintilla
+Il catalizzatore
+
+Ma il fuoco era mio
+Da qualche parte, dentro
+
+Non cambio per qualcuno
+Cambio perché ho capito
+
+Che avere una voce
+Non significa fare casino
+
+Significa scegliere
+Quando usarla
+
+Quando difendersi
+Quando rischiarla
+
+E se domani lei non fosse qui
+Quella voce resterebbe ancora mia
+
+[Final Chorus — Hard Rap]
+
+Ora parlo, man, un fiume in piena
+Fuori dall'ombra, dentro la scena
+Chiedo, voglio, dico ciò che penso
+Ogni parola adesso ha il suo peso
+
+Ora parlo, non mi tengo niente
+Voce davanti, paura assente
+Prima silenzio, adesso saetta
+La mia voce colpisce diretta
+
+[Outro]
+
+Un clic
+Un interruttore
+
+Non mi hai dato una voce
+
+Mi hai fatto capire
+Che ce l'avevo già.
+
+Cover Art URL: https://cdn2.suno.ai/d86906ee-d747-4fac-9058-ff13e9bae4ce_cb6494a3.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Un Interruttore",
+  "play_count": 56,
+  "upvote_count": 2,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "d86906ee-d747-4fac-9058-ff13e9bae4ce",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/d86906ee-d747-4fac-9058-ff13e9bae4ce.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/d86906ee-d747-4fac-9058-ff13e9bae4ce.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/d86906ee-d747-4fac-9058-ff13e9bae4ce_cb6494a3.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/d86906ee-d747-4fac-9058-ff13e9bae4ce_cb6494a3.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "# Style prompt\n\npure technical rap, no singing, aggressive modern hip-hop, Italian male rapper, sharp articulate delivery, conversational opening flow, dry punchy vocal, dark minimal piano motif, hard drums, deep sub bass, tight kick and snare, sparse cinematic textures, escalating rhythmic intensity, complex internal rhymes, multisyllabic rhyme patterns, frequent flow switches, syncopated cadence, rapid-fire double-time rap section, extremely fast but clearly articulated extrabeat passage, breathless rhythmic climax, sudden beat switch before fast verse, drums intensify during double-time section, brief beat cuts for emphasis, controlled aggression, introspective lyrical tone, confident transformation arc, stripped-back chorus performed as rhythmic rap rather than singing, dramatic half-time bridge, explosive final verse, modern polished hip-hop production, 92 BPM with double-time sections perceived at 184 BPM\n",
+    "prompt": "# Un Interruttore\n\n[Intro — Spoken Rap]\n\nPrima non usciva niente\nZero\nAdesso prova a fermarmi\n\n[Verse 1]\n\nPrima, bro, un blocco\nMuto, non un fiato\nOgni parola un macigno\nTutto dentro, incasinato\n\nVolevo, sì, ma zero azione\nPaura in ogni situazione\nLei, uno sguardo, un flash\nCambio marcia, niente crash\n\nTesta bassa, passo corto\nOgni pensiero nasceva morto\nMille frasi nella mente\nMa davanti a te? Niente\n\nPoi qualcosa ha fatto clic\nCome un colpo sopra il beat\nNon mi sono trasformato\nHo soltanto sbloccato il fiato\n\n[Pre-Chorus — Rap Build]\n\nUn clic\nUn interruttore\nSpengo il dubbio\nAlzo il rumore\n\nNon cerco più\nLa frase perfetta\nApro la bocca\nE parte diretta\n\n[Chorus — Rap]\n\nOra parlo, man, un fiume in piena\nFuori dall'ombra, dentro la scena\nChiedo, voglio, dico ciò che penso\nOgni parola adesso ha il suo peso\n\nOra parlo, non mi tengo niente\nVoce davanti, paura assente\nPrima silenzio, adesso saetta\nLa mia voce colpisce diretta\n\n[Verse 2]\n\nPrima un fantasma, quasi invisibile\nOra ogni sillaba diventa tangibile\nNon sono un altro, sono sempre quello\nSolo che adesso non abbasso il livello\n\nHo tolto il freno dalla lingua e dal petto\nDico ciò che voglio senza chiedere permesso\nNon per arroganza, non per fare il grosso\nHo perso troppo tempo col pensiero addosso\n\nLei è stata scintilla, non destinazione\nHa aperto una porta nella mia prigione\nPoi ho capito mentre correvo più forte\nChe quella chiave era mia, non della sorte\n\n[Beat Switch]\n\n[Fast Verse — Double-Time / Extrabeat]\n\nParlavo piano perché dentro avevo il panico\nCalcolo, analizzo, paralizzo, tutto statico\nPratico silenzi come fossero una tattica\nMa ogni cosa trattenuta diventava problematica\n\nAdesso sputo sillabe, le libero, le incastro\nPasso dalla nebbia fino al centro del contrasto\nScatto, cambio passo, non mi basta stare zitto\nScrivo quello che non dico, poi lo dico sopra il ritmo\n\nNiente freno, niente filtro per la paura che mi blocca\nOgni dubbio che ritorna trova chiusa quella porta\nPrima cento formulazioni prima ancora di parlare\nOra penso mentre parto, tanto imparo ad atterrare\n\nAccelerazione, respirazione, articolazione\nCambio metrica, direzione, senza perdere intenzione\nNon è voglia di impressionare, è recuperare il tempo\nChe ho passato ad aspettare che arrivasse il mio momento\n\nE se inciampo nella frase la correggo mentre corro\nNon mi fermo, non mi piego, non mi chiudo, non ritorno\nAlla versione che tremava solamente per un \"no\"\nOra prendo quel silenzio, lo comprimo—\n\nE lo esplodo.\n\n[Beat Cut]\n\n[Bridge — Slow Rap]\n\nLei, la scintilla\nIl catalizzatore\n\nMa il fuoco era mio\nDa qualche parte, dentro\n\nNon cambio per qualcuno\nCambio perché ho capito\n\nChe avere una voce\nNon significa fare casino\n\nSignifica scegliere\nQuando usarla\n\nQuando difendersi\nQuando rischiarla\n\nE se domani lei non fosse qui\nQuella voce resterebbe ancora mia\n\n[Final Chorus — Hard Rap]\n\nOra parlo, man, un fiume in piena\nFuori dall'ombra, dentro la scena\nChiedo, voglio, dico ciò che penso\nOgni parola adesso ha il suo peso\n\nOra parlo, non mi tengo niente\nVoce davanti, paura assente\nPrima silenzio, adesso saetta\nLa mia voce colpisce diretta\n\n[Outro]\n\nUn clic\nUn interruttore\n\nNon mi hai dato una voce\n\nMi hai fatto capire\nChe ce l'avevo già.",
+    "type": "gen",
+    "duration": 203.08,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "style_weight": 0.66
+    },
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": true,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "renaissance",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-08-21T10:28:16.710Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "technical rap, aggressive modern hip-hop",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 0,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 44,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-23T07:00:29.553Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-05T21:26:33.457Z",
+  "playlistName": "Dede's Originals"
+}

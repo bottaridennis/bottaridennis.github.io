@@ -1,0 +1,306 @@
+Metadata for: Unknown-The_Beast.m4a
+Generated: 2026-09-25T15:12:08.264Z
+
+--- Track Information ---
+Title: The Beast
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 3b4e1ec1-d8a7-4fcf-952d-8a1288747f13
+
+--- Lyrics ---
+[Intro]
+[gritty vocals]
+[Chorus]
+Wake up
+I don't know my name
+My mind erased
+No family to claim
+[Verse]
+Cold light of day and a world that's on fire
+No gods and no kings and no hope to aspire
+My bones they are tired
+These stones tell a tale
+My blood and my sins keep me locked in this cell
+Nowhere to run and no heroes in sight
+How did this happen? I'm losing my mind
+[Pre-Chorus]
+As time slips away and my memory fades
+I can't escape what these people are saying
+[Chorus]
+The monster is back
+The monster is back
+I don't know my name
+The monster is back
+The monster is back
+My mind erased
+The monster is back
+The monster is back
+No family to claim
+The monster is back
+The monster is back
+[Verse 2]
+If I'm the villain of the story
+Can you be the hero?
+So that you can hold me
+Took the skin of a child and stitched it together
+In a world that's on fire
+In a world that's on fire
+[Bridge]
+The children are running
+They're trying to hide
+The women are screaming
+The men grab their knives
+No one is safe and there's nowhere to go
+The fear in their eyes
+And I think that I know
+As time slips away and my memory fades
+I can't escape what these people are saying
+[Chorus]
+The monster is back
+The monster is back
+I don't know my name
+The monster is back
+The monster is back
+My mind erased
+The monster is back
+The monster is back
+No family to claim
+The monster is back
+The monster is back
+[Outro]
+If I'm the villain of the story
+Can you be the hero?
+So that you can hold me
+Took the skin of a child and stitched it together
+In a world that's on fire
+In a world that's on fire
+If I'm the villain of the story
+Can you be the hero?
+So that you can hold me
+Took the skin of a child and stitched it together
+In a world that's on fire
+In a world that's on fire
+
+Cover Art URL: https://cdn2.suno.ai/883f850b-cbd2-4f4e-b354-a40e3a9e8df7.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "The Beast",
+  "play_count": 76,
+  "upvote_count": 2,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "3b4e1ec1-d8a7-4fcf-952d-8a1288747f13",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/3b4e1ec1-d8a7-4fcf-952d-8a1288747f13.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/3b4e1ec1-d8a7-4fcf-952d-8a1288747f13.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/883f850b-cbd2-4f4e-b354-a40e3a9e8df7.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/883f850b-cbd2-4f4e-b354-a40e3a9e8df7.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "dark cinematic horror, 92 BPM, detuned brass stabs, bass drum hits, bowed low strings, prepared piano clusters, taiko underhits, granular tape texture, mono room reverb, 1980s score mix, fractured march rhythm, unstable build breaks, collapsing arrangement, whispered male vocals, distressed chorus shouts, ominous, apocalyptic dread",
+    "prompt": "[Intro]\n[gritty vocals]\n[Chorus]\nWake up\nI don't know my name\nMy mind erased\nNo family to claim\n[Verse]\nCold light of day and a world that's on fire\nNo gods and no kings and no hope to aspire\nMy bones they are tired\nThese stones tell a tale\nMy blood and my sins keep me locked in this cell\nNowhere to run and no heroes in sight\nHow did this happen? I'm losing my mind\n[Pre-Chorus]\nAs time slips away and my memory fades\nI can't escape what these people are saying\n[Chorus]\nThe monster is back\nThe monster is back\nI don't know my name\nThe monster is back\nThe monster is back\nMy mind erased\nThe monster is back\nThe monster is back\nNo family to claim\nThe monster is back\nThe monster is back\n[Verse 2]\nIf I'm the villain of the story\nCan you be the hero?\nSo that you can hold me\nTook the skin of a child and stitched it together\nIn a world that's on fire\nIn a world that's on fire\n[Bridge]\nThe children are running\nThey're trying to hide\nThe women are screaming\nThe men grab their knives\nNo one is safe and there's nowhere to go\nThe fear in their eyes\nAnd I think that I know\nAs time slips away and my memory fades\nI can't escape what these people are saying\n[Chorus]\nThe monster is back\nThe monster is back\nI don't know my name\nThe monster is back\nThe monster is back\nMy mind erased\nThe monster is back\nThe monster is back\nNo family to claim\nThe monster is back\nThe monster is back\n[Outro]\nIf I'm the villain of the story\nCan you be the hero?\nSo that you can hold me\nTook the skin of a child and stitched it together\nIn a world that's on fire\nIn a world that's on fire\nIf I'm the villain of the story\nCan you be the hero?\nSo that you can hold me\nTook the skin of a child and stitched it together\nIn a world that's on fire\nIn a world that's on fire",
+    "type": "gen",
+    "duration": 274.88,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "style_weight": 0.7
+    },
+    "vox_render_mode": "strict",
+    "playlist_id": "00000000-0000-0000-0000-000000000000",
+    "playlist_clip_ids": [
+      "558182a8-5c9b-430c-b29e-c24bcdfeac88",
+      "4ba42535-61a9-407b-a579-728c8d6d3696"
+    ],
+    "task": "playlist_condition",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-01T10:24:52.158Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": true,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "cinematic horror, dark score, apocalyptic dread",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 66,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-24T06:24:19.864Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-05T21:29:46.706Z",
+  "playlistName": "Dede's Originals"
+}

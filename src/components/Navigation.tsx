@@ -9,7 +9,6 @@ import {
   ArrowUpRight, 
   Compass, 
   Sparkles,
-  Search,
   Sun,
   Moon
 } from 'lucide-react';
@@ -68,7 +67,6 @@ export default function Navigation({ activeProfileId, onNavigate, onOpenSearch }
                     <DBLogo className="w-full h-full group-hover:scale-105 transition-transform" />
                   </div>
                 </div>
-                <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-zinc-950 shadow-sm" title={t.onlineStatus} />
               </div>
 
               <div className="flex-1 min-w-0">
@@ -284,19 +282,7 @@ export default function Navigation({ activeProfileId, onNavigate, onOpenSearch }
             )}
           </button>
 
-          {/* 2. Search Modal Trigger */}
-          {onOpenSearch && (
-            <button
-              onClick={onOpenSearch}
-              className="w-8 h-8 rounded-xl bg-white/[0.04] border border-white/[0.08] text-zinc-300 hover:text-purple-300 hover:bg-white/[0.08] transition-all flex items-center justify-center cursor-pointer"
-              aria-label={t.searchPortfolio}
-              title={t.searchPortfolio}
-            >
-              <Search size={15} />
-            </button>
-          )}
-
-          {/* 3. Language Switcher (IT / EN) */}
+          {/* 2. Language Switcher (IT / EN) */}
           <button
             onClick={toggleLanguage}
             className="h-8 px-2 rounded-xl bg-white/[0.04] border border-white/[0.08] text-zinc-200 hover:text-white hover:bg-white/[0.08] transition-all flex items-center gap-1 text-[11px] font-mono-tech font-bold cursor-pointer"

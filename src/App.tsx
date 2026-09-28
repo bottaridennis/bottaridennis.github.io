@@ -15,7 +15,6 @@ import GameModal, { PlayableGame } from './components/GameModal';
 import { AudioProvider } from './context/AudioContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
-import SearchModal from './components/SearchModal';
 import { useLocalizedPortfolio } from './portfolioData';
 
 // App-like directional page transition variants
@@ -54,7 +53,6 @@ function AppContent() {
   const [activeProfileId, setActiveProfileId] = useState<string | null>(null);
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
   const [activeGameModal, setActiveGameModal] = useState<PlayableGame | null>(null);
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [navDirection, setNavDirection] = useState<'forward' | 'backward'>('forward');
   const prevDepthRef = useRef<number>(0);
   const mainRef = useRef<HTMLElement>(null);
@@ -69,27 +67,6 @@ function AppContent() {
     mainRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  // Global keyboard shortcut for search (⌘K or Ctrl+K or /)
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
-        return;
-      }
-
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        setIsSearchModalOpen((prev) => !prev);
-      } else if (e.key === '/' && !e.metaKey && !e.ctrlKey) {
-        e.preventDefault();
-        setIsSearchModalOpen(true);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   // Sync state with URL hash
   useEffect(() => {
@@ -149,7 +126,6 @@ function AppContent() {
       <Navigation 
         activeProfileId={activeProfileId} 
         onNavigate={handleNavigate} 
-        onOpenSearch={() => setIsSearchModalOpen(true)}
       />
       
       {/* Main Content Area */}
@@ -222,19 +198,9 @@ function AppContent() {
 
         {/* Footer with Integrated Quick Actions Toolbar */}
         <Footer 
-          onOpenSearch={() => setIsSearchModalOpen(true)}
           onScrollToTop={handleScrollToTop}
         />
       </div>
-
-      {/* Global Spotlight / Omni-Search Modal */}
-      <SearchModal 
-        isOpen={isSearchModalOpen}
-        onClose={() => setIsSearchModalOpen(false)}
-        onSelect={(profId, projId) => {
-          handleNavigate(profId, projId || null);
-        }}
-      />
 
       {/* Global "Play in Browser" Modal per i Videogiochi */}
       <GameModal 

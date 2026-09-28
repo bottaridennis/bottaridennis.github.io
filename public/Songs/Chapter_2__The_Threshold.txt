@@ -1,0 +1,250 @@
+Metadata for: Unknown-Chapter_2__The_Threshold.m4a
+Generated: 2026-09-25T15:14:06.805Z
+
+--- Track Information ---
+Title: Chapter 2: The Threshold
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: c11d6c08-5a6a-4728-8c38-3f746738c8f5
+
+--- Lyrics ---
+[Instrumental Intro]
+(Low drones, a feeling of deep space)
+
+[Verse 1]
+The path narrows down, where the stone turns to bone,
+Walking in silence, each breath like a moan.
+We left the red heart in the room far behind,
+But the rhythm is pulsing deep inside our mind.
+
+[Pre-Chorus]
+No map for this road, no sun for this sky,
+Where the mountains are breathing and time goes to die.
+A bridge waits ahead, made of jade and of dread,
+Between what is living and all that is dead.
+
+[Chorus]
+Step by step, the abyss is wide,
+With nowhere to run, and nowhere to hide.
+The veil is thin, the air is still,
+We are puppets of a forgotten will.
+
+[Outro]
+The bridge stands waiting.
+The crossing begins.
+(Sudden transition into the first character theme)
+
+Cover Art URL: https://cdn2.suno.ai/image_c11d6c08-5a6a-4728-8c38-3f746738c8f5.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Chapter 2: The Threshold",
+  "play_count": 32,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "c11d6c08-5a6a-4728-8c38-3f746738c8f5",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/c11d6c08-5a6a-4728-8c38-3f746738c8f5.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/c11d6c08-5a6a-4728-8c38-3f746738c8f5.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/image_c11d6c08-5a6a-4728-8c38-3f746738c8f5.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/image_large_c11d6c08-5a6a-4728-8c38-3f746738c8f5.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "Dark Cinematic Ambient, Orchestral Prelude, Low-end drone, Deep tension, Atmospheric, Slow-burn building, Gothic soundscape, Threatening silence, High-fidelity, Moody.",
+    "prompt": "[Instrumental Intro]\n(Low drones, a feeling of deep space)\r\n\r\n[Verse 1]\nThe path narrows down, where the stone turns to bone,\r\nWalking in silence, each breath like a moan.\r\nWe left the red heart in the room far behind,\r\nBut the rhythm is pulsing deep inside our mind.\r\n\r\n[Pre-Chorus]\nNo map for this road, no sun for this sky,\r\nWhere the mountains are breathing and time goes to die.\r\nA bridge waits ahead, made of jade and of dread,\r\nBetween what is living and all that is dead.\r\n\r\n[Chorus]\nStep by step, the abyss is wide,\r\nWith nowhere to run, and nowhere to hide.\r\nThe veil is thin, the air is still,\r\nWe are puppets of a forgotten will.\r\n\r\n[Outro]\nThe bridge stands waiting.\r\nThe crossing begins.\r\n(Sudden transition into the first character theme)",
+    "type": "gen",
+    "duration": 208.32,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": false,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "caption": "Chapter 2 of my book in a song",
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-06T10:24:27.547Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "Cinematic, Ambient, Orchestral",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 31,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-15T11:45:14.080Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Faded kingdom"
+}

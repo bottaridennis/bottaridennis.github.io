@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  Mail, 
   Instagram, 
   Linkedin, 
   Copy, 
@@ -8,7 +7,6 @@ import {
   Sun, 
   Moon, 
   Globe, 
-  Search, 
   ArrowUp 
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -20,7 +18,7 @@ interface FooterProps {
   onScrollToTop?: () => void;
 }
 
-export default function Footer({ onOpenSearch, onScrollToTop }: FooterProps) {
+export default function Footer({ onScrollToTop }: FooterProps) {
   const [copied, setCopied] = useState(false);
   const { t, language, toggleLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
@@ -38,23 +36,14 @@ export default function Footer({ onOpenSearch, onScrollToTop }: FooterProps) {
   return (
     <footer className="shrink-0 w-full border-t border-white/[0.08] bg-zinc-950/85 backdrop-blur-xl z-20 py-2.5 px-3 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-3 text-xs">
-        {/* Left Side: Status / Availability */}
+        {/* Left Side: Email & Identity */}
         <div className="flex items-center gap-2 text-zinc-400 min-w-0 shrink-0">
-          <span className="relative flex h-2 w-2 shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-          </span>
-          <span className="truncate text-[11px] sm:text-xs">
-            <span className="hidden sm:inline">{t.availableForWork}</span>
-            <span className="sm:hidden">{t.availableShort}</span>
-          </span>
-          <span className="hidden md:inline text-zinc-600 font-mono">·</span>
-          <span className="hidden md:inline text-[11px] text-zinc-400 font-mono">
+          <span className="text-[11px] sm:text-xs text-zinc-400 font-mono">
             {email}
           </span>
         </div>
 
-        {/* Center: Integrated Quick Actions Bar (Theme, Search, IT/EN Multilanguage, Scroll to Top) - DESKTOP ONLY */}
+        {/* Center: Integrated Quick Actions Bar (Theme, IT/EN Multilanguage, Scroll to Top) - DESKTOP ONLY */}
         <div className="hidden md:flex items-center gap-1 p-1 rounded-2xl bg-white/[0.04] border border-white/[0.08] shadow-inner backdrop-blur-md">
           {/* 1. Dark / Light Mode Toggle */}
           <button
@@ -88,25 +77,7 @@ export default function Footer({ onOpenSearch, onScrollToTop }: FooterProps) {
             </AnimatePresence>
           </button>
 
-          {/* 2. Spotlight Search Trigger */}
-          {onOpenSearch && (
-            <button
-              onClick={onOpenSearch}
-              className="px-2 py-1 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-all flex items-center gap-1.5 group text-[11px] cursor-pointer"
-              aria-label={t.searchPortfolio}
-              title={`${t.searchPortfolio} (${t.searchShortcut})`}
-            >
-              <Search size={14} className="text-zinc-400 group-hover:text-purple-400 transition-colors" />
-              <span className="hidden sm:inline font-medium text-zinc-300 group-hover:text-white">
-                {t.searchPortfolio}
-              </span>
-              <kbd className="hidden lg:inline-flex items-center px-1 py-0.2 rounded bg-white/[0.08] border border-white/10 text-[9px] font-mono text-zinc-400">
-                {t.searchShortcut}
-              </kbd>
-            </button>
-          )}
-
-          {/* 3. Multilanguage Switcher (IT / EN) */}
+          {/* 2. Multilanguage Switcher (IT / EN) */}
           <button
             onClick={toggleLanguage}
             className="px-2 py-1 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-all flex items-center gap-1.5 group text-[11px] cursor-pointer"
@@ -119,7 +90,7 @@ export default function Footer({ onOpenSearch, onScrollToTop }: FooterProps) {
             </span>
           </button>
 
-          {/* 4. Scroll to Top Button */}
+          {/* 3. Scroll to Top Button */}
           {onScrollToTop && (
             <button
               onClick={onScrollToTop}
@@ -132,7 +103,7 @@ export default function Footer({ onOpenSearch, onScrollToTop }: FooterProps) {
           )}
         </div>
 
-        {/* Right Side: Social Media Profiles, Quick Top, Contact CTA */}
+        {/* Right Side: Social Media Profiles & Copy Email */}
         <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0 justify-end">
           {/* Mobile Scroll to Top button */}
           {onScrollToTop && (
@@ -186,16 +157,6 @@ export default function Footer({ onOpenSearch, onScrollToTop }: FooterProps) {
             {copied ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
             <span className="hidden xl:inline">{copied ? t.copied : 'Email'}</span>
           </button>
-
-          {/* Primary Contact Button (mailto) */}
-          <a
-            href={`mailto:${email}?subject=Contatto%20dal%20Portfolio`}
-            className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-white text-zinc-950 hover:bg-zinc-200 font-semibold text-xs flex items-center gap-1.5 transition-all shadow-sm active:scale-95 whitespace-nowrap"
-            title={`Scrivi a ${email}`}
-          >
-            <Mail size={13} className="text-zinc-950 shrink-0" />
-            <span className="hidden xs:inline sm:inline">{t.contactMe}</span>
-          </a>
         </div>
       </div>
     </footer>

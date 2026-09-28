@@ -1,0 +1,330 @@
+Metadata for: Unknown-Spit_It_Out.m4a
+Generated: 2026-09-25T15:12:13.147Z
+
+--- Track Information ---
+Title: Spit It Out
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 50a39267-9152-4442-8856-49d285f1ad43
+
+--- Lyrics ---
+[Verse]
+My honey says she needs a room
+She doesn't want my chains and jewelry
+And
+God
+I hope she makes it through
+'Cause my baby
+She likes to worry
+But her ex-boyfriend thinks I'm weird
+He didn't like my long hair
+But my girl does
+But if you can't give me a chance
+Why should I give you one?
+
+[Chorus]
+They told me to be more like everyone else
+So I got rid of the one thing that made me myself
+If I really was a monster
+Would you even tell?
+So
+Come on
+Spit it out
+Come on
+Spit it out
+If you really think I'm a monster
+Would you even tell?
+So
+Come on
+Spit it out
+Come on
+Spit it out
+[Verse 2]
+I tried to play the nice guy
+I went to church
+But it was too white
+I went to hell
+But it was too hot
+I tried to care
+But I could not
+I wore my fancy shoes and tie
+I asked them why
+And they just said it's 'cause
+But if you can't give me a chance
+Why should I give you one?
+
+[Chorus]
+They told me to be more like everyone else
+So I got rid of the one thing that made me myself
+If I really was a monster
+Would you even tell?
+So
+Come on
+Spit it out
+Come on
+Spit it out
+If you really think I'm a monster
+Would you even tell?
+So
+Come on
+Spit it out
+Come on
+Spit it out
+
+[Bridge]
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+Come on
+Spit it out
+[Chorus]
+They told me to be more like everyone else
+So I got rid of the one thing that made me myself
+If I really was a monster
+Would you even tell?
+So
+Come on
+Spit it out
+Come on
+Spit it out
+If you really think I'm a monster
+Would you even tell?
+So
+Come on
+Spit it out
+Come on
+Spit it out
+
+Cover Art URL: https://cdn2.suno.ai/50a39267-9152-4442-8856-49d285f1ad43_b760444d.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Spit It Out",
+  "play_count": 62,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "50a39267-9152-4442-8856-49d285f1ad43",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/50a39267-9152-4442-8856-49d285f1ad43.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/50a39267-9152-4442-8856-49d285f1ad43.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/50a39267-9152-4442-8856-49d285f1ad43_b760444d.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/50a39267-9152-4442-8856-49d285f1ad43_b760444d.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "dark cinematic horror score, baroque strings, detuned piano, whisper choir, low brass stabs, tremolo violins, bowed cymbals, tape saturation, analog room mic, minor-key ostinato, 92 BPM, triplet pulse, march snare, escalating bridge, claustrophobic dread",
+    "prompt": "[Verse]\nMy honey says she needs a room\nShe doesn't want my chains and jewelry\nAnd\nGod\nI hope she makes it through\n'Cause my baby\nShe likes to worry\nBut her ex-boyfriend thinks I'm weird\nHe didn't like my long hair\nBut my girl does\nBut if you can't give me a chance\nWhy should I give you one?\n\n[Chorus]\nThey told me to be more like everyone else\nSo I got rid of the one thing that made me myself\nIf I really was a monster\nWould you even tell?\nSo\nCome on\nSpit it out\nCome on\nSpit it out\nIf you really think I'm a monster\nWould you even tell?\nSo\nCome on\nSpit it out\nCome on\nSpit it out\n[Verse 2]\nI tried to play the nice guy\nI went to church\nBut it was too white\nI went to hell\nBut it was too hot\nI tried to care\nBut I could not\nI wore my fancy shoes and tie\nI asked them why\nAnd they just said it's 'cause\nBut if you can't give me a chance\nWhy should I give you one?\n\n[Chorus]\nThey told me to be more like everyone else\nSo I got rid of the one thing that made me myself\nIf I really was a monster\nWould you even tell?\nSo\nCome on\nSpit it out\nCome on\nSpit it out\nIf you really think I'm a monster\nWould you even tell?\nSo\nCome on\nSpit it out\nCome on\nSpit it out\n\n[Bridge]\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\nCome on\nSpit it out\n[Chorus]\nThey told me to be more like everyone else\nSo I got rid of the one thing that made me myself\nIf I really was a monster\nWould you even tell?\nSo\nCome on\nSpit it out\nCome on\nSpit it out\nIf you really think I'm a monster\nWould you even tell?\nSo\nCome on\nSpit it out\nCome on\nSpit it out",
+    "type": "gen",
+    "duration": 219.04,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-02T09:51:35.164Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "cinematic horror, baroque, dark ambient",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 0,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 57,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-24T06:24:19.243Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-05T21:28:56.636Z",
+  "playlistName": "Dede's Originals"
+}

@@ -1,0 +1,330 @@
+Metadata for: Unknown-Ask_Me_Properly.m4a
+Generated: 2026-09-25T15:13:36.963Z
+
+--- Track Information ---
+Title: Ask Me Properly
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: faf8df7f-6621-4807-b696-5c5aaf11f421
+
+--- Lyrics ---
+[Verse 1]
+You said you knew exactly what you came for
+Chin held high at my apartment door
+I poured the drink, let the silence take its place
+Watched that certainty settle on your face
+
+You name the rules like they belong to you
+I let you talk, I let you make it sound true
+Then I move one inch and stop before you reach
+Leave the wanting right there within your speech
+
+[Pre-Chorus]
+No, don’t look away
+You started this game
+If you want my hands
+You have to say my name
+
+[Chorus]
+Ask me properly
+Drop that little crown
+Tell me what you need from me
+Don’t dress it up now
+I can wait all night
+While your brave words disappear
+Ask me properly
+Let me hear you clear
+
+[Verse 2]
+You tried a laugh, then blamed the room for being cold
+Tried to bargain with the posture you still hold
+I traced a line along the glass and watched you freeze
+Every answer getting softer than the last one, please
+
+You want the lock, but you keep guarding the key
+You want permission, but you’re performing for me
+So take a breath, let the practiced version fall
+There’s no prize for pretending you don’t want it all
+
+[Pre-Chorus]
+No, don’t turn away
+You started this game
+If you want my hands
+You have to say my name
+
+[Chorus]
+Ask me properly
+Drop that little crown
+Tell me what you need from me
+Don’t dress it up now
+I can wait all night
+While your brave words disappear
+Ask me properly
+Let me hear you clear
+
+[Bridge]
+There you are, without the armor
+No clever line, no last defense
+Say it slow, and mean it fully
+Wanting isn’t weakness
+
+[Final Chorus]
+Ask me properly
+Let your shoulders down
+Tell me what you need from me
+Say it out loud now
+I won’t move until
+That honest voice is all I hear
+Ask me properly
+Come a little near
+
+[Outro]
+That’s better
+No more hiding what you want
+Say it again
+And I’ll give you what you came for
+
+Cover Art URL: https://cdn2.suno.ai/faf8df7f-6621-4807-b696-5c5aaf11f421_aa7de020.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Ask Me Properly",
+  "play_count": 10,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "faf8df7f-6621-4807-b696-5c5aaf11f421",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/faf8df7f-6621-4807-b696-5c5aaf11f421.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/faf8df7f-6621-4807-b696-5c5aaf11f421.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/faf8df7f-6621-4807-b696-5c5aaf11f421_aa7de020.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/faf8df7f-6621-4807-b696-5c5aaf11f421_aa7de020.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-goose",
+  "metadata": {
+    "tags": "dark alternative R&B with electronic pop edges, slow grinding groove, dominant low male vocal, intimate whispered close-mic delivery, massive warm sub bass, minimal kick and dry snap percussion, sparse piano punctuations, tense verse restraint opening into a fuller sensual chorus, spacious nocturnal mix, controlled dynamics",
+    "prompt": "[Verse 1]\nYou said you knew exactly what you came for\nChin held high at my apartment door\nI poured the drink, let the silence take its place\nWatched that certainty settle on your face\n\nYou name the rules like they belong to you\nI let you talk, I let you make it sound true\nThen I move one inch and stop before you reach\nLeave the wanting right there within your speech\n\n[Pre-Chorus]\nNo, don’t look away\nYou started this game\nIf you want my hands\nYou have to say my name\n\n[Chorus]\nAsk me properly\nDrop that little crown\nTell me what you need from me\nDon’t dress it up now\nI can wait all night\nWhile your brave words disappear\nAsk me properly\nLet me hear you clear\n\n[Verse 2]\nYou tried a laugh, then blamed the room for being cold\nTried to bargain with the posture you still hold\nI traced a line along the glass and watched you freeze\nEvery answer getting softer than the last one, please\n\nYou want the lock, but you keep guarding the key\nYou want permission, but you’re performing for me\nSo take a breath, let the practiced version fall\nThere’s no prize for pretending you don’t want it all\n\n[Pre-Chorus]\nNo, don’t turn away\nYou started this game\nIf you want my hands\nYou have to say my name\n\n[Chorus]\nAsk me properly\nDrop that little crown\nTell me what you need from me\nDon’t dress it up now\nI can wait all night\nWhile your brave words disappear\nAsk me properly\nLet me hear you clear\n\n[Bridge]\nThere you are, without the armor\nNo clever line, no last defense\nSay it slow, and mean it fully\nWanting isn’t weakness\n\n[Final Chorus]\nAsk me properly\nLet your shoulders down\nTell me what you need from me\nSay it out loud now\nI won’t move until\nThat honest voice is all I hear\nAsk me properly\nCome a little near\n\n[Outro]\nThat’s better\nNo more hiding what you want\nSay it again\nAnd I’ll give you what you came for",
+    "gpt_description_prompt": "A consensual game of control where one person refuses to give the other what they want until they finally drop their confidence and openly ask for it.",
+    "type": "gen",
+    "duration": 191.2,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6-MINI",
+        "light": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        },
+        "dark": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "minimal_album_art",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-14T10:30:37.901Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative R&B, electronic pop",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 12,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-23T21:59:51.499Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

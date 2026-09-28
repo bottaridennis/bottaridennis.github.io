@@ -1,0 +1,261 @@
+Metadata for: Unknown-Chapter_1__The_Bearers_of_Silence.m4a
+Generated: 2026-09-25T15:14:02.398Z
+
+--- Track Information ---
+Title: Chapter 1: The Bearers of Silence
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 840956b4-d51c-406f-9029-4d5b176a4709
+
+--- Lyrics ---
+[Verse 1 - Myros & Aldren]
+(Deep Male Voice)
+The sun hides behind the torn clouds' shroud,
+Four shadows walking, far from the crowd.
+Myros, the vow, a blade yet untried,
+Aldren, the weight of the ghosts deep inside.
+
+[Verse 2 - Vala & Jhoren]
+(Ethereal Female Voice)
+Vala traces signs in the frozen air,
+Jhoren writes down what we shouldn't dare.
+The threshold opens, the stone starts to bend,
+Into the spiral, where all laws descend.
+
+[Chorus - Ensemble/Chorus]
+(Majestic and haunting)
+We are the Keepers, the Bearers of Silence,
+Walking the abyss, defying the violence.
+A heart pulsing dark, a memory rare,
+Hanging in shadows, breathing despair.
+
+[Bridge - Aldren Solo]
+(Intimate, breathy, intense)
+It’s warm to the touch, a rhythm profound,
+No foe to be seen, yet the pulse is unbound.
+Three long beats, one short, a code in the deep,
+My own heart is waking, the secrets I keep.
+Mimesis… Mimesis…
+Am I still me?
+
+[Outro]
+(Slow, fading heartbeat sound)
+The void is watching.
+The stone begins to breathe.
+The silence is waiting.
+(The beat slows down until it stops)
+
+Cover Art URL: https://cdn2.suno.ai/image_840956b4-d51c-406f-9029-4d5b176a4709.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Chapter 1: The Bearers of Silence",
+  "play_count": 40,
+  "upvote_count": 2,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "840956b4-d51c-406f-9029-4d5b176a4709",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/840956b4-d51c-406f-9029-4d5b176a4709.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/840956b4-d51c-406f-9029-4d5b176a4709.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/image_840956b4-d51c-406f-9029-4d5b176a4709.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/image_large_840956b4-d51c-406f-9029-4d5b176a4709.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "Dark ambient ritualistic musical, Eerie, Minimalist instrumentation, Deep resonant bass, Sharp mechanical percussion, Choral layers, Haunted atmosphere, Melancholic, Slow tempo, Cinematic sound design, Avant-garde theatre.",
+    "prompt": "[Verse 1 - Myros & Aldren]\n(Deep Male Voice)\r\nThe sun hides behind the torn clouds' shroud,\r\nFour shadows walking, far from the crowd.\r\nMyros, the vow, a blade yet untried,\r\nAldren, the weight of the ghosts deep inside.\r\n\r\n[Verse 2 - Vala & Jhoren]\n(Ethereal Female Voice)\r\nVala traces signs in the frozen air,\r\nJhoren writes down what we shouldn't dare.\r\nThe threshold opens, the stone starts to bend,\r\nInto the spiral, where all laws descend.\r\n\r\n[Chorus - Ensemble/Chorus]\n(Majestic and haunting)\r\nWe are the Keepers, the Bearers of Silence,\r\nWalking the abyss, defying the violence.\r\nA heart pulsing dark, a memory rare,\r\nHanging in shadows, breathing despair.\r\n\r\n[Bridge - Aldren Solo]\n(Intimate, breathy, intense)\r\nIt’s warm to the touch, a rhythm profound,\r\nNo foe to be seen, yet the pulse is unbound.\r\nThree long beats, one short, a code in the deep,\r\nMy own heart is waking, the secrets I keep.\r\nMimesis… Mimesis…\r\nAm I still me?\r\n\r\n[Outro]\n(Slow, fading heartbeat sound)\r\nThe void is watching.\r\nThe stone begins to breathe.\r\nThe silence is waiting.\r\n(The beat slows down until it stops)",
+    "type": "gen",
+    "duration": 191.28,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "caption": "First chapter of my book turned into a song",
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-06T08:55:50.752Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "dark ambient, avant-garde, cinematic",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 30,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-15T11:42:44.004Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Faded kingdom"
+}

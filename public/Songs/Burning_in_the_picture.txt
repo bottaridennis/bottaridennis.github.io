@@ -1,0 +1,302 @@
+Metadata for: Unknown-Burning_in_the_picture.m4a
+Generated: 2026-09-25T15:11:47.722Z
+
+--- Track Information ---
+Title: Burning in the picture
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: ba519c52-af50-4573-a393-2d4fcc2e98d1
+
+--- Lyrics ---
+[Verse 1]
+I woke up with painted eyes
+In a house that smiles too wide
+Little shoes on polished floors
+Tiny hands behind the doors
+
+The frame around me tightens slow
+Gold on wood and ice-cold glow
+I can scream, but only small
+Like a moth behind the wall
+
+[Pre-Chorus]
+And the air tastes like varnish and tears
+Every room keeps my fear for years
+You hung my heart where the dust can see
+Pinned and pretty, and not for free
+
+[Chorus]
+Burning in the picture
+Burning in the frame
+I can’t move, I can’t leave
+But I still feel the flame
+Burning in the picture
+Calling out my name
+Little dollhouse heaven
+Big black soul aflame
+
+[Verse 2]
+Teacups grin on crowded shelves
+All the dolls just haunt themselves
+There’s a crack in the nursery glass
+Where my shadow tries to pass
+
+I tap, tap, tap on the pane
+Like a pulse inside the grain
+Every night the house gets near
+And the walls begin to hear
+
+[Pre-Chorus]
+And the air tastes like varnish and tears
+Every room keeps my fear for years
+You hung my heart where the dust can see
+Pinned and pretty, and not for free
+
+[Chorus]
+Burning in the picture
+Burning in the frame
+I can’t move, I can’t leave
+But I still feel the flame
+Burning in the picture
+Calling out my name
+Little dollhouse heaven
+Big black soul aflame
+
+[Bridge]
+If you touch the glass, I’ll stain your hand
+I’m the last warm spark in this painted land
+Turn me sideways, I still won’t fade
+I was made for the dark you made
+
+[Final Chorus]
+Burning in the picture
+Burning in the frame
+I can’t move, I can’t leave
+But I still feel the flame
+Burning in the picture
+Calling out my name
+Little dollhouse heaven
+Big black soul aflame
+
+Burning in the picture
+Burning in the frame
+Take me out, take me out
+I’ll still burn the same
+
+Cover Art URL: https://cdn2.suno.ai/ba519c52-af50-4573-a393-2d4fcc2e98d1_6ee18206.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Burning in the picture",
+  "play_count": 62,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "ba519c52-af50-4573-a393-2d4fcc2e98d1",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/ba519c52-af50-4573-a393-2d4fcc2e98d1.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/ba519c52-af50-4573-a393-2d4fcc2e98d1.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/ba519c52-af50-4573-a393-2d4fcc2e98d1_6ee18206.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/ba519c52-af50-4573-a393-2d4fcc2e98d1_6ee18206.jpeg",
+  "major_model_version": "v5.5",
+  "model_name": "chirp-fenix",
+  "metadata": {
+    "tags": "baroque pop, eerie lullaby, music box melody, celesta arpeggios, toy piano motifs, bowed vibraphone, chamber strings, concertina drone, warped tape wow, spring reverb, close-mic room, 1960s film score, slow waltz, whispered choir, bittersweet farewell",
+    "prompt": "[Verse 1]\nI woke up with painted eyes\nIn a house that smiles too wide\nLittle shoes on polished floors\nTiny hands behind the doors\n\nThe frame around me tightens slow\nGold on wood and ice-cold glow\nI can scream, but only small\nLike a moth behind the wall\n\n[Pre-Chorus]\nAnd the air tastes like varnish and tears\nEvery room keeps my fear for years\nYou hung my heart where the dust can see\nPinned and pretty, and not for free\n\n[Chorus]\nBurning in the picture\nBurning in the frame\nI can’t move, I can’t leave\nBut I still feel the flame\nBurning in the picture\nCalling out my name\nLittle dollhouse heaven\nBig black soul aflame\n\n[Verse 2]\nTeacups grin on crowded shelves\nAll the dolls just haunt themselves\nThere’s a crack in the nursery glass\nWhere my shadow tries to pass\n\nI tap, tap, tap on the pane\nLike a pulse inside the grain\nEvery night the house gets near\nAnd the walls begin to hear\n\n[Pre-Chorus]\nAnd the air tastes like varnish and tears\nEvery room keeps my fear for years\nYou hung my heart where the dust can see\nPinned and pretty, and not for free\n\n[Chorus]\nBurning in the picture\nBurning in the frame\nI can’t move, I can’t leave\nBut I still feel the flame\nBurning in the picture\nCalling out my name\nLittle dollhouse heaven\nBig black soul aflame\n\n[Bridge]\nIf you touch the glass, I’ll stain your hand\nI’m the last warm spark in this painted land\nTurn me sideways, I still won’t fade\nI was made for the dark you made\n\n[Final Chorus]\nBurning in the picture\nBurning in the frame\nI can’t move, I can’t leave\nBut I still feel the flame\nBurning in the picture\nCalling out my name\nLittle dollhouse heaven\nBig black soul aflame\n\nBurning in the picture\nBurning in the frame\nTake me out, take me out\nI’ll still burn the same",
+    "type": "gen",
+    "duration": 267.32,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "audio_weight": 0.74
+    },
+    "vox_render_mode": "strict",
+    "task": "",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-06-30T21:09:33.639Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "baroque pop, eerie lullaby, 1960s film score",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 60,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T13:30:05.586Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

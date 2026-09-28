@@ -1,0 +1,342 @@
+Metadata for: Unknown-Obey.m4a
+Generated: 2026-09-25T15:13:33.174Z
+
+--- Track Information ---
+Title: Obey
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 9ee325e3-354b-4eec-8dee-230996ae2940
+
+--- Lyrics ---
+[Intro]
+Come closer
+No—closer than that
+
+[Verse 1]
+You keep your answer tucked behind your teeth
+I see it move when you look at me
+Hands on the table, eyes on mine
+Take one breath, then take your time
+
+You say you’re fine, but your voice goes thin
+That little pause gives everything in
+No need to hide, no need to play
+Tell me the truth in the clearest way
+
+[Pre-Chorus]
+I won’t guess
+I won’t decide
+You give the word
+You choose the side
+
+[Chorus]
+Obey
+Say exactly what you came to say
+Obey
+Let the wanting have its honest name
+No force, no fear, you know the door
+You could leave, but you ask for more
+Look at me and don’t look away
+If that’s what you want, then obey
+
+[Verse 2]
+You test the line, then step across
+A little heat, a little loss
+I hold the silence, let it stay
+Until you give the words away
+
+There’s power in the choice you make
+In every breath you let me take
+You’re not beneath me, you’re beside
+But tonight you want me in control tonight
+
+[Pre-Chorus]
+I won’t guess
+I won’t decide
+You give the word
+You choose the side
+
+[Chorus]
+Obey
+Say exactly what you came to say
+Obey
+Let the wanting have its honest name
+No force, no fear, you know the door
+You could leave, but you ask for more
+Look at me and don’t look away
+If that’s what you want, then obey
+
+[Bridge]
+Say it plain
+Say it slow
+Tell me where you want this to go
+One word yes
+One word no
+Your choice is the only law I know
+
+Now breathe in
+Now release
+Give me truth and I’ll give you peace
+When the morning finds us changed
+You’ll remember you named the flame
+
+[Final Chorus]
+Obey
+Say exactly what you came to say
+Obey
+Let the wanting have its honest name
+No force, no fear, you know the door
+You could leave, but you ask for more
+Look at me and don’t look away
+If that’s what you want, then obey
+
+[Outro]
+Again
+Not because I told you
+Because you want to
+Obey
+
+Cover Art URL: https://cdn2.suno.ai/dcf7b515-3e12-4b80-b740-889240b33a12.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Obey",
+  "play_count": 16,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "9ee325e3-354b-4eec-8dee-230996ae2940",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/9ee325e3-354b-4eec-8dee-230996ae2940.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/9ee325e3-354b-4eec-8dee-230996ae2940.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/dcf7b515-3e12-4b80-b740-889240b33a12.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/dcf7b515-3e12-4b80-b740-889240b33a12.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-goose",
+  "metadata": {
+    "tags": "dark sensual alternative R&B, seductive male baritone, extremely close-mic vocals, breathy whispers, dominant controlled delivery, slow heavy groove, deep distorted sub bass, minimal punchy drums, sparse tense arrangement, restrained verses opening into a commanding chorus, close dry vocal with selective low room ambience, polished nocturnal mix",
+    "prompt": "[Intro]\nCome closer\nNo—closer than that\n\n[Verse 1]\nYou keep your answer tucked behind your teeth\nI see it move when you look at me\nHands on the table, eyes on mine\nTake one breath, then take your time\n\nYou say you’re fine, but your voice goes thin\nThat little pause gives everything in\nNo need to hide, no need to play\nTell me the truth in the clearest way\n\n[Pre-Chorus]\nI won’t guess\nI won’t decide\nYou give the word\nYou choose the side\n\n[Chorus]\nObey\nSay exactly what you came to say\nObey\nLet the wanting have its honest name\nNo force, no fear, you know the door\nYou could leave, but you ask for more\nLook at me and don’t look away\nIf that’s what you want, then obey\n\n[Verse 2]\nYou test the line, then step across\nA little heat, a little loss\nI hold the silence, let it stay\nUntil you give the words away\n\nThere’s power in the choice you make\nIn every breath you let me take\nYou’re not beneath me, you’re beside\nBut tonight you want me in control tonight\n\n[Pre-Chorus]\nI won’t guess\nI won’t decide\nYou give the word\nYou choose the side\n\n[Chorus]\nObey\nSay exactly what you came to say\nObey\nLet the wanting have its honest name\nNo force, no fear, you know the door\nYou could leave, but you ask for more\nLook at me and don’t look away\nIf that’s what you want, then obey\n\n[Bridge]\nSay it plain\nSay it slow\nTell me where you want this to go\nOne word yes\nOne word no\nYour choice is the only law I know\n\nNow breathe in\nNow release\nGive me truth and I’ll give you peace\nWhen the morning finds us changed\nYou’ll remember you named the flame\n\n[Final Chorus]\nObey\nSay exactly what you came to say\nObey\nLet the wanting have its honest name\nNo force, no fear, you know the door\nYou could leave, but you ask for more\nLook at me and don’t look away\nIf that’s what you want, then obey\n\n[Outro]\nAgain\nNot because I told you\nBecause you want to\nObey",
+    "gpt_description_prompt": "A seductive power game between two consenting lovers. One takes control and keeps pushing the other to admit exactly what they want, turning restraint into surrender.  I want the title to be OBEY",
+    "type": "gen",
+    "duration": 179.96,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6-MINI",
+        "light": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        },
+        "dark": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "polaroid",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-14T10:32:23.605Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative R&B, dark, sensual",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 13,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:37:06.004Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

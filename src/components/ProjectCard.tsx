@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Project } from '../types';
-import { ArrowUpRight, Volume2, Globe } from 'lucide-react';
+import { ArrowUpRight, Volume2, Globe, Play, Pause } from 'lucide-react';
+import { useAudio } from '../context/AudioContext';
 
 interface ProjectCardProps {
   project: Project;
@@ -10,7 +11,9 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, themeColor, onClick }) => {
+  const { playTrack, currentTrack, isPlaying, togglePlay } = useAudio();
   const hasAudio = !!project.audioUrl;
+  const isCurrentTrack = currentTrack?.id === project.id;
   const hasPreview = project.links?.some(l => l.type === 'preview');
 
   return (
@@ -51,6 +54,40 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, themeColor, onClick 
             </span>
           )}
         </div>
+
+        {/* Quick Play Audio Button on Card Artwork */}
+        {hasAudio && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              if (isCurrentTrack && isPlaying) {
+                togglePlay();
+              } else {
+                playTrack({
+                  id: project.id,
+                  title: project.title,
+                  artist: 'Dennis Bottari · Suno AI',
+                  audioUrl: project.audioUrl!,
+                  imageUrl: project.imageUrl,
+                  profileId: 'musicista',
+                  description: project.description,
+                });
+              }
+            }}
+            className={`absolute bottom-3 right-3 p-3 rounded-full shadow-xl transition-all duration-300 cursor-pointer ${
+              isCurrentTrack && isPlaying
+                ? 'bg-purple-600 text-white scale-105 shadow-purple-600/50 ring-2 ring-purple-400'
+                : 'bg-zinc-950/85 hover:bg-purple-600 text-white hover:scale-110 border border-white/20'
+            }`}
+            title={isCurrentTrack && isPlaying ? 'Pausa' : 'Ascolta ora'}
+          >
+            {isCurrentTrack && isPlaying ? (
+              <Pause size={14} className="fill-current" />
+            ) : (
+              <Play size={14} className="fill-current ml-0.5" />
+            )}
+          </button>
+        )}
       </div>
 
       {/* Content */}

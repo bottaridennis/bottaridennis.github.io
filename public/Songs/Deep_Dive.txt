@@ -1,0 +1,320 @@
+Metadata for: Unknown-Deep_Dive.m4a
+Generated: 2026-09-25T15:13:01.057Z
+
+--- Track Information ---
+Title: Deep Dive
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: aa98f8ff-e983-4831-9a6a-f1c829ffa119
+
+--- Lyrics ---
+[Verse 1]
+Scendo giù nel blu
+Maschera stretta, fiato su
+Il mondo sopra fa rumore
+Qui ogni gesto ha più valore
+
+Sale il sale sulla pelle
+Conta i battiti, conta le stelle
+Luce corta sul mio vetro
+Ogni metro mi vuole indietro
+
+[Pre-Chorus]
+Più giù
+Più su il cuore
+Più giù
+Più forte il dolore
+
+Sento il muro
+Sento il richiamo
+Stringo i denti
+Non torno piano
+
+[Chorus]
+Deep dive, deep dive
+Scendo e non mi fermo
+Deep dive, deep dive
+Più fondo, più in mezzo
+Deep dive, deep dive
+La pressione mi fa vivo
+Deep dive, deep dive
+Vado giù, resto in tiro (deep dive)
+
+[Verse 2]
+Sette ombre nel riflesso
+Uno sbalzo, poi lo stesso
+Ogni colpo dentro il petto
+Fa più largo questo stretto
+
+Mani fredde, cuore acceso
+Sono qui, ma non mi arrendo
+Guardo il buio che mi prende
+E mi spinge sempre, sempre
+
+[Pre-Chorus]
+Più giù
+Più su il timore
+Più giù
+Più duro il battito
+
+Sotto il nero
+C’è un varco
+Io ci entro
+Senza fiato
+
+[Chorus]
+Deep dive, deep dive
+Scendo e non mi fermo
+Deep dive, deep dive
+Più fondo, più in mezzo
+Deep dive, deep dive
+La pressione mi fa vivo
+Deep dive, deep dive
+Vado giù, resto in tiro (deep dive)
+
+[Bridge]
+[Drop to low pulse]
+Niente aria
+Solo fede
+Niente calma
+Solo spinta
+
+Se mi chiami
+Non rispondo
+Sto nel fondo
+E ci vivo
+
+[Final Chorus]
+Deep dive, deep dive
+Scendo e non mi fermo
+Deep dive, deep dive
+Più fondo, più in mezzo
+Deep dive, deep dive
+La pressione mi fa vivo
+Deep dive, deep dive
+Vado giù, resto in tiro (deep dive)
+
+Cover Art URL: https://cdn2.suno.ai/4bfd2ca9-cb7d-4dd1-9f52-0e0edcb524c8.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Deep Dive",
+  "play_count": 46,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "aa98f8ff-e983-4831-9a6a-f1c829ffa119",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/aa98f8ff-e983-4831-9a6a-f1c829ffa119.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/aa98f8ff-e983-4831-9a6a-f1c829ffa119.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/4bfd2ca9-cb7d-4dd1-9f52-0e0edcb524c8.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/4bfd2ca9-cb7d-4dd1-9f52-0e0edcb524c8.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "# Style Prompt — Deep Dive\n\nunderwater cinematic technical rap, Italian male rapper, dark claustrophobic atmosphere, 88 BPM half-time, deep sub-bass like ocean pressure, sonar pulses, hydrophone textures, muffled metallic percussion, distant underwater drones, sparse dark piano, intimate close-mic breathing, calm controlled opening verses, increasing tension with depth, sudden beat switch into ultra-fast extrabeat, extreme rapid-fire delivery, progressive accelerations, double-time into triple-time and peak-speed bursts, relentless syllable density, long breathless passages, technical panic flow, heartbeat percussion accelerating with the vocals, sparse instrumental at maximum speed, abrupt beat cuts, decompression-stop silences, cinematic tension, no singing, no melodic hook, final surface section quiet and spacious",
+    "prompt": "[Verse 1]\nScendo giù nel blu\nMaschera stretta, fiato su\nIl mondo sopra fa rumore\nQui ogni gesto ha più valore\n\nSale il sale sulla pelle\nConta i battiti, conta le stelle\nLuce corta sul mio vetro\nOgni metro mi vuole indietro\n\n[Pre-Chorus]\nPiù giù\nPiù su il cuore\nPiù giù\nPiù forte il dolore\n\nSento il muro\nSento il richiamo\nStringo i denti\nNon torno piano\n\n[Chorus]\nDeep dive, deep dive\nScendo e non mi fermo\nDeep dive, deep dive\nPiù fondo, più in mezzo\nDeep dive, deep dive\nLa pressione mi fa vivo\nDeep dive, deep dive\nVado giù, resto in tiro (deep dive)\n\n[Verse 2]\nSette ombre nel riflesso\nUno sbalzo, poi lo stesso\nOgni colpo dentro il petto\nFa più largo questo stretto\n\nMani fredde, cuore acceso\nSono qui, ma non mi arrendo\nGuardo il buio che mi prende\nE mi spinge sempre, sempre\n\n[Pre-Chorus]\nPiù giù\nPiù su il timore\nPiù giù\nPiù duro il battito\n\nSotto il nero\nC’è un varco\nIo ci entro\nSenza fiato\n\n[Chorus]\nDeep dive, deep dive\nScendo e non mi fermo\nDeep dive, deep dive\nPiù fondo, più in mezzo\nDeep dive, deep dive\nLa pressione mi fa vivo\nDeep dive, deep dive\nVado giù, resto in tiro (deep dive)\n\n[Bridge]\n[Drop to low pulse]\nNiente aria\nSolo fede\nNiente calma\nSolo spinta\n\nSe mi chiami\nNon rispondo\nSto nel fondo\nE ci vivo\n\n[Final Chorus]\nDeep dive, deep dive\nScendo e non mi fermo\nDeep dive, deep dive\nPiù fondo, più in mezzo\nDeep dive, deep dive\nLa pressione mi fa vivo\nDeep dive, deep dive\nVado giù, resto in tiro (deep dive)",
+    "type": "gen",
+    "duration": 198.76,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "camcorder",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-08-24T13:11:52.795Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "is_contest_clip": false,
+  "has_hook": true,
+  "hook_preview_thumbnail_url": "https://cdn2.suno.ai/video_upload_0e39fd37-0fd5-4d99-bae0-56e8be2c36eb_video_upload_0e39fd37-0fd5-4d99-bae0-56e8be2c36eb_cover_snapshot_0s_1790073453_image.jpeg",
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "view_hooks",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 45,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-23T19:41:38.510Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-04T14:46:09.595Z",
+  "playlistName": "Dede's Originals"
+}

@@ -1,0 +1,340 @@
+Metadata for: Unknown-After_the_Applause.m4a
+Generated: 2026-09-25T15:13:58.930Z
+
+--- Track Information ---
+Title: After the Applause
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: fc5d1ae6-1b0b-4e43-a3ad-72dd72d5a219
+
+--- Lyrics ---
+[Verse 1]
+The house goes dark before I do
+A row of lights ignites my bones
+I step into the painted blue
+And suddenly I’m not alone
+
+The mirror leaves me by the door
+In sequins, sweat, and sharpened pride
+I wear a face they’re waiting for
+Then breathe like I’ve been resurrected inside
+
+[Pre-Chorus]
+And every hand in the air
+Feels like a prayer I can answer
+Every eye finds me there
+Like I’m something worth dancing around
+
+[Chorus]
+After the applause, I’m nobody at all
+Just a heartbeat in the wings when the last note falls
+But under the roar, when the bright lights rise
+I know my name by the look in their eyes
+I come alive when they call me home
+Then I disappear the second I’m alone
+After the applause, after the show
+Who am I when the curtain won’t close?
+
+[Verse 2]
+Backstage, the makeup starts to crack
+A gold mask drying on my skin
+My costume hangs there on the rack
+Like somebody else is living in it
+
+The dressing room is paper thin
+A buzzing lamp, a plastic chair
+The crowd is gone, the silence in
+And I can hear the vacancy in the air
+
+[Pre-Chorus]
+I am not proud of the need
+I just know what the need has done to me
+When they believe in the dream
+It’s the only time I can believe
+
+[Chorus]
+After the applause, I’m nobody at all
+Just a heartbeat in the wings when the last note falls
+But under the roar, when the bright lights rise
+I know my name by the look in their eyes
+I come alive when they call me home
+Then I disappear the second I’m alone
+After the applause, after the show
+Who am I when the curtain won’t close?
+
+[Bridge]
+Take off the shine
+Take off the smile
+Take off the lights for a little while
+There’s a room in me
+No one sees
+Where the echo hides and the real me breathes
+
+No roar, no roar
+Just the floor
+And my shoes by the dressing room door
+If they stop clapping
+Will I still feel
+Anything here that is mine and real?
+
+[Final Chorus]
+After the applause, there’s nothing to hold
+Just a name without a voice in the quiet cold
+The crowd disappears, the magic is gone
+And I’m standing where the brave pretend to be strong
+I come alive when they call me home
+Then I’m face to face with the silence below
+After the applause, after the glow
+I meet the shadow I’ve always known
+
+After the applause, I’m nobody at all
+Just a soul in the wings when the last note falls
+And the lights go down, and the room is still
+I hear my own breath, and it hurts, and it kills
+I wanted the love, I wanted the rain
+I wanted the sound to carry my name
+After the applause, after the show
+There’s only the ache underneath the glow
+
+[Outro]
+The curtain falls
+The room holds still
+And I am left
+With the silence under the thrill
+
+Cover Art URL: https://cdn2.suno.ai/e3953d15-af0b-4e61-8673-ca2802e82d4a.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "After the Applause",
+  "play_count": 8,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "fc5d1ae6-1b0b-4e43-a3ad-72dd72d5a219",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/fc5d1ae6-1b0b-4e43-a3ad-72dd72d5a219.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/fc5d1ae6-1b0b-4e43-a3ad-72dd72d5a219.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/e3953d15-af0b-4e61-8673-ca2802e82d4a.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/e3953d15-af0b-4e61-8673-ca2802e82d4a.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-hawk",
+  "metadata": {
+    "tags": "Theatrical alternative pop-rock with dramatic grand piano, warm bass, live drums, chamber strings, subtle electric guitar, and layered backing vocals; polished raw mix with orchestral swells and distant crowd texture; expressive male lead with intimate vulnerable verses and theatrical phrasing; 96 BPM, restrained opening expanding into huge cathartic choruses, stripped piano-voice bridge, empty quiet outro.",
+    "prompt": "[Verse 1]\nThe house goes dark before I do\nA row of lights ignites my bones\nI step into the painted blue\nAnd suddenly I’m not alone\n\nThe mirror leaves me by the door\nIn sequins, sweat, and sharpened pride\nI wear a face they’re waiting for\nThen breathe like I’ve been resurrected inside\n\n[Pre-Chorus]\nAnd every hand in the air\nFeels like a prayer I can answer\nEvery eye finds me there\nLike I’m something worth dancing around\n\n[Chorus]\nAfter the applause, I’m nobody at all\nJust a heartbeat in the wings when the last note falls\nBut under the roar, when the bright lights rise\nI know my name by the look in their eyes\nI come alive when they call me home\nThen I disappear the second I’m alone\nAfter the applause, after the show\nWho am I when the curtain won’t close?\n\n[Verse 2]\nBackstage, the makeup starts to crack\nA gold mask drying on my skin\nMy costume hangs there on the rack\nLike somebody else is living in it\n\nThe dressing room is paper thin\nA buzzing lamp, a plastic chair\nThe crowd is gone, the silence in\nAnd I can hear the vacancy in the air\n\n[Pre-Chorus]\nI am not proud of the need\nI just know what the need has done to me\nWhen they believe in the dream\nIt’s the only time I can believe\n\n[Chorus]\nAfter the applause, I’m nobody at all\nJust a heartbeat in the wings when the last note falls\nBut under the roar, when the bright lights rise\nI know my name by the look in their eyes\nI come alive when they call me home\nThen I disappear the second I’m alone\nAfter the applause, after the show\nWho am I when the curtain won’t close?\n\n[Bridge]\nTake off the shine\nTake off the smile\nTake off the lights for a little while\nThere’s a room in me\nNo one sees\nWhere the echo hides and the real me breathes\n\nNo roar, no roar\nJust the floor\nAnd my shoes by the dressing room door\nIf they stop clapping\nWill I still feel\nAnything here that is mine and real?\n\n[Final Chorus]\nAfter the applause, there’s nothing to hold\nJust a name without a voice in the quiet cold\nThe crowd disappears, the magic is gone\nAnd I’m standing where the brave pretend to be strong\nI come alive when they call me home\nThen I’m face to face with the silence below\nAfter the applause, after the glow\nI meet the shadow I’ve always known\n\nAfter the applause, I’m nobody at all\nJust a soul in the wings when the last note falls\nAnd the lights go down, and the room is still\nI hear my own breath, and it hurts, and it kills\nI wanted the love, I wanted the rain\nI wanted the sound to carry my name\nAfter the applause, after the show\nThere’s only the ache underneath the glow\n\n[Outro]\nThe curtain falls\nThe room holds still\nAnd I am left\nWith the silence under the thrill",
+    "gpt_description_prompt": "Write an emotional theatrical song called “After the Applause” about a performer who feels completely alive onstage but empty the moment the show ends. Contrast roaring crowds, bright lights and perfect smiles with silent dressing rooms, removed makeup, discarded costumes and the loneliness that follows. Let the lyrics explore dependence on attention without making the performer shallow; the applause should feel like the only moment they know who they are. Build toward a final chorus where the crowd disappears and they are forced to face the silence underneath the performance.\n",
+    "type": "gen",
+    "duration": 307.6,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "is_max_mode": true,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": false,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "black_and_white_photograph",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-18T07:56:18.537Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative pop-rock, theatrical",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 7,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-23T17:02:10.045Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-25T15:09:15.923Z",
+  "playlistName": "Dede's Originals"
+}

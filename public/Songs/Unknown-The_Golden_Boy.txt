@@ -1,0 +1,324 @@
+Metadata for: Unknown-The_Golden_Boy.m4a
+Generated: 2026-09-25T15:38:04.156Z
+
+--- Track Information ---
+Title: The Golden Boy
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 7a749b64-f1cd-473f-9d36-8fa13cea8581
+
+--- Lyrics ---
+[Verse 1]
+White shirt, gold watch, tie pulled straight
+They say I make it look effortless
+A perfect smile at the garden gate
+Every answer measured, every step rehearsed
+
+Trophies gather dust in a glass-lit room
+Names engraved where the fingerprints fade
+I lift my glass when the cameras bloom
+Give them the calm they came to praise
+
+[Pre-Chorus]
+But the collar cuts when the house goes still
+And I count every breath against my will
+
+[Chorus]
+I'm the golden boy, shining while I burn
+Holding up the ceiling, waiting for it to turn
+Everybody loves the light I wear
+Nobody asks what's happening under there
+I'm the golden boy, polished to the bone
+Applause in the doorway, panic when I'm alone
+If I keep on glowing, maybe no one will know
+I'm not made of gold—I'm burning below
+
+[Verse 2]
+Clean shoes lined by the bedroom wall
+Phone face down, but I hear it ring
+I tell my friends that I'm good through it all
+Then lose an hour trying not to feel a thing
+
+The hallway mirror knows the shape of fear
+Red eyes hidden under tailored sleeves
+I practice answers till they disappear
+And swallow every reason they might leave
+
+[Pre-Chorus]
+There are cracks beneath the lacquered skin
+Small enough to hide, wide enough to let it in
+
+[Chorus]
+I'm the golden boy, shining while I burn
+Holding up the ceiling, waiting for it to turn
+Everybody loves the light I wear
+Nobody asks what's happening under there
+I'm the golden boy, polished to the bone
+Applause in the doorway, panic when I'm alone
+If I keep on glowing, maybe no one will know
+I'm not made of gold—I'm burning below
+
+[Bridge]
+If I drop the smile, will the whole room leave?
+If I miss one mark, what will they believe?
+I am tired of being proof that nothing hurts
+Tired of making ruin look like it works
+
+[Breakdown]
+No more perfect posture
+No more silver tongue
+I can hear the silence
+When the cheering's done
+
+[Final Chorus]
+I'm the golden boy, look how bright I blaze
+A trophy with a heartbeat, disappearing in the praise
+Everybody wants the light I wear
+Nobody sees the smoke collecting in the air
+I'm the golden boy, cracking open wide
+All the fear I buried coming up alive
+If I keep on glowing, I will vanish in the show
+I'm not made of gold—I'm burning below
+
+[Outro]
+White shirt on the floor, gold watch by the bed
+No applause, no answers, just the words I never said
+I'm the golden boy
+And I'm trying to come home
+
+Cover Art URL: https://cdn2.suno.ai/76c010e9-a452-4023-80f8-c78954d1451d.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "The Golden Boy",
+  "play_count": 12,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "7a749b64-f1cd-473f-9d36-8fa13cea8581",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/7a749b64-f1cd-473f-9d36-8fa13cea8581.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/7a749b64-f1cd-473f-9d36-8fa13cea8581.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/76c010e9-a452-4023-80f8-c78954d1451d.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/76c010e9-a452-4023-80f8-c78954d1451d.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-hawk",
+  "metadata": {
+    "tags": "Dark cinematic alternative pop-rock at 98 BPM in a minor key. Restrained opening with intimate emotional male lead, sparse piano, atmospheric synth pads, tense pulsing bass, clean electric guitar, and subtle glitch textures. Build pressure through the verses with punchy live drums and electronic percussion. Explosive anthemic chorus with distorted guitars widening, layered backing vocals, and sharp dynamic contrast. Dramatic bridge strips to close vocal and piano before a massive cathartic final chorus. Polished, controlled mix that conceals instability underneath; melancholic, powerful, no bright pop sheen.",
+    "prompt": "[Verse 1]\nWhite shirt, gold watch, tie pulled straight\nThey say I make it look effortless\nA perfect smile at the garden gate\nEvery answer measured, every step rehearsed\n\nTrophies gather dust in a glass-lit room\nNames engraved where the fingerprints fade\nI lift my glass when the cameras bloom\nGive them the calm they came to praise\n\n[Pre-Chorus]\nBut the collar cuts when the house goes still\nAnd I count every breath against my will\n\n[Chorus]\nI'm the golden boy, shining while I burn\nHolding up the ceiling, waiting for it to turn\nEverybody loves the light I wear\nNobody asks what's happening under there\nI'm the golden boy, polished to the bone\nApplause in the doorway, panic when I'm alone\nIf I keep on glowing, maybe no one will know\nI'm not made of gold—I'm burning below\n\n[Verse 2]\nClean shoes lined by the bedroom wall\nPhone face down, but I hear it ring\nI tell my friends that I'm good through it all\nThen lose an hour trying not to feel a thing\n\nThe hallway mirror knows the shape of fear\nRed eyes hidden under tailored sleeves\nI practice answers till they disappear\nAnd swallow every reason they might leave\n\n[Pre-Chorus]\nThere are cracks beneath the lacquered skin\nSmall enough to hide, wide enough to let it in\n\n[Chorus]\nI'm the golden boy, shining while I burn\nHolding up the ceiling, waiting for it to turn\nEverybody loves the light I wear\nNobody asks what's happening under there\nI'm the golden boy, polished to the bone\nApplause in the doorway, panic when I'm alone\nIf I keep on glowing, maybe no one will know\nI'm not made of gold—I'm burning below\n\n[Bridge]\nIf I drop the smile, will the whole room leave?\nIf I miss one mark, what will they believe?\nI am tired of being proof that nothing hurts\nTired of making ruin look like it works\n\n[Breakdown]\nNo more perfect posture\nNo more silver tongue\nI can hear the silence\nWhen the cheering's done\n\n[Final Chorus]\nI'm the golden boy, look how bright I blaze\nA trophy with a heartbeat, disappearing in the praise\nEverybody wants the light I wear\nNobody sees the smoke collecting in the air\nI'm the golden boy, cracking open wide\nAll the fear I buried coming up alive\nIf I keep on glowing, I will vanish in the show\nI'm not made of gold—I'm burning below\n\n[Outro]\nWhite shirt on the floor, gold watch by the bed\nNo applause, no answers, just the words I never said\nI'm the golden boy\nAnd I'm trying to come home",
+    "gpt_description_prompt": "Write a dark, emotional song called “Golden Boy” about someone everyone admires because he always seems calm, successful and in control, while privately he is exhausted, anxious and slowly falling apart. Contrast the polished version everyone sees with the cracks he hides when nobody is watching. Use imagery of perfect smiles, gold, trophies, clean clothes and applause, then gradually reveal sleepless nights, pressure, isolation and fear of disappointing everyone. Let the chorus feel big and memorable, built around the idea that the “golden boy” is shining because he is burning himself out.\n\n\nalternative pop-rock, dark cinematic synths, emotional male lead vocal, intimate verses, tense pulsing bass, clean electric guitar, punchy live drums, subtle electronic percussion, minor key, restrained opening, gradually increasing pressure, atmospheric synth pads, layered backing vocals, sharp dynamic contrasts, explosive anthemic chorus, distorted guitars widening in the hook, subtle glitch textures, dramatic bridge with stripped-back vocal and piano, final chorus massive and cathartic, polished production hiding emotional instability underneath, melancholic but powerful, no bright pop sheen, 98 BPM\n",
+    "type": "gen",
+    "duration": 209.6,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": false,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "film_strip",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-15T15:15:55.245Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative pop-rock, cinematic",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 11,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:06:52.465Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

@@ -1,0 +1,307 @@
+Metadata for: Unknown-Break_out.m4a
+Generated: 2026-09-25T15:11:56.661Z
+
+--- Track Information ---
+Title: Break out
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 4ba42535-61a9-407b-a579-728c8d6d3696
+
+--- Lyrics ---
+[Verse 1]
+I wake with teeth in my mind
+Scraping the back of my skull
+Smile on the outside, fine
+Inside, the room goes dull
+
+There’s a fist in the walls of my ribs
+Pounding for a way to run
+I keep locking every door
+It keeps learning everyone
+
+[Pre-Chorus]
+I can hear it call my name
+From under skin and bone
+It wants the keys, it wants the blame
+It wants to make me known
+
+[Chorus]
+Break out, break out
+The dark is getting loud
+Break out, break out
+It wants to wear my mouth
+All of us, all of us
+Carry a blackened flame
+All of us, all of us
+Trying to escape the same
+
+[Verse 2]
+In the mirror, I see two eyes
+One for mercy, one for war
+Some nights I feed the wrong one first
+Then I don’t know me anymore
+
+I’ve held my breath in crowded rooms
+Like that could keep it in
+But every hurt I never spoke
+Finds a crack and climbs back in
+
+[Pre-Chorus]
+I can hear it call my name
+From under skin and bone
+It wants the keys, it wants the blame
+It wants to make me known
+
+[Chorus]
+Break out, break out
+The dark is getting loud
+Break out, break out
+It wants to wear my mouth
+All of us, all of us
+Carry a blackened flame
+All of us, all of us
+Trying to escape the same
+
+[Bridge]
+If I cut out every lie
+Would you still see me here?
+If I let the cage come down
+Would you stay, or disappear?
+
+I’m not clean, I’m not pure
+I’m just trying to hold
+The wreckage of my tender parts
+Against the pull of cold
+
+[Final Chorus]
+Break out, break out
+The dark is getting loud
+Break out, break out
+It wants to wear my mouth
+All of us, all of us
+Carry a blackened flame
+All of us, all of us
+Trying to escape the same
+
+Break out, break out
+I can feel it now
+Break out, break out
+But I’m still here somehow
+
+Cover Art URL: https://cdn2.suno.ai/3ef2e02c-03e2-49e1-80ad-1e95e02f3e7d.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Break out",
+  "play_count": 77,
+  "upvote_count": 3,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "4ba42535-61a9-407b-a579-728c8d6d3696",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/4ba42535-61a9-407b-a579-728c8d6d3696.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/4ba42535-61a9-407b-a579-728c8d6d3696.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/3ef2e02c-03e2-49e1-80ad-1e95e02f3e7d.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/3ef2e02c-03e2-49e1-80ad-1e95e02f3e7d.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "dark cinematic, horror soundtrack, haunted choir, detuned piano, bowed bass, distorted cello, sub bass drones, tape saturation, chamber reverb, granular ambience, 80 BPM, sparse pulse, asymmetric percussion, whispered textures, rising brass stabs, claustrophobic mix, ominous dread",
+    "prompt": "[Verse 1]\nI wake with teeth in my mind\nScraping the back of my skull\nSmile on the outside, fine\nInside, the room goes dull\n\nThere’s a fist in the walls of my ribs\nPounding for a way to run\nI keep locking every door\nIt keeps learning everyone\n\n[Pre-Chorus]\nI can hear it call my name\nFrom under skin and bone\nIt wants the keys, it wants the blame\nIt wants to make me known\n\n[Chorus]\nBreak out, break out\nThe dark is getting loud\nBreak out, break out\nIt wants to wear my mouth\nAll of us, all of us\nCarry a blackened flame\nAll of us, all of us\nTrying to escape the same\n\n[Verse 2]\nIn the mirror, I see two eyes\nOne for mercy, one for war\nSome nights I feed the wrong one first\nThen I don’t know me anymore\n\nI’ve held my breath in crowded rooms\nLike that could keep it in\nBut every hurt I never spoke\nFinds a crack and climbs back in\n\n[Pre-Chorus]\nI can hear it call my name\nFrom under skin and bone\nIt wants the keys, it wants the blame\nIt wants to make me known\n\n[Chorus]\nBreak out, break out\nThe dark is getting loud\nBreak out, break out\nIt wants to wear my mouth\nAll of us, all of us\nCarry a blackened flame\nAll of us, all of us\nTrying to escape the same\n\n[Bridge]\nIf I cut out every lie\nWould you still see me here?\nIf I let the cage come down\nWould you stay, or disappear?\n\nI’m not clean, I’m not pure\nI’m just trying to hold\nThe wreckage of my tender parts\nAgainst the pull of cold\n\n[Final Chorus]\nBreak out, break out\nThe dark is getting loud\nBreak out, break out\nIt wants to wear my mouth\nAll of us, all of us\nCarry a blackened flame\nAll of us, all of us\nTrying to escape the same\n\nBreak out, break out\nI can feel it now\nBreak out, break out\nBut I’m still here somehow",
+    "type": "gen",
+    "duration": 249.96,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "audio_weight": 0.74
+    },
+    "vox_render_mode": "strict",
+    "task": "",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-06-30T22:06:07.557Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "film score, horror soundtrack, dark ambient",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 70,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-24T06:24:19.518Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

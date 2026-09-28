@@ -1,0 +1,322 @@
+Metadata for: Unknown-Stay_Where_I_Can_See_You.m4a
+Generated: 2026-09-25T15:13:54.855Z
+
+--- Track Information ---
+Title: Stay Where I Can See You
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 9dbea3dc-0112-43cd-b509-5a873e1794b9
+
+--- Lyrics ---
+[Verse 1]
+Where did you go, sweetheart? Tell me with a smile
+You said you’d be home soon, but soon took quite a while
+Who was at the table? Why’d you leave me on read?
+I only ask because I worry what goes on inside your head
+
+[Pre-Chorus]
+Give me your little secrets, I’ll keep them safe and warm
+Call it a lock, call it a shelter, call it weathering the storm
+If I count the minutes, baby, that’s devotion in disguise
+I’m just making sure your heart still recognizes mine
+
+[Chorus]
+Stay where I can see you, darling, don’t drift out of frame
+Tell me who you’re talking to and say my name, say my name
+I can be your keeper, I can be your sweetest alibi
+If I hold you close enough, you’ll never have to say goodbye
+Stay where I can see you
+Stay where I can see you
+
+[Verse 2]
+I know your usual coffee, I know the route you take
+I know the friend who calls too late, the plans you almost make
+Send me one more picture, let me hear the room you’re in
+I’m not trying to cage you, I’m protecting what we have within
+
+[Pre-Chorus]
+You call it too much feeling, I call it being awake
+Love is just attention with a promise not to break
+If I ask you where you’ve been, it means I’m faithful to the bone
+If I make the world get smaller, you’ll be safer in our home
+
+[Chorus]
+Stay where I can see you, darling, don’t drift out of frame
+Tell me who you’re talking to and say my name, say my name
+I can be your keeper, I can be your sweetest alibi
+If I hold you close enough, you’ll never have to say goodbye
+Stay where I can see you
+Stay where I can see you
+
+[Bridge]
+Mother checked the locks twice, Father checked her phone
+They called it care at supper, called it love when they were alone
+Every door had eyes behind it, every silence had a price
+I learned that being wanted means you never roll the dice
+So if I sound familiar, if my hands feel like a chain
+That’s only how they taught me to keep somebody from walking away
+
+[Break]
+Where are you?
+Who are you with?
+Why did it take so long?
+Do you still love me?
+Smile when you answer
+
+[Final Chorus]
+Stay where I can see you, darling, I have made it clear
+Every road outside our little room just brings you back in here
+I can be your keeper, I can make the bad world disappear
+If I hold you close enough, you’ll only hear me in your ear
+Stay where I can see you, say you’ll never leave the line
+Tell me I’m your favorite place, tell me you are still mine
+Call it care, call it mercy, call it anything you like
+I call it love when I can watch you every minute of the night
+Stay where I can see you
+Stay where I can see you
+Stay where I can see you
+
+Cover Art URL: https://cdn2.suno.ai/91bcda09-1c2e-4f7d-b251-439b86b0ecd1.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Stay Where I Can See You",
+  "play_count": 10,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "9dbea3dc-0112-43cd-b509-5a873e1794b9",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/9dbea3dc-0112-43cd-b509-5a873e1794b9.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/9dbea3dc-0112-43cd-b509-5a873e1794b9.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/91bcda09-1c2e-4f7d-b251-439b86b0ecd1.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/91bcda09-1c2e-4f7d-b251-439b86b0ecd1.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-goose",
+  "metadata": {
+    "tags": "dark alternative pop, twisted nursery-rhyme energy, creepy playful mood, intimate female lead vocal, sly theatrical delivery, minor key, toy piano motifs, plucked music-box melody, deep sub bass, punchy minimal drums, dry handclaps, warped synth accents, whispered doubles, distorted vocal layers, sharp stop-start rhythm, mischievous melodic hook, restrained verses with controlled tension, chorus opening into heavier low-end and wider vocals, subtle breathy growls beneath clean production, polished surface hiding obsessive possessiveness underneath, seductive but unsettling tone, escalating intensity, confident final chorus, no supernatural elements, no bright major resolution, no EDM drop, 96 BPM",
+    "prompt": "[Verse 1]\nWhere did you go, sweetheart? Tell me with a smile\nYou said you’d be home soon, but soon took quite a while\nWho was at the table? Why’d you leave me on read?\nI only ask because I worry what goes on inside your head\n\n[Pre-Chorus]\nGive me your little secrets, I’ll keep them safe and warm\nCall it a lock, call it a shelter, call it weathering the storm\nIf I count the minutes, baby, that’s devotion in disguise\nI’m just making sure your heart still recognizes mine\n\n[Chorus]\nStay where I can see you, darling, don’t drift out of frame\nTell me who you’re talking to and say my name, say my name\nI can be your keeper, I can be your sweetest alibi\nIf I hold you close enough, you’ll never have to say goodbye\nStay where I can see you\nStay where I can see you\n\n[Verse 2]\nI know your usual coffee, I know the route you take\nI know the friend who calls too late, the plans you almost make\nSend me one more picture, let me hear the room you’re in\nI’m not trying to cage you, I’m protecting what we have within\n\n[Pre-Chorus]\nYou call it too much feeling, I call it being awake\nLove is just attention with a promise not to break\nIf I ask you where you’ve been, it means I’m faithful to the bone\nIf I make the world get smaller, you’ll be safer in our home\n\n[Chorus]\nStay where I can see you, darling, don’t drift out of frame\nTell me who you’re talking to and say my name, say my name\nI can be your keeper, I can be your sweetest alibi\nIf I hold you close enough, you’ll never have to say goodbye\nStay where I can see you\nStay where I can see you\n\n[Bridge]\nMother checked the locks twice, Father checked her phone\nThey called it care at supper, called it love when they were alone\nEvery door had eyes behind it, every silence had a price\nI learned that being wanted means you never roll the dice\nSo if I sound familiar, if my hands feel like a chain\nThat’s only how they taught me to keep somebody from walking away\n\n[Break]\nWhere are you?\nWho are you with?\nWhy did it take so long?\nDo you still love me?\nSmile when you answer\n\n[Final Chorus]\nStay where I can see you, darling, I have made it clear\nEvery road outside our little room just brings you back in here\nI can be your keeper, I can make the bad world disappear\nIf I hold you close enough, you’ll only hear me in your ear\nStay where I can see you, say you’ll never leave the line\nTell me I’m your favorite place, tell me you are still mine\nCall it care, call it mercy, call it anything you like\nI call it love when I can watch you every minute of the night\nStay where I can see you\nStay where I can see you\nStay where I can see you",
+    "gpt_description_prompt": "Write a dark, obsessive song called “Stay Where I Can See You” from the perspective of a woman who becomes intensely possessive in relationships because she is terrified of being abandoned. She wants to know where her partner is, who they are with, why they took too long to answer, and whether they still love her. She presents her jealousy as care and protection, convincing herself that control is proof of devotion. Let the lyrics gradually reveal that she learned this idea of love from the family she grew up in. Keep the tone seductive, playful and unsettling rather than supernatural, with obsession growing underneath a polished surface.\n\ndark alternative pop, twisted nursery-rhyme energy, creepy playful mood, intimate female lead vocal, sly theatrical delivery, minor key, toy piano motifs, plucked music-box melody, deep sub bass, punchy minimal drums, dry handclaps, warped synth accents, whispered doubles, distorted vocal layers, sharp stop-start rhythm, mischievous melodic hook, restrained verses with controlled tension, chorus opening into heavier low-end and wider vocals, subtle breathy growls beneath clean production, polished surface hiding obsessive possessiveness underneath, seductive but unsettling tone, escalating intensity, confident final chorus, no supernatural elements, no bright major resolution, no EDM drop, 96 BPM\n",
+    "type": "gen",
+    "duration": 206.8,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": false,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6-MINI",
+        "light": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        },
+        "dark": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "camcorder",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-21T15:20:22.043Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative pop, dark pop, theatrical pop",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 6,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:37:34.797Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

@@ -36,7 +36,10 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
 
   // Check if project has an HTML5 game link
   const playableGameLink = project.links?.find(
-    (l) => l.url.endsWith('.html') || l.label.toLowerCase().includes('gioca') || l.url.includes('game') || l.url.includes('shooter')
+    (l) =>
+      ((l.url.endsWith('.html') && (l.url.includes('game') || l.url.includes('shooter') || l.url.includes('spooky') || l.url.includes('RPG'))) ||
+       l.label.toLowerCase().includes('gioca') ||
+       l.label.toLowerCase().includes('play'))
   );
 
   const gameModalData: PlayableGame | null = playableGameLink ? {

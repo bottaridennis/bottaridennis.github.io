@@ -1,0 +1,297 @@
+Metadata for: Unknown-A_Matter_of_Perspective.m4a
+Generated: 2026-09-25T15:12:37.838Z
+
+--- Track Information ---
+Title: A Matter of Perspective
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: afc4a193-f089-4f34-a626-d8692c23aff0
+
+--- Lyrics ---
+[Verse 1]
+I count the cracks in my hands
+Like they mean something at all
+Same blood on my shirt
+Same shadow on the wall
+
+I said I was built for the war
+But I flinch at my own name
+One wrong step, one weak night
+And I wear a different face
+
+[Pre-Chorus]
+Tell me where the line is
+Tell me who decides
+When the knife in my pocket
+Turns to a reason why
+
+[Chorus]
+It’s all a matter of perspective
+(half the room will call me saint)
+It’s all a matter of perspective
+(the other half will spell my name)
+I keep asking in the mirror
+Am I hero, am I flame?
+It’s all a matter of perspective
+And I’m burning either way
+
+[Verse 2]
+I walked past the church doors
+With my knuckles split and sore
+They saw a broken man
+I saw a lock, I saw a door
+
+My mother said, “Child, choose”
+But the choice was never clean
+When the hunger gets to talking
+It makes a monster out of me
+
+[Pre-Chorus]
+Tell me where the line is
+Tell me who decides
+If the same black river
+Runs through both our lives
+
+[Chorus]
+It’s all a matter of perspective
+(half the room will call me saint)
+It’s all a matter of perspective
+(the other half will spell my name)
+I keep asking in the mirror
+Am I hero, am I flame?
+It’s all a matter of perspective
+And I’m burning either way
+
+[Bridge]
+If I save one broken soul
+Do you wash the blood away?
+If I break to keep us standing
+Do you still look at me the same?
+
+I can hear my heartbeat stutter
+Like a fist behind my teeth
+Maybe monsters are just heroes
+When the truth is hard to keep
+
+[Chorus]
+It’s all a matter of perspective
+(half the room will call me saint)
+It’s all a matter of perspective
+(the other half will spell my name)
+I keep asking in the mirror
+Am I hero, am I flame?
+It’s all a matter of perspective
+And I’m burning either way
+
+Cover Art URL: https://cdn2.suno.ai/afc4a193-f089-4f34-a626-d8692c23aff0_76c34ae0.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "A Matter of Perspective",
+  "play_count": 43,
+  "upvote_count": 0,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "afc4a193-f089-4f34-a626-d8692c23aff0",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/afc4a193-f089-4f34-a626-d8692c23aff0.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/afc4a193-f089-4f34-a626-d8692c23aff0.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/afc4a193-f089-4f34-a626-d8692c23aff0_76c34ae0.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/afc4a193-f089-4f34-a626-d8692c23aff0_76c34ae0.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "Dark frantic musical, nervous piano staccato, sharp mechanical rhythm, deep male voice, existential dread, dramatic shift to silence, 110 BPM",
+    "prompt": "[Verse 1]\nI count the cracks in my hands\nLike they mean something at all\nSame blood on my shirt\nSame shadow on the wall\n\nI said I was built for the war\nBut I flinch at my own name\nOne wrong step, one weak night\nAnd I wear a different face\n\n[Pre-Chorus]\nTell me where the line is\nTell me who decides\nWhen the knife in my pocket\nTurns to a reason why\n\n[Chorus]\nIt’s all a matter of perspective\n(half the room will call me saint)\nIt’s all a matter of perspective\n(the other half will spell my name)\nI keep asking in the mirror\nAm I hero, am I flame?\nIt’s all a matter of perspective\nAnd I’m burning either way\n\n[Verse 2]\nI walked past the church doors\nWith my knuckles split and sore\nThey saw a broken man\nI saw a lock, I saw a door\n\nMy mother said, “Child, choose”\nBut the choice was never clean\nWhen the hunger gets to talking\nIt makes a monster out of me\n\n[Pre-Chorus]\nTell me where the line is\nTell me who decides\nIf the same black river\nRuns through both our lives\n\n[Chorus]\nIt’s all a matter of perspective\n(half the room will call me saint)\nIt’s all a matter of perspective\n(the other half will spell my name)\nI keep asking in the mirror\nAm I hero, am I flame?\nIt’s all a matter of perspective\nAnd I’m burning either way\n\n[Bridge]\nIf I save one broken soul\nDo you wash the blood away?\nIf I break to keep us standing\nDo you still look at me the same?\n\nI can hear my heartbeat stutter\nLike a fist behind my teeth\nMaybe monsters are just heroes\nWhen the truth is hard to keep\n\n[Chorus]\nIt’s all a matter of perspective\n(half the room will call me saint)\nIt’s all a matter of perspective\n(the other half will spell my name)\nI keep asking in the mirror\nAm I hero, am I flame?\nIt’s all a matter of perspective\nAnd I’m burning either way",
+    "type": "gen",
+    "duration": 197.28,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": false,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-13T19:29:33.285Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "dark, mechanical, existential",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 43,
+    "skip_count": 0,
+    "flagged": false,
+    "updated_at": "2026-09-23T06:51:29.889Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

@@ -1,0 +1,337 @@
+Metadata for: Unknown-When_the_Door_Closes.m4a
+Generated: 2026-09-25T15:13:28.016Z
+
+--- Track Information ---
+Title: When the Door Closes
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: cc3383ea-4921-441e-99a4-158917f6431c
+
+--- Lyrics ---
+[Verse 1]
+In the hallway, you adjust your sleeve
+I ask about the weather, you barely look at me
+Two careful strangers under borrowed light
+Polite little smiles, everything right
+
+You pass the salt, I say, “Thank you”
+No one sees what I’m waiting to do
+Your hand stays still when the others are near
+But the second they leave, you pull me here
+
+[Pre-Chorus]
+One turn of the lock, one breath in the dark
+Your careful face falls apart
+The room gets smaller, the silence gets loud
+We lose every rule we allowed
+
+[Chorus]
+When the door closes, you become mine
+No more perfect posture, no more alibi
+Out there, we’re harmless, just passing through
+In here, every secret points to you
+When the door closes, don’t say my name
+Let the red light flicker, let the room take shape
+We can be strangers when morning comes through
+But behind this door, I know what you do
+
+[Verse 2]
+Your jacket lands across the chair
+White shirt hanging like you left it there
+You move so slowly, making me wait
+Like anticipation is something we taste
+
+I know the version you show to the room
+Soft voice, steady eyes, perfume
+But your fingers speak in a different way
+They find the truth you hide all day
+
+[Pre-Chorus]
+One turn of the lock, one breath in the dark
+Your careful face falls apart
+The outside world can keep its view
+There’s only one thing left to prove
+
+[Chorus]
+When the door closes, you become mine
+No more perfect posture, no more alibi
+Out there, we’re harmless, just passing through
+In here, every secret points to you
+When the door closes, don’t say my name
+Let the red light flicker, let the room take shape
+We can be strangers when morning comes through
+But behind this door, I know what you do
+
+[Bridge]
+Tomorrow, you’ll hold your coffee like nothing changed
+Ask me if I slept, keep your voice arranged
+I’ll nod in the hallway, you’ll glance away
+And carry this room through the rest of the day
+
+But tonight, leave the silence on the chain
+Let every almost touch sharpen the flame
+No witness, no promise, no need to explain
+Just close it again, and undo me the same
+
+[Final Chorus]
+When the door closes, you become mine
+All that perfect composure left outside
+Out there, we’re harmless, just passing through
+In here, every secret points to you
+When the door closes, don’t say my name
+Let the red light flicker, let the room take shape
+We can be strangers when morning comes through
+But behind this door, I know what you do
+
+[Outro]
+At the threshold, we’re ordinary
+Past the lock, we’re temporary
+Keep your face calm when the hallway calls
+I’ll be waiting where the careful version falls
+
+Cover Art URL: https://cdn2.suno.ai/6dacfa12-d8d6-41cc-9eff-498f7ceee503.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "When the Door Closes",
+  "play_count": 10,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "cc3383ea-4921-441e-99a4-158917f6431c",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/cc3383ea-4921-441e-99a4-158917f6431c.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/cc3383ea-4921-441e-99a4-158917f6431c.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/6dacfa12-d8d6-41cc-9eff-498f7ceee503.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/6dacfa12-d8d6-41cc-9eff-498f7ceee503.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-hawk",
+  "metadata": {
+    "tags": "Dark sensual alternative pop and alternative R&B, 88 BPM, deep male vocal with breathy intimate delivery, slow confident groove, pulsing sub-bass, dry close kick, sparse percussion, warm Rhodes piano, muted electric guitar, analog synth pads, whispered backing vocals, sleek cinematic production, addictive chorus, tension increasing section by section, subtle distorted textures, restrained verses opening into a magnetic chorus, intimate secretive atmosphere, low-key crimson-and-charcoal room imagery, clean modern mix with close vocal detail",
+    "prompt": "[Verse 1]\nIn the hallway, you adjust your sleeve\nI ask about the weather, you barely look at me\nTwo careful strangers under borrowed light\nPolite little smiles, everything right\n\nYou pass the salt, I say, “Thank you”\nNo one sees what I’m waiting to do\nYour hand stays still when the others are near\nBut the second they leave, you pull me here\n\n[Pre-Chorus]\nOne turn of the lock, one breath in the dark\nYour careful face falls apart\nThe room gets smaller, the silence gets loud\nWe lose every rule we allowed\n\n[Chorus]\nWhen the door closes, you become mine\nNo more perfect posture, no more alibi\nOut there, we’re harmless, just passing through\nIn here, every secret points to you\nWhen the door closes, don’t say my name\nLet the red light flicker, let the room take shape\nWe can be strangers when morning comes through\nBut behind this door, I know what you do\n\n[Verse 2]\nYour jacket lands across the chair\nWhite shirt hanging like you left it there\nYou move so slowly, making me wait\nLike anticipation is something we taste\n\nI know the version you show to the room\nSoft voice, steady eyes, perfume\nBut your fingers speak in a different way\nThey find the truth you hide all day\n\n[Pre-Chorus]\nOne turn of the lock, one breath in the dark\nYour careful face falls apart\nThe outside world can keep its view\nThere’s only one thing left to prove\n\n[Chorus]\nWhen the door closes, you become mine\nNo more perfect posture, no more alibi\nOut there, we’re harmless, just passing through\nIn here, every secret points to you\nWhen the door closes, don’t say my name\nLet the red light flicker, let the room take shape\nWe can be strangers when morning comes through\nBut behind this door, I know what you do\n\n[Bridge]\nTomorrow, you’ll hold your coffee like nothing changed\nAsk me if I slept, keep your voice arranged\nI’ll nod in the hallway, you’ll glance away\nAnd carry this room through the rest of the day\n\nBut tonight, leave the silence on the chain\nLet every almost touch sharpen the flame\nNo witness, no promise, no need to explain\nJust close it again, and undo me the same\n\n[Final Chorus]\nWhen the door closes, you become mine\nAll that perfect composure left outside\nOut there, we’re harmless, just passing through\nIn here, every secret points to you\nWhen the door closes, don’t say my name\nLet the red light flicker, let the room take shape\nWe can be strangers when morning comes through\nBut behind this door, I know what you do\n\n[Outro]\nAt the threshold, we’re ordinary\nPast the lock, we’re temporary\nKeep your face calm when the hallway calls\nI’ll be waiting where the careful version falls",
+    "gpt_description_prompt": "Lyricist Prompt\nWrite a seductive song about two people who behave perfectly normally around everyone else, but completely change when the door closes behind them. Focus on secrecy, anticipation and the contrast between their public and private selves.\n\nStyle Prompt\ndark sensual alt-pop, alternative R&B, deep male vocal, breathy intimate delivery, pulsing bassline, dry kick, sparse percussion, warm Rhodes piano, muted guitar, analog synth pads, whispered backing vocals, slow confident groove, sleek cinematic production, addictive chorus, tension gradually increasing, subtle distorted textures, intimate and secretive atmosphere, 88 BPM\n\nImage Concept\nUna porta scura appena chiusa vista dall’interno, luce rossa filtrata da sotto, una giacca e una camicia abbandonate su una sedia.",
+    "type": "gen",
+    "duration": 265.48,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "airbrush",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false,
+    "artist_reference_warning": {
+      "artist_to_tag_mapping": {
+        "rossa": [
+          "Pop",
+          "Ballad",
+          "R&B"
+        ]
+      },
+      "modified_prompt": "lyricist prompt write a seductive song about two people who behave perfectly normally around everyone else but completely change when the door closes behind them focus on secrecy anticipation and the contrast between their public and private selves style prompt dark sensual alt pop alternative r b deep male vocal breathy intimate delivery pulsing bassline dry kick sparse percussion warm rhodes piano muted guitar analog synth pads whispered backing vocals slow confident groove sleek cinematic production addictive chorus tension gradually increasing subtle distorted textures intimate and secretive atmosphere 88 bpm image concept una porta scura appena chiusa vista dall interno luce Pop, Ballad, R&B filtrata da sotto una giacca e una camicia abbandonate su una sedia"
+    }
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-14T13:15:04.275Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative pop, alternative R&B",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 0,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 10,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:37:04.924Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

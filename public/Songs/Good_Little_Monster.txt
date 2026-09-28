@@ -1,0 +1,334 @@
+Metadata for: Unknown-Good_Little_Monster.m4a
+Generated: 2026-09-25T15:13:13.032Z
+
+--- Track Information ---
+Title: Good Little Monster
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: a5a4dae2-877e-4d1b-a289-8baebc2044fc
+
+--- Lyrics ---
+[Intro]
+One, two—chin up straight
+Three, four—smile and wait
+
+[Verse 1]
+I learned to fold my elbows in
+And tuck my little thunder under
+“Pardon me” with porcelain teeth
+A pocket full of hidden hunger
+Hands washed clean, cuffs buttoned tight
+Shoes lined up beside the bed
+I kept the wolves behind my tongue
+And served them tea inside my head
+
+[Pre-Chorus]
+Yes, ma’am, no, sir, isn’t it sweet?
+Perfect posture, polished feet
+Every little “please” and “thanks”
+Built a cage beneath the planks
+
+[Chorus]
+I’m your good little monster, darling
+Neat as a pin, but the pin is sparking
+Clean little hands, while the claws grow longer
+Smile for the room, make the silence stronger
+I’m your good little monster, see?
+All your rules made a home in me
+Now I’m done saying sorry for the teeth I hide
+Let the nice little beast come outside
+
+[Verse 2]
+I never slammed a single door
+I only closed them very gently
+Never told you what I wanted
+Just arranged my face politely
+Kept desire in a sugar bowl
+Kept my temper under glass
+Wrote “I’m fine” in careful ink
+While something scratched beneath the mask
+
+[Pre-Chorus]
+Yes, ma’am, no, sir, count to ten
+Bite the word and smile again
+Every swallowed little spark
+Learned the map around my heart
+
+[Chorus]
+I’m your good little monster, darling
+Neat as a pin, but the pin is sparking
+Clean little hands, while the claws grow longer
+Smile for the room, make the silence stronger
+I’m your good little monster, see?
+All your rules made a home in me
+Now I’m done saying sorry for the teeth I hide
+Let the nice little beast come outside
+
+[Bridge]
+Hush now, hush now, don’t be rude
+Mind your manners, mind your mood
+But the floorboards know my name
+And the wallpaper repeats the game
+I can laugh without permission
+I can want without confession
+I can wear this crooked grin
+And let the honest animal in
+
+[Break]
+Clean hands—dirty secret
+Perfect—until I mean it
+Head high—mask low
+Watch the little garden grow
+
+[Final Chorus]
+I’m my own good little monster, darling
+Neat as a pin, but the pin is sparking
+Clean little hands, now they open the door
+I don’t need your pardon anymore
+I’m my own good little monster, free
+Not what you trained me to pretend to be
+I’ll keep the manners, lose the alibi
+Let the nice little beast step into the light
+
+[Outro]
+One, two—chin up straight
+Three, four—no more waiting
+Goodnight, goodnight, close the book
+Keep your rules—I know how they look
+
+Cover Art URL: https://cdn2.suno.ai/1121b690-d9c7-4edf-bfab-19c442c0fe8b.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Good Little Monster",
+  "play_count": 26,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "a5a4dae2-877e-4d1b-a289-8baebc2044fc",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/a5a4dae2-877e-4d1b-a289-8baebc2044fc.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/a5a4dae2-877e-4d1b-a289-8baebc2044fc.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/1121b690-d9c7-4edf-bfab-19c442c0fe8b.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/1121b690-d9c7-4edf-bfab-19c442c0fe8b.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-hawk",
+  "metadata": {
+    "tags": "dark alternative pop, twisted nursery-rhyme energy, creepy playful mood, intimate male lead vocal, sly theatrical delivery, minor key, toy piano motifs, plucked music-box melody, deep sub bass, punchy minimal drums, dry handclaps, warped synth accents, whispered doubles, distorted vocal layers, sharp stop-start rhythm, mischievous melodic hook, restrained verses with controlled tension, chorus opening into heavier low-end and wider vocals, subtle growling textures beneath clean production, polished surface hiding something feral underneath, escalating intensity, confident final chorus, no bright major resolution, no EDM drop, 96 BPM",
+    "prompt": "[Intro]\nOne, two—chin up straight\nThree, four—smile and wait\n\n[Verse 1]\nI learned to fold my elbows in\nAnd tuck my little thunder under\n“Pardon me” with porcelain teeth\nA pocket full of hidden hunger\nHands washed clean, cuffs buttoned tight\nShoes lined up beside the bed\nI kept the wolves behind my tongue\nAnd served them tea inside my head\n\n[Pre-Chorus]\nYes, ma’am, no, sir, isn’t it sweet?\nPerfect posture, polished feet\nEvery little “please” and “thanks”\nBuilt a cage beneath the planks\n\n[Chorus]\nI’m your good little monster, darling\nNeat as a pin, but the pin is sparking\nClean little hands, while the claws grow longer\nSmile for the room, make the silence stronger\nI’m your good little monster, see?\nAll your rules made a home in me\nNow I’m done saying sorry for the teeth I hide\nLet the nice little beast come outside\n\n[Verse 2]\nI never slammed a single door\nI only closed them very gently\nNever told you what I wanted\nJust arranged my face politely\nKept desire in a sugar bowl\nKept my temper under glass\nWrote “I’m fine” in careful ink\nWhile something scratched beneath the mask\n\n[Pre-Chorus]\nYes, ma’am, no, sir, count to ten\nBite the word and smile again\nEvery swallowed little spark\nLearned the map around my heart\n\n[Chorus]\nI’m your good little monster, darling\nNeat as a pin, but the pin is sparking\nClean little hands, while the claws grow longer\nSmile for the room, make the silence stronger\nI’m your good little monster, see?\nAll your rules made a home in me\nNow I’m done saying sorry for the teeth I hide\nLet the nice little beast come outside\n\n[Bridge]\nHush now, hush now, don’t be rude\nMind your manners, mind your mood\nBut the floorboards know my name\nAnd the wallpaper repeats the game\nI can laugh without permission\nI can want without confession\nI can wear this crooked grin\nAnd let the honest animal in\n\n[Break]\nClean hands—dirty secret\nPerfect—until I mean it\nHead high—mask low\nWatch the little garden grow\n\n[Final Chorus]\nI’m my own good little monster, darling\nNeat as a pin, but the pin is sparking\nClean little hands, now they open the door\nI don’t need your pardon anymore\nI’m my own good little monster, free\nNot what you trained me to pretend to be\nI’ll keep the manners, lose the alibi\nLet the nice little beast step into the light\n\n[Outro]\nOne, two—chin up straight\nThree, four—no more waiting\nGoodnight, goodnight, close the book\nKeep your rules—I know how they look",
+    "gpt_description_prompt": "Write a dark, catchy song called “Good Little Monster” about someone who spent their whole life being obedient, polite and easy to control, constantly hiding anger, desire and darker impulses to remain “good.” As the song progresses, the mask starts to crack and the narrator stops apologizing for the parts of themselves everyone taught them to suppress. Keep the lyrics playful, sharp and slightly sinister rather than purely angry, with recurring imagery of good manners, clean hands, perfect posture and a monster growing quietly underneath. Let the final chorus feel like liberation rather than corruption.\n\ndark alternative pop, twisted nursery-rhyme energy, creepy playful mood, intimate male lead vocal, sly theatrical delivery, minor key, toy piano motifs, plucked music-box melody, deep sub bass, punchy minimal drums, dry handclaps, warped synth accents, whispered doubles, distorted vocal layers, sharp stop-start rhythm, mischievous melodic hook, restrained verses with controlled tension, chorus opening into heavier low-end and wider vocals, subtle growling textures beneath clean production, polished surface hiding something feral underneath, escalating intensity, confident final chorus, no bright major resolution, no EDM drop, 96 BPM\n",
+    "type": "gen",
+    "duration": 189.96,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": false,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "text_color_gradient": [
+            "FD429C",
+            "FF5126"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "camcorder",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-15T14:59:45.993Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative pop, dark, theatrical",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 26,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-23T19:45:10.624Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowUpRight, GraduationCap, Wrench, Layers } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, GraduationCap, Wrench, Layers, Search, X, Music } from 'lucide-react';
 import { Profile } from '../types';
 import { useLocalizedPortfolio } from '../portfolioData';
 import { useLanguage } from '../context/LanguageContext';
@@ -24,11 +24,15 @@ const colorMap: Record<string, { accent: string; bgSoft: string; border: string 
 
 export default function ProfilePage({ profile, onBack, onSelectProject }: ProfilePageProps) {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const { t, language } = useLanguage();
   const portfolio = useLocalizedPortfolio();
   const avatarSrc = '/Dede.png';
   const IconComponent = profile.icon;
   const theme = colorMap[profile.id] || { accent: '#6366f1', bgSoft: 'rgba(99, 102, 241, 0.12)', border: 'rgba(99, 102, 241, 0.3)' };
+
+  const isGeneralProfile = profile.id === 'persona';
+  const isMusicProfile = profile.id === 'musicista';
 
   const filterCategories = useMemo(() => [
     { id: 'all', label: language === 'it' ? 'Tutti' : 'All' },
@@ -38,6 +42,12 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
     { id: 'graphic-designer', label: language === 'it' ? 'Grafica' : 'Graphics' },
     { id: 'elettricista', label: language === 'it' ? 'Elettronica' : 'IoT Hardware' },
     { id: 'artista', label: language === 'it' ? 'Arte 3D' : '3D Art' },
+  ], [language]);
+
+  const musicPlaylistFilters = useMemo(() => [
+    { id: 'all', label: language === 'it' ? 'Tutti i Brani' : 'All Tracks' },
+    { id: "Dede's Originals", label: "Dede's Originals" },
+    { id: 'Faded kingdom', label: 'Faded Kingdom' },
   ], [language]);
 
   // Helper to find the original discipline of a project
@@ -50,11 +60,29 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
     return 'other';
   };
 
-  // Filter projects if viewing the general profile (persona)
-  const isGeneralProfile = profile.id === 'persona';
-  const displayedProjects = isGeneralProfile && activeFilter !== 'all'
-    ? profile.projects.filter(pj => getProjectCategory(pj.id) === activeFilter)
-    : profile.projects;
+  // Filter projects depending on active view
+  const displayedProjects = useMemo(() => {
+    let list = profile.projects;
+
+    if (isGeneralProfile && activeFilter !== 'all') {
+      list = list.filter(pj => getProjectCategory(pj.id) === activeFilter);
+    } else if (isMusicProfile && activeFilter !== 'all') {
+      list = list.filter(pj => pj.technologies.includes(activeFilter));
+    }
+
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      list = list.filter(pj => 
+        pj.title.toLowerCase().includes(q) ||
+        pj.description.toLowerCase().includes(q) ||
+        (pj.promptStyle && pj.promptStyle.toLowerCase().includes(q)) ||
+        (pj.lyrics && pj.lyrics.toLowerCase().includes(q)) ||
+        pj.technologies.some(t => t.toLowerCase().includes(q))
+      );
+    }
+
+    return list;
+  }, [profile.projects, isGeneralProfile, isMusicProfile, activeFilter, searchQuery, portfolio]);
 
   return (
     <div className="min-h-full px-5 py-8 md:px-12 md:py-14 max-w-7xl mx-auto space-y-16">
@@ -296,37 +324,96 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
             </span>
           </div>
 
-          {/* Category Filter Pills (when in Profilo Generale) */}
-          {isGeneralProfile && (
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full">
-              {filterCategories.map((cat) => {
-                const count = cat.id === 'all'
-                  ? profile.projects.length
-                  : profile.projects.filter(p => getProjectCategory(p.id) === cat.id).length;
-
-                if (count === 0 && cat.id !== 'all') return null;
-
-                const isSelected = activeFilter === cat.id;
-
-                return (
-                  <button
-                    key={cat.id}
-                    onClick={() => setActiveFilter(cat.id)}
-                    className={`px-3 py-1 rounded-full text-xs font-medium transition-all shrink-0 cursor-pointer ${
-                      isSelected
-                        ? 'bg-white text-zinc-950 font-semibold shadow-md'
-                        : 'bg-white/[0.04] text-zinc-400 hover:text-white hover:bg-white/[0.08] border border-white/5'
-                    }`}
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Real-time search bar for tracks */}
+            {(isMusicProfile || isGeneralProfile) && (
+              <div className="relative min-w-[220px]">
+                <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={
+                    isMusicProfile 
+                      ? (language === 'it' ? 'Cerca brano, testo o stile...' : 'Search track, lyrics, style...')
+                      : (language === 'it' ? 'Cerca tra i progetti...' : 'Search projects...')
+                  }
+                  className="w-full pl-8 pr-7 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs text-zinc-200 placeholder:text-zinc-500 focus:outline-none focus:border-purple-400/50 transition-colors"
+                />
+                {searchQuery && (
+                  <button 
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white cursor-pointer"
                   >
-                    <span>{cat.label}</span>
-                    <span className={`ml-1.5 text-[10px] ${isSelected ? 'text-zinc-600' : 'text-zinc-500'}`}>
-                      {count}
-                    </span>
+                    <X size={12} />
                   </button>
-                );
-              })}
-            </div>
-          )}
+                )}
+              </div>
+            )}
+
+            {/* Playlist Filter Pills for Musicista */}
+            {isMusicProfile && (
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full">
+                {musicPlaylistFilters.map((pl) => {
+                  const count = pl.id === 'all'
+                    ? profile.projects.length
+                    : profile.projects.filter(p => p.technologies.includes(pl.id)).length;
+
+                  if (count === 0 && pl.id !== 'all') return null;
+                  const isSelected = activeFilter === pl.id;
+
+                  return (
+                    <button
+                      key={pl.id}
+                      onClick={() => setActiveFilter(pl.id)}
+                      className={`px-3 py-1 rounded-full text-xs font-medium transition-all shrink-0 cursor-pointer ${
+                        isSelected
+                          ? 'bg-purple-600 text-white font-semibold shadow-md shadow-purple-600/30'
+                          : 'bg-white/[0.04] text-zinc-400 hover:text-white hover:bg-white/[0.08] border border-white/5'
+                      }`}
+                    >
+                      <span>{pl.label}</span>
+                      <span className={`ml-1.5 text-[10px] ${isSelected ? 'text-purple-200' : 'text-zinc-500'}`}>
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Category Filter Pills (when in Profilo Generale) */}
+            {isGeneralProfile && (
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full">
+                {filterCategories.map((cat) => {
+                  const count = cat.id === 'all'
+                    ? profile.projects.length
+                    : profile.projects.filter(p => getProjectCategory(p.id) === cat.id).length;
+
+                  if (count === 0 && cat.id !== 'all') return null;
+
+                  const isSelected = activeFilter === cat.id;
+
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setActiveFilter(cat.id)}
+                      className={`px-3 py-1 rounded-full text-xs font-medium transition-all shrink-0 cursor-pointer ${
+                        isSelected
+                          ? 'bg-white text-zinc-950 font-semibold shadow-md'
+                          : 'bg-white/[0.04] text-zinc-400 hover:text-white hover:bg-white/[0.08] border border-white/5'
+                      }`}
+                    >
+                      <span>{cat.label}</span>
+                      <span className={`ml-1.5 text-[10px] ${isSelected ? 'text-zinc-600' : 'text-zinc-500'}`}>
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </div>
 
         {displayedProjects.length > 0 ? (

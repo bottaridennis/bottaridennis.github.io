@@ -1,0 +1,346 @@
+Metadata for: Unknown-Keep_your_voice_down.m4a
+Generated: 2026-09-25T15:13:25.646Z
+
+--- Track Information ---
+Title: Keep your voice down
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: bc868cb8-08c8-478c-ab98-c72689e5bcef
+
+--- Lyrics ---
+[Intro]
+Come a little closer
+Not enough to touch
+
+[Verse 1]
+You ask if I’m cold
+Your hand stays at my side
+I say, “It’s nothing”
+You say, “You don’t have to hide”
+
+The room is holding still
+Your breath arrives before you do
+I answer with a question
+Just to keep talking to you
+
+[Pre-Chorus]
+Say my name like you’re checking
+How it feels inside your mouth
+I’ll pretend I missed the meaning
+You’ll pretend you didn’t count
+
+[Chorus]
+Keep your voice down
+You’re standing too close
+Every harmless sentence
+Shows me what you want most
+Keep your voice down
+Don’t give yourself away
+You say, “Are you listening?”
+I say, “I am,” and stay
+
+[Verse 2]
+You mention the weather
+Like it matters in here
+I tell you the window’s open
+You say, “I can’t feel the air”
+
+Your sleeve brushes my wrist
+Neither of us moves back
+You ask if I’m comfortable
+I say, “Not exactly that”
+
+[Pre-Chorus]
+Say my name like a warning
+Then soften the final sound
+I’ll answer with your question
+And let the silence come around
+
+[Chorus]
+Keep your voice down
+You’re standing too close
+Every harmless sentence
+Shows me what you want most
+Keep your voice down
+Don’t give yourself away
+You say, “Are you listening?”
+I say, “I am,” and stay
+
+[Bridge]
+Tell me about nothing
+Tell me slowly, right here
+Use those careful little phrases
+Till the meaning disappears
+
+If you wanted distance
+You would not lean in
+If I wanted innocence
+I would not ask again
+
+[Final Chorus]
+Keep your voice down
+You’re standing too close
+Every harmless sentence
+Shows me what you want most
+Keep your voice down
+Let the last word fall
+You say, “Should I go now?”
+I say, “Not at all”
+
+[Outro]
+No, don’t say it plainly
+Leave the door where it is
+Your mouth keeps making promises
+Without calling them this
+
+Cover Art URL: https://cdn2.suno.ai/80d2d80a-fe3f-462c-a115-dee7b00a3a79.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Keep your voice down",
+  "play_count": 23,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "bc868cb8-08c8-478c-ab98-c72689e5bcef",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/bc868cb8-08c8-478c-ab98-c72689e5bcef.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/bc868cb8-08c8-478c-ab98-c72689e5bcef.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/80d2d80a-fe3f-462c-a115-dee7b00a3a79.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/80d2d80a-fe3f-462c-a115-dee7b00a3a79.jpeg",
+  "major_model_version": "v6",
+  "model_name": "chirp-goose",
+  "metadata": {
+    "tags": "dark erotic alternative R&B with electronic pop edges, dominant low male vocal, intimate whispered close-mic delivery, slow grinding half-time groove, massive warm sub bass, minimal kick and dry snap percussion, sparse felt piano notes, tense pauses between phrases, close stereo vocal doubles, restrained verses opening into a heavy understated chorus, dark polished mix with breath detail and controlled low end",
+    "prompt": "[Intro]\nCome a little closer\nNot enough to touch\n\n[Verse 1]\nYou ask if I’m cold\nYour hand stays at my side\nI say, “It’s nothing”\nYou say, “You don’t have to hide”\n\nThe room is holding still\nYour breath arrives before you do\nI answer with a question\nJust to keep talking to you\n\n[Pre-Chorus]\nSay my name like you’re checking\nHow it feels inside your mouth\nI’ll pretend I missed the meaning\nYou’ll pretend you didn’t count\n\n[Chorus]\nKeep your voice down\nYou’re standing too close\nEvery harmless sentence\nShows me what you want most\nKeep your voice down\nDon’t give yourself away\nYou say, “Are you listening?”\nI say, “I am,” and stay\n\n[Verse 2]\nYou mention the weather\nLike it matters in here\nI tell you the window’s open\nYou say, “I can’t feel the air”\n\nYour sleeve brushes my wrist\nNeither of us moves back\nYou ask if I’m comfortable\nI say, “Not exactly that”\n\n[Pre-Chorus]\nSay my name like a warning\nThen soften the final sound\nI’ll answer with your question\nAnd let the silence come around\n\n[Chorus]\nKeep your voice down\nYou’re standing too close\nEvery harmless sentence\nShows me what you want most\nKeep your voice down\nDon’t give yourself away\nYou say, “Are you listening?”\nI say, “I am,” and stay\n\n[Bridge]\nTell me about nothing\nTell me slowly, right here\nUse those careful little phrases\nTill the meaning disappears\n\nIf you wanted distance\nYou would not lean in\nIf I wanted innocence\nI would not ask again\n\n[Final Chorus]\nKeep your voice down\nYou’re standing too close\nEvery harmless sentence\nShows me what you want most\nKeep your voice down\nLet the last word fall\nYou say, “Should I go now?”\nI say, “Not at all”\n\n[Outro]\nNo, don’t say it plainly\nLeave the door where it is\nYour mouth keeps making promises\nWithout calling them this",
+    "gpt_description_prompt": "Lyricist Prompt\nWrite an intimate sensual song about two people speaking so quietly and standing so close that ordinary words begin to sound provocative. Neither says directly what they want, but every sentence makes the tension more obvious. ",
+    "type": "gen",
+    "duration": 180.8,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "aug_creativity": 1
+    },
+    "vox_render_mode": "strict",
+    "task": "agentic_thinking",
+    "can_remix": false,
+    "show_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V6",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "V6-MINI",
+        "light": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        },
+        "dark": {
+          "text_color": "C2C2C2",
+          "text_color_gradient": [
+            "C2C2C2",
+            "C2C2C2",
+            "ADADAD",
+            "989898",
+            "838383",
+            "6E6E6E"
+          ]
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "film_strip",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-14T14:46:20.281Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "alternative R&B, electronic pop",
+  "is_contest_clip": false,
+  "has_hook": true,
+  "hook_preview_thumbnail_url": "https://cdn2.suno.ai/video_upload_5492e732-9699-48c1-a868-68a37e5ac5c2_video_upload_5492e732-9699-48c1-a868-68a37e5ac5c2_cover_snapshot_0s_1789989566_image.jpeg",
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "view_hooks",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 16,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:37:02.976Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-18T15:59:12.903Z",
+  "playlistName": "Dede's Originals"
+}

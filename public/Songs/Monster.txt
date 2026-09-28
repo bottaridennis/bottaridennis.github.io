@@ -1,0 +1,387 @@
+Metadata for: Unknown-Monster.m4a
+Generated: 2026-09-25T15:12:01.416Z
+
+--- Track Information ---
+Title: Monster
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: f8468396-bac5-44fc-a311-ac833fb8acf5
+
+--- Lyrics ---
+[Intro]
+Can you hear it?
+Can you hear it?
+There’s something breathing under my skin
+One voice says “hold on”
+One voice says “give in”
+
+[Verse 1 — Monster]
+There’s a war inside my head tonight
+Scratching words into the walls
+I try to stand in the candlelight
+But the dark knows how to crawl
+
+I hear a whisper soft and clean
+Telling me I’m not too far
+Then another voice behind my teeth
+Turns my mercy into scars
+
+[Good Voice]
+Breathe slow
+You are not what lives below
+Stay close
+There is still a way back home
+
+[Evil Voice]
+No peace
+No sleep
+Let the hunger take the lead
+Break free
+Show them what you really keep
+
+[Pre-Chorus — Monster]
+I can feel them pulling at my bones
+One builds a shelter
+One builds a throne
+I don’t know which one is calling me
+But both of them are wearing my voice
+
+[Chorus]
+There’s a demon inside of me
+And an angel I can barely hear
+One says “you can still be free”
+One says “burn away the fear”
+
+Two voices in my skull tonight
+One is light and one is teeth
+I’m the monster in the middle
+Fighting darkness underneath
+
+Can you hear it?
+Can you hear it?
+Can you hear it inside me?
+Can you hear it?
+Can you hear it?
+The good, the evil, and me
+
+[Verse 2 — Monster]
+I see my face in broken glass
+But the eyes don’t look like mine
+Every thought becomes a mask
+Every prayer becomes a crime
+
+The good voice holds my shaking hand
+Says the blood can still be rain
+The bad voice laughs and takes command
+Says there’s beauty in the pain
+
+[Good Voice]
+Come back
+You are more than your attack
+Don’t crack
+Let the silence pull you back
+
+[Evil Voice]
+Too late
+No grace
+Put the terror on your face
+Give chase
+Make the whole world know your name
+
+[Pre-Chorus — Monster]
+I can feel them crawling through my chest
+One wants forgiveness
+One wants the rest
+I don’t know if I can make it out
+When both of them are living in my mouth
+
+[Chorus]
+There’s a demon inside of me
+And an angel I can barely hear
+One says “you can still be free”
+One says “burn away the fear”
+
+Two voices in my skull tonight
+One is light and one is teeth
+I’m the monster in the middle
+Fighting darkness underneath
+
+Can you hear it?
+Can you hear it?
+Can you hear it inside me?
+Can you hear it?
+Can you hear it?
+The good, the evil, and me
+
+[Bridge — Good Voice]
+You are not the shadow
+You are not the blade
+You are not the nightmare
+That your sorrow made
+
+[Bridge — Evil Voice]
+You are only hunger
+You are only rage
+You were born in thunder
+You were built to break
+
+[Bridge — Monster]
+Shut up
+Please stop
+I can’t tell where my thoughts begin
+Light fades
+Dark talks
+And I’m locked in my own skin
+
+[Breakdown]
+One voice says “save him”
+One voice says “kill”
+One voice says “mercy”
+One voice says “will”
+
+One voice is shaking
+One voice is cruel
+One voice is praying
+One voice says “rule”
+
+[Final Chorus]
+There’s a demon inside of me
+And an angel I can barely hear
+One says “you can still be free”
+One says “disappear”
+
+Two voices in my skull tonight
+One is hope and one is grief
+I’m the monster in the middle
+Begging one of them to leave
+
+Can you hear it?
+Can you hear it?
+Can you hear it inside me?
+Can you hear it?
+Can you hear it?
+The good, the evil, and me
+
+[Outro — Monster]
+There’s a demon inside of me
+But there’s a light still underneath
+If I survive my mind tonight
+Maybe the monster isn’t me
+
+Cover Art URL: https://cdn2.suno.ai/f8468396-bac5-44fc-a311-ac833fb8acf5_dd6fba05.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Monster",
+  "play_count": 149,
+  "upvote_count": 2,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "f8468396-bac5-44fc-a311-ac833fb8acf5",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/f8468396-bac5-44fc-a311-ac833fb8acf5.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/f8468396-bac5-44fc-a311-ac833fb8acf5.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/f8468396-bac5-44fc-a311-ac833fb8acf5_dd6fba05.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/f8468396-bac5-44fc-a311-ac833fb8acf5_dd6fba05.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "dark cinematic horror score, whispered choir, detuned piano, tremolo strings, taiko impacts, distorted bass drone, reverse piano, close-mic male vocal, sinister deep voice spoken, breathy female countervoice, call-and-response, mono room reverb, tape saturation, low-end compression, sparse intro, half-time pulse, climactic drop, psychological dread",
+    "prompt": "[Intro]\nCan you hear it?\nCan you hear it?\nThere’s something breathing under my skin\nOne voice says “hold on”\nOne voice says “give in”\n\n[Verse 1 — Monster]\nThere’s a war inside my head tonight\nScratching words into the walls\nI try to stand in the candlelight\nBut the dark knows how to crawl\n\nI hear a whisper soft and clean\nTelling me I’m not too far\nThen another voice behind my teeth\nTurns my mercy into scars\n\n[Good Voice]\nBreathe slow\nYou are not what lives below\nStay close\nThere is still a way back home\n\n[Evil Voice]\nNo peace\nNo sleep\nLet the hunger take the lead\nBreak free\nShow them what you really keep\n\n[Pre-Chorus — Monster]\nI can feel them pulling at my bones\nOne builds a shelter\nOne builds a throne\nI don’t know which one is calling me\nBut both of them are wearing my voice\n\n[Chorus]\nThere’s a demon inside of me\nAnd an angel I can barely hear\nOne says “you can still be free”\nOne says “burn away the fear”\n\nTwo voices in my skull tonight\nOne is light and one is teeth\nI’m the monster in the middle\nFighting darkness underneath\n\nCan you hear it?\nCan you hear it?\nCan you hear it inside me?\nCan you hear it?\nCan you hear it?\nThe good, the evil, and me\n\n[Verse 2 — Monster]\nI see my face in broken glass\nBut the eyes don’t look like mine\nEvery thought becomes a mask\nEvery prayer becomes a crime\n\nThe good voice holds my shaking hand\nSays the blood can still be rain\nThe bad voice laughs and takes command\nSays there’s beauty in the pain\n\n[Good Voice]\nCome back\nYou are more than your attack\nDon’t crack\nLet the silence pull you back\n\n[Evil Voice]\nToo late\nNo grace\nPut the terror on your face\nGive chase\nMake the whole world know your name\n\n[Pre-Chorus — Monster]\nI can feel them crawling through my chest\nOne wants forgiveness\nOne wants the rest\nI don’t know if I can make it out\nWhen both of them are living in my mouth\n\n[Chorus]\nThere’s a demon inside of me\nAnd an angel I can barely hear\nOne says “you can still be free”\nOne says “burn away the fear”\n\nTwo voices in my skull tonight\nOne is light and one is teeth\nI’m the monster in the middle\nFighting darkness underneath\n\nCan you hear it?\nCan you hear it?\nCan you hear it inside me?\nCan you hear it?\nCan you hear it?\nThe good, the evil, and me\n\n[Bridge — Good Voice]\nYou are not the shadow\nYou are not the blade\nYou are not the nightmare\nThat your sorrow made\n\n[Bridge — Evil Voice]\nYou are only hunger\nYou are only rage\nYou were born in thunder\nYou were built to break\n\n[Bridge — Monster]\nShut up\nPlease stop\nI can’t tell where my thoughts begin\nLight fades\nDark talks\nAnd I’m locked in my own skin\n\n[Breakdown]\nOne voice says “save him”\nOne voice says “kill”\nOne voice says “mercy”\nOne voice says “will”\n\nOne voice is shaking\nOne voice is cruel\nOne voice is praying\nOne voice says “rule”\n\n[Final Chorus]\nThere’s a demon inside of me\nAnd an angel I can barely hear\nOne says “you can still be free”\nOne says “disappear”\n\nTwo voices in my skull tonight\nOne is hope and one is grief\nI’m the monster in the middle\nBegging one of them to leave\n\nCan you hear it?\nCan you hear it?\nCan you hear it inside me?\nCan you hear it?\nCan you hear it?\nThe good, the evil, and me\n\n[Outro — Monster]\nThere’s a demon inside of me\nBut there’s a light still underneath\nIf I survive my mind tonight\nMaybe the monster isn’t me",
+    "type": "gen",
+    "duration": 384.72,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "style_weight": 0.7
+    },
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-01T10:54:50.694Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "cinematic horror, dark ambient, psychological thriller",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 78,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-24T06:24:18.917Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-05T21:29:16.722Z",
+  "playlistName": "Dede's Originals"
+}

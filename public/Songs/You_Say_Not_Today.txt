@@ -1,0 +1,329 @@
+Metadata for: Unknown-You_Say_Not_Today.m4a
+Generated: 2026-09-25T15:12:28.666Z
+
+--- Track Information ---
+Title: You Say Not Today
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 53d25c3e-4915-4a95-83cb-e9014d0dfc94
+
+--- Lyrics ---
+[singer A]
+I wore my horns like a crown
+I watched you kneel for the count
+You call them children, I call them proof
+Every hand is stained right through
+
+I heard their lies in the hall
+I saw them laughing at fall
+They bite, they cheat, they take, they burn
+Why should they ever return?
+
+Tell me where your mercy stands
+When their blood is on their hands
+Tell me what you still can save
+From a world that dug its grave
+
+I say burn it down
+You say look again
+I say cut them loose
+You say raise them in
+I see doom in their names
+You see light in the rain
+I say burn it down
+You say not today
+
+[transition]
+
+[singer B]
+I held a sparrow in snow
+I saw a child let go
+A broken man gave up his bread
+Before the hungry mouth was fed
+
+I know the rot, I know the grime
+I know the cruel and the kind
+One soft hand can split the dark
+One good soul can spark a spark
+
+Tell me why you still believe
+In the smoke they breathe and leave
+Tell me how your heart can stay
+When their prayers all fade away
+
+I say burn it down
+You say look again
+I say cut them loose
+You say raise them in
+I see doom in their names
+You see light in the rain
+I say burn it down
+You say not today
+
+I am not blind, I know their teeth
+I know the knives they hide beneath
+But I have seen a mother stay
+When every road gave out to grey
+
+And I am rage with burning wings
+I am the end of broken things
+But even I can feel that thread
+Of one last chance above their heads
+
+I say burn it down
+You say look again
+I say let them fall
+You say lift them in
+I hear thunder in their names
+You hear hope in the pain
+I say burn it down
+You say not today
+
+I say burn it down
+You say not today
+
+Cover Art URL: https://cdn2.suno.ai/59b23988-a108-452c-bd5c-57af1810b51f.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "You Say Not Today",
+  "play_count": 50,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "53d25c3e-4915-4a95-83cb-e9014d0dfc94",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/53d25c3e-4915-4a95-83cb-e9014d0dfc94.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/53d25c3e-4915-4a95-83cb-e9014d0dfc94.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/59b23988-a108-452c-bd5c-57af1810b51f.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/59b23988-a108-452c-bd5c-57af1810b51f.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "dark cinematic horror score, spy thriller strings, 72 BPM, detuned piano ostinato, whispered choir, taiko impacts, tremolo strings, celesta arpeggios, low brass clusters, sub bass drones, mono room reverb, tape saturation, sidechain ducking, silence breaks, march pulse, bitter resolve, apocalyptic duel",
+    "prompt": "[singer A]\nI wore my horns like a crown\nI watched you kneel for the count\nYou call them children, I call them proof\nEvery hand is stained right through\n\nI heard their lies in the hall\nI saw them laughing at fall\nThey bite, they cheat, they take, they burn\nWhy should they ever return?\n\nTell me where your mercy stands\nWhen their blood is on their hands\nTell me what you still can save\nFrom a world that dug its grave\n\nI say burn it down\nYou say look again\nI say cut them loose\nYou say raise them in\nI see doom in their names\nYou see light in the rain\nI say burn it down\nYou say not today\n\n[transition]\n\n[singer B]\nI held a sparrow in snow\nI saw a child let go\nA broken man gave up his bread\nBefore the hungry mouth was fed\n\nI know the rot, I know the grime\nI know the cruel and the kind\nOne soft hand can split the dark\nOne good soul can spark a spark\n\nTell me why you still believe\nIn the smoke they breathe and leave\nTell me how your heart can stay\nWhen their prayers all fade away\n\nI say burn it down\nYou say look again\nI say cut them loose\nYou say raise them in\nI see doom in their names\nYou see light in the rain\nI say burn it down\nYou say not today\n\nI am not blind, I know their teeth\nI know the knives they hide beneath\nBut I have seen a mother stay\nWhen every road gave out to grey\n\nAnd I am rage with burning wings\nI am the end of broken things\nBut even I can feel that thread\nOf one last chance above their heads\n\nI say burn it down\nYou say look again\nI say let them fall\nYou say lift them in\nI hear thunder in their names\nYou hear hope in the pain\nI say burn it down\nYou say not today\n\nI say burn it down\nYou say not today",
+    "type": "gen",
+    "duration": 266.48,
+    "refund_credits": false,
+    "stream": true,
+    "has_vocal": false,
+    "can_publish_with_vocal": true,
+    "make_instrumental": false,
+    "control_sliders": {
+      "audio_weight": 0.85
+    },
+    "vox_render_mode": "strict",
+    "mashup_clip_ids": [
+      "f7a40279-8e4a-45a5-9fdc-e78bc5cfee56",
+      "b9c2b548-cadf-42c3-8c8c-adaf2bf9f5a2"
+    ],
+    "task": "mashup_condition",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "secondary_badges": [
+      {
+        "display_name": "MASHUP",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    ],
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-15T09:54:54.868Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": true,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "cinematic horror, spy thriller",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "clip_roots": {
+    "clips": [
+      {
+        "is_public": false,
+        "user_display_name": "Dennis Bottari",
+        "user_handle": "dedeneko",
+        "user_avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg"
+      }
+    ],
+    "clip_attribution_type": "remix"
+  },
+  "reaction": {
+    "play_count": 49,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-22T17:22:04.157Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

@@ -1,0 +1,304 @@
+Metadata for: Unknown-The_Weight_of_the_Crown.m4a
+Generated: 2026-09-25T15:12:44.110Z
+
+--- Track Information ---
+Title: The Weight of the Crown
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: 587ffa5e-e87f-456d-b776-06a02dd34483
+
+--- Lyrics ---
+[Verse 1]
+They called me a savior
+Said I had a light
+
+I heard the name hang there
+Like a coat I never liked
+
+A beacon for the lost ones
+Shining in the night
+
+But I was still just counting doors
+And the hour on the wall
+
+[Verse 2]
+But the shadows felt familiar
+Like an old
+
+Worn-out coat
+I kept by the chair
+
+And the whispers in the darkness
+
+Were the only truth I wrote
+In a notebook I could never share
+
+[Chorus]
+Oh
+The weight of the crown
+It pressed me to the ground
+
+And every hand that held it up
+Just wanted me to bow
+
+When all I ever wanted
+Was to make a different sound
+
+To say it plain, to say it loud
+I don't fit your statue now
+
+To break the pretty mold
+Let the wildness take hold
+
+Be the story's villain
+Unbought and unsold
+
+[Verse 3]
+They painted me a hero
+With a sword and a noble stare
+
+But I kept my coat on the back of the chair
+And my plans in the drawer somewhere
+
+But my heart beat for the chaos
+A tangled
+
+Broken snare
+Rattling through the room
+
+[Bridge]
+What good is saving faces
+When your own is just a lie?
+
+I tried to wear their mercy
+Till it turned cold in my mouth tonight
+
+Better to burn the bridges
+
+Beneath a blood-red sky
+If I have to leave as myself
+At least I leave alive
+
+[Chorus]
+Oh
+The weight of the crown
+It pressed me to the ground
+
+And every hand that held it up
+Just wanted me to bow
+
+When all I ever wanted
+Was to make a different sound
+
+Cover Art URL: https://cdn2.suno.ai/587ffa5e-e87f-456d-b776-06a02dd34483_b8f95ec6.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "The Weight of the Crown",
+  "play_count": 32,
+  "upvote_count": 0,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "587ffa5e-e87f-456d-b776-06a02dd34483",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/587ffa5e-e87f-456d-b776-06a02dd34483.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/587ffa5e-e87f-456d-b776-06a02dd34483.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/587ffa5e-e87f-456d-b776-06a02dd34483_b8f95ec6.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/587ffa5e-e87f-456d-b776-06a02dd34483_b8f95ec6.jpeg",
+  "major_model_version": "v5.5",
+  "model_name": "chirp-fenix",
+  "metadata": {
+    "tags": "dark cinematic horror score, gothic orchestration, taiko impacts, detuned piano ostinato, tremolo strings, low brass clusters, whispered choir, mono room reverb, tape saturation, unstable pulse, 92 BPM, minor key march, fractured crescendos, sub bass drone, bowed cymbals, bowed contrabass, cellos col legno, music box melody, dread atmosphere",
+    "prompt": "[Verse 1]\nThey called me a savior\nSaid I had a light\n\nI heard the name hang there\nLike a coat I never liked\n\nA beacon for the lost ones\nShining in the night\n\nBut I was still just counting doors\nAnd the hour on the wall\n\n[Verse 2]\nBut the shadows felt familiar\nLike an old\n\nWorn-out coat\nI kept by the chair\n\nAnd the whispers in the darkness\n\nWere the only truth I wrote\nIn a notebook I could never share\n\n[Chorus]\nOh\nThe weight of the crown\nIt pressed me to the ground\n\nAnd every hand that held it up\nJust wanted me to bow\n\nWhen all I ever wanted\nWas to make a different sound\n\nTo say it plain, to say it loud\nI don't fit your statue now\n\nTo break the pretty mold\nLet the wildness take hold\n\nBe the story's villain\nUnbought and unsold\n\n[Verse 3]\nThey painted me a hero\nWith a sword and a noble stare\n\nBut I kept my coat on the back of the chair\nAnd my plans in the drawer somewhere\n\nBut my heart beat for the chaos\nA tangled\n\nBroken snare\nRattling through the room\n\n[Bridge]\nWhat good is saving faces\nWhen your own is just a lie?\n\nI tried to wear their mercy\nTill it turned cold in my mouth tonight\n\nBetter to burn the bridges\n\nBeneath a blood-red sky\nIf I have to leave as myself\nAt least I leave alive\n\n[Chorus]\nOh\nThe weight of the crown\nIt pressed me to the ground\n\nAnd every hand that held it up\nJust wanted me to bow\n\nWhen all I ever wanted\nWas to make a different sound",
+    "type": "gen",
+    "duration": 266.24,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5.5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": false,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-09T10:22:25.440Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "cinematic horror, gothic orchestration",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 0,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 26,
+    "skip_count": 0,
+    "flagged": false,
+    "updated_at": "2026-09-23T19:34:07.298Z"
+  },
+  "is_download_unlocked": false,
+  "playlistName": "Dede's Originals"
+}

@@ -1,0 +1,300 @@
+Metadata for: Unknown-Salt_on_the_Mast.m4a
+Generated: 2026-09-25T15:13:10.358Z
+
+--- Track Information ---
+Title: Salt on the Mast
+Artist: Dennis Bottari
+
+--- Musical Information ---
+
+--- Creation Details ---
+Track ID: c2f01d79-f259-4dfd-9fd4-ce4f3500a6a0
+
+--- Lyrics ---
+[Verse 1]
+We left the dock at dawn
+With pitch on both our hands
+Old Jonah spat and laughed
+Said, “Boys, mind the rising sand”
+The hawser bit my palm
+The deck boards shook and moaned
+And every face on board
+Was carved from wind and bone
+
+[Pre-Chorus]
+Heave now, hold fast
+Bend your back and trust
+The tide don’t ask your name
+It only wants your dust
+
+[Chorus]
+Salt on the mast
+Keep it up, keep it fast
+Salt on the mast
+We’re still sailing past
+Hey, hey, haul away
+Hold the line, don’t slack
+Salt on the mast
+And the sea can’t pull us back
+
+[Verse 2]
+By noon the sky went black
+Like ink in a broken pail
+The cook tied down the pot
+And crossed his teeth for hail
+We lashed the yard with rope
+Till our fingers went numb and raw
+Then sang to keep the fear
+From climbing up the draw
+
+[Pre-Chorus]
+Heave now, hold fast
+Bend your back and trust
+The tide don’t ask your name
+It only wants your dust
+
+[Chorus]
+Salt on the mast
+Keep it up, keep it fast
+Salt on the mast
+We’re still sailing past
+Hey, hey, haul away
+Hold the line, don’t slack
+Salt on the mast
+And the sea can’t pull us back
+
+[Bridge]
+Then came a moonless wave
+Tall as a churchyard wall
+It struck us broad and hard
+And nearly took us all
+But Molly gripped the wheel
+And grinned through pouring spray
+She shouted, “Not this night!”
+And turned the beast away
+
+[Final Chorus]
+Salt on the mast
+Keep it up, keep it fast
+Salt on the mast
+We’re still sailing past
+Hey, hey, haul away
+Hold the line, don’t slack
+Salt on the mast
+And the sea can’t pull us back
+Salt on the mast
+Sing it loud, sing it fast
+Salt on the mast
+Till the last wave passes by
+
+Cover Art URL: https://cdn2.suno.ai/c2f01d79-f259-4dfd-9fd4-ce4f3500a6a0_53ccae78.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Salt on the Mast",
+  "play_count": 32,
+  "upvote_count": 1,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "c2f01d79-f259-4dfd-9fd4-ce4f3500a6a0",
+  "entity_type": "song_schema",
+  "video_url": "https://cdn1.suno.ai/c2f01d79-f259-4dfd-9fd4-ce4f3500a6a0.mp4",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/c2f01d79-f259-4dfd-9fd4-ce4f3500a6a0.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/c2f01d79-f259-4dfd-9fd4-ce4f3500a6a0_53ccae78.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/c2f01d79-f259-4dfd-9fd4-ce4f3500a6a0_53ccae78.jpeg",
+  "major_model_version": "v5",
+  "model_name": "chirp-crow",
+  "metadata": {
+    "tags": "Dark theatrical piano song with sharp, rhythmic staccato chords and no other instruments. Deep male baritone vocals, expressive and dramatic like a sinister musical villain. Unstable tempo shifts, obsessive repeating piano patterns, sudden pauses, dissonant harmonies, and unpredictable dynamics. Creepy, deranged, claustrophobic atmosphere with a manic cabaret feel. Intense storytelling, whispered phrases, explosive vocal accents, and a disturbing sense of controlled madness.",
+    "prompt": "[Verse 1]\nWe left the dock at dawn\nWith pitch on both our hands\nOld Jonah spat and laughed\nSaid, “Boys, mind the rising sand”\nThe hawser bit my palm\nThe deck boards shook and moaned\nAnd every face on board\nWas carved from wind and bone\n\n[Pre-Chorus]\nHeave now, hold fast\nBend your back and trust\nThe tide don’t ask your name\nIt only wants your dust\n\n[Chorus]\nSalt on the mast\nKeep it up, keep it fast\nSalt on the mast\nWe’re still sailing past\nHey, hey, haul away\nHold the line, don’t slack\nSalt on the mast\nAnd the sea can’t pull us back\n\n[Verse 2]\nBy noon the sky went black\nLike ink in a broken pail\nThe cook tied down the pot\nAnd crossed his teeth for hail\nWe lashed the yard with rope\nTill our fingers went numb and raw\nThen sang to keep the fear\nFrom climbing up the draw\n\n[Pre-Chorus]\nHeave now, hold fast\nBend your back and trust\nThe tide don’t ask your name\nIt only wants your dust\n\n[Chorus]\nSalt on the mast\nKeep it up, keep it fast\nSalt on the mast\nWe’re still sailing past\nHey, hey, haul away\nHold the line, don’t slack\nSalt on the mast\nAnd the sea can’t pull us back\n\n[Bridge]\nThen came a moonless wave\nTall as a churchyard wall\nIt struck us broad and hard\nAnd nearly took us all\nBut Molly gripped the wheel\nAnd grinned through pouring spray\nShe shouted, “Not this night!”\nAnd turned the beast away\n\n[Final Chorus]\nSalt on the mast\nKeep it up, keep it fast\nSalt on the mast\nWe’re still sailing past\nHey, hey, haul away\nHold the line, don’t slack\nSalt on the mast\nAnd the sea can’t pull us back\nSalt on the mast\nSing it loud, sing it fast\nSalt on the mast\nTill the last wave passes by",
+    "type": "gen",
+    "duration": 194.84,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": false,
+    "vox_render_mode": "strict",
+    "can_remix": false,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": false,
+    "model_badges": {
+      "songcard": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      },
+      "songrow": {
+        "display_name": "V5",
+        "light": {
+          "text_color": "A3A3A3"
+        },
+        "dark": {
+          "text_color": "A3A3A3"
+        }
+      }
+    },
+    "is_mumble": false
+  },
+  "is_liked": true,
+  "user_id": "93be0e5e-8390-46d8-a49b-df603eee5c00",
+  "display_name": "Dennis Bottari",
+  "handle": "dedeneko",
+  "is_handle_updated": true,
+  "avatar_image_url": "https://cdn2.suno.ai/5fd21eb1-9da2-4818-bcc8-95f71f11de78.jpeg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-07-28T10:30:54.627Z",
+  "is_public": true,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "dark cabaret, theatrical, dissonant",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "play_next",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "add_to_queue",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "unpublish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_comments_toggle_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "allow_remix",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "pin_to_profile",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  },
+  "reaction": {
+    "play_count": 43,
+    "skip_count": 0,
+    "flagged": false,
+    "reaction_type": "L",
+    "updated_at": "2026-09-23T19:45:09.834Z"
+  },
+  "is_download_unlocked": true,
+  "download_unlocked_at": "2026-09-04T14:46:38.343Z",
+  "playlistName": "Dede's Originals"
+}

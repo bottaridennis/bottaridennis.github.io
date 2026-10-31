@@ -12,6 +12,7 @@ import ProjectPage from './components/ProjectPage';
 import Footer from './components/Footer';
 import GlobalAudioPlayer from './components/GlobalAudioPlayer';
 import GameModal, { PlayableGame } from './components/GameModal';
+import ParallaxRulerScrollbar from './components/ParallaxRulerScrollbar';
 import { AudioProvider } from './context/AudioContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
@@ -130,49 +131,15 @@ function AppContent() {
       
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col h-full overflow-hidden relative">
-        <main 
-          ref={mainRef}
-          className="flex-1 overflow-y-auto overflow-x-hidden pt-16 md:pt-0 bg-[#0b0f17] relative bg-ambient-mesh"
-        >
-          <AnimatePresence mode="wait" custom={navDirection}>
-            {!activeProfileId ? (
-              <motion.div
-                key={`home-${language}`}
-                custom={navDirection}
-                variants={pageTransitionVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                className="min-h-full will-change-transform"
-              >
-                <Home 
-                  onProfileClick={(id) => handleNavigate(id)} 
-                  onDirectProjectClick={(profileId, projectId) => handleNavigate(profileId, projectId)}
-                  onPlayGame={(game) => setActiveGameModal(game)}
-                />
-              </motion.div>
-            ) : activeProject ? (
-              <motion.div
-                key={`${activeProfileId}-${activeProjectId}-${language}`}
-                custom={navDirection}
-                variants={pageTransitionVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                className="min-h-full will-change-transform"
-              >
-                <ProjectPage 
-                  project={activeProject} 
-                  profile={activeProfile!} 
-                  onBack={() => handleNavigate(activeProfileId, null)} 
-                  onSelectProject={(projectId) => handleNavigate(activeProfileId, projectId)}
-                  onPlayGame={(game) => setActiveGameModal(game)}
-                />
-              </motion.div>
-            ) : (
-              activeProfile && (
+        <div className="flex-1 relative overflow-hidden flex flex-col min-h-0">
+          <main 
+            ref={mainRef}
+            className="flex-1 overflow-y-auto overflow-x-hidden pt-16 md:pt-0 bg-[#0b0f17] relative bg-ambient-mesh ruler-scroll-hidden"
+          >
+            <AnimatePresence mode="wait" custom={navDirection}>
+              {!activeProfileId ? (
                 <motion.div
-                  key={`${activeProfileId}-${language}`}
+                  key={`home-${language}`}
                   custom={navDirection}
                   variants={pageTransitionVariants}
                   initial="initial"
@@ -180,16 +147,56 @@ function AppContent() {
                   exit="exit"
                   className="min-h-full will-change-transform"
                 >
-                  <ProfilePage 
-                    profile={activeProfile} 
-                    onBack={() => handleNavigate(null)}
-                    onSelectProject={(projectId) => handleNavigate(activeProfileId, projectId)}
+                  <Home 
+                    onProfileClick={(id) => handleNavigate(id)} 
+                    onDirectProjectClick={(profileId, projectId) => handleNavigate(profileId, projectId)}
+                    onPlayGame={(game) => setActiveGameModal(game)}
                   />
                 </motion.div>
-              )
-            )}
-          </AnimatePresence>
-        </main>
+              ) : activeProject ? (
+                <motion.div
+                  key={`${activeProfileId}-${activeProjectId}-${language}`}
+                  custom={navDirection}
+                  variants={pageTransitionVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  className="min-h-full will-change-transform"
+                >
+                  <ProjectPage 
+                    project={activeProject} 
+                    profile={activeProfile!} 
+                    onBack={() => handleNavigate(activeProfileId, null)} 
+                    onSelectProject={(projectId) => handleNavigate(activeProfileId, projectId)}
+                    onPlayGame={(game) => setActiveGameModal(game)}
+                  />
+                </motion.div>
+              ) : (
+                activeProfile && (
+                  <motion.div
+                    key={`${activeProfileId}-${language}`}
+                    custom={navDirection}
+                    variants={pageTransitionVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="min-h-full will-change-transform"
+                  >
+                    <ProfilePage 
+                      profile={activeProfile} 
+                      onBack={() => handleNavigate(null)}
+                      onSelectProject={(projectId) => handleNavigate(activeProfileId, projectId)}
+                      onPlayGame={(game) => setActiveGameModal(game)}
+                    />
+                  </motion.div>
+                )
+              )}
+            </AnimatePresence>
+          </main>
+
+          {/* Parallax Ruler Scrollbar (Tacchette in parallasse con selettore di posizione) */}
+          <ParallaxRulerScrollbar targetRef={mainRef} />
+        </div>
 
         {/* Mini Audio Player Globale e Persistente */}
         <GlobalAudioPlayer 

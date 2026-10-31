@@ -180,14 +180,31 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
           transition={{ delay: 0.1 }}
           className="lg:col-span-5"
         >
-          <div className="relative aspect-[16/11] rounded-3xl overflow-hidden glass-card shadow-2xl group">
-            <img 
-              src={project.imageUrl} 
-              alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />
+          <div className="relative aspect-[16/11] rounded-3xl overflow-hidden glass-card shadow-2xl group flex items-center justify-center bg-zinc-950">
+            {project.imageUrl.endsWith('.gif') || project.id === 'pixel-art-character' ? (
+              <div className="relative w-full h-full flex flex-col items-center justify-center p-6 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px] bg-opacity-20">
+                <img 
+                  src={project.imageUrl} 
+                  alt={project.title}
+                  className="w-48 h-48 object-contain transition-transform duration-300 group-hover:scale-110"
+                  style={{ imageRendering: 'pixelated' }}
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute bottom-3 px-3 py-1 rounded-full bg-black/80 border border-emerald-500/30 text-[11px] text-emerald-300 font-mono">
+                  ● Animazione 2D Attiva (60 FPS)
+                </div>
+              </div>
+            ) : (
+              <>
+                <img 
+                  src={project.imageUrl} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />
+              </>
+            )}
           </div>
         </motion.div>
       </section>
@@ -212,6 +229,54 @@ export default function ProjectPage({ project, profile, onBack, onSelectProject,
               ))}
             </div>
           </div>
+
+          {/* Sprite Sheet Inspector if Pixel Art Character */}
+          {project.id === 'pixel-art-character' && (
+            <div className="p-6 rounded-3xl glass-card space-y-4 border border-emerald-500/30">
+              <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
+                <div className="flex items-center gap-2">
+                  <Gamepad2 size={18} className="text-emerald-400" />
+                  <h3 className="font-heading text-base font-bold text-white">
+                    Sprite Sheet Esportato da Aseprite (192 × 24 px)
+                  </h3>
+                </div>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono border border-emerald-500/30">
+                  CC-0 License
+                </span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-zinc-950 border border-zinc-800 overflow-x-auto flex flex-col items-center gap-3">
+                <img 
+                  src="/sprite.png" 
+                  alt="Sprite Sheet Dennis Bottari"
+                  className="h-14 object-contain border border-emerald-500/30 p-1.5 bg-zinc-900 rounded"
+                  style={{ imageRendering: 'pixelated' }}
+                />
+                <div className="flex items-center gap-1.5 text-[10px] text-zinc-400 font-mono">
+                  <span>8 Frame sequenziali · 24×24 pixel per frame · Ciclo di camminata fluido</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  href="/sprite.png"
+                  download="sprite_dennis_bottari.png"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-xs transition-all shadow-md cursor-pointer"
+                >
+                  <Download size={14} />
+                  <span>Scarica Sprite Sheet PNG</span>
+                </a>
+                <a
+                  href="/PG.gif"
+                  download="animazione_dennis_bottari.gif"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/10 text-emerald-300 border border-emerald-500/30 font-bold text-xs transition-all cursor-pointer"
+                >
+                  <Download size={14} />
+                  <span>Scarica Loop Animato GIF</span>
+                </a>
+              </div>
+            </div>
+          )}
 
           {/* Audio Player if available */}
           {project.audioUrl && (

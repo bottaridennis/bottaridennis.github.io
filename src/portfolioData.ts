@@ -808,37 +808,38 @@ export const portfolioData: Profile[] = [
     projects: [
       {
         id: 'rev-minds',
-        title: 'Revolution Minds',
-        description: 'Piattaforma web innovativa per la moda sostenibile, green fashion e upcycling con catalogo dinamico ed esperienza utente immersiva.',
+        title: 'Revolution Minds (Verona Second Hand)',
+        description: 'Piattaforma web per la sensibilizzazione all\'impatto ambientale dell\'abbigliamento e la promozione di negozi second-hand e vintage a Verona.',
         fullDescription: [
-          'Revolution Minds è un progetto web completo dedicato alla sensibilizzazione e fruizione della moda sostenibile e dell\'upcycling tessile.',
-          'Sviluppato con architettura frontend moderna, offre un\'interfaccia immersiva, filtri dinamici di ricerca, catalogo interattivo e layout responsive ad alte prestazioni con animazioni curate.'
+          'Revolution Minds è un progetto web sviluppato con i compagni di corso durante il percorso ITS Academy LAST per promuovere la moda sostenibile e l\'economia circolare nel territorio veronese.',
+          'Offre un catalogo interattivo di negozi di seconda mano, guide all\'upcycling tessile, layout responsive ad alte prestazioni ed estetica moderna.'
         ],
         imageUrl: '/RevolutionMinds.png',
         technologies: ['JavaScript', 'HTML5 Semantico', 'CSS3 Modulare', 'Responsive UI', 'Green Fashion Web App'],
         links: [
-          { label: 'Codice GitHub', url: 'https://github.com/dennisbottari', type: 'github' },
-          { label: 'Visita Progetto', url: '#', type: 'preview' }
+          { label: 'Visita Sito Live', url: 'https://dennisbottari.it/revolutionminds/', type: 'preview' },
+          { label: 'Repository GitHub', url: 'https://github.com/bottaridennis/ProjectWorkRevolutionMinds', type: 'github' }
         ]
       },
       {
-        id: 'party-pantry',
-        title: 'Party Pantry',
-        description: 'Web application per la gestione di dispense cocktail, calcolo proporzionale delle dosi e organizzazione eventi.',
+        id: 'dnd-hub',
+        title: 'Forge of Heroes — Companion D&D 2024',
+        description: 'Web application e compendio italiano per D&D 5e / Regole 2024: crea, gestisci e porta in sessione schede personaggio, statistiche e incantesimi in tempo reale.',
         fullDescription: [
-          'Party Pantry è un assistente digitale per organizzare drink, verificare ingredienti disponibili e calcolare dosaggi ottimali per feste ed eventi privati.',
-          'Include gestione inventario in tempo reale, ricettario dinamico con calcolo proporzionale degli ingredienti, filtri alcolici/analcolici e interfaccia ottimizzata per tablet e smartphone.'
+          'Forge of Heroes è un companion digitale ottimizzato per giocatori e Dungeon Master di Dungeons & Dragons con le nuove regole 2024.',
+          'Consente la gestione rapida di tiri salvezza, slot incantesimi, inventario peso/monete, calcolo automatico dei modificatori di competenza, schede salvate offline e compendio dinamico.'
         ],
-        imageUrl: '/PartyPantry.png',
-        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'State Management', 'Mobile First'],
+        imageUrl: '/dnd.png',
+        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'D&D 2024 Rules Engine', 'PWA', 'Local Storage'],
         links: [
-          { label: 'Codice GitHub', url: 'https://github.com/dennisbottari', type: 'github' }
+          { label: 'Visita Forge of Heroes Live', url: 'https://dennisbottari.it/dnd/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
         ]
       },
       {
         id: 'nerd-shelf',
         title: 'NerdShelf',
-        description: 'Libreria digitale interattiva per collezionisti nerd: tracking di fumetti, manga, volumi fantasy, videogiochi e statistiche di lettura.',
+        description: 'Libreria digitale per collezionisti: tracking di fumetti, manga, volumi fantasy, manuali D&D, wishlist e statistiche di lettura.',
         fullDescription: [
           'NerdShelf è un\'applicazione web concepita per collezionisti e appassionati di cultura nerd, fumetti, manga e narrativa sci-fi/fantasy.',
           'Permette di catalogare la propria collezione fisica e digitale, tracciare volumi letti e wishlist, visualizzare copertine ad alta risoluzione, filtrare per casa editrice o genere e consultare statistiche dettagliate sui progressi di lettura.'
@@ -846,21 +847,158 @@ export const portfolioData: Profile[] = [
         imageUrl: '/NerdShelf.png',
         technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Filter & Search', 'LocalStorage', 'Responsive UI'],
         links: [
-          { label: 'Codice GitHub', url: 'https://github.com/dennisbottari', type: 'github' }
+          { label: 'Apri NerdShelf Live', url: 'https://dennisbottari.it/NerdShelf/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
         ]
       },
       {
-        id: 'dnd-hub',
-        title: 'D&D 5e Character & Campaign Hub',
-        description: 'Web application per giocatori e Dungeon Master di Dungeons & Dragons: schede personaggio interattive, calcolo tiri salvezza, inventario e slot incantesimi.',
+        id: 'party-organizer',
+        title: 'Party Organizer (Party Pantry)',
+        description: 'Web application per la gestione di feste ed eventi: calcolo dosaggi cocktail, liste della spesa e inventario dispense condiviso.',
         fullDescription: [
-          'Hub digitale dedicato a Dungeon Master e giocatori di Dungeons & Dragons (5ª Edizione).',
-          'Fornisce una scheda del personaggio interattiva con calcolo in tempo reale di modificatori di caratteristica, tiri salvezza, slot incantesimi, abilità, dadi vita e gestione dell\'equipaggiamento e delle monete, ottimizzata per sessioni dal vivo o su tablet.'
+          'Party Organizer è uno strumento studiato per chi organizza eventi, feste private e aperitivi tra amici senza sprechi.',
+          'Calcola automaticamente quantità ottimali di bevande, ghiaccio e cibo in base al numero di invitati, gestisce la checklist degli acquisti e consente la spunta condivisa degli alimenti acquistati.'
         ],
-        imageUrl: '/dnd.png',
-        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'D&D 5e Rules Engine', 'Interactive UI', 'PWA'],
+        imageUrl: '/PartyPantry.png',
+        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'State Management', 'Mobile First', 'Event Logistics'],
         links: [
-          { label: 'Codice GitHub', url: 'https://github.com/dennisbottari', type: 'github' }
+          { label: 'Apri Party Organizer Live', url: 'https://dennisbottari.it/partyOrganizer/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'sonicvisual-studio',
+        title: 'SonicVisual Studio - Music Visual Video Editor',
+        description: 'Studio di visualizzazione audio reattiva basato su Web Audio API con 10 modalità visuali, analisi FFT in tempo reale ed esportazione video 4K / Full HD.',
+        fullDescription: [
+          'SonicVisual Studio è un avanzato visualizzatore audio reattivo basato su Web Audio API e Canvas ad alte prestazioni.',
+          'Permette di caricare qualsiasi traccia audio, analizzare lo spettro FFT in tempo reale, selezionare tra 10 layout (barre, onde circolari, particelle 3D, tunnel cinetici) ed esportare video ad alta definizione (1080p e 4K) pronti per YouTube e TikTok.'
+        ],
+        imageUrl: '/sonicvisual.svg',
+        technologies: ['Web Audio API', 'HTML5 Canvas', 'FFT Spectrum Analysis', 'Video Export', 'Audio Reactive Engine', 'TypeScript'],
+        links: [
+          { label: 'Lancia SonicVisual Studio Live', url: 'https://dennisbottari.it/SonicVisual_Studio/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'scp-database',
+        title: 'SCP Foundation Archival Database',
+        description: 'Modernized, dark-mode, responsive web replica and database browser of the SCP Foundation Wiki anomaly archives.',
+        fullDescription: [
+          'Una replica web graficamente rinnovata dell\'interfaccia della celebre SCP Foundation, focalizzata su leggibilità, atmosfera cinematografica sci-fi e dark theme immersivo.',
+          'Supporta ricerca dossier per classificazione anomalia (Safe, Euclid, Keter, Thaumiel), terminale dossier con blocchi di sicurezza redaction interattivi e audio logs ambientali.'
+        ],
+        imageUrl: '/scp.svg',
+        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Sci-Fi UI / HUD', 'SCP Database Engine'],
+        links: [
+          { label: 'Accedi al Database SCP Live', url: 'https://dennisbottari.it/scp/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'defuser-game',
+        title: 'Defuser - Bomb Puzzle Simulator',
+        description: 'Puzzle game interattivo cooperativo per browser con moduli logici ed enigmi a tempo ad alta tensione.',
+        fullDescription: [
+          'Defuser è un web game cooperativo ad alta tensione dove uno o più giocatori devono decifrare manuali tecnici e disinnescare moduli elettronici prima che il timer scada.',
+          'Sviluppato con logica a stati reattiva in JavaScript/TypeScript e audio retro synth, include puzzle di cavi, tastierini numerici, codici Morse e sequenze simmetriche.'
+        ],
+        imageUrl: '/defuser.svg',
+        technologies: ['TypeScript', 'Vite', 'Canvas', 'Web Audio API', 'Puzzle Game', 'State Machine'],
+        links: [
+          { label: 'Gioca a Defuser Live', url: 'https://dennisbottari.it/defuser/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'alice-portfolio',
+        title: 'Portfolio - Alice Mele',
+        description: 'Portfolio di design editoriale e visual identity per Alice Mariarita Mele, Graphic Designer specializzata in tipografia, poster e identità visiva.',
+        fullDescription: [
+          'Portfolio web moderno sviluppato per la graphic designer Alice Mariarita Mele, con focus su comunicazione visiva, tipografia editoriale, branding e poster design d\'autore.',
+          'Realizzato con React, Vite e Tailwind CSS, presenta layout fluido e minimalista con tipografia elegante (Cormorant Garamond, Playfair Display e Syne) ed esperienza utente editoriale curata.'
+        ],
+        imageUrl: '/alice.svg',
+        technologies: ['React', 'Vite', 'Tailwind CSS', 'Editorial Design', 'Typography', 'Responsive UI'],
+        links: [
+          { label: 'Visita Sito Live', url: 'https://dennisbottari.it/alice/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'oppeado-assisi',
+        title: 'Oppeado | Assisi 2026',
+        description: 'Diario di viaggio e portale informativo per il pellegrinaggio degli adolescenti di Oppeano ad Assisi.',
+        fullDescription: [
+          'Piattaforma web interattiva ideata per documentare il cammino e le tappe del pellegrinaggio degli adolescenti di Oppeano ad Assisi nel 2026.',
+          'Fornisce programma giornaliero, meditazioni, canti, mappe del percorso, galleria fotografica e aggiornamenti per partecipanti e famiglie.'
+        ],
+        imageUrl: '/assisi.svg',
+        technologies: ['Web App', 'HTML5', 'Tailwind CSS', 'Mobile First', 'Interactive Map'],
+        links: [
+          { label: 'Visita Assisi 2026 Live', url: 'https://dennisbottari.it/assisi/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'linkshelf',
+        title: 'LinkShelf',
+        description: 'Personal bookmark manager e organizzatore di collegamenti web, documentazione per sviluppatori e risorse grafiche preferite.',
+        fullDescription: [
+          'LinkShelf è un\'applicazione web leggera progettata per archiviare, categorizzare e ritrovare istantaneamente URL, guide e documentazioni di sviluppo.',
+          'Dotata di filtri per tag, esportazione JSON, anteprime favicon automatiche e ricerca istantanea via tastiera.'
+        ],
+        imageUrl: '/linkshelf.svg',
+        technologies: ['TypeScript', 'Vite', 'Tailwind CSS', 'IndexedDB / Storage', 'Bookmark Manager'],
+        links: [
+          { label: 'Apri LinkShelf Live', url: 'https://dennisbottari.it/linkshelf/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'projects-hub',
+        title: 'HUB - Quick Project Portal',
+        description: 'Dashboard rapida e portale centrale di aggregazione per lanciare tutte le utility web, giochi ed esperimenti creativi di Dennis.',
+        fullDescription: [
+          'HUB è una springboard minimalista e veloce che raccoglie in un\'unica interfaccia tutti i collegamenti ai microservizi, prototipi e siti web ospitati sul server.',
+          'Ottimizzato per caricamento immediato a zero latenza con scorciatoie da tastiera e categorizzazione per tipo di risorsa.'
+        ],
+        imageUrl: '/hub.svg',
+        technologies: ['JavaScript', 'HTML5', 'CSS3 Modulare', 'Micro-Frontend Hub', 'Zero Latency'],
+        links: [
+          { label: 'Apri HUB Live', url: 'https://dennisbottari.it/HUB/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'old-portfolio',
+        title: 'Dennis Bottari (Archivio Portfolio Storico)',
+        description: 'La versione storica del portfolio personale di Dennis con tilt effect 3D, particle swirl e showcase progetti originali.',
+        fullDescription: [
+          'L\'archivio fedele del portfolio precedente di Dennis Bottari, sviluppato con Vanilla JavaScript, VanillaTilt, AOS animation library e animazioni particellari su Canvas.',
+          'Contiene i primi progetti accademici e personali in Aseprite, Godot, GameMaker e Python con cambio palette colore dinamico in tempo reale.'
+        ],
+        imageUrl: '/page.png',
+        technologies: ['Vanilla JavaScript', 'Canvas 2D / NextParticle', 'VanillaTilt', 'AOS', 'CSS Custom Variables'],
+        links: [
+          { label: 'Visita Portfolio Storico Live', url: 'https://dennisbottari.it/old_portfolio/', type: 'preview' },
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
+        ]
+      },
+      {
+        id: 'dennis-hub-root',
+        title: 'Dennis Bottari Portfolio Hub',
+        description: 'Il portale personale e hub centrale di Dennis Bottari ospitato su GitHub Pages e dennisbottari.it.',
+        fullDescription: [
+          'Architettura radice del dominio personale dennisbottari.it e bottaridennis.github.io, che smista il traffico, gestisce i sottodomini e funge da punto d\'accesso principale per tutte le creazioni digitali.',
+          'Configurato con routing personalizzato, reverse proxy Nginx, certificati SSL e ottimizzazione del delivery statico.'
+        ],
+        imageUrl: '/bottaridennis.svg',
+        technologies: ['Web Architecture', 'Nginx', 'GitHub Pages', 'DNS & CNAME', 'Portfolio Core'],
+        links: [
+          { label: 'Visita Hub Principale', url: 'https://dennisbottari.it/', type: 'preview' },
+          { label: 'Repository GitHub', url: 'https://github.com/bottaridennis/bottaridennis.github.io', type: 'github' }
         ]
       },
       {
@@ -874,7 +1012,7 @@ export const portfolioData: Profile[] = [
         imageUrl: '/encdec.png',
         technologies: ['Python', 'Web Crypto API', 'JavaScript', 'AES-256 / SHA-256', 'Cybersecurity', 'UI Toolkit'],
         links: [
-          { label: 'Codice GitHub', url: 'https://github.com/dennisbottari', type: 'github' }
+          { label: 'Repository GitHub', url: 'https://github.com/bottaridennis/Encoder_Decoder_AES', type: 'github' }
         ]
       },
       {
@@ -889,21 +1027,7 @@ export const portfolioData: Profile[] = [
         technologies: ['HTML5 Semantico', 'CSS3 Flex & Grid', 'JavaScript', 'Boxicons', 'FontAwesome', 'Corporate Design'],
         links: [
           { label: 'Apri Sito Live', url: '/ARCON/arcon.html', type: 'preview' },
-          { label: 'Codice Sorgente', url: 'https://github.com/dennisbottari', type: 'github' }
-        ]
-      },
-      {
-        id: 'personal-portfolio',
-        title: 'Creative Developer Portfolio',
-        description: 'Portfolio digitale multidisciplinare con console DAW per brani musicali Suno, emulatore giochi arcade retro HTML5 e architettura bilingue IT/EN.',
-        fullDescription: [
-          'Il portfolio personale di Dennis Bottari rappresenta una fusione tra sviluppo web ad alte prestazioni, estetica digitale e funzionalità interattive.',
-          'Include un player audio continuo stile console DAW, supporto per videogiochi retro HTML5 in modale, filtri e localizzazione bilingue IT/EN.'
-        ],
-        imageUrl: '/PG.gif',
-        technologies: ['React 19', 'TypeScript', 'Tailwind CSS v4', 'Motion', 'Vite'],
-        links: [
-          { label: 'GitHub Repository', url: 'https://github.com/dennisbottari', type: 'github' }
+          { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
         ]
       }
     ]
@@ -915,68 +1039,98 @@ export const portfolioData: Profile[] = [
     themeColor: 'text-emerald-500',
     bgColor: 'bg-emerald-500/10',
     icon: Gamepad2,
-    skills: ['GameMaker Studio', 'GML (GameMaker Language)', 'Level Design', '2D Physics & Collision', 'Pixel Art & Animation', 'Audio & Sound FX'],
+    skills: ['GameMaker Studio', 'Godot Engine', 'GDScript', 'Aseprite', 'GML', 'Level Design', 'Fisica 2D & Collisioni', 'Pixel Art & Animazione', 'Audio & Sound FX'],
     education: [
       {
         year: '2019 - Presente',
-        institution: 'Game Development & Game Jam',
-        description: 'Creazione di prototipi giocabili, studio di gameplay loop e programmazione logica GML.'
+        institution: 'Game Development & Pixel Art',
+        description: 'Creazione di videogiochi retro, studio di animazione pixel-art in Aseprite e programmazione di meccaniche in Godot e GameMaker.'
       }
     ],
     projects: [
       {
+        id: 'pixel-art-character',
+        title: 'Aseprite | Animazione Personaggio 2D',
+        description: 'Set completo di animazioni in 6 direzioni per un personaggio 2D in pixel-art realizzato su Aseprite con licenza CC-0 per videogiochi.',
+        fullDescription: [
+          'Con Aseprite ho creato un set completo di animazioni per un personaggio 2D in 6 direzioni da condividere con la community con licenza CC-0 per lo sviluppo di giochi e per la realizzazione di animazioni in pixel-art commerciali.',
+          'Include cicli di animazione per camminata (walk), corsa (run), posa statica (idle) e transizioni direzionali fluide, esportate su sprite sheet per motori di gioco 2D (Godot, GameMaker, Unity).'
+        ],
+        imageUrl: '/PG.gif',
+        technologies: ['Aseprite', 'Pixel-Art', 'Animazione 2D', 'Sprite Sheet', 'Game Asset CC-0'],
+        links: [
+          { label: 'Scarica Sprite Sheet (.png)', url: '/sprite.png', type: 'download' },
+          { label: 'Anteprima Animata (.gif)', url: '/PG.gif', type: 'preview' }
+        ]
+      },
+      {
+        id: 'knight-run',
+        title: 'Godot | Knight Run',
+        description: 'Videogioco platformer 16-bit sviluppato in Godot Engine con GDScript, fisica di movimento, salti e level design originale.',
+        fullDescription: [
+          'Sviluppo di un videogioco platformer 16-bit in Godot Engine: gli script di movimento, gestione delle collisioni e il level design sono opera mia.',
+          'Include implementazione di inerzia nei salti, gravità progressiva, trappole dinamiche e architettura modulare di nodi e scene in GDScript.'
+        ],
+        imageUrl: '/game.png',
+        technologies: ['Godot Engine', 'GDScript', 'Platformer 2D', 'Level Design', 'Physics 2D'],
+        links: [
+          { label: 'Codice Sorgente GitHub', url: 'https://github.com/bottaridennis/KnightRun', type: 'github' }
+        ]
+      },
+      {
         id: 'spooky-shooter',
-        title: 'Spooky Shooter',
-        description: 'Arcade shooter di sopravvivenza 2D giocabile nel browser con orde continue di nemici spettrali.',
+        title: 'Gamemaker 2 | Spooky Shooter',
+        description: 'Survival shooter arcade in GameMaker dove bisogna sopravvivere a orde continue di uomini zucca con audio retro.',
         fullDescription: [
           'Spooky Shooter è un survival shooter arcade ad alto ritmo dove il giocatore deve sopravvivere a ondate crescenti di zucche e mostri di Halloween.',
           'Include gestione di collisioni precise, spawn rate progressivo, sistema di punteggio e audio retro coinvolgente. Giocabile direttamente nel browser.'
         ],
         imageUrl: '/spookyshooter.png',
-        technologies: ['GameMaker', 'GML', 'HTML5 Game Engine', 'Pixel Art'],
+        technologies: ['GameMaker Studio 2', 'GML', 'HTML5 Game Engine', 'Arcade 2D'],
         links: [
           { label: 'Gioca nel Browser', url: '/spookyshooter/index.html', type: 'preview' }
         ]
       },
       {
         id: 'space-game',
-        title: 'Space Game',
-        description: 'Avventura spaziale retro con esplorazione di pianeti e manovre in assenza di gravità.',
+        title: 'Gamemaker 2 | Space Rocks',
+        description: 'Minigioco arcade spaziale in cui distruggere asteroidi con movimento WASD, freno a inerzia con barra spaziatrice e sparo con mouse.',
         fullDescription: [
-          'Un gioco di esplorazione spaziale 2D con comandi fisici inerziali, gestione carburante e pericoli cosmici da evitare.',
+          'Un gioco di distruzione asteroidi nello spazio profondo con comandi fisici inerziali (WASD per accelerazione, Spazio per freno d\'inerzia e click del mouse per fare fuoco).',
           'Esportato in formato HTML5 per essere eseguito istantaneamente su qualsiasi browser desktop o mobile.'
         ],
-        imageUrl: '/space_game.png',
-        technologies: ['GameMaker', 'GML', 'HTML5', 'Arcade Mechanics'],
+        imageUrl: '/spacegame.png',
+        technologies: ['GameMaker Studio 2', 'GML', 'HTML5', 'Arcade Physics'],
         links: [
           { label: 'Gioca nel Browser', url: '/space_game/index.html', type: 'preview' }
         ]
       },
       {
+        id: 'space-shooter',
+        title: 'Gamemaker 2 | Rocks Shooter',
+        description: 'Spacethruster arcade con hitbox di precisione, particelle e distruzione progressiva di formazioni rocciose.',
+        fullDescription: [
+          'Evoluzione del gameplay shoot-em-up spaziale con sprite di dettaglio, gestione avanzata degli angoli di tiro e calcolo delle collisioni.',
+          'Interamente compatibile HTML5 ed eseguibile direttamente via browser.'
+        ],
+        imageUrl: '/space_game.png',
+        technologies: ['GameMaker Studio 2', 'GML', 'Shmup Mechanics', 'HTML5'],
+        links: [
+          { label: 'Gioca nel Browser', url: '/space_shooter/index.html', type: 'preview' }
+        ]
+      },
+      {
         id: 'rpg-game',
-        title: 'RPG Game',
-        description: 'Prototipo RPG top-down con esplorazione della mappa, dialoghi e quest di base.',
+        title: 'Gamemaker 2 | RPG Game',
+        description: 'Prototipo RPG retro a 8-bit sviluppato con GameMaker 2 e Aseprite con assets e meccaniche di gioco.',
         fullDescription: [
           'Un classico gioco di ruolo con vista dall\'alto, movimento a griglia fluida, interazione con NPC e ambientazione fantasy medievale.',
           'Dimostra la struttura a stati finiti (FSM) per i personaggi e la logica di transizione tra aree di gioco.'
         ],
         imageUrl: '/rpg.png',
-        technologies: ['GameMaker', 'GML', 'Level Design', 'RPG Mechanics'],
+        technologies: ['GameMaker Studio 2', 'GML', 'Aseprite', 'Pixel-Art 8-bit', 'HTML5'],
         links: [
           { label: 'Gioca nel Browser', url: '/RPG_game/index.html', type: 'preview' }
-        ]
-      },
-      {
-        id: 'space-shooter',
-        title: 'Space Shooter',
-        description: 'Coinvolgente sparatutto verticale a scorrimento con astronavi, power-up e boss finali.',
-        fullDescription: [
-          'Tributo ai grandi classici arcade shoot-em-up (SHMUP), con pattern di proiettili complessi, scoring multiplier e dinamiche adrenaliniche.'
-        ],
-        imageUrl: '/spacegame.png',
-        technologies: ['GameMaker', 'GML', 'Shmup Mechanics', 'HTML5'],
-        links: [
-          { label: 'Gioca nel Browser', url: '/space_shooter/index.html', type: 'preview' }
         ]
       }
     ]
@@ -1008,7 +1162,7 @@ export const portfolioData: Profile[] = [
         imageUrl: '/parking.png',
         technologies: ['Arduino', 'Sensore Ultrasuoni HC-SR04', 'C++ Embedded', 'Elettronica Hardware'],
         links: [
-          { label: 'Scheda Tecnica', url: '#', type: 'preview' }
+          { label: 'Codice GitHub', url: 'https://github.com/bottaridennis/parking-sensor-arduino', type: 'github' }
         ]
       }
     ]
@@ -1042,7 +1196,7 @@ export const portfolioData: Profile[] = [
     themeColor: 'text-rose-500',
     bgColor: 'bg-rose-500/10',
     icon: Palette,
-    skills: ['Adobe Illustrator', 'Figma', 'Photoshop', 'Logo Design & Monogrammi', 'Tipografia & Griglie', 'Color Theory & Contrast'],
+    skills: ['Adobe Illustrator', 'Figma', 'Photoshop', 'Logo Design & Monogrammi', 'UI & UX Design', 'Tipografia & Griglie', 'Color Theory & Contrast'],
     education: [
       {
         year: '2020 - Presente',
@@ -1052,6 +1206,20 @@ export const portfolioData: Profile[] = [
     ],
     projects: [
       {
+        id: 'stove-ui',
+        title: 'UI & UX | Prototipo Stove Figma',
+        description: 'Progettazione dell\'interfaccia grafica e prototipo funzionante su Figma per un\'applicazione mobile di domotica e gestione stufe.',
+        fullDescription: [
+          'Con il percorso ITS con l\'ITS ACADEMY LAST ho sviluppato l\'interfaccia grafica e il prototipo interattivo funzionante di un\'app mobile per la gestione domestica delle stufe utilizzando Figma.',
+          'Include la definizione del design system, flussi utente (user flows), regolazione della temperatura, programmazione oraria settimanale e diagnostica in tempo reale.'
+        ],
+        imageUrl: '/page.png',
+        technologies: ['Figma', 'UI/UX Design', 'Mobile Prototyping', 'Design System', 'Smart Home UI'],
+        links: [
+          { label: 'Esplora Prototipo Figma', url: 'https://www.figma.com/file/aVVNqbTn3qFB69eTG17imo/Untitled?type=design&node-id=88%3A828&mode=design&t=2ieOiKQFAiT4OxO1-1', type: 'preview' }
+        ]
+      },
+      {
         id: 'brand-identity',
         title: 'Monogramma & Brand Identity DB',
         description: 'Studio vettoriale per il logo Dennis Bottari, basato su contrasti geometrici e legature minimaliste.',
@@ -1060,9 +1228,9 @@ export const portfolioData: Profile[] = [
           'Linee pulite, geometria essenziale e perfetta leggibilità a qualsiasi scala, dall\'avatar di 32px al cartellone.'
         ],
         imageUrl: '/Logo.png',
-        technologies: ['Illustrator', 'Figma', 'Vector Art', 'Brand Guidelines'],
+        technologies: ['Adobe Illustrator', 'Figma', 'Vector Art', 'Brand Guidelines'],
         links: [
-          { label: 'Portfolio Grafico', url: '#', type: 'preview' }
+          { label: 'Logo Vettoriale (.svg)', url: '/DB-Logo.svg', type: 'download' }
         ]
       }
     ]
@@ -1152,26 +1320,80 @@ export function useLocalizedPortfolio(): Profile[] {
               case 'rev-minds':
                 return {
                   ...p,
-                  title: 'Revolution Minds',
-                  description: 'Innovative web platform for sustainable and green fashion with dynamic catalog and immersive UI.',
+                  title: 'Revolution Minds (Verona Second Hand)',
+                  description: 'Innovative web platform for sustainable fashion, upcycling awareness, and vintage thrift stores in Verona.',
                 };
-              case 'party-pantry':
+              case 'dnd-hub':
                 return {
                   ...p,
-                  title: 'Party Pantry',
-                  description: 'Cocktail inventory assistant and proportional recipe calculator web app for parties and private events.',
+                  title: 'Forge of Heroes — Companion D&D 2024',
+                  description: 'Italian companion web app for D&D 5e / 2024 Rules: interactive character sheets, real-time spell tracking, and dice engines.',
                 };
               case 'nerd-shelf':
                 return {
                   ...p,
                   title: 'NerdShelf',
-                  description: 'Interactive digital library for nerd collectors: tracking comics, manga, fantasy novels, and reading statistics.',
+                  description: 'A personal library manager for books, manga, fantasy novels, and D&D manuals with a dark nerd aesthetic.',
                 };
-              case 'dnd-hub':
+              case 'party-organizer':
                 return {
                   ...p,
-                  title: 'D&D 5e Character & Campaign Hub',
-                  description: 'Web application for D&D players and DMs: interactive character sheets, saving throw calculators, and spell slot tracking.',
+                  title: 'Party Organizer (Party Pantry)',
+                  description: 'Event party planner and cocktail inventory assistant with proportional servings and shared groceries checklist.',
+                };
+              case 'sonicvisual-studio':
+                return {
+                  ...p,
+                  title: 'SonicVisual Studio - Music Visual Video Editor',
+                  description: 'Professional Web Audio reactive music visualizer studio with 10 layout modes, FFT spectrum analysis, and 4K video export.',
+                };
+              case 'scp-database':
+                return {
+                  ...p,
+                  title: 'SCP Foundation Archival Database',
+                  description: 'Modernized, dark-mode, responsive web replica and database browser of the SCP Foundation anomaly wiki.',
+                };
+              case 'defuser-game':
+                return {
+                  ...p,
+                  title: 'Defuser - Bomb Puzzle Simulator',
+                  description: 'High-tension cooperative puzzle game for browser with wire modules, logic ciphers, and retro synth audio.',
+                };
+              case 'alice-portfolio':
+                return {
+                  ...p,
+                  title: 'Portfolio - Alice Mele',
+                  description: 'Editorial design & visual identity portfolio for graphic designer Alice Mariarita Mele with bespoke typography.',
+                };
+              case 'oppeado-assisi':
+                return {
+                  ...p,
+                  title: 'Oppeado | Assisi 2026',
+                  description: 'Pilgrimage travel journal, interactive maps, itinerary schedules, and daily reflections for Oppeano youth in Assisi.',
+                };
+              case 'linkshelf':
+                return {
+                  ...p,
+                  title: 'LinkShelf',
+                  description: 'Lightweight bookmark manager and curated developer vault with instant tag searching and favicon previews.',
+                };
+              case 'projects-hub':
+                return {
+                  ...p,
+                  title: 'HUB - Quick Project Portal',
+                  description: 'Fast minimalist launcher and gateway linking all hosted web utilities, experimental tools, and prototypes.',
+                };
+              case 'old-portfolio':
+                return {
+                  ...p,
+                  title: 'Dennis Bottari (Archival Portfolio)',
+                  description: 'Original legacy portfolio featuring 3D tilt effects, Canvas particle swirl, and retro project showcases.',
+                };
+              case 'dennis-hub-root':
+                return {
+                  ...p,
+                  title: 'Dennis Bottari Portfolio Hub',
+                  description: 'Root domain hub for dennisbottari.it and bottaridennis.github.io routing subdomains and static services.',
                 };
               case 'enc-dec':
                 return {
@@ -1183,13 +1405,7 @@ export function useLocalizedPortfolio(): Profile[] {
                 return {
                   ...p,
                   title: 'ARCON - Small Business Corporate Portal',
-                  description: 'Comprehensive corporate website for small businesses with smooth anchor navigation, showcase sections, and responsive design.',
-                };
-              case 'personal-portfolio':
-                return {
-                  ...p,
-                  title: 'Creative Developer Portfolio',
-                  description: 'Multidisciplinary portfolio featuring custom continuous DAW music console, embedded HTML5 arcade emulator, and bilingual IT/EN architecture.',
+                  description: 'Comprehensive corporate website for small businesses with smooth anchor navigation and responsive design.',
                 };
               default:
                 return p;
@@ -1201,6 +1417,48 @@ export function useLocalizedPortfolio(): Profile[] {
           ...profile,
           title: 'Game Designer',
           intro: 'Designing and programming 2D video games, engaging gameplay loops, arcade physics, sound design, and pixel art aesthetics.',
+          projects: profile.projects.map((p) => {
+            switch (p.id) {
+              case 'pixel-art-character':
+                return {
+                  ...p,
+                  title: 'Aseprite | 2D Character Animation',
+                  description: 'Complete 6-directional 2D pixel-art character animation set created in Aseprite with CC-0 license for game engines.',
+                };
+              case 'knight-run':
+                return {
+                  ...p,
+                  title: 'Godot | Knight Run',
+                  description: '16-bit platformer video game developed in Godot Engine using GDScript with physics, jump mechanics, and custom level design.',
+                };
+              case 'spooky-shooter':
+                return {
+                  ...p,
+                  title: 'Gamemaker 2 | Spooky Shooter',
+                  description: 'Arcade survival shooter in GameMaker surviving waves of pumpkin monsters with retro audio effects.',
+                };
+              case 'space-game':
+                return {
+                  ...p,
+                  title: 'Gamemaker 2 | Space Rocks',
+                  description: 'Space arcade minigame destroying asteroids with WASD controls, spacebar inertia braking, and mouse shooting.',
+                };
+              case 'space-shooter':
+                return {
+                  ...p,
+                  title: 'Gamemaker 2 | Rocks Shooter',
+                  description: 'Arcade shoot-em-up with precision collision hitboxes, particles, and asteroid destruction mechanics.',
+                };
+              case 'rpg-game':
+                return {
+                  ...p,
+                  title: 'Gamemaker 2 | RPG Game',
+                  description: 'Retro 8-bit RPG prototype built with GameMaker 2 and Aseprite featuring grid movement, dialogues, and custom assets.',
+                };
+              default:
+                return p;
+            }
+          }),
         };
       case 'elettricista':
         return {
@@ -1219,6 +1477,24 @@ export function useLocalizedPortfolio(): Profile[] {
           ...profile,
           title: 'Graphic Designer',
           intro: 'Brand identity, vector logo design, cohesive visual design systems, and digital editorial layouts.',
+          projects: profile.projects.map((p) => {
+            switch (p.id) {
+              case 'stove-ui':
+                return {
+                  ...p,
+                  title: 'UI & UX | Stove Figma Prototype',
+                  description: 'UI/UX design and interactive prototype on Figma for a smart home mobile application controlling pellet and heating stoves.',
+                };
+              case 'brand-identity':
+                return {
+                  ...p,
+                  title: 'Monogram & DB Brand Identity',
+                  description: 'Vector identity design for Dennis Bottari logo based on geometric contrast, minimalist typography, and dual-mode scalability.',
+                };
+              default:
+                return p;
+            }
+          }),
         };
       case 'artista':
         return {

@@ -11,27 +11,21 @@ interface ArtboardViewProps {
 
 export default function DesignArtboardView({ profile, onBack, onSelectProject }: ArtboardViewProps) {
   return (
-    <div className="min-h-full px-3 py-6 sm:px-6 md:px-10 lg:py-8 max-w-7xl mx-auto space-y-6 select-none font-mono">
+    <div className="min-h-full px-3 py-4 sm:px-6 md:px-10 max-w-7xl mx-auto space-y-6 font-mono select-none">
       {/* Top Navigation */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-rose-500/30">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-rose-500/20">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-rose-300 border border-rose-500/30 text-xs font-semibold tracking-wider transition-all group cursor-pointer"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-rose-300 border border-rose-500/30 text-xs font-semibold tracking-wide transition-all group cursor-pointer"
         >
           <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
-          <span>[ ESC ] ESCI A PANORAMICA</span>
+          <span>Torna alla panoramica</span>
         </button>
 
-        <div className="flex items-center gap-3 text-xs">
-          <div className="flex items-center gap-2 px-3 py-1 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
-            <span>CANVAS:</span>
-            <span className="text-rose-400 font-bold">1920 × 1080 @ 300 DPI</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" title="Cyan" />
-            <span className="w-2.5 h-2.5 rounded-full bg-pink-500" title="Magenta" />
-            <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" title="Yellow" />
-            <span className="w-2.5 h-2.5 rounded-full bg-zinc-950 border border-white/20" title="Key Black" />
+        <div className="flex items-center gap-2 text-xs">
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-950 border border-zinc-800 text-zinc-300 font-sans">
+            <Palette size={13} className="text-rose-400" />
+            <span className="text-rose-300 font-semibold">{profile.projects.length} progetti di design</span>
           </div>
         </div>
       </div>
@@ -40,24 +34,6 @@ export default function DesignArtboardView({ profile, onBack, onSelectProject }:
           FIGMA / ILLUSTRATOR ARTBOARD WORKSPACE
       ========================================================================= */}
       <div className="rounded-2xl bg-[#140b10] border-2 border-rose-500/40 shadow-2xl shadow-rose-950/30 overflow-hidden relative">
-        {/* Workspace Ruler Bar at Top */}
-        <div className="bg-zinc-950 border-b border-rose-500/20 px-6 py-2 flex items-center justify-between text-[10px] text-zinc-500 overflow-x-auto">
-          <div className="flex items-center gap-8">
-            <span>0 px</span>
-            <span>200 px</span>
-            <span>400 px</span>
-            <span>600 px</span>
-            <span>800 px</span>
-            <span>1200 px</span>
-            <span>1600 px</span>
-          </div>
-          <div className="flex items-center gap-3 text-rose-400 font-bold">
-            <span>ZOOM: 100%</span>
-            <span>·</span>
-            <span>COLOR: DCI-P3</span>
-          </div>
-        </div>
-
         {/* Workspace Header */}
         <div className="bg-gradient-to-r from-zinc-950 via-[#210f18] to-zinc-950 border-b border-rose-500/30 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
@@ -66,25 +42,14 @@ export default function DesignArtboardView({ profile, onBack, onSelectProject }:
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-base sm:text-lg font-bold text-white tracking-wide uppercase font-mono">
-                  VECTOR ARTBOARD // BLENDER 3D & BRAND IDENTITY
+                <h1 className="text-base sm:text-lg font-bold text-white tracking-wide uppercase font-sans">
+                  Design Visivo & Brand Identity Studio
                 </h1>
-                <span className="px-2 py-0.5 rounded bg-rose-500/20 border border-rose-500/30 text-rose-300 text-[10px] font-bold">
-                  PROPORZIONE AUREA
-                </span>
               </div>
               <p className="text-xs text-zinc-400 font-sans mt-0.5">
-                Dennis Bottari · Brand Identity, Modellazione 3D e Layout Grafico Editoriale
+                Dennis Bottari · Brand Identity, Prototipazione Figma e Grafica Vettoriale
               </p>
             </div>
-          </div>
-
-          {/* Floating Mini Tools Bar */}
-          <div className="flex items-center gap-1.5 bg-zinc-950/90 p-1.5 rounded-xl border border-rose-500/30 text-zinc-400">
-            <span className="px-2 py-1 rounded bg-rose-500/20 text-rose-300 text-xs font-bold" title="Selection Tool (V)">V</span>
-            <span className="px-2 py-1 rounded hover:bg-white/5 text-xs" title="Direct Select (A)">A</span>
-            <span className="px-2 py-1 rounded hover:bg-white/5 text-xs" title="Pen Tool (P)">P</span>
-            <span className="px-2 py-1 rounded hover:bg-white/5 text-xs" title="Artboard (O)">O</span>
           </div>
         </div>
 
@@ -160,13 +125,14 @@ export default function DesignArtboardView({ profile, onBack, onSelectProject }:
         </div>
 
         {/* Footer */}
-        <div className="bg-zinc-950 border-t border-zinc-800 px-6 py-2.5 flex flex-wrap items-center justify-between text-[11px] text-zinc-500 font-mono">
+        <div className="bg-zinc-950 border-t border-zinc-800 px-6 py-2.5 flex flex-wrap items-center justify-between text-xs text-zinc-400 font-sans">
           <div className="flex items-center gap-2">
-            <span className="text-rose-400">●</span>
-            <span>CANVAS ENGINE: GPU ACCELERATED 3D</span>
+            <span className="text-rose-400 font-semibold">{profile.projects.length} progetti</span>
+            <span className="text-zinc-600">·</span>
+            <span>Figma, Adobe Illustrator, Visual Identity</span>
           </div>
-          <div className="flex items-center gap-3">
-            <span>EXPORT FORMATS: SVG · PNG @2X · OBJ</span>
+          <div className="text-zinc-500 text-[11px]">
+            Dennis Bottari Portfolio
           </div>
         </div>
       </div>

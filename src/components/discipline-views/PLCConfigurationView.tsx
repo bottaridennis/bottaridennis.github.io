@@ -14,51 +14,30 @@ export default function PLCConfigurationView({ profile, onBack, onSelectProject 
   const [plcStatus, setPlcStatus] = useState<'RUN' | 'STOP'>('RUN');
 
   return (
-    <div className="min-h-full px-3 py-6 sm:px-6 md:px-10 lg:py-8 max-w-7xl mx-auto space-y-6 select-none font-mono">
-      {/* Top Industrial Navigation Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-amber-500/30">
+    <div className="min-h-full px-3 py-4 sm:px-6 md:px-10 max-w-7xl mx-auto space-y-6 font-mono select-none">
+      {/* Top Navigation Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-amber-500/20">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-amber-400 border border-amber-500/30 text-xs font-semibold tracking-wider transition-all group cursor-pointer shadow-sm"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-amber-400 border border-amber-500/30 text-xs font-semibold tracking-wide transition-all group cursor-pointer shadow-sm"
         >
           <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
-          <span>[ ESC ] ESCI A PANORAMICA</span>
+          <span>Torna alla panoramica</span>
         </button>
 
         <div className="flex items-center gap-3 text-xs">
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-950 border border-zinc-800">
-            <span className="text-zinc-500 text-[10px]">TARGET:</span>
-            <span className="text-amber-400 font-bold">PLC_CORE_VR</span>
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-950 border border-zinc-800 text-zinc-300 font-sans">
+            <Zap size={13} className="text-amber-400" />
+            <span className="text-amber-300 font-semibold">{profile.projects.length} progetto/i hardware</span>
           </div>
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-950 border border-zinc-800">
-            <span className="text-zinc-500 text-[10px]">CYCLE:</span>
-            <span className="text-emerald-400 font-bold">1.8 ms</span>
-          </div>
-          <button 
-            onClick={() => setPlcStatus(s => s === 'RUN' ? 'STOP' : 'RUN')}
-            className={`flex items-center gap-1.5 px-3 py-1 rounded text-xs font-bold border transition-colors cursor-pointer ${
-              plcStatus === 'RUN' 
-                ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/40 hover:bg-emerald-500/25' 
-                : 'bg-red-500/15 text-red-400 border-red-500/40 hover:bg-red-500/25'
-            }`}
-          >
-            <span className={`w-2 h-2 rounded-full ${plcStatus === 'RUN' ? 'bg-emerald-400 animate-pulse' : 'bg-red-500'}`} />
-            <span>PLC {plcStatus}</span>
-          </button>
         </div>
       </div>
 
       {/* =========================================================================
-          MAIN INDUSTRIAL ENCLOSURE / PLC CHASSIS
+          MAIN INDUSTRIAL ENCLOSURE
       ========================================================================= */}
       <div className="rounded-2xl bg-[#0f141a] border-2 border-amber-500/40 shadow-2xl shadow-amber-950/20 overflow-hidden relative">
-        {/* Four Corner Industrial Screws */}
-        <div className="absolute top-2.5 left-2.5 text-zinc-600 text-[11px] font-mono select-none">⬡</div>
-        <div className="absolute top-2.5 right-2.5 text-zinc-600 text-[11px] font-mono select-none">⬡</div>
-        <div className="absolute bottom-2.5 left-2.5 text-zinc-600 text-[11px] font-mono select-none">⬡</div>
-        <div className="absolute bottom-2.5 right-2.5 text-zinc-600 text-[11px] font-mono select-none">⬡</div>
-
-        {/* Industrial Header Banner */}
+        {/* Header Banner */}
         <div className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border-b border-amber-500/30 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
             <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-inner">
@@ -66,75 +45,48 @@ export default function PLCConfigurationView({ profile, onBack, onSelectProject 
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wider uppercase font-mono">
-                  TIA-PORTAL // CONFIGURATORE HARDWARE & IOT
+                <h1 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wide uppercase font-sans">
+                  Hardware, Impianti Elettrici & IoT Studio
                 </h1>
-                <span className="hidden sm:inline-block px-2 py-0.5 rounded bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[10px] font-bold">
-                  230V / 5V DC
-                </span>
               </div>
               <p className="text-xs text-zinc-400 font-sans mt-0.5">
                 Dennis Bottari · Elettricista Specializzato & IoT Maker (Verona, IT)
               </p>
             </div>
           </div>
-
-          {/* Module Diagnostic LEDs */}
-          <div className="flex items-center gap-3 bg-zinc-950/80 px-4 py-2 rounded-xl border border-zinc-800 text-[10px]">
-            <div className="flex flex-col items-center gap-1">
-              <span className={`w-2.5 h-2.5 rounded-full ${plcStatus === 'RUN' ? 'bg-emerald-400 shadow-[0_0_8px_#34d399]' : 'bg-zinc-700'}`} />
-              <span className="text-zinc-400">RUN</span>
-            </div>
-            <div className="flex flex-col items-center gap-1">
-              <span className={`w-2.5 h-2.5 rounded-full ${plcStatus === 'STOP' ? 'bg-amber-400 shadow-[0_0_8px_#fbbf24]' : 'bg-zinc-700'}`} />
-              <span className="text-zinc-400">STOP</span>
-            </div>
-            <div className="flex flex-col items-center gap-1">
-              <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-              <span className="text-zinc-400">ERR</span>
-            </div>
-            <div className="flex flex-col items-center gap-1">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80 shadow-[0_0_6px_#34d399]" />
-              <span className="text-zinc-400">BUS</span>
-            </div>
-            <div className="flex flex-col items-center gap-1">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80 shadow-[0_0_6px_#fbbf24]" />
-              <span className="text-zinc-400">I²C</span>
-            </div>
-          </div>
         </div>
 
-        {/* Industrial Subheader Tabs (TIA Portal Style) */}
-        <div className="px-6 pt-3 bg-zinc-950/60 border-b border-zinc-800 flex items-center gap-2 overflow-x-auto text-xs">
+        {/* Subheader Tabs */}
+        <div className="px-6 pt-3 bg-zinc-950/60 border-b border-zinc-800 flex items-center gap-2 overflow-x-auto text-xs font-sans">
           <button
             onClick={() => setActiveTab('modules')}
-            className={`px-4 py-2 rounded-t-lg font-bold transition-colors cursor-pointer border-t border-x ${
+            className={`px-4 py-2 rounded-t-lg font-semibold transition-colors cursor-pointer border-t border-x ${
               activeTab === 'modules'
                 ? 'bg-[#0f141a] text-amber-300 border-amber-500/40 border-b-[#0f141a]'
                 : 'text-zinc-500 border-transparent hover:text-zinc-300'
             }`}
           >
-            [1] RACK PROGETTI & BLOCCHI FUNZIONALI ({profile.projects.length})
+            Progetti & Hardware ({profile.projects.length})
           </button>
           <button
             onClick={() => setActiveTab('logic')}
-            className={`px-4 py-2 rounded-t-lg font-bold transition-colors cursor-pointer border-t border-x ${
+            className={`px-4 py-2 rounded-t-lg font-semibold transition-colors cursor-pointer border-t border-x ${
               activeTab === 'logic'
                 ? 'bg-[#0f141a] text-amber-300 border-amber-500/40 border-b-[#0f141a]'
                 : 'text-zinc-500 border-transparent hover:text-zinc-300'
             }`}
           >
-            [2] SPECIFICHE TECNICHE & PROTOCOLLI
+            Specifiche Tecniche & Competenze
           </button>
           <button
             onClick={() => setActiveTab('diagnostics')}
-            className={`px-4 py-2 rounded-t-lg font-bold transition-colors cursor-pointer border-t border-x ${
+            className={`px-4 py-2 rounded-t-lg font-semibold transition-colors cursor-pointer border-t border-x ${
               activeTab === 'diagnostics'
                 ? 'bg-[#0f141a] text-amber-300 border-amber-500/40 border-b-[#0f141a]'
                 : 'text-zinc-500 border-transparent hover:text-zinc-300'
             }`}
           >
-            [3] COMMISSIONING & BIOGRAFIA
+            Percorso & Esperienza
           </button>
         </div>
 
@@ -310,15 +262,14 @@ export default function PLCConfigurationView({ profile, onBack, onSelectProject 
         </div>
 
         {/* Industrial Status Footer */}
-        <div className="bg-zinc-950 border-t border-zinc-800/80 px-6 py-2.5 flex flex-wrap items-center justify-between text-[11px] text-zinc-500">
+        <div className="bg-zinc-950 border-t border-zinc-800/80 px-6 py-2.5 flex flex-wrap items-center justify-between text-xs text-zinc-400 font-sans">
           <div className="flex items-center gap-2">
-            <span className="text-amber-500">●</span>
-            <span>MODALITA: ONLINE (LIVE HARDWARE MONITOR)</span>
+            <span className="text-amber-400 font-semibold">{profile.projects.length} progetto/i hardware</span>
+            <span className="text-zinc-600">·</span>
+            <span>Arduino, HC-SR04, ESP32, Impianti Elettrici CEI 64-8</span>
           </div>
-          <div className="flex items-center gap-3">
-            <span>MEMORIA CPU: 128KB / 320KB</span>
-            <span>·</span>
-            <span className="text-zinc-400">FIRMWARE v2.4-STABLE</span>
+          <div className="text-zinc-500 text-[11px]">
+            Dennis Bottari Portfolio
           </div>
         </div>
       </div>

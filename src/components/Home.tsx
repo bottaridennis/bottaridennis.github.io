@@ -292,11 +292,21 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
           {[
             { 
-              title: portfolio.find(p => p.id === 'web-developer')?.projects.find(pj => pj.id === 'rev-minds')?.title || 'Revolution Minds', 
-              role: language === 'it' ? 'Web App & Green Fashion' : 'Web App & Sustainable Fashion', 
+              title: portfolio.find(p => p.id === 'web-developer')?.projects.find(pj => pj.id === 'dnd-hub')?.title || 'Forge of Heroes D&D', 
+              role: language === 'it' ? 'Web App · Companion 2024' : 'Web App · 2024 Companion', 
               profileId: 'web-developer', 
-              projectId: 'rev-minds', 
-              tech: 'JS · CSS · Web' 
+              projectId: 'dnd-hub', 
+              tech: 'React · TS · PWA',
+              imageUrl: '/dnd.png'
+            },
+            { 
+              title: portfolio.find(p => p.id === 'game-designer')?.projects.find(pj => pj.id === 'pixel-art-character')?.title || 'Aseprite Animazione 2D', 
+              role: language === 'it' ? 'Personaggio 2D Animato' : '2D Animated Character', 
+              profileId: 'game-designer', 
+              projectId: 'pixel-art-character', 
+              tech: 'Aseprite · CC-0 · 60fps',
+              isPixelArt: true,
+              imageUrl: '/PG.gif'
             },
             { 
               title: portfolio.find(p => p.id === 'musicista')?.projects.find(pj => pj.id === '52-hertz')?.title || '52 Hertz', 
@@ -307,15 +317,6 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
               isAudio: true,
               audioUrl: '/52-Hertz.mp3',
               imageUrl: '/52-Hertz.jpeg'
-            },
-            { 
-              title: portfolio.find(p => p.id === 'game-designer')?.projects.find(pj => pj.id === 'spooky-shooter')?.title || 'Spooky Shooter', 
-              role: language === 'it' ? 'Videogioco Arcade 2D' : '2D Arcade Survival', 
-              profileId: 'game-designer', 
-              projectId: 'spooky-shooter', 
-              tech: 'GML · HTML5',
-              isGame: true,
-              gameUrl: '/spookyshooter/index.html'
             },
             { 
               title: portfolio.find(p => p.id === 'elettricista')?.projects.find(pj => pj.id === 'parking-sensor')?.title || 'Sensore Parcheggio', 
@@ -335,24 +336,11 @@ export default function Home({ onProfileClick, onDirectProjectClick, onPlayGame 
                   <span className="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold block truncate">
                     {item.role}
                   </span>
-                  {item.isGame && onPlayGame && (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onPlayGame({
-                          id: item.projectId,
-                          title: item.title,
-                          url: item.gameUrl!,
-                          technologies: ['GameMaker', 'HTML5', 'GML'],
-                          description: language === 'it' ? 'Sopravvivi alle orde di zucche!' : 'Survive the pumpkin monster hordes!'
-                        });
-                      }}
-                      className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition-all flex items-center gap-1 cursor-pointer"
-                      title={t.playGameTooltip}
-                    >
-                      <Gamepad2 size={11} />
-                      {t.playGame}
-                    </button>
+                  {item.isPixelArt && (
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                      <span>2D Loop</span>
+                    </span>
                   )}
                   {item.isAudio && (
                     <button

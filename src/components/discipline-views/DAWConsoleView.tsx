@@ -35,40 +35,30 @@ export default function DAWConsoleView({ profile, onBack, onSelectProject }: DAW
   }, [profile.projects, activePlaylist, searchQuery]);
 
   return (
-    <div className="min-h-full px-3 py-6 sm:px-6 md:px-10 lg:py-8 max-w-7xl mx-auto space-y-6 select-none font-mono">
+    <div className="min-h-full px-3 py-4 sm:px-6 md:px-10 max-w-7xl mx-auto space-y-6 font-mono select-none">
       {/* Top Navigation */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-purple-500/30">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-purple-500/20">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-purple-300 border border-purple-500/30 text-xs font-semibold tracking-wider transition-all group cursor-pointer"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-purple-300 border border-purple-500/30 text-xs font-semibold tracking-wide transition-all group cursor-pointer"
         >
           <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
-          <span>[ ESC ] ESCI A PANORAMICA</span>
+          <span>Torna alla panoramica</span>
         </button>
 
         <div className="flex items-center gap-3 text-xs">
           <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-zinc-950 border border-purple-500/30">
-            <span className="text-zinc-500 text-[10px]">TEMPO:</span>
-            <span className="text-purple-300 font-bold">128.00 BPM</span>
-          </div>
-          <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-zinc-950 border border-purple-500/30">
-            <span className="text-zinc-500 text-[10px]">SAMPLE RATE:</span>
-            <span className="text-emerald-400 font-bold">48.0 kHz / 24-BIT</span>
+            <Music size={13} className="text-purple-400" />
+            <span className="text-purple-300 font-semibold">{profile.projects.length} traccia/e archiviate</span>
           </div>
         </div>
       </div>
 
       {/* =========================================================================
-          DAW MASTER RACK CHASSIS (ABLETON / FL STUDIO / STUDIO RACK AESTHETIC)
+          DAW MASTER RACK CHASSIS
       ========================================================================= */}
       <div className="rounded-2xl bg-[#120d1c] border-2 border-purple-500/40 shadow-2xl shadow-purple-950/30 overflow-hidden relative">
-        {/* Rack Mount Screws (Left & Right Flanges) */}
-        <div className="absolute top-3 left-3 text-purple-400/40 text-xs font-mono">⊕</div>
-        <div className="absolute bottom-3 left-3 text-purple-400/40 text-xs font-mono">⊕</div>
-        <div className="absolute top-3 right-3 text-purple-400/40 text-xs font-mono">⊕</div>
-        <div className="absolute bottom-3 right-3 text-purple-400/40 text-xs font-mono">⊕</div>
-
-        {/* Master DAW Transport Header */}
+        {/* Master DAW Header */}
         <div className="bg-gradient-to-r from-zinc-950 via-[#191026] to-zinc-950 border-b border-purple-500/30 px-6 py-4">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
@@ -77,69 +67,49 @@ export default function DAWConsoleView({ profile, onBack, onSelectProject }: DAW
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h1 className="text-base sm:text-lg font-bold text-white tracking-wide uppercase font-mono">
-                    DAW WORKSTATION // MASTER AUDIO RACK
+                  <h1 className="text-base sm:text-lg font-bold text-white tracking-wide uppercase font-sans">
+                    Studio Musicale & Produzione Sonora
                   </h1>
-                  <span className="px-2 py-0.5 rounded bg-purple-500/20 border border-purple-500/30 text-purple-200 text-[10px] font-bold">
-                    SUNO AI V3.5 & PRODUZIONE
-                  </span>
                 </div>
                 <p className="text-xs text-zinc-400 font-sans mt-0.5">
-                  Dennis Bottari · Composizione Sonora, Testi Rap/Trap & Prompt Audio Engineering
+                  Dennis Bottari · Composizione Sonora, Testi Rap/Trap & Prompt Audio Engineering (Suno AI)
                 </p>
               </div>
-            </div>
-
-            {/* Master Stereo Peak Meter */}
-            <div className="flex items-center gap-3 bg-zinc-950/90 px-4 py-2 rounded-xl border border-purple-500/20">
-              <span className="text-[10px] text-zinc-400">MASTER OUT:</span>
-              <div className="flex items-end gap-1 h-5 w-24">
-                {[30, 45, 60, 75, 90, 100, 85, 70, 50, 35].map((val, idx) => (
-                  <span
-                    key={idx}
-                    className={`w-1.5 rounded-sm transition-all ${
-                      val > 80 ? 'bg-rose-500' : val > 60 ? 'bg-amber-400' : 'bg-emerald-400'
-                    }`}
-                    style={{ height: `${val}%` }}
-                  />
-                ))}
-              </div>
-              <span className="text-[11px] font-bold text-emerald-400">-0.2 dB</span>
             </div>
           </div>
         </div>
 
         {/* View Selection Tabs */}
-        <div className="px-6 pt-3 bg-zinc-950/60 border-b border-zinc-800 flex items-center gap-2 overflow-x-auto text-xs">
+        <div className="px-6 pt-3 bg-zinc-950/60 border-b border-zinc-800 flex items-center gap-2 overflow-x-auto text-xs font-sans">
           <button
             onClick={() => setActiveTab('mixer')}
-            className={`px-4 py-2 rounded-t-lg font-bold transition-colors cursor-pointer border-t border-x ${
+            className={`px-4 py-2 rounded-t-lg font-semibold transition-colors cursor-pointer border-t border-x ${
               activeTab === 'mixer'
                 ? 'bg-[#120d1c] text-purple-300 border-purple-500/40 border-b-[#120d1c]'
                 : 'text-zinc-500 border-transparent hover:text-zinc-300'
             }`}
           >
-            [1] MIXER CANALI & BRANI ARCHIVIATI ({profile.projects.length})
+            Tracce & Brani Originali ({profile.projects.length})
           </button>
           <button
             onClick={() => setActiveTab('rack')}
-            className={`px-4 py-2 rounded-t-lg font-bold transition-colors cursor-pointer border-t border-x ${
+            className={`px-4 py-2 rounded-t-lg font-semibold transition-colors cursor-pointer border-t border-x ${
               activeTab === 'rack'
                 ? 'bg-[#120d1c] text-purple-300 border-purple-500/40 border-b-[#120d1c]'
                 : 'text-zinc-500 border-transparent hover:text-zinc-300'
             }`}
           >
-            [2] RACK EFFETTI & PROMPT DESIGN
+            Prompt Audio & Sound Design
           </button>
           <button
             onClick={() => setActiveTab('bio')}
-            className={`px-4 py-2 rounded-t-lg font-bold transition-colors cursor-pointer border-t border-x ${
+            className={`px-4 py-2 rounded-t-lg font-semibold transition-colors cursor-pointer border-t border-x ${
               activeTab === 'bio'
                 ? 'bg-[#120d1c] text-purple-300 border-purple-500/40 border-b-[#120d1c]'
                 : 'text-zinc-500 border-transparent hover:text-zinc-300'
             }`}
           >
-            [3] VISIONE MUSICALE & BIO
+            Biografia & Metrica
           </button>
         </div>
 
@@ -149,10 +119,10 @@ export default function DAWConsoleView({ profile, onBack, onSelectProject }: DAW
         <div className="p-5 sm:p-7 space-y-6">
           {activeTab === 'mixer' && (
             <div className="space-y-4">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-zinc-400 border-b border-zinc-800 pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-zinc-400 border-b border-zinc-800 pb-3 font-sans">
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-purple-300">
-                    DAW MULTITRACK MATRIX // {filteredTracks.length} / {profile.projects.length} CANALI AUDIO
+                  <span className="font-bold text-zinc-200 uppercase tracking-wider">
+                    Catalogo Musicale ({filteredTracks.length} / {profile.projects.length} brani)
                   </span>
                 </div>
 
@@ -371,15 +341,14 @@ export default function DAWConsoleView({ profile, onBack, onSelectProject }: DAW
         </div>
 
         {/* DAW Footer Bar */}
-        <div className="bg-zinc-950 border-t border-zinc-800/80 px-6 py-2.5 flex flex-wrap items-center justify-between text-[11px] text-zinc-500">
+        <div className="bg-zinc-950 border-t border-zinc-800/80 px-6 py-2.5 flex flex-wrap items-center justify-between text-xs text-zinc-400 font-sans">
           <div className="flex items-center gap-2">
-            <span className="text-purple-400 animate-pulse">●</span>
-            <span>AUDIO ENGINE: READY (STEREO BUS NORMALIZED)</span>
+            <span className="text-purple-400 font-semibold">{profile.projects.length} brani originali</span>
+            <span className="text-zinc-600">·</span>
+            <span>Composizione & Prompt Audio Engineering</span>
           </div>
-          <div className="flex items-center gap-3">
-            <span>CANALI ATTIVI: {profile.projects.length}</span>
-            <span>·</span>
-            <span className="text-zinc-400">LATENZA: 0 ms</span>
+          <div className="text-zinc-500 text-[11px]">
+            Dennis Bottari Portfolio
           </div>
         </div>
       </div>

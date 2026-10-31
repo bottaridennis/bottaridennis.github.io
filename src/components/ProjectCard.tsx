@@ -15,6 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, themeColor, onClick 
   const hasAudio = !!project.audioUrl;
   const isCurrentTrack = currentTrack?.id === project.id;
   const hasPreview = project.links?.some(l => l.type === 'preview');
+  const isPixelArt = project.id === 'pixel-art-character' || project.imageUrl.endsWith('.gif');
 
   return (
     <motion.div 
@@ -27,20 +28,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, themeColor, onClick 
       className="flex flex-col rounded-3xl glass-card glass-card-hover overflow-hidden group cursor-pointer shadow-lg shadow-black/30"
     >
       {/* Artwork Container */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+      <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900 flex items-center justify-center">
         <img 
           src={project.imageUrl} 
           alt={project.title}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          className={`w-full h-full transition-transform duration-500 ease-out group-hover:scale-105 ${
+            isPixelArt ? 'object-contain p-4' : 'object-cover'
+          }`}
+          style={isPixelArt ? { imageRendering: 'pixelated' } : undefined}
           referrerPolicy="no-referrer"
         />
 
         {/* Subtle Soft Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity pointer-events-none" />
 
         {/* Media Badges */}
         <div className="absolute top-3 right-3 flex items-center gap-1.5">
+          {isPixelArt && (
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/85 backdrop-blur-md border border-emerald-500/40 text-xs font-medium text-emerald-300 shadow-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              <span>2D Animato</span>
+            </span>
+          )}
           {hasAudio && (
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md border border-purple-500/30 text-xs font-medium text-purple-300 shadow-md">
               <Volume2 size={12} className="text-purple-400" />

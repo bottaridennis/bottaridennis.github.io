@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="50%" stop-color="#101726"/>
+      <stop offset="100%" stop-color="#070a0f"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+
+  <!-- Radial Glow Behind Icon -->
+  <circle cx="400" cy="225" r="200" fill="url(#glow)"/>
+
+  <!-- Top Glass Bar -->
+  <rect x="40" y="35" width="720" height="50" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <circle cx="68" cy="60" r="5" fill="#ef4444" opacity="0.8"/>
+  <circle cx="86" cy="60" r="5" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="104" cy="60" r="5" fill="#10b981" opacity="0.8"/>
+  <text x="730" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="600" fill="#71717a" text-anchor="end" letter-spacing="1.5">DENNISBOTTARI.IT</text>
+
+  <!-- Central Graphic / Icon Motif -->
+  <g id="motif">
+    <rect x="330" y="240" width="12" height="40" rx="3" fill="#a855f7"/>
+               <rect x="350" y="210" width="12" height="70" rx="3" fill="#c084fc"/>
+               <rect x="370" y="180" width="12" height="100" rx="3" fill="#38bdf8"/>
+               <rect x="390" y="160" width="12" height="120" rx="3" fill="#22d3ee"/>
+               <rect x="410" y="190" width="12" height="90" rx="3" fill="#818cf8"/>
+               <rect x="430" y="220" width="12" height="60" rx="3" fill="#a855f7"/>
+               <rect x="450" y="250" width="12" height="30" rx="3" fill="#c084fc"/>
+  </g>
+
+  <!-- Badge Pill -->
+  <rect x="230" y="340" width="340" height="28" rx="14" fill="rgba(255,255,255,0.05)" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.6"/>
+  <text x="400" y="358" font-family="monospace" font-size="10.5" font-weight="700" fill="#e4e4e7" text-anchor="middle" letter-spacing="1.5">AUDIO REACTIVE FFT VIDEO EDITOR</text>
+
+  <!-- Title Text -->
+  <text x="400" y="410" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">SonicVisual Studio</text>
+
+  <!-- Subtitle Text -->
+  <text x="400" y="440" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="400" fill="#a1a1aa" text-anchor="middle">Web Audio API · 10 Layout Modes · 4K/FHD Video Export</text>
+</svg>

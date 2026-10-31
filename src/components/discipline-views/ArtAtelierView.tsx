@@ -11,23 +11,22 @@ interface AtelierViewProps {
 
 export default function ArtAtelierView({ profile, onBack, onSelectProject }: AtelierViewProps) {
   return (
-    <div className="min-h-full px-3 py-6 sm:px-6 md:px-10 lg:py-8 max-w-7xl mx-auto space-y-6 select-none font-mono">
+    <div className="min-h-full px-3 py-4 sm:px-6 md:px-10 max-w-7xl mx-auto space-y-6 font-mono select-none">
       {/* Top Navigation */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-cyan-500/30">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-cyan-500/20">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-cyan-300 border border-cyan-500/30 text-xs font-semibold tracking-wider transition-all group cursor-pointer"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-cyan-300 border border-cyan-500/30 text-xs font-semibold tracking-wide transition-all group cursor-pointer"
         >
           <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
-          <span>[ ESC ] ESCI A PANORAMICA</span>
+          <span>Torna alla panoramica</span>
         </button>
 
-        <div className="flex items-center gap-3 text-xs">
-          <div className="flex items-center gap-2 px-3 py-1 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
-            <span>STUDIO:</span>
-            <span className="text-cyan-400 font-bold">DIGITAL CLAY & SCULPTING</span>
+        <div className="flex items-center gap-2 text-xs">
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-950 border border-zinc-800 text-zinc-300 font-sans">
+            <Brush size={13} className="text-cyan-400" />
+            <span className="text-cyan-300 font-semibold">{profile.projects.length} opera/e 3D</span>
           </div>
-          <span className="text-cyan-300 font-bold">ARCHIVIO COLLEZIONE</span>
         </div>
       </div>
 
@@ -43,35 +42,22 @@ export default function ArtAtelierView({ profile, onBack, onSelectProject }: Ate
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-base sm:text-lg font-bold text-white tracking-wide uppercase font-mono">
-                  ATELIER D&apos;ARTE DIGITALE // SCULTURA 3D & BOZZETTI
+                <h1 className="text-base sm:text-lg font-bold text-white tracking-wide uppercase font-sans">
+                  Atelier 3D & Modellazione Artistica
                 </h1>
-                <span className="px-2 py-0.5 rounded bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-[10px] font-bold">
-                  COLLEZIONE ARCHIVIO
-                </span>
               </div>
               <p className="text-xs text-zinc-400 font-sans mt-0.5">
-                Dennis Bottari · Scultura Digitale, Espressione Formale & Illustrazione
+                Dennis Bottari · Blender 3D, Simulazioni Oceaniche & Scultura Digitale
               </p>
             </div>
-          </div>
-
-          {/* Studio Sculpting Modes */}
-          <div className="flex items-center gap-2 bg-zinc-950/90 px-3 py-1.5 rounded-xl border border-cyan-500/30 text-xs text-cyan-300 font-mono">
-            <span>BRUSH: CLAY</span>
-            <span>·</span>
-            <span>POLYGONS: DYNAMIC</span>
           </div>
         </div>
 
         {/* Gallery Artwork Grid */}
         <div className="p-5 sm:p-7 space-y-6">
-          <div className="flex items-center justify-between text-xs text-zinc-400 pb-2 border-b border-zinc-800">
-            <span className="font-bold text-cyan-300">
-              OPERE IN ESPOSIZIONE // {profile.projects.length} SCULTURE & CONCEPT
-            </span>
-            <span className="text-zinc-500">
-              MODELLAZIONE 3D & CURA DEL DETTAGLIO
+          <div className="flex items-center justify-between text-xs text-zinc-400 pb-2 border-b border-zinc-800 font-sans">
+            <span className="font-bold text-zinc-200 uppercase tracking-wider">
+              Opere & Modellazione 3D ({profile.projects.length})
             </span>
           </div>
 
@@ -130,13 +116,14 @@ export default function ArtAtelierView({ profile, onBack, onSelectProject }: Ate
         </div>
 
         {/* Footer */}
-        <div className="bg-zinc-950 border-t border-zinc-800 px-6 py-2.5 flex flex-wrap items-center justify-between text-[11px] text-zinc-500 font-mono">
+        <div className="bg-zinc-950 border-t border-zinc-800 px-6 py-2.5 flex flex-wrap items-center justify-between text-xs text-zinc-400 font-sans">
           <div className="flex items-center gap-2">
-            <span className="text-cyan-400">●</span>
-            <span>STUDIO LIGHTING: DYNAMIC TURNTABLE</span>
+            <span className="text-cyan-400 font-semibold">{profile.projects.length} opera/e</span>
+            <span className="text-zinc-600">·</span>
+            <span>Blender 3D, Shaders Procedurali, Scultura</span>
           </div>
-          <div className="flex items-center gap-3">
-            <span>ESPRESSIONE PLASTICA DEI VOLUMI</span>
+          <div className="text-zinc-500 text-[11px]">
+            Dennis Bottari Portfolio
           </div>
         </div>
       </div>

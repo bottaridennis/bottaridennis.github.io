@@ -1,15 +1,24 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowUpRight, GraduationCap, Wrench, Layers, Search, X, Music } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, GraduationCap, Wrench, Layers, Search, X, Music, Sliders, LayoutGrid } from 'lucide-react';
 import { Profile } from '../types';
 import { useLocalizedPortfolio } from '../portfolioData';
 import { useLanguage } from '../context/LanguageContext';
 import ProjectCard from './ProjectCard';
+import ArcadeConsoleView from './discipline-views/ArcadeConsoleView';
+import IDEWorkspaceView from './discipline-views/IDEWorkspaceView';
+import DAWConsoleView from './discipline-views/DAWConsoleView';
+import DesignArtboardView from './discipline-views/DesignArtboardView';
+import PLCConfigurationView from './discipline-views/PLCConfigurationView';
+import ArtAtelierView from './discipline-views/ArtAtelierView';
+import JournalDossierView from './discipline-views/JournalDossierView';
+import { PlayableGame } from './GameModal';
 
 interface ProfilePageProps {
   profile: Profile;
   onBack: () => void;
   onSelectProject: (projectId: string) => void;
+  onPlayGame?: (game: PlayableGame) => void;
 }
 
 const colorMap: Record<string, { accent: string; bgSoft: string; border: string }> = {
@@ -22,9 +31,10 @@ const colorMap: Record<string, { accent: string; bgSoft: string; border: string 
   'persona': { accent: '#94a3b8', bgSoft: 'rgba(148, 163, 184, 0.12)', border: 'rgba(148, 163, 184, 0.3)' },
 };
 
-export default function ProfilePage({ profile, onBack, onSelectProject }: ProfilePageProps) {
+export default function ProfilePage({ profile, onBack, onSelectProject, onPlayGame }: ProfilePageProps) {
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState<'studio' | 'dossier'>('dossier');
   const { t, language } = useLanguage();
   const portfolio = useLocalizedPortfolio();
   const avatarSrc = '/Dede.png';
@@ -84,28 +94,97 @@ export default function ProfilePage({ profile, onBack, onSelectProject }: Profil
     return list;
   }, [profile.projects, isGeneralProfile, isMusicProfile, activeFilter, searchQuery, portfolio]);
 
-  return (
-    <div className="min-h-full px-5 py-8 md:px-12 md:py-14 max-w-7xl mx-auto space-y-16">
-      {/* Top Navigation & Breadcrumb */}
-      <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
-        <motion.button
+  const renderViewSwitcher = () => (
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-white/[0.08]">
+      <div className="flex items-center justify-between w-full sm:w-auto">
+        <button
           onClick={onBack}
-          initial={{ opacity: 0, x: -8 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-2.5 text-zinc-400 hover:text-white transition-colors group text-xs font-medium cursor-pointer"
+          className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors group text-xs font-medium cursor-pointer"
         >
           <div className="w-8 h-8 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center group-hover:bg-white/[0.1] transition-all">
-            <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
+            <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
           </div>
           <span>{t.backToOverview}</span>
-        </motion.button>
+        </button>
+        <div className="sm:hidden flex items-center gap-1.5 text-xs text-zinc-400 font-medium">
+          <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: theme.accent }} />
+          <span className="text-zinc-200 truncate max-w-[140px]">{profile.title}</span>
+        </div>
+      </div>
 
+      <div className="flex items-center gap-3 w-full sm:w-auto">
         <div className="hidden sm:flex items-center gap-2 text-xs text-zinc-500 font-medium">
           <span>Dennis Bottari</span>
           <span>/</span>
           <span className="text-zinc-200">{profile.title}</span>
         </div>
+
+        {/* Mobile-friendly Segmented Control */}
+        <div className="grid grid-cols-2 w-full sm:w-auto p-1 rounded-xl bg-white/[0.05] border border-white/[0.08] text-xs">
+          <button
+            onClick={() => setViewMode('dossier')}
+            className={`flex items-center justify-center gap-2 px-3.5 py-2 sm:py-1.5 rounded-lg font-semibold transition-all cursor-pointer ${
+              viewMode === 'dossier'
+                ? 'bg-white text-zinc-950 shadow-md font-bold'
+                : 'text-zinc-400 hover:text-white'
+            }`}
+          >
+            <LayoutGrid size={13} />
+            <span>{language === 'it' ? 'Archivio Schede' : 'Project Cards'}</span>
+          </button>
+          <button
+            onClick={() => setViewMode('studio')}
+            className={`flex items-center justify-center gap-2 px-3.5 py-2 sm:py-1.5 rounded-lg font-semibold transition-all cursor-pointer ${
+              viewMode === 'studio'
+                ? 'bg-white text-zinc-950 shadow-md font-bold'
+                : 'text-zinc-400 hover:text-white'
+            }`}
+          >
+            <Sliders size={13} />
+            <span>{language === 'it' ? 'Studio Interattivo' : 'Interactive Studio'}</span>
+          </button>
+        </div>
       </div>
+    </div>
+  );
+
+  if (viewMode === 'studio') {
+    return (
+      <div className="min-h-full space-y-4">
+        {/* Sub-bar with view mode toggle */}
+        <div className="px-3 pt-3 sm:px-6 md:px-10 max-w-7xl mx-auto">
+          {renderViewSwitcher()}
+        </div>
+
+        {profile.id === 'web-developer' && (
+          <IDEWorkspaceView profile={profile} onBack={onBack} onSelectProject={onSelectProject} />
+        )}
+        {profile.id === 'game-designer' && (
+          <ArcadeConsoleView profile={profile} onBack={onBack} onSelectProject={onSelectProject} onPlayGame={onPlayGame} />
+        )}
+        {profile.id === 'musicista' && (
+          <DAWConsoleView profile={profile} onBack={onBack} onSelectProject={onSelectProject} />
+        )}
+        {profile.id === 'graphic-designer' && (
+          <DesignArtboardView profile={profile} onBack={onBack} onSelectProject={onSelectProject} />
+        )}
+        {profile.id === 'elettricista' && (
+          <PLCConfigurationView profile={profile} onBack={onBack} onSelectProject={onSelectProject} />
+        )}
+        {profile.id === 'artista' && (
+          <ArtAtelierView profile={profile} onBack={onBack} onSelectProject={onSelectProject} />
+        )}
+        {profile.id === 'persona' && (
+          <JournalDossierView profile={profile} onBack={onBack} onSelectProject={onSelectProject} />
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-full px-4 py-6 md:px-12 md:py-10 max-w-7xl mx-auto space-y-12">
+      {/* Top Navigation & Breadcrumb with Mobile-friendly switcher */}
+      {renderViewSwitcher()}
 
       {/* Hero Header */}
       <header className="space-y-8">

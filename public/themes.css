@@ -1740,7 +1740,11 @@
   text-shadow: none;
 }
 :root[data-active-theme="retro"] .ico span {
-  text-shadow: 1px 1px 0 #000;
+  display: inline-block;
+  padding: 0 4px;
+  background: #008080;
+  color: #fff;
+  text-shadow: none;
 }
 
 /* overlay CRT più leggeri: effetto visibile, testo nitido */
@@ -1765,4 +1769,218 @@
 }
 :root[data-active-theme="crt"] body {
   text-shadow: 0 0 3px rgba(112, 221, 140, 0.55);
+}
+
+/* =====================================================================
+   CARTELLE: VISTA LISTA / ICONE GRANDI
+   ===================================================================== */
+.view-toggle {
+  display: inline-flex;
+  flex: none;
+  border: 1.5px solid var(--ln);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.view-toggle button {
+  border: 0;
+  background: none;
+  min-width: 34px;
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0 8px;
+}
+.view-toggle button + button {
+  border-left: 1.5px solid var(--ln);
+}
+.view-toggle button[aria-pressed="true"] {
+  background: var(--c);
+  color: #15132b;
+}
+.view-toggle .bx {
+  font-size: 1rem;
+}
+.fm-file .fthumb {
+  display: none;
+}
+.fm-body.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+.fm-body.grid > :not(.fm-file) {
+  grid-column: 1 / -1;
+}
+.fm-body.grid .fm-file {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  padding: 8px 8px 10px;
+  min-height: 0;
+  border: 1.5px solid color-mix(in srgb, var(--ln) 22%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--c) 6%, var(--win));
+  transition:
+    transform 0.25s cubic-bezier(0.2, 1.6, 0.4, 1),
+    box-shadow 0.2s,
+    background 0.2s;
+}
+.fm-body.grid .fm-file:hover {
+  padding-left: 8px;
+  box-shadow: 4px 4px 0 var(--ln);
+}
+.fm-body.grid .fthumb {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--c) 28%, var(--win));
+  color: var(--wt);
+  font-size: 2.2rem;
+  border: 1.5px solid color-mix(in srgb, var(--ln) 25%, transparent);
+}
+#fm-music.grid .fthumb {
+  aspect-ratio: 1;
+}
+.fm-body.grid .fthumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.fm-body.grid .fm-file:hover .fthumb img {
+  transform: scale(1.06);
+}
+.fm-body.grid .fi {
+  display: none;
+}
+.fm-body.grid .ft b {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.fm-body.grid .fb {
+  align-self: flex-start;
+}
+
+/* =====================================================================
+   SCHERMO INTERO
+   La finestra occupa tutta la pagina; barra in alto, dock e player
+   restano sopra in vetro, con lo sfondo della finestra che passa sotto.
+   ===================================================================== */
+#mbar {
+  z-index: 1450;
+}
+#abar {
+  z-index: 1445;
+}
+#dock {
+  z-index: 1440;
+}
+:root .win.maximized {
+  left: 0 !important;
+  top: 0 !important;
+  width: 100vw !important;
+  height: 100svh !important;
+  max-width: none !important;
+  max-height: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-top: calc(var(--mbar-h) + env(safe-area-inset-top, 0px));
+  clip-path: none !important;
+}
+:root .win.maximized .tb {
+  border-radius: 0 !important;
+}
+:root .win.maximized::before,
+:root .win.maximized::after {
+  display: none !important;
+}
+:root .win.maximized .bd2::after {
+  content: "";
+  display: block;
+  flex: none;
+  height: calc(var(--dock-h) + var(--abar-real) + 36px + env(safe-area-inset-bottom, 0px));
+}
+/* il terminale riempie sempre la finestra */
+.win .bd2:has(> .tm) {
+  display: flex;
+  flex-direction: column;
+}
+.bd2 > .tm {
+  flex: 1 0 auto;
+}
+:root .win.maximized .bd2:has(> .tm)::after {
+  display: none;
+}
+:root .win.maximized .tm {
+  border-radius: 0;
+  padding-bottom: calc(var(--dock-h) + var(--abar-real) + 36px + env(safe-area-inset-bottom, 0px));
+}
+:root .win.maximized iframe {
+  height: calc(100svh - var(--mbar-h) - var(--dock-h) - 160px);
+  border-radius: 0;
+}
+/* barre in vetro quando una finestra è a schermo intero */
+body:has(.win.maximized:not([hidden])) #mbar,
+body:has(.win.maximized:not([hidden])) #dock,
+body:has(.win.maximized:not([hidden])) #abar {
+  background-color: color-mix(in srgb, var(--win) 68%, transparent) !important;
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+body:has(.win.maximized:not([hidden])) #mbar {
+  border-bottom-color: color-mix(in srgb, var(--ln) 35%, transparent);
+}
+
+/* =====================================================================
+   SFONDI IN PIXEL ART
+   ===================================================================== */
+#themeScene .pxbg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+:root[data-pixelbg] #themeScene .pxbg {
+  display: block;
+}
+/* livelli CSS che il disegno in pixel art sostituisce */
+:root[data-pixelbg][data-active-theme="synthwave"] #themeScene :is(.s1, .s2, .s3),
+:root[data-pixelbg][data-active-theme="vaporwave"] #themeScene .s1,
+:root[data-pixelbg][data-active-theme="nord"] #themeScene .s3,
+:root[data-pixelbg][data-active-theme="dracula"] #themeScene .s1,
+:root[data-pixelbg][data-active-theme="retro"] #themeScene .s1,
+:root[data-pixelbg][data-active-theme="netrunner"] #themeScene .s1,
+:root[data-pixelbg][data-active-theme="arcade"] #themeScene .s1 {
+  display: none;
+}
+:root[data-pixelbg][data-active-theme="vaporwave"] #themeScene .s2 {
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.4);
+  bottom: auto;
+  top: 8%;
+}
+:root[data-pixelbg][data-active-theme="nord"] #themeScene .s1,
+:root[data-pixelbg][data-active-theme="nord"] #themeScene .s2 {
+  height: 40%;
+  opacity: 0.4;
+}
+:root[data-pixelbg][data-active-theme="deepsea"] #themeScene .s1 {
+  opacity: 0.6;
+}
+:root[data-pixelbg][data-active-theme="gameboy"] #themeScene .s1 {
+  color: #0f380f;
 }

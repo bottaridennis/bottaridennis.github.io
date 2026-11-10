@@ -41,6 +41,16 @@
   .tm .ti-wrap input{position:relative;z-index:1;width:100%;background:transparent}
   .ti-ghost{position:absolute;left:0;top:0;right:0;white-space:pre;overflow:hidden;pointer-events:none;opacity:.42;font:inherit;line-height:inherit}
   .ti-ghost .typed{visibility:hidden}
+  .tm .tlink{color:inherit;text-decoration:none;border-bottom:1px dashed currentColor}
+  .tm .tlink:hover{background:rgba(255,255,255,.12)}
+  .tm .tls{display:flex;flex-wrap:wrap;gap:.4em 2.2ch}
+  .tm .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;margin:6px 0}
+  .tm .tcard{display:flex;flex-direction:column;gap:5px;color:inherit;text-decoration:none;padding:6px;border-radius:8px;border:1px solid rgba(255,255,255,.15);transition:transform .2s,background .2s}
+  .tm .tcard:hover{transform:translateY(-3px);background:rgba(255,255,255,.08)}
+  .tm .tthumb{display:grid;place-items:center;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:color-mix(in srgb,var(--tc) 35%,#0c0b1f);font-size:1.6rem;color:#fff}
+  .tm .tthumb.sq{aspect-ratio:1}
+  .tm .tthumb img{width:100%;height:100%;object-fit:cover}
+  .tm .tname{font-size:.78em;word-break:break-all;line-height:1.25}
   .tm mark.hl{background:#ffd23f;color:#15132b;border-radius:2px;padding:0 2px}
   .tm .tpre{margin:2px 0;font:inherit;white-space:pre;line-height:1.25;overflow-x:auto}
   .tm .dim{opacity:.65}
@@ -107,7 +117,7 @@
     while (parts.length > 1) {
       const d = parts.shift();
       if (d === "..") dir = "";
-      else if (C[d] && !dir) dir = d;
+      else if (C[d]) dir = d;
       else return null;
     }
     const name = (parts[0] || "").toLowerCase();
@@ -180,26 +190,46 @@
     "cd <cartella> — entra in una cartella (web, game, iot, music, graphic, art3d, about). cd .. o cd ~ per tornare alla home.",
   );
 
+  // link cliccabili: cartella → cd + ls, file → cat
+  const dirLink = (k) => `<a href="#" class="tlink acc" data-term-run="cd ${k} && ls">${k}/</a>`;
+  const fileLink = (dir, p) => `<a href="#" class="tlink" data-term-run="cat ${dir}/${esc(slug(p))}">${esc(slug(p))}</a>`;
+  const homeLink = (f) => `<a href="#" class="tlink" data-term-run="cat ${f}">${f}</a>`;
   function ls(args) {
-    const long = args.includes("-l") || args.includes("-la");
+    const flags = args.filter((a) => a.startsWith("-")).join("");
+    const long = flags.includes("l");
+    const grid = flags.includes("g") || args.includes("--grid");
     const target = args.find((a) => !a.startsWith("-"));
     const dir = target ? target.replace(/^~\/?/, "").replace(/\/$/, "") : cwd;
     if (dir && !C[dir]) return say(`ls: ${target}: cartella inesistente`, "bad");
+    if (grid) {
+      const items = dir
+        ? filesIn(dir).map((p) => ({ run: `cat ${dir}/${slug(p)}`, name: slug(p), img: p.img, ico: C[dir][3], c: C[dir][1] }))
+        : [
+            ...keys.map((k) => ({ run: `cd ${k} && ls -g`, name: k + "/", ico: C[k][3], c: C[k][1] })),
+            ...FILES_HOME.map((f) => ({ run: `cat ${f}`, name: f, ico: f.endsWith(".pdf") ? "▤" : "≡", c: "#f1eeff" })),
+          ];
+      return html(
+        `<div class="tgrid">${items
+          .map(
+            (it) =>
+              `<a href="#" class="tcard" data-term-run="${esc(it.run)}" style="--tc:${it.c}"><span class="tthumb${dir === "music" ? " sq" : ""}">${it.img ? `<img src="${esc(it.img)}" alt="" loading="lazy">` : esc(it.ico)}</span><span class="tname">${esc(it.name)}</span></a>`,
+          )
+          .join("")}</div>`,
+      );
+    }
     if (!dir) {
-      const folders = keys.map((k) => `<span class="acc">${k}/</span>`);
-      const files = FILES_HOME.map((f) => `<span>${f}</span>`);
       if (long)
         return html(
-          `<pre class="tpre">${keys.map((k) => `drwxr-xr-x  dede  ${String(filesIn(k).length).padStart(3)} file   <span class="acc">${k}/</span>  ${esc(C[k][2])}`).join("\n")}\n${FILES_HOME.map((f) => `-rw-r--r--  dede            ${f}`).join("\n")}</pre>`,
+          `<pre class="tpre">${keys.map((k) => `drwxr-xr-x  dede  ${String(filesIn(k).length).padStart(3)} file   ${dirLink(k)}  ${esc(C[k][2])}`).join("\n")}\n${FILES_HOME.map((f) => `-rw-r--r--  dede            ${homeLink(f)}`).join("\n")}</pre>`,
         );
-      return html(`<div class="line">${folders.concat(files).join("   ")}</div>`);
+      return html(`<div class="line tls">${keys.map(dirLink).concat(FILES_HOME.map(homeLink)).join("")}</div><div class="line dim">clicca per aprire · ls -g per le icone grandi</div>`);
     }
     const fs = filesIn(dir);
     if (long)
-      return html(`<pre class="tpre">${fs.map((p) => `-rw-r--r--  dede  ${esc((p.c || "").padEnd(12).slice(0, 12))}  ${esc(slug(p))}`).join("\n")}</pre>`);
-    html(`<div class="line">${fs.map((p) => esc(slug(p))).join("   ")}</div>`);
+      return html(`<pre class="tpre">${fs.map((p) => `-rw-r--r--  dede  ${esc((p.c || "").padEnd(12).slice(0, 12))}  ${fileLink(dir, p)}`).join("\n")}</pre>`);
+    html(`<div class="line tls">${fs.map((p) => fileLink(dir, p)).join("")}</div>`);
   }
-  def("ls", ls, "ls [-l] [cartella] — elenca file e cartelle. Con -l mostra i dettagli.");
+  def("ls", ls, "ls [-l|-g] [cartella] — elenca file e cartelle. -l mostra i dettagli, -g le icone grandi con anteprima. Clicca un elemento per aprirlo.");
 
   function catProject(p) {
     const i = P.indexOf(p);
@@ -1009,7 +1039,7 @@
       }
       return cmd === "open" ? [...keys, ...P.filter((p) => p.d !== "about").map((p) => slug(p).replace(/\.(md|mp3)$/, ""))] : local;
     }
-    if (cmd === "ls" || cmd === "tree") return keys.map((k) => k + "/");
+    if (cmd === "ls" || cmd === "tree") return [...keys.map((k) => k + "/"), "-l", "-g"];
     if (cmd === "man") return allCommands();
     if (cmd === "lyrics") return songs().map(({ p }) => slug(p).replace(/\.mp3$/, ""));
     if (cmd === "unalias") return Object.keys(aliases);

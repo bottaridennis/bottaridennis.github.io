@@ -1,0 +1,199 @@
+:root[data-active-theme="blueprint"] {
+    --win: #12355a;
+    --wt: #eef8ff;
+    --mu: #b8d8ef;
+    --ln: #aedcff;
+    --bg-base: #08264a !important;
+    --bg-a: #12355a !important;
+    --bg-b: #12355a !important;
+    --bg-c: #08264a !important;
+}
+
+:root[data-active-theme="gameboy"] {
+    --win: #b0c66b;
+    --wt: #0f380f;
+    --mu: #306230;
+    --ln: #0f380f;
+    --bg-base: #306230 !important;
+    --bg-a: #8bac0f !important;
+    --bg-b: #306230 !important;
+    --bg-c: #9bbc0f !important;
+}
+
+:root[data-active-theme="deepsea"] {
+    --win: #061e33;
+    --wt: #d9ffff;
+    --mu: #91c6d5;
+    --ln: #36caba;
+    --bg-base: #010e23 !important;
+    --bg-a: #07395b !important;
+    --bg-b: #02515b !important;
+    --bg-c: #053252 !important;
+}
+
+:root[data-active-theme="paper"] {
+    --win: #fff9e9;
+    --wt: #302b26;
+    --mu: #6f6251;
+    --ln: #514638;
+    --bg-base: #d5c8a8 !important;
+    --bg-a: #e1d6ba !important;
+    --bg-b: #d5c8a8 !important;
+    --bg-c: #ede1c5 !important;
+}
+
+:root[data-active-theme="crt"] {
+    --win: #07170d;
+    --wt: #9affb2;
+    --mu: #6abc82;
+    --ln: #70dd8c;
+    --bg-base: #020904 !important;
+    --bg-a: #092415 !important;
+    --bg-b: #021008 !important;
+    --bg-c: #092415 !important;
+}
+
+:root:is([data-active-theme="blueprint"], [data-active-theme="gameboy"], [data-active-theme="deepsea"], [data-active-theme="paper"], [data-active-theme="crt"]) .tb {
+    background: var(--ln);
+    color: var(--bg-base);
+}
+
+:root[data-active-theme="blueprint"] #wp::after {
+    background: linear-gradient(#acdfff20 1px, transparent 1px), linear-gradient(90deg, #acdfff20 1px, transparent 1px);
+    background-size: 24px 24px;
+    animation: none;
+}
+
+:root[data-active-theme="blueprint"] .win {
+    border-radius: 0;
+    border-style: dashed;
+}
+
+:root[data-active-theme="gameboy"] .win {
+    border-radius: 2px;
+    box-shadow: 6px 6px 0 #0f380f;
+    font-family: "VT323", monospace;
+    font-size: 1.2rem;
+}
+
+:root[data-active-theme="gameboy"] #wp::after {
+    background: repeating-linear-gradient(0deg, #0f380f18 0 2px, transparent 2px 4px);
+    animation: none;
+}
+
+:root[data-active-theme="gameboy"] .featured-project img,
+:root[data-active-theme="gameboy"] .thumb {
+    filter: grayscale(1) sepia(1) hue-rotate(30deg);
+    image-rendering: pixelated;
+}
+
+:root[data-active-theme="deepsea"] #wp::after {
+    background: repeating-radial-gradient(ellipse at 50% 120%, transparent 0 60px, #47e5cf18 62px 65px, transparent 67px 130px);
+    animation: ocean-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes ocean-drift {
+    to {
+        transform: translateY(-4%) scale(1.15);
+    }
+}
+
+:root[data-active-theme="paper"] .win {
+    border-radius: 1px;
+    box-shadow: 4px 6px 10px #302b2630;
+}
+
+:root[data-active-theme="paper"] #wp::after {
+    background: repeating-linear-gradient(0deg, transparent 0 27px, #51463818 28px 29px);
+    animation: none;
+}
+
+:root[data-active-theme="crt"] .win {
+    border-radius: 22px;
+    box-shadow: 0 0 18px #70dd8c40, inset 0 0 20px #70dd8c15;
+    font-family: "Share Tech Mono", monospace;
+}
+
+:root[data-active-theme="crt"] .win::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, #0002 0 1px, transparent 1px 4px);
+    border-radius: inherit;
+}
+
+:root[data-effects="off"] *,
+:root[data-effects="off"] *::before,
+:root[data-effects="off"] *::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+:root[data-effects="off"] #particles,
+:root[data-effects="off"] #matrixCv {
+    visibility: hidden;
+}
+
+#desktop-pet {
+    position: fixed;
+    z-index: 1700;
+    left: 20px;
+    bottom: calc(var(--dock-h) + var(--abar-real) + 28px);
+    background: var(--win);
+    color: var(--wt);
+    border: 2px solid var(--ln);
+    border-radius: 12px;
+    padding: 8px 12px;
+    white-space: pre;
+    font: 18px/1.2 monospace;
+    cursor: pointer;
+    animation: pet-walk 12s ease-in-out infinite alternate;
+}
+
+@keyframes pet-walk {
+    to {
+        left: calc(100vw - 145px);
+    }
+}
+
+#desktop-pet[data-mood="sleep"] {
+    animation-play-state: paused;
+}
+
+.terminal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.terminal-links a {
+    text-decoration: underline;
+}
+
+.terminal-dice {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    animation: dice-pop .3s ease-out;
+}
+
+@keyframes dice-pop {
+    from {
+        transform: rotate(-12deg) scale(.7);
+    }
+
+    to {
+        transform: none;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    #desktop-pet,
+    #wp::after {
+        animation: none !important;
+    }
+}

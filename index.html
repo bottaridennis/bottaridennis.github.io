@@ -1,14 +1,552 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dennis Bottari</title>
-    <link rel="shortcut icon" href="/DB-Logo.svg" type="image/svg+xml">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dennis Bottari | Portfolio</title>
+<meta name="description" content="Portfolio di Dennis Bottari: web developer, game designer, IoT, musica, grafica e 3D. Scegli da dove iniziare.">
+<meta name="theme-color" content="#2e2257">
+<meta property="og:title" content="Dennis Bottari | Portfolio">
+<meta property="og:description" content="Web · Game · IoT · Musica · Grafica · 3D">
+<meta property="og:image" content="/Dede.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="/db-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#4a3a4a; --card:#f1e8dd; --peach:#e8a598; --muted:#8a7585;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Quicksand',sans-serif;color:var(--ink);min-height:100vh;background:#2e2257}
 
+#scene{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;image-rendering:pixelated;z-index:0}
+
+main{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 18px}
+
+.card{
+  width:100%;max-width:460px;padding:34px 24px 24px;
+  display:flex;flex-direction:column;align-items:center;
+  background:var(--card);
+  border:3px solid var(--ink);border-radius:34px;
+  box-shadow:
+    8px 8px 0 rgba(46,34,87,.6),
+    inset 0 0 0 1px rgba(74,58,74,.08);
+  animation:rise .7s cubic-bezier(.2,.8,.2,1) both;
+  position:relative;
+}
+/* Cuciture artigianali */
+.card::before{
+  content:"";position:absolute;inset:8px;border-radius:26px;
+  border:1px dashed rgba(74,58,74,.12);pointer-events:none;
+}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+
+.avatar{
+  width:112px;height:112px;border-radius:50%;overflow:hidden;margin-bottom:20px;
+  background:#d9a094;border:3px solid var(--ink);
+  box-shadow:0 0 0 6px var(--peach),0 0 0 9px var(--ink);
+  position:relative;
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+/* Sparkle sull'angolo dell'avatar */
+.avatar::after{
+  content:"";position:absolute;top:8px;right:14px;width:4px;height:4px;
+  background:#fff;box-shadow:
+    6px 2px 0 #fff,
+    -2px 6px 0 #fff,
+    4px -2px 0 #fff;
+  border-radius:50%;
+  animation:sparkle 3s ease-in-out infinite;
+}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:1;transform:scale(1)}}
+
+h1{text-align:center;font-weight:400;line-height:1.05}
+.name{display:block;font-family:'Pacifico',cursive;font-size:clamp(2.6rem,10vw,3.2rem);
+  text-shadow:3px 3px 0 var(--peach)}
+.full{display:block;margin-top:8px;font-weight:700;font-size:1.05rem;letter-spacing:.14em;color:var(--muted)}
+
+.socials{display:flex;gap:12px;margin:22px 0 20px}
+.socials a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--ink);
+  background:var(--peach);border:2px solid var(--ink);box-shadow:0 3px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s,background .15s}
+.socials a:hover{transform:translateY(-3px);box-shadow:0 6px 0 var(--ink);background:#f2bcb0}
+.socials a:active{transform:translateY(3px);box-shadow:0 0 0 var(--ink)}
+.socials svg{width:20px;height:20px}
+
+.wave{width:82%;height:10px;margin-bottom:18px;overflow:hidden;position:relative}
+.wave::before{
+  content:"";position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10'%3E%3Cpath d='M0 5q6-6 12 0t12 0' fill='none' stroke='%23b9a99a' stroke-width='2.5'/%3E%3C/svg%3E") repeat-x center;
+  animation:waveMove 8s linear infinite;
+}
+@keyframes waveMove{to{background-position:48px 0}}
+
+.label{align-self:flex-start;font-weight:700;font-size:1rem;color:var(--muted);margin:0 4px 12px}
+
+.rows{width:100%;display:flex;flex-direction:column;gap:14px;list-style:none}
+.row{--c:var(--peach);display:flex;align-items:center;gap:14px;padding:11px 14px 11px 11px;
+  color:inherit;text-decoration:none;
+  background:color-mix(in srgb,var(--c) 30%,#fff9f2);
+  border:2px solid var(--ink);border-radius:24px;box-shadow:0 4px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s,background .15s;
+  animation:pop .5s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(var(--i)*90ms + 350ms)}
+@keyframes pop{from{opacity:0;transform:scale(.9) translateY(10px)}}
+.row:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--ink);background:color-mix(in srgb,var(--c) 55%,#fff9f2)}
+.row:active{transform:translateY(4px);box-shadow:0 0 0 var(--ink)}
+.row:focus-visible,.socials a:focus-visible{outline:3px dashed var(--ink);outline-offset:3px}
+
+.ic{flex:none;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
+  background:var(--c);border:2px solid var(--ink);transition:transform .25s}
+.ic svg{width:25px;height:25px}
+.row:hover .ic{transform:rotate(-10deg) scale(1.08)}
+
+.txt{flex:1;min-width:0}
+.txt strong{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:1.1rem;font-weight:700;line-height:1.2}
+.txt small{display:block;margin-top:2px;font-size:.9rem;font-weight:500;color:var(--muted);line-height:1.3}
+.tag{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:99px;
+  background:var(--peach);color:var(--ink);border:1.5px solid var(--ink)}
+.go{flex:none;width:30px;height:30px;display:grid;place-items:center;transition:transform .2s}
+.go svg{width:22px;height:22px}
+.row:hover .go{transform:translateX(4px)}
+
+.row.soon{border-style:dashed;box-shadow:none;opacity:.6;pointer-events:none;background:transparent}
+.tag.last{background:#fff9f2}
+
+.contact{width:100%;margin-top:24px;--c:#a8d5ba;--i:3}.contact:focus-visible{outline:3px dashed var(--ink);outline-offset:3px}
+footer{margin-top:20px;font-size:.88rem;font-weight:500;color:var(--muted)}
+footer .heart{color:#e8a598}
+
+@media (max-width:400px){.card{padding:28px 16px 20px}.row{gap:11px}}
+@media (min-width:600px) and (max-height:880px){
+  main{padding:20px 18px}
+  .card{padding:24px 24px 18px}
+  .avatar{width:92px;height:92px;margin-bottom:14px}
+  .socials{margin:16px 0 14px}.wave{margin-bottom:12px}
+  .rows{gap:11px}.row{padding:8px 14px 8px 9px}.ic{width:44px;height:44px}
+  .contact{margin-top:16px}footer{margin-top:14px}
+}
+/* Selettore del cielo */
+.sky-btn{position:fixed;z-index:2;right:16px;bottom:16px;display:flex;align-items:center;gap:8px;
+  font:700 .85rem 'Quicksand',sans-serif;color:var(--ink);background:var(--card);
+  border:2px solid var(--ink);border-radius:99px;padding:7px 14px 7px 10px;cursor:pointer;
+  box-shadow:0 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.sky-btn:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--ink)}
+.sky-btn:active{transform:translateY(3px);box-shadow:0 0 0 var(--ink)}
+.sky-btn:focus-visible{outline:3px dashed var(--card);outline-offset:3px}
+.sky-btn svg{width:18px;height:18px}
+@media (max-width:700px){.sky-btn{position:static;margin:18px auto 0}main{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<main>
+  <div class="card">
+    <div class="avatar"><img src="/Dede.png" alt="Dennis Bottari"></div>
+    <h1><span class="name">Dede</span><span class="full">Dennis Bottari</span></h1>
+    <nav class="socials" id="socials" aria-label="Social"></nav>
+    <div class="wave" aria-hidden="true"></div>
+    <p class="label">Scegli da dove iniziare</p>
+    <ul class="rows" id="versions"></ul>
+    <a class="row contact" href="mailto:info@dennisbottari.it"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="txt"><strong>Contattami</strong></span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <footer>© <span id="year"></span> Dennis Bottari · made with <span class="heart">❤</span></footer>
+  </div>
+  <button class="sky-btn" id="skyBtn" type="button"></button>
+</main>
+
+<script>
+/* =====================================================================
+   CONFIGURAZIONE
+   ===================================================================== */
+const VERSIONS = [
+  {
+    title: "Dede.OS",
+    desc: "Il mio portfolio come sistema operativo: desktop, cartelle, temi segreti.",
+    href: "dede-os.html",
+    icon: "monitor",
+    tag: "Nuovo",
+    color: "#e8a598"
+  },
+  {
+    title: "Classic",
+    desc: "La versione classica: pulita, lineare, diretta.",
+    href: "classic/",
+    icon: "layers",
+    color: "#9fd0e6"
+  },
+  {
+    title: "Handmade",
+    desc: "Il primo portfolio, scritto interamente a mano per esercizio.",
+    href: "LINK_HANDMADE",
+    icon: "star",
+    color: "#c3b1e1"
+  }
+];
+
+const SOCIALS = [
+  { name:"GitHub",    href:"https://github.com/bottaridennis",        icon:"github" },
+  { name:"Email",     href:"mailto:info@dennisbottari.it",            icon:"mail" },
+  { name:"YouTube",   href:"https://www.youtube.com/@dede_bottari",   icon:"youtube" },
+  { name:"Instagram", href:"https://www.instagram.com/dennisbottari", icon:"instagram" }
+];
+
+/* =====================================================================
+   ICONE SVG
+   ===================================================================== */
+const ICONS = {
+  monitor:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+  code:'<path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/>',
+  palette:'<path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-1 1.5-2-.6-1.2.2-2.5 1.5-2.5H17a4 4 0 0 0 4-4c0-4.5-4-9.5-9-9.5Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="15" cy="7.5" r="1"/>',
+  rocket:'<path d="M12 3c3 2 5 6 5 10l-2 3H9l-2-3c0-4 2-8 5-10Z"/><circle cx="12" cy="10" r="1.5"/><path d="M9 16l-3 3M15 16l3 3M12 17v4"/>',
+  cube:'<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3ZM12 12l8-4.5M12 12 4 7.5M12 12v9"/>',
+  gamepad:'<rect x="2" y="7" width="20" height="10" rx="5"/><path d="M7 10v4M5 12h4M16 11h.01M18 13h.01"/>',
+  terminal:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/>',
+  layers:'<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17.5l9 5 9-5"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  star:'<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3Z"/>',
+  leaf:'<path d="M5 19C5 10 10 5 20 4c0 10-4 15-12 15Z"/><path d="M5 19c3-5 6-8 10-10"/>',
+  sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>',
+  camera:'<path d="M4 8h3l2-3h6l2 3h3v11H4V8Z"/><circle cx="12" cy="13" r="3.5"/>',
+  arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+  moon:'<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/>',
+  sunset:'<path d="M17 18a5 5 0 0 0-10 0M12 9V2M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1M16 5l-4 4-4-4"/>',
+  auto:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+  github:'<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.500 1.300a12.300 12.300 0 0 0-6.200 0C6.500 2.800 5.400 3.100 5.400 3.100a4.200 4.200 0 0 0-.1 3.200A4.600 4.600 0 0 0 4 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+  youtube:'<path d="M22.5 6.4a2.800 2.800 0 0 0-1.900-2C18.900 4 12 4 12 4s-6.900 0-8.600.4a2.800 2.800 0 0 0-1.900 2A29 29 0 0 0 1 11.800a29 29 0 0 0 .5 5.300A2.800 2.800 0 0 0 3.400 19c1.700.5 8.600.5 8.600.5s6.900 0 8.600-.5a2.800 2.800 0 0 0 1.900-2 29 29 0 0 0 .5-5.200 29 29 0 0 0-.5-5.400Z"/><path d="m9.750 15 5.750-3.250L9.750 8.500V15Z"/>',
+  instagram:'<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.400A4 4 0 1 1 12.600 8 4 4 0 0 1 16 11.400ZM17.500 6.500h.01"/>'
+};
+const svg = n => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]||ICONS.star}</svg>`;
+
+/* =====================================================================
+   RENDER
+   ===================================================================== */
+document.getElementById('socials').innerHTML = SOCIALS.map(s =>
+  `<a href="${s.href}" aria-label="${s.name}" ${s.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${svg(s.icon)}</a>`).join('');
+
+document.getElementById('versions').innerHTML = VERSIONS.map((v,i) => {
+  const off = !v.href || v.href.startsWith('LINK_') || v.status === 'soon';
+  const tag = off ? 'In arrivo' : v.tag;
+  const inner = `<span class="ic">${svg(v.icon)}</span>
+    <span class="txt"><strong>${v.title}${tag?`<span class="tag">${tag}</span>`:''}</strong><small>${v.desc}</small></span>
+    <span class="go">${svg(off?'lock':'arrow')}</span>`;
+  const attrs = `class="row${off?' soon':''}" style="--c:${v.color||'#e8a598'};--i:${i}"`;
+  return `<li>${off ? `<div ${attrs} aria-disabled="true">${inner}</div>` : `<a ${attrs} href="${v.href}">${inner}</a>`}</li>`;
+}).join('');
+
+/* Ricorda l'ultima versione aperta e precarica la pagina al passaggio del mouse */
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch { return null; } },
+  set(k,v){ try { localStorage.setItem(k,v); } catch {} }
+};
+const lastHref = store.get('lastVersion');
+document.querySelectorAll('#versions a.row').forEach(a => {
+  const href = a.getAttribute('href');
+  if (href === lastHref) a.querySelector('strong').insertAdjacentHTML('beforeend','<span class="tag last">Ultima visita</span>');
+  a.addEventListener('click', () => store.set('lastVersion', href));
+  const prefetch = () => {
+    if (a.dataset.pf) return; a.dataset.pf = 1;
+    const l = document.createElement('link'); l.rel = 'prefetch'; l.href = href; document.head.appendChild(l);
+  };
+  a.addEventListener('pointerenter', prefetch, { once: true });
+  a.addEventListener('focus', prefetch, { once: true });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* =====================================================================
+   PAESAGGIO PIXEL ART · giorno, tramonto e notte
+   La modalità "auto" segue l'ora locale; il pulsante in basso la cambia.
+   ===================================================================== */
+(() => {
+  const cv = document.getElementById('scene'), ctx = cv.getContext('2d');
+  const btn = document.getElementById('skyBtn');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const H = 180, PAD = 16;
+  const BAYER = [[.125,.625],[.875,.375]];
+  const hex = h => [1,3,5].map(i => parseInt(h.slice(i,i+2),16));
+  const mk = (w,h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+  const rng = s => () => (s = s * 16807 % 2147483647) / 2147483647;
+
+  const MODES = {
+    day: {
+      label: 'Giorno', icon: 'sun', base: '#4d88d4',
+      sky: ['#3f78c9','#4d88d4','#5f99dd','#74abe5','#8cbdec','#a7cff1','#c6e0f3','#e8f1ef'],
+      body: 'sun', bodyY: .3, sunCols: ['#fff1b8','#ffe58f','#fff6d0','#fffdf0'],
+      cloud: ['#ffffff','#cfe0f2'], haze: [255,248,214,.22],
+      far: ['#8eaed6','#a9c5e6'], mid: ['#5e8f88','#79a99c','#477469'], near: ['#3f7552','#58936b','#2c5a3e'],
+      grass: ['#2c6440','#5aa86c','#3f8452'], birds: '#2e3e66', flies: 0, stars: 0
+    },
+    sunset: {
+      label: 'Tramonto', icon: 'sunset', base: '#2e2257',
+      sky: ['#2e2257','#4b2f78','#7a3f8e','#b64f86','#e0645f','#f28e5c','#f8b866','#fcdc92'],
+      body: 'sun', bodyY: 1, sunCols: ['#f9a860','#fbc674','#fbc674','#ffe9a8'],
+      cloud: ['#ffd7b8','#f2a08c'], haze: [255,190,120,.28],
+      far: ['#7d4a8f','#a066a8'], mid: ['#563475','#7a4c9a','#43285f'], near: ['#33224f','#4d3472','#241a3a'],
+      grass: ['#1f3d3f','#3c7a5a','#2d5a4a'], birds: '#2e2257', flies: 28, stars: 0
+    },
+    night: {
+      label: 'Notte', icon: 'moon', base: '#0b0a24',
+      sky: ['#0b0a24','#100f31','#16153f','#1e1c4f','#29255f','#352f6c','#463b78','#5a4a84'],
+      body: 'moon', bodyY: .32,
+      cloud: ['#3d3873','#29254f'], haze: [150,140,255,.12],
+      far: ['#2c2453','#3e346b'], mid: ['#211b42','#30285c','#18132f'], near: ['#151129','#221a3e','#0e0b1d'],
+      grass: ['#0f1f26','#1f4038','#18322f'], birds: null, flies: 44, stars: 70
+    }
+  };
+  const ORDER = ['auto','day','sunset','night'];
+  const autoMode = () => {
+    const h = new Date().getHours();
+    return (h >= 20 || h < 5) ? 'night' : (h < 8 || h >= 17) ? 'sunset' : 'day';
+  };
+  let choice = 'auto';
+  try { choice = localStorage.getItem('skyMode') || 'auto'; } catch {}
+  if (!ORDER.includes(choice)) choice = 'auto';
+  let M, mode;
+
+  let W, hor, vis, sky, far, mid, near, fg, haze, bodyX, bodyY, bodies, clouds, birds, flies, stars, shoot = null, px = 0, pxT = 0;
+
+  const pine = (g,x,y,h,col) => {
+    g.fillStyle = col;
+    for (let k = 0; k < h; k++) { const hw = k >> 1; g.fillRect(x - hw, y - h + k, hw * 2 + 1, 1); }
+    g.fillRect(x, y, 1, 2);
+  };
+
+  const hill = ([col, rim, tree], base, amp, seed, dens, th) => {
+    const r = rng(seed), c = mk(W + PAD * 2, H), g = c.getContext('2d');
+    const p1 = r() * 6, p2 = r() * 6, ys = [];
+    for (let x = 0; x < c.width; x++) {
+      const y = Math.floor(base + amp * Math.sin(x * .035 + p1) + amp * .5 * Math.sin(x * .09 + p2));
+      ys.push(y);
+      g.fillStyle = col; g.fillRect(x, y, 1, H - y);
+      g.fillStyle = rim; g.fillRect(x, y, 1, 1);
+    }
+    if (tree) for (let x = 2; x < c.width - 2; x++) if (r() < dens) pine(g, x, ys[x], th + Math.floor(r() * 4), tree);
+    return c;
+  };
+
+  /* dischi pixel con dithering, disegnati una volta sola su canvas a parte */
+  const disc = (g, cx, cy, r, col, dith) => {
+    g.fillStyle = col;
+    for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++)
+      if (dx*dx + dy*dy <= r*r && (!dith || ((cx + dx + cy + dy) & 1) === 0)) g.fillRect(cx + dx, cy + dy, 1, 1);
+  };
+  const makeBodies = scale => {
+    const size = Math.ceil(46 * scale) * 2 + 2, c0 = size >> 1;
+    const frames = [];
+    for (let pulse = -2; pulse <= 2; pulse++) {
+      const c = mk(size, size), g = c.getContext('2d');
+      if (M.body === 'sun') {
+        const [a, b, d, e] = M.sunCols;
+        disc(g, c0, c0, Math.round((38 + pulse) * scale), a, true);
+        disc(g, c0, c0, Math.round(30 * scale), b, true);
+        disc(g, c0, c0, Math.round(24 * scale), d);
+        disc(g, c0, c0, Math.round(19 * scale), e);
+      } else {
+        const R = Math.round(14 * scale);
+        disc(g, c0, c0, R + 9 + (pulse > 0 ? 1 : 0), 'rgba(200,190,255,.35)', true);
+        disc(g, c0, c0, R + 4, 'rgba(220,214,255,.55)', true);
+        disc(g, c0, c0, R, '#efeaff');
+        g.fillStyle = '#d4cdf2';
+        [[-5,-3,3],[4,2,2],[-1,6,2],[6,-6,1]].forEach(([x,y,r]) => disc(g, c0 + Math.round(x*scale), c0 + Math.round(y*scale), Math.max(1, Math.round(r*scale)), '#d4cdf2'));
+      }
+      frames.push(c);
+    }
+    return frames;
+  };
+
+  const build = () => {
+    vis = innerWidth / innerHeight * H;
+    W = Math.max(Math.ceil(vis), 200); cv.width = W; cv.height = H;
+    hor = Math.floor(H * .6);
+    bodyX = Math.round(W / 2 + Math.min(W * .28, vis * .32));
+    bodyY = M.bodyY === 1 ? hor - 4 : Math.round(H * M.bodyY);
+    if (M.body === 'moon') bodyX = Math.round(W / 2 - Math.min(W * .28, vis * .3));
+
+    /* cielo con sfumatura dithered */
+    sky = mk(W, H);
+    const sg = sky.getContext('2d'), img = sg.createImageData(W, H), cols = M.sky.map(hex);
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+      const t = Math.min(y / hor, 1) * (cols.length - 1), i = Math.min(Math.floor(t), cols.length - 2);
+      const c = cols[(t - i) > BAYER[y & 1][x & 1] ? i + 1 : i], o = (y * W + x) * 4;
+      img.data[o] = c[0]; img.data[o+1] = c[1]; img.data[o+2] = c[2]; img.data[o+3] = 255;
+    }
+    sg.putImageData(img, 0, 0);
+
+    far  = hill([...M.far],  hor + 4,  5, 11);
+    mid  = hill(M.mid, hor + 14, 7, 23, .05, 7);
+    near = hill(M.near, hor + 26, 8, 37, .09, 9);
+    bodies = makeBodies((W < 220 ? .7 : 1) * (mode === 'day' ? .6 : 1));
+
+    /* foschia luminosa sull'orizzonte (sostituisce la vecchia colonna di riflesso) */
+    haze = mk(W, H);
+    const hg = haze.getContext('2d'), [hr, hgc, hb, ha] = M.haze;
+    const grad = hg.createRadialGradient(bodyX, hor, 4, bodyX, hor, W * .55);
+    grad.addColorStop(0, `rgba(${hr},${hgc},${hb},${ha})`);
+    grad.addColorStop(1, `rgba(${hr},${hgc},${hb},0)`);
+    hg.fillStyle = grad; hg.fillRect(0, hor - 30, W, 60);
+
+    /* prato con fiori */
+    fg = mk(W + PAD * 2, H);
+    const g = fg.getContext('2d'), r = rng(77), top = H - 15, FL = ['#ff8fb1','#ffd36a','#fff4e0','#c3b1e1'];
+    const [soil, grass, tuft] = M.grass;
+    for (let x = 0; x < fg.width; x++) {
+      const y = top + Math.floor(2 * Math.sin(x * .2) + 1);
+      g.fillStyle = soil; g.fillRect(x, y, 1, H - y);
+      g.fillStyle = grass; g.fillRect(x, y, 1, 1);
+      if (r() < .25) { g.fillStyle = tuft; g.fillRect(x, y - 1, 1, 1); }
+    }
+    for (let x = 3; x < fg.width - 3; x++) if (r() < .05) {
+      const y = top + 3, col = FL[Math.floor(r() * FL.length)];
+      g.fillStyle = grass; g.fillRect(x, y - 3, 1, 4);
+      g.fillStyle = col; g.fillRect(x - 1, y - 5, 3, 1); g.fillRect(x, y - 6, 1, 3);
+      g.fillStyle = '#ffe9a8'; g.fillRect(x, y - 5, 1, 1);
+    }
+
+    const r2 = rng(5);
+    clouds = [[8,22,2,2.2],[60,40,1,1.4],[150,16,2,1.8],[230,34,1,2.6],[300,26,2,1.6]]
+      .map(([x,y,s,v]) => ({ x: x * W / 320, y, s, v, ph: Math.random() * 6.28 }));
+    birds = [0,1,2].map(i => ({ x: W * .25 + i * 9, y: 46 + (i % 2) * 6 + i * 2, v: 5 + i * .8, ph: i * .7, flap: 2 + i }));
+    flies = Array.from({ length: M.flies }, () => ({
+      x: r2() * W, y: hor + 12 + r2() * (H - hor - 22), ph: r2() * 6, s: .5 + r2(), hue: r2() < .3 ? 'pink' : 'gold'
+    }));
+    stars = Array.from({ length: M.stars }, () => ({
+      x: Math.floor(r2() * W), y: Math.floor(r2() * hor * .85), ph: r2() * 6.28, big: r2() < .12
+    }));
+  };
+
+  const cloud = (x, y, s) => {
+    x = Math.floor(x);
+    ctx.fillStyle = M.cloud[0];
+    ctx.fillRect(x + 4*s, y, 6*s, 2*s); ctx.fillRect(x + s, y + 2*s, 14*s, 2*s);
+    ctx.fillStyle = M.cloud[1]; ctx.fillRect(x + 2*s, y + 4*s, 12*s, s);
+  };
+
+  const WINGS = [
+    [[0,1],[1,1],[2,0],[3,1],[4,1]],
+    [[0,0],[1,1],[2,0],[3,1],[4,0]],
+    [[0,0],[1,0],[2,0],[3,0],[4,0]],
+    [[0,1],[1,0],[2,0],[3,0],[4,1]]
+  ];
+
+  const draw = t => {
+    const o = k => Math.round(px * k) - PAD;
+    ctx.drawImage(sky, 0, 0);
+
+    /* stelle e stelle cadenti */
+    stars.forEach(s => {
+      const a = .55 + .45 * Math.sin(t * 2 + s.ph);
+      ctx.fillStyle = `rgba(255,250,235,${a})`;
+      ctx.fillRect(s.x, s.y, 1, 1);
+      if (s.big && a > .8) { ctx.fillStyle = `rgba(255,250,235,${(a - .8) * 2})`; ctx.fillRect(s.x - 1, s.y, 3, 1); ctx.fillRect(s.x, s.y - 1, 1, 3); }
+    });
+    if (M.stars) {
+      if (!shoot && Math.random() < .004) shoot = { x: Math.random() * W * .7, y: Math.random() * hor * .4, life: 0 };
+      if (shoot) {
+        shoot.life++;
+        for (let k = 0; k < 6; k++) {
+          ctx.fillStyle = `rgba(255,255,255,${(1 - k / 6) * (1 - shoot.life / 14)})`;
+          ctx.fillRect(Math.floor(shoot.x + shoot.life * 4 - k * 2), Math.floor(shoot.y + shoot.life * 2 - k), 1, 1);
+        }
+        if (shoot.life > 13) shoot = null;
+      }
+    }
+
+    /* sole o luna con pulsazione morbida (sprite pre-renderizzati) */
+    const frame = bodies[Math.round(Math.sin(t * 1.2) * 2) + 2];
+    ctx.drawImage(frame, bodyX - (frame.width >> 1), bodyY - (frame.height >> 1));
+
+    /* nuvole che respirano e si muovono */
+    clouds.forEach(c => {
+      c.x += c.v * .15;
+      if (c.x > W + 30) c.x = -30;
+      cloud(c.x, c.y, c.s * (1 + Math.sin(t * .4 + c.ph) * .06));
+    });
+
+    ctx.drawImage(far, o(3), 0);
+    ctx.drawImage(haze, 0, 0);
+
+    /* uccelli con 4 stati di volo */
+    if (M.birds) {
+      ctx.fillStyle = M.birds;
+      birds.forEach(b => {
+        const bx = Math.floor((b.x + t * b.v) % (W + 20)) - 10;
+        const by = Math.floor(b.y + Math.sin(t + b.ph) * 2);
+        WINGS[Math.floor(t * b.flap + b.ph * 3) % 4].forEach(([dx,dy]) => ctx.fillRect(bx + dx, by + dy, 1, 1));
+      });
+    }
+
+    ctx.drawImage(mid, o(6), 0);
+    ctx.drawImage(near, o(11), 0);
+    ctx.drawImage(fg, o(18), 0);
+
+    /* lucciole con alone */
+    flies.forEach(f => {
+      const a = Math.sin(t * 1.8 + f.ph);
+      if (a > -.2) {
+        const fx = Math.floor(f.x + Math.sin(t * .6 * f.s + f.ph) * 6);
+        const fy = Math.floor(f.y + Math.cos(t * .5 * f.s + f.ph) * 4);
+        ctx.fillStyle = f.hue === 'pink' ? `rgba(255,143,177,${.25 * a})` : `rgba(255,220,120,${.25 * a})`;
+        ctx.fillRect(fx - 1, fy - 1, 3, 3);
+        ctx.fillRect(fx - 2, fy, 5, 1);
+        ctx.fillStyle = a > .6 ? '#fff6b0' : '#ffd36a';
+        ctx.fillRect(fx, fy, 1, 1);
+      }
+    });
+  };
+
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lastT = 0;
+
+  const label = () => {
+    const m = MODES[mode];
+    const text = choice === 'auto' ? `Cielo: auto · ${m.label.toLowerCase()}` : `Cielo: ${m.label.toLowerCase()}`;
+    btn.innerHTML = svg(choice === 'auto' ? 'auto' : m.icon) + `<span>${text}</span>`;
+    btn.setAttribute('aria-label', `${text}. Clicca per cambiare`);
+  };
+  const apply = () => {
+    mode = choice === 'auto' ? autoMode() : choice;
+    M = MODES[mode];
+    document.body.style.background = M.base;
+    if (themeMeta) themeMeta.content = M.base;
+    build(); draw(lastT); label();
+  };
+  btn.addEventListener('click', () => {
+    choice = ORDER[(ORDER.indexOf(choice) + 1) % ORDER.length];
+    try { localStorage.setItem('skyMode', choice); } catch {}
+    apply();
+  });
+  setInterval(() => { if (choice === 'auto' && autoMode() !== mode) apply(); }, 60000);
+
+  apply();
+  let rz = 0;
+  addEventListener('resize', () => { cancelAnimationFrame(rz); rz = requestAnimationFrame(() => { build(); draw(lastT); }); });
+
+  if (still) return;
+
+  /* parallasse mouse + touch */
+  addEventListener('pointermove', e => { pxT = (e.clientX / innerWidth - .5) * 2; });
+  addEventListener('touchmove', e => {
+    if (e.touches[0]) pxT = (e.touches[0].clientX / innerWidth - .5) * 2;
+  }, { passive: true });
+
+  let last = 0;
+  const loop = ms => {
+    if (ms - last > 66) {
+      last = ms; px += (pxT - px) * .15;
+      lastT = ms / 1000;
+      draw(lastT);
+    }
+    requestAnimationFrame(loop);
+  };
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

@@ -211,32 +211,26 @@ export default function PLCConfigurationView({ profile, onBack, onSelectProject 
           {activeTab === 'logic' && (
             <div className="p-6 rounded-xl bg-zinc-950/80 border border-zinc-800 space-y-6 text-xs">
               <h3 className="text-sm font-bold text-amber-300 uppercase tracking-wider">
-                SPECIFICHE DI PROGRAMMAZIONE & PROTOCOLLI SUPPORTATI
+                PERCORSO E COMPETENZE
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 rounded-lg bg-zinc-900 border border-zinc-800 space-y-2">
-                  <span className="text-amber-400 font-bold block">1. AUTOMAZIONE & CABLAGGIO CIVILE / INDUSTRIALE</span>
+                  <span className="text-amber-400 font-bold block">1. FORMAZIONE</span>
                   <p className="text-zinc-400 font-sans leading-relaxed">
-                    Esperienza diretta in quadri elettrici di distribuzione, dimensionamento linee, interruttori magnetotermici e differenziali, messa a terra e collaudo conformità CEI 64-8.
+                    Qualifica professionale per operatore elettrico all'Istituto Salesiano San Zeno (2017–2023): elettrotecnica, sistemi, tecniche e progettazione di sistemi elettrici.
                   </p>
                 </div>
                 <div className="p-4 rounded-lg bg-zinc-900 border border-zinc-800 space-y-2">
-                  <span className="text-amber-400 font-bold block">2. PROTOCOLLI IOT & MICROCONTROLLORI</span>
+                  <span className="text-amber-400 font-bold block">2. STAGE</span>
                   <p className="text-zinc-400 font-sans leading-relaxed">
-                    Sviluppo firmware C++/Arduino per ESP32/ESP8266, comunicazione seriale UART, bus I²C per display/sensori, SPI per moduli RF/Ethernet e broker MQTT.
+                    Operatore elettrico da Elettrosystem di Daniele Pellini a Oppeano, nel 2022 (maggio–giugno) e nel 2023 (giugno–luglio).
                   </p>
                 </div>
                 <div className="p-4 rounded-lg bg-zinc-900 border border-zinc-800 space-y-2">
-                  <span className="text-amber-400 font-bold block">3. DOMOTICA & SUPERVISIONE</span>
+                  <span className="text-amber-400 font-bold block">3. ARDUINO</span>
                   <p className="text-zinc-400 font-sans leading-relaxed">
-                    Integrazione sensori ambientali (temperatura, umidità, PIR), gestione relè a stato solido, automazione luci ed elaborazione comandi remoti.
-                  </p>
-                </div>
-                <div className="p-4 rounded-lg bg-zinc-900 border border-zinc-800 space-y-2">
-                  <span className="text-amber-400 font-bold block">4. DIAGNOSTICA & SICUREZZA</span>
-                  <p className="text-zinc-400 font-sans leading-relaxed">
-                    Risoluzione guasti con multimetro digitale, pinze amperometriche, verifica isolamento e monitoraggio carichi in tempo reale.
+                    Sensore di parcheggio con Arduino Uno, sensore a ultrasuoni, buzzer e display LCD con modulo I²C che mostra la distanza dall'ostacolo.
                   </p>
                 </div>
               </div>
@@ -253,9 +247,9 @@ export default function PLCConfigurationView({ profile, onBack, onSelectProject 
                 {profile.intro}
               </p>
               <div className="p-4 rounded-lg bg-zinc-900/90 border border-amber-500/20 font-mono text-xs text-zinc-400 space-y-1">
-                <div>STATO OPERATIVO: DISPONIBILE PER PROGETTI DI AUTOMAZIONE & IOT</div>
+                <div>FORMAZIONE: ISTITUTO SALESIANO SAN ZENO · OPERATORE ELETTRICO</div>
                 <div>LOCALIZZAZIONE CENTRALE: VERONA, VENETO, ITALIA</div>
-                <div>INTERFACCIA HARDWARE: MULTIMETRO, SALDATORE A STAGNO, PROTOBOARD, OSCILLOSCOPIO</div>
+                <div>OGGI: EDULIFE IMPRESA SOCIALE · CONTENUTI DIGITALI</div>
               </div>
             </div>
           )}
@@ -266,7 +260,7 @@ export default function PLCConfigurationView({ profile, onBack, onSelectProject 
           <div className="flex items-center gap-2">
             <span className="text-amber-400 font-semibold">{profile.projects.length} progetto/i hardware</span>
             <span className="text-zinc-600">·</span>
-            <span>Arduino, HC-SR04, ESP32, Impianti Elettrici CEI 64-8</span>
+            <span>Arduino, sensore a ultrasuoni, LCD I²C</span>
           </div>
           <div className="text-zinc-500 text-[11px]">
             Dennis Bottari Portfolio

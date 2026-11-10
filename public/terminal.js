@@ -10,7 +10,6 @@
    ===================================================================== */
 (() => {
   const EMAIL = "info@dennisbottari.it";
-  const FIRST_YEAR = 2015; // prime righe di codice (vedi Timeline)
   const IT = () => typeof LANG === "undefined" || LANG !== "EN";
   const $o = () => document.getElementById("to");
   const store = {
@@ -328,7 +327,6 @@
   def(
     "neofetch",
     () => {
-      const years = new Date().getFullYear() - FIRST_YEAR;
       const count = {};
       P.filter((p) => p.d === "web" || p.d === "game").forEach((p) => p.k.filter(Boolean).forEach((k) => (count[k] = (count[k] || 0) + 1)));
       const langs = Object.entries(count).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([k]) => k).join(", ");
@@ -347,7 +345,8 @@
         ["", "───────"],
         ["OS", "Dede.OS 3.0"],
         ["Host", "Verona, Italia"],
-        ["Uptime", `dal ${FIRST_YEAR} (${years} anni di codice)`],
+        ["Lavoro", "Edulife Impresa Sociale · contenuti digitali"],
+        ["Studi", "ITS Academy LAST · web development"],
         ["Pacchetti", `${np} progetti, ${nb} brani`],
         ["Shell", "dedesh 1.0"],
         ["Tema", THEMES[at] ? THEMES[at].label : "Originale"],
@@ -362,7 +361,7 @@
           .join("\n")}\n\n${swatches}</pre></div>`,
       );
     },
-    "neofetch — scheda di sistema con logo, anni di esperienza, progetti e tema attivo.",
+    "neofetch — scheda di sistema con logo, lavoro, studi, progetti e tema attivo.",
   );
 
   def(
@@ -452,7 +451,7 @@
         line.className = "line ok2";
         pre(keys.filter((k) => k !== "about").map((k) => `  ${C[k][3]}  ${C[k][0].padEnd(9)} ${C[k][2]}`).join("\n"));
         html(
-          `<div class="line">Per proposte di lavoro o collaborazioni:</div><div class="terminal-links"><a href="#" data-term-run="contact">✎ contact</a><a href="mailto:${EMAIL}">✉ email</a><a href="https://linkedin.com/in/dennis-bottari/" target="_blank" rel="noopener">in LinkedIn</a><a href="#" data-term-run="cat cv.pdf">📄 CV</a></div>`,
+          `<div class="line">Oggi lavoro in Edulife Impresa Sociale, area contenuti digitali.</div><div class="line">Per proposte di lavoro o collaborazioni:</div><div class="terminal-links"><a href="#" data-term-run="contact">✎ contact</a><a href="mailto:${EMAIL}">✉ email</a><a href="https://linkedin.com/in/dennis-bottari/" target="_blank" rel="noopener">in LinkedIn</a><a href="#" data-term-run="cat cv.pdf">📄 CV</a></div>`,
         );
       }, 180);
     },

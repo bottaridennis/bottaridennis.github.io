@@ -788,34 +788,39 @@ export const portfolioData: Profile[] = [
   {
     id: 'web-developer',
     title: 'Web Developer',
-    intro: 'Sviluppo di applicazioni web moderne, reattive e performanti con standard elevati di architettura frontend, UI/UX rifinita ed estetica contemporanea.',
+    intro: 'Siti e applicazioni web: dal project work all\'ITS Academy LAST ai progetti personali in React e TypeScript.',
     themeColor: 'text-blue-500',
     bgColor: 'bg-blue-500/10',
     icon: Code,
-    skills: ['React 19', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Node.js', 'Express', 'Vite', 'Motion', 'REST & GraphQL'],
+    skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Python', 'React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     education: [
       {
-        year: '2020 - Presente',
-        institution: 'Formazione Continua & Progetti Indipendenti',
-        description: 'Specializzazione avanzata su React, architetture client-side moderne e performance web.'
+        year: 'Oggi',
+        institution: 'Edulife Impresa Sociale',
+        description: 'Area contenuti digitali.'
       },
       {
-        year: '2018 - 2020',
-        institution: 'Sviluppo Software & Web Design',
-        description: 'Percorso intensivo su linguaggi frontend, architetture modulari e responsive design.'
+        year: 'Maggio - Dicembre 2024',
+        institution: 'Edulife Società Benefit',
+        description: 'Stage nell\'area contenuti digitali.'
+      },
+      {
+        year: 'Dal 2023',
+        institution: 'ITS Academy LAST',
+        description: 'Web development: HTML, CSS, JS, graphic design, UX, UI, PHP.'
       }
     ],
     projects: [
       {
         id: 'rev-minds',
         title: 'Revolution Minds (Verona Second Hand)',
-        description: 'Piattaforma web per la sensibilizzazione all\'impatto ambientale dell\'abbigliamento e la promozione di negozi second-hand e vintage a Verona.',
+        description: 'Project work dell\'ITS Academy LAST per sensibilizzare il territorio veronese sull\'impatto ambientale del proprio armadio, proponendo i negozi second-hand.',
         fullDescription: [
-          'Revolution Minds è un progetto web sviluppato con i compagni di corso durante il percorso ITS Academy LAST per promuovere la moda sostenibile e l\'economia circolare nel territorio veronese.',
-          'Offre un catalogo interattivo di negozi di seconda mano, guide all\'upcycling tessile, layout responsive ad alte prestazioni ed estetica moderna.'
+          'Durante il percorso ITS con l\'ITS Academy LAST, io e alcuni compagni abbiamo sviluppato un progetto che punta a sensibilizzare la popolazione del territorio veronese sull\'impatto ambientale del proprio armadio.',
+          'Come soluzione, il sito propone i negozi second-hand presenti sul territorio.'
         ],
         imageUrl: '/RevolutionMinds.png',
-        technologies: ['JavaScript', 'HTML5 Semantico', 'CSS3 Modulare', 'Responsive UI', 'Green Fashion Web App'],
+        technologies: ['JavaScript', 'HTML5', 'CSS3', 'Leaflet', 'particles.js'],
         links: [
           { label: 'Visita Sito Live', url: 'https://dennisbottari.it/revolutionminds/', type: 'preview' },
           { label: 'Repository GitHub', url: 'https://github.com/bottaridennis/ProjectWorkRevolutionMinds', type: 'github' }
@@ -991,11 +996,11 @@ export const portfolioData: Profile[] = [
         title: 'Dennis Bottari Portfolio Hub',
         description: 'Il portale personale e hub centrale di Dennis Bottari ospitato su GitHub Pages e dennisbottari.it.',
         fullDescription: [
-          'Architettura radice del dominio personale dennisbottari.it e bottaridennis.github.io, che smista il traffico, gestisce i sottodomini e funge da punto d\'accesso principale per tutte le creazioni digitali.',
-          'Configurato con routing personalizzato, reverse proxy Nginx, certificati SSL e ottimizzazione del delivery statico.'
+          'La pagina iniziale del dominio dennisbottari.it, pubblicata con GitHub Pages, da cui si sceglie la versione del portfolio da esplorare.',
+          'Collega Dede.OS, la versione Classic e gli altri progetti pubblicati sul dominio.'
         ],
         imageUrl: '/bottaridennis.svg',
-        technologies: ['Web Architecture', 'Nginx', 'GitHub Pages', 'DNS & CNAME', 'Portfolio Core'],
+        technologies: ['GitHub Pages', 'DNS & CNAME', 'Vite'],
         links: [
           { label: 'Visita Hub Principale', url: 'https://dennisbottari.it/', type: 'preview' },
           { label: 'Repository GitHub', url: 'https://github.com/bottaridennis/bottaridennis.github.io', type: 'github' }
@@ -1003,28 +1008,27 @@ export const portfolioData: Profile[] = [
       },
       {
         id: 'enc-dec',
-        title: 'EncDec - Cryptography & Security Suite',
-        description: 'Suite web e tool di cifratura / decifratura per la sicurezza informatica dei dati, hashing e gestione crittografica di file e testi.',
+        title: 'EncDec - Cifratura AES in Python',
+        description: 'Programma Python che cripta e decripta file di qualsiasi tipo con AES: progetto di cyber security dell\'ITS Academy LAST.',
         fullDescription: [
-          'Strumento di cifratura e sicurezza informatica sviluppato per proteggere testi confidenziali e file attraverso algoritmi crittografici (AES-256, RSA, hashing SHA-256 e encoding Base64).',
-          'Interfaccia chiara con generazione di chiavi simmetriche, validazione dell\'entropia delle password e prevenzione di leak crittografici, fruibile via browser o integrabile come modulo script.'
+          'Con alcuni compagni dell\'ITS Academy LAST ho sviluppato un progetto di cyber security: un programma in Python che cripta e decripta file di qualsiasi tipo con la libreria AES.',
+          'Comprende uno script per generare la chiave, una versione da terminale e una con interfaccia grafica in Tkinter.'
         ],
         imageUrl: '/encdec.png',
-        technologies: ['Python', 'Web Crypto API', 'JavaScript', 'AES-256 / SHA-256', 'Cybersecurity', 'UI Toolkit'],
+        technologies: ['Python', 'AES', 'Tkinter', 'Cyber security'],
         links: [
           { label: 'Repository GitHub', url: 'https://github.com/bottaridennis/Encoder_Decoder_AES', type: 'github' }
         ]
       },
       {
         id: 'arcon-web',
-        title: 'ARCON - Small Business Corporate Portal',
-        description: 'Sito web aziendale completo per piccole imprese con animazioni fluide, navigazione ad ancora, sezioni multimediali e design professionale.',
+        title: 'ARCON - Template HTML/CSS',
+        description: 'Template scelto su Envato e ricreato in HTML e CSS durante le lezioni dell\'ITS Academy LAST.',
         fullDescription: [
-          'ARCON è una piattaforma web completa pensata per presentare servizi aziendali, case study, team ed expertise di piccole e medie imprese con estetica pulita e moderna.',
-          'Sviluppato con architettura frontend pulita in HTML5 semantico, fogli di stile CSS modulari, icone Boxicons/FontAwesome e supporto completo per schermi mobile e desktop.'
+          'Durante le lezioni di HTML e CSS dell\'ITS Academy LAST ci è stato chiesto di scegliere un template dalla piattaforma Envato e di ricrearlo in HTML e CSS per prendere dimestichezza con il linguaggio.'
         ],
         imageUrl: '/ARCON.png',
-        technologies: ['HTML5 Semantico', 'CSS3 Flex & Grid', 'JavaScript', 'Boxicons', 'FontAwesome', 'Corporate Design'],
+        technologies: ['HTML5', 'CSS3'],
         links: [
           { label: 'Apri Sito Live', url: '/ARCON/arcon.html', type: 'preview' },
           { label: 'Profilo GitHub', url: 'https://github.com/bottaridennis', type: 'github' }
@@ -1035,17 +1039,13 @@ export const portfolioData: Profile[] = [
   {
     id: 'game-designer',
     title: 'Game Designer',
-    intro: 'Progettazione e programmazione di videogiochi 2D, gameplay loop avvincenti, fisica arcade, sound design ed estetica pixel-art.',
+    intro: 'Videogiochi 2D e pixel art con GameMaker, Godot e Aseprite: minigiochi giocabili nel browser, prototipi e asset.',
     themeColor: 'text-emerald-500',
     bgColor: 'bg-emerald-500/10',
     icon: Gamepad2,
-    skills: ['GameMaker Studio', 'Godot Engine', 'GDScript', 'Aseprite', 'GML', 'Level Design', 'Fisica 2D & Collisioni', 'Pixel Art & Animazione', 'Audio & Sound FX'],
+    skills: ['GameMaker Studio 2', 'GML', 'Godot', 'GDScript', 'Aseprite', 'Pixel art', 'Game design', 'Level design'],
     education: [
-      {
-        year: '2019 - Presente',
-        institution: 'Game Development & Pixel Art',
-        description: 'Creazione di videogiochi retro, studio di animazione pixel-art in Aseprite e programmazione di meccaniche in Godot e GameMaker.'
-      }
+
     ],
     projects: [
       {
@@ -1053,8 +1053,8 @@ export const portfolioData: Profile[] = [
         title: 'Aseprite | Animazione Personaggio 2D',
         description: 'Set completo di animazioni in 6 direzioni per un personaggio 2D in pixel-art realizzato su Aseprite con licenza CC-0 per videogiochi.',
         fullDescription: [
-          'Con Aseprite ho creato un set completo di animazioni per un personaggio 2D in 6 direzioni da condividere con la community con licenza CC-0 per lo sviluppo di giochi e per la realizzazione di animazioni in pixel-art commerciali.',
-          'Include cicli di animazione per camminata (walk), corsa (run), posa statica (idle) e transizioni direzionali fluide, esportate su sprite sheet per motori di gioco 2D (Godot, GameMaker, Unity).'
+          'Con Aseprite ho iniziato a creare un set di animazioni per un personaggio 2D in 6 direzioni, da condividere con la community con licenza CC-0 per lo sviluppo di giochi e per animazioni in pixel art commerciali.',
+          'Lo sprite sheet e l\'animazione sono scaricabili qui sotto.'
         ],
         imageUrl: '/PG.gif',
         technologies: ['Aseprite', 'Pixel-Art', 'Animazione 2D', 'Sprite Sheet', 'Game Asset CC-0'],
@@ -1066,13 +1066,13 @@ export const portfolioData: Profile[] = [
       {
         id: 'knight-run',
         title: 'Godot | Knight Run',
-        description: 'Videogioco platformer 16-bit sviluppato in Godot Engine con GDScript, fisica di movimento, salti e level design originale.',
+        description: 'Videogioco 16-bit in sviluppo con Godot: script e level design sono miei, gli sprite vengono da itch.io con licenza CC-0.',
         fullDescription: [
-          'Sviluppo di un videogioco platformer 16-bit in Godot Engine: gli script di movimento, gestione delle collisioni e il level design sono opera mia.',
-          'Include implementazione di inerzia nei salti, gravità progressiva, trappole dinamiche e architettura modulare di nodi e scene in GDScript.'
+          'Ho iniziato lo sviluppo di un videogioco 16-bit in Godot. Gli sprite vengono dal Brackeys Platformer Bundle su itch.io, con licenza CC-0, mentre gli script e il level design sono opera mia.',
+          'Nella repository GitHub ci sono il progetto Godot e la demo da scaricare.'
         ],
         imageUrl: '/game.png',
-        technologies: ['Godot Engine', 'GDScript', 'Platformer 2D', 'Level Design', 'Physics 2D'],
+        technologies: ['Godot', 'GDScript', 'Level design'],
         links: [
           { label: 'Codice Sorgente GitHub', url: 'https://github.com/bottaridennis/KnightRun', type: 'github' }
         ]
@@ -1080,13 +1080,12 @@ export const portfolioData: Profile[] = [
       {
         id: 'spooky-shooter',
         title: 'Gamemaker 2 | Spooky Shooter',
-        description: 'Survival shooter arcade in GameMaker dove bisogna sopravvivere a orde continue di uomini zucca con audio retro.',
+        description: 'Minigioco in GameMaker 2 in cui sopravvivere a orde di uomini zucca, giocabile nel browser.',
         fullDescription: [
-          'Spooky Shooter è un survival shooter arcade ad alto ritmo dove il giocatore deve sopravvivere a ondate crescenti di zucche e mostri di Halloween.',
-          'Include gestione di collisioni precise, spawn rate progressivo, sistema di punteggio e audio retro coinvolgente. Giocabile direttamente nel browser.'
+          'Con GameMaker 2 ho creato un minigioco in cui bisogna sopravvivere a orde di uomini zucca. Clicca Gioca e divertiti!'
         ],
         imageUrl: '/spookyshooter.png',
-        technologies: ['GameMaker Studio 2', 'GML', 'HTML5 Game Engine', 'Arcade 2D'],
+        technologies: ['GameMaker Studio 2', 'GML', 'HTML5'],
         links: [
           { label: 'Gioca nel Browser', url: '/spookyshooter/index.html', type: 'preview' }
         ]
@@ -1094,13 +1093,12 @@ export const portfolioData: Profile[] = [
       {
         id: 'space-game',
         title: 'Gamemaker 2 | Space Rocks',
-        description: 'Minigioco arcade spaziale in cui distruggere asteroidi con movimento WASD, freno a inerzia con barra spaziatrice e sparo con mouse.',
+        description: 'Minigioco in GameMaker 2 in cui distruggere asteroidi: W A S D per muoversi, Spazio per bloccare la navicella, clic sinistro per sparare.',
         fullDescription: [
-          'Un gioco di distruzione asteroidi nello spazio profondo con comandi fisici inerziali (WASD per accelerazione, Spazio per freno d\'inerzia e click del mouse per fare fuoco).',
-          'Esportato in formato HTML5 per essere eseguito istantaneamente su qualsiasi browser desktop o mobile.'
+          'Con GameMaker 2 ho creato un minigioco in cui bisogna distruggere degli asteroidi. I comandi sono W A S D per il movimento, Spazio per bloccare la navicella e il tasto sinistro del mouse per sparare.'
         ],
         imageUrl: '/spacegame.png',
-        technologies: ['GameMaker Studio 2', 'GML', 'HTML5', 'Arcade Physics'],
+        technologies: ['GameMaker Studio 2', 'GML', 'HTML5'],
         links: [
           { label: 'Gioca nel Browser', url: '/space_game/index.html', type: 'preview' }
         ]
@@ -1108,13 +1106,12 @@ export const portfolioData: Profile[] = [
       {
         id: 'space-shooter',
         title: 'Gamemaker 2 | Rocks Shooter',
-        description: 'Spacethruster arcade con hitbox di precisione, particelle e distruzione progressiva di formazioni rocciose.',
+        description: 'Minigioco in GameMaker 2 in cui distruggere asteroidi, da personalizzare in seguito con sprite più dettagliati.',
         fullDescription: [
-          'Evoluzione del gameplay shoot-em-up spaziale con sprite di dettaglio, gestione avanzata degli angoli di tiro e calcolo delle collisioni.',
-          'Interamente compatibile HTML5 ed eseguibile direttamente via browser.'
+          'Con GameMaker 2 ho creato un minigioco in cui bisogna distruggere degli asteroidi: un progetto da modificare e personalizzare in seguito con sprite più dettagliati.'
         ],
         imageUrl: '/space_game.png',
-        technologies: ['GameMaker Studio 2', 'GML', 'Shmup Mechanics', 'HTML5'],
+        technologies: ['GameMaker Studio 2', 'GML', 'HTML5'],
         links: [
           { label: 'Gioca nel Browser', url: '/space_shooter/index.html', type: 'preview' }
         ]
@@ -1122,13 +1119,12 @@ export const portfolioData: Profile[] = [
       {
         id: 'rpg-game',
         title: 'Gamemaker 2 | RPG Game',
-        description: 'Prototipo RPG retro a 8-bit sviluppato con GameMaker 2 e Aseprite con assets e meccaniche di gioco.',
+        description: 'Asset creati con GameMaker 2 e Aseprite e meccaniche di gioco in sviluppo per un RPG 8-bit.',
         fullDescription: [
-          'Un classico gioco di ruolo con vista dall\'alto, movimento a griglia fluida, interazione con NPC e ambientazione fantasy medievale.',
-          'Dimostra la struttura a stati finiti (FSM) per i personaggi e la logica di transizione tra aree di gioco.'
+          'Con GameMaker 2 e Aseprite ho creato degli asset e sto lavorando a delle meccaniche di gioco per un RPG 8-bit.'
         ],
         imageUrl: '/rpg.png',
-        technologies: ['GameMaker Studio 2', 'GML', 'Aseprite', 'Pixel-Art 8-bit', 'HTML5'],
+        technologies: ['GameMaker Studio 2', 'GML', 'Aseprite', 'Pixel art'],
         links: [
           { label: 'Gioca nel Browser', url: '/RPG_game/index.html', type: 'preview' }
         ]
@@ -1137,30 +1133,40 @@ export const portfolioData: Profile[] = [
   },
   {
     id: 'elettricista',
-    title: 'Elettricista & IoT',
-    intro: 'Esperto in impianti elettrici civili e industriali, domotica intelligente, programmazione microcontrollori e sensori IoT.',
+    title: 'Elettrotecnica & Arduino',
+    intro: 'Qualifica professionale per operatore elettrico, stage come operatore elettrico e prototipi con Arduino.',
     themeColor: 'text-amber-500',
     bgColor: 'bg-amber-500/10',
     icon: Zap,
-    skills: ['Impiantistica Civile & Industriale', 'Arduino & ESP32', 'Sensori Ultrasuoni & Infrarossi', 'Protocolli I2C / SPI / UART', 'Domotica & Relè', 'Normative CEI 64-8'],
+    skills: ['Elettrotecnica', 'Sistemi elettrici', 'Progettazione di sistemi elettrici', 'Arduino', 'Sensori a ultrasuoni', 'Display LCD I2C'],
     education: [
       {
-        year: '2016 - 2021',
-        institution: 'Istituto Tecnico Industriale Guglielmo Marconi - Verona',
-        description: 'Diploma Tecnico in Elettrotecnica, Automazione e Impiantistica.'
+        year: '2017 - 2023',
+        institution: 'Istituto Salesiano San Zeno',
+        description: 'Qualifica professionale per operatore elettrico: elettrotecnica, sistemi, tecniche e progettazione di sistemi elettrici.'
+      },
+      {
+        year: 'Giugno - Luglio 2023',
+        institution: 'Elettrosystem di Daniele Pellini, Oppeano',
+        description: 'Stage come operatore elettrico.'
+      },
+      {
+        year: 'Maggio - Giugno 2022',
+        institution: 'Elettrosystem di Daniele Pellini, Oppeano',
+        description: 'Stage come operatore elettrico.'
       }
     ],
     projects: [
       {
         id: 'parking-sensor',
         title: 'Sensore Parcheggio',
-        description: 'Dispositivo hardware IoT a ultrasuoni per assistenza al parcheggio con avvisi acustici e visivi graduati.',
+        description: 'Sensore di parcheggio funzionante con Arduino Uno, sensore a ultrasuoni, buzzer e display LCD I2C.',
         fullDescription: [
-          'Progetto hardware completo basato su microcontrollore e trasduttore ultrasonico HC-SR04 per il rilevamento di ostacoli in prossimità.',
-          'Il firmware calcola la distanza in millisecondi in base alla velocità del suono e modula frequenza del buzzer piezoelettrico e matrice LED multicolore a seconda dell\'avvicinamento dell\'auto.'
+          'Con Arduino ho realizzato un sensore di parcheggio funzionante usando una scheda Arduino Uno, un buzzer, un sensore a ultrasuoni e un display LCD con modulo I2C, che mostra per iscritto la distanza dall\'ostacolo.',
+          'Codice e schema elettrico sono nella repository GitHub.'
         ],
         imageUrl: '/parking.png',
-        technologies: ['Arduino', 'Sensore Ultrasuoni HC-SR04', 'C++ Embedded', 'Elettronica Hardware'],
+        technologies: ['Arduino', 'C++', 'Sensore a ultrasuoni', 'LCD I2C'],
         links: [
           { label: 'Codice GitHub', url: 'https://github.com/bottaridennis/parking-sensor-arduino', type: 'github' }
         ]
@@ -1169,52 +1175,42 @@ export const portfolioData: Profile[] = [
   },
   {
     id: 'musicista',
-    title: 'Musicista & Producer',
-    intro: 'Composizione musicale, scrittura di testi rap/trap, sound design narrativo e produzione avanzata con Suno AI.',
+    title: 'Musica',
+    intro: 'Testi e brani realizzati con Suno AI. Nel tempo libero suono chitarra e ukulele e canto.',
     themeColor: 'text-purple-500',
     bgColor: 'bg-purple-500/10',
     icon: Music,
-    skills: ['Suno AI v3.5 & v5', 'Prompt Audio Engineering', 'Songwriting Rap & Trap', 'Sound Design Cinematografico', 'Arrangiamento Strumentale', 'Metriche & Flow Vocali'],
+    skills: ['Suno AI', 'Scrittura di testi', 'Chitarra', 'Canto', 'Ukulele'],
     education: [
-      {
-        year: '2023 - Presente',
-        institution: 'Produzione Musicale AI & Sound Engineering',
-        description: 'Studio intensivo di prompt audio per l\'ottenimento di sonorità ricercate, mix professionali e strutture complesse.'
-      },
-      {
-        year: '2018 - Presente',
-        institution: 'Scrittura Metrica & Rap Italiano',
-        description: 'Composizione di testi autoriali, figure retoriche, schemi di rime complesse e flow double-time.'
-      }
+
     ],
     projects: musicProjects
   },
   {
     id: 'graphic-designer',
     title: 'Graphic Designer',
-    intro: 'Brand identity, progettazione di loghi vettoriali, visual system coerenti e impaginazione per la comunicazione digitale.',
+    intro: 'Graphic design, UI e UX: interfacce e prototipi in Figma e un monogramma personale.',
     themeColor: 'text-rose-500',
     bgColor: 'bg-rose-500/10',
     icon: Palette,
-    skills: ['Adobe Illustrator', 'Figma', 'Photoshop', 'Logo Design & Monogrammi', 'UI & UX Design', 'Tipografia & Griglie', 'Color Theory & Contrast'],
+    skills: ['Graphic design', 'UI', 'UX', 'Web design', 'Figma', 'Illustrator'],
     education: [
       {
-        year: '2020 - Presente',
-        institution: 'Graphic Design & Visual Communication',
-        description: 'Studio e applicazione di principi di identità visiva, gerarchia tipografica e proporzioni auree.'
+        year: 'Dal 2023',
+        institution: 'ITS Academy LAST',
+        description: 'Graphic design, UX e UI all\'interno del percorso di web development.'
       }
     ],
     projects: [
       {
         id: 'stove-ui',
         title: 'UI & UX | Prototipo Stove Figma',
-        description: 'Progettazione dell\'interfaccia grafica e prototipo funzionante su Figma per un\'applicazione mobile di domotica e gestione stufe.',
+        description: 'Interfaccia grafica e prototipo funzionante in Figma di un\'app per la gestione domestica delle stufe, realizzati all\'ITS Academy LAST.',
         fullDescription: [
-          'Con il percorso ITS con l\'ITS ACADEMY LAST ho sviluppato l\'interfaccia grafica e il prototipo interattivo funzionante di un\'app mobile per la gestione domestica delle stufe utilizzando Figma.',
-          'Include la definizione del design system, flussi utente (user flows), regolazione della temperatura, programmazione oraria settimanale e diagnostica in tempo reale.'
+          'Con il percorso ITS all\'ITS Academy LAST ho sviluppato l\'interfaccia grafica e il prototipo funzionante di un\'app per la gestione domestica delle stufe utilizzando Figma.'
         ],
         imageUrl: '/page.png',
-        technologies: ['Figma', 'UI/UX Design', 'Mobile Prototyping', 'Design System', 'Smart Home UI'],
+        technologies: ['Figma', 'UI', 'UX', 'Prototipazione'],
         links: [
           { label: 'Esplora Prototipo Figma', url: 'https://www.figma.com/file/aVVNqbTn3qFB69eTG17imo/Untitled?type=design&node-id=88%3A828&mode=design&t=2ieOiKQFAiT4OxO1-1', type: 'preview' }
         ]
@@ -1237,30 +1233,26 @@ export const portfolioData: Profile[] = [
   },
   {
     id: 'artista',
-    title: 'Artista & Modellatore 3D',
-    intro: 'Scultura digitale, modellazione 3D in Blender, simulazioni ambientali e ricerca formale tra classico e digitale.',
+    title: 'Artista 2D & 3D',
+    intro: 'Disegno e animazione in 2D e in 3D con Blender, oltre alla pixel art.',
     themeColor: 'text-cyan-500',
     bgColor: 'bg-cyan-500/10',
     icon: Brush,
-    skills: ['Blender 3D', 'Modellazione Poligonale', 'Materiali procedurali & Shader', 'Simulazione Acqua & Onde', 'Scultura Digitale', 'Concept Art'],
+    skills: ['Blender', 'Disegno 3D', 'Animazione 3D', 'Disegno 2D', 'Animazione 2D', 'Pixel art'],
     education: [
-      {
-        year: '2021 - Presente',
-        institution: 'Formazione 3D & Digital Art',
-        description: 'Studio approfondito di Blender per il rendering architettonico, simulazioni fisiche e scultura organica.'
-      }
+
     ],
     projects: [
       {
         id: 'sea-3d',
-        title: 'Mare & Onde 3D (Blender)',
-        description: 'Scena tridimensionale con simulazione oceanica dinamica, shader d\'acqua riflettente e mesh poligonale.',
+        title: 'Mare in tempesta (Blender)',
+        description: 'Primo render dell\'animazione di un mare in tempesta, modellato e animato in Blender.',
         fullDescription: [
-          'Studio di simulazione marina realizzato con Blender: modellazione della superficie dell\'acqua con modificatori procedurali d\'onda, dispersione della schiuma e riflessione realistica della luce del cielo.',
-          'Il file sorgente 3D (.blend) include la configurazione completa di illuminazione cinematografica e materiali procedurali.'
+          'Con Blender ho eseguito il primo render dell\'animazione di un mare in tempesta, modellato e animato da me per studiare l\'interfaccia del programma.',
+          'Il file sorgente .blend è scaricabile qui sotto.'
         ],
         imageUrl: '/sea.png',
-        technologies: ['Blender 3D', 'Ocean Modifier', 'Procedural Shaders', 'Lighting & Cycles'],
+        technologies: ['Blender', 'Modellazione 3D', 'Animazione'],
         links: [
           { label: 'File Sorgente 3D (.blend)', url: '/sea.blend', type: 'download' }
         ]
@@ -1270,16 +1262,16 @@ export const portfolioData: Profile[] = [
   {
     id: 'persona',
     title: 'Chi Sono & Filosofia',
-    intro: 'Dennis Bottari: una mente poliedrica che naviga tra pixel, circuiti, lenti e spartiti. La curiosità è l\'unico linguaggio universale.',
+    intro: 'Dennis Bottari: un ragazzo di Verona appassionato di graphic design e sviluppo frontend, con un percorso di studi che va dall\'elettrotecnica all\'arte.',
     themeColor: 'text-slate-400',
     bgColor: 'bg-slate-500/10',
     icon: User,
-    skills: ['Problem Solving Creativo', 'Apprendimento Rapido', 'Visione Interdisciplinare', 'Attenzione al Dettaglio', 'Autonomia & Ricerca'],
+    skills: ['Creatività', 'Pazienza', 'Curiosità', 'Graphic design', 'Frontend'],
     education: [
       {
         year: 'Verona, Italia',
         institution: 'Dennis Bottari',
-        description: 'Residente e operativo a Verona. Passione incondizionata per la tecnologia applicata alla creatività.'
+        description: 'Oggi lavoro in Edulife Impresa Sociale, nell\'area contenuti digitali.'
       }
     ],
     projects: [
@@ -1288,11 +1280,11 @@ export const portfolioData: Profile[] = [
         title: 'Il Percorso Multidisciplinare',
         description: 'Perché limitarsi a una sola etichetta quando il mondo reale richiede connessioni tra discipline diverse?',
         fullDescription: [
-          'Dennis Bottari nasce e vive a Verona. Fin da giovane ha coltivato una curiosità insaziabile che lo ha portato a esplorare l\'elettronica, la programmazione, il game design, la grafica e la musica.',
-          'Non vede barriere tra codice e arte: per lui, scrivere una riga di TypeScript, comporre una barra rap in double-time su Suno, collegare un sensore a ultrasuoni su Arduino o modellare un\'onda su Blender sono tutti rami dello stesso albero: creare valore attraverso la curiosità.'
+          'Sono un ragazzo di Verona creativo, paziente e anche un po\' matto: non sto mai fermo e cerco sempre nuove attività da cui imparare qualcosa. Il mio percorso di studi va dall\'elettrotecnica, all\'Istituto Salesiano San Zeno, al web development, all\'ITS Academy LAST.',
+          'Oggi lavoro in Edulife Impresa Sociale, nell\'area contenuti digitali. Nel tempo libero suono vari strumenti musicali e disegno, sia in 2D che in 3D con Blender, creo asset per videogiochi e studio Godot.'
         ],
         imageUrl: '/Dede.png',
-        technologies: ['Multidisciplinary', 'Curiosity', 'Verona', 'Creative Problem Solving'],
+        technologies: ['Verona', 'Graphic design', 'Frontend', 'Curiosità'],
         links: [
           { label: 'LinkedIn', url: 'https://www.linkedin.com/in/dennis-bottari/', type: 'external' }
         ]
@@ -1314,14 +1306,14 @@ export function useLocalizedPortfolio(): Profile[] {
         return {
           ...profile,
           title: 'Web Developer',
-          intro: 'Developing modern, performant, and responsive web applications with high frontend architecture standards and contemporary aesthetics.',
+          intro: 'Websites and web apps: from the ITS Academy LAST project work to personal projects in React and TypeScript.',
           projects: profile.projects.map((p) => {
             switch (p.id) {
               case 'rev-minds':
                 return {
                   ...p,
                   title: 'Revolution Minds (Verona Second Hand)',
-                  description: 'Innovative web platform for sustainable fashion, upcycling awareness, and vintage thrift stores in Verona.',
+                  description: 'ITS Academy LAST project work raising awareness in the Verona area about the environmental impact of our wardrobes, pointing to second-hand shops.',
                 };
               case 'dnd-hub':
                 return {
@@ -1393,19 +1385,19 @@ export function useLocalizedPortfolio(): Profile[] {
                 return {
                   ...p,
                   title: 'Dennis Bottari Portfolio Hub',
-                  description: 'Root domain hub for dennisbottari.it and bottaridennis.github.io routing subdomains and static services.',
+                  description: 'The landing page of dennisbottari.it, hosted on GitHub Pages, where you choose which version of the portfolio to explore.',
                 };
               case 'enc-dec':
                 return {
                   ...p,
-                  title: 'EncDec - Cryptography & Security Suite',
-                  description: 'Web security suite for data encryption/decryption, SHA-256 hashing, and cryptographic file management.',
+                  title: 'EncDec - AES Encryption in Python',
+                  description: 'Python program that encrypts and decrypts any file with AES: a cyber security group project at ITS Academy LAST.',
                 };
               case 'arcon-web':
                 return {
                   ...p,
-                  title: 'ARCON - Small Business Corporate Portal',
-                  description: 'Comprehensive corporate website for small businesses with smooth anchor navigation and responsive design.',
+                  title: 'ARCON - HTML/CSS Template',
+                  description: 'A template picked on Envato and rebuilt in HTML and CSS during the ITS Academy LAST lessons.',
                 };
               default:
                 return p;
@@ -1416,44 +1408,44 @@ export function useLocalizedPortfolio(): Profile[] {
         return {
           ...profile,
           title: 'Game Designer',
-          intro: 'Designing and programming 2D video games, engaging gameplay loops, arcade physics, sound design, and pixel art aesthetics.',
+          intro: '2D games and pixel art with GameMaker, Godot and Aseprite: browser-playable minigames, prototypes and assets.',
           projects: profile.projects.map((p) => {
             switch (p.id) {
               case 'pixel-art-character':
                 return {
                   ...p,
                   title: 'Aseprite | 2D Character Animation',
-                  description: 'Complete 6-directional 2D pixel-art character animation set created in Aseprite with CC-0 license for game engines.',
+                  description: '6-directional 2D character animation set made with Aseprite, to be shared under a CC-0 licence for games and pixel art animation.',
                 };
               case 'knight-run':
                 return {
                   ...p,
                   title: 'Godot | Knight Run',
-                  description: '16-bit platformer video game developed in Godot Engine using GDScript with physics, jump mechanics, and custom level design.',
+                  description: '16-bit game in development with Godot: scripts and level design are mine, sprites come from itch.io under a CC-0 licence.',
                 };
               case 'spooky-shooter':
                 return {
                   ...p,
                   title: 'Gamemaker 2 | Spooky Shooter',
-                  description: 'Arcade survival shooter in GameMaker surviving waves of pumpkin monsters with retro audio effects.',
+                  description: 'GameMaker 2 minigame where you survive hordes of pumpkin men, playable in the browser.',
                 };
               case 'space-game':
                 return {
                   ...p,
                   title: 'Gamemaker 2 | Space Rocks',
-                  description: 'Space arcade minigame destroying asteroids with WASD controls, spacebar inertia braking, and mouse shooting.',
+                  description: 'GameMaker 2 minigame about destroying asteroids: W A S D to move, Space to stop the ship, left click to shoot.',
                 };
               case 'space-shooter':
                 return {
                   ...p,
                   title: 'Gamemaker 2 | Rocks Shooter',
-                  description: 'Arcade shoot-em-up with precision collision hitboxes, particles, and asteroid destruction mechanics.',
+                  description: 'GameMaker 2 asteroid-destroying minigame, to be customised later with more detailed sprites.',
                 };
               case 'rpg-game':
                 return {
                   ...p,
                   title: 'Gamemaker 2 | RPG Game',
-                  description: 'Retro 8-bit RPG prototype built with GameMaker 2 and Aseprite featuring grid movement, dialogues, and custom assets.',
+                  description: 'Assets made with GameMaker 2 and Aseprite, with game mechanics in development for an 8-bit RPG.',
                 };
               default:
                 return p;
@@ -1463,27 +1455,27 @@ export function useLocalizedPortfolio(): Profile[] {
       case 'elettricista':
         return {
           ...profile,
-          title: 'Electrician & IoT',
-          intro: 'Expert in electrical systems, smart home automation, microcontroller programming, and IoT hardware sensors.',
+          title: 'Electrical & Arduino',
+          intro: 'Vocational qualification as an electrical operator, internships as an electrical operator and Arduino prototypes.',
         };
       case 'musicista':
         return {
           ...profile,
-          title: 'Musician & Producer',
-          intro: 'Music composition, rap/trap songwriting, narrative soundscapes, and advanced audio prompt engineering with Suno AI.',
+          title: 'Music',
+          intro: 'Lyrics and songs made with Suno AI. In my free time I play guitar and ukulele and sing.',
         };
       case 'graphic-designer':
         return {
           ...profile,
           title: 'Graphic Designer',
-          intro: 'Brand identity, vector logo design, cohesive visual design systems, and digital editorial layouts.',
+          intro: 'Graphic design, UI and UX: interfaces and prototypes in Figma and a personal monogram.',
           projects: profile.projects.map((p) => {
             switch (p.id) {
               case 'stove-ui':
                 return {
                   ...p,
                   title: 'UI & UX | Stove Figma Prototype',
-                  description: 'UI/UX design and interactive prototype on Figma for a smart home mobile application controlling pellet and heating stoves.',
+                  description: 'UI and working Figma prototype of an app for managing home stoves, made at ITS Academy LAST.',
                 };
               case 'brand-identity':
                 return {
@@ -1499,14 +1491,14 @@ export function useLocalizedPortfolio(): Profile[] {
       case 'artista':
         return {
           ...profile,
-          title: 'Artist & 3D Modeler',
-          intro: 'Digital sculpting, 3D polygon modeling in Blender, fluid dynamics simulations, and formal visual expression.',
+          title: '2D & 3D Artist',
+          intro: '2D and 3D drawing and animation with Blender, plus pixel art.',
         };
       case 'persona':
         return {
           ...profile,
           title: 'About Me & Philosophy',
-          intro: 'Dennis Bottari: a multifaceted mind navigating pixels, circuits, lenses, and musical scores. Curiosity is the universal language.',
+          intro: 'Dennis Bottari: a guy from Verona passionate about graphic design and frontend development, whose studies range from electrical engineering to art.',
         };
       default:
         return profile;

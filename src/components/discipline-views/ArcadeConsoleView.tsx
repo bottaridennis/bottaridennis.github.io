@@ -214,7 +214,7 @@ export default function ArcadeConsoleView({ profile, onBack, onSelectProject, on
                 </div>
 
                 <p className="text-xs text-zinc-300 font-sans leading-relaxed">
-                  Set completo di animazioni in pixel-art realizzato su <strong>Aseprite</strong> con licenza CC-0. Comprende cicli di movimento fluidi per camminata, corsa, idle e transizioni direzionali, compatibile con i motori <strong>Godot Engine</strong>, <strong>GameMaker</strong> e <strong>Unity</strong>.
+                  Set di animazioni in 6 direzioni per un personaggio 2D, realizzato con <strong>Aseprite</strong> da condividere con licenza CC-0 per lo sviluppo di giochi e animazioni in pixel art.
                 </p>
 
                 {/* Download and Inspection Buttons */}

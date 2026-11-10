@@ -1655,3 +1655,114 @@
 :root[data-effects="off"] #themeOverlay::after {
   display: none;
 }
+
+/* =====================================================================
+   LEGGIBILITÀ
+   Colori secondari schiariti/scuriti per raggiungere almeno 4.5:1 sul
+   fondo delle finestre; etichette del desktop su "pillola" leggibile
+   sopra gli scenari animati; overlay CRT più leggeri.
+   ===================================================================== */
+:root[data-active-theme="netrunner"] { --mu: #86c4ad; }
+:root[data-active-theme="synthwave"] { --mu: #b4a6dc; --wt: #7ff0f8; }
+:root[data-active-theme="nord"] { --mu: #a7b1c4; --wt: #e5e9f0; }
+:root[data-active-theme="dracula"] { --mu: #a9b5e0; }
+:root[data-active-theme="solarized"] { --mu: #93a1a1; --wt: #eee8d5; }
+:root[data-active-theme="gruvbox"] { --mu: #bdae93; }
+:root[data-active-theme="amber"] { --mu: #d99a1c; }
+:root[data-active-theme="vt100"] { --mu: #2fcf2f; }
+:root[data-active-theme="vaporwave"] { --wt: #5a2380; --mu: #8a3f7e; }
+:root[data-active-theme="gameboy"] {
+  --sk-mu: #0f380f;
+  --sk-acc: #0f380f;
+  --sk-on-acc: #9bbc0f;
+}
+:root[data-active-theme="paper"] { --sk-acc: #b8391f; --sk-mu: #5c5146; }
+
+/* terminale: fondo e testo dedicati nei temi chiari */
+:root[data-active-theme="gameboy"] .tm {
+  background: #0f380f;
+  color: #9bbc0f;
+}
+:root[data-active-theme="gameboy"] .tm .o {
+  color: #c7e05a;
+}
+:root[data-active-theme="paper"] .tm {
+  background: #2d2924;
+  color: #fffcf2;
+}
+:root[data-active-theme="paper"] .tm .o {
+  color: #ffd27a;
+}
+
+/* vaporwave: testo scuro su pastello, accenti saturi */
+:root[data-active-theme="vaporwave"] body,
+:root[data-active-theme="vaporwave"] .win {
+  color: var(--wt);
+}
+:root[data-active-theme="vaporwave"] .fm-file .ft b,
+:root[data-active-theme="vaporwave"] .featured-project strong,
+:root[data-active-theme="vaporwave"] #mbar .mb-left b,
+:root[data-active-theme="vaporwave"] #ck {
+  color: #b0127a;
+}
+:root[data-active-theme="vaporwave"] .fm-file .fb {
+  color: #076f94;
+  border-color: #01cdfe;
+}
+:root[data-active-theme="vaporwave"] .btn {
+  color: #b0127a;
+}
+:root[data-active-theme="vaporwave"] .tb,
+:root[data-active-theme="vaporwave"] .btn.p {
+  text-shadow: 0 1px 2px rgba(60, 0, 80, 0.55), 0 0 1px rgba(60, 0, 80, 0.6);
+}
+:root[data-active-theme="vaporwave"] .crumbs {
+  color: #3d0f5c;
+}
+
+/* titoli su barre a gradiente */
+:root[data-active-theme="retro"] .tb b,
+:root[data-active-theme="synthwave"] .tb {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+:root[data-active-theme="deepsea"] .tb {
+  color: #00121f;
+}
+
+/* etichette del desktop leggibili sopra gli scenari animati */
+:root[data-active-theme]:not([data-active-theme="none"]):not([data-active-theme="retro"]):not([data-active-theme="vaporwave"]):not([data-active-theme="paper"]) .ico span {
+  display: inline-block;
+  max-width: 100%;
+  padding: 1px 7px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--win) 82%, transparent);
+  color: var(--wt);
+  text-shadow: none;
+}
+:root[data-active-theme="retro"] .ico span {
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* overlay CRT più leggeri: effetto visibile, testo nitido */
+:root[data-active-theme="vt100"] #themeOverlay,
+:root[data-active-theme="amber"] #themeOverlay {
+  background:
+    radial-gradient(ellipse at center, transparent 62%, rgba(0, 0, 0, 0.5) 100%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.13) 0 1px, transparent 1px 3px);
+}
+:root[data-active-theme="crt"] #themeOverlay {
+  background:
+    radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.6) 100%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.14) 0 1px, transparent 1px 3px);
+}
+@keyframes crtFlicker {
+  from {
+    opacity: 0.97;
+  }
+  to {
+    opacity: 1;
+  }
+}
+:root[data-active-theme="crt"] body {
+  text-shadow: 0 0 3px rgba(112, 221, 140, 0.55);
+}

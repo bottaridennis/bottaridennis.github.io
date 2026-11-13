@@ -1984,3 +1984,26 @@ body:has(.win.maximized:not([hidden])) #mbar {
 :root[data-pixelbg][data-active-theme="gameboy"] #themeScene .s1 {
   color: #0f380f;
 }
+
+/* =====================================================================
+   NIENTE ZOOM AUTOMATICO SUI CAMPI DI TESTO (iPhone/iPad)
+   Safari ingrandisce la pagina se un campo ha il testo sotto i 16px.
+   Sui dispositivi touch tutti i campi stanno a 16px; lo zoom con due
+   dita resta disponibile per l'accessibilità.
+   ===================================================================== */
+@media (pointer: coarse) {
+  input,
+  textarea,
+  select,
+  #mbar input[type="search"],
+  .fm-search input,
+  #cmd input {
+    font-size: 16px !important;
+  }
+  /* il terminale allinea prompt, testo e suggerimento in grigio */
+  .tm .ti-row,
+  .tm .ti-wrap,
+  .tm .ti-ghost {
+    font-size: 16px;
+  }
+}

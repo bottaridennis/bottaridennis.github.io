@@ -258,3 +258,13 @@ svg.db-logo g {
   background: rgba(0, 0, 0, 0.32);
 }
 
+/* iPhone/iPad: niente zoom automatico quando si tocca un campo di testo
+   (Safari ingrandisce se il testo è sotto i 16px). */
+@media (pointer: coarse) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
